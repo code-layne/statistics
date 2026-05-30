@@ -1,0 +1,188 @@
+%! AP Statistics — Unit 1, Lesson 6
+\documentclass[10pt]{article}
+\usepackage[margin=0.6in]{geometry}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{amsmath,amssymb}
+\usepackage{array}
+\usepackage{tabularx}
+\tcbuselibrary{breakable}
+
+\definecolor{sky}{HTML}{EAF3FB}
+\definecolor{navy}{HTML}{1F3A5F}
+\definecolor{redbox}{HTML}{FCECEC}
+\definecolor{greenbox}{HTML}{EDF8F0}
+\definecolor{goldbox}{HTML}{FFF7E6}
+\newtcolorbox{skillbox}[2][]{
+    colback=#2, colframe=navy, boxrule=0.8pt, arc=2mm,
+    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm,
+    fonttitle=\bfseries, title={#1}, halign title=center, breakable
+}
+\setlist[itemize]{leftmargin=1.2em,itemsep=0.35em,topsep=0.35em}
+\setlist[enumerate]{leftmargin=1.4em,itemsep=0.35em,topsep=0.35em}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\newcommand{\CourseName}{AP Statistics}
+\newcommand{\SchoolYear}{2026--2027}
+\newcommand{\MeetingLength}{55 minutes}
+\newcommand{\UnitNumberName}{Unit 1: Exploring One-Variable Data \quad}
+\newcommand{\LessonNumberName}{Lesson 1.6: Describing the Distribution of a Quantitative Variable}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear\ (\MeetingLength) \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky,colframe=navy,boxrule=0.9pt,arc=2mm,
+    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm]
+    \textbf{Primary Objective:} Students will describe the distribution of a quantitative
+    variable using the SOCS framework: \textbf{S}hape, \textbf{O}utliers, \textbf{C}enter, and
+    \textbf{S}pread. Students will recognize common shapes (symmetric, skewed left, skewed right,
+    unimodal, bimodal) and relate shape to real-world contexts (Big Idea: UNC; AP Skills 2 \& 4).
+\end{tcolorbox}
+
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skills 2 \& 4 --- Data Analysis \& Statistical Argumentation}
+    \begin{itemize}
+        \item Describe a distribution completely using SOCS with context in every sentence.
+        \item Identify and justify potential outliers by visual inspection (formal rule in Lesson 1.7).
+        \item Use appropriate vocabulary to describe shape: symmetric, skewed right/left, unimodal, bimodal, uniform.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item A complete AP description always includes all four SOCS components \textit{with context}.
+        \item Skewed right $=$ tail on the right (a few very high values); skewed left $=$ tail on the left.
+        \item ``Center'' here is informal (approximate); exact measures come in Lesson 1.7.
+        \item Outliers affect center and spread --- always mention them.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Shape} --- overall pattern: symmetric, skewed right (positive skew), skewed left (negative skew), unimodal, bimodal, uniform
+        \item \textbf{Skewed right} --- long tail toward higher values; most data cluster at low values
+        \item \textbf{Skewed left} --- long tail toward lower values; most data cluster at high values
+        \item \textbf{Symmetric} --- roughly mirror-image about the center
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Outlier} --- an individual value that falls far from the overall pattern; investigate, do not automatically remove
+        \item \textbf{Center} --- informal measure of a typical value; roughly where the distribution is ``balanced''
+        \item \textbf{Spread} --- the variability; how wide or narrow the distribution is
+        \item \textbf{SOCS} --- the AP framework for describing distributions: Shape, Outliers, Center, Spread
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Quick Review (3 min)}\\
+    Display the histogram of sleep times from Lesson 1.5. Ask: ``What story does this graph tell?'' Accept informal descriptions, then introduce SOCS as a structured way to make sure the description is complete.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Spiral Connections}
+    \begin{itemize}
+        \item Lesson 1.7: SOCS center becomes mean or median; spread becomes range, IQR, or standard deviation.
+        \item Lesson 1.9: compare two distributions using SOCS --- same framework, two groups.
+        \item Skewness connects to mean vs.\ median relationship in Lesson 1.7.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (5 min)}\\
+    Show two histograms: (1) household incomes in the U.S., (2) heights of adult women. Ask: ``Describe each in one word.'' Students notice one is ``bunched left'' and one is ``bell-shaped.'' Connect: these shapes have names and consequences for which statistics we use.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15 min)}
+    \begin{enumerate}
+        \item Introduce SOCS acronym; explain each component briefly.
+        \item Model a full SOCS description of the income histogram (skewed right, possible high-income outliers, center around \$60k, spread from near \$0 to over \$200k).
+        \item Guide students through a SOCS description of the height histogram together.
+        \item Introduce the key shapes with sketches: symmetric bell, skewed right, skewed left, bimodal, uniform.
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Direct Instruction (10 min)}
+    \begin{itemize}
+        \item Write a model SOCS response on the board. Label each sentence with S, O, C, or S.
+        \item Teach the AP ``context rule'': every sentence must name the variable and population (e.g., ``The distribution of SAT scores for these 200 students is\ldots'').
+        \item Emphasize: skewed right \textit{does not} mean ``the peak is on the right'' --- the tail is on the right.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Active Monitoring}
+    \begin{itemize}
+        \item Circulate during guided practice; check for context in every sentence.
+        \item Prompt: ``Which direction is the tail pointing? That is the direction of skew.''
+        \item Red flag: students who write only shape and center and omit spread or outliers. Remind: all four components needed for full credit on AP.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Group Activity (8--10 min)}\\
+    Each group receives a different histogram (e.g., ages at a concert, wait times at a store, test scores). Groups write a complete SOCS description, then share with the class. Class checks each description for missing components and context.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support}: Provide a SOCS sentence-starter sheet (``The shape of the distribution is\ldots; There appear to be outliers\ldots; The center is approximately\ldots; The spread ranges from\ldots'').
+        \item \textit{Extension}: Students predict the real-world context from a histogram's shape only (e.g., bimodal $\to$ two subgroups; skewed right $\to$ income, prices, or time data).
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    Display a dotplot of commute times (minutes) for 20 workers. Students write a complete SOCS description in 4--6 sentences. Collect and use a quick rubric (1 point each: shape correct, outliers mentioned, center estimated, spread described, context in every sentence).
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{Free-response: ``The histogram shows the distribution of the number of hours per week students spend on social media. Describe the distribution.''}\\[4pt]
+    Model response: Shape (skewed right), Outliers (one student at 50+ hours), Center (approximately 8--10 hours), Spread (0 to about 55 hours), all with context.
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item Write SOCS descriptions for 2--3 provided graphs (histogram, dotplot, stemplot).
+        \item Self-check: Does every sentence include context? Are all four SOCS components present?
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: Find a histogram online; write a SOCS description and explain what the shape implies about the data-generating process.
+        \item \textit{Preview}: Lesson 1.7 gives us precise numerical tools for center (mean, median) and spread (range, IQR, standard deviation) --- so our SOCS descriptions become quantitatively specific.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\end{document}

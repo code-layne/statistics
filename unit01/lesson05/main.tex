@@ -1,0 +1,192 @@
+%! AP Statistics — Unit 1, Lesson 5
+\documentclass[10pt]{article}
+\usepackage[margin=0.6in]{geometry}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{amsmath,amssymb}
+\usepackage{array}
+\usepackage{tabularx}
+\tcbuselibrary{breakable}
+
+\definecolor{sky}{HTML}{EAF3FB}
+\definecolor{navy}{HTML}{1F3A5F}
+\definecolor{redbox}{HTML}{FCECEC}
+\definecolor{greenbox}{HTML}{EDF8F0}
+\definecolor{goldbox}{HTML}{FFF7E6}
+\newtcolorbox{skillbox}[2][]{
+    colback=#2, colframe=navy, boxrule=0.8pt, arc=2mm,
+    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm,
+    fonttitle=\bfseries, title={#1}, halign title=center, breakable
+}
+\setlist[itemize]{leftmargin=1.2em,itemsep=0.35em,topsep=0.35em}
+\setlist[enumerate]{leftmargin=1.4em,itemsep=0.35em,topsep=0.35em}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\newcommand{\CourseName}{AP Statistics}
+\newcommand{\SchoolYear}{2026--2027}
+\newcommand{\MeetingLength}{55 minutes}
+\newcommand{\UnitNumberName}{Unit 1: Exploring One-Variable Data \quad}
+\newcommand{\LessonNumberName}{Lesson 1.5: Representing a Quantitative Variable with Graphs}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear\ (\MeetingLength) \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky,colframe=navy,boxrule=0.9pt,arc=2mm,
+    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm]
+    \textbf{Primary Objective:} Students will construct and interpret dotplots, stemplots, and
+    histograms for quantitative data. Students will recognize that the shape of a distribution
+    (visible in these displays) is the foundation for describing and comparing data in subsequent
+    lessons (Big Idea: UNC).
+\end{tcolorbox}
+
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 2 --- Data Analysis}
+    \begin{itemize}
+        \item Choose an appropriate graph type for a given quantitative dataset.
+        \item Construct a correctly labeled dotplot, stemplot, and histogram from raw data.
+        \item Interpret a graph: identify approximate center, spread, and shape (formal description comes in Lesson 1.6).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item Histogram bars \textit{touch} because quantitative data are continuous (or ordered); categories have a gap.
+        \item Dotplots preserve every value; histograms group data into intervals --- each trade-off matters.
+        \item Stem-and-leaf plots show the actual data values while giving a visual shape.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Dotplot} --- each data value represented by a dot above a number line; reveals every value and clusters
+        \item \textbf{Stemplot (stem-and-leaf plot)} --- stems are leading digit(s); leaves are trailing digits; preserves individual values; back-to-back for comparison
+        \item \textbf{Histogram} --- data grouped into equal-width intervals (bins); bar height = frequency or relative frequency; bars touch
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Bin (class interval)} --- the equal-width grouping used in a histogram
+        \item \textbf{Shape} --- the overall pattern of the distribution (symmetric, skewed left/right, unimodal, bimodal, uniform) --- formal description in Lesson 1.6
+        \item \textbf{Gap} --- a range of values with no observations; \textbf{cluster} --- a group of values that appear together
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Quick Review (3 min)}\\
+    Review: what makes a variable quantitative? Why do bar chart bars NOT touch? Bridge: when data are quantitative (continuous or ordered), the bars \textit{do} touch because adjacent bins share a boundary.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Spiral Connections}
+    \begin{itemize}
+        \item Lesson 1.6: use these graphs to describe shape, center, spread, and outliers (SOCS).
+        \item Lesson 1.8: boxplots are another quantitative display --- compare them to histograms.
+        \item Unit 4: histogram shape connects to probability distributions.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (4--5 min)}\\
+    Collect class data: ``How many minutes did you sleep last night?'' Record on the board. Ask: ``Without calculating anything, what do you notice about this list of numbers?'' Students observe variability, a rough center, and possible extremes. Today's graphs make those observations precise.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15 min)}
+    \begin{enumerate}
+        \item Build a dotplot of the sleep data together.
+        \item Rearrange the same data into a stemplot; compare what's visible.
+        \item Group the data into bins and construct a histogram; choose bin width together.
+        \item Discuss trade-offs: dotplot (all values, small $n$), stemplot (sorted values), histogram (large $n$, grouped).
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Direct Instruction (10 min)}
+    \begin{itemize}
+        \item Histogram construction rules: equal bin widths, bins start where the last ends, label axes with variable and scale, add a title.
+        \item Demonstrate how changing bin width changes the histogram's appearance --- discuss the judgment involved.
+        \item Stemplot rule: split stems if needed; back-to-back stemplot preview for Lesson 1.9.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Active Monitoring}
+    \begin{itemize}
+        \item Circulate as students construct graphs; watch for: bars with gaps in histograms, unlabeled axes, unequal bin widths.
+        \item Ask students: ``If you doubled the bin width, what would happen to the shape of your histogram?''
+        \item Probe: ``Which graph would you use if you only had 10 data values? 200?''
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Group Activity (8--10 min)}\\
+    Groups receive a dataset of 25 test scores (0--100). Each group constructs:
+    \begin{enumerate}
+        \item A dotplot
+        \item A stemplot (stems: tens digit; leaves: units digit)
+        \item A histogram with bins of width 10
+    \end{enumerate}
+    Then groups compare: ``Which graph is most useful for a teacher? Justify.''
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support}: Provide a dotplot template with a pre-drawn number line; stemplot with stems pre-filled.
+        \item \textit{Extension}: Students experiment with bin widths of 5, 10, and 20 for the histogram. Write: how does bin width affect the story told by the graph?
+        \item \textit{Technology}: Use a graphing calculator or Desmos to verify their hand-drawn histogram.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    Given: 12 data values (e.g., number of books read last year: 3, 7, 1, 5, 2, 8, 4, 6, 3, 10, 2, 5). Students sketch a dotplot and a histogram (bins: 0--3, 4--7, 8--11). They label both graphs completely.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{``A histogram of daily high temperatures is shown. Describe what the histogram tells you about the distribution of temperatures.''} \\[4pt]
+    Students should mention: approximate center, spread (range of values visible), and overall shape --- this primes Lesson 1.6 SOCS framework.
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item Construct a dotplot, stemplot, and histogram from a provided dataset of 20 values.
+        \item Answer: ``Which display would you choose to present to an audience unfamiliar with statistics? Why?''
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: Collect real data (e.g., prices of 20 items at a grocery store) and create all three displays.
+        \item \textit{Preview}: Lesson 1.6 teaches how to \textit{describe} a distribution using SOCS --- Shape, Outliers, Center, Spread. Review the graphs you made today and try to describe each one in words before next class.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\end{document}
