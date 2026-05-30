@@ -1,0 +1,195 @@
+%! AP Statistics — Unit 2, Lesson 3
+\documentclass[10pt]{article}
+\usepackage[margin=0.6in]{geometry}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{amsmath,amssymb}
+\usepackage{array}
+\usepackage{tabularx}
+\tcbuselibrary{breakable}
+
+\definecolor{sky}{HTML}{EAF3FB}
+\definecolor{navy}{HTML}{1F3A5F}
+\definecolor{redbox}{HTML}{FCECEC}
+\definecolor{greenbox}{HTML}{EDF8F0}
+\definecolor{goldbox}{HTML}{FFF7E6}
+\newtcolorbox{skillbox}[2][]{
+    colback=#2, colframe=navy, boxrule=0.8pt, arc=2mm,
+    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm,
+    fonttitle=\bfseries, title={#1}, halign title=center, breakable
+}
+\setlist[itemize]{leftmargin=1.2em,itemsep=0.35em,topsep=0.35em}
+\setlist[enumerate]{leftmargin=1.4em,itemsep=0.35em,topsep=0.35em}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\newcommand{\CourseName}{AP Statistics}
+\newcommand{\SchoolYear}{2026--2027}
+\newcommand{\MeetingLength}{55 minutes}
+\newcommand{\UnitNumberName}{Unit 2: Exploring Two-Variable Data \quad}
+\newcommand{\LessonNumberName}{Lesson 2.3: Statistics for Two Categorical Variables}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear\ (\MeetingLength) \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky,colframe=navy,boxrule=0.9pt,arc=2mm,
+    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm]
+    \textbf{Primary Objective:} Students will quantify the association between two categorical
+    variables by computing and interpreting the difference in proportions and relative risk.
+    Students will use these statistics to make comparative claims in context, understanding that
+    the size of the statistics (not just direction) conveys the strength of the association (Big Idea: UNC).
+\end{tcolorbox}
+
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 2 --- Data Analysis}
+    \begin{itemize}
+        \item Compute conditional proportions (e.g., proportion of successes in each group).
+        \item Calculate and interpret the difference in proportions in context.
+        \item Calculate and interpret relative risk (ratio of proportions) in context.
+        \item Recognize that a difference in proportions and relative risk can tell different stories about the same data.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item Difference in proportions is additive: ``Group A's rate is 0.15 higher than Group B's.''
+        \item Relative risk is multiplicative: ``Group A's rate is 3 times Group B's rate.''
+        \item Both statistics are needed: a small absolute difference can be a large relative risk (and vice versa).
+        \item These statistics lay the groundwork for two-proportion inference in Unit 6.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Conditional proportion} --- the proportion of ``successes'' within a given group; $\hat{p} = \frac{\text{count of successes}}{\text{group total}}$
+        \item \textbf{Difference in proportions} --- $\hat{p}_1 - \hat{p}_2$; quantifies the additive difference between two groups' rates
+        \item \textbf{Relative risk (risk ratio)} --- $\dfrac{\hat{p}_1}{\hat{p}_2}$; how many times higher one group's rate is compared to the other
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Baseline group} --- the reference group in the denominator of the relative risk
+        \item \textbf{Strength of association} --- how much the conditional distributions differ; larger differences $\to$ stronger association
+        \item \textbf{Direction of association} --- which group has the higher proportion; determines the sign of the difference
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Quick Review (3 min)}\\
+    Return to the two-way table from Lesson 2.2. Students have already computed conditional relative frequencies. Ask: ``How much different are the two conditional proportions? Can we put a single number on that difference?'' This motivates both statistics today.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Spiral Connections}
+    \begin{itemize}
+        \item Conditional relative frequencies (Lesson 2.2) are the $\hat{p}$ values used here.
+        \item Unit 6: the difference in proportions becomes a test statistic for formal inference.
+        \item Relative risk appears in epidemiology and medical research --- a real-world application of statistics.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (5 min)}\\
+    Medical context: ``A study found that 2\% of people who took Drug A got a side effect, vs.\ 1\% who took a placebo.'' Ask: Is 1 percentage point a big deal? Now reframe: ``Those who took Drug A are \textit{twice} as likely to get the side effect.'' Discuss: same data, two different ways to describe it.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15 min)}
+    \begin{enumerate}
+        \item Define and compute the difference in proportions from a two-way table.
+        \item Define and compute relative risk from the same table.
+        \item Interpret both in context side-by-side.
+        \item Work a second example where relative risk is dramatic but absolute difference is tiny --- and vice versa.
+        \item Discuss: which statistic is more informative depends on the question being asked.
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Direct Instruction (10 min)}
+    \begin{itemize}
+        \item Difference in proportions template: ``The proportion of [response] among [Group 1] ($\hat{p}_1 = \ldots$) was [value] [higher/lower] than the proportion among [Group 2] ($\hat{p}_2 = \ldots$).''
+        \item Relative risk template: ``[Group 1] was [value] times as likely to [response] as [Group 2].''
+        \item Relative risk $= 1$ means no association; $> 1$ means Group 1 higher; $< 1$ means Group 1 lower.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Active Monitoring}
+    \begin{itemize}
+        \item Common error: interpreting relative risk as a percentage difference (e.g., ``RR = 2 means 2\% more'' --- wrong; it means twice as likely).
+        \item Check: Is the student's interpretation in context? Is the direction stated?
+        \item Probe: ``If the relative risk is 1.05, is there a strong association? What about the difference in proportions --- could it be large at the same time?''
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Group Activity (8--10 min)}\\
+    Groups receive a two-way table: vaccination status (vaccinated/unvaccinated) $\times$ illness (sick/not sick). Groups compute:
+    \begin{enumerate}
+        \item Conditional proportion sick for each group.
+        \item Difference in proportions (with direction).
+        \item Relative risk (vaccinated vs.\ unvaccinated).
+        \item A 2-sentence conclusion about the association, including both statistics.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support}: Provide the interpretation templates filled in with blanks; students supply the numbers.
+        \item \textit{Extension}: Students research and critique a real news article that reports relative risk without reporting the absolute difference --- is the headline misleading?
+        \item \textit{AP Connection}: Discuss how Unit 6 tests will ask whether the observed difference in proportions is statistically significant.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    A survey finds 45 of 150 smokers (30\%) and 18 of 180 non-smokers (10\%) developed a certain condition. Students: (1) compute the difference in proportions and interpret, (2) compute the relative risk and interpret, (3) state which statistic better conveys the practical importance of the association and justify.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{``Based on the table, calculate and interpret the relative risk of [outcome] for Group A compared to Group B. Does the relative risk or the difference in proportions better communicate the strength of this association? Explain.''}\\[4pt]
+    Assess: correct calculation, correct direction, full context in interpretation.
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item Given two different two-way tables, compute both statistics for each and write a comparison paragraph.
+        \item Reflect: When would a researcher prefer to report relative risk vs.\ difference in proportions?
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: Research ``absolute risk reduction'' and ``number needed to treat'' --- two more ways to quantify the same association in medical studies.
+        \item \textit{Preview}: Lesson 2.4 shifts to two \textit{quantitative} variables. Instead of a table, we'll plot data on a coordinate plane --- a scatterplot. Think about what features you would look for in such a plot.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\end{document}

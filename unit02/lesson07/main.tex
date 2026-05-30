@@ -1,0 +1,194 @@
+%! AP Statistics — Unit 2, Lesson 7
+\documentclass[10pt]{article}
+\usepackage[margin=0.6in]{geometry}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{amsmath,amssymb}
+\usepackage{array}
+\usepackage{tabularx}
+\tcbuselibrary{breakable}
+
+\definecolor{sky}{HTML}{EAF3FB}
+\definecolor{navy}{HTML}{1F3A5F}
+\definecolor{redbox}{HTML}{FCECEC}
+\definecolor{greenbox}{HTML}{EDF8F0}
+\definecolor{goldbox}{HTML}{FFF7E6}
+\newtcolorbox{skillbox}[2][]{
+    colback=#2, colframe=navy, boxrule=0.8pt, arc=2mm,
+    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm,
+    fonttitle=\bfseries, title={#1}, halign title=center, breakable
+}
+\setlist[itemize]{leftmargin=1.2em,itemsep=0.35em,topsep=0.35em}
+\setlist[enumerate]{leftmargin=1.4em,itemsep=0.35em,topsep=0.35em}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\newcommand{\CourseName}{AP Statistics}
+\newcommand{\SchoolYear}{2026--2027}
+\newcommand{\MeetingLength}{55 minutes}
+\newcommand{\UnitNumberName}{Unit 2: Exploring Two-Variable Data \quad}
+\newcommand{\LessonNumberName}{Lesson 2.7: Residuals}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear\ (\MeetingLength) \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky,colframe=navy,boxrule=0.9pt,arc=2mm,
+    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm]
+    \textbf{Primary Objective:} Students will calculate and interpret residuals, and will construct
+    and analyze residual plots to assess whether a linear model is appropriate for a dataset.
+    Students will recognize patterns in residual plots that indicate a linear model is or is not
+    a good fit (Big Idea: DAT; AP Skills 2 \& 4).
+\end{tcolorbox}
+
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skills 2 \& 4 --- Data Analysis \& Statistical Argumentation}
+    \begin{itemize}
+        \item Calculate a residual: $e = y - \hat{y}$.
+        \item Interpret a residual in context: positive $\to$ actual is above prediction; negative $\to$ actual is below prediction.
+        \item Construct and interpret a residual plot; use it to assess the appropriateness of a linear model.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item The sum of residuals is always 0 (for a least-squares line) --- this is a quick check.
+        \item A residual plot with no pattern (random scatter around $y = 0$) indicates a linear model is appropriate.
+        \item A curved or fanning pattern in a residual plot signals that a linear model is \textit{not} the best choice.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Residual}: $e = y - \hat{y}$; the vertical distance from a data point to the regression line
+        \item \textbf{Positive residual}: actual value is above the line (underpredicted)
+        \item \textbf{Negative residual}: actual value is below the line (overpredicted)
+        \item \textbf{$\sum e_i = 0$}: residuals always sum to zero for a least-squares regression line
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Residual plot}: a scatterplot of residuals ($e$) vs.\ $x$ (or $\hat{y}$); used to assess model fit
+        \item \textbf{Random scatter}: residual plot showing no pattern $\to$ linear model is appropriate
+        \item \textbf{Curved pattern}: residual plot showing a curve $\to$ linear model is NOT appropriate; a nonlinear model is needed
+        \item \textbf{Fanning (heteroscedasticity)}: spread of residuals increases with $x$ $\to$ linear model is questionable
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Quick Review (3 min)}\\
+    Return to the regression equation from Lesson 2.6. Compute $\hat{y}$ for one observed data point and ask: ``The actual value was [y]. How far off were we?'' The answer is the residual --- the error in our prediction.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Spiral Connections}
+    \begin{itemize}
+        \item Lesson 2.6: predicted value $\hat{y}$ is needed to compute a residual.
+        \item Lesson 2.8: least-squares regression minimizes $\sum e_i^2$ --- the sum of squared residuals.
+        \item Lesson 2.9: non-random residual plots (curved patterns) motivate transformations and nonlinear models.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (5 min)}\\
+    Show a scatterplot with the regression line drawn. Point to a specific data point above the line. Ask: ``This person's actual value is higher than our prediction. By how much? Is that good or bad?'' Students see that the vertical gap between the point and the line is meaningful --- it measures prediction error.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15 min)}
+    \begin{enumerate}
+        \item Define the residual formula; compute residuals for all points in a small dataset.
+        \item Verify: $\sum e_i = 0$.
+        \item Construct a residual plot by hand.
+        \item Examine four residual plots --- identify each as showing random scatter, a curve, or fanning.
+        \item Connect pattern $\to$ model assessment conclusion.
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Direct Instruction (10 min)}
+    \begin{itemize}
+        \item AP residual plot interpretation rubric: (1) describe the pattern (random/curved/fanning), (2) conclude whether the linear model is or is not appropriate, (3) include context.
+        \item Model response for a curved residual plot: ``The residual plot shows a curved pattern, indicating that a linear model may not be appropriate for predicting [y] from [x]. A nonlinear model may provide a better fit.''
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Active Monitoring}
+    \begin{itemize}
+        \item Common error: describing the \textit{direction} of the curve in the residual plot (not needed) instead of the \textit{implication} for model fit.
+        \item Check: Is the residual plot labeled ($x$-axis = $x$ variable or $\hat{y}$; $y$-axis = residuals)?
+        \item Probe: ``Is there a curved pattern? Then what does that tell you about using a straight line?''
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Group Activity (8--10 min)}\\
+    Groups receive a dataset (8 points) and its regression equation. Groups:
+    \begin{enumerate}
+        \item Compute all residuals; verify they sum to 0.
+        \item Construct the residual plot.
+        \item Describe the pattern and conclude whether a linear model is appropriate.
+        \item Identify the point with the largest absolute residual and interpret it in context.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support}: Pre-compute $\hat{y}$ values; students compute only $e = y - \hat{y}$ and construct the plot.
+        \item \textit{Extension}: Provide a dataset that shows clear fanning --- students research heteroscedasticity and suggest a data transformation (e.g., log of $y$) to stabilize variance.
+        \item \textit{Technology}: Use a graphing calculator's RESID list or Desmos to generate and inspect the residual plot.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    Given a regression output and one data point ($x = 10$, $y = 45$, $\hat{y} = 38$): (1) calculate and interpret the residual, (2) a residual plot shows a clear U-shaped pattern --- what does this indicate about the linear model?
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{``The residual plot for a linear regression model is shown. Describe the pattern and use it to assess whether a linear model is an appropriate model for the data.''}\\[4pt]
+    Assess: describes the pattern (curved/random/fanning), states the conclusion (appropriate or not), gives brief justification.
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item For a provided dataset, compute residuals, construct a residual plot, and write a complete assessment of model appropriateness.
+        \item AP practice: matching residual plot patterns to appropriate conclusions.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: Given two models (linear and quadratic) for the same data, compare their residual plots and argue which is a better fit.
+        \item \textit{Preview}: Lesson 2.8 --- where exactly do the slope and intercept come from? The \textit{least-squares criterion} chooses the line that minimizes $\sum e_i^2$. We'll derive the formulas and connect them back to $r$, $\bar{x}$, $\bar{y}$, $s_x$, and $s_y$.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\end{document}

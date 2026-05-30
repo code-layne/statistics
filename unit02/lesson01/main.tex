@@ -1,0 +1,185 @@
+%! AP Statistics — Unit 2, Lesson 1
+\documentclass[10pt]{article}
+\usepackage[margin=0.6in]{geometry}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{amsmath,amssymb}
+\usepackage{array}
+\usepackage{tabularx}
+\tcbuselibrary{breakable}
+
+\definecolor{sky}{HTML}{EAF3FB}
+\definecolor{navy}{HTML}{1F3A5F}
+\definecolor{redbox}{HTML}{FCECEC}
+\definecolor{greenbox}{HTML}{EDF8F0}
+\definecolor{goldbox}{HTML}{FFF7E6}
+\newtcolorbox{skillbox}[2][]{
+    colback=#2, colframe=navy, boxrule=0.8pt, arc=2mm,
+    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm,
+    fonttitle=\bfseries, title={#1}, halign title=center, breakable
+}
+\setlist[itemize]{leftmargin=1.2em,itemsep=0.35em,topsep=0.35em}
+\setlist[enumerate]{leftmargin=1.4em,itemsep=0.35em,topsep=0.35em}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\newcommand{\CourseName}{AP Statistics}
+\newcommand{\SchoolYear}{2026--2027}
+\newcommand{\MeetingLength}{55 minutes}
+\newcommand{\UnitNumberName}{Unit 2: Exploring Two-Variable Data \quad}
+\newcommand{\LessonNumberName}{Lesson 2.1: Introducing Statistics --- Are Variables Related?}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear\ (\MeetingLength) \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky,colframe=navy,boxrule=0.9pt,arc=2mm,
+    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm]
+    \textbf{Primary Objective:} Students will recognize when two variables may be related and
+    distinguish between explanatory and response variables. Students will understand that
+    association does not imply causation, and will identify the type of display or analysis
+    needed based on whether the variables are categorical or quantitative (Big Idea: VAR).
+\end{tcolorbox}
+
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 1 --- Selecting Statistical Methods}
+    \begin{itemize}
+        \item Identify the explanatory (independent) and response (dependent) variable in a given context.
+        \item Choose the appropriate display based on variable types: two categorical $\to$ two-way table/segmented bar chart; two quantitative $\to$ scatterplot.
+        \item Articulate why association $\neq$ causation.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item Unit 1 explored one variable at a time; Unit 2 asks whether two variables move together.
+        \item Association means knowing one variable tells us something about the other --- but the relationship may have many explanations.
+        \item Confounding variables can create the appearance of association without a causal link.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Explanatory variable} --- the variable thought to explain or predict the response; placed on the $x$-axis
+        \item \textbf{Response variable} --- the outcome being measured; placed on the $y$-axis
+        \item \textbf{Association} --- a relationship between two variables such that knowing the value of one gives information about the other
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Causation} --- one variable directly produces a change in another; requires a controlled experiment to establish
+        \item \textbf{Confounding variable} --- a third variable that is related to both the explanatory and response variables, making the apparent association misleading
+        \item \textbf{Lurking variable} --- a variable not measured in the study that may explain an observed association
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Quick Review (3 min)}\\
+    Recall from Unit 1: categorical vs.\ quantitative variables. Ask: ``If we want to study whether studying more hours leads to higher test scores, what type is each variable?'' Bridge to today: two quantitative variables call for a scatterplot; two categorical variables call for a table.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Spiral Connections}
+    \begin{itemize}
+        \item Variable types (Lesson 1.2) determine which two-variable method to use.
+        \item Two categorical variables $\to$ Lessons 2.2--2.3.
+        \item Two quantitative variables $\to$ Lessons 2.4--2.9.
+        \item Causation and confounding return in Unit 3 (experimental design).
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (5 min)}\\
+    Display headline: \textit{``Counties with more fast-food restaurants have higher obesity rates.''} Ask: Does this mean eating fast food causes obesity? What other explanations are there? Students brainstorm confounders (income, urban density, etc.). Connect: this is the central challenge of observational studies.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15 min)}
+    \begin{enumerate}
+        \item Define explanatory and response variable; practice identifying them in 4--5 contexts.
+        \item Discuss the association vs.\ causation distinction with 2--3 famous examples (ice cream and drowning; shoe size and reading ability in children).
+        \item Introduce the road map for Unit 2: which display/analysis for which variable types.
+        \item Preview: next two lessons handle two categorical variables; the rest handle two quantitative variables.
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Direct Instruction (10 min)}
+    \begin{itemize}
+        \item Emphasize: the explanatory/response distinction is about the question we are asking, not a physical cause. (e.g., we can regress height on age even if age doesn't ``cause'' height in a mechanistic sense.)
+        \item Introduce the three possible explanations for an observed association: (1) $X$ causes $Y$, (2) $Y$ causes $X$, (3) a third variable causes both.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Active Monitoring}
+    \begin{itemize}
+        \item Quick poll: for each scenario shown, students identify the explanatory and response variable.
+        \item Watch for: students reversing explanatory and response in regression contexts (common on AP).
+        \item Probe: ``Can you think of a lurking variable that might explain this association?''
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Group Activity (8--10 min)}\\
+    Groups receive 5 study descriptions. For each, they identify: (1) explanatory variable and type, (2) response variable and type, (3) appropriate display (table, bar chart, or scatterplot), (4) one possible confounding variable. Groups share findings on a sticky-note gallery walk.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support}: Provide a decision tree: ``Is the explanatory variable categorical or quantitative? Is the response categorical or quantitative?'' with display recommendations.
+        \item \textit{Extension}: Students write their own research question, identify variables, propose a confounding variable, and explain why it would be difficult to establish causation.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    Scenario: ``Researchers find that people who drink more coffee have fewer cavities.'' Students write: (1) explanatory variable, (2) response variable, (3) one possible confounding variable, (4) does this prove coffee prevents cavities? Explain.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{``A study found a strong positive association between the number of fire trucks sent to a fire and the amount of property damage. Does this mean fire trucks cause property damage? Explain.''}\\[4pt]
+    Assess: student identifies the lurking variable (size of fire) and correctly states association $\neq$ causation.
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item For 4 provided research scenarios, identify the explanatory and response variables, their types, and the appropriate display.
+        \item Explain in writing why one famous spurious correlation (e.g., Nicolas Cage films and pool drownings) does not imply causation.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: Research the concept of Simpson's Paradox --- a striking example of how aggregated data can reverse an association.
+        \item \textit{Preview}: Lesson 2.2 --- when both variables are categorical, we use a two-way table. Think about what additional information a two-way table gives compared to a one-way frequency table.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\end{document}
