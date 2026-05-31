@@ -1,0 +1,266 @@
+%! AP Statistics — Unit 1, Lesson 1.1 — Homework KEY
+\documentclass[10pt]{article}
+\usepackage[margin=0.65in, top=0.55in, bottom=0.65in]{geometry}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage{colortbl}
+\tcbuselibrary{breakable, skins}
+
+% ── Colors ───────────────────────────────────────────────────────────────────
+\definecolor{navy}{HTML}{1F3A5F}
+\definecolor{navylight}{HTML}{2E5490}
+\definecolor{sky}{HTML}{EAF3FB}
+\definecolor{skymid}{HTML}{C5DFF5}
+\definecolor{goldacc}{HTML}{D4820A}
+\definecolor{goldbg}{HTML}{FEF3E2}
+\definecolor{greenbg}{HTML}{EDF8F0}
+\definecolor{greenacc}{HTML}{2D7A4F}
+\definecolor{redbg}{HTML}{FCECEC}
+\definecolor{redacc}{HTML}{C0392B}
+\definecolor{slate}{HTML}{64748B}
+\definecolor{linegray}{HTML}{AAAAAA}
+\definecolor{keyred}{HTML}{C0392B}
+
+% ── Box styles ───────────────────────────────────────────────────────────────
+\newtcolorbox{blurbbox}[2][]{
+    colback=white, colframe=#2, boxrule=0.9pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=4mm,
+    fonttitle=\bfseries\small\color{white}, title={#1},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=#2, colframe=#2, arc=1.5mm},
+    breakable
+}
+\newtcolorbox{headlinebox}[1]{
+    colback=#1, colframe=#1!50!black, boxrule=0pt,
+    arc=1.5mm, left=3mm, right=3mm, top=2mm, bottom=2mm
+}
+\newtcolorbox{reflectionbox}{
+    colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=4mm,
+    fonttitle=\bfseries\small\color{white}, title={Reflection},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=navy, colframe=navy, arc=1.5mm},
+    breakable
+}
+\newtcolorbox{extensionbox}{
+    colback=goldbg, colframe=goldacc, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=4mm,
+    fonttitle=\bfseries\small\color{white},
+    title={Extension \normalfont\small\color{white!80!black}\quad optional},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=goldacc, colframe=goldacc, arc=1.5mm},
+    breakable
+}
+\newtcolorbox{teachernote}{
+    colback=redbg, colframe=redacc, boxrule=0.7pt, arc=1.5mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm,
+    fonttitle=\bfseries\scriptsize\color{white}, title={Teacher Note},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=redacc, colframe=redacc, arc=1mm}
+}
+
+% ── Fill-in helpers ──────────────────────────────────────────────────────────
+\newcommand{\ans}[1]{\textcolor{keyred}{\textit{#1}}}
+\newcommand{\blank}[1]{\underline{\hspace{#1}}}
+\newcommand{\writeline}{\vspace{1pt}\noindent\textcolor{linegray}{\hrulefill}\vspace{3pt}}
+
+% ── Component table (key version) ────────────────────────────────────────────
+\newcommand{\componenttablekey}[4]{%
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.22\linewidth} X @{}}
+Individual:  & \ans{#1} \\
+Population:  & \ans{#2} \\
+Sample:      & \ans{#3} \\
+Variable(s): & \ans{#4} \\
+\end{tabularx}}
+
+% ── List / para settings ─────────────────────────────────────────────────────
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+
+%=============================================================================
+\begin{document}
+
+% ── Page header ──────────────────────────────────────────────────────────────
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[navy] (current page.north west)
+    rectangle ([yshift=-0.52in]current page.north east);
+\end{tikzpicture}
+\vspace{-0.42in}
+{\color{white}\textbf{\large AP Statistics \hfill Unit 1: Exploring One-Variable Data}}\\[2pt]
+{\color{skymid}\small\textbf{Lesson 1.1 Homework \textcolor{keyred}{--- Key}
+  \quad Identifying Statistical Components}}
+\vspace{0.16in}
+
+\noindent
+\begin{tabularx}{\linewidth}{X X X}
+Name:\;\textcolor{keyred}{\textit{Key}} & Date:\; & Period:\;
+\end{tabularx}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=1.5mm, bottom=1.5mm]
+\small For each news blurb, identify the \textbf{individual}, \textbf{population},
+\textbf{sample}, and \textbf{variable(s)}. Write in complete phrases, not single words.
+If no sample size is stated, write \textit{not given}.
+\end{tcolorbox}
+
+\vspace{0.14in}
+
+% ════════════════════════════════════════════════════════════════════════════
+% BLURB 1 KEY
+% ════════════════════════════════════════════════════════════════════════════
+\begin{blurbbox}[Study 1]{navylight}
+\begin{headlinebox}{sky}
+\small\textit{``Researchers surveyed 1{,}800 teenagers across 12 countries and
+found that 67\% felt social media had a negative effect on their self-image.''}
+\end{headlinebox}
+
+\vspace{8pt}
+\componenttablekey
+  {A teenager (any adolescent in one of the 12 countries studied)}
+  {All teenagers (accept: all teenagers in the 12 countries represented)}
+  {The 1{,}800 teenagers surveyed}
+  {Perception of social media's effect on self-image (categorical: positive / negative / neutral)}
+
+\vspace{6pt}
+\begin{teachernote}
+\scriptsize
+Students may write ``all teenagers in the world'' — accept with a note that the study's
+actual scope is the 12 countries sampled. This is a productive ambiguity: the population
+the researchers \emph{want} to generalize to may be broader than what their sample
+actually represents. Revisit in Unit 3 (sampling methods).
+\end{teachernote}
+\end{blurbbox}
+
+\vspace{0.12in}
+
+% ════════════════════════════════════════════════════════════════════════════
+% BLURB 2 KEY
+% ════════════════════════════════════════════════════════════════════════════
+\begin{blurbbox}[Study 2]{greenacc}
+\begin{headlinebox}{greenbg}
+\small\textit{``A study of 250 WNBA players found that athletes who practiced
+yoga at least twice a week reported significantly fewer injuries during the season
+compared to those who did not.''}
+\end{headlinebox}
+
+\vspace{8pt}
+\componenttablekey
+  {A WNBA player}
+  {All WNBA players}
+  {The 250 WNBA players in the study}
+  {Yoga practice frequency (quantitative: sessions per week); number of injuries during the season (quantitative)}
+
+\vspace{6pt}
+\begin{teachernote}
+\scriptsize
+The WNBA has roughly 140 active roster spots per season — so 250 players likely represents
+more than one season or includes players no longer active. Students who notice this are
+thinking carefully about feasibility. Worth acknowledging: a near-census of active WNBA
+players would actually be achievable, unlike most populations.
+\end{teachernote}
+\end{blurbbox}
+
+\vspace{0.12in}
+
+% ════════════════════════════════════════════════════════════════════════════
+% BLURB 3 KEY
+% ════════════════════════════════════════════════════════════════════════════
+\begin{blurbbox}[Study 3]{redacc}
+\begin{headlinebox}{redbg}
+\small\textit{``Scientists collected soil samples from 45 farms in Iowa and
+found that fields using cover crops contained 30\% more earthworms per square
+meter than fields without cover crops.''}
+\end{headlinebox}
+
+\vspace{8pt}
+\componenttablekey
+  {A farm field (a specific plot of land) --- not a scientist, not a farmer}
+  {All farm fields in Iowa (accept: all Midwestern / U.S.\ farm fields)}
+  {The 45 farms examined}
+  {Number of earthworms per square meter (quantitative); whether cover crops are used (categorical)}
+
+\vspace{6pt}
+\begin{teachernote}
+\scriptsize
+Common errors: writing ``a scientist'' or ``an Iowa farmer'' as the individual.
+The individual is whatever each data row describes — here, each row is a field with
+a worm count and a cover-crop status. Reinforce: ask ``what did they measure \emph{one of}?''
+\end{teachernote}
+\end{blurbbox}
+
+\vspace{0.12in}
+
+% ── REFLECTION KEY ────────────────────────────────────────────────────────────
+\begin{reflectionbox}
+\small Choose \textbf{one} of the three studies above and answer:
+\textit{Why might the results of this study not apply to everyone?}
+What would make you more --- or less --- confident in the findings?
+
+\vspace{8pt}
+\ans{\textbf{Study 1 (model):} The study covered only 12 countries, so results may not
+reflect teenagers in countries with different social media cultures or access levels.
+Confidence increases if the 12 countries were chosen to represent a broad range of
+regions and incomes; it decreases if they were all similar wealthy democracies.}
+
+\vspace{6pt}
+\ans{\textbf{Study 2 (model):} Results apply only to elite professional basketball players —
+not recreational athletes or players in other sports. Confidence increases if players were
+randomly assigned to yoga vs.\ no yoga (an experiment); it decreases if players self-selected
+(those who do yoga may already take better care of their bodies).}
+
+\vspace{6pt}
+\ans{\textbf{Study 3 (model):} Iowa farms may differ from farms in other states in soil
+type, climate, and farming practices, so results may not generalize nationally. Confidence
+increases with a larger, more geographically diverse sample.}
+\end{reflectionbox}
+
+\vspace{0.12in}
+
+% ── EXTENSION KEY ────────────────────────────────────────────────────────────
+\begin{extensionbox}
+\small
+
+\textbf{Part A --- U.S.\ Census}
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+  \item \textbf{Cost and time:}\\
+        \ans{The 2020 U.S.\ Census cost approximately \$14.2 billion and took several years
+        to plan, conduct, and process. It employed hundreds of thousands of temporary workers
+        to contact households that did not respond online or by mail.}
+
+  \item \textbf{Hard-to-count group:}\\
+        \ans{Examples: people experiencing homelessness (no fixed address), undocumented
+        immigrants (may fear government contact), people in rural areas (fewer mailings
+        reach them), college students (counted at home or at school?). Accept any group
+        with a clear explanation.}
+
+  \item \textbf{Why not just use a sample?}\\
+        \ans{Census data are used to allocate Congressional seats and federal funding to
+        states and counties. A sample would introduce uncertainty into these high-stakes
+        decisions. Some applications genuinely require counts of every individual, not estimates.}
+\end{enumerate}
+
+\vspace{8pt}
+\textbf{Part B --- Preview: Categorical vs.\ Quantitative}
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.08\linewidth}
+                                    >{\raggedright\arraybackslash}p{0.44\linewidth}
+                                    X @{}}
+& \textbf{Variable} & \textbf{Number or category?} \\
+\hline
+S1 & \ans{Perception of social media's effect on self-image} & \ans{Category} \\
+S2 & \ans{Yoga sessions per week; number of injuries}        & \ans{Number (both)} \\
+S3 & \ans{Earthworms per sq.\ meter; cover crop use}         & \ans{Number; Category} \\
+\end{tabularx}
+\end{extensionbox}
+
+\end{document}

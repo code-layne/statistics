@@ -1,0 +1,210 @@
+%! AP Statistics — Unit 1, Lesson 1.1 — Homework
+\documentclass[10pt]{article}
+\usepackage[margin=0.65in, top=0.55in, bottom=0.65in]{geometry}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage{colortbl}
+\tcbuselibrary{breakable, skins}
+
+% ── Colors ───────────────────────────────────────────────────────────────────
+\definecolor{navy}{HTML}{1F3A5F}
+\definecolor{navylight}{HTML}{2E5490}
+\definecolor{sky}{HTML}{EAF3FB}
+\definecolor{skymid}{HTML}{C5DFF5}
+\definecolor{goldacc}{HTML}{D4820A}
+\definecolor{goldbg}{HTML}{FEF3E2}
+\definecolor{greenbg}{HTML}{EDF8F0}
+\definecolor{greenacc}{HTML}{2D7A4F}
+\definecolor{redbg}{HTML}{FCECEC}
+\definecolor{redacc}{HTML}{C0392B}
+\definecolor{slate}{HTML}{64748B}
+\definecolor{linegray}{HTML}{AAAAAA}
+
+% ── Box styles ───────────────────────────────────────────────────────────────
+\newtcolorbox{blurbbox}[2][]{
+    colback=white, colframe=#2, boxrule=0.9pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=4mm,
+    fonttitle=\bfseries\small\color{white}, title={#1},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=#2, colframe=#2, arc=1.5mm},
+    breakable
+}
+\newtcolorbox{headlinebox}[1]{
+    colback=#1, colframe=#1!50!black, boxrule=0pt,
+    arc=1.5mm, left=3mm, right=3mm, top=2mm, bottom=2mm
+}
+\newtcolorbox{reflectionbox}{
+    colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=4mm,
+    fonttitle=\bfseries\small\color{white}, title={Reflection},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=navy, colframe=navy, arc=1.5mm},
+    breakable
+}
+\newtcolorbox{extensionbox}{
+    colback=goldbg, colframe=goldacc, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=4mm,
+    fonttitle=\bfseries\small\color{white},
+    title={Extension \normalfont\small\color{white!80!black}\quad optional},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=goldacc, colframe=goldacc, arc=1.5mm},
+    breakable
+}
+
+% ── Fill-in helpers ──────────────────────────────────────────────────────────
+\newcommand{\blank}[1]{\underline{\hspace{#1}}}
+\newcommand{\writeline}{\vspace{1pt}\noindent\textcolor{linegray}{\hrulefill}\vspace{3pt}}
+
+% ── Component table ───────────────────────────────────────────────────────────
+\newcommand{\componenttable}{%
+\renewcommand{\arraystretch}{1.9}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.22\linewidth} X @{}}
+Individual:  & \blank{10.5cm} \\
+Population:  & \blank{10.5cm} \\
+Sample:      & \blank{10.5cm} \\
+Variable(s): & \blank{10.5cm} \\
+\end{tabularx}}
+
+% ── List / para settings ─────────────────────────────────────────────────────
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+
+%=============================================================================
+\begin{document}
+
+% ── Page header ──────────────────────────────────────────────────────────────
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[navy] (current page.north west)
+    rectangle ([yshift=-0.52in]current page.north east);
+\end{tikzpicture}
+\vspace{-0.42in}
+{\color{white}\textbf{\large AP Statistics \hfill Unit 1: Exploring One-Variable Data}}\\[2pt]
+{\color{skymid}\small\textbf{Lesson 1.1 Homework \quad Identifying Statistical Components}}
+\vspace{0.16in}
+
+\noindent
+\begin{tabularx}{\linewidth}{X X X}
+Name:\;\blank{4.8cm} & Date:\;\blank{2.8cm} & Period:\;\blank{1.5cm}
+\end{tabularx}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=1.5mm, bottom=1.5mm]
+\small For each news blurb, identify the \textbf{individual}, \textbf{population},
+\textbf{sample}, and \textbf{variable(s)}. Write in complete phrases, not single words.
+If no sample size is stated, write \textit{not given}.
+\end{tcolorbox}
+
+\vspace{0.14in}
+
+% ════════════════════════════════════════════════════════════════════════════
+% BLURB 1
+% ════════════════════════════════════════════════════════════════════════════
+\begin{blurbbox}[Study 1]{navylight}
+\begin{headlinebox}{sky}
+\small\textit{``Researchers surveyed 1{,}800 teenagers across 12 countries and
+found that 67\% felt social media had a negative effect on their self-image.''}
+\end{headlinebox}
+
+\vspace{8pt}
+\componenttable
+\end{blurbbox}
+
+\vspace{0.14in}
+
+% ════════════════════════════════════════════════════════════════════════════
+% BLURB 2
+% ════════════════════════════════════════════════════════════════════════════
+\begin{blurbbox}[Study 2]{greenacc}
+\begin{headlinebox}{greenbg}
+\small\textit{``A study of 250 WNBA players found that athletes who practiced
+yoga at least twice a week reported significantly fewer injuries during the season
+compared to those who did not.''}
+\end{headlinebox}
+
+\vspace{8pt}
+\componenttable
+\end{blurbbox}
+
+\vspace{0.14in}
+
+% ════════════════════════════════════════════════════════════════════════════
+% BLURB 3
+% ════════════════════════════════════════════════════════════════════════════
+\begin{blurbbox}[Study 3]{redacc}
+\begin{headlinebox}{redbg}
+\small\textit{``Scientists collected soil samples from 45 farms in Iowa and
+found that fields using cover crops contained 30\% more earthworms per square
+meter than fields without cover crops.''}
+\end{headlinebox}
+
+\vspace{8pt}
+\componenttable
+\end{blurbbox}
+
+\vspace{0.14in}
+
+% ── REFLECTION ───────────────────────────────────────────────────────────────
+\begin{reflectionbox}
+\small Choose \textbf{one} of the three studies above and answer:
+\textit{Why might the results of this study not apply to everyone?}
+What would make you more --- or less --- confident in the findings?
+
+\vspace{6pt}
+\textcolor{slate}{\scriptsize Study \#:\;\blank{0.6cm}}
+
+\vspace{4pt}
+\writeline\\[1pt]\writeline\\[1pt]\writeline\\[1pt]\writeline
+\end{reflectionbox}
+
+\vspace{0.14in}
+
+% ── EXTENSION ────────────────────────────────────────────────────────────────
+\begin{extensionbox}
+\small
+
+\textbf{Part A --- U.S.\ Census}\quad
+The U.S.\ government conducts a census of every person in the country every
+10 years. Research (or reason through) the following and write a few sentences
+for each:
+
+\vspace{5pt}
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item What does it cost --- in money and time --- to conduct the U.S.\ Census?\\[4pt]
+        \writeline\\[1pt]\writeline
+
+  \item Name one group of people who are difficult to count accurately and explain why.\\[4pt]
+        \writeline\\[1pt]\writeline
+
+  \item Why do we bother with a census at all instead of just using a large sample?\\[4pt]
+        \writeline\\[1pt]\writeline
+\end{enumerate}
+
+\vspace{8pt}
+\textbf{Part B --- Preview: Categorical vs.\ Quantitative}\\[4pt]
+Look back at the variables you identified in Studies 1--3 above.
+For each variable, decide: does it produce a \emph{number} you can do arithmetic
+with, or does it put individuals into \emph{categories}?
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.08\linewidth}
+                                    >{\raggedright\arraybackslash}p{0.44\linewidth}
+                                    X @{}}
+& \textbf{Variable} & \textbf{Number or category?} \\
+\hline
+S1 & \blank{7cm} & \blank{4cm} \\
+S2 & \blank{7cm} & \blank{4cm} \\
+S3 & \blank{7cm} & \blank{4cm} \\
+\end{tabularx}
+
+\vspace{4pt}
+\textcolor{slate}{\scriptsize We will formalize this distinction in Lesson 1.2.}
+\end{extensionbox}
+
+\end{document}

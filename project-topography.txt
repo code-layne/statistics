@@ -1,0 +1,1068 @@
+total 40
+46302547 drwxr-xr-x  13 layne   416 May 31 15:39 ./
+  225519 drwxr-xr-x  19 layne   608 May 30 09:19 ../
+46316002 -rw-r--r--@  1 layne  8196 May 30 10:18 .DS_Store
+46303248 drwxr-xr-x  12 layne   384 May 31 15:39 .git/
+46364436 -rw-r--r--   1 layne    26 May 30 17:22 .gitignore
+46307209 drwxr-xr-x@  7 layne   224 May 31 15:38 .idea/
+46304368 -rw-r--r--@  2 layne  1269 May 31 15:38 Makefile
+46515304 -rw-r--r--   1 layne     0 May 31 15:39 project-topography.txt
+46303284 -rw-r--r--   1 layne     0 May 30 09:20 README.md
+46304365 drwxr-xr-x   2 layne    64 May 30 09:29 shared/
+46513750 drwxr-xr-x   4 layne   128 May 31 15:33 target/
+46303604 drwxr-xr-x  13 layne   416 May 30 11:36 unit01/
+46304223 drwxr-xr-x  12 layne   384 May 31 09:45 unit02/
+
+./.git:
+total 40
+46303248 drwxr-xr-x  12 layne   384 May 31 15:39 ./
+46302547 drwxr-xr-x  13 layne   416 May 31 15:39 ../
+46303298 -rw-r--r--   1 layne    27 May 31 15:10 COMMIT_EDITMSG
+46303587 -rw-r--r--   1 layne   287 May 30 09:21 config
+46303251 -rw-r--r--   1 layne    73 May 30 09:20 description
+46303461 -rw-r--r--   1 layne    21 May 30 09:21 HEAD
+46303252 drwxr-xr-x  16 layne   512 May 30 09:20 hooks/
+46515259 -rw-r--r--   1 layne  2957 May 31 15:39 index
+46303249 drwxr-xr-x   3 layne    96 May 30 09:20 info/
+46303305 drwxr-xr-x   4 layne   128 May 30 09:20 logs/
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 objects/
+46303275 drwxr-xr-x   5 layne   160 May 30 09:21 refs/
+
+./.git/hooks:
+total 128
+46303252 drwxr-xr-x  16 layne   512 May 30 09:20 ./
+46303248 drwxr-xr-x  12 layne   384 May 31 15:39 ../
+46303257 -rwxr-xr-x   1 layne   478 May 30 09:20 applypatch-msg.sample*
+46303253 -rwxr-xr-x   1 layne   896 May 30 09:20 commit-msg.sample*
+46303258 -rwxr-xr-x   1 layne  4726 May 30 09:20 fsmonitor-watchman.sample*
+46303261 -rwxr-xr-x   1 layne   189 May 30 09:20 post-update.sample*
+46303263 -rwxr-xr-x   1 layne   424 May 30 09:20 pre-applypatch.sample*
+46303256 -rwxr-xr-x   1 layne  1649 May 30 09:20 pre-commit.sample*
+46303262 -rwxr-xr-x   1 layne   416 May 30 09:20 pre-merge-commit.sample*
+46303264 -rwxr-xr-x   1 layne  1374 May 30 09:20 pre-push.sample*
+46303254 -rwxr-xr-x   1 layne  4898 May 30 09:20 pre-rebase.sample*
+46303259 -rwxr-xr-x   1 layne   544 May 30 09:20 pre-receive.sample*
+46303260 -rwxr-xr-x   1 layne  1492 May 30 09:20 prepare-commit-msg.sample*
+46303266 -rwxr-xr-x   1 layne  2783 May 30 09:20 push-to-checkout.sample*
+46303255 -rwxr-xr-x   1 layne  2308 May 30 09:20 sendemail-validate.sample*
+46303265 -rwxr-xr-x   1 layne  3650 May 30 09:20 update.sample*
+
+./.git/info:
+total 8
+46303249 drwxr-xr-x   3 layne   96 May 30 09:20 ./
+46303248 drwxr-xr-x  12 layne  384 May 31 15:39 ../
+46303250 -rw-r--r--   1 layne  240 May 30 09:20 exclude
+
+./.git/logs:
+total 8
+46303305 drwxr-xr-x   4 layne   128 May 30 09:20 ./
+46303248 drwxr-xr-x  12 layne   384 May 31 15:39 ../
+46303306 -rw-r--r--   1 layne  1248 May 31 15:10 HEAD
+46303307 drwxr-xr-x   4 layne   128 May 30 09:21 refs/
+
+./.git/logs/refs:
+total 0
+46303307 drwxr-xr-x  4 layne  128 May 30 09:21 ./
+46303305 drwxr-xr-x  4 layne  128 May 30 09:20 ../
+46303308 drwxr-xr-x  3 layne   96 May 30 09:21 heads/
+46303591 drwxr-xr-x  3 layne   96 May 30 09:21 remotes/
+
+./.git/logs/refs/heads:
+total 8
+46303308 drwxr-xr-x  3 layne    96 May 30 09:21 ./
+46303307 drwxr-xr-x  4 layne   128 May 30 09:21 ../
+46303309 -rw-r--r--  1 layne  1062 May 31 15:10 main
+
+./.git/logs/refs/remotes:
+total 0
+46303591 drwxr-xr-x  3 layne   96 May 30 09:21 ./
+46303307 drwxr-xr-x  4 layne  128 May 30 09:21 ../
+46303592 drwxr-xr-x  3 layne   96 May 30 09:21 origin/
+
+./.git/logs/refs/remotes/origin:
+total 8
+46303592 drwxr-xr-x  3 layne   96 May 30 09:21 ./
+46303591 drwxr-xr-x  3 layne   96 May 30 09:21 ../
+46303593 -rw-r--r--  1 layne  750 May 31 15:10 main
+
+./.git/objects:
+total 0
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ./
+46303248 drwxr-xr-x  12 layne   384 May 31 15:39 ../
+46304108 drwxr-xr-x   3 layne    96 May 30 09:28 00/
+46510795 drwxr-xr-x   3 layne    96 May 31 15:10 02/
+46304201 drwxr-xr-x   3 layne    96 May 30 09:28 04/
+46305761 drwxr-xr-x   3 layne    96 May 30 09:48 09/
+46305776 drwxr-xr-x   3 layne    96 May 30 09:48 0a/
+46305804 drwxr-xr-x   3 layne    96 May 30 09:48 0f/
+46304132 drwxr-xr-x   4 layne   128 May 30 09:48 10/
+46305768 drwxr-xr-x   3 layne    96 May 30 09:48 1a/
+46304124 drwxr-xr-x   4 layne   128 May 30 09:48 1c/
+46305796 drwxr-xr-x   3 layne    96 May 30 09:48 1d/
+46305742 drwxr-xr-x   3 layne    96 May 30 09:48 20/
+46305828 drwxr-xr-x   3 layne    96 May 30 09:48 31/
+46364484 drwxr-xr-x   3 layne    96 May 30 17:22 38/
+46304136 drwxr-xr-x   3 layne    96 May 30 09:28 39/
+46364447 drwxr-xr-x   4 layne   128 May 31 15:09 3b/
+46364480 drwxr-xr-x   3 layne    96 May 30 17:22 44/
+46305785 drwxr-xr-x   3 layne    96 May 30 09:48 45/
+46305808 drwxr-xr-x   3 layne    96 May 30 09:48 46/
+46305746 drwxr-xr-x   3 layne    96 May 30 09:48 4b/
+46304165 drwxr-xr-x   3 layne    96 May 30 09:28 50/
+46304161 drwxr-xr-x   3 layne    96 May 30 09:28 62/
+46510788 drwxr-xr-x   3 layne    96 May 31 15:10 65/
+46304185 drwxr-xr-x   3 layne    96 May 30 09:28 6b/
+46304128 drwxr-xr-x   3 layne    96 May 30 09:28 6d/
+46304144 drwxr-xr-x   3 layne    96 May 30 09:28 75/
+46305820 drwxr-xr-x   3 layne    96 May 30 09:48 82/
+46304193 drwxr-xr-x   3 layne    96 May 30 09:28 8d/
+46304197 drwxr-xr-x   3 layne    96 May 30 09:28 8f/
+46304120 drwxr-xr-x   4 layne   128 May 30 09:48 90/
+46364473 drwxr-xr-x   3 layne    96 May 30 17:22 97/
+46304116 drwxr-xr-x   3 layne    96 May 30 09:28 99/
+46304140 drwxr-xr-x   3 layne    96 May 30 09:28 a1/
+46510780 drwxr-xr-x   4 layne   128 May 31 15:10 a2/
+46304157 drwxr-xr-x   3 layne    96 May 30 09:28 a4/
+46305812 drwxr-xr-x   3 layne    96 May 30 09:48 aa/
+46305816 drwxr-xr-x   3 layne    96 May 30 09:48 bd/
+46304181 drwxr-xr-x   3 layne    96 May 30 09:28 bf/
+46304205 drwxr-xr-x   3 layne    96 May 30 09:28 c1/
+46304169 drwxr-xr-x   3 layne    96 May 30 09:28 c8/
+46364451 drwxr-xr-x   4 layne   128 May 30 17:22 ca/
+46303299 drwxr-xr-x   3 layne    96 May 30 09:20 d3/
+46305792 drwxr-xr-x   3 layne    96 May 30 09:48 d4/
+46304177 drwxr-xr-x   3 layne    96 May 30 09:28 d6/
+46305753 drwxr-xr-x   4 layne   128 May 30 17:22 da/
+46305757 drwxr-xr-x   3 layne    96 May 30 09:48 dc/
+46305824 drwxr-xr-x   3 layne    96 May 30 09:48 e5/
+46303287 drwxr-xr-x   3 layne    96 May 30 09:20 e6/
+46510784 drwxr-xr-x   3 layne    96 May 31 15:10 ec/
+46304112 drwxr-xr-x   3 layne    96 May 30 09:28 ef/
+46305800 drwxr-xr-x   3 layne    96 May 30 09:48 f4/
+46364443 drwxr-xr-x   3 layne    96 May 30 17:22 f5/
+46303294 drwxr-xr-x   3 layne    96 May 30 09:20 f9/
+46304173 drwxr-xr-x   3 layne    96 May 30 09:28 fa/
+46305772 drwxr-xr-x   3 layne    96 May 30 09:48 fc/
+46304189 drwxr-xr-x   3 layne    96 May 30 09:28 fe/
+46303281 drwxr-xr-x   2 layne    64 May 30 09:20 info/
+46303280 drwxr-xr-x   2 layne    64 May 30 09:20 pack/
+
+./.git/objects/00:
+total 8
+46304108 drwxr-xr-x   3 layne    96 May 30 09:28 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46304109 -r--r--r--   1 layne  3666 May 30 09:28 8d9d48281134da3e0adb022692cb0882792d80
+
+./.git/objects/02:
+total 8
+46510795 drwxr-xr-x   3 layne    96 May 31 15:10 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46510796 -r--r--r--   1 layne   176 May 31 15:10 032560b74dc0c43cd8c97bb0985c34353810b3
+
+./.git/objects/04:
+total 8
+46304201 drwxr-xr-x   3 layne    96 May 30 09:28 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46304202 -r--r--r--   1 layne    87 May 30 09:28 ebbe3cb3600fd884584bdb73f23ca1f1f81957
+
+./.git/objects/09:
+total 8
+46305761 drwxr-xr-x   3 layne    96 May 30 09:48 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46305762 -r--r--r--   1 layne  3859 May 30 09:48 43ab79ad9035928be49e075393cc627d8914eb
+
+./.git/objects/0a:
+total 8
+46305776 drwxr-xr-x   3 layne    96 May 30 09:48 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46305777 -r--r--r--   1 layne  3879 May 30 09:48 633e7674a768d03dcedd4ecb3db94ecf3db4ad
+
+./.git/objects/0f:
+total 8
+46305804 drwxr-xr-x   3 layne    96 May 30 09:48 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46305805 -r--r--r--   1 layne    53 May 30 09:48 546b483b7e861ff7a944b22d7362f23dcf7ff7
+
+./.git/objects/10:
+total 16
+46304132 drwxr-xr-x   4 layne   128 May 30 09:48 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46304133 -r--r--r--   1 layne  3741 May 30 09:28 dbba7dc3e3ba20f097be0b48dc582fca9174ca
+46305765 -r--r--r--   1 layne  3804 May 30 09:48 f3ea8d3bdeefac7e736b8d985a7e7aee30e55c
+
+./.git/objects/1a:
+total 8
+46305768 drwxr-xr-x   3 layne    96 May 30 09:48 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46305769 -r--r--r--   1 layne  3530 May 30 09:48 11f7a4aea82893ab7643e1f1ccd594a6a899ac
+
+./.git/objects/1c:
+total 16
+46304124 drwxr-xr-x   4 layne   128 May 30 09:48 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46305750 -r--r--r--   1 layne  3470 May 30 09:48 0c61fc48a1f8b01967e5c2375b833aa5e0ce4e
+46304125 -r--r--r--   1 layne  3617 May 30 09:28 4502a0211bec28147aa23ce46fc4c8e5fea781
+
+./.git/objects/1d:
+total 8
+46305796 drwxr-xr-x   3 layne    96 May 30 09:48 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46305797 -r--r--r--   1 layne    53 May 30 09:48 fb13ce0f2511b8231f451739f13dc454a473ff
+
+./.git/objects/20:
+total 8
+46305742 drwxr-xr-x   3 layne    96 May 30 09:48 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46305743 -r--r--r--   1 layne   455 May 30 09:48 34e93dcff68f6d13531f9daed1e4c167995d96
+
+./.git/objects/31:
+total 8
+46305828 drwxr-xr-x   3 layne    96 May 30 09:48 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46305829 -r--r--r--   1 layne   189 May 30 09:48 50963f723fb4588ea7b657f75eb6b1c8a32c8d
+
+./.git/objects/38:
+total 8
+46364484 drwxr-xr-x   3 layne    96 May 30 17:22 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46364485 -r--r--r--   1 layne   174 May 30 17:22 602763b3f46f50da9e751e476a63248dec9499
+
+./.git/objects/39:
+total 8
+46304136 drwxr-xr-x   3 layne    96 May 30 09:28 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46304137 -r--r--r--   1 layne  3565 May 30 09:28 bc444d79dbdc25ce6f33a983d860817b243031
+
+./.git/objects/3b:
+total 24
+46364447 drwxr-xr-x   4 layne   128 May 31 15:09 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46510767 -r--r--r--   1 layne  4623 May 31 15:09 028f9e741382c4548163050d6395cb9047e5b5
+46364448 -r--r--r--   1 layne    42 May 30 17:22 76624b338b779ec6f1be90f60166b60f3ad526
+
+./.git/objects/44:
+total 8
+46364480 drwxr-xr-x   3 layne    96 May 30 17:22 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46364481 -r--r--r--   1 layne   179 May 30 17:22 c2f4ae4e92cdd61b78d637a74d0b2d7fea29c0
+
+./.git/objects/45:
+total 8
+46305785 drwxr-xr-x   3 layne    96 May 30 09:48 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46305786 -r--r--r--   1 layne    53 May 30 09:48 acabe1158841e5ec39b1fde5ee3354e9c699f6
+
+./.git/objects/46:
+total 8
+46305808 drwxr-xr-x   3 layne    96 May 30 09:48 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46305809 -r--r--r--   1 layne    55 May 30 09:48 535c41b44a060e56f6c93fa19f98583c704e37
+
+./.git/objects/4b:
+total 8
+46305746 drwxr-xr-x   3 layne    96 May 30 09:48 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46305747 -r--r--r--   1 layne  3646 May 30 09:48 0b5aa15738b8c05bd711172b7d2df1d89a00ac
+
+./.git/objects/50:
+total 8
+46304165 drwxr-xr-x   3 layne    96 May 30 09:28 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46304166 -r--r--r--   1 layne    53 May 30 09:28 06d04faed8c39b1fddf9c5d9ba0e3e4d048d39
+
+./.git/objects/62:
+total 8
+46304161 drwxr-xr-x   3 layne    96 May 30 09:28 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46304162 -r--r--r--   1 layne    53 May 30 09:28 5badfd858f2806497aff244b9c312f0d477364
+
+./.git/objects/65:
+total 8
+46510788 drwxr-xr-x   3 layne    96 May 31 15:10 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46510789 -r--r--r--   1 layne   327 May 31 15:10 c601dc6c937070dd0893c775b01bd38710ae04
+
+./.git/objects/6b:
+total 8
+46304185 drwxr-xr-x   3 layne    96 May 30 09:28 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46304186 -r--r--r--   1 layne    52 May 30 09:28 10d8304889a7e99b8ff820cccb5a5861c7776d
+
+./.git/objects/6d:
+total 8
+46304128 drwxr-xr-x   3 layne    96 May 30 09:28 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46304129 -r--r--r--   1 layne  3656 May 30 09:28 a90a6d047f4a5e67ee5b18a3d9c275e7a70374
+
+./.git/objects/75:
+total 8
+46304144 drwxr-xr-x   3 layne    96 May 30 09:28 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46304145 -r--r--r--   1 layne  3832 May 30 09:28 cc28a8a85ae10559aa8e418b917d78a421f6be
+
+./.git/objects/82:
+total 8
+46305820 drwxr-xr-x   3 layne    96 May 30 09:48 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46305821 -r--r--r--   1 layne   254 May 30 09:48 c38857c9550987691dfe9c2e6372424398c286
+
+./.git/objects/8d:
+total 8
+46304193 drwxr-xr-x   3 layne    96 May 30 09:28 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46304194 -r--r--r--   1 layne    53 May 30 09:28 552d68f8f91040292713b6880b896dc658a8f7
+
+./.git/objects/8f:
+total 8
+46304197 drwxr-xr-x   3 layne    96 May 30 09:28 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46304198 -r--r--r--   1 layne   279 May 30 09:28 a0906c24acedaa0be9b9d27c3237f2ea1484cd
+
+./.git/objects/90:
+total 16
+46304120 drwxr-xr-x   4 layne   128 May 30 09:48 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46304121 -r--r--r--   1 layne  3645 May 30 09:28 22d33fe3cac995fd1caa7ca0cd5c9317bcb48b
+46305789 -r--r--r--   1 layne    53 May 30 09:48 fd6f70be1a72ac82f9b8732bbddc09c5525030
+
+./.git/objects/97:
+total 8
+46364473 drwxr-xr-x   3 layne    96 May 30 17:22 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46364474 -r--r--r--   1 layne   326 May 30 17:22 0feaacab00188203b32e48841b462f7e8bdb04
+
+./.git/objects/99:
+total 8
+46304116 drwxr-xr-x   3 layne    96 May 30 09:28 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46304117 -r--r--r--   1 layne  3549 May 30 09:28 0f35de67d783c9389e0c89987290bfdb7f8605
+
+./.git/objects/a1:
+total 8
+46304140 drwxr-xr-x   3 layne    96 May 30 09:28 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46304141 -r--r--r--   1 layne  3685 May 30 09:28 ea07ab1bdbb7790ebf33940662365a60667607
+
+./.git/objects/a2:
+total 16
+46510780 drwxr-xr-x   4 layne   128 May 31 15:10 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46510781 -r--r--r--   1 layne    53 May 31 15:10 745a01c04ebcd5d5ad42a83ef705a32658f050
+46510792 -r--r--r--   1 layne   179 May 31 15:10 7b0a6c4f62712e7868b750a72f1ab0e68bf7ea
+
+./.git/objects/a4:
+total 8
+46304157 drwxr-xr-x   3 layne    96 May 30 09:28 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46304158 -r--r--r--   1 layne    52 May 30 09:28 00c1b24e2b085d00a393880b0f3cae05ccd876
+
+./.git/objects/aa:
+total 8
+46305812 drwxr-xr-x   3 layne    96 May 30 09:48 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46305813 -r--r--r--   1 layne    53 May 30 09:48 38edf0e61087112ca25ffdadf186c4fe070dcf
+
+./.git/objects/bd:
+total 8
+46305816 drwxr-xr-x   3 layne    96 May 30 09:48 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46305817 -r--r--r--   1 layne    53 May 30 09:48 508bfd7d9094fa906a4dc506f398d3a2f1cfe2
+
+./.git/objects/bf:
+total 8
+46304181 drwxr-xr-x   3 layne    96 May 30 09:28 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46304182 -r--r--r--   1 layne    53 May 30 09:28 82a30b2ea0efe5d035b5e8adfc0733b658d7d5
+
+./.git/objects/c1:
+total 8
+46304205 drwxr-xr-x   3 layne    96 May 30 09:28 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46304206 -r--r--r--   1 layne   185 May 30 09:28 4798ec8e219ce1cce74406b995d9632f2f6682
+
+./.git/objects/c8:
+total 8
+46304169 drwxr-xr-x   3 layne    96 May 30 09:28 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46304170 -r--r--r--   1 layne    53 May 30 09:28 3d4dedef1fb16c001ca1ea3bb23be8992212dd
+
+./.git/objects/ca:
+total 216
+46364451 drwxr-xr-x   4 layne     128 May 30 17:22 ./
+46303279 drwxr-xr-x  59 layne    1888 May 31 15:10 ../
+46364477 -r--r--r--   1 layne     301 May 30 17:22 8cfe2bb2d2bd68de6eb16ad979b78f5bf2afbc
+46364452 -r--r--r--   1 layne  104206 May 30 17:22 fee71036914f8322f7e6fcb84a260973e3e99e
+
+./.git/objects/d3:
+total 8
+46303299 drwxr-xr-x   3 layne    96 May 30 09:20 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46303300 -r--r--r--   1 layne   135 May 30 09:20 47759a196cd159a1eef6158d6a8942c922252d
+
+./.git/objects/d4:
+total 8
+46305792 drwxr-xr-x   3 layne    96 May 30 09:48 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46305793 -r--r--r--   1 layne    53 May 30 09:48 c85b60d0569798644911ba0e26f0cf86a51ef8
+
+./.git/objects/d6:
+total 8
+46304177 drwxr-xr-x   3 layne    96 May 30 09:28 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46304178 -r--r--r--   1 layne    53 May 30 09:28 092baef671191598068918c65af42b9a711d95
+
+./.git/objects/da:
+total 208
+46305753 drwxr-xr-x   4 layne     128 May 30 17:22 ./
+46303279 drwxr-xr-x  59 layne    1888 May 31 15:10 ../
+46364455 -r--r--r--   1 layne  100379 May 30 17:22 30865115f7416b43a1e6f2dd6bab19fb632767
+46305754 -r--r--r--   1 layne    3729 May 30 09:48 c9e1e84b20c5d124524fcf63a61ece7a23d9bc
+
+./.git/objects/dc:
+total 8
+46305757 drwxr-xr-x   3 layne    96 May 30 09:48 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46305758 -r--r--r--   1 layne  3683 May 30 09:48 b2f41238d04a0ac858c36bf1985cc28801e3f2
+
+./.git/objects/e5:
+total 8
+46305824 drwxr-xr-x   3 layne    96 May 30 09:48 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46305825 -r--r--r--   1 layne   145 May 30 09:48 6806efe229bfb8d4f5c41d0b12e45a9fbd5df9
+
+./.git/objects/e6:
+total 8
+46303287 drwxr-xr-x   3 layne    96 May 30 09:20 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46303288 -r--r--r--   1 layne    15 May 30 09:20 9de29bb2d1d6434b8b29ae775ad8c2e48c5391
+
+./.git/objects/ec:
+total 8
+46510784 drwxr-xr-x   3 layne    96 May 31 15:10 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46510785 -r--r--r--   1 layne    85 May 31 15:10 06531ef3d8b532d8b1eb8d7151fc6bdb31e2ed
+
+./.git/objects/ef:
+total 8
+46304112 drwxr-xr-x   3 layne    96 May 30 09:28 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46304113 -r--r--r--   1 layne  3554 May 30 09:28 d30d65f3a7eb69328a598cca29b7d1fe4f4602
+
+./.git/objects/f4:
+total 8
+46305800 drwxr-xr-x   3 layne    96 May 30 09:48 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46305801 -r--r--r--   1 layne    53 May 30 09:48 b0192db9de39b83d28fb4b9d69a4905ac73394
+
+./.git/objects/f5:
+total 8
+46364443 drwxr-xr-x   3 layne    96 May 30 17:22 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46364444 -r--r--r--   1 layne   550 May 30 17:22 685dd29e79d320234bee8872a9a103e48e5b7e
+
+./.git/objects/f9:
+total 8
+46303294 drwxr-xr-x   3 layne    96 May 30 09:20 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46303295 -r--r--r--   1 layne    54 May 30 09:20 3e3a1a1525fb5b91020da86e44810c87a2d7bc
+
+./.git/objects/fa:
+total 8
+46304173 drwxr-xr-x   3 layne    96 May 30 09:28 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46304174 -r--r--r--   1 layne    53 May 30 09:28 28b8437ed54330a81c1327272b546b5dafd0d8
+
+./.git/objects/fc:
+total 8
+46305772 drwxr-xr-x   3 layne    96 May 30 09:48 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46305773 -r--r--r--   1 layne  3728 May 30 09:48 ed3432f10f0dd743398e562433c3a8992cd2e5
+
+./.git/objects/fe:
+total 8
+46304189 drwxr-xr-x   3 layne    96 May 30 09:28 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+46304190 -r--r--r--   1 layne    53 May 30 09:28 8da1d9cece1393e5697a68369458b77eb0bd71
+
+./.git/objects/info:
+total 0
+46303281 drwxr-xr-x   2 layne    64 May 30 09:20 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+
+./.git/objects/pack:
+total 0
+46303280 drwxr-xr-x   2 layne    64 May 30 09:20 ./
+46303279 drwxr-xr-x  59 layne  1888 May 31 15:10 ../
+
+./.git/refs:
+total 0
+46303275 drwxr-xr-x   5 layne  160 May 30 09:21 ./
+46303248 drwxr-xr-x  12 layne  384 May 31 15:39 ../
+46303276 drwxr-xr-x   3 layne   96 May 31 15:10 heads/
+46303588 drwxr-xr-x   3 layne   96 May 30 09:21 remotes/
+46303277 drwxr-xr-x   2 layne   64 May 30 09:20 tags/
+
+./.git/refs/heads:
+total 8
+46303276 drwxr-xr-x  3 layne   96 May 31 15:10 ./
+46303275 drwxr-xr-x  5 layne  160 May 30 09:21 ../
+46510800 -rw-r--r--  1 layne   41 May 31 15:10 main
+
+./.git/refs/remotes:
+total 0
+46303588 drwxr-xr-x  3 layne   96 May 30 09:21 ./
+46303275 drwxr-xr-x  5 layne  160 May 30 09:21 ../
+46303589 drwxr-xr-x  3 layne   96 May 31 15:10 origin/
+
+./.git/refs/remotes/origin:
+total 8
+46303589 drwxr-xr-x  3 layne  96 May 31 15:10 ./
+46303588 drwxr-xr-x  3 layne  96 May 30 09:21 ../
+46510806 -rw-r--r--  1 layne  41 May 31 15:10 main
+
+./.git/refs/tags:
+total 0
+46303277 drwxr-xr-x  2 layne   64 May 30 09:20 ./
+46303275 drwxr-xr-x  5 layne  160 May 30 09:21 ../
+
+./.idea:
+total 48
+46307209 drwxr-xr-x@  7 layne   224 May 31 15:38 ./
+46302547 drwxr-xr-x  13 layne   416 May 31 15:39 ../
+46307535 -rw-r--r--@  1 layne   228 May 30 10:02 .gitignore
+46307211 -rw-r--r--@  1 layne   272 May 30 10:01 modules.xml
+46307210 -rw-r--r--@  1 layne   283 May 30 10:01 statistics.iml
+46307215 -rw-r--r--@  1 layne   167 May 30 10:01 vcs.xml
+46307212 -rw-r--r--@  1 layne  4650 May 31 15:38 workspace.xml
+
+./shared:
+total 0
+46304365 drwxr-xr-x   2 layne   64 May 30 09:29 ./
+46302547 drwxr-xr-x  13 layne  416 May 31 15:39 ../
+
+./target:
+total 0
+46513750 drwxr-xr-x   4 layne  128 May 31 15:33 ./
+46302547 drwxr-xr-x  13 layne  416 May 31 15:39 ../
+46513751 drwxr-xr-x  12 layne  384 May 31 15:33 unit01/
+46514181 drwxr-xr-x  11 layne  352 May 31 15:33 unit02/
+
+./target/unit01:
+total 0
+46513751 drwxr-xr-x  12 layne  384 May 31 15:33 ./
+46513750 drwxr-xr-x   4 layne  128 May 31 15:33 ../
+46513752 drwxr-xr-x  15 layne  480 May 31 15:33 lesson01/
+46513950 drwxr-xr-x   8 layne  256 May 31 15:33 lesson02/
+46513971 drwxr-xr-x   8 layne  256 May 31 15:33 lesson03/
+46513988 drwxr-xr-x   8 layne  256 May 31 15:33 lesson04/
+46514009 drwxr-xr-x   8 layne  256 May 31 15:33 lesson05/
+46514033 drwxr-xr-x   8 layne  256 May 31 15:33 lesson06/
+46514052 drwxr-xr-x   8 layne  256 May 31 15:33 lesson07/
+46514096 drwxr-xr-x   8 layne  256 May 31 15:33 lesson08/
+46514141 drwxr-xr-x   8 layne  256 May 31 15:33 lesson09/
+46514162 drwxr-xr-x   8 layne  256 May 31 15:33 lesson10/
+
+./target/unit01/lesson01:
+total 408
+46513752 drwxr-xr-x  15 layne    480 May 31 15:33 ./
+46513751 drwxr-xr-x  12 layne    384 May 31 15:33 ../
+46513765 drwxr-xr-x   8 layne    256 May 31 15:32 activity/
+46513753 drwxr-xr-x   8 layne    256 May 31 15:32 activity_key/
+46513779 drwxr-xr-x   8 layne    256 May 31 15:32 cover/
+46513818 drwxr-xr-x   8 layne    256 May 31 15:33 homework/
+46513800 drwxr-xr-x   8 layne    256 May 31 15:32 homework_key/
+46513896 -rw-r--r--   1 layne     32 May 31 15:33 main.aux
+46513897 -rw-r--r--   1 layne  18835 May 31 15:33 main.fdb_latexmk
+46513903 -rw-r--r--   1 layne  18589 May 31 15:33 main.fls
+46513899 -rw-r--r--   1 layne  27910 May 31 15:33 main.log
+46513908 -rw-r--r--   1 layne  45491 May 31 15:33 main.pdf
+46513902 -rw-r--r--   1 layne  85252 May 31 15:33 main.xdv
+46513912 drwxr-xr-x  12 layne    384 May 31 15:33 slides/
+46513933 drwxr-xr-x   8 layne    256 May 31 15:33 warmup/
+
+./target/unit01/lesson01/activity:
+total 320
+46513765 drwxr-xr-x   8 layne    256 May 31 15:32 ./
+46513752 drwxr-xr-x  15 layne    480 May 31 15:33 ../
+46513766 -rw-r--r--   1 layne     75 May 31 15:32 main.aux
+46513767 -rw-r--r--   1 layne  17761 May 31 15:32 main.fdb_latexmk
+46513773 -rw-r--r--   1 layne  17527 May 31 15:32 main.fls
+46513769 -rw-r--r--   1 layne  25838 May 31 15:32 main.log
+46513777 -rw-r--r--   1 layne  40741 May 31 15:32 main.pdf
+46513772 -rw-r--r--   1 layne  48076 May 31 15:32 main.xdv
+
+./target/unit01/lesson01/activity_key:
+total 512
+46513753 drwxr-xr-x   8 layne    256 May 31 15:32 ./
+46513752 drwxr-xr-x  15 layne    480 May 31 15:33 ../
+46513754 -rw-r--r--   1 layne     75 May 31 15:32 main.aux
+46513755 -rw-r--r--   1 layne  17805 May 31 15:32 main.fdb_latexmk
+46513759 -rw-r--r--   1 layne  17559 May 31 15:32 main.fls
+46513757 -rw-r--r--   1 layne  25751 May 31 15:32 main.log
+46513761 -rw-r--r--   1 layne  55086 May 31 15:32 main.pdf
+46513758 -rw-r--r--   1 layne  72984 May 31 15:32 main.xdv
+
+./target/unit01/lesson01/cover:
+total 272
+46513779 drwxr-xr-x   8 layne    256 May 31 15:32 ./
+46513752 drwxr-xr-x  15 layne    480 May 31 15:33 ../
+46513780 -rw-r--r--   1 layne     75 May 31 15:32 main.aux
+46513781 -rw-r--r--   1 layne  18714 May 31 15:32 main.fdb_latexmk
+46513791 -rw-r--r--   1 layne  18243 May 31 15:32 main.fls
+46513784 -rw-r--r--   1 layne  26376 May 31 15:32 main.log
+46513796 -rw-r--r--   1 layne  31332 May 31 15:32 main.pdf
+46513790 -rw-r--r--   1 layne  32048 May 31 15:32 main.xdv
+
+./target/unit01/lesson01/homework:
+total 360
+46513818 drwxr-xr-x   8 layne    256 May 31 15:33 ./
+46513752 drwxr-xr-x  15 layne    480 May 31 15:33 ../
+46513819 -rw-r--r--   1 layne     75 May 31 15:33 main.aux
+46513820 -rw-r--r--   1 layne  18621 May 31 15:33 main.fdb_latexmk
+46513889 -rw-r--r--   1 layne  18121 May 31 15:33 main.fls
+46513822 -rw-r--r--   1 layne  25842 May 31 15:33 main.log
+46513892 -rw-r--r--   1 layne  45888 May 31 15:33 main.pdf
+46513886 -rw-r--r--   1 layne  60948 May 31 15:33 main.xdv
+
+./target/unit01/lesson01/homework_key:
+total 528
+46513800 drwxr-xr-x   8 layne    256 May 31 15:32 ./
+46513752 drwxr-xr-x  15 layne    480 May 31 15:33 ../
+46513801 -rw-r--r--   1 layne     75 May 31 15:32 main.aux
+46513802 -rw-r--r--   1 layne  18662 May 31 15:32 main.fdb_latexmk
+46513808 -rw-r--r--   1 layne  18153 May 31 15:32 main.fls
+46513804 -rw-r--r--   1 layne  25755 May 31 15:32 main.log
+46513814 -rw-r--r--   1 layne  64856 May 31 15:32 main.pdf
+46513807 -rw-r--r--   1 layne  88184 May 31 15:32 main.xdv
+
+./target/unit01/lesson01/slides:
+total 544
+46513912 drwxr-xr-x  12 layne    384 May 31 15:33 ./
+46513752 drwxr-xr-x  15 layne    480 May 31 15:33 ../
+46513913 -rw-r--r--   1 layne   2198 May 31 15:33 main.aux
+46513914 -rw-r--r--   1 layne  26646 May 31 15:33 main.fdb_latexmk
+46513924 -rw-r--r--   1 layne  30260 May 31 15:33 main.fls
+46513916 -rw-r--r--   1 layne  39492 May 31 15:33 main.log
+46513921 -rw-r--r--   1 layne   1011 May 31 15:33 main.nav
+46513917 -rw-r--r--   1 layne      0 May 31 15:33 main.out
+46513929 -rw-r--r--   1 layne  35986 May 31 15:33 main.pdf
+46513923 -rw-r--r--   1 layne      0 May 31 15:33 main.snm
+46513922 -rw-r--r--   1 layne      0 May 31 15:33 main.toc
+46513920 -rw-r--r--   1 layne  66736 May 31 15:33 main.xdv
+
+./target/unit01/lesson01/warmup:
+total 256
+46513933 drwxr-xr-x   8 layne    256 May 31 15:33 ./
+46513752 drwxr-xr-x  15 layne    480 May 31 15:33 ../
+46513934 -rw-r--r--   1 layne     75 May 31 15:33 main.aux
+46513935 -rw-r--r--   1 layne  17499 May 31 15:33 main.fdb_latexmk
+46513942 -rw-r--r--   1 layne  17295 May 31 15:33 main.fls
+46513937 -rw-r--r--   1 layne  25630 May 31 15:33 main.log
+46513948 -rw-r--r--   1 layne  30007 May 31 15:33 main.pdf
+46513938 -rw-r--r--   1 layne  22140 May 31 15:33 main.xdv
+
+./target/unit01/lesson02:
+total 400
+46513950 drwxr-xr-x   8 layne    256 May 31 15:33 ./
+46513751 drwxr-xr-x  12 layne    384 May 31 15:33 ../
+46513951 -rw-r--r--   1 layne     32 May 31 15:33 main.aux
+46513952 -rw-r--r--   1 layne  18837 May 31 15:33 main.fdb_latexmk
+46513962 -rw-r--r--   1 layne  18589 May 31 15:33 main.fls
+46513956 -rw-r--r--   1 layne  28448 May 31 15:33 main.log
+46513967 -rw-r--r--   1 layne  44672 May 31 15:33 main.pdf
+46513961 -rw-r--r--   1 layne  84496 May 31 15:33 main.xdv
+
+./target/unit01/lesson03:
+total 416
+46513971 drwxr-xr-x   8 layne    256 May 31 15:33 ./
+46513751 drwxr-xr-x  12 layne    384 May 31 15:33 ../
+46513972 -rw-r--r--   1 layne     32 May 31 15:33 main.aux
+46513973 -rw-r--r--   1 layne  19695 May 31 15:33 main.fdb_latexmk
+46513979 -rw-r--r--   1 layne  19525 May 31 15:33 main.fls
+46513975 -rw-r--r--   1 layne  27912 May 31 15:33 main.log
+46513984 -rw-r--r--   1 layne  51843 May 31 15:33 main.pdf
+46513978 -rw-r--r--   1 layne  85432 May 31 15:33 main.xdv
+
+./target/unit01/lesson04:
+total 416
+46513988 drwxr-xr-x   8 layne    256 May 31 15:33 ./
+46513751 drwxr-xr-x  12 layne    384 May 31 15:33 ../
+46513989 -rw-r--r--   1 layne     32 May 31 15:33 main.aux
+46513990 -rw-r--r--   1 layne  18837 May 31 15:33 main.fdb_latexmk
+46513998 -rw-r--r--   1 layne  18589 May 31 15:33 main.fls
+46513992 -rw-r--r--   1 layne  27912 May 31 15:33 main.log
+46514005 -rw-r--r--   1 layne  45997 May 31 15:33 main.pdf
+46513995 -rw-r--r--   1 layne  87392 May 31 15:33 main.xdv
+
+./target/unit01/lesson05:
+total 400
+46514009 drwxr-xr-x   8 layne    256 May 31 15:33 ./
+46513751 drwxr-xr-x  12 layne    384 May 31 15:33 ../
+46514010 -rw-r--r--   1 layne     32 May 31 15:33 main.aux
+46514011 -rw-r--r--   1 layne  18835 May 31 15:33 main.fdb_latexmk
+46514017 -rw-r--r--   1 layne  18589 May 31 15:33 main.fls
+46514013 -rw-r--r--   1 layne  28043 May 31 15:33 main.log
+46514029 -rw-r--r--   1 layne  44179 May 31 15:33 main.pdf
+46514016 -rw-r--r--   1 layne  85560 May 31 15:33 main.xdv
+
+./target/unit01/lesson06:
+total 416
+46514033 drwxr-xr-x   8 layne    256 May 31 15:33 ./
+46513751 drwxr-xr-x  12 layne    384 May 31 15:33 ../
+46514034 -rw-r--r--   1 layne     32 May 31 15:33 main.aux
+46514035 -rw-r--r--   1 layne  18837 May 31 15:33 main.fdb_latexmk
+46514041 -rw-r--r--   1 layne  18589 May 31 15:33 main.fls
+46514037 -rw-r--r--   1 layne  28062 May 31 15:33 main.log
+46514048 -rw-r--r--   1 layne  46372 May 31 15:33 main.pdf
+46514040 -rw-r--r--   1 layne  89124 May 31 15:33 main.xdv
+
+./target/unit01/lesson07:
+total 512
+46514052 drwxr-xr-x   8 layne    256 May 31 15:33 ./
+46513751 drwxr-xr-x  12 layne    384 May 31 15:33 ../
+46514053 -rw-r--r--   1 layne     32 May 31 15:33 main.aux
+46514054 -rw-r--r--   1 layne  18836 May 31 15:33 main.fdb_latexmk
+46514060 -rw-r--r--   1 layne  18589 May 31 15:33 main.fls
+46514056 -rw-r--r--   1 layne  28636 May 31 15:33 main.log
+46514092 -rw-r--r--   1 layne  55339 May 31 15:33 main.pdf
+46514059 -rw-r--r--   1 layne  87868 May 31 15:33 main.xdv
+
+./target/unit01/lesson08:
+total 416
+46514096 drwxr-xr-x   8 layne    256 May 31 15:33 ./
+46513751 drwxr-xr-x  12 layne    384 May 31 15:33 ../
+46514097 -rw-r--r--   1 layne     32 May 31 15:33 main.aux
+46514098 -rw-r--r--   1 layne  18835 May 31 15:33 main.fdb_latexmk
+46514104 -rw-r--r--   1 layne  18589 May 31 15:33 main.fls
+46514100 -rw-r--r--   1 layne  28030 May 31 15:33 main.log
+46514137 -rw-r--r--   1 layne  50277 May 31 15:33 main.pdf
+46514103 -rw-r--r--   1 layne  85764 May 31 15:33 main.xdv
+
+./target/unit01/lesson09:
+total 424
+46514141 drwxr-xr-x   8 layne    256 May 31 15:33 ./
+46513751 drwxr-xr-x  12 layne    384 May 31 15:33 ../
+46514142 -rw-r--r--   1 layne     32 May 31 15:33 main.aux
+46514143 -rw-r--r--   1 layne  18836 May 31 15:33 main.fdb_latexmk
+46514151 -rw-r--r--   1 layne  18589 May 31 15:33 main.fls
+46514145 -rw-r--r--   1 layne  28333 May 31 15:33 main.log
+46514158 -rw-r--r--   1 layne  47082 May 31 15:33 main.pdf
+46514148 -rw-r--r--   1 layne  92128 May 31 15:33 main.xdv
+
+./target/unit01/lesson10:
+total 440
+46514162 drwxr-xr-x   8 layne    256 May 31 15:33 ./
+46513751 drwxr-xr-x  12 layne    384 May 31 15:33 ../
+46514165 -rw-r--r--   1 layne     32 May 31 15:33 main.aux
+46514166 -rw-r--r--   1 layne  18837 May 31 15:33 main.fdb_latexmk
+46514172 -rw-r--r--   1 layne  18589 May 31 15:33 main.fls
+46514168 -rw-r--r--   1 layne  28055 May 31 15:33 main.log
+46514177 -rw-r--r--   1 layne  56742 May 31 15:33 main.pdf
+46514171 -rw-r--r--   1 layne  91644 May 31 15:33 main.xdv
+
+./target/unit02:
+total 0
+46514181 drwxr-xr-x  11 layne  352 May 31 15:33 ./
+46513750 drwxr-xr-x   4 layne  128 May 31 15:33 ../
+46514182 drwxr-xr-x   8 layne  256 May 31 15:33 lesson01/
+46514203 drwxr-xr-x   8 layne  256 May 31 15:33 lesson02/
+46514220 drwxr-xr-x   8 layne  256 May 31 15:33 lesson03/
+46514240 drwxr-xr-x   8 layne  256 May 31 15:33 lesson04/
+46514257 drwxr-xr-x   8 layne  256 May 31 15:33 lesson05/
+46514281 drwxr-xr-x   8 layne  256 May 31 15:33 lesson06/
+46514298 drwxr-xr-x   8 layne  256 May 31 15:33 lesson07/
+46514315 drwxr-xr-x   8 layne  256 May 31 15:33 lesson08/
+46514343 drwxr-xr-x   8 layne  256 May 31 15:33 lesson09/
+
+./target/unit02/lesson01:
+total 424
+46514182 drwxr-xr-x   8 layne    256 May 31 15:33 ./
+46514181 drwxr-xr-x  11 layne    352 May 31 15:33 ../
+46514183 -rw-r--r--   1 layne     32 May 31 15:33 main.aux
+46514184 -rw-r--r--   1 layne  18837 May 31 15:33 main.fdb_latexmk
+46514192 -rw-r--r--   1 layne  18589 May 31 15:33 main.fls
+46514188 -rw-r--r--   1 layne  27910 May 31 15:33 main.log
+46514199 -rw-r--r--   1 layne  46687 May 31 15:33 main.pdf
+46514191 -rw-r--r--   1 layne  90444 May 31 15:33 main.xdv
+
+./target/unit02/lesson02:
+total 416
+46514203 drwxr-xr-x   8 layne    256 May 31 15:33 ./
+46514181 drwxr-xr-x  11 layne    352 May 31 15:33 ../
+46514204 -rw-r--r--   1 layne     32 May 31 15:33 main.aux
+46514205 -rw-r--r--   1 layne  18837 May 31 15:33 main.fdb_latexmk
+46514211 -rw-r--r--   1 layne  18589 May 31 15:33 main.fls
+46514207 -rw-r--r--   1 layne  27910 May 31 15:33 main.log
+46514216 -rw-r--r--   1 layne  46076 May 31 15:33 main.pdf
+46514210 -rw-r--r--   1 layne  89572 May 31 15:33 main.xdv
+
+./target/unit02/lesson03:
+total 432
+46514220 drwxr-xr-x   8 layne    256 May 31 15:33 ./
+46514181 drwxr-xr-x  11 layne    352 May 31 15:33 ../
+46514221 -rw-r--r--   1 layne     32 May 31 15:33 main.aux
+46514222 -rw-r--r--   1 layne  18838 May 31 15:33 main.fdb_latexmk
+46514228 -rw-r--r--   1 layne  18589 May 31 15:33 main.fls
+46514224 -rw-r--r--   1 layne  28194 May 31 15:33 main.log
+46514236 -rw-r--r--   1 layne  51972 May 31 15:33 main.pdf
+46514227 -rw-r--r--   1 layne  93556 May 31 15:33 main.xdv
+
+./target/unit02/lesson04:
+total 416
+46514240 drwxr-xr-x   8 layne    256 May 31 15:33 ./
+46514181 drwxr-xr-x  11 layne    352 May 31 15:33 ../
+46514241 -rw-r--r--   1 layne     32 May 31 15:33 main.aux
+46514242 -rw-r--r--   1 layne  18837 May 31 15:33 main.fdb_latexmk
+46514248 -rw-r--r--   1 layne  18589 May 31 15:33 main.fls
+46514244 -rw-r--r--   1 layne  28302 May 31 15:33 main.log
+46514253 -rw-r--r--   1 layne  47268 May 31 15:33 main.pdf
+46514247 -rw-r--r--   1 layne  90028 May 31 15:33 main.xdv
+
+./target/unit02/lesson05:
+total 448
+46514257 drwxr-xr-x   8 layne    256 May 31 15:33 ./
+46514181 drwxr-xr-x  11 layne    352 May 31 15:33 ../
+46514258 -rw-r--r--   1 layne     32 May 31 15:33 main.aux
+46514259 -rw-r--r--   1 layne  18835 May 31 15:33 main.fdb_latexmk
+46514270 -rw-r--r--   1 layne  18589 May 31 15:33 main.fls
+46514261 -rw-r--r--   1 layne  28769 May 31 15:33 main.log
+46514277 -rw-r--r--   1 layne  57887 May 31 15:33 main.pdf
+46514269 -rw-r--r--   1 layne  88380 May 31 15:33 main.xdv
+
+./target/unit02/lesson06:
+total 432
+46514281 drwxr-xr-x   8 layne    256 May 31 15:33 ./
+46514181 drwxr-xr-x  11 layne    352 May 31 15:33 ../
+46514282 -rw-r--r--   1 layne     32 May 31 15:33 main.aux
+46514283 -rw-r--r--   1 layne  18838 May 31 15:33 main.fdb_latexmk
+46514289 -rw-r--r--   1 layne  18589 May 31 15:33 main.fls
+46514285 -rw-r--r--   1 layne  28416 May 31 15:33 main.log
+46514294 -rw-r--r--   1 layne  51161 May 31 15:33 main.pdf
+46514288 -rw-r--r--   1 layne  92004 May 31 15:33 main.xdv
+
+./target/unit02/lesson07:
+total 424
+46514298 drwxr-xr-x   8 layne    256 May 31 15:33 ./
+46514181 drwxr-xr-x  11 layne    352 May 31 15:33 ../
+46514299 -rw-r--r--   1 layne     32 May 31 15:33 main.aux
+46514300 -rw-r--r--   1 layne  18835 May 31 15:33 main.fdb_latexmk
+46514306 -rw-r--r--   1 layne  18589 May 31 15:33 main.fls
+46514302 -rw-r--r--   1 layne  27910 May 31 15:33 main.log
+46514311 -rw-r--r--   1 layne  51186 May 31 15:33 main.pdf
+46514305 -rw-r--r--   1 layne  88596 May 31 15:33 main.xdv
+
+./target/unit02/lesson08:
+total 432
+46514315 drwxr-xr-x   8 layne    256 May 31 15:33 ./
+46514181 drwxr-xr-x  11 layne    352 May 31 15:33 ../
+46514327 -rw-r--r--   1 layne     32 May 31 15:33 main.aux
+46514328 -rw-r--r--   1 layne  18836 May 31 15:33 main.fdb_latexmk
+46514334 -rw-r--r--   1 layne  18589 May 31 15:33 main.fls
+46514330 -rw-r--r--   1 layne  27914 May 31 15:33 main.log
+46514339 -rw-r--r--   1 layne  55918 May 31 15:33 main.pdf
+46514333 -rw-r--r--   1 layne  88360 May 31 15:33 main.xdv
+
+./target/unit02/lesson09:
+total 440
+46514343 drwxr-xr-x   8 layne    256 May 31 15:33 ./
+46514181 drwxr-xr-x  11 layne    352 May 31 15:33 ../
+46514344 -rw-r--r--   1 layne     32 May 31 15:33 main.aux
+46514345 -rw-r--r--   1 layne  18838 May 31 15:33 main.fdb_latexmk
+46514351 -rw-r--r--   1 layne  18589 May 31 15:33 main.fls
+46514347 -rw-r--r--   1 layne  27910 May 31 15:33 main.log
+46514385 -rw-r--r--   1 layne  55678 May 31 15:33 main.pdf
+46514350 -rw-r--r--   1 layne  93796 May 31 15:33 main.xdv
+
+./unit01:
+total 272
+46303604 drwxr-xr-x  13 layne     416 May 30 11:36 ./
+46302547 drwxr-xr-x  13 layne     416 May 31 15:39 ../
+46303619 drwxr-xr-x  10 layne     320 May 31 15:32 lesson01/
+46303620 drwxr-xr-x   3 layne      96 May 30 09:26 lesson02/
+46303621 drwxr-xr-x   3 layne      96 May 30 09:26 lesson03/
+46303622 drwxr-xr-x   3 layne      96 May 30 09:26 lesson04/
+46303623 drwxr-xr-x   3 layne      96 May 30 09:27 lesson05/
+46303634 drwxr-xr-x   3 layne      96 May 30 09:27 lesson06/
+46303635 drwxr-xr-x   3 layne      96 May 30 09:27 lesson07/
+46303636 drwxr-xr-x   3 layne      96 May 30 09:27 lesson08/
+46303637 drwxr-xr-x   3 layne      96 May 30 09:27 lesson09/
+46303638 drwxr-xr-x   3 layne      96 May 30 09:28 lesson10/
+46319837 -rw-------   1 layne  138585 May 30 11:36 unit01_slides.pptx
+
+./unit01/lesson01:
+total 24
+46303619 drwxr-xr-x  10 layne   320 May 31 15:32 ./
+46303604 drwxr-xr-x  13 layne   416 May 30 11:36 ../
+46512415 drwxr-xr-x   3 layne    96 May 31 15:23 activity/
+46512436 drwxr-xr-x   3 layne    96 May 31 15:24 activity_key/
+46507980 drwxr-xr-x@  3 layne    96 May 31 15:14 cover/
+46513730 drwxr-xr-x   3 layne    96 May 31 15:32 homework/
+46513733 drwxr-xr-x   3 layne    96 May 31 15:32 homework_key/
+46303656 -rw-r--r--@  1 layne  9611 May 30 09:22 main.tex
+46507974 drwxr-xr-x@  3 layne    96 May 31 15:07 slides/
+46507982 drwxr-xr-x@  3 layne    96 May 31 15:14 warmup/
+
+./unit01/lesson01/activity:
+total 16
+46512415 drwxr-xr-x   3 layne    96 May 31 15:23 ./
+46303619 drwxr-xr-x  10 layne   320 May 31 15:32 ../
+46512429 -rw-r--r--@  1 layne  7844 May 31 15:23 main.tex
+
+./unit01/lesson01/activity_key:
+total 24
+46512436 drwxr-xr-x   3 layne     96 May 31 15:24 ./
+46303619 drwxr-xr-x  10 layne    320 May 31 15:32 ../
+46512443 -rw-r--r--@  1 layne  10289 May 31 15:24 main.tex
+
+./unit01/lesson01/cover:
+total 16
+46507980 drwxr-xr-x@  3 layne    96 May 31 15:14 ./
+46303619 drwxr-xr-x  10 layne   320 May 31 15:32 ../
+46511020 -rw-r--r--@  1 layne  6916 May 31 15:13 main.tex
+
+./unit01/lesson01/homework:
+total 24
+46513730 drwxr-xr-x   3 layne    96 May 31 15:32 ./
+46303619 drwxr-xr-x  10 layne   320 May 31 15:32 ../
+46513738 -rw-------@  1 layne  9445 May 31 15:32 main.tex
+
+./unit01/lesson01/homework_key:
+total 32
+46513733 drwxr-xr-x   3 layne     96 May 31 15:32 ./
+46303619 drwxr-xr-x  10 layne    320 May 31 15:32 ../
+46513746 -rw-------@  1 layne  12768 May 31 15:32 main.tex
+
+./unit01/lesson01/slides:
+total 40
+46507974 drwxr-xr-x@  3 layne     96 May 31 15:07 ./
+46303619 drwxr-xr-x  10 layne    320 May 31 15:32 ../
+46508064 -rw-r--r--@  1 layne  18607 May 31 15:07 main.tex
+
+./unit01/lesson01/warmup:
+total 8
+46507982 drwxr-xr-x@  3 layne    96 May 31 15:14 ./
+46303619 drwxr-xr-x  10 layne   320 May 31 15:32 ../
+46511026 -rw-r--r--@  1 layne  3191 May 31 15:14 main.tex
+
+./unit01/lesson02:
+total 24
+46303620 drwxr-xr-x   3 layne    96 May 30 09:26 ./
+46303604 drwxr-xr-x  13 layne   416 May 30 11:36 ../
+46304047 -rw-r--r--@  1 layne  9236 May 30 09:26 main.tex
+
+./unit01/lesson03:
+total 24
+46303621 drwxr-xr-x   3 layne    96 May 30 09:26 ./
+46303604 drwxr-xr-x  13 layne   416 May 30 11:36 ../
+46304052 -rw-r--r--@  1 layne  9595 May 30 09:26 main.tex
+
+./unit01/lesson04:
+total 24
+46303622 drwxr-xr-x   3 layne    96 May 30 09:26 ./
+46303604 drwxr-xr-x  13 layne   416 May 30 11:36 ../
+46304056 -rw-r--r--@  1 layne  9471 May 30 09:26 main.tex
+
+./unit01/lesson05:
+total 24
+46303623 drwxr-xr-x   3 layne    96 May 30 09:27 ./
+46303604 drwxr-xr-x  13 layne   416 May 30 11:36 ../
+46304068 -rw-r--r--@  1 layne  9262 May 30 09:27 main.tex
+
+./unit01/lesson06:
+total 24
+46303634 drwxr-xr-x   3 layne    96 May 30 09:27 ./
+46303604 drwxr-xr-x  13 layne   416 May 30 11:36 ../
+46304075 -rw-r--r--@  1 layne  9604 May 30 09:27 main.tex
+
+./unit01/lesson07:
+total 24
+46303635 drwxr-xr-x   3 layne    96 May 30 09:27 ./
+46303604 drwxr-xr-x  13 layne   416 May 30 11:36 ../
+46304081 -rw-r--r--@  1 layne  9760 May 30 09:27 main.tex
+
+./unit01/lesson08:
+total 24
+46303636 drwxr-xr-x   3 layne    96 May 30 09:27 ./
+46303604 drwxr-xr-x  13 layne   416 May 30 11:36 ../
+46304087 -rw-r--r--@  1 layne  9428 May 30 09:27 main.tex
+
+./unit01/lesson09:
+total 24
+46303637 drwxr-xr-x   3 layne    96 May 30 09:27 ./
+46303604 drwxr-xr-x  13 layne   416 May 30 11:36 ../
+46304092 -rw-r--r--@  1 layne  9875 May 30 09:27 main.tex
+
+./unit01/lesson10:
+total 24
+46303638 drwxr-xr-x   3 layne     96 May 30 09:28 ./
+46303604 drwxr-xr-x  13 layne    416 May 30 11:36 ../
+46304099 -rw-r--r--@  1 layne  10180 May 30 09:28 main.tex
+
+./unit02:
+total 264
+46304223 drwxr-xr-x  12 layne     384 May 31 09:45 ./
+46302547 drwxr-xr-x  13 layne     416 May 31 15:39 ../
+46304340 drwxr-xr-x   3 layne      96 May 30 09:45 lesson01/
+46304349 drwxr-xr-x   3 layne      96 May 30 09:45 lesson02/
+46304351 drwxr-xr-x   3 layne      96 May 30 09:46 lesson03/
+46305225 drwxr-xr-x   3 layne      96 May 30 09:46 lesson04/
+46305296 drwxr-xr-x   3 layne      96 May 30 09:46 lesson05/
+46305442 drwxr-xr-x   3 layne      96 May 30 09:46 lesson06/
+46305538 drwxr-xr-x   3 layne      96 May 30 09:47 lesson07/
+46305542 drwxr-xr-x   3 layne      96 May 30 09:47 lesson08/
+46305730 drwxr-xr-x   3 layne      96 May 30 09:48 lesson09/
+46322252 -rw-------   1 layne  133117 May 30 12:18 unit02_slides.pptx
+
+./unit02/lesson01:
+total 24
+46304340 drwxr-xr-x   3 layne    96 May 30 09:45 ./
+46304223 drwxr-xr-x  12 layne   384 May 31 09:45 ../
+46305455 -rw-r--r--@  1 layne  9672 May 30 09:45 main.tex
+
+./unit02/lesson02:
+total 24
+46304349 drwxr-xr-x   3 layne    96 May 30 09:45 ./
+46304223 drwxr-xr-x  12 layne   384 May 31 09:45 ../
+46305460 -rw-r--r--@  1 layne  9649 May 30 09:45 main.tex
+
+./unit02/lesson03:
+total 24
+46304351 drwxr-xr-x   3 layne     96 May 30 09:46 ./
+46304223 drwxr-xr-x  12 layne    384 May 31 09:45 ../
+46305470 -rw-r--r--@  1 layne  10179 May 30 09:46 main.tex
+
+./unit02/lesson04:
+total 24
+46305225 drwxr-xr-x   3 layne    96 May 30 09:46 ./
+46304223 drwxr-xr-x  12 layne   384 May 31 09:45 ../
+46305473 -rw-r--r--@  1 layne  9841 May 30 09:46 main.tex
+
+./unit02/lesson05:
+total 24
+46305296 drwxr-xr-x   3 layne    96 May 30 09:46 ./
+46304223 drwxr-xr-x  12 layne   384 May 31 09:45 ../
+46305481 -rw-r--r--@  1 layne  9961 May 30 09:46 main.tex
+
+./unit02/lesson06:
+total 24
+46305442 drwxr-xr-x   3 layne     96 May 30 09:46 ./
+46304223 drwxr-xr-x  12 layne    384 May 31 09:45 ../
+46305554 -rw-r--r--@  1 layne  10367 May 30 09:46 main.tex
+
+./unit02/lesson07:
+total 24
+46305538 drwxr-xr-x   3 layne    96 May 30 09:47 ./
+46304223 drwxr-xr-x  12 layne   384 May 31 09:45 ../
+46305559 -rw-r--r--@  1 layne  9788 May 30 09:47 main.tex
+
+./unit02/lesson08:
+total 24
+46305542 drwxr-xr-x   3 layne    96 May 30 09:47 ./
+46304223 drwxr-xr-x  12 layne   384 May 31 09:45 ../
+46305689 -rw-r--r--@  1 layne  9984 May 30 09:47 main.tex
+
+./unit02/lesson09:
+total 24
+46305730 drwxr-xr-x   3 layne     96 May 30 09:48 ./
+46304223 drwxr-xr-x  12 layne    384 May 31 09:45 ../
+46305736 -rw-r--r--@  1 layne  10460 May 30 09:48 main.tex

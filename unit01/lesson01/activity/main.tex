@@ -1,0 +1,167 @@
+%! AP Statistics — Unit 1, Lesson 1.1 — Group Activity
+\documentclass[10pt]{article}
+\usepackage[margin=0.65in, top=0.55in, bottom=0.65in]{geometry}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage{colortbl}
+\tcbuselibrary{breakable, skins}
+
+% ── Colors ───────────────────────────────────────────────────────────────────
+\definecolor{navy}{HTML}{1F3A5F}
+\definecolor{navylight}{HTML}{2E5490}
+\definecolor{sky}{HTML}{EAF3FB}
+\definecolor{skymid}{HTML}{C5DFF5}
+\definecolor{goldacc}{HTML}{D4820A}
+\definecolor{goldbg}{HTML}{FEF3E2}
+\definecolor{greenbg}{HTML}{EDF8F0}
+\definecolor{greenacc}{HTML}{2D7A4F}
+\definecolor{redbg}{HTML}{FCECEC}
+\definecolor{redacc}{HTML}{C0392B}
+\definecolor{charcoal}{HTML}{2C3E50}
+\definecolor{slate}{HTML}{64748B}
+\definecolor{linegray}{HTML}{AAAAAA}
+
+% ── Box styles ───────────────────────────────────────────────────────────────
+\newtcolorbox{scenariobox}[2][]{
+    colback=white, colframe=#2, boxrule=0.9pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=4mm,
+    fonttitle=\bfseries\small\color{white}, title={#1},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=#2, colframe=#2, arc=1.5mm},
+    breakable
+}
+\newtcolorbox{headlinebox}[1]{
+    colback=#1, colframe=#1!60!black, boxrule=0pt,
+    arc=1.5mm, left=3mm, right=3mm, top=2mm, bottom=2mm
+}
+
+% ── Fill-in helpers ──────────────────────────────────────────────────────────
+\newcommand{\blank}[1]{\underline{\hspace{#1}}}
+\newcommand{\writeline}{\vspace{1pt}\noindent\textcolor{linegray}{\hrulefill}\vspace{3pt}}
+
+% ── Component table (reusable) ───────────────────────────────────────────────
+\newcommand{\componenttable}{%
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.22\linewidth} X @{}}
+Individual:  & \blank{10.5cm} \\
+Population:  & \blank{10.5cm} \\
+Sample:      & \blank{10.5cm} \\
+Variable(s): & \blank{10.5cm} \\
+\end{tabularx}}
+
+% ── List / para settings ─────────────────────────────────────────────────────
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+
+%=============================================================================
+\begin{document}
+
+% ── Page header ──────────────────────────────────────────────────────────────
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[navy] (current page.north west)
+    rectangle ([yshift=-0.52in]current page.north east);
+\end{tikzpicture}
+\vspace{-0.42in}
+{\color{white}\textbf{\large AP Statistics \hfill Unit 1: Exploring One-Variable Data}}\\[2pt]
+{\color{skymid}\small\textbf{Lesson 1.1 \quad Group Activity: Identifying Statistical Components}}
+\vspace{0.16in}
+
+\noindent
+\begin{tabularx}{\linewidth}{X X X}
+Name:\;\blank{4.8cm} & Partner:\;\blank{4.0cm} & Period:\;\blank{1.5cm}
+\end{tabularx}
+
+\vspace{0.1in}
+
+% ── Instructions ─────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small
+For each headline below, identify the \textbf{individual}, \textbf{population},
+\textbf{sample}, and \textbf{variable(s)}. Then answer the follow-up question.
+Remember: the \emph{population} is who or what we \emph{want} to know about;
+the \emph{sample} is who or what we \emph{actually studied}.
+\end{tcolorbox}
+
+\vspace{0.14in}
+
+% ════════════════════════════════════════════════════════════════════════════
+% SCENARIO 1
+% ════════════════════════════════════════════════════════════════════════════
+\begin{scenariobox}[Scenario 1]{navylight}
+
+\begin{headlinebox}{sky}
+\small\textit{``A survey of 500 U.S.\ high school students found that 78\% report
+feeling stressed about grades at least once a week.''}
+\end{headlinebox}
+
+\vspace{8pt}
+\componenttable
+
+\vspace{8pt}
+\small\textbf{Would it be possible to conduct a census for this study?
+Why or why not?}\\[4pt]
+\writeline\\[1pt]\writeline
+
+\end{scenariobox}
+
+\vspace{0.16in}
+
+% ════════════════════════════════════════════════════════════════════════════
+% SCENARIO 2
+% ════════════════════════════════════════════════════════════════════════════
+\begin{scenariobox}[Scenario 2]{greenacc}
+
+\begin{headlinebox}{greenbg}
+\small\textit{``A national study tracked 1{,}200 elementary school students over
+three years and found that those who had at least 30 minutes of recess daily
+scored higher on standardized reading assessments.''}
+\end{headlinebox}
+
+\vspace{8pt}
+\componenttable
+
+\vspace{8pt}
+\small\textbf{This study found that more recess is \emph{associated} with higher
+reading scores. Does that mean recess \emph{causes} better reading? Explain.}\\[4pt]
+\writeline\\[1pt]\writeline
+
+\end{scenariobox}
+
+\vspace{0.16in}
+
+% ════════════════════════════════════════════════════════════════════════════
+% SCENARIO 3
+% ════════════════════════════════════════════════════════════════════════════
+\begin{scenariobox}[Scenario 3 \normalfont\small\color{white!80!black}\quad stretch]{redacc}
+
+\begin{headlinebox}{redbg}
+\small\textit{``Scientists examined 60 coral reef sites across the Pacific Ocean
+and found that water temperature had increased at 85\% of them over the past decade.''}
+\end{headlinebox}
+
+\vspace{8pt}
+\componenttable
+
+\vspace{8pt}
+\small\textbf{A classmate says: \textit{``The individual is the ocean, because
+that's what they're studying.''} Do you agree? Correct any errors in her reasoning.}\\[4pt]
+\writeline\\[1pt]\writeline\\[1pt]\writeline
+
+\end{scenariobox}
+
+\vspace{0.16in}
+
+% ── Reflection ───────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=goldbg, colframe=goldacc, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small\textbf{Reflection \textnormal{\color{slate}(answer together, one response per pair):}}
+\quad Which scenario was hardest? What made it harder?\\[6pt]
+\writeline\\[1pt]\writeline
+\end{tcolorbox}
+
+\end{document}
