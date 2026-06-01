@@ -1,0 +1,39 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{apstats-beamer}[2026/06/01 AP Statistics Beamer setup]
+
+\RequirePackage{apstats-colors}
+\RequirePackage{tikz}
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{multicol}
+\RequirePackage{array}
+\RequirePackage{tabularx}
+
+% Beamer overrides — brighter values needed for dark-background slides
+\definecolor{goldacc}{HTML}{F5A623}
+\definecolor{hookbg}{HTML}{D4820A}
+
+% ── Theme ─────────────────────────────────────────────────────────────────────
+\usetheme{default}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{headline}{}
+\setbeamercolor{normal text}{fg=charcoal}
+\setbeamerfont{normal text}{family=\sffamily}
+
+% ── \navyheader{Title} ────────────────────────────────────────────────────────
+% Full-width navy bar across the top of a slide with white title text.
+\newcommand{\navyheader}[1]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[navy] (current page.north west)
+      rectangle ([yshift=-1.35cm]current page.north east);
+    \node[anchor=west, text=white, font=\bfseries\large,
+          inner xsep=0.55cm, inner ysep=0pt]
+      at ([yshift=-0.68cm]current page.north west) {#1};
+  \end{tikzpicture}%
+  \vspace{1.05cm}\par}
+
+% ── \sectionlabel[color]{LABEL TEXT} ─────────────────────────────────────────
+% Small-caps section label above slide content.
+\newcommand{\sectionlabel}[2][navy]{%
+  {\color{#1}\bfseries\footnotesize\MakeUppercase{#2}}\par\smallskip}

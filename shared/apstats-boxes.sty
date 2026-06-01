@@ -1,0 +1,170 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{apstats-boxes}[2026/06/01 AP Statistics tcolorbox environments]
+
+% Requires colors and tcolorbox; does NOT require apstats-article so that
+% lesson-plan documents can set their own geometry independently.
+\RequirePackage{apstats-colors}
+\RequirePackage[most]{tcolorbox}
+\tcbuselibrary{breakable, skins}
+
+% ── Lesson-plan box ───────────────────────────────────────────────────────────
+% Usage: \begin{skillbox}[Title]{background-color} ... \end{skillbox}
+\newtcolorbox{skillbox}[2][]{
+    colback=#2, colframe=navy, boxrule=0.8pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm,
+    fonttitle=\bfseries, title={#1}, halign title=center, breakable
+}
+
+% ── Objective / learning-target boxes ─────────────────────────────────────────
+\newtcolorbox{objectivebox}{
+    enhanced,
+    colback=sky, colframe=navy, boxrule=1pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm,
+    fonttitle=\bfseries\small\color{white}, title={Primary Objective},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=navy, colframe=navy, arc=1.5mm}
+}
+\newtcolorbox{learningtargetbox}{
+    enhanced,
+    colback=sky, colframe=navy, boxrule=1pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm,
+    fonttitle=\bfseries\small\color{white},
+    title={Learning Targets --- I Can\dots},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=navy, colframe=navy, arc=1.5mm}
+}
+
+% ── Vocabulary ────────────────────────────────────────────────────────────────
+\newtcolorbox{vocabbox}{
+    enhanced,
+    colback=greenbg, colframe=greenacc, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm,
+    fonttitle=\bfseries\small\color{white}, title={Vocabulary \& Key Concepts},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=greenacc, colframe=greenacc, arc=1.5mm},
+    breakable
+}
+
+% ── Hook ──────────────────────────────────────────────────────────────────────
+\newtcolorbox{hookbox}{
+    enhanced,
+    colback=hookbg, colframe=goldacc, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm,
+    fonttitle=\bfseries\small\color{white}, title={Hook},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=goldacc, colframe=goldacc, arc=1.5mm},
+    breakable
+}
+
+% ── Generic titled notes box ──────────────────────────────────────────────────
+% Usage: \begin{notesbox}{Title} ... \end{notesbox}
+\newtcolorbox{notesbox}[1]{
+    enhanced,
+    colback=white, colframe=navy, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm,
+    fonttitle=\bfseries\small\color{white}, title={#1},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=navy, colframe=navy, arc=1.5mm},
+    breakable
+}
+
+% ── Guided practice ───────────────────────────────────────────────────────────
+\newtcolorbox{practicebox}{
+    enhanced,
+    colback=redbg, colframe=redacc, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm,
+    fonttitle=\bfseries\small\color{white}, title={Guided Practice},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=redacc, colframe=redacc, arc=1.5mm},
+    breakable
+}
+
+% ── Spiral connections ────────────────────────────────────────────────────────
+\newtcolorbox{spiralbox}{
+    enhanced,
+    colback=white, colframe=slate, boxrule=0.6pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm,
+    fonttitle=\bfseries\small\color{white}, title={Connections \& Big Ideas},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=slate, colframe=slate, arc=1.5mm}
+}
+
+% ── Activity / homework scenario boxes ────────────────────────────────────────
+% Usage: \begin{scenariobox}[Scenario 1]{navylight} ... \end{scenariobox}
+\newtcolorbox{scenariobox}[2][]{
+    enhanced,
+    colback=white, colframe=#2, boxrule=0.9pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=4mm,
+    fonttitle=\bfseries\small\color{white}, title={#1},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=#2, colframe=#2, arc=1.5mm},
+    breakable
+}
+
+% Usage: \begin{headlinebox}{sky} ... \end{headlinebox}
+\newtcolorbox{headlinebox}[1]{
+    enhanced,
+    colback=#1, colframe=#1!60!black, boxrule=0pt,
+    arc=1.5mm, left=3mm, right=3mm, top=2mm, bottom=2mm
+}
+
+% Usage: \begin{blurbbox}[Study 1]{navylight} ... \end{blurbbox}
+\newtcolorbox{blurbbox}[2][]{
+    enhanced,
+    colback=white, colframe=#2, boxrule=0.9pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=4mm,
+    fonttitle=\bfseries\small\color{white}, title={#1},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=#2, colframe=#2, arc=1.5mm},
+    breakable
+}
+
+% ── Homework boxes ────────────────────────────────────────────────────────────
+\newtcolorbox{reflectionbox}{
+    enhanced,
+    colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=4mm,
+    fonttitle=\bfseries\small\color{white}, title={Reflection},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=navy, colframe=navy, arc=1.5mm},
+    breakable
+}
+\newtcolorbox{extensionbox}{
+    enhanced,
+    colback=goldbg, colframe=goldacc, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=4mm,
+    fonttitle=\bfseries\small\color{white},
+    title={Extension \normalfont\small\color{white!80!black}\quad optional},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=goldacc, colframe=goldacc, arc=1.5mm},
+    breakable
+}
+
+% ── Cover page boxes ──────────────────────────────────────────────────────────
+\newtcolorbox{tocbox}{
+    enhanced,
+    colback=white, colframe=navy, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm,
+    fonttitle=\bfseries\small\color{white}, title={What's in This Packet},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=navy, colframe=navy, arc=1.5mm}
+}
+\newtcolorbox{remindbox}{
+    enhanced,
+    colback=goldbg, colframe=goldacc, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm,
+    fonttitle=\bfseries\small\color{white}, title={Keep in Mind},
+    attach boxed title to top left={yshift=-2mm, xshift=4mm},
+    boxed title style={colback=goldacc, colframe=goldacc, arc=1.5mm}
+}
+
+% ── Reusable component identification table (student version) ─────────────────
+% Usage: \componenttable  (no arguments; blanks for students to fill in)
+\newcommand{\componenttable}{%
+    \renewcommand{\arraystretch}{2.0}%
+    \begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.22\linewidth} X @{}}
+    Individual:  & \blank{10.5cm} \\
+    Population:  & \blank{10.5cm} \\
+    Sample:      & \blank{10.5cm} \\
+    Variable(s): & \blank{10.5cm} \\
+    \end{tabularx}}

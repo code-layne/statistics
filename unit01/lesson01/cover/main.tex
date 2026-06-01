@@ -1,78 +1,12 @@
 %! AP Statistics — Unit 1, Lesson 1.1 — Student Packet Cover Sheet
 \documentclass[10pt]{article}
-\usepackage[margin=0.65in, top=0.55in, bottom=0.65in]{geometry}
-\usepackage{xcolor}
-\usepackage[most]{tcolorbox}
-\usepackage{enumitem}
-\usepackage{array}
-\usepackage{tabularx}
-\usepackage{tikz}
-\usepackage{colortbl}
-\usepackage{booktabs}
-\tcbuselibrary{breakable, skins}
-
-% ── Colors ──────────────────────────────────────────────────────────────────
-\definecolor{navy}{HTML}{1F3A5F}
-\definecolor{navylight}{HTML}{2E5490}
-\definecolor{sky}{HTML}{EAF3FB}
-\definecolor{skymid}{HTML}{C5DFF5}
-\definecolor{goldacc}{HTML}{D4820A}
-\definecolor{goldbg}{HTML}{FEF3E2}
-\definecolor{greenbg}{HTML}{EDF8F0}
-\definecolor{greenacc}{HTML}{2D7A4F}
-\definecolor{charcoal}{HTML}{2C3E50}
-\definecolor{slate}{HTML}{64748B}
-\definecolor{linegray}{HTML}{AAAAAA}
-
-% ── Box styles ───────────────────────────────────────────────────────────────
-\newtcolorbox{objectivebox}{
-    enhanced,
-    colback=sky, colframe=navy, boxrule=1pt, arc=2mm,
-    left=3mm, right=3mm, top=2mm, bottom=2mm,
-    fonttitle=\bfseries\small\color{white},
-    title={Learning Targets — I Can\dots},
-    attach boxed title to top left={yshift=-2mm, xshift=4mm},
-    boxed title style={colback=navy, colframe=navy, arc=1.5mm}
-}
-\newtcolorbox{vocabbox}{
-    enhanced,
-    colback=greenbg, colframe=greenacc, boxrule=0.8pt, arc=2mm,
-    left=3mm, right=3mm, top=2mm, bottom=2mm,
-    fonttitle=\bfseries\small\color{white}, title={Vocabulary},
-    attach boxed title to top left={yshift=-2mm, xshift=4mm},
-    boxed title style={colback=greenacc, colframe=greenacc, arc=1.5mm},
-    breakable
-}
-\newtcolorbox{tocbox}{
-    enhanced,
-    colback=white, colframe=navy, boxrule=0.8pt, arc=2mm,
-    left=3mm, right=3mm, top=2mm, bottom=2mm,
-    fonttitle=\bfseries\small\color{white}, title={What's in This Packet},
-    attach boxed title to top left={yshift=-2mm, xshift=4mm},
-    boxed title style={colback=navy, colframe=navy, arc=1.5mm}
-}
-\newtcolorbox{remindbox}{
-    enhanced,
-    colback=goldbg, colframe=goldacc, boxrule=0.8pt, arc=2mm,
-    left=3mm, right=3mm, top=2mm, bottom=2mm,
-    fonttitle=\bfseries\small\color{white}, title={Keep in Mind},
-    attach boxed title to top left={yshift=-2mm, xshift=4mm},
-    boxed title style={colback=goldacc, colframe=goldacc, arc=1.5mm}
-}
-
-% ── Fill-in helpers ──────────────────────────────────────────────────────────
-\newcommand{\blank}[1]{\underline{\hspace{#1}}}
-
-% ── List / para settings ─────────────────────────────────────────────────────
-\setlist[itemize]{leftmargin=1.3em, itemsep=4pt, topsep=2pt}
-\setlist[enumerate]{leftmargin=1.5em, itemsep=4pt, topsep=2pt}
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{3pt}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
 
 %=============================================================================
 \begin{document}
 
-% ── Page header ──────────────────────────────────────────────────────────────
+% ── Full-bleed navy banner (cover page uses tikz overlay, not \pageheader) ───
 \begin{tikzpicture}[remember picture, overlay]
   \fill[navy] (current page.north west)
     rectangle ([yshift=-0.9in]current page.north east);
@@ -87,16 +21,12 @@
 
 \vspace{0.22in}
 
-% Name / Date / Period row
-\noindent
-\begin{tabularx}{\linewidth}{X X X}
-Name:\;\blank{4.8cm} & Date:\;\blank{2.8cm} & Period:\;\blank{1.5cm}
-\end{tabularx}
+\namedateperiod
 
 \vspace{0.18in}
 
 % ── LEARNING TARGETS ─────────────────────────────────────────────────────────
-\begin{objectivebox}
+\begin{learningtargetbox}
 \small
 \begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
   \item \ldots{} explain what statistics is and describe the 4-step statistical
@@ -106,7 +36,7 @@ Name:\;\blank{4.8cm} & Date:\;\blank{2.8cm} & Period:\;\blank{1.5cm}
   \item \ldots{} explain why variation in data is the reason statistics is useful,
         and distinguish between a sample and a dataset.
 \end{enumerate}
-\end{objectivebox}
+\end{learningtargetbox}
 
 \vspace{0.14in}
 
@@ -127,7 +57,6 @@ Name:\;\blank{4.8cm} & Date:\;\blank{2.8cm} & Period:\;\blank{1.5cm}
   & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
 \end{tabularx}
 \end{tocbox}
-
 
 \vspace{0.14in}
 
