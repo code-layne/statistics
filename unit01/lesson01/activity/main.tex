@@ -1,83 +1,13 @@
 %! AP Statistics — Unit 1, Lesson 1.1 — Group Activity
 \documentclass[10pt]{article}
-\usepackage[margin=0.65in, top=0.55in, bottom=0.65in]{geometry}
-\usepackage{xcolor}
-\usepackage[most]{tcolorbox}
-\usepackage{enumitem}
-\usepackage{array}
-\usepackage{tabularx}
-\usepackage{tikz}
-\usepackage{colortbl}
-\tcbuselibrary{breakable, skins}
-
-% ── Colors ───────────────────────────────────────────────────────────────────
-\definecolor{navy}{HTML}{1F3A5F}
-\definecolor{navylight}{HTML}{2E5490}
-\definecolor{sky}{HTML}{EAF3FB}
-\definecolor{skymid}{HTML}{C5DFF5}
-\definecolor{goldacc}{HTML}{D4820A}
-\definecolor{goldbg}{HTML}{FEF3E2}
-\definecolor{greenbg}{HTML}{EDF8F0}
-\definecolor{greenacc}{HTML}{2D7A4F}
-\definecolor{redbg}{HTML}{FCECEC}
-\definecolor{redacc}{HTML}{C0392B}
-\definecolor{charcoal}{HTML}{2C3E50}
-\definecolor{slate}{HTML}{64748B}
-\definecolor{linegray}{HTML}{AAAAAA}
-
-% ── Box styles ───────────────────────────────────────────────────────────────
-\newtcolorbox{scenariobox}[2][]{
-    enhanced,
-    colback=white, colframe=#2, boxrule=0.9pt, arc=2mm,
-    left=3mm, right=3mm, top=2mm, bottom=4mm,
-    fonttitle=\bfseries\small\color{white}, title={#1},
-    attach boxed title to top left={yshift=-2mm, xshift=4mm},
-    boxed title style={colback=#2, colframe=#2, arc=1.5mm},
-    breakable
-}
-\newtcolorbox{headlinebox}[1]{
-    enhanced,
-    colback=#1, colframe=#1!60!black, boxrule=0pt,
-    arc=1.5mm, left=3mm, right=3mm, top=2mm, bottom=2mm
-}
-
-% ── Fill-in helpers ──────────────────────────────────────────────────────────
-\newcommand{\blank}[1]{\underline{\hspace{#1}}}
-\newcommand{\writeline}{\vspace{1pt}\noindent\textcolor{linegray}{\hrulefill}\vspace{3pt}}
-
-% ── Component table (reusable) ───────────────────────────────────────────────
-\newcommand{\componenttable}{%
-\renewcommand{\arraystretch}{2.0}
-\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.22\linewidth} X @{}}
-Individual:  & \blank{10.5cm} \\
-Population:  & \blank{10.5cm} \\
-Sample:      & \blank{10.5cm} \\
-Variable(s): & \blank{10.5cm} \\
-\end{tabularx}}
-
-% ── List / para settings ─────────────────────────────────────────────────────
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{3pt}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
 
 %=============================================================================
 \begin{document}
 
-% ── Page header ──────────────────────────────────────────────────────────────
-    \noindent
-    \colorbox{navy}{%
-        \parbox{\dimexpr\linewidth}{%
-            \vspace{6pt}
-            \color{white}\textbf{\large AP Statistics \hfill Unit 1, Lesson 1.1}\\[2pt]
-            {\color{skymid}\small\textbf{Group Activity}}
-            \vspace{6pt}
-        }%
-    }
-    \vspace{1.5em}
-
-\noindent
-\begin{tabularx}{\linewidth}{X X X}
-Name:\;\blank{4.8cm} & Partner:\;\blank{4.0cm} & Period:\;\blank{1.5cm}
-\end{tabularx}
+\pageheader{Unit 1, Lesson 1.1}{Group Activity}
+\namepartnerperiod
 
 \vspace{0.1in}
 

@@ -1,56 +1,6 @@
 %! AP Statistics — Unit 1, Lesson 1.1 — Slides (Beamer)
 \documentclass[aspectratio=169, 11pt]{beamer}
-
-% ── Packages ─────────────────────────────────────────────────────────────────
-\usepackage{xcolor}
-\usepackage{tikz}
-\usepackage{amsmath,amssymb}
-\usepackage{multicol}
-\usepackage{array}
-\usepackage{tabularx}
-% enumitem omitted — conflicts with beamer; use \setlength{\itemsep} inline
-
-% ── Colors ───────────────────────────────────────────────────────────────────
-\definecolor{navy}{HTML}{1F3A5F}
-\definecolor{navylight}{HTML}{2E5490}
-\definecolor{sky}{HTML}{EAF3FB}
-\definecolor{skymid}{HTML}{C5DFF5}
-\definecolor{goldacc}{HTML}{F5A623}
-\definecolor{hookbg}{HTML}{D4820A}
-\definecolor{greenbg}{HTML}{EDF8F0}
-\definecolor{greenacc}{HTML}{2D7A4F}
-\definecolor{redbg}{HTML}{FCECEC}
-\definecolor{redacc}{HTML}{C0392B}
-\definecolor{charcoal}{HTML}{2C3E50}
-\definecolor{slate}{HTML}{64748B}
-
-% ── Beamer setup ─────────────────────────────────────────────────────────────
-\usetheme{default}
-\usecolortheme{default}
-\setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{footline}{}
-\setbeamertemplate{headline}{}
-\setbeamercolor{normal text}{fg=charcoal}
-\setbeamerfont{normal text}{family=\sffamily}
-
-% ── Helper: navy header bar with white title ──────────────────────────────────
-% Usage: \navyheader{Title Text}
-\newcommand{\navyheader}[1]{%
-  \begin{tikzpicture}[remember picture, overlay]
-    \fill[navy] (current page.north west)
-      rectangle ([yshift=-1.35cm]current page.north east);
-    \node[anchor=west, text=white, font=\bfseries\large,
-          inner xsep=0.55cm, inner ysep=0pt]
-      at ([yshift=-0.68cm]current page.north west) {#1};
-  \end{tikzpicture}%
-  \vspace{1.05cm}\par
-}
-
-% ── Helper: section label (small-caps style label above content) ──────────────
-% Usage: \sectionlabel[color]{LABEL TEXT}
-\newcommand{\sectionlabel}[2][navy]{%
-  {\color{#1}\bfseries\footnotesize\MakeUppercase{#2}}\par\smallskip
-}
+\usepackage{apstats-beamer}
 
 %=============================================================================
 \begin{document}
@@ -62,7 +12,6 @@
 \setbeamercolor{background canvas}{bg=navy}
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture, overlay]
-    % lighter navy top bar
     \fill[navylight] (current page.north west)
       rectangle ([yshift=-1.35cm]current page.north east);
   \end{tikzpicture}
@@ -83,7 +32,6 @@
 {
 \setbeamercolor{background canvas}{bg=sky}
 \begin{frame}[t, plain]
-  % Thin navy accent bar at top
   \begin{tikzpicture}[remember picture, overlay]
     \fill[navy] (current page.north west)
       rectangle ([yshift=-0.25cm]current page.north east);
@@ -102,7 +50,7 @@
     why variation in data is central to statistical thinking
     (Big Idea: VAR\,---\,Skill 1).
 
-    \vspace{0.6cm}  % <-- vertical space between sections
+    \vspace{0.6cm}
 
     \normalsize\textbf{\color{navy}By the end of this lesson, I will be able to:}
 
@@ -236,7 +184,6 @@
     \begin{columns}[T]
 
       \vspace{1em}
-      % Left column
       \begin{column}{0.48\textwidth}
         \small
         \textbf{\color{navy}Example: Identifying the Components}\\[4pt]
@@ -255,7 +202,6 @@
         populations. A well-chosen sample gives reliable estimates.
       \end{column}
 
-      % Right column
       \begin{column}{0.48\textwidth}
         \small
         \textbf{\color{navy}Why Statistics Needs Variation}\\[4pt]
@@ -361,7 +307,6 @@
     \vspace{0.45cm}\par
     \begin{columns}[T]
 
-      % Left: Key reminders
       \begin{column}{0.54\textwidth}
         \small
         {\color{goldacc}\bfseries Key Reminders}\\[5pt]
@@ -381,7 +326,6 @@
         \end{itemize}
       \end{column}
 
-      % Right: Homework
       \begin{column}{0.42\textwidth}
         \small
         {\color{goldacc}\bfseries Homework}\\[5pt]

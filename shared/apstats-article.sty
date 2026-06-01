@@ -1,0 +1,62 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{apstats-article}[2026/06/01 AP Statistics article preamble]
+
+\RequirePackage[margin=0.75in, top=0.6in, bottom=0.75in]{geometry}
+\RequirePackage{apstats-colors}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{enumitem}
+\RequirePackage{multicol}
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{array}
+\RequirePackage{tabularx}
+\RequirePackage{tikz}
+\RequirePackage{colortbl}
+\RequirePackage{booktabs}
+
+\tcbuselibrary{breakable, skins}
+
+% ── Column types ──────────────────────────────────────────────────────────────
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+% ── List / paragraph settings ─────────────────────────────────────────────────
+\setlist[itemize]{leftmargin=1.2em, itemsep=0.3em, topsep=0.3em}
+\setlist[enumerate]{leftmargin=1.5em, itemsep=0.4em, topsep=0.3em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+
+% ── Fill-in helpers ───────────────────────────────────────────────────────────
+\newcommand{\blank}[1]{\underline{\hspace{#1}}}
+\newcommand{\writeline}{\vspace{1pt}\noindent\textcolor{linegray}{\hrulefill}\vspace{3pt}}
+\newcommand{\writelines}[1]{\foreach \i in {1,...,#1}{\writeline\\}}
+\newcommand{\termblank}[1]{%
+  \noindent\textbf{\textcolor{navy}{#1:}}\quad\blank{6.5cm}\\[1pt]%
+  \writeline\\[2pt]}
+\newcommand{\termblanklong}[1]{%
+  \noindent\textbf{\textcolor{navy}{#1:}}\\[1pt]%
+  \writeline\\[1pt]\writeline\\[3pt]}
+
+% ── Page header: \pageheader{Unit X, Lesson Y.Z}{Document Type} ───────────────
+% Produces the full-width navy colorbox header used on all student documents.
+\newcommand{\pageheader}[2]{%
+    \noindent
+    \colorbox{navy}{%
+        \parbox{\dimexpr\linewidth}{%
+            \vspace{6pt}%
+            \color{white}\textbf{\large AP Statistics \hfill #1}\\[2pt]%
+            {\color{skymid}\small\textbf{#2}}%
+            \vspace{6pt}%
+        }%
+    }%
+    \vspace{1.5em}\par\noindent}
+
+% ── Student name rows ─────────────────────────────────────────────────────────
+\newcommand{\namedateperiod}{%
+    \begin{tabularx}{\linewidth}{X X X}
+    Name:\;\blank{4.8cm} & Date:\;\blank{2.8cm} & Period:\;\blank{1.5cm}
+    \end{tabularx}}
+
+\newcommand{\namepartnerperiod}{%
+    \begin{tabularx}{\linewidth}{X X X}
+    Name:\;\blank{4.8cm} & Partner:\;\blank{4.0cm} & Period:\;\blank{1.5cm}
+    \end{tabularx}}

@@ -1,123 +1,12 @@
 %! AP Statistics — Unit 1, Lesson 1.1 — Guided Notes ANSWER KEY
 \documentclass[10pt]{article}
-\usepackage[margin=0.65in, top=0.55in, bottom=0.65in]{geometry}
-\usepackage{xcolor}
-\usepackage[most]{tcolorbox}
-\usepackage{enumitem}
-\usepackage{multicol}
-\usepackage{amsmath,amssymb}
-\usepackage{array}
-\usepackage{tabularx}
-\usepackage{tikz}
-\usepackage{colortbl}
-
-\tcbuselibrary{breakable, skins}
-
-% ── Colors ──────────────────────────────────────────────────────────────────
-\definecolor{navy}{HTML}{1F3A5F}
-\definecolor{navylight}{HTML}{2E5490}
-\definecolor{sky}{HTML}{EAF3FB}
-\definecolor{skymid}{HTML}{C5DFF5}
-\definecolor{goldacc}{HTML}{D4820A}
-\definecolor{hookbg}{HTML}{FEF3E2}
-\definecolor{greenbg}{HTML}{EDF8F0}
-\definecolor{greenacc}{HTML}{2D7A4F}
-\definecolor{redbg}{HTML}{FCECEC}
-\definecolor{redacc}{HTML}{C0392B}
-\definecolor{charcoal}{HTML}{2C3E50}
-\definecolor{slate}{HTML}{64748B}
-\definecolor{linegray}{HTML}{AAAAAA}
-\definecolor{keyred}{HTML}{CC0000}
-
-% ── Box styles ───────────────────────────────────────────────────────────────
-\newtcolorbox{objectivebox}{
-    enhanced,
-    colback=sky, colframe=navy, boxrule=1pt, arc=2mm,
-    left=3mm, right=3mm, top=2mm, bottom=2mm,
-    fonttitle=\bfseries\small\color{white}, title={Primary Objective},
-    attach boxed title to top left={yshift=-2mm, xshift=4mm},
-    boxed title style={colback=navy, colframe=navy, arc=1.5mm}
-}
-\newtcolorbox{vocabbox}{
-    enhanced,
-    colback=greenbg, colframe=greenacc, boxrule=0.8pt, arc=2mm,
-    left=3mm, right=3mm, top=2mm, bottom=2mm,
-    fonttitle=\bfseries\small\color{white}, title={Vocabulary \& Key Concepts},
-    attach boxed title to top left={yshift=-2mm, xshift=4mm},
-    boxed title style={colback=greenacc, colframe=greenacc, arc=1.5mm},
-    breakable
-}
-\newtcolorbox{hookbox}{
-    enhanced,
-    colback=hookbg, colframe=goldacc, boxrule=0.8pt, arc=2mm,
-    left=3mm, right=3mm, top=2mm, bottom=2mm,
-    fonttitle=\bfseries\small\color{white}, title={Hook},
-    attach boxed title to top left={yshift=-2mm, xshift=4mm},
-    boxed title style={colback=goldacc, colframe=goldacc, arc=1.5mm},
-    breakable
-}
-\newtcolorbox{notesbox}[1]{
-    enhanced,
-    colback=white, colframe=navy, boxrule=0.8pt, arc=2mm,
-    left=3mm, right=3mm, top=2mm, bottom=2mm,
-    fonttitle=\bfseries\small\color{white}, title={#1},
-    attach boxed title to top left={yshift=-2mm, xshift=4mm},
-    boxed title style={colback=navy, colframe=navy, arc=1.5mm},
-    breakable
-}
-\newtcolorbox{practicebox}{
-    enhanced,
-    colback=redbg, colframe=redacc, boxrule=0.8pt, arc=2mm,
-    left=3mm, right=3mm, top=2mm, bottom=2mm,
-    fonttitle=\bfseries\small\color{white}, title={Guided Practice},
-    attach boxed title to top left={yshift=-2mm, xshift=4mm},
-    boxed title style={colback=redacc, colframe=redacc, arc=1.5mm},
-    breakable
-}
-\newtcolorbox{spiralbox}{
-    enhanced,
-    colback=white, colframe=slate, boxrule=0.6pt, arc=2mm,
-    left=3mm, right=3mm, top=2mm, bottom=2mm,
-    fonttitle=\bfseries\small\color{white}, title={Connections \& Big Ideas},
-    attach boxed title to top left={yshift=-2mm, xshift=4mm},
-    boxed title style={colback=slate, colframe=slate, arc=1.5mm}
-}
-
-% ── Answer helpers ───────────────────────────────────────────────────────────
-% \ans{text} — inline answer replacing a \blank
-\newcommand{\ans}[1]{\underline{\textcolor{keyred}{\textbf{#1}}}}
-
-% \ansline{text} — answer replacing a write line
-\newcommand{\ansline}[1]{%
-  \vspace{1pt}\noindent\textcolor{keyred}{\textbf{#1}}%
-  \textcolor{linegray}{\dotfill}\vspace{3pt}}
-
-% \writeline — blank line (kept for structural spacing)
-\newcommand{\writeline}{\vspace{1pt}\noindent\textcolor{linegray}{\hrulefill}\vspace{3pt}}
-
-% ── List / spacing settings ──────────────────────────────────────────────────
-\setlist[itemize]{leftmargin=1.2em, itemsep=0.3em, topsep=0.3em}
-\setlist[enumerate]{leftmargin=1.5em, itemsep=0.4em, topsep=0.3em}
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{3pt}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
 
 %=============================================================================
 \begin{document}
 
-% ── Page header ──────────────────────────────────────────────────────────────
-    \noindent
-    \colorbox{navy}{%
-        \parbox{\dimexpr\linewidth}{%
-            \vspace{6pt}
-            \color{white}\textbf{\large AP Statistics \hfill Unit 1, Lesson 1.1}\\[2pt]
-            {\color{skymid}\small\textbf{Guided Notes}}
-            \vspace{6pt}
-        }%
-    }
-    \vspace{1.5em}
-
-% Name / Date / Period row
-\noindent
+\pageheader{Unit 1, Lesson 1.1}{Guided Notes — Answer Key}
 \begin{tabularx}{\linewidth}{X X X}
 Name:\;\ans{\;Key\;} & Date:\;\ans{\;\textit{(any)}\;} & Period:\;\ans{\;\textit{(any)}\;}
 \end{tabularx}
@@ -139,28 +28,28 @@ Name:\;\ans{\;Key\;} & Date:\;\ans{\;\textit{(any)}\;} & Period:\;\ans{\;\textit
 \small
 
 \noindent\textbf{\textcolor{navy}{Statistics:}}\quad
-\textcolor{keyred}{\textbf{the science of collecting, analyzing, and drawing conclusions from data}}\\[4pt]
+\ans{the science of collecting, analyzing, and drawing conclusions from data}\\[4pt]
 
 \noindent\textbf{\textcolor{navy}{Individual:}}\quad
-\textcolor{keyred}{\textbf{a single person, object, or event in a dataset}}\\[4pt]
+\ans{a single person, object, or event in a dataset}\\[4pt]
 
 \noindent\textbf{\textcolor{navy}{Population:}}\quad
-\textcolor{keyred}{\textbf{the entire group of individuals of interest}}\\[4pt]
+\ans{the entire group of individuals of interest}\\[4pt]
 
 \noindent\textbf{\textcolor{navy}{Sample:}}\quad
-\textcolor{keyred}{\textbf{a subset of the population from which data are collected}}\\[4pt]
+\ans{a subset of the population from which data are collected}\\[4pt]
 
 \noindent\textbf{\textcolor{navy}{Census:}}\quad
-\textcolor{keyred}{\textbf{data collected from EVERY individual in the population}}\\[4pt]
+\ans{data collected from EVERY individual in the population}\\[4pt]
 
 \noindent\textbf{\textcolor{navy}{Variability / Variation:}}\\
-\textcolor{keyred}{\textbf{natural differences in values across individuals — the reason statistics exists}}\\[4pt]
+\ans{natural differences in values across individuals — the reason statistics exists}\\[4pt]
 
 \noindent\textbf{\textcolor{navy}{Data:}}\quad
-\textcolor{keyred}{\textbf{recorded values for individuals; can be categorical or quantitative}}\\[4pt]
+\ans{recorded values for individuals; can be categorical or quantitative}\\[4pt]
 
 \noindent\textbf{\textcolor{navy}{Anecdotal evidence:}}\\
-\textcolor{keyred}{\textbf{data from a few unrepresentative cases; not reliable for drawing conclusions}}\\[4pt]
+\ans{data from a few unrepresentative cases; not reliable for drawing conclusions}\\[4pt]
 
 \end{vocabbox}
 
@@ -176,16 +65,16 @@ Name:\;\ans{\;Key\;} & Date:\;\ans{\;\textit{(any)}\;} & Period:\;\ans{\;\textit
 \textbf{Discussion questions — write your thoughts:}
 \begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
   \item How do researchers know this? Did they study every student in the world?\\
-        \textcolor{keyred}{\textbf{No — they used a sample of 12,000 students and applied statistical}}\\
-        \textcolor{keyred}{\textbf{methods to draw conclusions about a larger population.}}
+        \ans{No — they used a sample of 12,000 students and applied statistical
+        methods to draw conclusions about a larger population.}
 
   \item Could this finding be wrong? What would make you doubt it?\\
-        \textcolor{keyred}{\textbf{Yes — the sample might not be representative; other factors (e.g., overall}}\\
-        \textcolor{keyred}{\textbf{health, study habits) could explain both sleep and test performance.}}
+        \ans{Yes — the sample might not be representative; other factors (e.g., overall
+        health, study habits) could explain both sleep and test performance.}
 
   \item What information would you want before trusting this headline?\\
-        \textcolor{keyred}{\textbf{Who was sampled, how sleep was measured, whether other variables}}\\
-        \textcolor{keyred}{\textbf{(confounders) were controlled for, whether the study was an experiment.}}
+        \ans{Who was sampled, how sleep was measured, whether other variables
+        (confounders) were controlled for, whether the study was an experiment.}
 \end{enumerate}
 \end{hookbox}
 
@@ -234,8 +123,8 @@ Name:\;\ans{\;Key\;} & Date:\;\ans{\;\textit{(any)}\;} & Period:\;\ans{\;\textit
 
 \vspace{4pt}
 \textbf{Why use a sample instead of a census?}\\
-\textcolor{keyred}{\textbf{A census is too costly, time-consuming, or impossible for large populations.
-A well-chosen sample can give reliable estimates.}}
+\ans{A census is too costly, time-consuming, or impossible for large populations.
+A well-chosen sample can give reliable estimates.}
 
 \columnbreak
 
@@ -271,25 +160,25 @@ need statistics, because there would be \ans{nothing}
 \small\textbf{Scenario Analysis} \hfill \textcolor{slate}{\scriptsize Sample: Hospital knee-surgery study}
 
 \vspace{5pt}
-\textit{Scenario:} \textcolor{keyred}{\textbf{A hospital tracks recovery times for 50 patients after knee surgery.}}
+\textit{Scenario:} \ans{A hospital tracks recovery times for 50 patients after knee surgery.}
 
 \vspace{4pt}
 \begin{tabularx}{\linewidth}{@{} l X @{}}
-\textbf{Individual:}   & \textcolor{keyred}{\textbf{a single patient who had knee surgery}} \\[6pt]
-\textbf{Population:}   & \textcolor{keyred}{\textbf{all patients who have knee surgery (at this hospital / in general)}} \\[6pt]
-\textbf{Sample:}       & \textcolor{keyred}{\textbf{the 50 patients whose recovery times were tracked}} \\[6pt]
-\textbf{Variable(s):}  & \textcolor{keyred}{\textbf{recovery time (quantitative); could also include pain level, age, etc.}} \\[6pt]
+\textbf{Individual:}   & \ans{a single patient who had knee surgery} \\[6pt]
+\textbf{Population:}   & \ans{all patients who have knee surgery (at this hospital / in general)} \\[6pt]
+\textbf{Sample:}       & \ans{the 50 patients whose recovery times were tracked} \\[6pt]
+\textbf{Variable(s):}  & \ans{recovery time (quantitative); could also include pain level, age, etc.} \\[6pt]
 \end{tabularx}
 
 \vspace{4pt}
 \textbf{Is a census feasible? Why or why not?}\\
-\textcolor{keyred}{\textbf{No — tracking every knee-surgery patient would be prohibitively expensive and}}\\
-\textcolor{keyred}{\textbf{time-consuming. The 50-patient sample can still yield useful information.}}
+\ans{No — tracking every knee-surgery patient would be prohibitively expensive and
+time-consuming. The 50-patient sample can still yield useful information.}
 
 \vspace{4pt}
 \textbf{Record one key insight from another group's scenario:}\\
-\textcolor{keyred}{\textbf{(Answers will vary — students should capture a specific example of how}}\\
-\textcolor{keyred}{\textbf{identifying the population vs. sample changes how we interpret results.)}}
+\ans{(Answers will vary — students should capture a specific example of how
+identifying the population vs. sample changes how we interpret results.)}
 \end{practicebox}
 
 \vspace{0.1in}
@@ -310,9 +199,9 @@ need statistics, because there would be \ans{nothing}
 
 \textbf{Big Idea — Write it in your own words:}\\
 \textit{What is the point of statistics?}\\[4pt]
-\textcolor{keyred}{\textbf{Statistics gives us tools to learn about a large}}\\
-\textcolor{keyred}{\textbf{population using a smaller sample, and to}}\\
-\textcolor{keyred}{\textbf{account for the natural variation in data.}}
+\ans{Statistics gives us tools to learn about a large
+population using a smaller sample, and to
+account for the natural variation in data.}
 
 \end{multicols}
 \end{spiralbox}
@@ -322,11 +211,11 @@ need statistics, because there would be \ans{nothing}
 % ── EXTRA NOTES ──────────────────────────────────────────────────────────────
 \begin{notesbox}{Additional Notes}
 \vspace{2pt}
-\textcolor{keyred}{\small\textit{Key reminders for grading / discussion:}}\\[2pt]
-\textcolor{keyred}{\small $\bullet$\ \textbf{Association $\neq$ causation} — sleeping more may not directly cause higher scores; other variables may be involved.}\\[2pt]
-\textcolor{keyred}{\small $\bullet$\ A \textbf{sample} is a group of individuals; \textbf{data} are the values recorded — these are different things.}\\[2pt]
-\textcolor{keyred}{\small $\bullet$\ Variation is \textit{expected} and \textit{informative} — it is not a flaw in the data collection.}\\[2pt]
-\textcolor{keyred}{\small $\bullet$\ The 4-step process will spiral throughout the entire course; students should internalize it now.}
+\ans{\small\textit{Key reminders for grading / discussion:}}\\[2pt]
+\ans{\small $\bullet$\ \textbf{Association $\neq$ causation} — sleeping more may not directly cause higher scores; other variables may be involved.}\\[2pt]
+\ans{\small $\bullet$\ A \textbf{sample} is a group of individuals; \textbf{data} are the values recorded — these are different things.}\\[2pt]
+\ans{\small $\bullet$\ Variation is \textit{expected} and \textit{informative} — it is not a flaw in the data collection.}\\[2pt]
+\ans{\small $\bullet$\ The 4-step process will spiral throughout the entire course; students should internalize it now.}
 \end{notesbox}
 
 \end{document}
