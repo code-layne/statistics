@@ -28,6 +28,7 @@
 
 % ── Box styles ───────────────────────────────────────────────────────────────
 \newtcolorbox{scenariobox}[2][]{
+    enhanced,
     colback=white, colframe=#2, boxrule=0.9pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=4mm,
     fonttitle=\bfseries\small\color{white}, title={#1},
@@ -36,10 +37,12 @@
     breakable
 }
 \newtcolorbox{headlinebox}[1]{
+    enhanced,
     colback=#1, colframe=#1!60!black, boxrule=0pt,
     arc=1.5mm, left=3mm, right=3mm, top=2mm, bottom=2mm
 }
 \newtcolorbox{teachernote}{
+    enhanced,
     colback=redbg, colframe=redacc, boxrule=0.7pt, arc=1.5mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm,
     fonttitle=\bfseries\scriptsize\color{white}, title={Teacher Note},
@@ -69,15 +72,16 @@ Variable(s): & \ans{#4} \\
 \begin{document}
 
 % ── Page header ──────────────────────────────────────────────────────────────
-\begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
-    rectangle ([yshift=-0.52in]current page.north east);
-\end{tikzpicture}
-\vspace{-0.42in}
-{\color{white}\textbf{\large AP Statistics \hfill Unit 1: Exploring One-Variable Data}}\\[2pt]
-{\color{skymid}\small\textbf{Lesson 1.1 \quad Group Activity: Identifying Statistical Components
-  \textcolor{keyred}{--- Key}}}
-\vspace{0.16in}
+    \noindent
+    \colorbox{navy}{%
+        \parbox{\dimexpr\linewidth}{%
+            \vspace{6pt}
+            \color{white}\textbf{\large AP Statistics \hfill Unit 1, Lesson 1.1}\\[2pt]
+            {\color{skymid}\small\textbf{Group Activity}}
+            \vspace{6pt}
+        }%
+    }
+    \vspace{1.5em}
 
 \noindent
 \begin{tabularx}{\linewidth}{X X X}

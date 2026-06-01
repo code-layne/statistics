@@ -66,7 +66,9 @@ L01_STUDENT_PDFS := \
     $(L01)/warmup/main.pdf \
     $(L01)/notes/main.pdf \
     $(L01)/activity/main.pdf \
-    $(L01)/homework/main.pdf
+    $(L01)/homework/main.pdf \
+	$(L01)/exit_ticket/main.pdf
+
 
 # Add $(L01)/exit/main.pdf above (before homework) once that directory exists.
 
@@ -81,7 +83,9 @@ L01_FULL_PDFS := \
     $(L01)/activity/main.pdf \
     $(L01)/activity_key/main.pdf \
     $(L01)/homework/main.pdf \
-    $(L01)/homework_key/main.pdf
+    $(L01)/homework_key/main.pdf \
+    $(L01)/exit_ticket/main.pdf \
+    $(L01)/exit_ticket_key/main.pdf
 
 # Add $(L01)/exit/main.pdf and $(L01)/exit_key/main.pdf above once built.
 

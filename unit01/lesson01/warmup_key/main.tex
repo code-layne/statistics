@@ -28,14 +28,16 @@
 \begin{document}
 
 % ── Header ───────────────────────────────────────────────────────────────────
-\begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
-    rectangle ([yshift=-0.5in]current page.north east);
-\end{tikzpicture}
-\vspace{-0.4in}
-{\color{white}\textbf{\large AP Statistics \hfill Unit 1, Lesson 1.1}}\\[2pt]
-{\color{skymid}\small\textbf{Warm-Up --- \textcolor{keyred}{Key}}}
-\vspace{0.2in}
+    \noindent
+    \colorbox{navy}{%
+        \parbox{\dimexpr\linewidth}{%
+            \vspace{6pt}
+            \color{white}\textbf{\large AP Statistics \hfill Unit 1, Lesson 1.1}\\[2pt]
+            {\color{skymid}\small\textbf{Warm-Up}}
+            \vspace{6pt}
+        }%
+    }
+    \vspace{1.5em}
 
 \noindent
 \begin{tabularx}{\linewidth}{X X X}

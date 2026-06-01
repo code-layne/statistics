@@ -10,7 +10,6 @@
 \usepackage{tabularx}
 \usepackage{tikz}
 \usepackage{colortbl}
-\usepackage{amssymb}
 
 \tcbuselibrary{breakable, skins}
 
@@ -32,6 +31,7 @@
 
 % ── Box styles ───────────────────────────────────────────────────────────────
 \newtcolorbox{objectivebox}{
+    enhanced,
     colback=sky, colframe=navy, boxrule=1pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm,
     fonttitle=\bfseries\small\color{white}, title={Primary Objective},
@@ -39,6 +39,7 @@
     boxed title style={colback=navy, colframe=navy, arc=1.5mm}
 }
 \newtcolorbox{vocabbox}{
+    enhanced,
     colback=greenbg, colframe=greenacc, boxrule=0.8pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm,
     fonttitle=\bfseries\small\color{white}, title={Vocabulary \& Key Concepts},
@@ -47,6 +48,7 @@
     breakable
 }
 \newtcolorbox{hookbox}{
+    enhanced,
     colback=hookbg, colframe=goldacc, boxrule=0.8pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm,
     fonttitle=\bfseries\small\color{white}, title={Hook},
@@ -55,6 +57,7 @@
     breakable
 }
 \newtcolorbox{notesbox}[1]{
+    enhanced,
     colback=white, colframe=navy, boxrule=0.8pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm,
     fonttitle=\bfseries\small\color{white}, title={#1},
@@ -63,6 +66,7 @@
     breakable
 }
 \newtcolorbox{practicebox}{
+    enhanced,
     colback=redbg, colframe=redacc, boxrule=0.8pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm,
     fonttitle=\bfseries\small\color{white}, title={Guided Practice},
@@ -71,6 +75,7 @@
     breakable
 }
 \newtcolorbox{spiralbox}{
+    enhanced,
     colback=white, colframe=slate, boxrule=0.6pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm,
     fonttitle=\bfseries\small\color{white}, title={Connections \& Big Ideas},
@@ -100,16 +105,16 @@
 \begin{document}
 
 % ── Page header ──────────────────────────────────────────────────────────────
-\begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
-    rectangle ([yshift=-0.52in]current page.north east);
-\end{tikzpicture}
-\vspace{-0.42in}
-{\color{white}\textbf{\large AP Statistics \hfill Unit 1: Exploring One-Variable Data}}\\[2pt]
-{\color{skymid}\small\textbf{Lesson 1.1 \quad Introducing Statistics: What Can We Learn from Data?}}
-\hfill
-{\color{keyred}\small\textbf{--- ANSWER KEY ---}}
-\vspace{0.18in}
+    \noindent
+    \colorbox{navy}{%
+        \parbox{\dimexpr\linewidth}{%
+            \vspace{6pt}
+            \color{white}\textbf{\large AP Statistics \hfill Unit 1, Lesson 1.1}\\[2pt]
+            {\color{skymid}\small\textbf{Guided Notes}}
+            \vspace{6pt}
+        }%
+    }
+    \vspace{1.5em}
 
 % Name / Date / Period row
 \noindent
@@ -132,43 +137,31 @@ Name:\;\ans{\;Key\;} & Date:\;\ans{\;\textit{(any)}\;} & Period:\;\ans{\;\textit
 % ── VOCABULARY ───────────────────────────────────────────────────────────────
 \begin{vocabbox}
 \small
-\begin{multicols}{2}
 
 \noindent\textbf{\textcolor{navy}{Statistics:}}\quad
-\ans{the science of collecting, analyzing,}\\
-\ans{and drawing conclusions from data}\\[4pt]
+\textcolor{keyred}{\textbf{the science of collecting, analyzing, and drawing conclusions from data}}\\[4pt]
 
 \noindent\textbf{\textcolor{navy}{Individual:}}\quad
-\ans{a single person, object, or event}\\
-\ans{in a dataset}\\[4pt]
+\textcolor{keyred}{\textbf{a single person, object, or event in a dataset}}\\[4pt]
 
 \noindent\textbf{\textcolor{navy}{Population:}}\quad
-\ans{the entire group of individuals}\\
-\ans{of interest}\\[4pt]
+\textcolor{keyred}{\textbf{the entire group of individuals of interest}}\\[4pt]
 
 \noindent\textbf{\textcolor{navy}{Sample:}}\quad
-\ans{a subset of the population}\\
-\ans{from which data are collected}\\[4pt]
+\textcolor{keyred}{\textbf{a subset of the population from which data are collected}}\\[4pt]
 
 \noindent\textbf{\textcolor{navy}{Census:}}\quad
-\ans{data collected from EVERY individual}\\
-\ans{in the population}\\[4pt]
-
-\columnbreak
+\textcolor{keyred}{\textbf{data collected from EVERY individual in the population}}\\[4pt]
 
 \noindent\textbf{\textcolor{navy}{Variability / Variation:}}\\
-\textcolor{keyred}{\textbf{Natural differences in values across}}\\
-\textcolor{keyred}{\textbf{individuals — the reason statistics exists}}\\[4pt]
+\textcolor{keyred}{\textbf{natural differences in values across individuals — the reason statistics exists}}\\[4pt]
 
 \noindent\textbf{\textcolor{navy}{Data:}}\quad
-\ans{recorded values for individuals;}\\
-\ans{can be categorical or quantitative}\\[4pt]
+\textcolor{keyred}{\textbf{recorded values for individuals; can be categorical or quantitative}}\\[4pt]
 
 \noindent\textbf{\textcolor{navy}{Anecdotal evidence:}}\\
-\textcolor{keyred}{\textbf{data from a few unrepresentative cases;}}\\
-\textcolor{keyred}{\textbf{not reliable for drawing conclusions}}\\[4pt]
+\textcolor{keyred}{\textbf{data from a few unrepresentative cases; not reliable for drawing conclusions}}\\[4pt]
 
-\end{multicols}
 \end{vocabbox}
 
 \vspace{0.1in}

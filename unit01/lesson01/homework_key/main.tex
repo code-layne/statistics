@@ -27,6 +27,7 @@
 
 % ── Box styles ───────────────────────────────────────────────────────────────
 \newtcolorbox{blurbbox}[2][]{
+    enhanced,
     colback=white, colframe=#2, boxrule=0.9pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=4mm,
     fonttitle=\bfseries\small\color{white}, title={#1},
@@ -35,10 +36,12 @@
     breakable
 }
 \newtcolorbox{headlinebox}[1]{
+    enhanced,
     colback=#1, colframe=#1!50!black, boxrule=0pt,
     arc=1.5mm, left=3mm, right=3mm, top=2mm, bottom=2mm
 }
 \newtcolorbox{reflectionbox}{
+    enhanced,
     colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=4mm,
     fonttitle=\bfseries\small\color{white}, title={Reflection},
@@ -47,6 +50,7 @@
     breakable
 }
 \newtcolorbox{extensionbox}{
+    enhanced,
     colback=goldbg, colframe=goldacc, boxrule=0.8pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=4mm,
     fonttitle=\bfseries\small\color{white},
@@ -56,6 +60,7 @@
     breakable
 }
 \newtcolorbox{teachernote}{
+    enhanced,
     colback=redbg, colframe=redacc, boxrule=0.7pt, arc=1.5mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm,
     fonttitle=\bfseries\scriptsize\color{white}, title={Teacher Note},
@@ -86,15 +91,16 @@ Variable(s): & \ans{#4} \\
 \begin{document}
 
 % ── Page header ──────────────────────────────────────────────────────────────
-\begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
-    rectangle ([yshift=-0.52in]current page.north east);
-\end{tikzpicture}
-\vspace{-0.42in}
-{\color{white}\textbf{\large AP Statistics \hfill Unit 1: Exploring One-Variable Data}}\\[2pt]
-{\color{skymid}\small\textbf{Lesson 1.1 Homework \textcolor{keyred}{--- Key}
-  \quad Identifying Statistical Components}}
-\vspace{0.16in}
+    \noindent
+    \colorbox{navy}{%
+        \parbox{\dimexpr\linewidth}{%
+            \vspace{6pt}
+            \color{white}\textbf{\large AP Statistics \hfill Unit 1, Lesson 1.1}\\[2pt]
+            {\color{skymid}\small\textbf{Homework}}
+            \vspace{6pt}
+        }%
+    }
+    \vspace{1.5em}
 
 \noindent
 \begin{tabularx}{\linewidth}{X X X}

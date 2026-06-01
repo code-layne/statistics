@@ -31,6 +31,7 @@
 
 % ── Box styles ───────────────────────────────────────────────────────────────
 \newtcolorbox{objectivebox}{
+    enhanced,
     colback=sky, colframe=navy, boxrule=1pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm,
     fonttitle=\bfseries\small\color{white}, title={Primary Objective},
@@ -38,6 +39,7 @@
     boxed title style={colback=navy, colframe=navy, arc=1.5mm}
 }
 \newtcolorbox{vocabbox}{
+    enhanced,
     colback=greenbg, colframe=greenacc, boxrule=0.8pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm,
     fonttitle=\bfseries\small\color{white}, title={Vocabulary \& Key Concepts},
@@ -46,6 +48,7 @@
     breakable
 }
 \newtcolorbox{hookbox}{
+    enhanced,
     colback=hookbg, colframe=goldacc, boxrule=0.8pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm,
     fonttitle=\bfseries\small\color{white}, title={Hook},
@@ -54,6 +57,7 @@
     breakable
 }
 \newtcolorbox{notesbox}[1]{
+    enhanced,
     colback=white, colframe=navy, boxrule=0.8pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm,
     fonttitle=\bfseries\small\color{white}, title={#1},
@@ -62,6 +66,7 @@
     breakable
 }
 \newtcolorbox{practicebox}{
+    enhanced,
     colback=redbg, colframe=redacc, boxrule=0.8pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm,
     fonttitle=\bfseries\small\color{white}, title={Guided Practice},
@@ -70,6 +75,7 @@
     breakable
 }
 \newtcolorbox{spiralbox}{
+    enhanced,
     colback=white, colframe=slate, boxrule=0.6pt, arc=2mm,
     left=3mm, right=3mm, top=2mm, bottom=2mm,
     fonttitle=\bfseries\small\color{white}, title={Connections \& Big Ideas},
@@ -101,14 +107,16 @@
 \begin{document}
 
 % ── Page header ──────────────────────────────────────────────────────────────
-\begin{tikzpicture}[remember picture, overlay]
-  \fill[navy] (current page.north west)
-    rectangle ([yshift=-0.52in]current page.north east);
-\end{tikzpicture}
-\vspace{-0.42in}
-{\color{white}\textbf{\large AP Statistics \hfill Unit 1: Exploring One-Variable Data}}\\[2pt]
-{\color{skymid}\small\textbf{Lesson 1.1 \quad Introducing Statistics: What Can We Learn from Data?}}
-\vspace{0.18in}
+    \noindent
+    \colorbox{navy}{%
+        \parbox{\dimexpr\linewidth}{%
+            \vspace{6pt}
+            \color{white}\textbf{\large AP Statistics \hfill Unit 1, Lesson 1.1}\\[2pt]
+            {\color{skymid}\small\textbf{Guided Notes}}
+            \vspace{6pt}
+        }%
+    }
+    \vspace{1.5em}
 
 % Name / Date / Period row
 \noindent
@@ -130,17 +138,14 @@ Name:\;\blank{4.8cm} & Date:\;\blank{2.8cm} & Period:\;\blank{1.5cm}
 
 % ── VOCABULARY ───────────────────────────────────────────────────────────────
 \begin{vocabbox}
-\begin{multicols}{2}
-\termblank{Statistics}
-\termblank{Individual}
-\termblank{Population}
-\termblank{Sample}
-\columnbreak
-\termblank{Census}
+\termblanklong{Statistics}
+\termblanklong{Individual}
+\termblanklong{Population}
+\termblanklong{Sample}
+\termblanklong{Census}
 \termblanklong{Variability / Variation}
-\termblank{Data}
-\termblank{Anecdotal evidence}
-\end{multicols}
+\termblanklong{Data}
+\termblanklong{Anecdotal evidence}
 \end{vocabbox}
 
 \vspace{0.1in}
