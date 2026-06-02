@@ -1,0 +1,618 @@
+%! AP Statistics — Unit 1, Lesson 1.2 — Slides (Beamer)
+\documentclass[aspectratio=169, 11pt]{beamer}
+\usepackage{apstats-beamer}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, fit, backgrounds}
+
+%=============================================================================
+\begin{document}
+
+% ─────────────────────────────────────────────────────────────────────────────
+% SLIDE 1 — LESSON TITLE
+% ─────────────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[navylight] (current page.north west)
+      rectangle ([yshift=-1.35cm]current page.north east);
+  \end{tikzpicture}
+  \vspace{2.8cm}
+  \hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    {\color{goldacc}\bfseries\small LESSON 1.2}\\[0.5cm]
+    {\color{white}\bfseries\LARGE The Language of Variation:\\[0.25cm]
+      Variables}\\[1.4cm]
+    {\color{skymid}\small AP Statistics~$\cdot$~Unit 1: Exploring One-Variable Data}
+  \end{minipage}
+\end{frame}
+}
+
+% ─────────────────────────────────────────────────────────────────────────────
+% SLIDE 2 — PRIMARY OBJECTIVE
+% ─────────────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=sky}
+\begin{frame}[t, plain]
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[navy] (current page.north west)
+      rectangle ([yshift=-0.25cm]current page.north east);
+  \end{tikzpicture}
+  \vspace{0.45cm}\par
+  \hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+
+    \sectionlabel{Primary Objective}
+
+    \normalsize
+    Students will classify variables as \textbf{categorical} or
+    \textbf{quantitative}, and further distinguish quantitative variables as
+    \textbf{discrete} or \textbf{continuous}. Students will articulate why
+    variable type determines which statistical methods are appropriate
+    (Big Idea: VAR).
+
+    \vspace{0.55cm}
+
+    \normalsize\textbf{\color{navy}By the end of this lesson, I will be able to:}
+
+    \smallskip
+    \begin{itemize}
+      \setlength{\itemsep}{0.3em}\setlength{\topsep}{0.2em}
+      \item Classify a variable as categorical or quantitative and justify
+            using the ``average test.''
+      \item Distinguish between discrete and continuous quantitative variables
+            and give an example of each.
+      \item Explain why variable type must be identified before choosing a
+            statistical display or summary.
+    \end{itemize}
+
+  \end{minipage}
+\end{frame}
+}
+
+% ─────────────────────────────────────────────────────────────────────────────
+% SLIDE 3 — HOOK: SORT THESE VARIABLES
+% ─────────────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=hookbg}
+\begin{frame}[t, plain]
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[goldacc] (current page.north west)
+      rectangle ([yshift=-1.35cm]current page.north east);
+    \node[anchor=west, text=white, font=\bfseries\large,
+          inner xsep=0.55cm, inner ysep=0pt]
+      at ([yshift=-0.68cm]current page.north west)
+      {Hook --- Sort These Variables};
+  \end{tikzpicture}
+  \vspace{1.1cm}\par
+  \hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    \small
+    {\color{white}\bfseries
+      The table below shows data recorded for four students.
+      Sort the five variables into two groups --- without looking at any labels yet.
+      What was your sorting rule?}
+
+    \vspace{0.4cm}
+
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{@{} >{\bfseries\color{white}}p{0.14\textwidth}
+                        >{\centering\arraybackslash}p{0.10\textwidth}
+                        >{\centering\arraybackslash}p{0.10\textwidth}
+                        >{\centering\arraybackslash}p{0.14\textwidth}
+                        >{\centering\arraybackslash}p{0.14\textwidth} @{}}
+      \rowcolor{navy}
+      {\color{skymid}Name} &
+      {\color{skymid}Grade} &
+      {\color{skymid}GPA} &
+      {\color{skymid}Fav.\ Color} &
+      {\color{skymid}Sleep (hrs)} \\
+      \rowcolor{white!15!hookbg}
+      {\color{white}Jordan}  & {\color{white}11} & {\color{white}3.7} &
+        {\color{white}Blue}   & {\color{white}7.5} \\
+      \rowcolor{white!8!hookbg}
+      {\color{white}Priya}   & {\color{white}10} & {\color{white}3.2} &
+        {\color{white}Green}  & {\color{white}6.0} \\
+      \rowcolor{white!15!hookbg}
+      {\color{white}Marcus}  & {\color{white}12} & {\color{white}2.9} &
+        {\color{white}Red}    & {\color{white}8.0} \\
+      \rowcolor{white!8!hookbg}
+      {\color{white}Sofia}   & {\color{white}11} & {\color{white}3.5} &
+        {\color{white}Purple} & {\color{white}7.0} \\
+    \end{tabular}
+
+    \vspace{0.45cm}
+    {\color{white}\bfseries\small
+      \textbf{Group A:}\;\underline{\hspace{5cm}} \qquad
+      \textbf{Group B:}\;\underline{\hspace{5cm}}}
+  \end{minipage}
+\end{frame}
+}
+
+% ─────────────────────────────────────────────────────────────────────────────
+% SLIDE 4 — VOCABULARY & KEY CONCEPTS
+% ─────────────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=greenbg}
+\begin{frame}[t, plain]
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[greenacc] (current page.north west)
+      rectangle ([yshift=-1.35cm]current page.north east);
+    \node[anchor=west, text=white, font=\bfseries\large,
+          inner xsep=0.55cm]
+      at ([yshift=-0.68cm]current page.north west)
+      {Vocabulary \& Key Concepts};
+  \end{tikzpicture}
+  \vspace{1.1cm}\par
+  \hspace{0.4cm}%
+  \begin{minipage}{0.93\textwidth}
+    \vspace{0.4em}
+    \footnotesize
+    \begin{multicols}{2}
+      \textbf{\color{greenacc}Variable} --- a characteristic that can take
+        different values for different individuals\\[5pt]
+      \textbf{\color{greenacc}Categorical variable} --- places an individual
+        into one of several groups or categories; no meaningful arithmetic\\[5pt]
+      \textbf{\color{greenacc}Quantitative variable} --- takes numerical values
+        for which arithmetic makes sense
+
+      \columnbreak
+
+      \textbf{\color{greenacc}Discrete quantitative variable} --- countable
+        values with gaps (e.g., number of siblings: 0, 1, 2, \ldots)\\[5pt]
+      \textbf{\color{greenacc}Continuous quantitative variable} --- can take
+        any value in an interval; measured, not counted (e.g., height, time)\\[5pt]
+      \textbf{\color{greenacc}Distribution of a variable} --- describes what
+        values a variable takes and how often; developed in Lessons 1.3--1.10
+    \end{multicols}
+  \end{minipage}
+\end{frame}
+}
+
+% ─────────────────────────────────────────────────────────────────────────────
+% SLIDE 5 — CATEGORICAL VS. QUANTITATIVE: THE AVERAGE TEST
+% ─────────────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=white}
+\begin{frame}[t, plain]
+  \navyheader{Categorical vs.\ Quantitative: The Average Test}
+  \hspace{0.4cm}%
+  \begin{minipage}{0.93\textwidth}
+    \vspace{0.2em}
+    \begin{columns}[T]
+
+      \begin{column}{0.48\textwidth}
+        \small
+        \textbf{\color{greenacc}Categorical Variable}\\[4pt]
+        Places an individual into a \textbf{group or category}.
+        The values are words or labels --- or numbers that act as labels.\\[6pt]
+        \textit{Examples:} favorite color, mode of transport,
+        blood type, ZIP code\\[10pt]
+
+        \textbf{\color{navy}Quantitative Variable}\\[4pt]
+        Takes \textbf{numerical values} for which arithmetic makes sense.
+        You can add, subtract, and average the values meaningfully.\\[6pt]
+        \textit{Examples:} GPA, hours of sleep, commute time, salary
+      \end{column}
+
+      \begin{column}{0.48\textwidth}
+        \small
+        \textbf{\color{goldacc}The Average Test}\\[4pt]
+        Ask: \textit{``Does the average of these values give a
+        \textbf{meaningful} result in context?''}
+
+        \vspace{8pt}
+        \setlength{\tabcolsep}{6pt}
+        \renewcommand{\arraystretch}{1.6}
+        \begin{tabular}{@{} >{\bfseries}p{0.12\textwidth} p{0.72\textwidth} @{}}
+          \rowcolor{greenbg}
+          Yes & The variable is \textbf{quantitative}. \\
+          \rowcolor{redbg}
+          No  & The variable is \textbf{categorical}. \\
+        \end{tabular}
+
+        \vspace{10pt}
+        \footnotesize\color{slate}
+        \textit{``Does averaging jersey numbers tell you anything about
+        the players?''}\\[4pt]
+        \textit{``Does averaging commute times tell you something useful?''}
+      \end{column}
+
+    \end{columns}
+  \end{minipage}
+\end{frame}
+}
+
+% ─────────────────────────────────────────────────────────────────────────────
+% SLIDE 6 — TRAP VARIABLES
+% ─────────────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=white}
+\begin{frame}[t, plain]
+  \navyheader{Watch Out: Numbers That Are Categorical}
+  \hspace{0.4cm}%
+  \begin{minipage}{0.93\textwidth}
+    \vspace{0.3em}
+    \small
+    \textbf{\color{redacc}A number is not automatically quantitative.}
+    If the number is being used as a \textit{label} or \textit{identifier},
+    it is categorical --- averaging it gives a meaningless result.
+
+    \vspace{0.6em}
+
+    \setlength{\tabcolsep}{8pt}
+    \renewcommand{\arraystretch}{1.7}
+    \begin{tabular}{@{} >{\bfseries\color{navy}}p{0.22\textwidth}
+                        p{0.36\textwidth}
+                        p{0.32\textwidth} @{}}
+      \rowcolor{sky}
+      Variable & Why it looks quantitative & Why it is categorical \\
+      \midrule
+      ZIP code       & It's a 5-digit number  & Labels a geographic area; average ZIP = nonsense \\
+      Jersey number  & It's a number on a uniform & Identifies a player; no meaningful arithmetic \\
+      Student ID     & It's a numeric code    & A unique identifier; averaging IDs means nothing \\
+      Phone area code & It's a 3-digit number & Labels a calling region; not a measured amount \\
+      Likert rating (1--5) & Looks like a scale & Equal spacing not guaranteed; context-dependent \\
+    \end{tabular}
+
+    \vspace{0.5em}
+    \footnotesize\color{slate}
+    \textit{The same \textbf{question} can yield different variable types.
+    ``How do students rate the cafeteria?''
+    can be recorded as a 1--5 scale \textbf{or} as ``satisfied / unsatisfied'' ---
+    your choice of measurement determines the variable type.}
+  \end{minipage}
+\end{frame}
+}
+
+% ─────────────────────────────────────────────────────────────────────────────
+% SLIDE 7 — CLASSIFYING VARIABLES: EXAMPLES
+% ─────────────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=white}
+\begin{frame}[t, plain]
+  \navyheader{Classifying Variables: Examples}
+  \hspace{0.4cm}%
+  \begin{minipage}{0.93\textwidth}
+    \vspace{0.3em}
+    \small
+    Classify each variable: \textbf{C} = Categorical,
+    \textbf{QD} = Quantitative Discrete,
+    \textbf{QC} = Quantitative Continuous.
+
+    \vspace{0.5em}
+    \setlength{\tabcolsep}{7pt}
+    \renewcommand{\arraystretch}{1.65}
+    \begin{tabular}{@{} c >{\raggedright\arraybackslash}p{0.38\textwidth}
+                        >{\centering\arraybackslash}p{0.08\textwidth}
+                        p{0.35\textwidth} @{}}
+      \rowcolor{sky}
+      \# & Variable & Type & Reason \\
+      \midrule
+      1 & Eye color                        & C   & Labels a category; no arithmetic \\
+      2 & Number of siblings               & QD  & Countable; gaps between values \\
+      3 & Body temperature (\textdegree F) & QC  & Measured; can be any decimal \\
+      4 & Area code                        & C   & Numeric label; averaging meaningless \\
+      5 & Number of words in an essay      & QD  & Count of whole words \\
+      6 & Time to run a mile (min)         & QC  & Measured time; any positive value \\
+      7 & Blood type (A, B, AB, O)         & C   & Places individual into a category \\
+      8 & Annual salary (\$)               & QC  & Measured amount; treated as continuous \\
+    \end{tabular}
+  \end{minipage}
+\end{frame}
+}
+
+% ─────────────────────────────────────────────────────────────────────────────
+% SLIDE 8 — DISCRETE VS. CONTINUOUS
+% ─────────────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=white}
+\begin{frame}[t, plain]
+  \navyheader{Quantitative Variables: Discrete vs.\ Continuous}
+  \hspace{0.4cm}%
+  \begin{minipage}{0.93\textwidth}
+    \vspace{0.3em}
+    \begin{columns}[T]
+
+      \begin{column}{0.47\textwidth}
+        \small
+        \textbf{\color{navy}Discrete}\\[4pt]
+        Values are \textbf{countable} --- gaps exist between them.
+        You can list all possible values.\\[6pt]
+        \textit{Ask: ``Can I count them?''}\\[6pt]
+        \begin{tabular}{@{} >{\color{greenacc}\bfseries}l l @{}}
+          Anchor: & Number of pets \\
+          Values: & 0, 1, 2, 3, \ldots \\
+        \end{tabular}\\[6pt]
+        \footnotesize\color{slate}
+        More examples: number of siblings, songs on a playlist,
+        students in a class
+      \end{column}
+
+      \begin{column}{0.47\textwidth}
+        \small
+        \textbf{\color{navy}Continuous}\\[4pt]
+        Can take \textbf{any value in an interval} --- measured, not counted.
+        No gaps; values can fall between any two others.\\[6pt]
+        \textit{Ask: ``Could it fall between two values?''}\\[6pt]
+        \begin{tabular}{@{} >{\color{redacc}\bfseries}l l @{}}
+          Anchor: & Weight of a pet \\
+          Values: & any positive real number \\
+        \end{tabular}\\[6pt]
+        \footnotesize\color{slate}
+        More examples: height, commute time, temperature,
+        song duration
+      \end{column}
+
+    \end{columns}
+
+    \vspace{0.6em}
+    \small
+    \setlength{\tabcolsep}{7pt}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{@{} p{0.34\textwidth}
+                        >{\centering\arraybackslash}p{0.14\textwidth}
+                        >{\centering\arraybackslash}p{0.14\textwidth} @{}}
+      \rowcolor{navy}
+      {\color{white}\bfseries Question} &
+      {\color{white}\bfseries Discrete} &
+      {\color{white}\bfseries Continuous} \\
+      Are there gaps between values? & Yes & No \\
+      \rowcolor{sky}
+      Is it measured on a scale?     & No  & Yes \\
+      Can I list all possible values? & Yes & No \\
+    \end{tabular}
+  \end{minipage}
+\end{frame}
+}
+
+% ─────────────────────────────────────────────────────────────────────────────
+% SLIDE 9 — DECISION FLOWCHART
+% ─────────────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=white}
+\begin{frame}[plain]
+  \navyheader{Decision Flowchart: Classifying Any Variable}
+
+  \vspace{-0.3cm}
+  \begin{center}
+  \begin{tikzpicture}[
+    node distance = 0.55cm and 1.4cm,
+    decision/.style = {
+      diamond, draw=navy, fill=sky, thick,
+      text width=3.0cm, align=center,
+      inner sep=2pt, aspect=1.8
+    },
+    terminal/.style = {
+      rectangle, rounded corners=4pt,
+      draw=navy, thick,
+      text width=2.4cm, align=center,
+      minimum height=0.8cm, font=\bfseries\small
+    },
+    cat/.style    = {terminal, fill=greenbg,  draw=greenacc, text=greenacc},
+    discr/.style  = {terminal, fill=redbg,    draw=redacc,   text=redacc},
+    cont/.style   = {terminal, fill=goldbg,   draw=goldacc,  text=goldacc},
+    arrow/.style  = {-Stealth, thick, draw=navy},
+    lbl/.style    = {font=\footnotesize\bfseries, text=navy}
+  ]
+
+  % Nodes
+  \node[decision] (q1)
+    {Is the variable a word, label, or category?};
+
+  \node[cat, below left=0.7cm and 2.2cm of q1] (cat1)
+    {Categorical};
+
+  \node[decision, below=1.1cm of q1] (q2)
+    {Does averaging give a \emph{meaningful} result?};
+
+  \node[cat, below left=0.7cm and 2.2cm of q2] (cat2)
+    {Categorical \\ \footnotesize\normalfont (trap number)};
+
+  \node[decision, below=1.1cm of q2] (q3)
+    {Can you \emph{count} the values? (Are there gaps?)};
+
+  \node[discr, below left=0.7cm and 2.2cm of q3] (qd)
+    {Quantitative \\ Discrete};
+
+  \node[cont, below right=0.7cm and 2.2cm of q3] (qc)
+    {Quantitative \\ Continuous};
+
+  % Arrows
+  \draw[arrow] (q1) -- node[lbl, above left=-2pt]{Yes} (cat1);
+  \draw[arrow] (q1) -- node[lbl, right=2pt]{No}  (q2);
+  \draw[arrow] (q2) -- node[lbl, above left=-2pt]{No}  (cat2);
+  \draw[arrow] (q2) -- node[lbl, right=2pt]{Yes} (q3);
+  \draw[arrow] (q3) -- node[lbl, above left=-2pt]{Yes} (qd);
+  \draw[arrow] (q3) -- node[lbl, above right=-2pt]{No}  (qc);
+
+  \end{tikzpicture}
+  \end{center}
+\end{frame}
+}
+
+% ─────────────────────────────────────────────────────────────────────────────
+% SLIDE 10 — ACTIVE MONITORING: MINI-WHITEBOARD ROUND
+% ─────────────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=sky}
+\begin{frame}[t, plain]
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[navy] (current page.north west)
+      rectangle ([yshift=-1.35cm]current page.north east);
+    \node[anchor=west, text=white, font=\bfseries\large,
+          inner xsep=0.55cm, inner ysep=0pt]
+      at ([yshift=-0.68cm]current page.north west)
+      {Active Monitoring --- Mini-Whiteboard Round};
+  \end{tikzpicture}
+  \vspace{1.1cm}\par
+  \hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    \vspace{0.4em}
+    \small
+
+    For each variable your teacher displays, hold up your whiteboard showing:\\[6pt]
+    \hspace{1cm}
+    \textbf{\color{greenacc}C} \hspace{0.8cm}
+    \textbf{\color{navy}QD} \hspace{0.8cm}
+    \textbf{\color{redacc}QC}\\[8pt]
+    Then give a one-phrase reason out loud.
+
+    \vspace{0.6cm}
+
+    \begin{tabular}{@{} >{\bfseries\color{navy}}p{0.12\textwidth}
+                        p{0.80\textwidth} @{}}
+      Tip 1: & Use the average test first --- does averaging give a meaningful result? \\[4pt]
+      Tip 2: & If quantitative, ask ``Can I count it?'' to decide discrete vs.\ continuous. \\[4pt]
+      Tip 3: & Watch for numbers that are really labels. \\
+    \end{tabular}
+
+    \vspace{0.7cm}
+    \textcolor{slate}{\small\itshape
+      See Part 1 of the activity worksheet for the practice problems.}
+  \end{minipage}
+\end{frame}
+}
+
+% ─────────────────────────────────────────────────────────────────────────────
+% SLIDE 11 — GROUP ACTIVITY: CARD SORT
+% ─────────────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=redbg}
+\begin{frame}[t, plain]
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[redacc] (current page.north west)
+      rectangle ([yshift=-1.35cm]current page.north east);
+    \node[anchor=west, text=white, font=\bfseries\large,
+          inner xsep=0.55cm, inner ysep=0pt]
+      at ([yshift=-0.68cm]current page.north west)
+      {Group Activity --- Variable Card Sort};
+  \end{tikzpicture}
+  \vspace{1.1cm}\par
+  \hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    \vspace{0.4em}
+    \small
+
+    \begin{enumerate}
+      \setlength{\itemsep}{0.5em}\setlength{\topsep}{0em}
+      \item Open your activity worksheet to \textbf{Part 2}.
+      \item Sort the variable cards into three columns on the worksheet:\\[4pt]
+        \hspace{0.8cm}
+        \textbf{\color{greenacc}Categorical} \hspace{1.2cm}
+        \textbf{\color{navy}Quantitative Discrete} \hspace{1.2cm}
+        \textbf{\color{redacc}Quantitative Continuous}
+      \item When your group finishes, compare your sort with a neighboring group.
+            Resolve any disagreements before debriefing.
+      \item Be ready to defend the cards your group found most contested.
+    \end{enumerate}
+
+    \vspace{0.7cm}
+    {\color{redacc}\bfseries\small TIME: 8--10 minutes}
+
+    \vspace{0.3cm}
+    \textcolor{slate}{\small\itshape
+      Your teacher will debrief 2--3 contested cards whole-class.}
+  \end{minipage}
+\end{frame}
+}
+
+% ─────────────────────────────────────────────────────────────────────────────
+% SLIDE 12 — EXIT TICKET
+% ─────────────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[t, plain]
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[navylight] (current page.north west)
+      rectangle ([yshift=-1.35cm]current page.north east);
+  \end{tikzpicture}
+  \vspace{0.45cm}\par
+  \hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    {\color{goldacc}\bfseries\footnotesize\MakeUppercase{Exit Ticket}}
+    \vspace{0.5cm}\par
+    \small
+
+    {\color{skymid} A researcher is studying music listening habits.
+    For each variable on your exit ticket, write the type and a
+    one-phrase justification.}
+
+    \vspace{0.5cm}
+    \begin{enumerate}
+      \setlength{\itemsep}{0.5em}\setlength{\topsep}{0em}
+      \item {\color{white}Classify each of the five variables on your exit ticket
+            as \textbf{C}, \textbf{QD}, or \textbf{QC}.
+            Write a brief justification for each.}
+      \item {\color{white}Answer the AP-style multiple-choice question on
+            annual income and job type.
+            Write your answer \textit{and} explain your reasoning in one sentence.}
+    \end{enumerate}
+
+    \vspace{0.6cm}
+    {\color{skymid}\small\itshape
+      Completeness is graded. Justification is required for full credit.}
+  \end{minipage}
+\end{frame}
+}
+
+% ─────────────────────────────────────────────────────────────────────────────
+% SLIDE 13 — CLOSING & HOMEWORK
+% ─────────────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[t, plain]
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[navylight] (current page.north west)
+      rectangle ([yshift=-1.35cm]current page.north east);
+  \end{tikzpicture}
+  \vspace{0.45cm}\par
+  \hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    {\color{goldacc}\bfseries\footnotesize\MakeUppercase{Closing \& Homework}}
+    \vspace{0.4cm}\par
+    \begin{columns}[T]
+
+      \begin{column}{0.54\textwidth}
+        \small
+        {\color{goldacc}\bfseries Key Reminders}\\[5pt]
+        \begin{itemize}
+          \setlength{\itemsep}{0.4em}\setlength{\topsep}{0em}
+          \item {\color{white}\textbf{Numbers are not always quantitative.}
+            {\color{skymid} ZIP codes, jersey numbers, and IDs are
+            categorical labels.}}
+          \item {\color{white}\textbf{Use the average test.}
+            {\color{skymid} ``Does averaging these values give a
+            meaningful result?''}}
+          \item {\color{white}\textbf{Discrete = countable; continuous = measured.}
+            {\color{skymid} Ask: ``Could it fall between two values?''}}
+          \item {\color{white}\textbf{Variable type is Step 0.}
+            {\color{skymid} Identify it before choosing any display
+            or summary statistic.}}
+        \end{itemize}
+      \end{column}
+
+      \begin{column}{0.42\textwidth}
+        \small
+        {\color{goldacc}\bfseries Homework}\\[5pt]
+        {\color{skymid}Complete the homework worksheet for Lesson 1.2:}\\[5pt]
+        \begin{itemize}
+          \setlength{\itemsep}{0.35em}\setlength{\topsep}{0em}
+          \item {\color{white}NBA player dataset: classify all variables
+            with justification}
+          \item {\color{white}AP-style multiple-choice practice}
+          \item {\color{white}Optional extension: real dataset from
+            CDC or Census}
+        \end{itemize}
+        \vspace{0.45cm}
+        {\color{skymid}\itshape\small
+          \textbf{Preview:} Lesson 1.3 --- now that we know a variable is
+          categorical, how do we display and summarize it?}
+      \end{column}
+
+    \end{columns}
+  \end{minipage}
+\end{frame}
+}
+
+\end{document}
