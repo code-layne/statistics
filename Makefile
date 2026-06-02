@@ -1,5 +1,5 @@
 .PHONY: all clean distclean units unit01-pdf unit02-pdf \
-        lesson01-student lesson01-full
+        unit01-lesson01-student unit01-lesson01-full
 
 PROJECT_ROOT := $(CURDIR)
 TEXINPUTS    := $(PROJECT_ROOT)/shared//:
@@ -53,9 +53,9 @@ unit02-pdf: $(UNIT02_STAMPS)
 	pdfunite $(UNIT02_PDFS) target/compiled/unit02.pdf
 
 # ── Lesson 1.1 component lists ────────────────────────────────────────────────
-L01 := target/unit01/lesson01
+U01_L01 := target/unit01/lesson01
 
-L01_STUDENT_STAMPS := \
+U01_L01_STUDENT_STAMPS := \
     .stamps/unit01/lesson01/cover/main.stamp \
     .stamps/unit01/lesson01/warmup/main.stamp \
     .stamps/unit01/lesson01/notes/main.stamp \
@@ -63,15 +63,15 @@ L01_STUDENT_STAMPS := \
     .stamps/unit01/lesson01/exit_ticket/main.stamp \
     .stamps/unit01/lesson01/homework/main.stamp
 
-L01_STUDENT_PDFS := \
-    $(L01)/cover/main.pdf \
-    $(L01)/warmup/main.pdf \
-    $(L01)/notes/main.pdf \
-    $(L01)/activity/main.pdf \
-    $(L01)/exit_ticket/main.pdf \
+U01_L01_STUDENT_PDFS := \
+    $(U01_L01)/cover/main.pdf \
+    $(U01_L01)/warmup/main.pdf \
+    $(U01_L01)/notes/main.pdf \
+    $(U01_L01)/activity/main.pdf \
+    $(U01_L01)/exit_ticket/main.pdf \
     $(L01)/homework/main.pdf
 
-L01_FULL_STAMPS := \
+U01_L01_FULL_STAMPS := \
     .stamps/unit01/lesson01/main.stamp \
     .stamps/unit01/lesson01/slides/main.stamp \
     .stamps/unit01/lesson01/cover/main.stamp \
@@ -86,29 +86,29 @@ L01_FULL_STAMPS := \
     .stamps/unit01/lesson01/homework/main.stamp \
     .stamps/unit01/lesson01/homework_key/main.stamp
 
-L01_FULL_PDFS := \
-    $(L01)/main.pdf \
-    $(L01)/slides/main.pdf \
-    $(L01)/cover/main.pdf \
-    $(L01)/warmup/main.pdf \
-    $(L01)/warmup_key/main.pdf \
-    $(L01)/notes/main.pdf \
-    $(L01)/notes_key/main.pdf \
-    $(L01)/activity/main.pdf \
-    $(L01)/activity_key/main.pdf \
-    $(L01)/exit_ticket/main.pdf \
-    $(L01)/exit_ticket_key/main.pdf \
-    $(L01)/homework/main.pdf \
-    $(L01)/homework_key/main.pdf
+U01_L01_FULL_PDFS := \
+    $(U01_L01)/main.pdf \
+    $(U01_L01)/slides/main.pdf \
+    $(U01_L01)/cover/main.pdf \
+    $(U01_L01)/warmup/main.pdf \
+    $(U01_L01)/warmup_key/main.pdf \
+    $(U01_L01)/notes/main.pdf \
+    $(U01_L01)/notes_key/main.pdf \
+    $(U01_L01)/activity/main.pdf \
+    $(U01_L01)/activity_key/main.pdf \
+    $(U01_L01)/exit_ticket/main.pdf \
+    $(U01_L01)/exit_ticket_key/main.pdf \
+    $(U01_L01)/homework/main.pdf \
+    $(U01_L01)/homework_key/main.pdf
 
-lesson01-student: $(L01_STUDENT_STAMPS)
+unit01-lesson01-student: $(U01_L01_STUDENT_STAMPS)
 	mkdir -p target/compiled
-	pdfunite $(L01_STUDENT_PDFS) target/compiled/unit01_lesson01_student.pdf
+	pdfunite $(U01_L01_STUDENT_PDFS) target/compiled/unit01_lesson01_student.pdf
 	@echo "✓  Student packet  →  target/compiled/unit01_lesson01_student.pdf"
 
-lesson01-full: $(L01_FULL_STAMPS)
+unit01-lesson01-full: $(U01_L01_FULL_STAMPS)
 	mkdir -p target/compiled
-	pdfunite $(L01_FULL_PDFS) target/compiled/unit01_lesson01_full.pdf
+	pdfunite $(U01_L01_FULL_PDFS) target/compiled/unit01_lesson01_full.pdf
 	@echo "✓  Full lesson     →  target/compiled/unit01_lesson01_full.pdf"
 
 # ── Cleanup ───────────────────────────────────────────────────────────────────
