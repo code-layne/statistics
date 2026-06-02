@@ -70,7 +70,7 @@
 }
 
 % ─────────────────────────────────────────────────────────────────────────────
-% SLIDE 3 — HOOK: SORT THESE VARIABLES
+% SLIDE 3a — HOOK: SORT THESE VARIABLES
 % ─────────────────────────────────────────────────────────────────────────────
 {
 \setbeamercolor{background canvas}{bg=hookbg}
@@ -83,24 +83,25 @@
       at ([yshift=-0.68cm]current page.north west)
       {Hook --- Sort These Variables};
   \end{tikzpicture}
-  \vspace{1.1cm}\par
+  \vspace{1.2cm}\par
   \hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
+    \vspace{0.2cm}
     \small
     {\color{white}\bfseries
       The table below shows data recorded for four students.
-      Sort the five variables into two groups --- without looking at any labels yet.
-      What was your sorting rule?}
+      Sort the five column variables into two groups ---
+      \emph{without} being told the group names.}
 
-    \vspace{0.4cm}
+    \vspace{0.45cm}
 
-    \setlength{\tabcolsep}{8pt}
-    \renewcommand{\arraystretch}{1.5}
-    \begin{tabular}{@{} >{\bfseries\color{white}}p{0.14\textwidth}
+    \setlength{\tabcolsep}{10pt}
+    \renewcommand{\arraystretch}{1.6}
+    \begin{tabular}{@{} >{\bfseries\color{white}}p{0.15\textwidth}
                         >{\centering\arraybackslash}p{0.10\textwidth}
                         >{\centering\arraybackslash}p{0.10\textwidth}
-                        >{\centering\arraybackslash}p{0.14\textwidth}
-                        >{\centering\arraybackslash}p{0.14\textwidth} @{}}
+                        >{\centering\arraybackslash}p{0.15\textwidth}
+                        >{\centering\arraybackslash}p{0.15\textwidth} @{}}
       \rowcolor{navy}
       {\color{skymid}Name} &
       {\color{skymid}Grade} &
@@ -120,11 +121,48 @@
       {\color{white}Sofia}   & {\color{white}11} & {\color{white}3.5} &
         {\color{white}Purple} & {\color{white}7.0} \\
     \end{tabular}
+  \end{minipage}
+\end{frame}
+}
 
-    \vspace{0.45cm}
-    {\color{white}\bfseries\small
-      \textbf{Group A:}\;\underline{\hspace{5cm}} \qquad
-      \textbf{Group B:}\;\underline{\hspace{5cm}}}
+% ─────────────────────────────────────────────────────────────────────────────
+% SLIDE 3b — HOOK: DEBRIEF
+% ─────────────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=hookbg}
+\begin{frame}[t, plain]
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[goldacc] (current page.north west)
+      rectangle ([yshift=-1.35cm]current page.north east);
+    \node[anchor=west, text=white, font=\bfseries\large,
+          inner xsep=0.55cm, inner ysep=0pt]
+      at ([yshift=-0.68cm]current page.north west)
+      {Hook --- Debrief};
+  \end{tikzpicture}
+  \vspace{1.2cm}\par
+  \hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    \vspace{0.3cm}
+    \small
+
+    {\color{white}\bfseries What was your sorting rule?}\\[0.5cm]
+
+    {\color{white}
+    \textbf{Group A:}\;\underline{\hspace{6cm}}\\[0.4cm]
+    \textbf{Group B:}\;\underline{\hspace{6cm}}}
+
+    \vspace{0.7cm}
+
+    \begin{tabular}{@{} >{\color{goldacc}\bfseries}p{0.06\textwidth}
+                        p{0.86\textwidth} @{}}
+      $\to$ & {\color{white}Group A contains words or labels ---
+               we call these \textbf{categorical} variables.} \\[8pt]
+      $\to$ & {\color{white}Group B contains numbers you can meaningfully
+               average --- we call these \textbf{quantitative} variables.} \\[8pt]
+      $\to$ & {\color{white}Today we will formalize these two types and
+               add a third distinction: \textbf{discrete} vs.\
+               \textbf{continuous}.}
+    \end{tabular}
   \end{minipage}
 \end{frame}
 }
@@ -178,7 +216,7 @@
   \navyheader{Categorical vs.\ Quantitative: The Average Test}
   \hspace{0.4cm}%
   \begin{minipage}{0.93\textwidth}
-    \vspace{0.2em}
+    \vspace{0.5cm}
     \begin{columns}[T]
 
       \begin{column}{0.48\textwidth}
@@ -303,7 +341,7 @@
 }
 
 % ─────────────────────────────────────────────────────────────────────────────
-% SLIDE 8 — DISCRETE VS. CONTINUOUS
+% SLIDE 8a — DISCRETE VS. CONTINUOUS: DEFINITIONS
 % ─────────────────────────────────────────────────────────────────────────────
 {
 \setbeamercolor{background canvas}{bg=white}
@@ -311,57 +349,78 @@
   \navyheader{Quantitative Variables: Discrete vs.\ Continuous}
   \hspace{0.4cm}%
   \begin{minipage}{0.93\textwidth}
-    \vspace{0.3em}
+    \vspace{0.55cm}
     \begin{columns}[T]
 
       \begin{column}{0.47\textwidth}
         \small
-        \textbf{\color{navy}Discrete}\\[4pt]
+        \textbf{\color{navy}Discrete}\\[6pt]
         Values are \textbf{countable} --- gaps exist between them.
-        You can list all possible values.\\[6pt]
-        \textit{Ask: ``Can I count them?''}\\[6pt]
+        You can list every possible value.\\[8pt]
+        \textit{Ask: ``Can I count them?''}\\[8pt]
         \begin{tabular}{@{} >{\color{greenacc}\bfseries}l l @{}}
           Anchor: & Number of pets \\
-          Values: & 0, 1, 2, 3, \ldots \\
-        \end{tabular}\\[6pt]
+          Values: & 0,\ 1,\ 2,\ 3,\ \ldots \\
+        \end{tabular}\\[10pt]
         \footnotesize\color{slate}
-        More examples: number of siblings, songs on a playlist,
-        students in a class
+        More examples: number of siblings, songs on a\\
+        playlist, students in a class, goals in a game
       \end{column}
 
       \begin{column}{0.47\textwidth}
         \small
-        \textbf{\color{navy}Continuous}\\[4pt]
-        Can take \textbf{any value in an interval} --- measured, not counted.
-        No gaps; values can fall between any two others.\\[6pt]
-        \textit{Ask: ``Could it fall between two values?''}\\[6pt]
+        \textbf{\color{navy}Continuous}\\[6pt]
+        Can take \textbf{any value in an interval} ---
+        measured, not counted. No gaps exist.\\[8pt]
+        \textit{Ask: ``Could it fall \emph{between} two values?''}\\[8pt]
         \begin{tabular}{@{} >{\color{redacc}\bfseries}l l @{}}
           Anchor: & Weight of a pet \\
           Values: & any positive real number \\
-        \end{tabular}\\[6pt]
+        \end{tabular}\\[10pt]
         \footnotesize\color{slate}
-        More examples: height, commute time, temperature,
-        song duration
+        More examples: height, commute time,\\
+        temperature, song duration in minutes
       \end{column}
 
     \end{columns}
+  \end{minipage}
+\end{frame}
+}
 
-    \vspace{0.6em}
+% ─────────────────────────────────────────────────────────────────────────────
+% SLIDE 8b — DISCRETE VS. CONTINUOUS: COMPARISON TABLE
+% ─────────────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=white}
+\begin{frame}[t, plain]
+  \navyheader{Discrete vs.\ Continuous: Quick Reference}
+  \hspace{0.4cm}%
+  \begin{minipage}{0.93\textwidth}
+    \vspace{0.55cm}
     \small
-    \setlength{\tabcolsep}{7pt}
-    \renewcommand{\arraystretch}{1.5}
-    \begin{tabular}{@{} p{0.34\textwidth}
-                        >{\centering\arraybackslash}p{0.14\textwidth}
-                        >{\centering\arraybackslash}p{0.14\textwidth} @{}}
+    \setlength{\tabcolsep}{10pt}
+    \renewcommand{\arraystretch}{1.8}
+    \begin{tabular}{@{} p{0.38\textwidth}
+                        >{\centering\arraybackslash}p{0.18\textwidth}
+                        >{\centering\arraybackslash}p{0.18\textwidth} @{}}
       \rowcolor{navy}
-      {\color{white}\bfseries Question} &
+      {\color{white}\bfseries Question to ask} &
       {\color{white}\bfseries Discrete} &
       {\color{white}\bfseries Continuous} \\
-      Are there gaps between values? & Yes & No \\
+      Are there gaps between values?  & Yes & No \\
       \rowcolor{sky}
-      Is it measured on a scale?     & No  & Yes \\
+      Is it measured on a scale?      & No  & Yes \\
       Can I list all possible values? & Yes & No \\
+      \rowcolor{sky}
+      Does it make sense between two consecutive values? & No & Yes \\
     \end{tabular}
+
+    \vspace{0.6cm}
+    \footnotesize\color{slate}
+    \textit{Note: some variables are ambiguous in practice.
+    Annual salary is technically discrete (whole cents) but treated
+    as continuous because the number of possible values is enormous.
+    When in doubt, explain your reasoning.}
   \end{minipage}
 \end{frame}
 }
@@ -374,59 +433,50 @@
 \begin{frame}[plain]
   \navyheader{Decision Flowchart: Classifying Any Variable}
 
-  \vspace{-0.3cm}
+  \vspace{0.2cm}
   \begin{center}
+  \resizebox{0.97\textwidth}{!}{%
   \begin{tikzpicture}[
-    node distance = 0.55cm and 1.4cm,
     decision/.style = {
       diamond, draw=navy, fill=sky, thick,
-      text width=3.0cm, align=center,
-      inner sep=2pt, aspect=1.8
+      text width=2.8cm, align=center,
+      inner sep=2pt, aspect=2.4
     },
     terminal/.style = {
-      rectangle, rounded corners=4pt,
+      rectangle, rounded corners=5pt,
       draw=navy, thick,
       text width=2.4cm, align=center,
-      minimum height=0.8cm, font=\bfseries\small
+      minimum height=1.0cm, font=\bfseries\normalsize
     },
-    cat/.style    = {terminal, fill=greenbg,  draw=greenacc, text=greenacc},
-    discr/.style  = {terminal, fill=redbg,    draw=redacc,   text=redacc},
-    cont/.style   = {terminal, fill=goldbg,   draw=goldacc,  text=goldacc},
-    arrow/.style  = {-Stealth, thick, draw=navy},
-    lbl/.style    = {font=\footnotesize\bfseries, text=navy}
+    cat/.style   = {terminal, fill=greenbg, draw=greenacc, text=greenacc},
+    discr/.style = {terminal, fill=redbg,   draw=redacc,   text=redacc},
+    cont/.style  = {terminal, fill=goldbg,  draw=goldacc,  text=goldacc},
+    arrow/.style = {-Stealth, very thick, draw=navy},
+    lbl/.style   = {font=\small\bfseries, text=navy, fill=white, inner sep=2pt}
   ]
 
-  % Nodes
-  \node[decision] (q1)
-    {Is the variable a word, label, or category?};
+  % ── Main decision chain (left → right) ──────────────────────────────────
+  \node[decision] (q1) {Is it a word, label, or category?};
+  \node[decision, right=3.2cm of q1] (q2) {Does averaging give a \emph{meaningful} result?};
+  \node[decision, right=3.2cm of q2] (q3) {Can you \emph{count} the values?};
+  \node[cont,     right=2.8cm of q3] (qc) {Quantitative\\Continuous};
 
-  \node[cat, below left=0.7cm and 2.2cm of q1] (cat1)
-    {Categorical};
+  % ── Exit terminals (drop below each decision) ────────────────────────────
+  \node[cat,   below=1.6cm of q1] (cat1) {Categorical};
+  \node[cat,   below=1.6cm of q2] (cat2) {Categorical\\\small\normalfont(trap number)};
+  \node[discr, below=1.6cm of q3] (qd)   {Quantitative\\Discrete};
 
-  \node[decision, below=1.1cm of q1] (q2)
-    {Does averaging give a \emph{meaningful} result?};
+  % ── Arrows: main horizontal flow ─────────────────────────────────────────
+  \draw[arrow] (q1) -- node[lbl, above]{No}  (q2);
+  \draw[arrow] (q2) -- node[lbl, above]{Yes} (q3);
+  \draw[arrow] (q3) -- node[lbl, above]{No}  (qc);
 
-  \node[cat, below left=0.7cm and 2.2cm of q2] (cat2)
-    {Categorical \\ \footnotesize\normalfont (trap number)};
+  % ── Arrows: exit branches downward ───────────────────────────────────────
+  \draw[arrow] (q1) -- node[lbl, right]{Yes} (cat1);
+  \draw[arrow] (q2) -- node[lbl, right]{No}  (cat2);
+  \draw[arrow] (q3) -- node[lbl, right]{Yes} (qd);
 
-  \node[decision, below=1.1cm of q2] (q3)
-    {Can you \emph{count} the values? (Are there gaps?)};
-
-  \node[discr, below left=0.7cm and 2.2cm of q3] (qd)
-    {Quantitative \\ Discrete};
-
-  \node[cont, below right=0.7cm and 2.2cm of q3] (qc)
-    {Quantitative \\ Continuous};
-
-  % Arrows
-  \draw[arrow] (q1) -- node[lbl, above left=-2pt]{Yes} (cat1);
-  \draw[arrow] (q1) -- node[lbl, right=2pt]{No}  (q2);
-  \draw[arrow] (q2) -- node[lbl, above left=-2pt]{No}  (cat2);
-  \draw[arrow] (q2) -- node[lbl, right=2pt]{Yes} (q3);
-  \draw[arrow] (q3) -- node[lbl, above left=-2pt]{Yes} (qd);
-  \draw[arrow] (q3) -- node[lbl, above right=-2pt]{No}  (qc);
-
-  \end{tikzpicture}
+  \end{tikzpicture}}
   \end{center}
 \end{frame}
 }
