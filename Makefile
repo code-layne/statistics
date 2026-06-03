@@ -111,6 +111,65 @@ unit01-lesson01-full: $(U01_L01_FULL_STAMPS)
 	pdfunite $(U01_L01_FULL_PDFS) target/compiled/unit01_lesson01_full.pdf
 	@echo "✓  Full lesson     →  target/compiled/unit01_lesson01_full.pdf"
 
+# ── Lesson 1.1 component lists ────────────────────────────────────────────────
+U01_L02 := target/unit01/lesson02
+
+U01_L02_STUDENT_STAMPS := \
+    .stamps/unit01/lesson02/cover/main.stamp \
+    .stamps/unit01/lesson02/warmup/main.stamp \
+    .stamps/unit01/lesson02/notes/main.stamp \
+    .stamps/unit01/lesson02/activity/main.stamp \
+    .stamps/unit01/lesson02/exit_ticket/main.stamp \
+    .stamps/unit01/lesson02/homework/main.stamp
+
+U01_L02_STUDENT_PDFS := \
+    $(U01_L02)/cover/main.pdf \
+    $(U01_L02)/warmup/main.pdf \
+    $(U01_L02)/notes/main.pdf \
+    $(U01_L02)/activity/main.pdf \
+    $(U01_L02)/exit_ticket/main.pdf \
+    $(U01_L02)/homework/main.pdf
+
+U01_L01_FULL_STAMPS := \
+    .stamps/unit01/lesson02/main.stamp \
+    .stamps/unit01/lesson02/slides/main.stamp \
+    .stamps/unit01/lesson02/cover/main.stamp \
+    .stamps/unit01/lesson02/warmup/main.stamp \
+    .stamps/unit01/lesson02/warmup_key/main.stamp \
+    .stamps/unit01/lesson02/notes/main.stamp \
+    .stamps/unit01/lesson02/notes_key/main.stamp \
+    .stamps/unit01/lesson02/activity/main.stamp \
+    .stamps/unit01/lesson02/activity_key/main.stamp \
+    .stamps/unit01/lesson02/exit_ticket/main.stamp \
+    .stamps/unit01/lesson02/exit_ticket_key/main.stamp \
+    .stamps/unit01/lesson02/homework/main.stamp \
+    .stamps/unit01/lesson02/homework_key/main.stamp
+
+U01_L02_FULL_PDFS := \
+    $(U01_L02)/main.pdf \
+    $(U01_L02)/slides/main.pdf \
+    $(U01_L02)/cover/main.pdf \
+    $(U01_L02)/warmup/main.pdf \
+    $(U01_L02)/warmup_key/main.pdf \
+    $(U01_L02)/notes/main.pdf \
+    $(U01_L02)/notes_key/main.pdf \
+    $(U01_L02)/activity/main.pdf \
+    $(U01_L02)/activity_key/main.pdf \
+    $(U01_L02)/exit_ticket/main.pdf \
+    $(U01_L02)/exit_ticket_key/main.pdf \
+    $(U01_L02)/homework/main.pdf \
+    $(U01_L02)/homework_key/main.pdf
+
+unit01-lesson02-student: $(U01_L02_STUDENT_STAMPS)
+	mkdir -p target/compiled
+	pdfunite $(U01_L02_STUDENT_PDFS) target/compiled/unit01_lesson02_student.pdf
+	@echo "✓  Student packet  →  target/compiled/unit01_lesson02_student.pdf"
+
+unit01-lesson02-full: $(U01_L02_FULL_STAMPS)
+	mkdir -p target/compiled
+	pdfunite $(U01_L02_FULL_PDFS) target/compiled/unit01_lesson02_full.pdf
+	@echo "✓  Full lesson     →  target/compiled/unit01_lesson02_full.pdf"
+
 # ── Cleanup ───────────────────────────────────────────────────────────────────
 clean:
 	rm -rf target .stamps
