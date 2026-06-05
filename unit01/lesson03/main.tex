@@ -1,66 +1,61 @@
-%! AP Statistics — Unit 1, Lesson 3
+%! AP Statistics — Unit 1, Lesson 1.3 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage[margin=0.6in]{geometry}
-\usepackage{xcolor}
-\usepackage[most]{tcolorbox}
+\usepackage{apstats-boxes}
 \usepackage{enumitem}
 \usepackage{multicol}
 \usepackage{amsmath,amssymb}
 \usepackage{array}
 \usepackage{tabularx}
-\tcbuselibrary{breakable}
+\usepackage{booktabs}
+\usepackage{colortbl}
 
-\definecolor{sky}{HTML}{EAF3FB}
-\definecolor{navy}{HTML}{1F3A5F}
-\definecolor{redbox}{HTML}{FCECEC}
-\definecolor{greenbox}{HTML}{EDF8F0}
-\definecolor{goldbox}{HTML}{FFF7E6}
-\newtcolorbox{skillbox}[2][]{
-    colback=#2, colframe=navy, boxrule=0.8pt, arc=2mm,
-    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm,
-    fonttitle=\bfseries, title={#1}, halign title=center, breakable
-}
-\setlist[itemize]{leftmargin=1.2em,itemsep=0.35em,topsep=0.35em}
-\setlist[enumerate]{leftmargin=1.4em,itemsep=0.35em,topsep=0.35em}
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
-
-\newcommand{\CourseName}{AP Statistics}
-\newcommand{\SchoolYear}{2026--2027}
-\newcommand{\MeetingLength}{55 minutes}
-\newcommand{\UnitNumberName}{Unit 1: Exploring One-Variable Data \quad}
-\newcommand{\LessonNumberName}{Lesson 1.3: Representing a Categorical Variable with Tables}
+\setlist[itemize]{leftmargin=1.2em,itemsep=0.35em,topsep=0.35em}
+\setlist[enumerate]{leftmargin=1.4em,itemsep=0.35em,topsep=0.35em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
 
 \begin{document}
+
 \begin{center}
-    {\Large\bfseries \CourseName: \SchoolYear\ (\MeetingLength) \\
-    {\small\bfseries \UnitNumberName \LessonNumberName}}
+    {\Large\bfseries AP Statistics: 2026--2027\ (55 minutes) \\[4pt]
+    {\small\bfseries Unit 1: Exploring One-Variable Data \qquad
+     Lesson 1.3: Representing a Categorical Variable with Tables}}
 \end{center}
 
 \begin{tcolorbox}[colback=sky,colframe=navy,boxrule=0.9pt,arc=2mm,
     left=2mm,right=2mm,top=1.5mm,bottom=1.5mm]
-    \textbf{Primary Objective:} Students will construct and interpret frequency and relative
-    frequency tables for a categorical variable. Students will use these tables to describe the
-    distribution of a categorical variable and make comparisons, understanding that relative
-    frequencies are essential when comparing groups of different sizes (Big Idea: UNC).
+    \textbf{Primary Objective:} Students will construct and interpret frequency and
+    relative frequency tables for a categorical variable. Students will recognize that
+    relative frequency (not raw count) is necessary when comparing groups of different
+    sizes, and will use tables to describe the distribution of a categorical variable
+    in context (Big Idea: UNC).
 \end{tcolorbox}
+
+\vspace{4pt}
 
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{AP Skill 2 --- Data Analysis}
     \begin{itemize}
-        \item Construct a frequency table and a relative frequency table from raw categorical data.
-        \item Interpret relative frequencies in context (e.g., ``32\% of students prefer\ldots'').
-        \item Explain why relative frequency (not count) is used to compare categories across groups of different sizes.
+        \item Construct a frequency table and a relative frequency table from raw
+              categorical data.
+        \item Interpret relative frequencies in context
+              (e.g., ``32\% of students prefer\ldots'').
+        \item Explain why relative frequency is used to compare groups of different sizes.
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Key Understandings}
     \begin{itemize}
-        \item Counts alone are misleading when group sizes differ.
-        \item Relative frequencies sum to 1 (or 100\%); this is a quick error-check.
-        \item A table reveals the distribution of a categorical variable just as a graph does --- choosing between them depends on precision needed.
+        \item Raw counts are misleading when total group sizes differ.
+        \item Relative frequencies must sum to 1 (or 100\%) --- this is a built-in
+              error check.
+        \item A frequency table is an alternative to a bar chart for displaying the
+              distribution of a categorical variable; use one when precision matters.
     \end{itemize}
 \end{minipage}
 \end{skillbox}
@@ -69,61 +64,88 @@
 \begin{minipage}[t]{0.48\linewidth}
     \begin{itemize}
         \item \textbf{Frequency} --- the count of individuals in a category
-        \item \textbf{Relative frequency} --- frequency divided by total; expressed as a proportion or percentage
-        \item \textbf{Frequency table} --- a table listing each category and its frequency
-        \item \textbf{Relative frequency table} --- a table listing each category and its relative frequency
+        \item \textbf{Relative frequency} --- frequency $\div$ total; expressed as a
+              proportion or percentage
+        \item \textbf{Frequency table} --- lists each category with its count
+        \item \textbf{Relative frequency table} --- lists each category with its
+              relative frequency
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
     \begin{itemize}
-        \item \textbf{Distribution (categorical)} --- the set of possible values and their associated relative frequencies
-        \item \textbf{Marginal frequency} --- total for a row or column in a two-way table (preview for Lesson 2.2)
-        \item \textbf{Mode} --- the category with the highest frequency (note: not always meaningful for categorical data)
+        \item \textbf{Distribution (categorical)} --- the set of possible values and
+              their associated relative frequencies
+        \item \textbf{Proportion} --- a relative frequency expressed as a decimal
+        \item \textbf{Percent} --- a relative frequency expressed per 100
+        \item \textbf{Mode} --- the category with the highest frequency (note: rarely
+              the focus on AP exams)
     \end{itemize}
 \end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{Quick Review (3 min)}\\
-    Pose: ``Our class has 28 students. 12 prefer math, 10 prefer English, 6 prefer art. What fraction prefer math?'' Transition: turning raw counts into fractions \textit{is} making a relative frequency table.
+    \textbf{Warm-Up Worksheet (5 min)}\\
+    Students receive a list of 20 students' favorite school subjects (categorical
+    data). Tasks: tally each category; ask ``Can we tell which subject is most
+    popular just by scanning the list?'' Motivates today's tables as an
+    organizational tool.\\[6pt]
+    \textbf{Topics Connected}
+    \begin{itemize}
+        \item[\rule{0.7cm}{0.4pt}] Categorical variable (Lesson 1.2)
+        \item[\rule{0.7cm}{0.4pt}] Distribution of a variable (Lesson 1.2 preview)
+        \item[\rule{0.7cm}{0.4pt}] Preview: displaying data with bar charts (Lesson 1.4)
+    \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{Spiral Connections}
+    \textbf{Connections to Current Learning}
     \begin{itemize}
-        \item Variable type (Lesson 1.2): tables are for \textit{categorical} variables.
-        \item Relative frequency becomes a proportion and then a probability (Unit 4).
-        \item Two-way tables reappear in Unit 2 (bivariate categorical data).
+        \item Lesson 1.4 displays the same categorical distributions \textit{visually}
+              (bar charts, pie charts). Tables and graphs answer the same question
+              differently.
+        \item Relative frequency now is the same operation as computing a probability
+              in Unit 4.
+        \item Two-way frequency tables (Unit 2) are a direct extension of today's
+              one-way tables.
     \end{itemize}
 \end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Hook \& Lesson]{sky}
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{Hook (5 min)}\\
-    Display two schools' survey results on transportation mode:
+    \textbf{Hook (4--5 min)}\\
+    Display counts for two schools' survey results on commute mode:
     \begin{center}
-    \small
+    \small\renewcommand{\arraystretch}{1.3}
     \begin{tabular}{lcc}
     \hline
     Mode & School A & School B \\ \hline
-    Bus  & 120 & 40 \\
-    Car  & 80  & 60 \\
-    Walk & 40  & 100 \\ \hline
+    Bus  & 120 & 30 \\
+    Car  & 80  & 50 \\
+    Walk & 40  & 120 \\ \hline
+    \textbf{Total} & \textbf{240} & \textbf{200} \\
+    \hline
     \end{tabular}
     \end{center}
-    Ask: ``Which school has more walkers?'' Watch students debate counts vs.\ proportions.
+    Ask: ``Which school has more walkers?'' Let students debate. Reveal: School B
+    has \textit{fewer} walkers by count but \textit{more} by proportion. Transition
+    to why we need relative frequency.
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Lesson Flow (15 min)}
     \begin{enumerate}
-        \item Build a frequency table together from raw class survey data (e.g., birth month).
-        \item Add a relative frequency column; verify the sum equals 1.
-        \item Revisit the hook: compute relative frequencies for both schools. Who really has more walkers?
-        \item Practice writing interpretations in context: \textit{``About 40\% of School A students ride the bus, compared to 20\% of School B students.''}
+        \item From raw class data (birth month), build a tally, then a frequency
+              table together.
+        \item Add the relative frequency column: divide each count by $n$; verify
+              sum $= 1$.
+        \item Revisit the hook: compute relative frequencies for both schools and
+              resolve the debate.
+        \item Model AP-style interpretation:
+              \textit{``About 60\% of School B students walk to school, compared
+              to only 17\% of School A students.''}
     \end{enumerate}
 \end{minipage}
 \end{skillbox}
@@ -132,18 +154,24 @@
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Direct Instruction (10 min)}
     \begin{itemize}
-        \item Model the table construction step-by-step: tally, count, divide by $n$, verify sum.
-        \item Show common errors: forgetting to divide (reporting counts as ``relative''), rounding errors that make the sum $\neq 1$.
-        \item Emphasize AP language: always state the context when interpreting (``of all students surveyed\ldots'').
+        \item Model the four-step table build: \textbf{(1)} list categories,
+              \textbf{(2)} tally, \textbf{(3)} count, \textbf{(4)} divide by $n$.
+        \item Common errors: forgetting to divide (reporting counts as ``relative
+              frequency''), rounding that makes sum $\neq 1$.
+        \item AP language: always state the context and the total
+              (\textit{``of the 200 students surveyed\ldots''}).
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Active Monitoring}
     \begin{itemize}
-        \item Circulate as students build their tables during guided practice.
-        \item Check: Are relative frequencies expressed as decimals \textit{or} percentages? (Both are correct; students should be comfortable with both.)
-        \item Ask individual students to read their interpretation aloud before writing it.
+        \item Circulate as students complete guided notes practice.
+        \item Check: relative frequencies expressed as decimals \textit{and} as
+              percentages (AP uses both; students should convert fluently).
+        \item Prompt cold-calls: ``Does your sum equal 1? If not, where did the
+              rounding error occur?''
+        \item Use the notes guided-practice table as the monitoring anchor.
     \end{itemize}
 \end{minipage}
 \end{skillbox}
@@ -151,21 +179,27 @@
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Group Activity (8--10 min)}\\
-    Groups receive a raw dataset of 30 individuals' favorite sport (6 categories). Each group:
+    Groups receive a raw dataset of 30 students' favorite sport (6 categories).
+    Each group:
     \begin{enumerate}
-        \item Tallies the data.
-        \item Constructs a complete frequency and relative frequency table.
+        \item Tallies the data and builds a complete frequency table.
+        \item Adds a relative frequency column; verifies the sum.
         \item Writes two sentences interpreting the distribution.
-        \item Identifies the most and least common category.
+        \item A second dataset (different $n$) prompts comparison using relative
+              frequency.
     \end{enumerate}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Differentiation}
     \begin{itemize}
-        \item \textit{Support}: Provide a pre-labeled table template with the category column filled in.
-        \item \textit{Extension}: Give two datasets of different sizes; students compare distributions using relative frequencies and write a paragraph conclusion.
-        \item \textit{AP Connection}: Discuss how an AP question might ask you to ``describe the distribution'' --- practice complete sentences with context.
+        \item \textit{Support}: Pre-labeled table template with categories already
+              listed; student only fills counts and relative frequencies.
+        \item \textit{Extension}: Two datasets of different sizes; compare
+              distributions and write a short conclusion paragraph.
+        \item \textit{AP Connection}: Discuss how an AP free-response item asks to
+              ``describe the distribution'' --- complete sentences, context, and
+              relative frequency are required.
     \end{itemize}
 \end{minipage}
 \end{skillbox}
@@ -173,25 +207,18 @@
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Exit Ticket (5 min)}\\
-    A survey of 50 students asks preferred study location:
-    \begin{center}
-    \small
-    \begin{tabular}{lc}
-    \hline
-    Location & Count \\ \hline
-    Library   & 18 \\
-    Home      & 22 \\
-    Café      & 6  \\
-    Other     & 4  \\ \hline
-    \end{tabular}
-    \end{center}
-    Students complete the relative frequency column and write one sentence describing the most common preference.
+    A survey of 50 students on preferred study location (library 18, home 22,
+    caf\'{e} 6, other 4). Students complete the relative frequency column and write
+    one sentence describing the most common preference in context.
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{AP-Style Check}\\
-    Free-response prompt: \textit{``The table shows the distribution of eye color for 200 people. What proportion have either brown or hazel eyes? Describe what the table tells you about the distribution of eye color in this sample.''}\\[4pt]
-    Assess: correct calculation, complete sentence, use of context.
+    Free-response prompt: \textit{``A table shows the distribution of eye color for
+    200 people. What proportion have brown or hazel eyes? Describe what the table
+    tells you about the distribution of eye color in this sample.''}\\[4pt]
+    Assess: correct proportion calculation, complete contextual sentence,
+    identification of the most and least common category.
 \end{minipage}
 \end{skillbox}
 
@@ -199,16 +226,21 @@
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Homework / Practice}
     \begin{itemize}
-        \item Given a raw list of 20 categorical data values, construct a frequency and relative frequency table, then describe the distribution in 2--3 sentences.
-        \item AP textbook practice: frequency table interpretation problems.
+        \item Given a raw list of 25 categorical values, construct a frequency and
+              relative frequency table; describe the distribution in 2--3 sentences.
+        \item Three AP-style problems: one table-build, one interpretation, one
+              compare-two-groups using relative frequency.
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Extension / Preview}
     \begin{itemize}
-        \item \textit{Extension}: Find a published table (e.g., U.S.\ Census, Pew Research) and write a description of the distribution.
-        \item \textit{Preview}: Lesson 1.4 represents the same data \textit{visually}. Think about what a table tells you that a graph might not, and vice versa.
+        \item \textit{Extension}: Find a published frequency table (U.S.\ Census,
+              Pew Research) and write a description of the distribution.
+        \item \textit{Preview}: Lesson 1.4 --- the same distributions displayed as
+              bar charts and pie charts. Think: what does a table show that a bar
+              chart doesn't (and vice versa)?
     \end{itemize}
 \end{minipage}
 \end{skillbox}
