@@ -33,9 +33,9 @@
 \setbeamercolor{background canvas}{bg=sky}
 \begin{frame}[t, plain]
   \navyheader{Warm-Up}
+  \vspace{1em}%
   \hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
-    \vspace{0.3em}
     \small
 
     Recall the transportation survey from Lesson 1.3 ($n = 25$):
@@ -49,10 +49,8 @@
       \item If you wanted to show this distribution \textit{visually} --- so a
             reader could compare categories at a glance --- what type of picture
             would you draw?
-      \item Sketch a rough display in the space on your warm-up sheet. Label
-            whatever you can think of.
-      \item What does your sketch show that the table does not? What does the
-            table show that the sketch might not?
+      \item What information does a visual display show that the table does not
+            show as easily? What does the table show that a visual might not?
     \end{enumerate}
 
     \vspace{0.5cm}
@@ -116,36 +114,57 @@
       {Hook --- Can a Graph Lie?};
   \end{tikzpicture}
   \vspace{1.2cm}\par
+  \vspace{1em}%
   \hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
-    \vspace{0.2cm}
     \small
 
-    {\color{white}\bfseries
-      Two bars. Same data. Very different stories.}
+    % ── Two bar charts drawn with TikZ ───────────────────────────────────────
+    % Chart A: y-axis 950–1010  →  X bar height 0.833, Y bar height 2.083
+    % Chart B: y-axis 0–1050   →  X bar height 2.310, Y bar height 2.381
+    \begin{tikzpicture}[x=1.22cm, y=1.22cm]
 
-    \vspace{0.45cm}
+      % ── Chart A (left) ── y starts at 950 ──────────────────────────────────
+      \node[white, font=\small\bfseries, anchor=south] at (1.5, 2.5) {Graph A};
+      \node[white, font=\scriptsize, anchor=north] at (1.5, 2.5)
+            {(y-axis starts at 950)};
+      \draw[white, thick] (0, 2.5) -- (0, 0) -- (3.0, 0);
+      \node[white, left, font=\scriptsize] at (0, 0)   {950};
+      \node[white, left, font=\scriptsize] at (0, 2.5) {1010};
+      % bars
+      \fill[goldacc!85]  (0.35, 0) rectangle (1.15, 0.833);
+      \fill[skymid!85]   (1.65, 0) rectangle (2.45, 2.083);
+      % x-labels
+      \node[white, below, font=\small] at (0.75, 0) {X};
+      \node[white, below, font=\small] at (2.05, 0) {Y};
+      % value labels
+      \node[white, above, font=\scriptsize] at (0.75, 0.833) {970};
+      \node[white, above, font=\scriptsize] at (2.05, 2.083) {1000};
 
-    \setlength{\tabcolsep}{12pt}
-    \renewcommand{\arraystretch}{1.6}
-    \begin{tabular}{@{} >{\bfseries\color{white}}p{0.20\textwidth}
-                        >{\centering\arraybackslash\color{white}}p{0.22\textwidth}
-                        >{\centering\arraybackslash\color{white}}p{0.22\textwidth} @{}}
-      \rowcolor{navy}
-      {\color{skymid}Product} &
-      {\color{skymid}Graph A (y starts at 950)} &
-      {\color{skymid}Graph B (y starts at 0)} \\
-      \rowcolor{white!15!hookbg}
-      {\color{white}Product X} & {\color{white}970 units} & {\color{white}970 units} \\
-      \rowcolor{white!8!hookbg}
-      {\color{white}Product Y} & {\color{white}1000 units} & {\color{white}1000 units} \\
-    \end{tabular}
+      % ── Chart B (right) ── y starts at 0 ───────────────────────────────────
+      \begin{scope}[xshift=4.4cm]
+        \node[white, font=\small\bfseries, anchor=south] at (1.5, 2.5) {Graph B};
+        \node[white, font=\scriptsize, anchor=north] at (1.5, 2.5)
+              {(y-axis starts at 0)};
+        \draw[white, thick] (0, 2.5) -- (0, 0) -- (3.0, 0);
+        \node[white, left, font=\scriptsize] at (0, 0)   {0};
+        \node[white, left, font=\scriptsize] at (0, 2.5) {1050};
+        % bars: X=970/1050*2.5=2.310, Y=1000/1050*2.5=2.381
+        \fill[goldacc!85]  (0.35, 0) rectangle (1.15, 2.310);
+        \fill[skymid!85]   (1.65, 0) rectangle (2.45, 2.381);
+        \node[white, below, font=\small] at (0.75, 0) {X};
+        \node[white, below, font=\small] at (2.05, 0) {Y};
+        \node[white, above, font=\scriptsize] at (0.75, 2.310) {970};
+        \node[white, above, font=\scriptsize] at (2.05, 2.381) {1000};
+      \end{scope}
 
-    \vspace{0.5cm}
+    \end{tikzpicture}
+
+    \vspace{0.35cm}
     {\color{white}\small
-      In Graph A, Product Y's bar looks \textbf{twice as tall} as Product X.\\
-      In Graph B (y-axis from 0), the bars are nearly \textbf{identical}.\\[8pt]
-      The \textit{data} are the same. The \textit{design} changes the story.}
+      Graph A: Y looks \textbf{2.5$\times$ taller} than X. \quad
+      Graph B: the bars are \textbf{nearly identical}.\\[5pt]
+      \textit{Same data. Non-zero y-axis. Very different story.}}
   \end{minipage}
 \end{frame}
 }
@@ -157,6 +176,7 @@
 \setbeamercolor{background canvas}{bg=greenbg}
 \begin{frame}[t, plain]
   \navyheader{Vocabulary}
+  \vspace{1em}%
   \hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     \small
@@ -183,6 +203,7 @@
 \setbeamercolor{background canvas}{bg=white}
 \begin{frame}[t, plain]
   \navyheader{Building a Bar Chart --- Four Requirements}
+  \vspace{1em}%
   \hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     \small
@@ -220,6 +241,7 @@
 \setbeamercolor{background canvas}{bg=white}
 \begin{frame}[t, plain]
   \navyheader{Worked Example --- Pet Ownership ($n = 40$)}
+  \vspace{1em}%
   \hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     \small
@@ -260,6 +282,7 @@
 \setbeamercolor{background canvas}{bg=sky}
 \begin{frame}[t, plain]
   \navyheader{Constructing a Pie Chart}
+  \vspace{1em}%
   \hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     \small
@@ -301,6 +324,7 @@
 \setbeamercolor{background canvas}{bg=sky}
 \begin{frame}[t, plain]
   \navyheader{Misleading Graphs --- Three Common Tricks}
+  \vspace{1em}%
   \hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     \small
@@ -334,6 +358,7 @@
 \setbeamercolor{background canvas}{bg=sky}
 \begin{frame}[t, plain]
   \navyheader{Interpreting a Bar Chart --- AP Language}
+  \vspace{1em}%
   \hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     \small
@@ -413,6 +438,7 @@
 \setbeamercolor{background canvas}{bg=sky}
 \begin{frame}[t, plain]
   \navyheader{Exit Ticket --- 5 Minutes}
+  \vspace{1em}%
   \hspace{0.55cm}%
   \begin{minipage}{0.9\textwidth}
     \small
@@ -437,8 +463,6 @@
     \begin{enumerate}
       \setlength{\itemsep}{0.35em}
       \item Complete the relative frequency column.
-      \item Sketch a relative frequency bar chart (title, labeled axes, scale
-            from 0, gaps between bars).
       \item Write one sentence describing the distribution in context.
       \item Describe one way someone could make this bar chart misleading.
     \end{enumerate}
