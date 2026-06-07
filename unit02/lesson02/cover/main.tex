@@ -1,0 +1,91 @@
+%! AP Statistics — Unit 2, Lesson 2.2 — Student Packet Cover Sheet
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+%=============================================================================
+\begin{document}
+
+% ── Full-bleed navy banner ────────────────────────────────────────────────────
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[navy] (current page.north west)
+    rectangle ([yshift=-0.9in]current page.north east);
+\end{tikzpicture}
+\vspace{-0.8in}
+
+\begin{center}
+  {\color{white}\textbf{\LARGE AP Statistics}}\\[4pt]
+  {\color{skymid}\large\textbf{Unit 2: Exploring Two-Variable Data}}\\[6pt]
+  {\color{white}\textbf{\large Lesson 2.2 \quad Representing Two Categorical Variables}}
+\end{center}
+
+\vspace{0.22in}
+
+\namedateperiod
+
+\vspace{0.18in}
+
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
+\begin{learningtargetbox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
+  \item \ldots{} construct a two-way (contingency) table and identify joint and marginal
+        frequencies.
+  \item \ldots{} compute joint and conditional relative frequencies from a two-way table
+        and explain the difference between them.
+  \item \ldots{} construct and interpret a segmented bar chart using conditional relative
+        frequencies to determine whether two categorical variables are associated.
+\end{enumerate}
+\end{learningtargetbox}
+
+\vspace{0.14in}
+
+% ── TABLE OF CONTENTS ────────────────────────────────────────────────────────
+\begin{tocbox}
+\small
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{} c l X r @{}}
+\rowcolor{sky}
+\textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
+\midrule
+1 & Warm-Up       & Spiral review --- relative frequency tables      & \blank{1.2cm} \\
+2 & Guided Notes  & Two-way tables, joint/conditional frequencies, segmented bars & \blank{1.2cm} \\
+3 & Group Activity & Build and interpret two-way tables by tier        & \blank{1.2cm} \\
+4 & Exit Ticket   & Compute conditional frequencies; describe association & \blank{1.2cm} \\
+5 & Homework      & Real-data two-way tables + segmented bar charts    & \blank{1.2cm} \\
+\midrule
+  & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
+\end{tabularx}
+\end{tocbox}
+
+\vspace{0.14in}
+
+% ── KEEP IN MIND ─────────────────────────────────────────────────────────────
+\begin{remindbox}
+\small
+Two categorical variables call for a two-way table. Here are the key ideas to keep in mind.
+
+\vspace{6pt}
+\begin{tabularx}{\linewidth}{@{} >{\centering\arraybackslash\columncolor{goldbg}}p{0.06\linewidth}
+                                    X @{}}
+\textbf{\large!} &
+\textbf{Joint vs.\ conditional.}\enspace
+A joint relative frequency divides a cell by the \emph{grand} total.
+A conditional relative frequency divides by a \emph{row or column} total.
+To detect association, use conditional frequencies. \\[6pt]
+\textbf{\large!} &
+\textbf{Condition on the explanatory variable.}\enspace
+Identify which variable is explanatory, then divide by its row (or column) total.
+Comparing those conditional distributions reveals association. \\[6pt]
+\textbf{\large!} &
+\textbf{Segmented bars add to 100\%.}\enspace
+Each bar represents one group; segments are proportional to conditional relative
+frequencies. If the bars look the same, there is no association. \\[6pt]
+\textbf{\large!} &
+\textbf{Association $\neq$ causation.}\enspace
+Even a clear association in a two-way table does not mean one variable causes the
+other --- remember Lesson 2.1. \\
+\end{tabularx}
+\end{remindbox}
+
+\end{document}
