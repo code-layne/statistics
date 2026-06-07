@@ -1,0 +1,128 @@
+%! AP Statistics — Unit 1, Lesson 1.8 — Homework ANSWER KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+%=============================================================================
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.8}{Homework --- Answer Key}
+\begin{tabularx}{\linewidth}{X X X}
+Name:\;\ans{Key} & Date:\; & Period:\;
+\end{tabularx}
+
+\vspace{0.10in}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=1.5mm, bottom=1.5mm]
+\small Show all calculations. Interpret statistics in context. Use complete
+sentences for AP-style questions.
+\end{tcolorbox}
+
+\vspace{0.12in}
+
+% ════════════════════════════════════════════════════════════════════════════
+% PART A
+% ════════════════════════════════════════════════════════════════════════════
+\begin{blurbbox}[Part A \quad Five-Number Summary \& Outlier Detection]{navylight}
+\small
+
+Data (sorted, $n=12$):\quad
+8, 12, 15, 18, 20, 22, 25, 28, 30, 33, 36, 61
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+
+  \item Lower half (6 values): \ans{8, 12, 15, 18, 20, 22}\\[4pt]
+        $Q_1 = (15+18)/2 = $ \ans{16.5} \quad
+        Median $= (22+25)/2 = $ \ans{23.5} \quad
+        $Q_3 = (30+33)/2 = $ \ans{31.5}\\[4pt]
+        $\min = $ \ans{8} \quad $\max = $ \ans{61} \quad
+        IQR $= 31.5 - 16.5 = $ \ans{15}
+
+  \item Lower fence $= 16.5 - 1.5(15) = 16.5 - 22.5 = $ \ans{$-6$}\\[4pt]
+        Upper fence $= 31.5 + 1.5(15) = 31.5 + 22.5 = $ \ans{54}\\[4pt]
+        Is 61 an outlier? \ans{Yes} \quad Justify: \ans{$61 > 54$ (upper fence)}
+
+  \item Right whisker ends at \ans{36} push-ups (last value $\leq 54$).\\[4pt]
+        The outlier dot represents \ans{the student who completed 61 push-ups in
+        one minute --- a value that exceeds the upper fence of 54 and is plotted
+        separately on the modified boxplot}.
+
+\end{enumerate}
+
+\end{blurbbox}
+
+\vspace{0.12in}
+
+% ════════════════════════════════════════════════════════════════════════════
+% PART B
+% ════════════════════════════════════════════════════════════════════════════
+\begin{blurbbox}[Part B \quad Read and Interpret a Boxplot]{greenacc}
+\small
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+  \draw[thick] (0.3,0) -- (8.5,0);
+  \foreach \v/\lbl in {0/0, 0.80/5, 1.60/10, 2.40/15, 3.20/20,
+                        4.00/25, 4.80/30, 5.60/35, 6.40/40, 7.20/45, 8.00/50} {
+    \draw (\v,-0.12) -- (\v,0.12);
+    \node[below, font=\small] at (\v,-0.12) {\lbl};
+  }
+  \node[below, font=\small\itshape] at (4.0,-0.56) {Seedling height (cm)};
+  \draw[thick, navy] (1.28, 0.38) -- (1.92, 0.38);
+  \draw[thick, navy] (1.92, 0.10) rectangle (3.84, 0.66);
+  \draw[thick, navy] (2.88, 0.10) -- (2.88, 0.66);
+  \draw[thick, navy] (3.84, 0.38) -- (5.76, 0.38);
+  \draw[thick, navy] (1.28, 0.22) -- (1.28, 0.54);
+  \draw[thick, navy] (5.76, 0.22) -- (5.76, 0.54);
+  \filldraw[navy] (7.36, 0.38) circle (0.11);
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+
+  \item $\min = $ \ans{8} cm \quad $Q_1 = $ \ans{12} cm \quad $M = $ \ans{18} cm
+        \quad $Q_3 = $ \ans{24} cm \quad right whisker end $= $ \ans{36} cm\\[4pt]
+        Outlier dot at $\approx$ \ans{46} cm. \quad
+        IQR $= 24 - 12 = $ \ans{12} cm
+
+  \item Upper fence $= 24 + 1.5(12) = 24 + 18 = $ \ans{42 cm}\\[4pt]
+        Is 46 cm an outlier? \ans{Yes} \quad Justify: \ans{$46 > 42$ (upper fence)}
+
+  \item \ans{The distribution is slightly \textbf{right-skewed}. The right whisker
+        ($36 - 24 = 12$ cm) is longer than the left whisker ($12 - 8 = 4$ cm),
+        and the median (18 cm) is closer to $Q_1$ (12 cm) than to $Q_3$ (24 cm).
+        There is also a high outlier at 46 cm that extends the right tail.}
+
+\end{enumerate}
+
+\end{blurbbox}
+
+\vspace{0.12in}
+
+% ════════════════════════════════════════════════════════════════════════════
+% PART C
+% ════════════════════════════════════════════════════════════════════════════
+\begin{blurbbox}[Part C \quad AP-Style Free Response --- Model Response]{redacc}
+\small
+
+\ans{The distribution of seedling heights after two weeks of growth is slightly
+right-skewed, with one high outlier at 46 cm. The outlier exceeds the upper fence
+of 42 cm ($= 24 + 1.5 \times 12$) and is plotted separately on the modified
+boxplot. The median seedling height is 18 cm, meaning half of the seedlings grew
+to fewer than 18 cm and half grew to more than 18 cm in two weeks. The middle 50\%
+of seedlings ranged from 12 cm to 24 cm ($\text{IQR} = 12$ cm). Excluding the
+outlier, the range of heights is $36 - 8 = 28$ cm.}
+
+\end{blurbbox}
+
+\begin{teachernote}
+\textbf{Grading notes:}
+\begin{itemize}[itemsep=2pt]
+  \item Part A: 5 pts — Q1 correct (2 pts: quartiles + median); Q2 fences + conclusion (2 pts); Q3 whisker end + dot explanation (1 pt).
+  \item Part B: 5 pts — Q4 all values correct (2 pts, allow ±1 for visual reading); Q5 fence calc + conclusion (2 pts); Q6 skewness + evidence (1 pt).
+  \item Part C: 4 pts — SOCS: 1 pt each component. Shape must reference whisker asymmetry. Outlier must give fence. Center must state median + interpret. Spread must give IQR in context.
+\end{itemize}
+\end{teachernote}
+
+\end{document}
