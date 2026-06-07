@@ -1,0 +1,401 @@
+%! AP Statistics — Unit 2, Lesson 2.1 — Slides (Beamer)
+\documentclass[aspectratio=169, 11pt]{beamer}
+\usepackage{apstats-beamer}
+
+%=============================================================================
+\begin{document}
+
+% ─────────────────────────────────────────────────────────────────────────────
+% SLIDE 1 — LESSON TITLE
+% ─────────────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[navylight] (current page.north west)
+      rectangle ([yshift=-1.35cm]current page.north east);
+  \end{tikzpicture}
+  \vspace{2.8cm}
+  \hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    {\color{goldacc}\bfseries\small LESSON 2.1}\\[0.5cm]
+    {\color{white}\bfseries\LARGE Introducing Statistics:\\[0.25cm]
+      Are Variables Related?}\\[1.4cm]
+    {\color{skymid}\small AP Statistics~$\cdot$~Unit 2: Exploring Two-Variable Data}
+  \end{minipage}
+\end{frame}
+}
+
+% ─────────────────────────────────────────────────────────────────────────────
+% SLIDE 2 — PRIMARY OBJECTIVE
+% ─────────────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=sky}
+\begin{frame}[t, plain]
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[navy] (current page.north west)
+      rectangle ([yshift=-0.25cm]current page.north east);
+  \end{tikzpicture}
+  \vspace{0.45cm}\par
+  \hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+
+    \sectionlabel{Primary Objective}
+
+    \normalsize
+    Students will identify statistical questions about possible relationships
+    between two variables and recognize that \textbf{apparent patterns in data
+    may be random} --- not every association is real, and even a real association
+    does not prove causation (Big Idea: VAR, Skill 1.A).
+
+    \vspace{0.6cm}
+
+    \normalsize\textbf{\color{navy}By the end of this lesson, I will be able to:}
+
+    \smallskip
+    \begin{itemize}
+      \setlength{\itemsep}{0.3em}\setlength{\topsep}{0.2em}
+      \item Identify a statistical question about a possible relationship between
+        two variables.
+      \item Explain why an apparent association may be random, not real.
+      \item Explain why association does not imply causation, and give an example
+        of a confounding variable.
+    \end{itemize}
+
+  \end{minipage}
+\end{frame}
+}
+
+% ─────────────────────────────────────────────────────────────────────────────
+% SLIDE 3 — HOOK
+% ─────────────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=hookbg}
+\setbeamercolor{itemize item}{fg=white}
+\begin{frame}[t, plain]
+  \vspace{0.45cm}\par
+  \hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+
+    {\color{white}\bfseries\footnotesize\MakeUppercase{Hook}}\par\medskip
+
+    {\color{white}\large\bfseries Two Headlines:}\\[0.3cm]
+    {\color{skymid}\itshape
+      ``Students who eat breakfast score higher on tests.''}\\[0.2cm]
+    {\color{skymid}\itshape
+      ``Shoe size and reading ability are strongly associated in children.''}
+
+    \vspace{0.5cm}
+    {\color{white}\bfseries Discussion questions:}\par\smallskip
+    \begin{itemize}
+      \setlength{\itemsep}{0.4em}\setlength{\topsep}{0.1em}
+      \item {\color{white}Is the breakfast--grades association real? Random? How would you know?}
+      \item {\color{white}Shoe size does not teach children to read.
+        What actually explains this association?}
+      \item {\color{white}These are the questions Unit 2 is designed to answer.}
+    \end{itemize}
+
+  \end{minipage}
+\end{frame}
+}
+
+% ─────────────────────────────────────────────────────────────────────────────
+% SLIDE 4 — FROM ONE VARIABLE TO TWO
+% ─────────────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=white}
+\begin{frame}[t, plain]
+  \navyheader{From One-Variable to Two-Variable Questions}
+  \hspace{0.4cm}%
+  \begin{minipage}{0.93\textwidth}
+    \vspace{0.3cm}
+    \begin{columns}[T]
+
+      \begin{column}{0.48\textwidth}
+        \small
+        \textbf{\color{navy}Unit 1 --- One variable at a time}
+        \begin{itemize}
+          \setlength{\itemsep}{0.35em}
+          \item What is the typical GPA of students at our school?
+          \item How many hours of sleep do students get per night?
+          \item What is the distribution of commute times?
+        \end{itemize}
+      \end{column}
+
+      \begin{column}{0.48\textwidth}
+        \small
+        \textbf{\color{navy}Unit 2 --- Two variables together}
+        \begin{itemize}
+          \setlength{\itemsep}{0.35em}
+          \item Is there a relationship between sleep and GPA?
+          \item Do athletes sleep more or less than non-athletes?
+          \item Does commute time affect job satisfaction?
+        \end{itemize}
+      \end{column}
+
+    \end{columns}
+    \vspace{0.6cm}
+    \small\textbf{The new question:}\enspace
+    Does knowing one variable tell us something about the other?
+  \end{minipage}
+\end{frame}
+}
+
+% ─────────────────────────────────────────────────────────────────────────────
+% SLIDE 5 — APPARENT ASSOCIATIONS MAY BE RANDOM
+% ─────────────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=greenbg}
+\begin{frame}[t, plain]
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[greenacc] (current page.north west)
+      rectangle ([yshift=-1.35cm]current page.north east);
+    \node[anchor=west, text=white, font=\bfseries\large,
+          inner xsep=0.55cm]
+      at ([yshift=-0.68cm]current page.north west)
+      {Key Idea: Apparent Patterns May Be Random (VAR-1.D.1)};
+  \end{tikzpicture}
+  \vspace{1.05cm}\par
+  \hspace{0.4cm}%
+  \begin{minipage}{0.93\textwidth}
+    \vspace{1em}
+    \small
+    \begin{columns}[T]
+
+      \begin{column}{0.48\textwidth}
+        \textbf{\color{greenacc}Example}\\[4pt]
+        In a class of 10 students, the 3 who drink coffee
+        all have higher GPAs.\\[8pt]
+        Does this prove coffee helps GPA?\\[4pt]
+        \textbf{No.} With only 10 students, this pattern
+        could easily be random. A larger sample
+        might show no relationship at all.
+      \end{column}
+
+      \begin{column}{0.48\textwidth}
+        \textbf{\color{greenacc}What makes an association more credible?}
+        \begin{itemize}
+          \setlength{\itemsep}{0.3em}
+          \item Larger sample size
+          \item Stronger association
+          \item Consistent across different groups and settings
+        \end{itemize}
+        \vspace{8pt}
+        \textbf{Bottom line:} Statistics gives us the tools to decide
+        whether a pattern is real. We build those tools in Units 5--9.
+      \end{column}
+
+    \end{columns}
+  \end{minipage}
+\end{frame}
+}
+
+% ─────────────────────────────────────────────────────────────────────────────
+% SLIDE 6 — ASSOCIATION vs. CAUSATION
+% ─────────────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=white}
+\begin{frame}[t, plain]
+  \navyheader{Association vs.\ Causation}
+  \hspace{0.4cm}%
+  \begin{minipage}{0.93\textwidth}
+    \vspace{0.3cm}
+    \begin{columns}[T]
+
+      \begin{column}{0.48\textwidth}
+        \small
+        \textbf{\color{navy}Three explanations for an association:}
+        \begin{enumerate}
+          \setlength{\itemsep}{0.4em}
+          \item $X$ causes $Y$
+          \item $Y$ causes $X$ (reverse causation)
+          \item A third variable causes both $X$ and $Y$
+                (\textbf{confounding variable})
+        \end{enumerate}
+        \vspace{8pt}
+        \textbf{\color{navy}Classic example --- fire trucks:}\\
+        \textit{Cities that send more trucks have more property damage.}\\[4pt]
+        Do trucks cause damage?\\
+        \textbf{No.} Larger fires cause both.
+        Fire size is the confounding variable.
+      \end{column}
+
+      \begin{column}{0.48\textwidth}
+        \small
+        \textbf{\color{navy}Shoe size \& reading ability}\\[4pt]
+        Both increase as children \textbf{grow older}.\\
+        Age is the confounding variable.\\[8pt]
+        \textbf{\color{navy}Ice cream \& drowning}\\[4pt]
+        Both increase in \textbf{summer}.\\
+        Season / temperature is the confounding variable.\\[8pt]
+        \textit{The association is real in both cases ---
+        but causation is not.}
+      \end{column}
+
+    \end{columns}
+  \end{minipage}
+\end{frame}
+}
+
+% ─────────────────────────────────────────────────────────────────────────────
+% SLIDE 7 — VOCABULARY
+% ─────────────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=greenbg}
+\begin{frame}[t, plain]
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[greenacc] (current page.north west)
+      rectangle ([yshift=-1.35cm]current page.north east);
+    \node[anchor=west, text=white, font=\bfseries\large,
+          inner xsep=0.55cm]
+      at ([yshift=-0.68cm]current page.north west)
+      {Vocabulary \& Key Concepts};
+  \end{tikzpicture}
+  \vspace{1.05cm}\par
+  \hspace{0.4cm}%
+  \begin{minipage}{0.93\textwidth}
+    \vspace{1em}
+    \footnotesize
+    \begin{multicols}{2}
+      \textbf{\color{greenacc}Association} --- a relationship between two variables
+        such that knowing one gives information about the other\\[4pt]
+      \textbf{\color{greenacc}Apparent association} --- a pattern in a sample that may
+        or may not reflect a real relationship in the population\\[4pt]
+      \textbf{\color{greenacc}Causation} --- one variable directly produces a change in
+        another; requires a controlled experiment to establish\\[4pt]
+
+      \columnbreak
+
+      \textbf{\color{greenacc}Confounding variable} --- a third variable related to both
+        the explanatory and response variable, making an apparent association misleading\\[4pt]
+      \textbf{\color{greenacc}Explanatory variable} --- the variable used to explain or
+        predict the response; placed on the $x$-axis\\[4pt]
+      \textbf{\color{greenacc}Response variable} --- the outcome of interest;
+        placed on the $y$-axis
+    \end{multicols}
+  \end{minipage}
+\end{frame}
+}
+
+% ─────────────────────────────────────────────────────────────────────────────
+% SLIDE 8 — GROUP ACTIVITY
+% ─────────────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=redbg}
+\setbeamercolor{enumerate item}{fg=redacc}
+\begin{frame}[t, plain]
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[redacc] (current page.north west)
+      rectangle ([yshift=-1.35cm]current page.north east);
+    \node[anchor=west, text=white, font=\bfseries\large,
+          inner xsep=0.55cm, inner ysep=0pt]
+      at ([yshift=-0.675cm]current page.north west)
+      {Group Activity};
+  \end{tikzpicture}
+  \vspace{1.05cm}\par
+  \hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    \vspace{1em}
+    \small
+    \textbf{Evaluating Associations --- Real or Random?}\\[6pt]
+    For each of the 3 scenarios on your activity sheet:
+    \begin{enumerate}
+      \setlength{\itemsep}{0.4em}\setlength{\topsep}{0em}
+      \item Identify the two variables and their types.
+      \item Decide: is this association likely real or possibly random?
+            (Consider the sample size.)
+      \item Name one confounding variable.
+      \item Could this study establish causation?
+    \end{enumerate}
+    \vspace{0.6cm}
+    {\color{redacc}\bfseries\small TIME: 8--10 minutes}
+  \end{minipage}
+\end{frame}
+}
+
+% ─────────────────────────────────────────────────────────────────────────────
+% SLIDE 9 — EXIT TICKET
+% ─────────────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\setbeamercolor{enumerate item}{fg=white}
+\begin{frame}[t, plain]
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[navylight] (current page.north west)
+      rectangle ([yshift=-1.35cm]current page.north east);
+  \end{tikzpicture}
+  \vspace{0.45cm}\par
+  \hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    {\color{goldacc}\bfseries\footnotesize\MakeUppercase{Exit Ticket}}
+    \vspace{0.4cm}\par
+    {\color{skymid}\small\itshape
+      A researcher surveys 30 high school students and finds that students
+      who drink more coffee tend to have higher GPAs.}\par
+    \vspace{0.4cm}
+    \small
+    \begin{enumerate}
+      \setlength{\itemsep}{0.45em}\setlength{\topsep}{0em}
+      \item {\color{white}What are the two variables? What type is each?}
+      \item {\color{white}Could this association be random? Why does sample size matter?}
+      \item {\color{white}Name one confounding variable.}
+      \item {\color{white}Does this prove coffee causes higher grades? Explain.}
+    \end{enumerate}
+  \end{minipage}
+\end{frame}
+}
+
+% ─────────────────────────────────────────────────────────────────────────────
+% SLIDE 10 — CLOSING & UNIT 2 ROAD MAP
+% ─────────────────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\setbeamercolor{itemize item}{fg=white}
+\begin{frame}[t, plain]
+  \begin{tikzpicture}[remember picture, overlay]
+    \fill[navylight] (current page.north west)
+      rectangle ([yshift=-1.35cm]current page.north east);
+  \end{tikzpicture}
+  \vspace{0.45cm}\par
+  \hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    {\color{goldacc}\bfseries\footnotesize\MakeUppercase{Closing \& Unit 2 Road Map}}
+    \vspace{0.45cm}\par
+    \begin{columns}[T]
+
+      \begin{column}{0.54\textwidth}
+        \small
+        {\color{goldacc}\bfseries Key Reminders}\\[5pt]
+        \begin{itemize}
+          \setlength{\itemsep}{0.4em}\setlength{\topsep}{0em}
+          \item {\color{white}\textbf{Apparent patterns may be random.}
+            {\color{skymid} Small samples can look like big patterns by chance.}}
+          \item {\color{white}\textbf{Association $\neq$ Causation.}
+            {\color{skymid} A confounding variable may explain both.}}
+          \item {\color{white}\textbf{The question drives the method.}
+            {\color{skymid} Variable types determine which display and analysis to use.}}
+        \end{itemize}
+      \end{column}
+
+      \begin{column}{0.42\textwidth}
+        \small
+        {\color{goldacc}\bfseries Where We Go Next}\\[5pt]
+        \begin{itemize}
+          \setlength{\itemsep}{0.35em}\setlength{\topsep}{0em}
+          \item {\color{white}\textbf{2.2--2.3:} Two categorical variables
+            $\to$ two-way tables, bar charts}
+          \item {\color{white}\textbf{2.4--2.9:} Two quantitative variables
+            $\to$ scatterplots, regression}
+          \item {\color{white}\textbf{Unit 3:} Experimental design
+            $\to$ establishing causation}
+        \end{itemize}
+        \vspace{0.5cm}
+        {\color{skymid}\itshape\small Homework due next class.}
+      \end{column}
+
+    \end{columns}
+  \end{minipage}
+\end{frame}
+}
+
+\end{document}
