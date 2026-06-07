@@ -1,5 +1,10 @@
 # shared/lesson.mk — included by every lesson-level Makefile.
 # Auto-detects PROJECT_ROOT, UNIT, and LESSON from CURDIR.
+#
+# A component subdirectory may provide EITHER:
+#   - main.tex  → compiled with latexmk to target/.../<comp>/main.pdf, or
+#   - main.pdf  → a prefab PDF, used as-is straight from the source tree.
+# Either form is discovered and merged into the packet by pdfunite.
 
 PROJECT_ROOT := $(abspath ../..)
 UNIT         := $(notdir $(abspath ..))
@@ -17,36 +22,46 @@ STAMP_DIR    := $(PROJECT_ROOT)/.stamps/$(UNIT)/$(LESSON)
 PDF_DIR      := $(PROJECT_ROOT)/target/$(UNIT)/$(LESSON)
 COMPILED_DIR := $(PROJECT_ROOT)/target/compiled/$(UNIT)
 
+# ── Component helpers ─────────────────────────────────────────────────────────
+# A component "exists" if its directory holds a main.tex or a prefab main.pdf.
+#   comp-present $1 → the dir name if usable, else empty
+#   comp-pdf     $1 → the PDF to feed pdfunite: compiled target if main.tex,
+#                     otherwise the source main.pdf used as-is
+#   comp-stamp   $1 → a build stamp ONLY for tex components (prefab PDFs don't compile)
+comp-present = $(if $(or $(wildcard $1/main.tex),$(wildcard $1/main.pdf)),$1)
+comp-pdf     = $(if $(wildcard $1/main.tex),$(PDF_DIR)/$1/main.pdf,$1/main.pdf)
+comp-stamp   = $(if $(wildcard $1/main.tex),$(STAMP_DIR)/$1/main.stamp)
+
 # ── Component discovery (in pedagogical order) ────────────────────────────────
 STUDENT_ORDER := cover warmup notes activity exit_ticket homework
-KEY_ORDER     := warmup_key notes_key activity_key exit_ticket_key homework_key
-
-STUDENT_COMPS := $(foreach c,$(STUDENT_ORDER),$(if $(wildcard $(c)/main.tex),$(c)))
-KEY_COMPS     := $(foreach c,$(KEY_ORDER),$(if $(wildcard $(c)/main.tex),$(c)))
-HAS_SLIDES    := $(if $(wildcard slides/main.tex),slides)
-HAS_ROOT_MAIN := $(wildcard main.tex)
-
-# Full order: root, slides, cover, then for each keyed component prefer _key over blank
 KEYED_PAIRS   := warmup notes activity exit_ticket homework
-COVER_COMP    := $(if $(wildcard cover/main.tex),cover)
+
+STUDENT_COMPS := $(foreach c,$(STUDENT_ORDER),$(call comp-present,$(c)))
+COVER_COMP    := $(call comp-present,cover)
+
+# Full version: prefer <c>_key over the blank <c>; cover has no key.
 KEYED_COMPS   := $(foreach c,$(KEYED_PAIRS),\
-                   $(if $(wildcard $(c)_key/main.tex),$(c)_key,\
-                   $(if $(wildcard $(c)/main.tex),$(c))))
+                   $(or $(call comp-present,$(c)_key),$(call comp-present,$(c))))
 FULL_COMPS    := $(COVER_COMP) $(KEYED_COMPS)
 
-# ── Stamp and PDF lists ───────────────────────────────────────────────────────
-STUDENT_STAMPS := $(foreach c,$(STUDENT_COMPS),$(STAMP_DIR)/$(c)/main.stamp)
-STUDENT_PDFS   := $(foreach c,$(STUDENT_COMPS),$(PDF_DIR)/$(c)/main.pdf)
+# Root lesson plan and slides may also be prefab PDFs.
+HAS_ROOT      := $(or $(wildcard main.tex),$(wildcard main.pdf))
+ROOT_STAMP    := $(if $(wildcard main.tex),$(STAMP_DIR)/main.stamp)
+ROOT_PDF      := $(if $(HAS_ROOT),$(if $(wildcard main.tex),$(PDF_DIR)/main.pdf,main.pdf))
 
-ROOT_STAMP     := $(if $(HAS_ROOT_MAIN),$(STAMP_DIR)/main.stamp)
-ROOT_PDF       := $(if $(HAS_ROOT_MAIN),$(PDF_DIR)/main.pdf)
-SLIDES_STAMP   := $(if $(HAS_SLIDES),$(STAMP_DIR)/slides/main.stamp)
-SLIDES_PDF     := $(if $(HAS_SLIDES),$(PDF_DIR)/slides/main.pdf)
+HAS_SLIDES    := $(call comp-present,slides)
+SLIDES_STAMP  := $(call comp-stamp,slides)
+SLIDES_PDF    := $(if $(HAS_SLIDES),$(call comp-pdf,slides))
+
+# ── Stamp and PDF lists ───────────────────────────────────────────────────────
+# Stamps drive compilation (tex only); PDF lists drive the pdfunite merge.
+STUDENT_STAMPS := $(foreach c,$(STUDENT_COMPS),$(call comp-stamp,$(c)))
+STUDENT_PDFS   := $(foreach c,$(STUDENT_COMPS),$(call comp-pdf,$(c)))
 
 FULL_STAMPS    := $(ROOT_STAMP) $(SLIDES_STAMP) \
-                  $(foreach c,$(FULL_COMPS),$(STAMP_DIR)/$(c)/main.stamp)
+                  $(foreach c,$(FULL_COMPS),$(call comp-stamp,$(c)))
 FULL_PDFS      := $(ROOT_PDF) $(SLIDES_PDF) \
-                  $(foreach c,$(FULL_COMPS),$(PDF_DIR)/$(c)/main.pdf)
+                  $(foreach c,$(FULL_COMPS),$(call comp-pdf,$(c)))
 
 # ── Targets ───────────────────────────────────────────────────────────────────
 .PHONY: all student full clean
@@ -71,7 +86,7 @@ else
 	@echo "  (no content in $(UNIT)/$(LESSON))"
 endif
 
-# ── Pattern rule: compile a component subdirectory ────────────────────────────
+# ── Pattern rule: compile a component subdirectory (tex components only) ───────
 $(STAMP_DIR)/%/main.stamp: %/main.tex $(SHARED_STYS)
 	@mkdir -p $(dir $@) $(PDF_DIR)/$*
 	cd $* && TEXINPUTS="$(TEXINPUTS)" $(LATEXMK) $(LATEXFLAGS) \
