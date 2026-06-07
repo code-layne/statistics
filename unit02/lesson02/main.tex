@@ -1,33 +1,8 @@
-%! AP Statistics — Unit 2, Lesson 2
+%! AP Statistics — Unit 2, Lesson 2.2 — Lesson Plan
 \documentclass[10pt]{article}
-\usepackage[margin=0.6in]{geometry}
-\usepackage{xcolor}
-\usepackage[most]{tcolorbox}
-\usepackage{enumitem}
-\usepackage{multicol}
-\usepackage{amsmath,amssymb}
-\usepackage{array}
-\usepackage{tabularx}
-\tcbuselibrary{breakable}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
 
-\definecolor{sky}{HTML}{EAF3FB}
-\definecolor{navy}{HTML}{1F3A5F}
-\definecolor{redbox}{HTML}{FCECEC}
-\definecolor{greenbox}{HTML}{EDF8F0}
-\definecolor{goldbox}{HTML}{FFF7E6}
-\newtcolorbox{skillbox}[2][]{
-    colback=#2, colframe=navy, boxrule=0.8pt, arc=2mm,
-    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm,
-    fonttitle=\bfseries, title={#1}, halign title=center, breakable
-}
-\setlist[itemize]{leftmargin=1.2em,itemsep=0.35em,topsep=0.35em}
-\setlist[enumerate]{leftmargin=1.4em,itemsep=0.35em,topsep=0.35em}
-\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
-\newcolumntype{Y}{>{\centering\arraybackslash}X}
-
-\newcommand{\CourseName}{AP Statistics}
-\newcommand{\SchoolYear}{2026--2027}
-\newcommand{\MeetingLength}{55 minutes}
 \newcommand{\UnitNumberName}{Unit 2: Exploring Two-Variable Data \quad}
 \newcommand{\LessonNumberName}{Lesson 2.2: Representing Two Categorical Variables}
 
@@ -37,30 +12,40 @@
     {\small\bfseries \UnitNumberName \LessonNumberName}}
 \end{center}
 
-\begin{tcolorbox}[colback=sky,colframe=navy,boxrule=0.9pt,arc=2mm,
-    left=2mm,right=2mm,top=1.5mm,bottom=1.5mm]
-    \textbf{Primary Objective:} Students will construct and read two-way (contingency) tables and
-    segmented bar charts for two categorical variables. Students will distinguish between joint,
-    marginal, and conditional frequencies, and will use these displays to explore whether an
-    association exists between the two variables (Big Idea: UNC).
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will construct and interpret two-way (contingency)
+    tables and segmented bar charts for two categorical variables, compute joint and
+    conditional relative frequencies, and use these representations to determine whether
+    the two variables are associated (Big Idea: UNC).
 \end{tcolorbox}
 
+\renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{AP Skill 2 --- Data Analysis}
     \begin{itemize}
-        \item Construct a two-way table from raw data; identify cells as joint frequencies.
-        \item Compute marginal frequencies (row totals and column totals).
-        \item Construct a segmented bar chart using conditional relative frequencies to compare groups visually.
+        \item Construct a two-way table from raw data; identify joint and marginal
+              frequencies (UNC-1.P.3).
+        \item Compute joint and conditional relative frequencies from a contingency
+              table (UNC-1.P.4, Skill 2.D).
+        \item Compare conditional distributions using a segmented bar chart to
+              determine whether an association exists (UNC-1.P.1, UNC-1.P.2).
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Key Understandings}
     \begin{itemize}
-        \item Marginal frequencies describe one variable at a time (same as a one-way table).
-        \item Conditional frequencies hold one variable fixed and describe the distribution of the other --- these reveal association.
-        \item A segmented bar chart with conditional relative frequencies makes comparisons between groups visually clear.
+        \item A two-way table organizes two categorical variables simultaneously;
+              row and column totals are marginal frequencies.
+        \item A \emph{joint} relative frequency divides a cell count by the grand
+              total; a \emph{conditional} relative frequency divides by a row or
+              column total.
+        \item Condition on the explanatory variable: if conditional distributions
+              differ across groups, the variables are associated.
+        \item A segmented bar chart built from conditional relative frequencies
+              makes group comparisons visual and immediate.
     \end{itemize}
 \end{minipage}
 \end{skillbox}
@@ -68,33 +53,55 @@
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \begin{minipage}[t]{0.48\linewidth}
     \begin{itemize}
-        \item \textbf{Two-way table (contingency table)} --- organizes counts for two categorical variables; rows = one variable, columns = the other
-        \item \textbf{Joint frequency} --- count in a single cell; describes both variables simultaneously
-        \item \textbf{Marginal frequency} --- row total or column total; describes one variable ignoring the other
+        \item \textbf{Two-way table (contingency table)} --- organizes counts for two
+              categorical variables; rows are one variable, columns are the other
+        \item \textbf{Joint frequency} --- count in a single interior cell; describes
+              both variables simultaneously
+        \item \textbf{Marginal frequency} --- row or column total; describes one
+              variable ignoring the other
+        \item \textbf{Joint relative frequency} --- cell count divided by the grand
+              total (UNC-1.P.4)
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
     \begin{itemize}
-        \item \textbf{Conditional relative frequency} --- relative frequency for one variable \textit{given} a specific value of the other variable
-        \item \textbf{Segmented bar chart} --- each bar represents a group; bar divided into segments proportional to conditional relative frequencies
-        \item \textbf{Association (categorical)} --- if conditional distributions differ across groups, the two variables are associated
+        \item \textbf{Conditional relative frequency} --- cell count divided by the
+              row or column total; holds one variable fixed
+        \item \textbf{Segmented bar chart} --- each bar represents one group; bar
+              divided into segments proportional to conditional relative frequencies
+        \item \textbf{Association (categorical)} --- two variables are associated when
+              conditional distributions differ across groups
+        \item \textbf{Side-by-side bar chart / mosaic plot} --- alternative graphical
+              displays for two categorical variables (UNC-1.P.1)
     \end{itemize}
 \end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{Quick Review (3 min)}\\
-    Recall relative frequency tables from Lesson 1.3. Ask: ``What if I want to cross two categorical variables at once? For example, grade level AND preferred subject?'' A one-way table can't show both --- that's the motivation for today's two-way table.
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item \textit{``In Lesson 1.4, what did a frequency table show?''} (counts for
+              one categorical variable)
+        \item \textit{``What is a relative frequency? How do you compute one?''}
+              (count $\div$ total)
+        \item Transition: \textit{``Today we cross two categorical variables at once.
+              What would that table look like?''}
+    \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Spiral Connections}
     \begin{itemize}
-        \item Lesson 1.3: relative frequency tables (one variable) $\to$ today: two variables crossed.
-        \item Lesson 2.3: we compute statistics (conditional proportions, relative risk) from these tables.
-        \item Unit 8: Chi-square tests formally assess whether an association in a two-way table is statistically significant.
+        \item Lesson 1.4: bar charts and relative frequency tables for one categorical
+              variable $\to$ today: two variables crossed
+        \item Lesson 2.1: the statistical question driving today's work --- ``Are grade
+              level and lunch preference associated?''
+        \item Lesson 2.3: we will compute statistics (difference in proportions,
+              relative risk) from the same tables
+        \item Unit 8: chi-square tests formally assess whether an observed association
+              is statistically significant
     \end{itemize}
 \end{minipage}
 \end{skillbox}
@@ -102,16 +109,24 @@
 \begin{skillbox}[Hook \& Lesson]{sky}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Hook (5 min)}\\
-    Present a table of data: 200 students surveyed on grade level (9th/10th) and whether they have a part-time job (Yes/No). Ask: ``Do 10th graders have jobs at a higher rate than 9th graders?'' Students immediately see a raw table isn't enough --- we need conditional percents.
+    Display a single question: \textit{``Are underclassmen and upperclassmen equally likely
+    to eat in the school cafeteria?''}\\[4pt]
+    Show 5 raw data rows (Grade, Lunch). Ask: ``How would you use this list to answer the
+    question?'' Students immediately see a raw list is inefficient --- we need a
+    two-way table to organize the counts.
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{Lesson Flow (15 min)}
+    \textbf{Lesson Flow (18--20 min)}
     \begin{enumerate}
-        \item Build the two-way table together; label joint and marginal cells.
-        \item Compute conditional relative frequencies for each grade level (row percents).
-        \item Construct a segmented bar chart from those conditional percents.
-        \item Read the chart: do the segments look different? $\to$ evidence of association or no association.
+        \item Build the two-way table together from a sample of 240 students;
+              label rows (grade: Under/Upper), columns (lunch: Cafeteria/Off-campus/Home).
+        \item Identify joint frequencies (interior cells) and marginal frequencies (totals).
+        \item Compute joint relative frequencies (each cell $\div$ 240).
+        \item Compute conditional relative frequencies for each grade row
+              (each cell $\div$ row total); compare rows --- do they differ?
+        \item Construct a segmented bar chart from the conditional frequencies; interpret:
+              if segments look different, the variables are associated.
     \end{enumerate}
 \end{minipage}
 \end{skillbox}
@@ -120,40 +135,55 @@
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Direct Instruction (10 min)}
     \begin{itemize}
-        \item Walk through computing row conditional percents vs.\ column conditional percents; when to use each (condition on the explanatory variable).
-        \item Segmented bar construction: each bar totals 100\%; segments colored by response variable categories.
-        \item Association check: if the segmented bars look the same for all groups $\to$ no association.
+        \item Emphasize EK UNC-1.P.4: joint relative frequency $= \text{cell} / \text{grand total}$,
+              \emph{not} the row or column total.
+        \item Conditional relative frequency: divide by the row total when the row
+              variable is explanatory (grade level explains lunch preference, not vice versa).
+        \item Segmented bar construction: each bar $= 100\%$; segments colored by response
+              variable (lunch type); bars labeled by explanatory variable (grade level).
+        \item Association check: if the two bars' segment proportions look the same $\to$
+              no evidence of association; if different $\to$ association.
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Active Monitoring}
     \begin{itemize}
-        \item Common error: computing conditional percents by dividing by the grand total (gives joint frequencies) instead of the row or column total.
-        \item Probe: ``Which variable is the explanatory? That's the one you condition on (divide by its row/column total).''
-        \item Check segmented bars: do they add to 100\%? Are they on the same scale?
+        \item Common error: dividing by the grand total to get conditional relative
+              frequencies (gives joint, not conditional).
+        \item Probe: \textit{``You divided by 240. What does that give you? (Joint relative freq.)
+              To compare grade levels, what should you divide by?''} (row total = 120).
+        \item Segmented bar check: do both bars reach 100\%? Are bars on the same scale?
+        \item Cold-call: \textit{``Look at the two bars. Do they look the same or different?
+              What does that tell you about association?''}
     \end{itemize}
 \end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{Group Activity (8--10 min)}\\
-    Groups receive a two-way table (political affiliation $\times$ preferred news source, $n=300$). Groups:
-    \begin{enumerate}
-        \item Compute and add marginal frequencies.
-        \item Compute conditional relative frequencies for each political group.
-        \item Construct a segmented bar chart.
-        \item Write one sentence: is there evidence of an association? Justify.
-    \end{enumerate}
+    \textbf{Group Activity (10--12 min)}\\
+    Three differentiated tiers (activity sheet):
+    \begin{itemize}
+        \item \textit{Tier R}: Given a completed 2$\times$2 table (after-school job $\times$
+              sports), compute conditional relative frequencies and answer: associated?
+        \item \textit{Tier A}: Given raw counts, build a 2$\times$3 table (grade $\times$
+              genre preference), compute conditional frequencies, sketch a segmented bar.
+        \item \textit{Tier E}: Interpret a mosaic plot; compute marginal and conditional
+              relative frequencies; write a two-sentence association claim.
+    \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Differentiation}
     \begin{itemize}
-        \item \textit{Support}: Provide a partially completed table with marginal totals filled in.
-        \item \textit{Extension}: Investigate Simpson's Paradox with a provided dataset where the overall association reverses when data are separated by a third variable.
-        \item \textit{Technology}: Use a spreadsheet to build a segmented bar chart and compare to the hand-drawn version.
+        \item \textit{Support}: Provide a computation scaffold with the formulas written
+              in the table headers; totals column pre-filled.
+        \item \textit{Extension}: Swap rows and columns in the same table; discuss how the
+              association conclusion changes (or doesn't) when you condition on the other variable.
+        \item \textit{Technology}: Use a spreadsheet to generate a segmented bar chart and
+              compare its appearance to the hand-drawn version.
+        \item \textit{ELL}: Pair vocabulary card (joint / marginal / conditional) with the table.
     \end{itemize}
 \end{minipage}
 \end{skillbox}
@@ -161,13 +191,27 @@
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Exit Ticket (5 min)}\\
-    Given a two-way table (gender $\times$ prefers fiction or nonfiction, $n=120$), students: (1) compute conditional relative frequencies for each gender, (2) state whether there is evidence of an association between gender and reading preference, (3) justify using specific values.
+    Given a partial two-way table (pet ownership $\times$ volunteering, $n = 180$):
+    \begin{enumerate}
+        \item Fill in the missing marginal totals.
+        \item Compute the conditional relative frequencies for each pet-ownership group.
+        \item State whether there is evidence of an association between pet ownership and
+              volunteering; justify with specific values.
+    \end{enumerate}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{AP-Style Check}\\
-    \textit{``The table shows data on transportation method and whether students are late or on time. Compute the conditional relative frequencies and describe any association you see between transportation method and tardiness.''}\\[4pt]
-    Assess: correct computation, clear comparison of conditional distributions, context included.
+    \textit{``A two-way table shows grade level (9th/10th) and whether students participate
+    in extracurriculars (Yes/No). For 9th graders, 60\% participate; for 10th graders, 55\%
+    participate. Which of the following best describes the relationship?''}
+    \begin{enumerate}[label=(\Alph*)]
+        \item There is no association because both values are near 50\%.
+        \item There is a strong association because the percentages are not equal.
+        \item There is weak or no association because the conditional distributions are similar.
+        \item Association cannot be determined without the actual counts.
+    \end{enumerate}
+    \textit{Answer: (C). Use student responses to calibrate readiness for Lesson 2.3.}
 \end{minipage}
 \end{skillbox}
 
@@ -175,16 +219,23 @@
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Homework / Practice}
     \begin{itemize}
-        \item Construct a two-way table from a raw dataset (30 individuals, 2 categorical variables).
-        \item Compute marginal and conditional relative frequencies; build a segmented bar chart; describe any association.
+        \item Given three two-way tables from real-survey contexts: compute marginal and
+              conditional relative frequencies, construct a segmented bar chart for one,
+              and describe whether an association is present for each.
+        \item Reflect: \textit{``Why do we use conditional relative frequencies (not joint
+              relative frequencies) to check for association?''}
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Extension / Preview}
     \begin{itemize}
-        \item \textit{Extension}: Research a real two-way table from a published survey (e.g., Pew Research); describe the association and suggest a possible explanation.
-        \item \textit{Preview}: Lesson 2.3 --- we will quantify association using statistics like the difference in proportions and relative risk, giving us numbers to compare rather than just visual impressions.
+        \item \textit{Extension}: Look up a published two-way table (e.g., Pew Research
+              Center survey on social media use by age group). Compute conditional relative
+              frequencies and write a paragraph describing the association.
+        \item \textit{Preview}: Lesson 2.3 quantifies association using the difference in
+              proportions and relative risk --- giving a number to the visual impression we
+              formed today from the segmented bar chart.
     \end{itemize}
 \end{minipage}
 \end{skillbox}
