@@ -1,0 +1,94 @@
+%! AP Statistics — Unit 1, Lesson 1.10 — Group Activity KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+%=============================================================================
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.10}{Group Activity — Key}
+\begin{tabularx}{\linewidth}{X X X}
+  Name:\;\ans{Key} & Date:\; & Period:\;
+\end{tabularx}
+
+\vspace{0.10in}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm]
+\small SAT scores: $\mu = 1060$, $\sigma = 195$. Notation: \ans{$N(1060, 195)$}
+\end{tcolorbox}
+
+\vspace{0.12in}
+
+{\large\bfseries\color{navy} Part 1 \quad Applying the 68--95--99.7 Rule}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+
+  \item \renewcommand{\arraystretch}{1.5}
+        \begin{tabularx}{\linewidth}{@{} l Y Y Y @{}}
+        \rowcolor{sky}
+        Region & Lower bound & Upper bound & \% of scores \\
+        \midrule
+        $\mu \pm 1\sigma$ & \ans{865} & \ans{1255} & \ans{68}\% \\
+        $\mu \pm 2\sigma$ & \ans{670} & \ans{1450} & \ans{95}\% \\
+        $\mu \pm 3\sigma$ & \ans{475} & \ans{1645} & \ans{99.7}\% \\
+        \end{tabularx}
+
+  \item \ansline{1255 is $\mu + 1\sigma$. By Empirical Rule, 68\% are between 865 and 1255. Above 1255: $(100\% - 68\%) / 2 = 16\%$.}
+
+  \item \ansline{670 is $\mu - 2\sigma$. Below 670: $(100\% - 95\%) / 2 = 2.5\%$.}
+
+  \item \ansline{84th percentile $= \mu + 1\sigma = 1060 + 195 = 1255$.
+  (50\% below mean + 34\% within top half of 68\% region.)}
+
+\end{enumerate}
+
+\vspace{0.10in}
+
+{\large\bfseries\color{navy} Part 2 \quad $z$-Scores and the Normal Table}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt, resume]
+
+  \item $z = (900 - 1060)/195 = -160/195 \approx \ans{-0.82}$\\[4pt]
+        Interpretation: \ansline{A score of 900 is 0.82 standard deviations below the mean SAT score.}
+
+  \item $P(Z < \ans{-0.82}) = \ans{0.2061}$\\[4pt]
+        Approximately \ans{20.6}\% of students scored below 900.
+
+  \item $z = 340/195 \approx \ans{1.74}$\\[4pt]
+        $P(Z > \ans{1.74}) = 1 - P(Z < 1.74) = 1 - \ans{0.9591} = \ans{0.0409}$
+
+  \item $P(900 < \text{SAT} < 1400) = P(Z < \ans{1.74}) - P(Z < \ans{-0.82}) = \ans{0.9591} - \ans{0.2061} = \ans{0.7530}$
+
+\end{enumerate}
+
+\vspace{0.10in}
+
+{\large\bfseries\color{navy} Part 3 \quad Percentiles and Unusual Values}
+
+\vspace{0.10in}
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt, resume]
+
+  \item $z^* \approx \ans{1.28}$\\[4pt]
+        $x = 1060 + \ans{1.28} \times 195 = 1060 + 249.6 \approx \ans{1310}$\\[4pt]
+        Interpretation: \ansline{A student would need approximately 1310 to be in the top 10\%.}
+
+  \item $z = 440/195 \approx \ans{2.26}$\\[4pt]
+        \ansline{Yes, 1500 is unusually high. A $z$-score of 2.26 means only about 1.2\% of students score above 1500 ($P(Z>2.26) \approx 0.012$). Values with $|z|>2$ are generally considered unusual.}
+
+  \item \ansline{No. A right-skewed distribution with an outlier is not approximately Normal. Applying the Normal model would produce inaccurate probabilities. We should use only the five-number summary and a boxplot for that dataset.}
+
+\end{enumerate}
+
+\begin{teachernote}
+Part 1 Q4 (84th percentile): this is a key AP conceptual link — $\mu + 1\sigma$ is the 84th percentile of any Normal distribution. Reinforce this as a shortcut.\\
+Part 2: $z(-0.82) = 0.2061$ from Table A row $-0.8$, column $.02$. $z(1.74) = 0.9591$ from row $1.7$, col $.04$.\\
+Part 3 Q11: $P(Z > 2.26) = 1 - 0.9881 = 0.0119 \approx 1.2\%$.
+\end{teachernote}
+
+\end{document}
