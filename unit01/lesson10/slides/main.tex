@@ -584,7 +584,10 @@
 % ─────────────────────────────────────────────────────────────────────────────
 {
 \setbeamercolor{background canvas}{bg=navy}
+\setbeamercolor{normal text}{fg=white}
+\setbeamercolor{itemize item}{fg=goldacc}
 \begin{frame}[t, plain]
+  \usebeamercolor[fg]{normal text}
   \begin{tikzpicture}[remember picture, overlay]
     \fill[navylight] (current page.north west)
       rectangle ([yshift=-1.35cm]current page.north east);
@@ -595,21 +598,20 @@
     {\color{goldacc}\bfseries\large Lesson 1.10 Summary}
 
     \vspace{0.5cm}
-    {\color{white}\small
+    \small
     \begin{itemize}
       \setlength{\itemsep}{0.5em}
-      \item The \textbf{Normal distribution} $N(\mu, \sigma)$ is symmetric, unimodal,
-            bell-shaped; fully described by mean and SD.
-      \item The \textbf{68--95--99.7 Rule} gives approximate proportions within
-            1, 2, 3 standard deviations of the mean.
-      \item A \textbf{$z$-score} standardizes any value: $z = (x-\mu)/\sigma$.
-            It counts standard deviations from the mean.
-      \item \textbf{Table A} gives $P(Z < z)$ (area to the left).
-            Subtract from 1 for ``greater than''; subtract areas for ``between''.
-      \item Always \textbf{assess Normality} with a histogram or Normal probability plot
-            before applying the Normal model.
+      \item \textcolor{white}{The {\color{goldacc}\bfseries Normal distribution} $N(\mu, \sigma)$ is symmetric, unimodal,
+            bell-shaped; fully described by mean and SD.}
+      \item \textcolor{white}{The {\color{goldacc}\bfseries 68--95--99.7 Rule} gives approximate proportions within
+            1, 2, 3 standard deviations of the mean.}
+      \item \textcolor{white}{A {\color{goldacc}\bfseries $z$-score} standardizes any value: $z = (x-\mu)/\sigma$.
+            It counts standard deviations from the mean.}
+      \item \textcolor{white}{{\color{goldacc}\bfseries Table A} gives $P(Z < z)$ (area to the left).
+            Subtract from 1 for ``greater than''; subtract areas for ``between''.}
+      \item \textcolor{white}{Always {\color{goldacc}\bfseries assess Normality} with a histogram or Normal probability plot
+            before applying the Normal model.}
     \end{itemize}
-    }
 
     \vspace{0.6cm}
     {\color{skymid}\small\itshape
