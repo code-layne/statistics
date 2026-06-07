@@ -1,0 +1,225 @@
+%! AP Statistics — Unit 1, Lesson 1.10 — Guided Notes KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+%=============================================================================
+\begin{document}
+
+\pageheader{Unit 1, Lesson 1.10}{Guided Notes — Key}
+\begin{tabularx}{\linewidth}{X X X}
+  Name:\;\ans{Key} & Date:\; & Period:\;
+\end{tabularx}
+
+\vspace{0.10in}
+
+\begin{objectivebox}
+\small By the end of this lesson, I will be able to\dots\\[4pt]
+\ansline{describe Normal distributions; apply the 68-95-99.7 Rule;}\\[1pt]
+\ansline{calculate and interpret z-scores; use Normal table for probabilities;}\\[1pt]
+\ansline{assess Normality with a histogram or Normal probability plot.}
+\end{objectivebox}
+
+\vspace{0.10in}
+
+\begin{vocabbox}
+\begin{multicols}{2}
+\termblanklong{Normal distribution}
+\ansline{Symmetric, bell-shaped distribution described by $\mu$ and $\sigma$; notation $N(\mu,\sigma)$.}
+\termblanklong{68--95--99.7 Rule (Empirical Rule)}
+\ansline{$\approx$68\%, 95\%, 99.7\% of data fall within 1, 2, 3 SDs of the mean.}
+\termblanklong{$z$-score (standardized value)}
+\ansline{$z = (x-\mu)/\sigma$; number of SDs above/below the mean.}
+\columnbreak
+\termblanklong{Standard Normal distribution $N(0,1)$}
+\ansline{Normal distribution with $\mu=0$ and $\sigma=1$; all z-scores follow this.}
+\termblanklong{Normal table (Table A)}
+\ansline{Gives cumulative area to the LEFT of a given $z$-score.}
+\termblanklong{Normal probability plot (NPP)}
+\ansline{If points fall near a diagonal line, the distribution is approximately Normal.}
+\end{multicols}
+\end{vocabbox}
+
+\vspace{0.10in}
+
+\begin{hookbox}
+\small\textbf{Why does the Normal model matter?}
+
+\vspace{5pt}
+Adult male heights follow approximately $N(70, 3)$ inches. Without any data, we can
+answer: \textit{``What percent of men are between 67 and 73 inches tall?''} --- because
+we know the distribution's shape and parameters.
+\end{hookbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Shape and Parameters of the Normal Distribution}
+\small
+\begin{multicols}{2}
+\textbf{\textcolor{navy}{Properties:}}
+\begin{itemize}[itemsep=3pt]
+  \item Shape: \ans{unimodal} (bell-shaped)
+  \item Symmetric about the \ans{mean}
+  \item Mean $=$ Median $=$ Mode
+  \item Described by \ans{2} parameters: $\mu$ (\ans{mean}) and $\sigma$ (\ans{std.\ dev.})
+  \item Notation: \ans{$N(\mu,\sigma)$}
+  \item Tails approach \ans{zero} quickly
+\end{itemize}
+\vspace{4pt}
+Changing $\mu$ \ans{shifts} the curve.\\
+Larger $\sigma \Rightarrow$ \ans{flatter} and \ans{wider}.\\
+Smaller $\sigma \Rightarrow$ \ans{taller} and \ans{narrower}.
+\columnbreak
+
+\begin{center}
+\begin{tikzpicture}[scale=0.80]
+  \draw[thick, navy]
+    plot[domain=-3.5:3.5, samples=80] (\x, {2.5*exp(-\x*\x/2)});
+  \draw[thick] (-3.8, 0) -- (3.8, 0);
+  \foreach \z/\h in {-3/61, -2/64, -1/67, 0/70, 1/73, 2/76, 3/79} {
+    \draw (\z, -0.12) -- (\z, 0.12);
+    \node[below, font=\tiny] at (\z, -0.15) {\h};
+  }
+  \node[below, font=\tiny\itshape] at (0, -0.52) {Height (in.)};
+  \node[above, font=\tiny\bfseries\color{navy}] at (0, 2.52) {$\mu = 70$};
+\end{tikzpicture}
+\end{center}
+
+The curve is \ans{tallest/peaked} at $\mu = 70$.
+\end{multicols}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{The 68--95--99.7 (Empirical) Rule}
+\small
+\begin{multicols}{2}
+\begin{itemize}[itemsep=4pt]
+  \item $\approx \ans{68}\%$ within $1\,\sigma$
+  \item $\approx \ans{95}\%$ within $2\,\sigma$
+  \item $\approx \ans{99.7}\%$ within $3\,\sigma$
+\end{itemize}
+\vspace{6pt}
+\textbf{Heights $N(70,3)$:}
+\begin{itemize}[itemsep=3pt]
+  \item 68\%: between \ans{67} and \ans{73} in.
+  \item 95\%: between \ans{64} and \ans{76} in.
+  \item 99.7\%: between \ans{61} and \ans{79} in.
+\end{itemize}
+\vspace{6pt}
+$P(\text{height}>76) = \frac{100\%-95\%}{2} = \ans{2.5\%}$
+\columnbreak
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+  \fill[navy!10]
+    plot[domain=-3:3, samples=60] (\x, {2.5*exp(-\x*\x/2)})
+    -- (3,0) -- (-3,0) -- cycle;
+  \fill[navy!20]
+    plot[domain=-2:2, samples=60] (\x, {2.5*exp(-\x*\x/2)})
+    -- (2,0) -- (-2,0) -- cycle;
+  \fill[sky]
+    plot[domain=-1:1, samples=40] (\x, {2.5*exp(-\x*\x/2)})
+    -- (1,0) -- (-1,0) -- cycle;
+  \draw[thick, navy]
+    plot[domain=-3.5:3.5, samples=80] (\x, {2.5*exp(-\x*\x/2)});
+  \foreach \z in {-3,-2,-1,1,2,3} {
+    \draw[dashed, charcoal, thin] (\z, 0) -- (\z, {2.5*exp(-\z*\z/2)});
+  }
+  \draw[thick] (-3.8, 0) -- (3.8, 0);
+  \foreach \z in {-3,-2,-1,0,1,2,3} {
+    \draw (\z, -0.12) -- (\z, 0.12);
+    \node[below, font=\tiny] at (\z, -0.15) {$\z$};
+  }
+  \node[below, font=\tiny\itshape] at (0, -0.52) {$z$-score};
+  \node[font=\tiny\bfseries] at (0, 1.0) {68\%};
+  \node[font=\tiny\bfseries] at (1.55, 0.45) {95\%};
+  \node[font=\tiny\bfseries] at (2.55, 0.15) {99.7\%};
+\end{tikzpicture}
+\end{center}
+\end{multicols}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{$z$-Scores and the Normal Table}
+\small
+\begin{multicols}{2}
+$z$ tells us how many \ans{standard deviations}
+above/below the \ans{mean} $x$ falls.
+
+Converting to $z$ gives the \ans{Standard} Normal: $N(\ans{0},\ans{1})$.
+
+\textbf{Examples (heights $N(70,3)$):}\\
+$x=76$: $z = \ans{+2}$\\
+$x=64$: $z = \ans{-2}$\\
+$x=70$: $z = \ans{0}$
+
+\columnbreak
+Table A gives area to the \ans{left}.
+
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{@{}l l@{}}
+$P(Z<z)$          & look up $z$ \\
+$P(Z>z)$          & $= 1 - P(Z<z)$ \\
+$P(z_1<Z<z_2)$    & $= P(Z<z_2) - P(Z<z_1)$ \\
+\end{tabular}
+
+\textbf{Inverse:} find $z^*$ for percentile $p$, then $x = \mu + z^*\sigma$.
+\end{multicols}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Assessing Normality}
+\small
+\begin{multicols}{2}
+\begin{enumerate}[itemsep=3pt, label=\alph*.]
+  \item \textbf{Histogram}: look for \ans{symmetric}, \ans{unimodal} shape with no strong \ans{skewness}.
+  \item \textbf{NPP}: points \ans{near a line} $\Rightarrow$ approximately Normal. \ans{Curves} suggest skewness.
+\end{enumerate}
+\vspace{5pt}
+Use when histogram is \ans{symmetric} and \ans{bell-shaped}, or NPP is \ans{linear}. Always \ans{check first}.
+\columnbreak
+
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+  \draw[thick] (0,0) -- (3.5, 3.5);
+  \foreach \x/\y in {0.3/0.25, 0.8/0.85, 1.3/1.25, 1.8/1.82, 2.3/2.28, 2.8/2.75, 3.2/3.18} {
+    \filldraw[navy] (\x, \y) circle (0.07);
+  }
+  \node[below, font=\tiny\itshape] at (1.75, -0.15) {Approx.\ Normal};
+  \draw[thin, charcoal] (0,0) rectangle (3.5, 3.5);
+\end{tikzpicture}
+\hspace{0.5cm}
+\begin{tikzpicture}[scale=0.7]
+  \draw[thick] (0,0) -- (3.5, 3.5);
+  \foreach \x/\y in {0.3/0.05, 0.8/0.30, 1.3/0.85, 1.8/1.80, 2.3/2.75, 2.8/3.20, 3.2/3.45} {
+    \filldraw[navy] (\x, \y) circle (0.07);
+  }
+  \node[below, font=\tiny\itshape] at (1.75, -0.15) {Not Normal};
+  \draw[thin, charcoal] (0,0) rectangle (3.5, 3.5);
+\end{tikzpicture}
+\end{center}
+
+Left: \ans{approximately} Normal. Right: \ans{skewed}.
+\end{multicols}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{tcolorbox}[colback=goldbg, colframe=goldacc, boxrule=0.8pt, arc=2mm,
+    left=4mm, right=4mm, top=2mm, bottom=2mm]
+\small\textbf{Quick Check — Key:} $N(7.5, 1.1)$\\
+(a) $6.4 = 7.5 - 1.1 = \mu - \sigma$ and $8.6 = \mu + \sigma$.
+    By Empirical Rule, $P = \ans{68\%}$ (or 0.68).\\[4pt]
+(b) $z = (9.7 - 7.5)/1.1 = 2.2/1.1 = \ans{+2.0}$\\[4pt]
+(c) \ans{Yes} — a $z$-score of $+2$ is unusually high (only $\approx 2.5\%$ of newborns weigh more).
+\end{tcolorbox}
+
+\begin{teachernote}
+Section 3 blank answers: ``standard deviations'' / ``mean'' / ``Standard'' / $N(0,1)$.
+For the Empirical Rule, remind students that 68/95/99.7 are approximations — Table A gives slightly different values (e.g., $P(|Z|<1) = 0.6827$).
+\end{teachernote}
+
+\end{document}
