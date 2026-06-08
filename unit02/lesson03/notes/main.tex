@@ -1,0 +1,195 @@
+%! AP Statistics — Unit 2, Lesson 2.3 — Student Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+%=============================================================================
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.3}{Guided Notes}
+\namedateperiod
+
+\vspace{0.12in}
+
+% ── OBJECTIVE ────────────────────────────────────────────────────────────────
+\begin{objectivebox}
+\small By the end of this lesson, I will be able to\dots\\[4pt]
+\writeline\\[1pt]
+\writeline\\[1pt]
+\writeline
+\end{objectivebox}
+
+\vspace{0.1in}
+
+% ── VOCABULARY ───────────────────────────────────────────────────────────────
+\begin{vocabbox}
+\termblanklong{Conditional proportion ($\hat{p}$)}
+\termblanklong{Difference in proportions}
+\termblanklong{Relative risk (risk ratio)}
+\termblanklong{Baseline group}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+% ── HOOK ─────────────────────────────────────────────────────────────────────
+\begin{hookbox}
+\small\textbf{Scenario:} A clinical trial tested a new vaccine. Of 400 vaccinated participants,
+32 contracted the flu. Of 400 unvaccinated participants, 80 contracted the flu.
+
+\vspace{6pt}
+\textbf{Statistical question:} \textit{How much does vaccination reduce the likelihood of getting the flu?}
+
+\vspace{6pt}
+\textbf{Discussion:}
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
+  \item We already know the conditional proportions from Lesson 2.2. What are they here?\\
+        Vaccinated: $\hat{p}_V = \blank{2cm}$ \quad Unvaccinated: $\hat{p}_U = \blank{2cm}$
+  \item The proportions differ --- but \emph{how} do we describe that difference with a single number?\\
+        \writeline
+\end{enumerate}
+\end{hookbox}
+
+\vspace{0.1in}
+
+% ── DIFFERENCE IN PROPORTIONS ────────────────────────────────────────────────
+\begin{notesbox}{Step 1 --- Difference in Proportions (UNC-1.Q, UNC-1.R)}
+\small
+
+\noindent\textbf{Formula:}
+\[
+  \hat{p}_1 - \hat{p}_2 = \frac{\text{successes in Group 1}}{\text{Group 1 total}} -
+                           \frac{\text{successes in Group 2}}{\text{Group 2 total}}
+\]
+
+\vspace{4pt}
+\textbf{Vaccine example} (Group 1 = Vaccinated, Group 2 = Unvaccinated):
+\[
+  \hat{p}_V - \hat{p}_U = \frac{\blank{1cm}}{\blank{1cm}} - \frac{\blank{1cm}}{\blank{1cm}}
+  = \blank{2cm} - \blank{2cm} = \blank{2.4cm}
+\]
+
+\vspace{6pt}
+\textbf{Interpretation template:}\\
+\textit{``The proportion of [outcome] among [Group 1] was \underline{\hspace{2cm}} [higher / lower]
+than the proportion among [Group 2].''}
+
+\vspace{6pt}
+\textbf{Write the interpretation for the vaccine example:}\\[6pt]
+\writeline\\[1pt]\writeline
+
+\vspace{6pt}
+\textbf{Key properties:}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item Value of \blank{1cm} $\to$ no difference (no association).
+  \item Positive $\to$ Group 1 rate is \blank{3cm}; Negative $\to$ Group 1 rate is \blank{3cm}.
+  \item Units: \blank{3cm} (same units as the proportions themselves).
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.1in}
+
+% ── RELATIVE RISK ─────────────────────────────────────────────────────────────
+\begin{notesbox}{Step 2 --- Relative Risk (UNC-1.Q, UNC-1.R)}
+\small
+
+\noindent\textbf{Formula:}
+\[
+  \text{Relative Risk} = \frac{\hat{p}_1}{\hat{p}_2}
+\]
+The denominator $\hat{p}_2$ is the \textbf{\blank{3cm} group} (the comparison baseline).
+
+\vspace{4pt}
+\textbf{Vaccine example} (Group 1 = Vaccinated, Group 2 = Unvaccinated):
+\[
+  \text{RR} = \frac{\hat{p}_V}{\hat{p}_U} = \frac{\blank{2cm}}{\blank{2cm}} = \blank{2.4cm}
+\]
+
+\vspace{6pt}
+\textbf{Interpretation template:}\\
+\textit{``[Group 1] was \underline{\hspace{2cm}} times as likely to [outcome] as [Group 2].''}
+
+\vspace{6pt}
+\textbf{Write the interpretation for the vaccine example:}\\[6pt]
+\writeline\\[1pt]\writeline
+
+\vspace{6pt}
+\textbf{Key properties:}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item Value of \blank{1cm} $\to$ no difference (no association).
+  \item RR $> 1$ $\to$ Group 1 rate is \blank{3cm}; RR $< 1$ $\to$ Group 1 rate is \blank{3cm}.
+  \item \textbf{Not} a percentage-point difference --- RR $= 2$ means ``twice as likely,'' not ``2\% more.''
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.1in}
+
+% ── COMPARING THE TWO STATISTICS ─────────────────────────────────────────────
+\begin{notesbox}{Step 3 --- When Do They Tell Different Stories?}
+\small
+\begin{multicols}{2}
+
+\textbf{Context A: Rare outcome}\\
+Group 1: 2 of 1000 ($\hat{p}_1 = 0.002$)\\
+Group 2: 1 of 1000 ($\hat{p}_2 = 0.001$)
+
+\vspace{4pt}
+Difference in proportions: \blank{3cm}\\
+Relative risk: \blank{3cm}
+
+\vspace{6pt}
+Which statistic is more striking?\\
+\writeline\\[1pt]\writeline
+
+\columnbreak
+
+\textbf{Context B: Common outcome}\\
+Group 1: 600 of 1000 ($\hat{p}_1 = 0.60$)\\
+Group 2: 400 of 1000 ($\hat{p}_2 = 0.40$)
+
+\vspace{4pt}
+Difference in proportions: \blank{3cm}\\
+Relative risk: \blank{3cm}
+
+\vspace{6pt}
+Which statistic is more striking?\\
+\writeline\\[1pt]\writeline
+
+\end{multicols}
+
+\vspace{4pt}
+\textbf{Takeaway:} Fill in the blanks.\\
+A small \blank{3cm} can correspond to a large \blank{3cm}, and vice versa.
+Always report \blank{5cm} in context.
+\end{notesbox}
+
+\vspace{0.1in}
+
+% ── CONNECTIONS ───────────────────────────────────────────────────────────────
+\begin{spiralbox}
+\small
+\begin{multicols}{2}
+
+\textbf{How this connects:}
+\begin{itemize}[itemsep=3pt]
+  \item Lesson 2.2: conditional frequencies show \emph{whether} groups differ.
+  \item Lesson 2.3 (today): difference in proportions and relative risk \emph{quantify} how much.
+  \item Unit 6: formal inference tests whether the observed difference is statistically significant.
+\end{itemize}
+
+\columnbreak
+
+\textbf{In your own words:}\\
+Why do researchers sometimes prefer relative risk over the difference in proportions?\\[2pt]
+\writeline\\[1pt]\writeline\\[1pt]\writeline
+
+\end{multicols}
+\end{spiralbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Additional Notes}
+\vspace{0pt}
+\writeline\\\writeline\\\writeline\\\writeline\\\writeline\\\writeline
+\end{notesbox}
+
+\end{document}
