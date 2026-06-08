@@ -8,6 +8,7 @@
 \usepackage{amsmath,amssymb}
 \usepackage{array}
 \usepackage{tabularx}
+\usepackage{graphicx}
 \tcbuselibrary{breakable}
 
 \definecolor{sky}{HTML}{EAF3FB}
@@ -89,15 +90,19 @@
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Quick Review (3 min)}\\
     Students recall from Lesson 2.7: the sum of residuals is 0. Ask: ``Why would we want to minimize $\sum e_i^2$ rather than $\sum e_i$?'' (The sum of residuals is always 0 regardless of the line --- squaring prevents cancellation of positive and negative errors.)
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
+
+    \vspace{6pt}
     \textbf{Spiral Connections}
     \begin{itemize}
         \item Lesson 2.5: $r$ appears directly in the slope formula $b = r\frac{s_y}{s_x}$.
         \item Lesson 2.7: residuals are what we are minimizing.
         \item Unit 9: least-squares regression is the foundation for inference on the slope ($b$).
     \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \vspace{0pt}
+    \includegraphics[page=1,width=\linewidth]{warmup/main}
 \end{minipage}
 \end{skillbox}
 
@@ -154,9 +159,9 @@
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Differentiation}
     \begin{itemize}
-        \item \textit{Support}: Provide a reference card with the formulas and a step-by-step example; students follow the steps with new values.
-        \item \textit{Extension}: Show two regression outputs with $r^2 = 0.87$ but very different residual plots. Students argue: which model is better, and why does $r^2$ alone not suffice?
-        \item \textit{Technology}: Use calculator LinReg output to verify hand calculations.
+        \item \textit{Tier R}: Provide a reference card with the formulas and a step-by-step example; students follow the steps with new values.
+        \item \textit{Tier A}: Students compute slope and intercept from summary statistics and interpret $r^2$ independently.
+        \item \textit{Tier E}: Show two regression outputs with $r^2 = 0.87$ but very different residual plots. Students argue: which model is better, and why does $r^2$ alone not suffice?
     \end{itemize}
 \end{minipage}
 \end{skillbox}
