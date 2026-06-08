@@ -1,0 +1,183 @@
+%! AP Statistics — Unit 2, Lesson 2.5 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.5}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{objectivebox}
+\small By the end of this lesson, I will be able to\dots\\[4pt]
+\ansline{calculate $r$ using technology and interpret the formula}\\[1pt]
+\ansline{interpret $r$ in context: direction, strength, linear qualifier}\\[1pt]
+\ansline{explain why correlation does not imply causation}
+\end{objectivebox}
+
+\vspace{0.08in}
+
+\begin{vocabbox}
+\termblanklong{Correlation coefficient ($r$)}
+\ansline{a number between $-1$ and $1$ that measures the direction and strength of the
+\emph{linear} association between two quantitative variables}
+\termblanklong{Positive correlation}
+\ansline{$r > 0$; as $x$ increases, $y$ tends to increase}
+\termblanklong{Negative correlation}
+\ansline{$r < 0$; as $x$ increases, $y$ tends to decrease}
+\termblanklong{No linear association}
+\ansline{$r \approx 0$; knowing $x$ does not linearly predict $y$}
+\termblanklong{Lurking variable}
+\ansline{a variable not included in the analysis that may explain the association between $x$ and $y$}
+\end{vocabbox}
+
+\vspace{0.08in}
+
+\begin{hookbox}
+\small\textbf{Opening Question:} Your teacher displays four scatterplots.
+
+\vspace{6pt}
+Rank them from \textit{strongest} linear association to \textit{weakest} and explain.\\[8pt]
+\ansline{Answers vary; look for students connecting tightness of points to strength.}\\[1pt]
+\ansline{Accept any reasonable ranking with a justification referencing how closely points
+follow the pattern.}
+\vspace{4pt}
+\textbf{Key idea:} A single number called the \ans{correlation coefficient $r$} lets us compare
+strengths precisely.
+\end{hookbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Step 1 --- What Is the Correlation Coefficient? (DAT-1.B)}
+\small
+
+\noindent The \textbf{correlation coefficient} $r$ measures the \ans{direction} and \ans{strength}
+of the \ans{linear} association between two quantitative variables.
+
+\vspace{8pt}
+\textbf{Properties of $r$:}
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+  \item $r$ is always between \ans{$-1$} and \ans{$1$}, inclusive.
+  \item The \ans{sign} (positive/negative) of $r$ gives the \ans{direction} of the association.
+  \item The \ans{magnitude} (size) of $r$ gives the \ans{strength} of the linear association.
+  \item $r$ is \ans{unit-free} --- it does not change when units change.
+  \item Swapping $x$ and $y$ \ans{does not change} the value of $r$.
+\end{itemize}
+
+\vspace{8pt}
+\textbf{The formula (for reference):}
+\[
+  r = \frac{1}{n-1}\sum_{i=1}^{n}\left(\frac{x_i - \bar{x}}{s_x}\right)\!\left(\frac{y_i - \bar{y}}{s_y}\right)
+\]
+Each term is the product of two \ans{$z$-scores} --- that is why $r$ is unit-free.
+In practice, we use \ans{technology (calculator or software)}.
+
+\vspace{8pt}
+\textbf{Correlation strength guidelines (approximate):}
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}C{2.5cm} X @{}}
+\rowcolor{sky}
+$|r|$ range & Interpretation \\
+\midrule
+$0.9$ to $1.0$ & \ans{very strong} linear association \\
+$0.7$ to $0.9$ & \ans{strong} linear association \\
+$0.5$ to $0.7$ & \ans{moderate} linear association \\
+$0$ to $0.5$   & \ans{weak} linear association \\
+\end{tabularx}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Step 2 --- Interpreting $r$ in Context (DAT-1.C)}
+\small
+
+\noindent \textbf{Interpretation template:}\\[6pt]
+``There is a \ans{strong/moderate/weak} \ans{positive/negative} \textbf{linear} association between
+[explanatory variable] and [response variable] for these [individuals] ($r = \ans{\text{value}}$).''
+
+\vspace{8pt}
+\textbf{Class example --- Hours of sleep ($x$) vs.\ reaction time in ms ($y$):}
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} l *{8}{C{1cm}} @{}}
+\rowcolor{sky}
+\textbf{Sleep (hr)} & 5 & 6 & 7 & 7 & 8 & 8 & 9 & 9 \\
+\textbf{RT (ms)}    & 310 & 285 & 260 & 250 & 235 & 220 & 205 & 195 \\
+\end{tabularx}
+
+\vspace{6pt}
+Technology gives $r = \ans{-0.998}$.
+
+\vspace{6pt}
+Write the full interpretation in context:\\[6pt]
+\ansline{There is a very strong negative linear association between hours of sleep and reaction
+time (ms) for these 8 students ($r \approx -1.00$). As hours of sleep increase, reaction time
+tends to decrease.}\\[1pt]
+\ansline{}\\[1pt]
+\ansline{}
+
+\vspace{6pt}
+\textbf{Caution --- $r$ near $\pm1$ does NOT guarantee a linear model is appropriate.}\\
+A dataset following a perfect \ans{curved} pattern can have $r$ close to $1$ if the
+curve rises consistently. Always check the \ans{scatterplot} before reporting $r$.
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Step 3 --- Correlation Does Not Imply Causation (DAT-1.C.2)}
+\small
+
+\noindent A strong $r$ tells us two variables are \ans{associated} --- it does \emph{not} tell
+us that one \ans{causes} the other.
+
+\vspace{6pt}
+\textbf{Classic example:} Cities with more \ans{firefighters} tend to have more \ans{fire damage}.
+Does that mean one causes the other? No --- both are caused by a \ans{lurking} variable: \ans{fire size}.
+
+\vspace{6pt}
+A \textbf{lurking variable} is a variable that is \ans{not included in the study} and may explain the
+relationship between $x$ and $y$.
+
+\vspace{6pt}
+\textbf{Practice --- For each pair, identify a possible lurking variable:}
+\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+  \item Ice cream sales and drowning deaths (strong positive): \ans{hot weather / season}
+  \item Shoe size and reading level in elementary school (positive): \ans{age of the child}
+\end{enumerate}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{spiralbox}
+\small
+\begin{multicols}{2}
+\textbf{Connections:}
+\begin{itemize}[itemsep=3pt]
+  \item Lesson 2.4: DOFS described direction and strength in words --- $r$ assigns a number.
+  \item Lesson 2.6: slope of regression line $= r \cdot \dfrac{s_y}{s_x}$.
+  \item Lessons 2.8--2.9: $r^2$ measures how much variability in $y$ is explained by $x$.
+\end{itemize}
+
+\columnbreak
+
+\textbf{Reflection:}\\
+Why must you \emph{always} look at the scatterplot even after computing $r$?\\[2pt]
+\ansline{$r$ only captures the strength of a \emph{linear} pattern; a curved relationship,}\\[1pt]
+\ansline{outliers, or clusters can distort $r$ without obvious warning.}\\[1pt]
+\ansline{The scatterplot reveals what $r$ alone cannot.}
+\end{multicols}
+\end{spiralbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Additional Notes}
+\vspace{0pt}
+\writeline\\\writeline\\\writeline\\\writeline\\\writeline
+\end{notesbox}
+
+\end{document}

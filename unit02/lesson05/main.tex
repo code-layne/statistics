@@ -39,28 +39,34 @@
 
 \begin{tcolorbox}[colback=sky,colframe=navy,boxrule=0.9pt,arc=2mm,
     left=2mm,right=2mm,top=1.5mm,bottom=1.5mm]
-    \textbf{Primary Objective:} Students will calculate and interpret the correlation coefficient
-    $r$ as a measure of the strength and direction of a linear association between two quantitative
-    variables. Students will understand the properties of $r$ (including its sensitivity to
-    outliers) and recognize that correlation does not imply causation (Big Idea: DAT; AP Skills 2 \& 4).
+    \textbf{Primary Objective:} Students will calculate and interpret the correlation
+    coefficient $r$ for a linear relationship between two quantitative variables ---
+    understanding that $r$ quantifies the strength and direction of a \emph{linear}
+    association, is unit-free, and does not imply causation (Big Idea: DAT; AP Skills 2.C \& 4.B).
 \end{tcolorbox}
 
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{AP Skills 2 \& 4 --- Data Analysis \& Statistical Argumentation}
+    \textbf{AP Skills 2.C \& 4.B --- Data Analysis \& Statistical Argumentation}
     \begin{itemize}
-        \item Interpret $r$ in context: sign (direction), magnitude (strength).
-        \item Recognize the properties of $r$: $-1 \leq r \leq 1$; $r = \pm 1$ means perfect linear; $r$ is sensitive to outliers; $r$ has no units.
-        \item Explain why a high $|r|$ value does not establish causation.
+        \item Calculate $r$ using technology (or the formula) for a bivariate dataset.
+        \item Interpret $r$: state direction (sign), strength (magnitude), and that the
+              association is linear --- in context.
+        \item Explain why a value of $r$ near $\pm 1$ does \emph{not} guarantee that a
+              linear model is appropriate.
+        \item Distinguish association from causation.
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Key Understandings}
     \begin{itemize}
-        \item $r$ measures only \textit{linear} association; a curved relationship can have $r \approx 0$ yet be very strong.
-        \item $r$ is not resistant: one influential point can dramatically change its value.
-        \item $r^2$ (the coefficient of determination) tells what proportion of variation in $y$ is explained by the linear model --- preview for Lesson 2.6.
+        \item $r$ is always between $-1$ and $1$, inclusive, and is unit-free.
+        \item The sign of $r$ gives direction; the magnitude gives strength of the
+              \emph{linear} association.
+        \item $r = 0$ indicates no \emph{linear} association (curved patterns can still exist).
+        \item A perceived relationship between two variables does not mean one \emph{causes}
+              the other (DAT-1.C.2).
     \end{itemize}
 \end{minipage}
 \end{skillbox}
@@ -68,19 +74,22 @@
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
 \begin{minipage}[t]{0.48\linewidth}
     \begin{itemize}
-        \item \textbf{Correlation coefficient} $r$:
-        \[r = \frac{1}{n-1}\sum\left(\frac{x_i - \bar{x}}{s_x}\right)\left(\frac{y_i - \bar{y}}{s_y}\right)\]
-        measures linear association; $-1 \leq r \leq 1$
-        \item \textbf{$r > 0$}: positive linear association; \textbf{$r < 0$}: negative linear association; \textbf{$r = 0$}: no linear association
-        \item \textbf{$|r|$ close to 1}: strong; close to 0: weak (rough guides: $|r| \geq 0.8$ strong, $0.5$--$0.8$ moderate, $< 0.5$ weak)
+        \item \textbf{Correlation coefficient ($r$)} --- a number between $-1$ and $1$ that
+              measures the direction and strength of the linear association between two
+              quantitative variables
+        \item \textbf{Positive correlation} ($r > 0$) --- as $x$ increases, $y$ tends to increase
+        \item \textbf{Negative correlation} ($r < 0$) --- as $x$ increases, $y$ tends to decrease
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
     \begin{itemize}
-        \item \textbf{$r^2$ (coefficient of determination)}: proportion of variation in $y$ explained by the linear relationship with $x$; $0 \leq r^2 \leq 1$
-        \item \textbf{Properties of $r$}: unitless; symmetric ($r_{xy} = r_{yx}$); not resistant to outliers; only meaningful for linear relationships
-        \item \textbf{Correlation $\neq$ causation}: a high $|r|$ can result from a confounding variable or coincidence
+        \item \textbf{No linear association} ($r \approx 0$) --- knowing $x$ does not
+              linearly predict $y$
+        \item \textbf{Perfect linear association} ($r = \pm 1$) --- all points lie exactly
+              on a line
+        \item \textbf{Correlation $\neq$ causation} --- a strong $r$ does not mean one
+              variable causes changes in the other
     \end{itemize}
 \end{minipage}
 \end{skillbox}
@@ -88,15 +97,17 @@
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Quick Review (3 min)}\\
-    Display the scatterplots from Lesson 2.4 and students' DOFS descriptions. Ask: ``You used words like `strong' and `moderate.' Could we replace those words with a single number?'' That number is $r$.
+    Students describe the direction and strength of three scatterplots (from Lesson 2.4
+    DOFS language). Ask: ``Wouldn't it be useful to have a single number to compare
+    how strong each relationship is?'' --- motivates $r$.
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Spiral Connections}
     \begin{itemize}
-        \item DOFS from Lesson 2.4 gives qualitative description; $r$ gives a quantitative one.
-        \item Lesson 2.8: $r^2$ is reported alongside regression output.
-        \item Unit 9: inference for the slope of a regression model also tests whether $r$ is significantly different from 0.
+        \item Lesson 2.4: direction and strength from DOFS --- $r$ puts a number on those words.
+        \item Lessons 2.6--2.7: the regression line relies on $r$ (slope $= r \cdot s_y/s_x$).
+        \item Unit 3: inference for regression uses $r^2$ and the $t$-test for slope.
     \end{itemize}
 \end{minipage}
 \end{skillbox}
@@ -104,17 +115,19 @@
 \begin{skillbox}[Hook \& Lesson]{sky}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Hook (5 min)}\\
-    Show 6 scatterplots with different $r$ values ($r = -0.95, -0.5, 0, 0.5, 0.85, 1.0$) displayed out of order. Students match each plot to an $r$ value by intuition. Debrief: correlation is a formalization of the visual impression of linear tightness.
+    Display four scatterplots on the board. Ask students to rank them from ``strongest
+    relationship'' to ``weakest.'' After discussion, reveal $r$ values and confirm (or
+    surprise!) the class. Debrief: $r$ makes ``strong'' and ``weak'' precise.
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Lesson Flow (15 min)}
     \begin{enumerate}
-        \item Introduce the formula for $r$ conceptually (products of standardized values).
-        \item Walk through a by-hand computation for 4 data points.
-        \item Discuss the properties of $r$ one by one, with a counterexample for each potential misconception.
-        \item Demonstrate with technology (calculator or Desmos correlation feature).
-        \item Introduce $r^2$ briefly as ``proportion of variation explained.''
+        \item Introduce the formula; emphasize technology is the usual tool (EK DAT-1.B.2).
+        \item Students calculate $r$ for a small dataset by hand once to build intuition.
+        \item Display several $(r, \text{scatterplot})$ pairs; students identify matches.
+        \item Discuss: can $r$ be near $\pm 1$ for a curved dataset? (EK DAT-1.B.3)
+        \item Address causation with a classic lurking-variable example.
     \end{enumerate}
 \end{minipage}
 \end{skillbox}
@@ -123,40 +136,51 @@
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Direct Instruction (10 min)}
     \begin{itemize}
-        \item Interpretation template: ``The correlation between [x] and [y] is $r = [value]$, indicating a [strong/moderate/weak] [positive/negative] linear association.''
-        \item Demonstrate the outlier sensitivity of $r$: show a scatterplot, compute $r$, remove one outlier, recompute $r$ --- dramatic change.
-        \item Show a curved relationship with $r \approx 0$ to illustrate that $r = 0$ does NOT mean no relationship.
+        \item Write the formula:
+              $r = \dfrac{1}{n-1}\sum\!\left(\dfrac{x_i - \bar x}{s_x}\right)\!\left(\dfrac{y_i - \bar y}{s_y}\right)$
+        \item Emphasize: $r$ is unit-free (standardized $z$-scores); swapping $x$ and $y$
+              leaves $r$ unchanged.
+        \item Model a full interpretation: ``There is a [strong/moderate/weak]
+              [positive/negative] linear association between [var1] and [var2]; $r = [\ldots]$.''
+        \item Show a dataset with $r \approx 0.9$ but a curved pattern to reinforce
+              EK DAT-1.B.3.
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Active Monitoring}
     \begin{itemize}
-        \item Common misconception: $r = 0.9$ means 90\% of the data is linear. Correct: it describes strength; $r^2 = 0.81$ means 81\% of variation is explained.
-        \item Watch for: students switching $r$ and $r^2$ in interpretations.
-        \item Probe: ``If I switch $x$ and $y$, what happens to $r$?'' (Nothing --- $r$ is symmetric.)
+        \item Common errors: forgetting to state ``linear'' in the interpretation; confusing
+              $r$ with $r^2$; concluding causation from a high $r$.
+        \item Prompt: ``Does $r$ tell us the \emph{form} of the relationship? What if
+              the scatterplot is curved?''
+        \item Circulate as students calculate $r$ for the activity dataset; look for
+              sign errors.
     \end{itemize}
 \end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
 \begin{minipage}[t]{0.48\linewidth}
-    \textbf{Group Activity (8--10 min)}\\
-    Each group receives a dataset and computes $r$ by hand (or with a calculator). Groups then:
+    \textbf{Group Activity (10 min)}\\
+    Each tier receives a different dataset. Groups:
     \begin{enumerate}
-        \item Interpret $r$ fully in context.
-        \item Compute $r^2$ and write a sentence interpreting it.
-        \item Remove one apparent outlier, recompute $r$, and describe the change.
-        \item Discuss: does the correlation establish a causal relationship?
+        \item Compute $r$ using technology (and verify with formula for Tier E).
+        \item Interpret $r$ in context: direction, strength, linear qualifier.
+        \item Sketch a scatterplot that could match their $r$; compare with the actual plot.
+        \item Respond to: ``Does this $r$ prove one variable causes the other?''
     \end{enumerate}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Differentiation}
     \begin{itemize}
-        \item \textit{Support}: Provide a formula sheet and a worked example of the by-hand calculation; students replicate with new data.
-        \item \textit{Extension}: Use an online correlation guessing game (e.g., \texttt{guessthecorrelation.com}) to build intuition for estimating $r$ from scatterplots.
-        \item \textit{AP Connection}: Practice interpreting $r^2$ --- the most commonly misinterpreted statistic in AP Statistics FRQs.
+        \item \textit{Support (Tier R)}: pre-computed $\bar x$, $\bar y$, $s_x$, $s_y$ provided;
+              students complete the formula with guided steps.
+        \item \textit{Extension (Tier E)}: students generate their own dataset targeting
+              a specified $r$ value, then verify with technology.
+        \item \textit{Misconception check}: provide two scenarios with the same $r$ but
+              different scatterplots (one linear, one curved) --- which model is appropriate?
     \end{itemize}
 \end{minipage}
 \end{skillbox}
@@ -164,13 +188,19 @@
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Exit Ticket (5 min)}\\
-    Given: $r = -0.74$ between daily temperature and hot chocolate sales. Students: (1) describe the association, (2) compute and interpret $r^2$, (3) identify one possible confounding variable that could explain the association without direct causation.
+    Students are given $r = -0.87$ for a dataset of engine size ($x$, liters) vs.\ fuel
+    efficiency ($y$, mpg) for 30 cars. They write a complete interpretation and answer
+    whether this proves larger engines \emph{cause} lower efficiency.
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{AP-Style Check}\\
-    \textit{``The correlation between study hours and exam score is $r = 0.88$. A student concludes that studying causes higher scores. Evaluate this conclusion.''}\\[4pt]
-    Assess: student acknowledges the strong linear association, but correctly states this is an observational study and association does not establish causation (lurking variables possible).
+    \textit{``Describe the linear association between engine size and fuel efficiency using
+    the correlation coefficient.''}\\[4pt]
+    Model: ``There is a strong negative linear association between engine size and fuel
+    efficiency for these 30 cars ($r = -0.87$). As engine size increases, fuel efficiency
+    tends to decrease. This does not prove that larger engines \emph{cause} lower efficiency ---
+    other factors may be involved.''
 \end{minipage}
 \end{skillbox}
 
@@ -178,16 +208,22 @@
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Homework / Practice}
     \begin{itemize}
-        \item For 3 provided datasets, compute $r$ and $r^2$, interpret both, and state whether causation can be concluded.
-        \item AP textbook: multiple-choice on properties and interpretation of $r$.
+        \item Interpret given $r$ values in 3 contexts; identify direction, strength, and
+              whether causation can be concluded.
+        \item Match five scatterplot sketches to five $r$ values.
+        \item Investigate a real dataset (provided): compute $r$ with technology and write
+              a full interpretation.
     \end{itemize}
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.48\linewidth}
     \textbf{Extension / Preview}
     \begin{itemize}
-        \item \textit{Extension}: Visit \texttt{tylervigen.com/spurious-correlations} --- find two correlations that are clearly not causal. Write a brief explanation of the likely lurking variable.
-        \item \textit{Preview}: Lesson 2.6 --- knowing the strength of the linear association, we now want to \textit{model} it with a line. The least-squares regression line uses the same $r$, $\bar{x}$, $\bar{y}$, $s_x$, and $s_y$ values.
+        \item \textit{Extension}: Research a famous spurious correlation (e.g., Nicolas Cage
+              films vs.\ drowning deaths). Write a paragraph explaining why the high $r$ is
+              misleading.
+        \item \textit{Preview}: Lesson 2.6 uses $r$ to build the \textbf{least-squares
+              regression line} --- a formula that makes predictions from $x$ values.
     \end{itemize}
 \end{minipage}
 \end{skillbox}
