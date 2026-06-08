@@ -1,0 +1,152 @@
+%! AP Statistics — Unit 2, Lesson 2.3 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+%=============================================================================
+\begin{document}
+
+\pageheader{Unit 2, Lesson 2.3}{Guided Notes --- Answer Key}
+\begin{tabularx}{\linewidth}{X X X}
+Name:\;\ans{Key} & Date:\; & Period:\;
+\end{tabularx}
+
+\vspace{0.12in}
+
+\begin{objectivebox}
+\small By the end of this lesson, I will be able to\dots\\[4pt]
+\ansline{compute the conditional proportion for each group in a two-way table,}\\[1pt]
+\ansline{calculate and interpret the difference in proportions and relative risk,}\\[1pt]
+\ansline{compare both statistics to assess the strength of an association.}
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\termblanklong{Conditional proportion ($\hat{p}$)}
+\hfill\ans{the proportion of successes within a given group: $\hat{p} = \frac{\text{successes}}{\text{group total}}$}
+
+\termblanklong{Difference in proportions}
+\hfill\ans{$\hat{p}_1 - \hat{p}_2$; additive comparison between two groups' rates}
+
+\termblanklong{Relative risk (risk ratio)}
+\hfill\ans{$\hat{p}_1 / \hat{p}_2$; multiplicative comparison; how many times as likely}
+
+\termblanklong{Baseline group}
+\hfill\ans{the reference group in the denominator of the relative risk}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+\small\textbf{Scenario:} 400 vaccinated, 32 flu cases; 400 unvaccinated, 80 flu cases.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=2pt]
+  \item Vaccinated: $\hat{p}_V = \ans{32/400 = 0.08}$ \quad Unvaccinated: $\hat{p}_U = \ans{80/400 = 0.20}$
+  \item \ansline{We need a statistic --- either the difference (additive) or the ratio (multiplicative).}
+\end{enumerate}
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Step 1 --- Difference in Proportions (UNC-1.Q, UNC-1.R)}
+\small
+
+\[
+  \hat{p}_V - \hat{p}_U = \frac{\ans{32}}{\ans{400}} - \frac{\ans{80}}{\ans{400}}
+  = \ans{0.08} - \ans{0.20} = \ans{-0.12}
+\]
+
+\textbf{Interpretation:}\\[4pt]
+\ansline{The proportion of vaccinated participants who got the flu (8\%) was 0.12 (12 percentage points) \emph{lower} than the proportion of unvaccinated participants who got the flu (20\%).}
+
+\vspace{4pt}
+\textbf{Key properties:}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item Value of \ans{0} $\to$ no difference.
+  \item Positive $\to$ Group 1 rate is \ans{higher}; Negative $\to$ Group 1 rate is \ans{lower}.
+  \item Units: \ans{proportion (or percentage points)}.
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Step 2 --- Relative Risk (UNC-1.Q, UNC-1.R)}
+\small
+
+The denominator is the \textbf{\ans{baseline (unvaccinated)}} group.
+
+\[
+  \text{RR} = \frac{\hat{p}_V}{\hat{p}_U} = \frac{\ans{0.08}}{\ans{0.20}} = \ans{0.40}
+\]
+
+\textbf{Interpretation:}\\[4pt]
+\ansline{Vaccinated participants were 0.40 times as likely to get the flu as unvaccinated
+participants --- i.e., vaccination reduced the likelihood of flu to 40\% of the unvaccinated rate.}
+
+\vspace{4pt}
+\textbf{Key properties:}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item Value of \ans{1} $\to$ no difference.
+  \item RR $> 1$ $\to$ Group 1 rate is \ans{higher}; RR $< 1$ $\to$ Group 1 rate is \ans{lower}.
+  \item Not a percentage-point difference.
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Step 3 --- When Do They Tell Different Stories?}
+\small
+\begin{multicols}{2}
+
+\textbf{Context A: Rare outcome}\\
+Difference in proportions: \ans{0.001}\\
+Relative risk: \ans{2}
+
+\vspace{4pt}
+\ansline{RR is more striking --- ``twice as likely'' sounds alarming even though the absolute difference is tiny.}
+
+\columnbreak
+
+\textbf{Context B: Common outcome}\\
+Difference in proportions: \ans{0.20}\\
+Relative risk: \ans{1.5}
+
+\vspace{4pt}
+\ansline{The absolute difference (20 percentage points) is more striking here.}
+
+\end{multicols}
+
+\vspace{4pt}
+\textbf{Takeaway:} A small \ans{absolute difference} can correspond to a large \ans{relative risk}.
+Always report \ans{both statistics in context}.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{spiralbox}
+\small
+\begin{multicols}{2}
+\textbf{How this connects:} [same as student version]
+
+\columnbreak
+
+\ansline{Relative risk is preferred when the outcome is rare, because the multiplicative
+comparison is more interpretable than a tiny absolute difference. In medical research, both
+are routinely reported together.}
+\end{multicols}
+\end{spiralbox}
+
+\begin{teachernote}
+\textbf{Hook item 1:} Students should recall that $\hat{p} = \text{successes}/\text{group total}$
+from Lesson 2.2. Circulate to check that they divide by 400, not by the grand total 800.
+
+\textbf{Step 2 RR $< 1$:} Many students expect RR to always be $>1$. Emphasize that which group
+is Group 1 is arbitrary --- swapping gives RR $= 1/0.40 = 2.5$ (unvaccinated are 2.5 times as
+likely to get flu). Both are correct; direction must be stated.
+
+\textbf{Step 3:} Context A is the classic ``scary headline'' situation (drug doubles cancer risk
+from 0.001 to 0.002). Use to discuss media literacy and statistical communication.
+\end{teachernote}
+
+\end{document}

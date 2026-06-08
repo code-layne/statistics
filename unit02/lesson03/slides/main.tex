@@ -1,0 +1,147 @@
+%! AP Statistics — Unit 2, Lesson 2.3 — Slides
+\documentclass[aspectratio=169, 11pt]{beamer}
+\usepackage{apstats-beamer}
+
+\begin{document}
+
+% ── TITLE SLIDE ───────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{2.8cm}\hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    {\color{goldacc}\bfseries\small LESSON 2.3}\\[0.5cm]
+    {\color{white}\bfseries\LARGE Statistics for Two Categorical Variables}\\[1.2cm]
+    {\color{skymid}\small AP Statistics~$\cdot$~Unit 2: Exploring Two-Variable Data}
+  \end{minipage}
+\end{frame}
+}
+
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Today's Learning Targets}
+  \vspace{0.3cm}
+  By the end of class, I will be able to\dots
+  \begin{itemize}
+    \item compute the \textbf{conditional proportion} ($\hat{p}$) for each group in a two-way table.
+    \item calculate and interpret the \textbf{difference in proportions} in context.
+    \item calculate and interpret \textbf{relative risk} in context.
+    \item compare both statistics and explain which better describes the association.
+  \end{itemize}
+  \vspace{0.5cm}
+  \textcolor{goldacc}{\small Standards: UNC-1.Q [Skill 2.C] $\cdot$ UNC-1.R [Skill 2.D]}
+\end{frame}
+
+% ── HOOK ─────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Hook --- Same Data, Two Stories}
+  \vspace{0.3cm}
+  A clinical study reports:
+  \begin{itemize}
+    \item Drug A group: \textbf{2\%} got the side effect.
+    \item Placebo group: \textbf{1\%} got the side effect.
+  \end{itemize}
+  \vspace{0.5cm}
+  \begin{columns}
+    \column{0.48\textwidth}
+      \textbf{Story 1 (Additive):}\\
+      The drug group's rate is \textbf{1 percentage point higher}.\\[0.4cm]
+      \textit{``Not a big deal\ldots''}
+    \column{0.48\textwidth}
+      \textbf{Story 2 (Multiplicative):}\\
+      Drug group is \textbf{twice as likely} to get the side effect.\\[0.4cm]
+      \textit{``That sounds alarming!''}
+  \end{columns}
+  \vspace{0.6cm}
+  \textcolor{navy}{\small Both statements are mathematically correct. Today we learn the statistics behind each.}
+\end{frame}
+
+% ── DIFFERENCE IN PROPORTIONS ────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Statistic 1 --- Difference in Proportions}
+  \vspace{0.3cm}
+  \[
+    \hat{p}_1 - \hat{p}_2 \;=\;
+    \frac{\text{successes in Group 1}}{\text{Group 1 total}}
+    -
+    \frac{\text{successes in Group 2}}{\text{Group 2 total}}
+  \]
+  \vspace{0.3cm}
+  \textbf{Interpretation template:}\\[0.2cm]
+  \textit{``The proportion of [outcome] among [Group 1] was [value] [higher / lower] than the
+  proportion among [Group 2].''}
+
+  \vspace{0.5cm}
+  \textbf{Key properties:}
+  \begin{itemize}
+    \item Value of \textbf{0} $\Rightarrow$ no difference, no association.
+    \item Units are in proportions (or percentage points).
+    \item Sign tells you direction.
+  \end{itemize}
+\end{frame}
+
+% ── RELATIVE RISK ─────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Statistic 2 --- Relative Risk}
+  \vspace{0.3cm}
+  \[
+    \text{RR} \;=\; \frac{\hat{p}_1}{\hat{p}_2}
+  \]
+  Group 2 is the \textbf{baseline} (reference) group.
+
+  \vspace{0.3cm}
+  \textbf{Interpretation template:}\\[0.2cm]
+  \textit{``[Group 1] was [RR] times as likely to [outcome] as [Group 2].''}
+
+  \vspace{0.5cm}
+  \textbf{Key properties:}
+  \begin{itemize}
+    \item Value of \textbf{1} $\Rightarrow$ no difference, no association.
+    \item RR $> 1$: Group 1 higher. \quad RR $< 1$: Group 1 lower.
+    \item \textbf{Not} a percentage-point difference --- RR $= 2$ means ``twice as likely,'' not ``2\% more.''
+  \end{itemize}
+\end{frame}
+
+% ── COMPARING THE STATISTICS ─────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{When Do They Tell Different Stories?}
+  \vspace{0.3cm}
+  \begin{columns}
+    \column{0.48\textwidth}
+      \textbf{Rare outcome:}\\
+      Group 1: $\hat{p}_1 = 0.002$ \\
+      Group 2: $\hat{p}_2 = 0.001$ \\[0.3cm]
+      Difference: $+0.001$ (tiny)\\
+      RR: $2.0$ (striking!)\\[0.3cm]
+      \textit{RR tells a more dramatic story.}
+    \column{0.48\textwidth}
+      \textbf{Common outcome:}\\
+      Group 1: $\hat{p}_1 = 0.60$ \\
+      Group 2: $\hat{p}_2 = 0.40$ \\[0.3cm]
+      Difference: $+0.20$ (meaningful!)\\
+      RR: $1.5$ (moderate)\\[0.3cm]
+      \textit{Absolute difference is more interpretable.}
+  \end{columns}
+  \vspace{0.5cm}
+  \textcolor{navy}{\bfseries Takeaway:} Always report \emph{both} statistics in context.
+  A small absolute difference can correspond to a large relative risk --- and vice versa.
+\end{frame}
+
+% ── CLOSING ──────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{3cm}\hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    {\color{goldacc}\bfseries\large Exit Ticket}\\[0.6cm]
+    {\color{white} A health survey finds 45 of 150 smokers (30\%) and 18 of 180 non-smokers (10\%)
+    developed a condition.}\\[0.5cm]
+    {\color{skymid}\small
+      (1) Compute the difference in proportions and interpret.\\
+      (2) Compute the relative risk and interpret.\\
+      (3) Which statistic better conveys the strength of association? Why?}
+  \end{minipage}
+\end{frame}
+}
+
+\end{document}
