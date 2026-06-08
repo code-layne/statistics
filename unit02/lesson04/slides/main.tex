@@ -1,0 +1,188 @@
+%! AP Statistics — Unit 2, Lesson 2.4 — Slides
+\documentclass[aspectratio=169, 11pt]{beamer}
+\usepackage{apstats-beamer}
+
+\begin{document}
+
+% ── TITLE SLIDE ───────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{2.8cm}\hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    {\color{goldacc}\bfseries\small LESSON 2.4}\\[0.5cm]
+    {\color{white}\bfseries\LARGE Representing the Relationship Between Two Quantitative Variables}\\[1.2cm]
+    {\color{skymid}\small AP Statistics~$\cdot$~Unit 2: Exploring Two-Variable Data}
+  \end{minipage}
+\end{frame}
+}
+
+% ── LEARNING TARGETS ─────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Today's Learning Targets}
+  \vspace{0.3cm}
+  By the end of class, I will be able to\dots
+  \begin{itemize}
+    \item identify the \textbf{explanatory} and \textbf{response} variables and place them on the correct axes.
+    \item \textbf{construct} a correctly labeled scatterplot from a two-variable dataset.
+    \item describe the \textbf{direction}, \textbf{form}, \textbf{strength}, and \textbf{outliers} of a scatterplot in context.
+    \item write a complete \textbf{DOFS description} using the DOFS framework.
+  \end{itemize}
+  \vspace{0.4cm}
+  \textcolor{goldacc}{\small Standards: UNC-1.S [Skill 2.A] $\cdot$ UNC-1.T [Skill 4.B]}
+\end{frame}
+
+% ── HOOK ─────────────────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Hook --- Which Pattern Is Most Useful?}
+  \vspace{0.3cm}
+  \textit{Four scatterplots are displayed. Rank them from most useful for prediction to least useful.}
+  \vspace{0.4cm}
+  \begin{columns}
+    \column{0.48\textwidth}
+      \textbf{What makes a pattern useful?}
+      \begin{itemize}
+        \item Points follow a clear, consistent shape.
+        \item We can predict $y$ reliably from $x$.
+        \item The scatter around the pattern is small.
+      \end{itemize}
+    \column{0.48\textwidth}
+      \textbf{What makes a pattern less useful?}
+      \begin{itemize}
+        \item Points are scattered randomly.
+        \item The relationship is curved in an irregular way.
+        \item A few extreme points distort the picture.
+      \end{itemize}
+  \end{columns}
+  \vspace{0.5cm}
+  \textcolor{navy}{\small Today we learn the precise language to describe these patterns: \textbf{DOFS}.}
+\end{frame}
+
+% ── WHAT IS A SCATTERPLOT ────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{What Is a Scatterplot?}
+  \vspace{0.3cm}
+  A \textbf{scatterplot} displays two \textbf{quantitative} variables for the same set of individuals.
+  \vspace{0.4cm}
+  \begin{columns}
+    \column{0.48\textwidth}
+      \textbf{Axis rule:}
+      \begin{itemize}
+        \item \textbf{Explanatory variable} ($x$) on the horizontal axis.
+        \item \textbf{Response variable} ($y$) on the vertical axis.
+        \item Each point = one individual.
+      \end{itemize}
+    \column{0.48\textwidth}
+      \textbf{Label your axes:}
+      \begin{itemize}
+        \item Variable name \textit{and} units.
+        \item Consistent, reasonable scale.
+        \item Start at a value that shows the data well.
+      \end{itemize}
+  \end{columns}
+\end{frame}
+
+% ── DOFS: DIRECTION ──────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{DOFS: \textbf{D}irection}
+  \vspace{0.3cm}
+  \begin{columns}
+    \column{0.32\textwidth}
+      \textbf{Positive}\\
+      As $x$ increases, $y$ tends to \textbf{increase}.\\[0.2cm]
+      \textit{Points go up from left to right.}
+    \column{0.32\textwidth}
+      \textbf{Negative}\\
+      As $x$ increases, $y$ tends to \textbf{decrease}.\\[0.2cm]
+      \textit{Points go down from left to right.}
+    \column{0.32\textwidth}
+      \textbf{None}\\
+      Knowing $x$ gives \textbf{no information} about $y$.\\[0.2cm]
+      \textit{Points show no slope.}
+  \end{columns}
+  \vspace{0.8cm}
+  \textcolor{navy!70}{\small Caution: ``positive'' does not mean ``good'' --- it only describes the direction of the pattern.}
+\end{frame}
+
+% ── DOFS: FORM AND STRENGTH ──────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{DOFS: \textbf{F}orm and \textbf{S}trength}
+  \vspace{0.3cm}
+  \begin{columns}
+    \column{0.48\textwidth}
+      \textbf{Form} --- overall shape:
+      \begin{itemize}
+        \item \textbf{Linear} --- points cluster around a straight line.
+        \item \textbf{Curved} --- points follow a curved path.
+        \item \textbf{None} --- no discernible pattern.
+      \end{itemize}
+      \vspace{0.3cm}
+      \textit{Form matters: correlation and regression only apply to \textbf{linear} associations.}
+    \column{0.48\textwidth}
+      \textbf{Strength} --- how closely points follow the form:
+      \begin{itemize}
+        \item \textbf{Strong} --- points hug the form tightly.
+        \item \textbf{Moderate} --- points follow the form with some scatter.
+        \item \textbf{Weak} --- points are loosely scattered.
+      \end{itemize}
+  \end{columns}
+\end{frame}
+
+% ── DOFS: OUTLIERS ───────────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{DOFS: \textbf{O}utliers}
+  \vspace{0.3cm}
+  An \textbf{outlier} in a scatterplot is a point that \textbf{deviates from the overall pattern}.
+  \vspace{0.4cm}
+  \begin{columns}
+    \column{0.48\textwidth}
+      A bivariate outlier may have:
+      \begin{itemize}
+        \item An extreme $x$ value.
+        \item An extreme $y$ value.
+        \item Both $x$ and $y$ in range but \textit{far from the pattern}.
+      \end{itemize}
+    \column{0.48\textwidth}
+      \textbf{Describe it in context:}\\[0.2cm]
+      ``One [individual] with [x-value] had [y-value], which does not follow the overall [direction] pattern.''
+  \end{columns}
+  \vspace{0.5cm}
+  \textcolor{navy!70}{\small Preview: Lesson 2.8 --- \textit{influential points} are outliers that substantially change the regression line when removed.}
+\end{frame}
+
+% ── PUTTING IT TOGETHER ───────────────────────────────────────────────────────
+\begin{frame}[t, plain]
+  \navyheader{Putting It Together: The DOFS Template}
+  \vspace{0.3cm}
+  \textbf{Complete description template:}\\[0.4cm]
+  \begin{block}{}
+    ``There is a \textbf{[strength]} \textbf{[direction]} \textbf{[form]} association between
+    \textbf{[explanatory variable]} and \textbf{[response variable]} for these \textbf{[individuals]}.
+    \textbf{[Outlier sentence if applicable.]}''
+  \end{block}
+  \vspace{0.4cm}
+  \textbf{Example (sleep vs.\ reaction time):}\\[0.2cm]
+  ``There is a strong negative linear association between hours of sleep and reaction time (ms)
+  for these 10 students. As sleep increases, reaction time tends to decrease. There are no
+  obvious outliers.''
+\end{frame}
+
+% ── CLOSING ──────────────────────────────────────────────────────────────────
+{
+\setbeamercolor{background canvas}{bg=navy}
+\begin{frame}[plain]
+  \vspace{3cm}\hspace{0.55cm}%
+  \begin{minipage}{0.9\textwidth}
+    {\color{goldacc}\bfseries\large Exit Ticket}\\[0.6cm]
+    {\color{white} A scatterplot shows hours of TV per day vs.\ GPA for 25 students.
+    The points slope downward from left to right, with most clustering tightly along the line.
+    One student who watches 7 hr/day has a GPA of 3.8.}\\[0.5cm]
+    {\color{skymid}\small
+      (1) Identify the explanatory and response variables.\\
+      (2) Write a complete DOFS description in context.\\
+      (3) Describe the red point and explain whether it is an outlier.}
+  \end{minipage}
+\end{frame}
+}
+
+\end{document}
