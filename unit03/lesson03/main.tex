@@ -1,0 +1,222 @@
+%! AP Statistics — Unit 3, Lesson 3.3 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\newcommand{\UnitNumberName}{Unit 3: Collecting Data \quad}
+\newcommand{\LessonNumberName}{Lesson 3.3: Random Sampling and Data Collection}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear\ (\MeetingLength) \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will identify and describe the major random
+    sampling methods --- SRS, stratified, cluster, systematic, and census --- and
+    explain why a particular method is or is not appropriate for a given study
+    (Big Idea: DAT).
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 1 --- Selecting Statistical Methods}
+    \begin{itemize}
+        \item Identify a sampling method given a study description (DAT-2.C, Skill 1.C).
+        \item Explain why a method is or is not appropriate (DAT-2.D, Skill 1.C).
+        \item Distinguish sampling with and without replacement (DAT-2.C.1).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item Simple random sample: every group of size $n$ has equal chance of selection.
+        \item Stratified: population divided into homogeneous strata; SRS within each.
+        \item Cluster: population divided into heterogeneous clusters; SRS of clusters,
+              then all individuals in selected clusters.
+        \item Systematic: every $k$th individual after a random start.
+        \item Census: every individual in the population is measured.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Simple random sample (SRS)} --- every group of size $n$ has an
+              equal chance of being chosen
+        \item \textbf{Stratified random sample} --- population divided into strata
+              (homogeneous groups); SRS within each stratum
+        \item \textbf{Cluster sample} --- population divided into heterogeneous clusters;
+              a random sample of clusters is selected; all individuals in chosen
+              clusters are surveyed
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Systematic random sample} --- random start, then every $k$th
+              individual
+        \item \textbf{Census} --- all items/subjects in a population are measured
+        \item \textbf{Sampling with/without replacement} --- whether a selected
+              individual can be chosen again
+        \item \textbf{Sampling frame} --- the list from which the sample is drawn
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Recall: ``What's the difference between an observational study and an
+              experiment?'' (Lesson 3.2)
+        \item Recall: ``Why does random selection make data more trustworthy?''
+              (Lesson 3.1)
+        \item Transition: ``Today we get specific about HOW to randomly select
+              individuals.''
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Connections Forward}
+    \begin{itemize}
+        \item When random sampling fails or isn't used $\to$ Lesson 3.4 (bias)
+        \item Random \emph{assignment} in experiments $\to$ Lesson 3.5
+        \item Scope of inference (generalization) $\to$ Lesson 3.7
+        \item Inference for proportions (Unit 7) uses SRS assumptions
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (5--7 min)}\\
+    Challenge: ``I need to survey 50 of the 400 students in this school. How would
+    you do it?'' Collect 3--4 student ideas (pull names from a hat, ask friends,
+    survey every 8th person in the hallway, etc.). Classify each as random or not.\\[4pt]
+    Transition: \textit{``Statisticians have developed several principled methods --- all
+    relying on chance --- that work better than asking your friends.''}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15--18 min)}
+    \begin{enumerate}
+        \item SRS: define; show numbering + random number table or calculator.
+        \item Stratified: define strata (homogeneous); SRS within each; advantage ---
+              guarantees representation of each group.
+        \item Cluster: define cluster (heterogeneous); random selection of clusters;
+              advantage --- practical when individuals are spread out geographically.
+        \item Systematic: random start, every $k$th individual; caution about periodic
+              patterns in the list.
+        \item Census: everyone; when practical, eliminates sampling variability.
+        \item Pros/cons table comparing all methods.
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Direct Instruction (10 min)}
+    \begin{itemize}
+        \item Worked example: a school of 600 students (100 per grade 9--12, plus
+              100 each in two elective tracks). Choose 60 students using SRS, stratified
+              by grade, cluster by homeroom, and systematic.
+        \item Emphasize: stratified $\neq$ cluster --- strata are homogeneous (same
+              grade), clusters are heterogeneous (mixed grades/backgrounds).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Active Monitoring}
+    \begin{itemize}
+        \item Listen for: confusing stratified and cluster (most common error).
+        \item Cold-call: ``If I want to compare grades 9 and 11 specifically, which
+              method ensures I have students from each grade?'' (stratified)
+        \item Check that students can describe the procedure, not just name the method.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Partner Activity (8--10 min)}\\
+    Four scenario cards (hospital, city block, school, factory). Partners:
+    \begin{enumerate}
+        \item Name the sampling method described.
+        \item Explain one advantage of using that method in this context.
+        \item Identify one disadvantage or situation where a different method would
+              be better.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support}: Comparison table with columns: Method / Key feature /
+              When to use / One advantage.
+        \item \textit{Extension}: Design two different sampling plans for a citywide
+              health survey of 1{,}000 residents. Justify which is better and why.
+        \item \textit{ELL}: Visual diagrams of each method (color-coded circles
+              representing strata/clusters).
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    Scenario: \textit{``A researcher wants to survey 80 of 500 registered voters in
+    a county. She divides them into 5 districts (100 per district) and randomly
+    selects 2 districts. She then surveys all 100 voters in each selected
+    district.''}
+    \begin{enumerate}
+        \item Name the sampling method.
+        \item What is one advantage of this method?
+        \item What is one disadvantage?
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{``A magazine surveys its subscribers by sending a questionnaire to every
+    25th name on the subscriber list, starting from a randomly chosen name between 1
+    and 25. This is an example of a:''}
+    \begin{enumerate}[label=(\Alph*)]
+        \item Simple random sample
+        \item Stratified random sample
+        \item Cluster sample
+        \item Systematic random sample
+    \end{enumerate}
+    Answer: (D)
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item For 4 sampling scenarios: identify the method, justify whether it is
+              appropriate, and state what population results can be generalized to.
+        \item Comparison question: ``In what situation would stratified random sampling
+              be better than SRS?''
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: Design a sampling plan for a national political poll.
+              Explain which method you would use and why.
+        \item \textit{Preview}: Lesson 3.4 examines what goes wrong when random
+              sampling is not used or is poorly executed --- start thinking about
+              whose voices get missed.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\end{document}
