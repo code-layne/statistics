@@ -1,0 +1,83 @@
+%! Conditional Probability — Unit 4, Lesson 4.5 — Student Packet Cover Sheet
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{ltablex}
+\keepXColumns
+
+\begin{document}
+
+% Full-bleed navy banner
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[navy] (current page.north west)
+    rectangle ([yshift=-0.9in]current page.north east);
+\end{tikzpicture}
+\vspace{-0.8in}
+
+\begin{center}
+  {\color{white}\textbf{\LARGE AP Statistics}}\\[4pt]
+  {\color{skymid}\large\textbf{Unit 4: Probability, Random Variables, and Probability Distributions}}\\[6pt]
+  {\color{white}\textbf{\large Lesson 4.5 \quad Conditional Probability}}
+\end{center}
+
+\vspace{0.22in}
+\namedateperiod
+\vspace{0.18in}
+
+\begin{learningtargetbox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
+  \item \ldots{} calculate a conditional probability $P(A|B)$ using the formula
+        $P(A|B) = P(A \cap B)/P(B)$, showing my setup clearly.
+  \item \ldots{} read a two-way table to identify the joint probability and the
+        conditioning event probability.
+  \item \ldots{} apply the multiplication rule $P(A \cap B) = P(A) \cdot P(B|A)$
+        to find a joint probability.
+\end{enumerate}
+\end{learningtargetbox}
+
+\vspace{0.14in}
+
+\begin{tocbox}
+\small
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{} c l X r @{}}
+\rowcolor{sky}
+\textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
+\midrule
+1 & Warm-Up        & Spiral review: joint probability and two-way tables          & \blank{1.2cm} \\
+2 & Guided Notes   & Conditional probability formula; multiplication rule         & \blank{1.2cm} \\
+3 & Group Activity & Sport preference $\times$ training frequency table           & \blank{1.2cm} \\
+4 & Exit Ticket    & Diet and health outcome two-way table                         & \blank{1.2cm} \\
+5 & Homework       & School survey: study environment $\times$ GPA range          & \blank{1.2cm} \\
+\midrule
+  & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
+\end{tabularx}
+\end{tocbox}
+
+\vspace{0.14in}
+
+\begin{remindbox}
+\small
+The \textbf{core idea of Lesson 4.5}: conditioning restricts the sample space to the
+event that has already occurred.
+
+\vspace{6pt}
+\begin{tabularx}{\linewidth}{@{} >{\centering\arraybackslash\columncolor{goldbg}}p{0.06\linewidth}
+                                    X @{}}
+\textbf{\large!} &
+\textbf{Formula first.}\enspace
+Always write $P(A|B) = P(A \cap B) / P(B)$ before plugging in numbers.
+AP exam graders reward the setup. \\[6pt]
+\textbf{\large!} &
+\textbf{The denominator is the conditioning event, not the grand total.}\enspace
+When working from a two-way table, the denominator is the row or column total
+of the given event, not the overall total. \\[6pt]
+\textbf{\large!} &
+\textbf{$P(A|B) \neq P(B|A)$ in general.}\enspace
+The order matters --- ``the probability of a positive test given the disease''
+is very different from ``the probability of the disease given a positive test.'' \\
+\end{tabularx}
+\end{remindbox}
+
+\end{document}

@@ -1,0 +1,144 @@
+%! AP Statistics — Unit 4, Lesson 4.5 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.5}{Guided Notes}
+\namedateperiod
+
+\vspace{0.12in}
+
+\begin{objectivebox}
+\small By the end of this lesson, I will be able to\dots\\[4pt]
+\writeline\\[1pt]
+\writeline\\[1pt]
+\writeline
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\termblanklong{Conditional probability $P(A|B)$}
+\termblanklong{Conditioning event}
+\termblanklong{Multiplication rule}
+\termblanklong{Marginal probability}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+\small
+\textbf{Card scenario:} I draw a card and tell you it is a face card.
+\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+  \item Before I told you, what was $P(\text{King})$? \blank{4cm}
+  \item Now that you know it's a face card, what is the new probability it's a King?
+        \blank{4cm}
+  \item How many face cards are there? \blank{2cm} \quad How many are Kings? \blank{2cm}
+\end{enumerate}
+\textbf{Why did the probability change?}\\[4pt]
+\writeline
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Conditional Probability (VAR-4.D.1)}
+\small
+\textbf{Definition:} The \textbf{conditional probability} $P(A|B)$ is the probability
+that event $A$ will occur \blank{4cm} event $B$ \blank{3cm}.
+
+\vspace{8pt}
+\textbf{Formula:}
+\[
+  P(A|B) = \frac{P(A \cap B)}{P(B)}, \quad \text{provided } P(B) \blank{2cm}.
+\]
+
+\vspace{6pt}
+\textbf{Interpretation:} Knowing $B$ occurred \blank{5cm} the sample space to only
+outcomes in $B$.
+
+\vspace{10pt}
+\textbf{From a two-way table:}
+\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+  \item Find $P(A \cap B)$ = \blank{5cm} $\div$ grand total
+  \item Find $P(B)$ = \blank{5cm} $\div$ grand total
+  \item Compute $P(A|B)$ = \blank{5cm} $\div$ \blank{3cm} (the grand total cancels!)
+\end{enumerate}
+
+\vspace{8pt}
+\textbf{Short-cut for tables:} $P(A|B) = \dfrac{\text{count in both }A\text{ and }B}{\blank{4cm}}$
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Worked Example --- Two-Way Table}
+\small
+Use the sport and training table below (120 athletes):
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} l X X r @{}}
+ & \textbf{Trains Daily} & \textbf{Trains Weekly} & \textbf{Total} \\
+\hline
+\textbf{Runs}     & 24 & 16 & 40 \\
+\textbf{Swims}    & 18 & 22 & 40 \\
+\textbf{Cycles}   & 20 & 20 & 40 \\
+\hline
+\textbf{Total}    & 62 & 58 & 120 \\
+\end{tabularx}
+
+\vspace{8pt}
+\textbf{Find $P(\text{Runs} | \text{Trains Daily})$:}
+\begin{itemize}[itemsep=3pt]
+  \item $P(\text{Runs} \cap \text{Trains Daily}) = $ \blank{3cm}
+  \item $P(\text{Trains Daily}) = $ \blank{3cm}
+  \item $P(\text{Runs} | \text{Trains Daily}) = \dfrac{\blank{2cm}}{\blank{2cm}} = $ \blank{3cm}
+\end{itemize}
+
+\vspace{6pt}
+\textbf{Interpret in context:} Among athletes who train daily,
+\blank{4cm}\% run.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Multiplication Rule (VAR-4.D.2)}
+\small
+\textbf{Rearranging the formula} gives the \textbf{multiplication rule}:
+\[
+  P(A \cap B) = P(A) \cdot P(B|A) = P(B) \cdot P(A|B)
+\]
+
+\vspace{6pt}
+\textbf{Use this when:} you know $P(A)$ and $P(B|A)$ and need to find \blank{4cm}.
+
+\vspace{8pt}
+\textbf{Example:} $P(\text{Trains Daily}) = 62/120$. $P(\text{Runs}|\text{Trains Daily}) = 24/62$.
+\[
+  P(\text{Runs} \cap \text{Trains Daily}) = \blank{3cm} \times \blank{3cm} = \blank{3cm}
+\]
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small Use the same 120-athlete table above.
+
+\vspace{6pt}
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+  \item Find $P(\text{Trains Daily} | \text{Swims})$. Show setup.\\
+        \blank{3cm} $\div$ \blank{3cm} $=$ \blank{3cm}
+
+  \item Find $P(\text{Cycles} | \text{Trains Weekly})$. Show setup.\\
+        \blank{3cm} $\div$ \blank{3cm} $=$ \blank{3cm}
+
+  \item Use the multiplication rule: $P(\text{Trains Weekly}) \cdot P(\text{Cycles}|\text{Trains Weekly}) = $ \blank{4cm}\\
+        Does this match the cell count? \blank{2cm}
+
+  \item Is $P(\text{Runs}|\text{Trains Daily})$ equal to $P(\text{Trains Daily}|\text{Runs})$?
+        Calculate both and compare.\\
+        \writeline\writeline
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

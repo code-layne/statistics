@@ -1,0 +1,273 @@
+%! AP Statistics — Unit 4, Lesson 4.7 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\UnitNumberName}{Unit 4: Probability, Random Variables, and Probability Distributions \quad}
+\newcommand{\LessonNumberName}{Lesson 4.7: Introduction to Random Variables and Probability Distributions}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will represent and interpret probability distributions
+    for discrete random variables --- constructing tables and histograms, verifying that all
+    probabilities sum to 1, and describing a distribution's shape, center, and spread in context
+    (Big Idea: VAR-5).
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 2 --- Data Analysis}
+    \begin{itemize}
+        \item Represent a probability distribution as a table, graph, or function (Skill 2.B;
+              VAR-5.A, VAR-5.A.1--4).
+        \item Interpret a probability distribution in context: shape, center, spread (Skill 4.B;
+              VAR-5.B, VAR-5.B.1).
+        \item Verify that probabilities are valid: each $P(X=x) \ge 0$ and $\sum P(X=x) = 1$.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item A random variable assigns a number to each outcome of a random process.
+        \item A discrete random variable takes a countable number of values; each value carries
+              a probability.
+        \item A probability distribution completely describes the long-run behavior of a random
+              variable.
+        \item A cumulative distribution gives $P(X \le x)$ for each value.
+        \item Interpreting a distribution means describing shape, center, and spread
+              \emph{in context}, not just stating numerical values.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Random variable} --- a variable whose value is a numerical outcome of a
+              random process
+        \item \textbf{Discrete random variable} --- a random variable that takes a countable
+              number of values
+        \item \textbf{Probability distribution} --- a table, graph, or function giving $P(X=x)$
+              for every possible value
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Probability histogram} --- a bar graph with values of $X$ on the
+              horizontal axis and probabilities on the vertical axis
+        \item \textbf{Cumulative probability distribution} --- gives $P(X \le x)$ for each $x$
+        \item \textbf{Valid probability distribution} --- requires $P(X=x) \ge 0$ for all $x$
+              and $\sum P(X=x) = 1$
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+    \begin{minipage}[t]{0.58\linewidth}\vspace{0pt}
+        \textbf{Prior Knowledge Check (3--4 min)}
+        \begin{itemize}
+            \item Basic probability rules: $0 \le P(A) \le 1$; $P(A^c) = 1 - P(A)$; addition
+                  rule for mutually exclusive events (Unit 4, Lessons 4.1--4.2).
+            \item Sample space and outcomes: listing all possibilities for a simple random
+                  process.
+            \item Prompt: \textit{``If I roll a fair die, list all outcomes and their
+                  probabilities. What must those probabilities sum to?''}
+        \end{itemize}
+        \textbf{Connections Forward}
+        \begin{itemize}
+            \item Mean/expected value of a distribution $\to$ Lesson 4.8
+            \item Combining random variables $\to$ Lesson 4.9
+            \item Binomial distribution (a special discrete RV) $\to$ Lesson 4.10
+        \end{itemize}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
+        % Authored warm-up; see warmup/main.tex for spiral review problems.
+    \end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Hook]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (4--5 min)}\\
+    Display a table showing the number of pets owned by households in a neighborhood:
+    \begin{center}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{}ccccc@{}}
+    Pets ($x$) & 0 & 1 & 2 & 3 \\
+    \hline
+    Probability & 0.30 & 0.40 & 0.20 & 0.10 \\
+    \end{tabular}
+    \end{center}
+    Ask: ``If you choose a household at random, what is the probability it owns
+    \emph{at most} 1 pet?''\\[4pt]
+    Follow-up: ``What must the probabilities sum to, and why?''
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15--18 min)}
+    \begin{enumerate}
+        \item Define \emph{random variable} and \emph{discrete} vs.\ continuous (brief preview).
+        \item Build a probability distribution table from a sample space (number of siblings
+              context).
+        \item Check the two validity conditions.
+        \item Sketch a probability histogram; connect bar heights to probabilities.
+        \item Introduce cumulative distribution: $P(X \le x)$ column added to the table.
+        \item Interpret the distribution: What does the shape tell us? Where is the center?
+              How spread out are the values?
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction: Building a Probability Distribution]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Steps}
+    \begin{enumerate}
+        \item Identify the random variable $X$ and state its possible values.
+        \item Find or assign a probability for each value (from data, symmetry, or a model).
+        \item Check: $P(X=x) \ge 0$ for all $x$; $\sum P(X=x) = 1$.
+        \item Organize into a two-row table: values in row 1, probabilities in row 2.
+        \item Add a cumulative column: $P(X \le x) = \sum_{k \le x} P(X=k)$.
+        \item Sketch the probability histogram.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Worked Example}\\
+    $X$ = number of cars owned per household (survey of 200 households):
+    \begin{center}
+    \renewcommand{\arraystretch}{1.3}
+    \small
+    \begin{tabular}{@{}cccc@{}}
+    $x$ & Freq & $P(X=x)$ & $P(X \le x)$ \\
+    \hline
+    0 & 20  & 0.10 & 0.10 \\
+    1 & 80  & 0.40 & 0.50 \\
+    2 & 70  & 0.35 & 0.85 \\
+    3 & 30  & 0.15 & 1.00 \\
+    \end{tabular}
+    \end{center}
+    Check: $0.10+0.40+0.35+0.15 = 1.00$ \checkmark\\[4pt]
+    \textit{Interpretation:} The distribution is roughly symmetric (slight right skew).
+    Most households own 1--2 cars.
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Circulate and Check}
+    \begin{itemize}
+        \item Students often confuse frequency with probability --- look for raw counts in the
+              $P(X=x)$ column.
+        \item Check that cumulative probabilities are non-decreasing and end at exactly 1.
+        \item Cold-call: ``How do you know this is a valid probability distribution?''
+        \item Cold-call: ``What does $P(X \le 2) = 0.85$ mean in context?''
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Common Errors}
+    \begin{itemize}
+        \item Writing probabilities as percentages (e.g., 40 instead of 0.40).
+        \item Histogram bars not centered on the values of $X$.
+        \item ``Interpreting'' the distribution by only restating the table numbers, not
+              describing shape/center/spread in context.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Activity Summary (10 min)}\\
+    Three-tier differentiated activity (see \texttt{activity/}):
+    \begin{itemize}
+        \item \textbf{Tier R:} Given a frequency table for number of siblings, students
+              convert frequencies to probabilities, verify validity, and answer basic
+              probability questions.
+        \item \textbf{Tier A:} Students add a cumulative column and interpret $P(X \le x)$
+              statements in context.
+        \item \textbf{Tier E:} Students compare two distributions for number of pets
+              owned, describe differences in shape/center/spread, and construct a joint
+              table (extension).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation Notes}
+    \begin{itemize}
+        \item \textit{Support}: Provide a reference card showing the two validity conditions
+              and the histogram template with labeled axes.
+        \item \textit{ELL}: Vocabulary anchor chart: random variable / distribution /
+              probability / cumulative.
+        \item \textit{Extension}: Ask students to create their own discrete RV (e.g., number
+              of text messages sent per hour) and build a distribution from their own data.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    $X$ = number of siblings for a randomly chosen student.
+    \begin{center}
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{}ccccc@{}}
+    $x$ & 0 & 1 & 2 & 3 \\
+    \hline
+    $P(X=x)$ & 0.15 & 0.45 & 0.30 & 0.10 \\
+    \end{tabular}
+    \end{center}
+    \begin{enumerate}
+        \item Is this a valid probability distribution? Explain.
+        \item Find $P(X \ge 2)$.
+        \item Describe the shape of this distribution in context.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{Which of the following could be a valid probability distribution for
+    a discrete random variable?}
+    \begin{enumerate}[label=(\Alph*)]
+        \item $P(0)=0.30,\ P(1)=0.40,\ P(2)=0.40$
+        \item $P(0)=0.25,\ P(1)=0.50,\ P(2)=0.25$
+        \item $P(0)=-0.10,\ P(1)=0.60,\ P(2)=0.50$
+        \item $P(0)=0.10,\ P(1)=0.40,\ P(2)=0.60$
+    \end{enumerate}
+    Answer: (B) --- only option with all non-negative probabilities summing to 1.
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item Six problems: build distributions from frequency tables, verify validity,
+              compute $P(X \le x)$ and $P(X > x)$, and interpret in context.
+        \item Emphasis on full sentence interpretations (AP exam rewards context).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: Given a probability distribution, find the missing
+              probability and explain why it must take that value.
+        \item \textit{Preview}: Lesson 4.8 --- once we have a distribution, how do we
+              describe its average (expected value) and typical spread numerically?
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\end{document}

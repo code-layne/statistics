@@ -1,0 +1,146 @@
+%! AP Statistics — Unit 4, Lesson 4.12 — Group Activity
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.12}{Group Activity: Geometric vs.\ Binomial}
+\namepartnerperiod
+
+\vspace{0.1in}
+
+\begin{scenariobox}[Directions]{sky}
+\small
+Work through all three tiers. Show all formula setup. Use complete sentences
+when interpreting parameters.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+% ── TIER R ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=goldbg, colframe=goldacc, boxrule=1pt, arc=2mm,
+    title={\bfseries Tier R \quad Remediate: Identifying the Distribution},
+    fonttitle=\small]
+\small
+
+For each scenario, (a) identify the distribution (binomial, geometric, or neither),
+(b) state the key distinction, and (c) if geometric or binomial, state $X$ and the
+parameters.
+
+\vspace{10pt}
+\textbf{Scenario 1:} A coin is flipped until tails appears.
+$X =$ the number of flips.
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=6pt]
+  \item Distribution: \blank{4cm}
+  \item Key distinction: \writeline
+  \item Parameters: \blank{6cm}
+\end{enumerate}
+
+\vspace{10pt}
+\textbf{Scenario 2:} A coin is flipped 10 times.
+$X =$ the number of tails.
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=6pt]
+  \item Distribution: \blank{4cm}
+  \item Key distinction: \writeline
+  \item Parameters: \blank{6cm}
+\end{enumerate}
+
+\vspace{10pt}
+\textbf{Scenario 3:} A tetrahedral die (4 sides) is rolled. The die is fair.
+$X =$ the number of the first roll.
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=6pt]
+  \item Distribution: \blank{4cm}
+  \item Key distinction: \writeline
+\end{enumerate}
+\vspace{4pt}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+% ── TIER A ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=1pt, arc=2mm,
+    title={\bfseries Tier A \quad Approaching Proficiency: Full Geometric Analysis},
+    fonttitle=\small]
+\small
+
+\textbf{Context:} An archer hits the bullseye 30\% of the time. She shoots arrows
+one at a time until hitting the bullseye.
+Let $X =$ the number of arrows shot until (and including) the first bullseye.
+
+\vspace{8pt}
+(a) Check BITS. Write one sentence per condition.
+
+\vspace{4pt}
+B: \writeline
+
+I: \writeline
+
+T: \writeline
+
+S: \writeline
+
+\vspace{6pt}
+State the distribution: $X \sim $ \blank{4cm}
+
+\vspace{8pt}
+(b) Compute $P(X = 5)$. Show the formula and the numerical answer.
+\[
+  P(X = 5) = (\quad)^{4}(\quad) = \hspace{5cm} \approx \hspace{2cm}
+\]
+
+\vspace{8pt}
+(c) Compute $\mu_X$ and interpret in context.
+\vspace{4pt}
+$\mu_X = $ \blank{4cm} $= $ \blank{2cm}
+
+\vspace{4pt}
+Interpretation: \writeline\\[1pt]\writeline
+
+\vspace{8pt}
+(d) Find $P(X \le 4)$ using \texttt{geometcdf}. What does this represent?
+\vspace{4pt}
+$P(X \le 4) = \texttt{geometcdf(}\blank{1cm}\texttt{,}\;4\texttt{)} \approx $ \blank{2cm}
+
+\vspace{4pt}
+Interpretation: \writeline\\[1pt]\writeline
+\vspace{4pt}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+% ── TIER E ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=1pt, arc=2mm,
+    title={\bfseries Tier E \quad Extension: Distribution Table and Shape},
+    fonttitle=\small]
+\small
+
+\textbf{Context (same archer):} $X \sim \text{Geom}(0.30)$.
+
+\vspace{8pt}
+(a) Build the partial distribution table for $X = 1, 2, 3, 4, 5$.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{1.2cm} X X X X X @{}}
+$k$ & 1 & 2 & 3 & 4 & 5 \\
+\hline
+$P(X=k)$ & \blank{2cm} & \blank{2cm} & \blank{2cm} & \blank{2cm} & \blank{2cm} \\
+\end{tabularx}
+
+\vspace{8pt}
+(b) Describe the shape of the geometric distribution based on your table.
+Does it look like the binomial distribution for the same $p$?
+\vspace{4pt}
+\writeline\\[1pt]\writeline
+
+\vspace{8pt}
+(c) Now consider $Y \sim B(5, 0.30)$ (same $p$, fixed $n = 5$).
+Compare $P(X = 5)$ and $P(Y = 5)$. Explain why they are different,
+and state what each probability means in context.
+\vspace{4pt}
+\writeline\\[1pt]\writeline\\[1pt]\writeline
+\vspace{4pt}
+\end{tcolorbox}
+
+\end{document}

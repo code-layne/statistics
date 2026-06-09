@@ -1,0 +1,219 @@
+%! AP Statistics — Unit 4, Lesson 4.4 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{graphicx}
+
+\newcommand{\UnitNumberName}{Unit 4: Probability, Random Variables, and Probability Distributions \quad}
+\newcommand{\LessonNumberName}{Lesson 4.4: Mutually Exclusive Events}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear\ (\MeetingLength) \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will explain why two events are mutually exclusive
+    (disjoint) by reasoning that they cannot occur simultaneously, so their joint probability
+    $P(A \cap B) = 0$ (Big Idea: VAR-4).
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 4.B --- Determine Relative Frequencies, Proportions, and Probabilities}
+    \begin{itemize}
+        \item Explain why two events are or are not mutually exclusive (VAR-4.C).
+        \item Identify $P(A \cap B)$ as the joint probability of $A$ and $B$
+              (VAR-4.C.1).
+        \item State and apply the condition $P(A \cap B) = 0$ for mutually exclusive
+              events (VAR-4.C.2).
+        \item Justify conclusions \emph{in context} --- not just ``yes/no'' but
+              ``because these two outcomes cannot happen at the same time.''
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item $P(A \cap B)$ is the probability that \emph{both} $A$ and $B$ occur (joint probability).
+        \item Mutually exclusive (disjoint) events have no outcomes in common; their circles do not overlap in a Venn diagram.
+        \item Most real-world events are \emph{not} mutually exclusive; students should check rather than assume.
+        \item Being able to explain \emph{why} is the AP exam expectation, not just identifying the label.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Joint probability} $P(A \cap B)$ --- probability that both $A$ and $B$ occur
+        \item \textbf{Intersection} $A \cap B$ --- outcomes in both $A$ and $B$
+        \item \textbf{Mutually exclusive (disjoint)} --- $A$ and $B$ cannot both occur;
+              $P(A \cap B) = 0$
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Venn diagram} --- visual representation of events and their overlaps
+        \item \textbf{Sample space} --- the set of all possible outcomes
+        \item \textbf{Event} --- any collection of outcomes from the sample space
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Review: basic probability notation $P(A)$, complement $P(A^c)$, and
+              the idea that all probabilities in a sample space sum to 1 (Lesson 4.1--4.3).
+        \item Ask: ``If I roll a fair die, what are the outcomes in the event
+              `roll an even number'? What are the outcomes in `roll a 3'?''
+        \item Connect: ``Today we ask --- can two events happen at the same time?''
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Connections Forward}
+    \begin{itemize}
+        \item Conditional probability $\to$ Lesson 4.5
+        \item Independence $\to$ Lesson 4.6
+        \item Addition rule uses $P(A \cap B)$ $\to$ Lesson 4.6
+        \item Common AP exam trap: confusing ``mutually exclusive'' with
+              ``independent'' $\to$ address now and reinforce in 4.6
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (4--5 min)}\\
+    Present two scenarios on the board:
+    \begin{enumerate}
+        \item A randomly selected student is enrolled in both AP Statistics and AP Calculus.
+        \item A randomly selected card from a standard deck is both a heart and a spade.
+    \end{enumerate}
+    Ask: ``Which scenario is impossible? Why?'' Then: ``Is it possible to be in
+    both classes at once?''\\[4pt]
+    Transition: \textit{``When two outcomes literally cannot happen at the same time,
+    we call them mutually exclusive --- and that changes how we calculate probabilities.''}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15--18 min)}
+    \begin{enumerate}
+        \item Define intersection $A \cap B$ and joint probability $P(A \cap B)$.
+        \item Sketch two Venn diagrams: overlapping circles (not ME) and
+              non-overlapping circles (ME, $P(A \cap B) = 0$).
+        \item Work through die-rolling example: $A = \{\text{even}\}$,
+              $B = \{\text{odd}\}$ --- show the intersection is empty.
+        \item Work through card example: $A = \{\text{heart}\}$, $B = \{\text{face card}\}$
+              --- show the intersection is \emph{not} empty (face-card hearts exist).
+        \item Stress AP exam requirement: always justify in context.
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Direct Instruction (10 min)}
+    \begin{itemize}
+        \item Model the two-step check: (1) list outcomes in each event;
+              (2) check whether any outcome appears in both.
+        \item Use a student classification two-way table:
+              Grade (9/10/11/12) $\times$ Sport (Soccer/Basketball). Ask whether
+              ``Grade 11'' and ``Basketball'' are mutually exclusive.
+        \item Emphasize: if even one outcome is shared, events are \emph{not}
+              mutually exclusive --- students often incorrectly say ``mostly separate.''
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Active Monitoring}
+    \begin{itemize}
+        \item Listen for: students saying events are mutually exclusive because they
+              are \emph{unlikely} to overlap --- correct with the definition.
+        \item Cold-call: ``Give me one example of mutually exclusive events in this
+              classroom right now.''
+        \item Cold-call: ``Could a student be in both events $A$ and $B$?
+              How do you know?''
+        \item Check Venn diagrams during notes for correct overlap/no-overlap.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Group Activity (10--12 min)}\\
+    Three-tier activity (see activity sheet). Students classify event pairs as
+    mutually exclusive or not, justify with evidence from the sample space or
+    a two-way table, and compute joint probabilities where applicable.
+    \begin{itemize}
+        \item Tier R: identify ME vs.\ not ME from Venn diagrams already drawn.
+        \item Tier A: classify events, justify in context, compute $P(A \cap B)$.
+        \item Tier E: create their own example, critique a peer's incorrect claim.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support}: Provide a sample space list; students circle shared
+              outcomes to visualize the intersection.
+        \item \textit{Extension}: Pose the question: ``Can two events with
+              $P(A) > 0$ and $P(B) > 0$ be both mutually exclusive AND
+              independent?'' (Answer: no --- preview of Lesson 4.6.)
+        \item \textit{ELL}: Post Venn diagram anchor chart with labels
+              ``Overlap = NOT mutually exclusive'' and ``No overlap = mutually exclusive.''
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    Two items using a streaming service two-way table:
+    \begin{enumerate}
+        \item Classify two event pairs as mutually exclusive or not; justify in context.
+        \item Compute $P(A \cap B)$ from the table.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    Multiple-choice item: A student is randomly selected. Event $A$ = the student
+    prefers drama. Event $B$ = the student prefers comedy.
+    ``Are $A$ and $B$ mutually exclusive? Justify.''\\[4pt]
+    Look for: explicit check of whether a student can prefer \emph{both} genres,
+    followed by a conclusion in context.
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item Four scenario-based problems: classify event pairs, justify, and compute
+              $P(A \cap B)$ from a two-way table (blood type and health outcome context).
+        \item AP free-response style: write a complete sentence justification for
+              whether two events are mutually exclusive.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: Can two events be mutually exclusive if one is
+              a subset of the other? Explain with a Venn diagram.
+        \item \textit{Preview}: Lesson 4.5 introduces conditional probability ---
+              start thinking about what it means to ``know'' one event has occurred
+              and how that changes the probability of another.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\end{document}

@@ -1,0 +1,117 @@
+%! AP Statistics — Unit 4 Cover Sheet
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+%=============================================================================
+\begin{document}
+
+% ── Full-bleed navy banner ────────────────────────────────────────────────────
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[navy] (current page.north west)
+    rectangle ([yshift=-1.4in]current page.north east);
+\end{tikzpicture}
+\vspace{-1.3in}
+
+\begin{center}
+  {\color{white}\bfseries\fontsize{28}{34}\selectfont AP Statistics}\\[8pt]
+  {\color{goldacc}\bfseries\Large Shepherd \quad 2026--2027}\\[14pt]
+  {\color{white}\bfseries\LARGE Unit 4: Probability, Random Variables, and Probability Distributions}\\[4pt]
+\end{center}
+
+\vspace{0.30in}
+
+% ── Unit overview ─────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=sky,colframe=navy,boxrule=0.9pt,arc=2mm,
+    left=4mm,right=4mm,top=3mm,bottom=3mm]
+  \textbf{Unit Overview.}\quad
+  Unit 4 develops the mathematical language of chance.  Students begin by recognizing
+  that patterns in data can arise from pure randomness, then build simulation skills
+  to estimate probabilities empirically.  The probability rules half of the unit
+  establishes sample spaces, complementary events, conditional probability,
+  independence, and the addition rule --- the tools needed to calculate the likelihood
+  of complex events.  The random-variables half introduces discrete probability
+  distributions and their parameters (mean and standard deviation), rules for combining
+  independent random variables, and two specific models --- the binomial and geometric
+  distributions --- that describe counts of successes in repeated binary trials.
+  This unit provides the probabilistic foundation for all of Units 5--9.
+\end{tcolorbox}
+
+\vspace{0.22in}
+
+% ── Lessons in this unit ──────────────────────────────────────────────────────
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Lessons in This Unit]{goldbox}
+\begin{tabularx}{\linewidth}{@{} c >{\bfseries}p{0.46\linewidth} X @{}}
+  \textbf{\#} & \textbf{Title} & \textbf{Focus} \\
+  \hline
+  4.1  & Introducing Statistics: Random and Non-Random Patterns?
+       & Patterns in data vs.\ true randomness; questioning variation. \\
+  \hline
+  4.2  & Estimating Probabilities Using Simulation
+       & Outcomes, events, simulation design; law of large numbers. \\
+  \hline
+  4.3  & Introduction to Probability
+       & Sample spaces; classical probability; complement rule; long-run interpretation. \\
+  \hline
+  4.4  & Mutually Exclusive Events
+       & Joint probability; disjoint events; Venn diagrams; $P(A \cap B) = 0$. \\
+  \hline
+  4.5  & Conditional Probability
+       & $P(A\mid B)$; multiplication rule; two-way tables. \\
+  \hline
+  4.6  & Independent Events and Unions of Events
+       & Independence vs.\ mutual exclusivity; addition rule $P(A \cup B)$. \\
+  \hline
+  4.7  & Introduction to Random Variables and Probability Distributions
+       & Discrete random variables; probability tables and histograms; cumulative distributions. \\
+  \hline
+  4.8  & Mean and Standard Deviation of Random Variables
+       & $\mu_X = \sum x\,P(X{=}x)$;\; $\sigma_X$; contextual interpretation. \\
+  \hline
+  4.9  & Combining Random Variables
+       & Linear transformations; sums and differences of independent random variables. \\
+  \hline
+  4.10 & Introduction to the Binomial Distribution
+       & BINS conditions; $P(X{=}k) = \binom{n}{k}p^k(1-p)^{n-k}$; binompdf. \\
+  \hline
+  4.11 & Parameters for a Binomial Distribution
+       & $\mu_X = np$;\; $\sigma_X = \sqrt{np(1-p)}$;\; cumulative binomcdf; interpretation. \\
+  \hline
+  4.12 & The Geometric Distribution
+       & Number of trials until first success; $P(X{=}k) = (1-p)^{k-1}p$;\; $\mu_X = 1/p$. \\
+  \hline
+\end{tabularx}
+\end{skillbox}
+
+\vspace{0.18in}
+
+% ── Standards covered ─────────────────────────────────────────────────────────
+\begin{skillbox}[AP Statistics Big Ideas \& Learning Objectives --- Unit 4]{greenbox}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.14\linewidth} X @{}}
+  VAR-1.F & Identify questions suggested by patterns in data; recognize that patterns
+            do not necessarily imply non-random variation. \\
+  UNC-2.A & Estimate probabilities using simulation; apply the law of large numbers. \\
+  VAR-4.A & Calculate probabilities for events and their complements using sample spaces
+            and the classical definition. \\
+  VAR-4.B & Interpret probabilities as long-run relative frequencies. \\
+  VAR-4.C & Explain why two events are (or are not) mutually exclusive using $P(A\cap B)$. \\
+  VAR-4.D & Calculate conditional probabilities using $P(A\mid B) = P(A\cap B)/P(B)$
+            and the multiplication rule. \\
+  VAR-4.E & Calculate probabilities for independent events and for the union of two
+            events using the addition rule. \\
+  VAR-5.A & Represent the probability distribution for a discrete random variable
+            as a table, graph, or function. \\
+  VAR-5.B & Interpret a probability distribution in terms of shape, center, and spread. \\
+  VAR-5.C & Determine mean and standard deviation of a discrete random variable. \\
+  VAR-5.D & Interpret $\mu_X$ and $\sigma_X$ in context. \\
+  VAR-5.E--F & Determine parameters for linear combinations and sums/differences
+               of independent random variables. \\
+  UNC-3.A & Determine whether a random variable follows a binomial distribution (BINS). \\
+  UNC-3.B--C & Determine and interpret parameters of the binomial distribution. \\
+  UNC-3.D--F & Calculate and interpret probabilities and parameters for the geometric
+               distribution. \\
+\end{tabularx}
+\end{skillbox}
+
+\end{document}

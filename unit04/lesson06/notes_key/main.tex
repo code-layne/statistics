@@ -1,0 +1,148 @@
+%! AP Statistics — Unit 4, Lesson 4.6 — Guided Notes KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.6}{Guided Notes --- KEY}
+\namedateperiod
+
+\vspace{0.12in}
+
+\begin{objectivebox}
+\small By the end of this lesson, I will be able to\dots\\[4pt]
+\ans{Determine whether two events are independent using the condition $P(A|B) = P(A)$.}\\[1pt]
+\ans{Calculate $P(A \cup B)$ using the addition rule $P(A \cup B) = P(A) + P(B) - P(A \cap B)$.}\\[1pt]
+\ans{Explain why mutually exclusive events with positive probabilities cannot be independent.}
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\termblanklong{Independent events} \ans{Events $A$ and $B$ are independent if knowing whether one occurred does not change the probability of the other: $P(A|B) = P(A)$.}
+\termblanklong{Dependent events} \ans{Events where knowing one changes the probability of the other: $P(A|B) \neq P(A)$.}
+\termblanklong{Multiplication rule (independent events)} \ans{If $A$ and $B$ are independent, then $P(A \cap B) = P(A) \cdot P(B)$.}
+\termblanklong{Union $A \cup B$} \ans{The event that $A$ or $B$ (or both) occurs; includes all outcomes in either event.}
+\termblanklong{Addition rule} \ans{$P(A \cup B) = P(A) + P(B) - P(A \cap B)$; subtracts the intersection to avoid double-counting.}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+  \item \ans{No --- coin flips are independent; the outcome of the first does not affect the second.}
+  \item \ans{Yes --- removing the first card changes the composition of the deck, so the probability of the second card changes.}
+\end{enumerate}
+\ans{In the first case the sample space is reset each time; in the second case what has already been removed changes what remains.}
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Independent Events (VAR-4.E.1, VAR-4.E.2)}
+\small
+\textbf{Definition:} Events $A$ and $B$ are \textbf{independent} if knowing whether
+$A$ occurred \ans{does not change} the probability that $B$ will occur.
+
+\vspace{8pt}
+\textbf{Test for independence:}
+\[
+  A \text{ and } B \text{ are independent} \iff P(A|B) = \ans{P(A)}
+\]
+
+\vspace{4pt}
+\textbf{Equivalent condition:}
+\[
+  A \text{ and } B \text{ are independent} \iff P(A \cap B) = \ans{P(A)} \cdot \ans{P(B)}
+\]
+
+\vspace{8pt}
+\textbf{From a two-way table:}
+\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+  \item Calculate $P(A)$ from the \ans{row or column marginal total}.
+  \item Calculate $P(A|B)$ from the \ans{joint cell divided by the conditioning total}.
+  \item Compare: if $P(A|B)$ \ans{equals} $P(A)$, independent; otherwise \ans{dependent}.
+\end{enumerate}
+
+\vspace{8pt}
+\textbf{Important:} Mutually exclusive (with $P(A) > 0$ and $P(B) > 0$) $\Rightarrow$
+events are \ans{dependent}.\\[4pt]
+If $A$ and $B$ are ME and $A$ occurs, then $P(B|A) = $ \ans{$0$}, but $P(B) > 0$.
+So $P(B|A) \neq P(B)$, which means they are \ans{dependent}.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Union and the Addition Rule (VAR-4.E.3, VAR-4.E.4)}
+\small
+\textbf{Union:} $A \cup B$ is the event that \ans{$A$} or \ans{$B$} (or both) occurs.
+
+\vspace{8pt}
+\textbf{Addition Rule:}
+\[
+  P(A \cup B) = P(A) + P(B) - \textcolor{keyred}{P(A \cap B)}
+\]
+
+\vspace{4pt}
+\textbf{Why subtract?} If we just add $P(A) + P(B)$, the outcomes in $A \cap B$ are
+\ans{counted twice}, so we subtract once.
+
+\vspace{8pt}
+\textbf{Special case --- Mutually Exclusive:}\\
+$P(A \cup B) = $ \ans{$P(A) + P(B)$}
+
+\vspace{8pt}
+\textbf{Special case --- Independent:}\\
+$P(A \cup B) = P(A) + P(B) - $ \ans{$P(A) \cdot P(B)$}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Worked Example}
+\small
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} l X X r @{}}
+ & \textbf{10th Grade} & \textbf{11th Grade} & \textbf{Total} \\
+\hline
+\textbf{Sports} & 40 & 60 & 100 \\
+\textbf{Arts}   & 30 & 30 & 60  \\
+\textbf{Neither}& 20 & 20 & 40  \\
+\hline
+\textbf{Total}  & 90 & 110 & 200 \\
+\end{tabularx}
+
+\vspace{8pt}
+\textbf{Independence check:}
+\begin{itemize}[itemsep=3pt]
+  \item $P(\text{Sports}) = $ \ans{$100/200 = 0.5$}
+  \item $P(\text{Sports}|\text{10th}) = $ \ans{$40/90 \approx 0.444$}
+  \item Equal? \ans{No ($0.5 \neq 0.444$)} \quad Independent? \ans{No --- dependent}
+\end{itemize}
+
+\vspace{8pt}
+\textbf{Addition Rule:}
+\begin{itemize}[itemsep=3pt]
+  \item $P(\text{Sports}) = $ \ans{$100/200 = 0.5$}
+  \item $P(\text{10th Grade}) = $ \ans{$90/200 = 0.45$}
+  \item $P(\text{Sports} \cap \text{10th}) = $ \ans{$40/200 = 0.2$}
+  \item $P(\text{Sports} \cup \text{10th}) = $ \ans{$0.5 + 0.45 - 0.2 = 0.75$}
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+\vspace{6pt}
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+  \item \ans{$P(\text{Arts}) = 60/200 = 0.3$; $P(\text{Arts}|\text{11th}) = 30/110 \approx 0.273$.}\\
+        \ans{Since $0.3 \neq 0.273$, Arts and 11th Grade are \textbf{not independent} (dependent).}
+
+  \item \ans{$0.3 + 110/200 - 30/200 = 0.3 + 0.55 - 0.15 = 0.7$}
+
+  \item \ans{Yes, Sports and Arts are mutually exclusive (based on table design --- each student has one activity). No, they are not independent --- if you know a student does Sports, the probability of Arts is 0, which differs from $P(\text{Arts}) = 0.3$. Mutually exclusive events with positive probabilities are always dependent.}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

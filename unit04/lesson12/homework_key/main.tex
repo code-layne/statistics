@@ -1,0 +1,57 @@
+%! AP Statistics — Unit 4, Lesson 4.12 — Homework KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.12}{Homework --- KEY}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+
+\textbf{1.} Die rolled until 1 appears; $p = 1/6$.
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
+  \item \ans{B: each roll is a 1 (success) or not. I: rolls are independent. T: counting until first 1. S: $p=1/6$ every roll. $X \sim \text{Geom}(1/6)$.}
+  \item \ans{$P(X=2) = (5/6)^1(1/6) \approx 0.1389$; \quad $P(X=6) = (5/6)^5(1/6) \approx 0.0670$}
+  \item \ans{$\mu_X = 6$. On average, a player would need to roll a die 6 times to get the first 1.}
+  \item \ans{$P(X>6) = (5/6)^6 \approx 0.3349$. There is about a 33.5\% probability of needing more than 6 rolls to get the first 1.}
+\end{enumerate}
+
+\vspace{6pt}
+\textbf{2.} Oversized bolts; $p = 0.04$.
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
+  \item \ans{$X \sim \text{Geom}(0.04)$}
+  \item \ans{$P(X=10) = (0.96)^9(0.04) = (0.6925)(0.04) \approx 0.0277$}
+  \item \ans{$\mu_X = 1/0.04 = 25$. On average, the factory would test 25 bolts before finding the first oversized one.}
+  \item \ans{$P(X \le 5) = \texttt{geometcdf(0.04, 5)} \approx 0.1846$}
+\end{enumerate}
+
+\vspace{6pt}
+\textbf{3.} Binomial vs.\ geometric, $p = 0.55$.
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
+  \item \ans{$W \sim \text{Geom}(0.55)$; \quad $\mu_W = 1/0.55 \approx 1.82$}
+  \item \ans{$V \sim B(10, 0.55)$; \quad $\mu_V = 10(0.55) = 5.5$}
+  \item \ans{$W$ counts how many voters the researcher must interview until finding the first supporter (number of trials is random). $V$ counts how many of exactly 10 interviewed voters support the candidate (number of trials is fixed at 10). They both use the same $p$ but measure completely different things.}
+\end{enumerate}
+
+\vspace{6pt}
+\textbf{4.} Allele carrier; $p = 0.20$.
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
+  \item \ans{$X \sim \text{Geom}(0.20)$. B: each person either carries the allele (success) or not. I: individuals are independent (large population). T: examining until the first carrier. S: same $p=0.20$ for every individual.}
+  \item \ans{$P(X=4) = (0.80)^3(0.20) = (0.512)(0.20) = 0.1024$}
+  \item \ans{$\mu_X = 1/0.20 = 5$. On average, the geneticist would need to examine 5 individuals to find the first allele carrier.}
+  \item \ans{$P(X \le 3) = \texttt{geometcdf(0.20, 3)} \approx 0.4880$}
+  \item \ans{$P(X > 5) = (0.80)^5 \approx 0.3277$. There is about a 32.8\% probability that the geneticist must examine more than 5 individuals before finding the first allele carrier.}
+\end{enumerate}
+
+\vspace{6pt}
+\textbf{5. Extension:}
+\ans{$P(X > 2) = (0.80)^2 = 0.64$. $P(X > 5) = (0.80)^5 = 0.32768$. $P(X > 5 \mid X > 2) = P(X > 5 \text{ and } X > 2)/P(X > 2) = P(X > 5)/P(X > 2) = 0.32768/0.64 = 0.5120 = (0.80)^3 = P(X > 3)$. This verifies the memoryless property. In context: if the geneticist has already examined 2 individuals without finding a carrier, the probability of needing more than 3 \emph{additional} examinations is the same as the probability of needing more than 3 examinations from the start --- past failures don't change future probabilities.}
+
+\end{practicebox}
+
+\end{document}

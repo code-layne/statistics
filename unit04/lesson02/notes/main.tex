@@ -1,0 +1,125 @@
+%! AP Statistics — Unit 4, Lesson 4.2 — Student Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.2}{Guided Notes}
+\namedateperiod
+
+\vspace{0.12in}
+
+\begin{objectivebox}
+\small By the end of this lesson, I will be able to\dots\\[4pt]
+\writeline\\[1pt]
+\writeline\\[1pt]
+\writeline
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\termblanklong{Simulation}
+\termblanklong{Trial}
+\termblanklong{Outcome}
+\termblanklong{Event}
+\termblanklong{Relative frequency (empirical probability)}
+\termblanklong{Law of Large Numbers}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+\small
+A thumbtack is dropped 50 times. Tally the results and compute running relative frequency.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{@{} l c c c c c @{}}
+After $n$ drops: & 5 & 10 & 20 & 35 & 50 \\
+\hline
+Point-up count & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
+Relative freq. & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} & \blank{1cm} \\
+\end{tabularx}
+
+\vspace{6pt}
+What do you notice about the relative frequency as $n$ increases? \writeline
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Simulation Design Framework}
+\small
+
+\textbf{Key Idea (UNC-2.A.4):} Simulation is a way to model random events such that
+simulated outcomes \blank{5cm} real-world outcomes. All possible outcomes are
+associated with a value determined by \blank{2cm}.
+
+\vspace{10pt}
+\textbf{Steps to Design a Simulation:}
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+  \item \textbf{Identify} the random process: \blank{8cm}
+  \item \textbf{Assign} values to outcomes: \blank{8cm}
+  \item \textbf{Choose} a chance device: \blank{8cm}
+  \item \textbf{Run} trials and record outcomes: \blank{8cm}
+  \item \textbf{Compute} relative frequency: $\hat{p} = \dfrac{\blank{3cm}}{\blank{3cm}}$
+\end{enumerate}
+
+\vspace{10pt}
+\textbf{Example:} A genetic cross. Each parent is a carrier (one dominant, one recessive allele).
+Each offspring independently receives one allele from each parent.
+\begin{itemize}[itemsep=4pt]
+  \item Chance device: \blank{5cm}
+  \item Assign: \blank{7cm}
+  \item One trial = \blank{5cm}
+  \item Event of interest: offspring has two recessive alleles (affected)
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{The Law of Large Numbers}
+\small
+\textbf{UNC-2.A.5:} The relative frequency of an outcome in simulated data can be used
+to \blank{5cm} the probability of that outcome.
+
+\vspace{8pt}
+\textbf{UNC-2.A.6 --- Law of Large Numbers:}\\
+As the number of trials \blank{3cm}, the simulated (empirical) probability tends to
+get \blank{4cm} to the \blank{4cm} probability.
+
+\vspace{8pt}
+\textbf{What this means in practice:}
+\begin{itemize}[itemsep=4pt]
+  \item With \blank{2cm} trials, relative frequency can vary a lot.
+  \item With \blank{2cm} trials, relative frequency stabilizes near the true value.
+  \item A few unlucky trials early on \blank{4cm} (do/does not) mean the estimate is wrong;
+        it just takes more trials to stabilize.
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+A free-throw shooter makes 72\% of attempts. Use the random number table
+below to simulate 20 shots. Let digits 00--71 represent a make and 72--99
+represent a miss.
+
+\vspace{6pt}
+{\small\texttt{39 48 54 70 29 73 41 61 85 33 \quad 17 56 88 12 65 09 42 99 77 23}}
+
+\vspace{8pt}
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item List the outcome (make/miss) for each of the 20 two-digit values above.
+        \vspace{20pt}
+  \item How many of the 20 shots were makes? \blank{2cm}
+  \item What is the empirical probability (relative frequency) of a make?
+        $\hat{p} = \blank{3cm}$
+  \item How does this compare to the true probability of 0.72?
+        \writeline
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

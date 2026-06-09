@@ -1,0 +1,134 @@
+%! AP Statistics — Unit 4, Lesson 4.4 — Group Activity
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.4}{Group Activity: Are These Events Mutually Exclusive?}
+\namepartnerperiod
+
+\vspace{0.1in}
+
+\begin{scenariobox}[Context]{sky}
+\small
+A large high school surveyed 200 students about their after-school activities and
+class standing. The two-way table below shows the results.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} l *{4}{X} r @{}}
+ & \textbf{Freshman} & \textbf{Sophomore} & \textbf{Junior} & \textbf{Senior} & \textbf{Total} \\
+\hline
+\textbf{Sports}    & 18 & 22 & 20 & 15 & 75  \\
+\textbf{Arts/Music}& 12 & 10 & 14 & 9  & 45  \\
+\textbf{Neither}   & 20 & 18 & 22 & 20 & 80  \\
+\hline
+\textbf{Total}     & 50 & 50 & 56 & 44 & 200 \\
+\end{tabularx}
+\end{scenariobox}
+
+\vspace{0.12in}
+
+% ── TIER R ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=0.9pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm,
+    title={\bfseries\small Tier R --- Remediate: Identifying Mutually Exclusive Events},
+    fonttitle=\small]
+\small
+For each pair of events, circle \textbf{ME} (mutually exclusive) or \textbf{Not ME}.
+A brief reason is given to help you.
+
+\vspace{6pt}
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item $A = \{\text{student is a Freshman}\}$, $B = \{\text{student is a Senior}\}$.\\
+        Can a student be both a freshman and a senior at the same time?
+        \blank{3cm}\\
+        \textbf{ME} \quad / \quad \textbf{Not ME}
+
+  \item $A = \{\text{student is in Sports}\}$, $B = \{\text{student is in Arts/Music}\}$.\\
+        Can a student be in both activities? (Look at the table --- are there rows for both?)
+        \blank{3cm}\\
+        \textbf{ME} \quad / \quad \textbf{Not ME}
+
+  \item $A = \{\text{student is in Sports}\}$, $B = \{\text{student is a Junior}\}$.\\
+        Can a student play sports and be a junior? \blank{3cm}\\
+        \textbf{ME} \quad / \quad \textbf{Not ME}
+
+  \item $A = \{\text{student is in Arts/Music}\}$, $B = \{\text{student is in Neither}\}$.\\
+        \textbf{ME} \quad / \quad \textbf{Not ME}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+% ── TIER A ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm,
+    title={\bfseries\small Tier A --- Approaching Proficiency: Classify, Justify, and Compute},
+    fonttitle=\small]
+\small
+Use the table above to answer each question. Show your reasoning.
+
+\vspace{6pt}
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+  \item Let $A = \{\text{Sophomore}\}$ and $B = \{\text{Sports}\}$. One student is chosen
+        at random.
+        \begin{enumerate}[label=(\alph*), itemsep=5pt]
+          \item Are $A$ and $B$ mutually exclusive? Justify in context.\\
+                \writeline\writeline
+          \item Find $P(A \cap B)$. Show your setup. \blank{5cm}
+        \end{enumerate}
+
+  \item Let $A = \{\text{Freshman}\}$ and $B = \{\text{Senior}\}$.
+        \begin{enumerate}[label=(\alph*), itemsep=5pt]
+          \item Are $A$ and $B$ mutually exclusive? Justify in context.\\
+                \writeline\writeline
+          \item Find $P(A \cap B)$. \blank{4cm}
+        \end{enumerate}
+
+  \item Let $A = \{\text{Sports}\}$ and $B = \{\text{Arts/Music}\}$.
+        Based on the table structure (each row is a separate activity), are students
+        assumed to be in at most one activity?
+        \begin{enumerate}[label=(\alph*), itemsep=5pt]
+          \item Are $A$ and $B$ mutually exclusive? Justify.\\
+                \writeline\writeline
+          \item Find $P(A \cap B)$ and $P(A)$. \blank{5cm}
+        \end{enumerate}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+% ── TIER E ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=goldbg, colframe=goldacc, boxrule=0.9pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm,
+    title={\bfseries\small Tier E --- Extension: Creating and Critiquing},
+    fonttitle=\small]
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+  \item \textbf{Create your own:} Using the same table, define two events that \emph{are}
+        mutually exclusive and two events that are \emph{not} mutually exclusive.
+        Write a complete sentence justification for each.
+
+        \vspace{4pt}
+        ME pair: $A = $ \blank{5cm}, $B = $ \blank{5cm}\\
+        Justification: \writeline\writeline
+
+        \vspace{4pt}
+        Not ME pair: $A = $ \blank{5cm}, $B = $ \blank{5cm}\\
+        Justification: \writeline\writeline
+
+  \item \textbf{Critique this claim:} A classmate says: ``Events $A$ and $B$ are
+        mutually exclusive because $P(A)$ and $P(B)$ are both small.''
+        Is this reasoning correct? Explain the error.\\
+        \writeline\writeline\writeline
+
+  \item \textbf{Probability challenge:} A student says: ``If two events are mutually exclusive,
+        then neither can have a high probability.'' Provide a counterexample that shows this
+        is false, then explain.\\
+        \writeline\writeline\writeline
+\end{enumerate}
+\end{tcolorbox}
+
+\end{document}

@@ -1,0 +1,111 @@
+%! AP Statistics — Unit 4, Lesson 4.9 — Group Activity
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.9}{Group Activity: Combining Random Variables}
+\namepartnerperiod
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=sky!60, colframe=navy, title=\textbf{Tier R --- Remediate},
+    arc=2mm, boxrule=0.8pt, left=4mm, right=4mm, top=3mm, bottom=3mm]
+\small
+$X$ = score on a quiz (out of 20). $\mu_X = 14$, $\sigma_X = 3$.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+  \item A teacher adds 4 bonus points to every score. Define $W = X + 4$.
+        \begin{enumerate}[label=(\alph*), itemsep=6pt]
+          \item $\mu_W = $ \blank{4cm}
+          \item $\sigma_W = $ \blank{4cm}
+          \item Explain why the spread did not change.\\
+                \writeline
+        \end{enumerate}
+
+  \item The teacher decides to scale scores by 1.5 instead. Define $V = 1.5X$.
+        \begin{enumerate}[label=(\alph*), itemsep=6pt]
+          \item $\mu_V = $ \blank{4cm}
+          \item $\sigma_V = $ \blank{4cm}
+        \end{enumerate}
+
+  \item Now the teacher applies both: $W = 4 + 1.5X$.
+        \begin{enumerate}[label=(\alph*), itemsep=6pt]
+          \item $\mu_W = $ \blank{4cm}
+          \item $\sigma_W = $ \blank{4cm}
+        \end{enumerate}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.12in}
+
+\begin{tcolorbox}[colback=goldbg!60, colframe=goldacc, title=\textbf{Tier A --- Approaching Proficiency},
+    arc=2mm, boxrule=0.8pt, left=4mm, right=4mm, top=3mm, bottom=3mm]
+\small
+Two players on a trivia team score independently.
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item Player A: $\mu_A = 15$ points, $\sigma_A = 4$ points
+  \item Player B: $\mu_B = 12$ points, $\sigma_B = 3$ points
+\end{itemize}
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+  \item Team total $T = A + B$:
+        \begin{enumerate}[label=(\alph*), itemsep=6pt]
+          \item $\mu_T = $ \blank{4cm}
+          \item $\sigma^2_T = $ \blank{4cm} (show computation)
+          \item $\sigma_T = $ \blank{4cm}
+        \end{enumerate}
+
+  \item Score difference $D = A - B$:
+        \begin{enumerate}[label=(\alph*), itemsep=6pt]
+          \item $\mu_D = $ \blank{4cm}
+          \item $\sigma^2_D = $ \blank{4cm}
+          \item $\sigma_D = $ \blank{4cm}
+        \end{enumerate}
+
+  \item Is $\sigma_T = \sigma_D$? Explain why or why not.\\
+        \writeline\\[1pt]\writeline
+
+  \item Interpret $\mu_T$ in context.\\
+        \writeline\\[1pt]\writeline
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.12in}
+
+\begin{tcolorbox}[colback=greenbg!60, colframe=greenacc, title=\textbf{Tier E --- Extension},
+    arc=2mm, boxrule=0.8pt, left=4mm, right=4mm, top=3mm, bottom=3mm]
+\small
+A delivery service charges for weight and distance independently.
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item Weight charge $W \sim N(\mu_W = \$8.00,\ \sigma_W = \$1.50)$
+  \item Distance charge $D \sim N(\mu_D = \$5.00,\ \sigma_D = \$2.00)$
+\end{itemize}
+Total charge $T = W + D$ (independent).
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+  \item Find $\mu_T$ and $\sigma_T$.
+
+        \vspace{0.3in}
+
+  \item Is the distribution of $T$ normal? Justify.\\
+        \writeline\\[1pt]\writeline
+
+  \item Find $P(T > \$15.00)$. Show all work (draw a sketch; use the formula for standardizing).
+
+        \vspace{0.5in}
+
+  \item A ``premium'' plan triples the weight charge: $P = 3W + D$ (independent).
+        Find $\mu_P$ and $\sigma_P$.
+
+        \vspace{0.3in}
+
+  \item For the premium plan, find $P(P > \$30.00)$. Show work.
+
+        \vspace{0.5in}
+\end{enumerate}
+\end{tcolorbox}
+
+\end{document}

@@ -1,0 +1,83 @@
+%! AP Statistics — Unit 4, Lesson 4.5 — Activity KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.5}{Group Activity KEY: Conditional Probability from Tables}
+\namepartnerperiod
+
+\vspace{0.1in}
+
+\begin{scenariobox}[Context]{sky}
+\small
+A fitness researcher surveyed 180 athletes. Table repeated for reference.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} l X X X r @{}}
+ & \textbf{Daily} & \textbf{3--4$\times$/week} & \textbf{1--2$\times$/week} & \textbf{Total} \\
+\hline
+\textbf{Running}  & 30 & 20 & 10 & 60 \\
+\textbf{Swimming} & 24 & 18 & 18 & 60 \\
+\textbf{Cycling}  & 18 & 22 & 20 & 60 \\
+\hline
+\textbf{Total}    & 72 & 60 & 48 & 180 \\
+\end{tabularx}
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\textbf{Tier R}
+\begin{practicebox}
+\small
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{@{} l X X @{}}
+\textbf{Expression} & \textbf{Numerator} & \textbf{Denominator} \\
+\hline
+$P(\text{Running}|\text{Daily})$ & \ans{30 (Running \& Daily cell)} & \ans{72 (Daily total)} \\
+$P(\text{Daily}|\text{Swimming})$ & \ans{24 (Swimming \& Daily cell)} & \ans{60 (Swimming total)} \\
+$P(\text{Cycling}|1\text{--}2\times)$ & \ans{20} & \ans{48} \\
+$P(\text{Swimming}|3\text{--}4\times)$ & \ans{18} & \ans{60} \\
+\end{tabularx}
+
+\vspace{6pt}
+$P(\text{Running}|\text{Daily}) = $ \ans{$30 \div 72 \approx 0.417$}\\[4pt]
+$P(\text{Daily}|\text{Swimming}) = $ \ans{$24 \div 60 = 0.4$}
+\end{practicebox}
+
+\vspace{0.08in}
+
+\textbf{Tier A}
+\begin{practicebox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+  \item
+    \begin{enumerate}[label=(\alph*), itemsep=4pt]
+      \item \ans{$P(\text{Running}|\text{Daily}) = 30/72 \approx 0.417$}
+      \item \ans{$P(\text{Daily}|\text{Running}) = 30/60 = 0.5$}
+      \item \ans{No, they are not equal. $P(\text{Running}|\text{Daily})$ answers ``given that an athlete trains daily, how likely are they to be a runner?'' while $P(\text{Daily}|\text{Running})$ answers ``given that an athlete runs, how likely are they to train daily?'' The conditioning changes the denominator.}
+    \end{enumerate}
+
+  \item \ans{$(72/180) \times (30/72) = 30/180 \approx 0.167$. Yes, this equals the cell count $30/180$.}
+
+  \item \ans{$P(\text{Cycling}|3\text{--}4\times/\text{week}) = 22/60 \approx 0.367$.} \ans{Among athletes who train 3--4 times per week, approximately 36.7\% are cyclists.}
+\end{enumerate}
+\end{practicebox}
+
+\vspace{0.08in}
+
+\textbf{Tier E}
+\begin{practicebox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item \ans{$P(\text{Swimming}|\text{Daily}) = 24/72 \approx 0.333$; $P(\text{Daily}|\text{Swimming}) = 24/60 = 0.4$. They differ because the denominators are different. The first answers: ``of all daily trainers, what fraction swims?'' The second answers: ``of all swimmers, what fraction trains daily?''}
+
+  \item \ans{Updated Daily total = 72 + 12 = 84; Updated Running \& Daily = 30 + 12 = 42; Updated $P(\text{Running}|\text{Daily}) = 42/84 = 0.5$. This is an \emph{increase} from 0.417 because the new runners all train daily, which raises the proportion of runners among daily trainers.}
+
+  \item \ans{Sample: $P(\text{Running}|\text{1--2$\times$/week})^c$, i.e., the complement. Or more naturally: $P(\text{Daily}|\text{Running}) = 30/60 = 0.5$. Any valid conditional probability $> 0.5$ with a correct explanation is acceptable.}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

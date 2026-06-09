@@ -1,0 +1,121 @@
+%! AP Statistics — Unit 4, Lesson 4.9 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.9}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.12in}
+
+\begin{objectivebox}
+\small By the end of this lesson, I will be able to\dots\\[4pt]
+\ans{Find $\mu_W$ and $\sigma_W$ for a linear transformation $W = a + bX$.}\\[1pt]
+\ans{Find the mean and variance of the sum or difference of two independent random variables.}\\[1pt]
+\ans{Explain why variances add for independent RVs but standard deviations do not.}
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\termblanklong{Linear transformation ($W = a + bX$)} \ans{A new RV formed by adding a constant and/or multiplying by a constant. Shifts mean by $a$; scales SD by $|b|$.}
+\termblanklong{Sum of random variables} \ans{$T = X + Y$; $\mu_T = \mu_X + \mu_Y$ and (if independent) $\sigma^2_T = \sigma^2_X + \sigma^2_Y$.}
+\termblanklong{Difference of random variables} \ans{$D = X - Y$; $\mu_D = \mu_X - \mu_Y$ and (if independent) $\sigma^2_D = \sigma^2_X + \sigma^2_Y$.}
+\termblanklong{Variance addition rule} \ans{For independent $X$ and $Y$: $\sigma^2_{X \pm Y} = \sigma^2_X + \sigma^2_Y$. Variances add; SDs do not.}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+\small
+$\mu_X = \$6.00$, $\sigma_X = \$1.50$; $\mu_Y = \$4.00$, $\sigma_Y = \$1.00$.\\[4pt]
+\textbf{Expected total:} \ans{$\$6.00 + \$4.00 = \$10.00$} \quad
+\textbf{SD of total:} \ans{$\sqrt{1.5^2+1.0^2}=\sqrt{3.25}\approx\$1.80$ (not $\$2.50$!)}
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Rule 1: Linear Transformation}
+\small
+
+Adding $a$ \ans{shifts} the mean by $a$ but does \ans{not} change spread.
+Multiplying by $b$ \ans{scales} both mean and SD by $b$.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{@{}ll@{}}
+\hline
+$\mu_W = $ & \ans{$a + b\mu_X$} \\
+$\sigma_W = $ & \ans{$|b|\sigma_X$} \\
+\hline
+\end{tabular}
+\end{center}
+
+$\mu_W = $ \ans{$3(0.90) = 2.70$ points} \quad $\sigma_W = $ \ans{$3(0.70) = 2.10$ points}
+
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Rule 2: Sum of Independent Random Variables}
+\small
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{@{}ll@{}}
+\hline
+$\mu_T = $ & \ans{$\mu_X + \mu_Y$} \\
+$\sigma^2_T = $ & \ans{$\sigma^2_X + \sigma^2_Y$} \\
+$\sigma_T = $ & \ans{$\sqrt{\sigma^2_X + \sigma^2_Y}$} \\
+\hline
+\end{tabular}
+\end{center}
+
+$\mu_T = $ \ans{\$10.00} \quad $\sigma^2_T = $ \ans{$2.25+1.00=3.25$} \quad
+$\sigma_T = \sqrt{\ans{3.25}} = $ \ans{$\approx \$1.80$}
+
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Rule 3: Difference of Independent Random Variables}
+\small
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{@{}ll@{}}
+\hline
+$\mu_D = $ & \ans{$\mu_X - \mu_Y$} \\
+$\sigma^2_D = $ & \ans{$\sigma^2_X + \sigma^2_Y$ (variances still add!)} \\
+$\sigma_D = $ & \ans{$\sqrt{\sigma^2_X + \sigma^2_Y}$} \\
+\hline
+\end{tabular}
+\end{center}
+
+Subtracting increases the variance: \ans{increases}.
+
+$\mu_D = $ \ans{\$2.00} \quad $\sigma^2_D = $ \ans{3.25} \quad $\sigma_D = $ \ans{$\approx\$1.80$}
+
+$\sigma_T = $ \ans{1.80} and $\sigma_D = $ \ans{1.80}. Equal? \ans{Yes} (same variances added.)
+
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item $\mu_T = $ \ans{80} \quad $\sigma^2_T = $ \ans{$64+25=89$} \quad
+        $\sigma_T = $ \ans{$\sqrt{89}\approx 9.43$}
+
+  \item $\mu_D = $ \ans{20} \quad $\sigma^2_D = $ \ans{$64+25=89$} \quad
+        $\sigma_D = $ \ans{$\sqrt{89}\approx 9.43$}
+
+  \item $\mu_W = $ \ans{$10+2(50)=110$} \quad $\sigma_W = $ \ans{$|2|(8)=16$}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

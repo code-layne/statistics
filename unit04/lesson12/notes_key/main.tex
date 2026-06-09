@@ -1,0 +1,134 @@
+%! AP Statistics — Unit 4, Lesson 4.12 — Guided Notes KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.12}{Guided Notes --- KEY}
+\namedateperiod
+
+\vspace{0.12in}
+
+\begin{objectivebox}
+\small By the end of this lesson, I will be able to\dots\\[4pt]
+\ans{Determine whether a setting is geometric by checking BITS conditions, and state $X \sim \text{Geom}(p)$.}\\[1pt]
+\ans{Compute $P(X=k) = (1-p)^{k-1}p$ and cumulative probabilities using \texttt{geometpdf}/\texttt{geometcdf}.}\\[1pt]
+\ans{Find $\mu_X = 1/p$ and interpret it in context as the long-run average trials until the first success.}
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\termblanklong{Geometric random variable} \ans{A discrete RV $X$ that counts the number of trials up to and including the first success in a geometric setting.}
+\termblanklong{BITS conditions} \ans{Binary, Independent, Trials counted until the first success, Same probability $p$ --- the four conditions for a geometric distribution.}
+\termblanklong{Geometric probability formula} \ans{$P(X=k) = (1-p)^{k-1}p$ for $k = 1, 2, 3, \ldots$}
+\termblanklong{Mean of a geometric distribution} \ans{$\mu_X = 1/p$ --- the average number of trials until the first success.}
+\termblanklong{geometpdf(p, k) / geometcdf(p, k)} \ans{\texttt{geometpdf(p, k)} computes $P(X=k)$; \texttt{geometcdf(p, k)} computes $P(X \le k)$.}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+\small\textbf{Opening scenario:}
+
+\vspace{6pt}
+Average shots expected: \ans{$1/0.65 \approx 1.54$}\\[6pt]
+Values $X$ can take: \ans{$1, 2, 3, 4, \ldots$ (any positive integer)} \quad Is there an upper limit? \ans{No}
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Geometric Settings --- BITS Conditions}
+\small
+
+\vspace{8pt}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.06\linewidth}
+                                     >{\bfseries}p{0.30\linewidth} X
+                                     p{3.2cm} @{}}
+ & \textbf{BITS condition} & \textbf{What it means} & \textbf{Binomial analog} \\
+\hline
+B & Binary & \ans{Two outcomes: success or failure.} & same \\
+I & Independent & \ans{Outcome of one trial does not affect others.} & same \\
+T & Trials until \ans{first} success & Counting stops when the first \ans{success} occurs. & N: fixed $n$ \\
+S & Same $p$ & \ans{$p$ is the same on every trial.} & same \\
+\end{tabularx}
+
+\vspace{6pt}
+If all four conditions are met, write: $X \sim \text{Geom}(\ans{p})$
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{The Geometric Probability Formula and Mean}
+\small
+
+\[
+  P(X = k) = (1-p)^{\ans{k-1}} \cdot p \qquad k = 1, 2, 3, \ldots
+\]
+
+\vspace{4pt}
+Why? Trials $1$ through $k-1$ must be \ans{failures}, and trial $k$ must be a
+\ans{success}.
+
+\vspace{8pt}
+\textbf{Mean:} $\mu_X = \dfrac{1}{\ans{p}}$
+
+\vspace{4pt}
+\textbf{Interpretation:} ``In many repetitions of this geometric experiment, the average number of \ans{trials} until the first \ans{success} would be $1/p$.''
+
+\vspace{8pt}
+\textbf{Calculator:}
+\begin{itemize}[itemsep=4pt]
+  \item \texttt{geometpdf(p, k)} $= P(X = k)$
+  \item \texttt{geometcdf(p, k)} $= P(X \le k)$
+  \item $P(X > k) = (1-p)^k = 1 - \texttt{geometcdf(p, k)}$
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Worked Example --- Free-Throw Shooting}
+\small
+$X = $ \ans{the number of free-throw attempts until the first make} \quad $X \sim \text{Geom}(\ans{0.65})$
+
+\vspace{6pt}
+\textbf{Check BITS:}\\[4pt]
+B: \ans{Binary --- each shot is a make (success) or a miss (failure).}\\[4pt]
+I: \ans{Independent --- each shot is independent of the others.}\\[4pt]
+T: \ans{Trials until first success --- shooting continues until the first make.}\\[4pt]
+S: \ans{Same $p = 0.65$ on every attempt.}
+
+\vspace{8pt}
+\[
+  P(X = 3) = (1 - \textcolor{keyred}{0.65})^{\textcolor{keyred}{2}} \cdot \textcolor{keyred}{0.65}
+           = (\textcolor{keyred}{0.35})^2 \cdot \textcolor{keyred}{0.65}
+           \approx \textcolor{keyred}{0.0796}
+\]
+Calculator: \texttt{geometpdf(\ans{0.65},\;3)} $\approx \ans{0.0796}$
+
+\vspace{8pt}
+\textbf{Mean:} $\mu_X = \dfrac{1}{\ans{0.65}} \approx \ans{1.54}$
+
+\vspace{6pt}
+\textbf{Interpret $\mu_X$:} \ans{If the player shoots free throws many times until making one, he will average about 1.54 shots per attempt to get his first make.}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+
+  \item Die roll until 6 appears; $p = 1/6 \approx 0.1667$.
+  \begin{enumerate}[label=(\alph*), itemsep=5pt]
+    \item \ans{$P(X=4) = (5/6)^3(1/6) = (0.5787)(0.1667) \approx 0.0965$}
+    \item \ans{$\mu_X = 1/(1/6) = 6$. On average, a player would need to roll the die 6 times to get the first 6.}
+    \item \ans{$P(X > 4) = (5/6)^4 \approx 0.4823$. There is about a 48.2\% probability of needing more than 4 rolls to get the first 6.}
+  \end{enumerate}
+
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

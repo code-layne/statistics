@@ -1,0 +1,91 @@
+%! AP Statistics — Unit 4, Lesson 4.12 — Group Activity KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.12}{Group Activity KEY: Geometric vs.\ Binomial}
+\namepartnerperiod
+
+\vspace{0.1in}
+
+% ── TIER R ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=goldbg, colframe=goldacc, boxrule=1pt, arc=2mm,
+    title={\bfseries Tier R --- Key},
+    fonttitle=\small]
+\small
+
+\textbf{Scenario 1:} Flipping until tails.
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=4pt]
+  \item \ans{Geometric}
+  \item \ans{$n$ is not fixed --- flipping continues until tails appears.}
+  \item \ans{$X \sim \text{Geom}(0.5)$; $p = 0.5$}
+\end{enumerate}
+
+\textbf{Scenario 2:} Flipping 10 times.
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=4pt]
+  \item \ans{Binomial}
+  \item \ans{$n = 10$ is fixed in advance; $X$ counts the total number of tails.}
+  \item \ans{$X \sim B(10, 0.5)$; $n = 10$, $p = 0.5$}
+\end{enumerate}
+
+\textbf{Scenario 3:} Number of first roll of a fair tetrahedral die.
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=4pt]
+  \item \ans{Neither --- $X$ takes values $\{1, 2, 3, 4\}$ each with probability $1/4$. There is only one trial, so it is not binomial or geometric.}
+  \item \ans{It is simply a discrete uniform distribution, not a repeated-trials distribution.}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+% ── TIER A ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=1pt, arc=2mm,
+    title={\bfseries Tier A --- Key},
+    fonttitle=\small]
+\small
+
+Archer, $p = 0.30$.
+
+(a) BITS:
+\begin{tabularx}{\linewidth}{@{} p{0.08\linewidth} X @{}}
+B: & \ans{Binary --- each arrow either hits the bullseye (success) or misses (failure).} \\[4pt]
+I: & \ans{Independent --- the outcome of one shot does not affect the next.} \\[4pt]
+T: & \ans{Trials until first success --- shooting continues until the first bullseye.} \\[4pt]
+S: & \ans{Same $p = 0.30$ on every shot.} \\[4pt]
+\end{tabularx}
+$X \sim \text{Geom}(0.30)$
+
+(b) $P(X=5) = (0.70)^4(0.30) = (0.2401)(0.30) \approx \ans{0.0720}$
+
+(c) $\mu_X = 1/0.30 \approx \ans{3.33}$
+
+\ans{If the archer shoots arrows until hitting the bullseye many times, she will average about 3.33 arrows per bullseye.}
+
+(d) $P(X \le 4) = \texttt{geometcdf(0.30, 4)} \approx \ans{0.7599}$
+
+\ans{There is about a 76.0\% probability that the archer hits the bullseye within the first 4 shots.}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+% ── TIER E ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=1pt, arc=2mm,
+    title={\bfseries Tier E --- Key},
+    fonttitle=\small]
+\small
+
+(a)
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{1.2cm} X X X X X @{}}
+$k$ & 1 & 2 & 3 & 4 & 5 \\
+\hline
+$P(X=k)$ & \ans{0.3000} & \ans{0.2100} & \ans{0.1470} & \ans{0.1029} & \ans{0.0720} \\
+\end{tabularx}
+
+(b) \ans{The probabilities decrease as $k$ increases --- the distribution is strongly right-skewed with the highest probability at $k=1$. This contrasts sharply with a binomial distribution for the same $p$, which is roughly mound-shaped (bell-shaped) centered near $\mu_X = np$.}
+
+(c) \ans{$P(X=5) \approx 0.0720$: the probability that the archer needs exactly 5 shots to get the first bullseye. $P(Y=5) = \binom{5}{5}(0.30)^5(0.70)^0 = (0.30)^5 \approx 0.0024$: the probability of getting exactly 5 bullseyes in 5 independent shots. They are different because $X=5$ (geometric) means 4 misses then a hit, while $Y=5$ (binomial) means all 5 shots are hits. Both use $p=0.30$ but count completely different events.}
+\end{tcolorbox}
+
+\end{document}

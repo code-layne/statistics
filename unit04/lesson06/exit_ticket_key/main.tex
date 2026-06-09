@@ -1,0 +1,42 @@
+%! AP Statistics — Unit 4, Lesson 4.6 — Exit Ticket KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.6}{Exit Ticket --- KEY}
+\namedateperiod
+
+\vspace{0.14in}
+
+\begin{scenariobox}[Context]{sky}
+\small
+School-week preference $\times$ grade level survey (160 students).
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} l X X r @{}}
+ & \textbf{Underclassmen} & \textbf{Upperclassmen} & \textbf{Total} \\
+\hline
+\textbf{Prefers 4-day}  & 40 & 60 & 100 \\
+\textbf{Prefers 5-day}  & 36 & 24 & 60  \\
+\hline
+\textbf{Total}          & 76 & 84 & 160 \\
+\end{tabularx}
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=12pt]
+  \item \ans{$P(\text{Prefers 4-day}) = 100/160 = 0.625$; $P(\text{Prefers 4-day}|\text{Upper}) = 60/84 \approx 0.714$.} \ans{Since $0.625 \neq 0.714$, Prefers 4-day week and Upperclassmen are \textbf{not independent} --- upperclassmen are more likely to prefer a 4-day week than the overall student population.}
+
+  \item \ans{$100/160 + 84/160 - 60/160 = (100 + 84 - 60)/160 = 124/160 = 0.775$}
+
+  \item \ans{The student has the two concepts confused. Mutually exclusive means $P(A \cap B) = 0$ --- a student cannot prefer both a 4-day and a 5-day week simultaneously. However, mutually exclusive events with positive probabilities are \emph{dependent}, not independent. If you know a student prefers the 4-day week, the probability they prefer the 5-day week drops to 0, which differs from $P(\text{5-day}) = 60/160 = 0.375$. Therefore the two events are dependent, not independent.}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

@@ -1,0 +1,247 @@
+%! AP Statistics — Unit 4, Lesson 4.12 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+\newcommand{\UnitNumberName}{Unit 4: Probability, Random Variables, and Probability Distributions \quad}
+\newcommand{\LessonNumberName}{Lesson 4.12: The Geometric Distribution}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will calculate geometric probabilities
+    using $P(X = k) = (1-p)^{k-1}p$, find the mean $\mu_X = 1/p$, and interpret
+    these parameters in context --- contrasting the geometric with the binomial
+    distribution (Big Idea: UNC-3).
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skills 3.A, 3.B, and 4.B}
+    \begin{itemize}
+        \item Compute $P(X = k) = (1-p)^{k-1}p$ for a geometric setting
+              (UNC-3.D, Skill 3.A).
+        \item Find $\mu_X = 1/p$ (UNC-3.E, Skill 3.B).
+        \item Interpret $\mu_X = 1/p$ in context (UNC-3.F, Skill 4.B).
+        \item Use \texttt{geometpdf(p, k)} and \texttt{geometcdf(p, k)} on the
+              calculator.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item The geometric RV counts trials until (and \emph{including}) the
+              first success; unlike binomial, $n$ is not fixed.
+        \item The BITS conditions parallel BINS; the key difference is that $N$
+              (fixed trials) is replaced by ``trials until 1st success.''
+        \item $\mu_X = 1/p$ is the expected number of trials needed to get the
+              first success --- larger $p$ means fewer trials needed on average.
+        \item $P(X > k) = (1-p)^k$ (complement of getting at least one success
+              in $k$ trials).
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Geometric random variable} --- counts trials until first
+              success
+        \item \textbf{BITS conditions} --- Binary, Independent, Trial counts
+              until first success, Same $p$
+        \item \textbf{Geometric probability formula} ---
+              $P(X = k) = (1-p)^{k-1}p$
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Mean of a geometric RV} --- $\mu_X = 1/p$
+        \item \textbf{geometpdf(p, k)} --- $P(X = k)$
+        \item \textbf{geometcdf(p, k)} --- $P(X \le k)$
+        \item \textbf{Geometric vs.\ binomial} --- geometric does not fix $n$;
+              binomial does not wait for a first success
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Review: What are the BINS conditions? (Lesson 4.10)
+        \item Contrast: \textit{``You flip a coin until you get heads. Is $n$ fixed?
+              How is this different from flipping exactly 10 times?''}
+        \item Connect: both geometric and binomial require binary, independent,
+              same-$p$ trials; only the stopping rule differs.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Connections Forward}
+    \begin{itemize}
+        \item Waiting-time distributions appear in Unit 6 (inference for
+              proportions) indirectly.
+        \item The complement $P(X > k) = (1-p)^k$ previews the idea of
+              cumulative geometric probability.
+        \item Normal approximation to binomial $\to$ Unit 5 (contrast:
+              geometric has a right-skewed distribution).
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Hook]{sky}
+    \textbf{Hook (4--5 min)}\\
+    Display: \textit{``A basketball player makes 65\% of his free throws.
+    He keeps shooting until he makes one. On average, how many shots should
+    he expect to need?''}\\[4pt]
+    Poll the class for guesses. Record them. Reveal $\mu_X = 1/0.65 \approx 1.54$
+    shots on average. Ask: \textit{``Does that surprise you? What does it mean
+    if the answer is 1.54 --- can you take 1.54 shots?''} Clarify: $\mu_X$ is a
+    long-run average, not a guaranteed outcome.
+    Transition: \textit{``Today we formalize this idea as the geometric
+    distribution --- the distribution of waiting time until the first success.''}
+\end{skillbox}
+
+\begin{skillbox}[Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Part 1 --- Geometric Setting \& BITS (8 min)}
+    \begin{enumerate}
+        \item Introduce the geometric RV: $X =$ number of trials until the
+              \emph{first} success, including the success.
+        \item Check BITS: Binary, Independent, Trial counts until 1st success,
+              Same $p$. Note: N (fixed trials) from BINS is replaced by T
+              (trials until first success).
+        \item Model: define $X$ for the free-throw scenario.
+        \item Point out the key difference from binomial: trials keep going
+              until success, so $X$ can take values $1, 2, 3, \ldots$ with
+              no upper bound.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Part 2 --- Formula, Mean, Calculator (8--10 min)}
+    \begin{enumerate}
+        \item Derive $P(X = k) = (1-p)^{k-1}p$: must fail $k-1$ times, then
+              succeed.
+        \item Mean: $\mu_X = 1/p$. Brief intuition: if $p = 0.5$ you need
+              about 2 trials on average; if $p = 0.1$ you need about 10.
+        \item Interpret $\mu_X$: \textit{``In many repetitions of this
+              geometric experiment, the average number of trials until the
+              first success would be $1/p$.''}
+        \item Calculator: \texttt{geometpdf(p, k)} for $P(X = k)$;
+              \texttt{geometcdf(p, k)} for $P(X \le k)$.
+        \item $P(X > k) = (1-p)^k = 1 - \texttt{geometcdf(p, k)}$.
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Circulate \& Check For\ldots}
+    \begin{itemize}
+        \item Students who write $(1-p)^k p$ (off by one) instead of
+              $(1-p)^{k-1}p$ --- require them to write out what happens on
+              trials 1 through $k$.
+        \item Confusing \texttt{geometpdf} and \texttt{geometcdf}.
+        \item Students who claim $\mu_X = 1/p$ means the first success will
+              \emph{always} occur on trial $\lceil 1/p \rceil$.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Cold-Call Prompts}
+    \begin{itemize}
+        \item ``Explain why the exponent in $(1-p)^{k-1}p$ is $k-1$ and not $k$.''
+        \item ``Contrast: binomial with $n = 5$ and geometric with the same $p$.
+              What is different about what $X$ counts?''
+        \item ``If $p$ increases, does $\mu_X = 1/p$ increase or decrease?
+              Does that make sense?''
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Three-Tier Activity (10--12 min)}
+    \begin{itemize}
+        \item \textbf{Tier R}: Check BITS for two scenarios; compute $P(X = k)$
+              for small $k$ by hand.
+        \item \textbf{Tier A}: Full geometric analysis: check BITS, compute
+              $P(X = k)$, find $\mu_X$, interpret, and compute a cumulative
+              probability.
+        \item \textbf{Tier E}: Build a partial geometric distribution table,
+              sketch its shape, and compare it to a binomial's shape for the
+              same $p$.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support}: Side-by-side BINS vs.\ BITS comparison table.
+        \item \textit{Extension}: Find $P(X > k) = (1-p)^k$ and use it to
+              compute the probability the player needs more than 5 attempts.
+        \item \textit{ELL}: Visual timeline showing $k-1$ failures followed by
+              one success.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    Scenario: \textit{``A quality inspector tests items from an assembly line.
+    Each item has a 12\% chance of being defective. The inspector tests items
+    one at a time until finding the first defective one.''} Students define $X$,
+    verify BITS, compute $P(X = 3)$, and find $\mu_X$ with interpretation.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{``$X$ is geometric with $p = 0.20$. Which is correct?''}
+    \begin{enumerate}[label=(\Alph*)]
+        \item $P(X = 4) = (0.80)^4(0.20)$
+        \item $P(X = 4) = (0.80)^3(0.20)$
+        \item $\mu_X = 0.20$
+        \item $X$ can equal $0$.
+    \end{enumerate}
+    Answer: (B)
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item Four geometric scenarios: BITS check, $P(X = k)$, $\mu_X$,
+              interpretation.
+        \item One problem contrasting binomial and geometric for the same $p$.
+        \item AP free-response: die rolling until first 6 --- full geometric
+              analysis.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: Show that the geometric distribution is
+              memoryless --- $P(X > m+n \mid X > m) = P(X > n)$. Give a
+              numerical example.
+        \item \textit{Preview}: Unit 5 explores the normal distribution and
+              sampling distributions --- we will revisit the binomial as an
+              approximation context.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\end{document}

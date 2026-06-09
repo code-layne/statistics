@@ -1,0 +1,135 @@
+%! AP Statistics — Unit 4, Lesson 4.10 — Guided Notes KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.10}{Guided Notes --- KEY}
+\namedateperiod
+
+\vspace{0.12in}
+
+\begin{objectivebox}
+\small By the end of this lesson, I will be able to\dots\\[4pt]
+\ans{Determine whether a random variable is binomial by checking the BINS conditions.}\\[1pt]
+\ans{State the distribution as $X \sim B(n, p)$ when all four conditions are met.}\\[1pt]
+\ans{Compute a single binomial probability $P(X=k)$ using the formula and \texttt{binompdf}.}
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\termblanklong{Binomial setting} \ans{A situation with $n$ independent binary trials, each with the same probability of success $p$.}
+\termblanklong{Binomial random variable} \ans{A discrete random variable $X$ that counts the number of successes in a binomial setting.}
+\termblanklong{BINS conditions} \ans{Binary, Independent, fixed Number of trials, Same probability --- the four requirements for a binomial distribution.}
+\termblanklong{$10\%$ condition} \ans{When sampling without replacement, independence is approximately satisfied if the sample size $n \le 0.10 \times N$ (the population size).}
+\termblanklong{Binomial coefficient $\binom{n}{k}$} \ans{$\dfrac{n!}{k!(n-k)!}$ --- the number of ways to choose $k$ successes from $n$ trials.}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+\small\textbf{Opening question:}
+
+\vspace{6pt}
+Estimate the probability of getting exactly 6 correct: \ans{low (about 1\%--2\%)}\\[6pt]
+\ans{Need: (1) the number of trials ($n = 10$), (2) the probability of success on each trial ($p = 0.25$), and (3) what counts as success (getting the correct answer).}
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{The BINS Conditions for a Binomial Setting}
+\small
+
+\vspace{8pt}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.06\linewidth}
+                                     >{\bfseries}p{0.28\linewidth} X @{}}
+B & Binary outcomes &
+  Each trial has exactly \ans{two} outcomes: \ans{success} or \ans{failure}. \\
+I & Independent trials &
+  The outcome of one trial \ans{does not affect} another trial.
+  Use the \ans{$10\%$} condition when sampling without replacement. \\
+N & Fixed number of trials &
+  The number of trials $n$ is \ans{set/fixed} in advance. \\
+S & Same probability &
+  The probability of success $p$ is \ans{the same} on every trial. \\
+\end{tabularx}
+
+\vspace{8pt}
+If all four conditions are met, write: $X \sim B(\ans{n},\;\ans{p})$
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{The Binomial Probability Formula}
+\small
+
+For $X \sim B(n, p)$, the probability of exactly $k$ successes is:
+\[
+  P(X = k) \;=\; \binom{n}{k}\,p^k\,(1-p)^{n-k}
+\]
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.22\linewidth} X @{}}
+$\binom{n}{k} = \dfrac{n!}{k!(n-k)!}$ & counts the number of \ans{arrangements (ways)}
+  in which $k$ successes can occur among $n$ trials. \\
+$p^k$ & the probability of \ans{$k$ consecutive successes} in exactly $k$ trials. \\
+$(1-p)^{n-k}$ & the probability of \ans{$n-k$ consecutive failures} in the remaining $n-k$ trials. \\
+\end{tabularx}
+
+\vspace{8pt}
+\textbf{Calculator:} \texttt{binompdf(}$n$\texttt{,}\;$p$\texttt{,}\;$k$\texttt{)}
+gives $P(X = k)$ directly.
+
+\vspace{8pt}
+\textbf{AP Exam reminder:} Always show the formula setup even if you use the
+calculator. Write $\binom{n}{k}p^k(1-p)^{n-k}$ with numbers substituted before
+computing.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Worked Example --- Random Guessing}
+\small
+\textbf{Context:} 10-question quiz, 4 choices per question, student guesses randomly.\\
+$n = \ans{10}$, \quad $p = \ans{0.25}$, \quad success $= $ \ans{getting the correct answer}
+
+\vspace{6pt}
+\textbf{Check BINS:}\\[4pt]
+B: \ans{Binary --- each question is either correct (success) or incorrect (failure).}\\[4pt]
+I: \ans{Independent --- guessing on one question does not affect guessing on another.}\\[4pt]
+N: \ans{Fixed $n = 10$ questions; set in advance.}\\[4pt]
+S: \ans{Same $p = 0.25$ on every question (4 choices, 1 correct).}
+
+\vspace{6pt}
+$X \sim B(\ans{10},\;\ans{0.25})$
+
+\vspace{8pt}
+\textbf{Compute} $P(X = 6)$:
+\[
+  P(X=6) \;=\; \binom{10}{6}(0.25)^6(0.75)^4
+             \;=\; 210\,(0.000244)\,(0.316)
+             \;\approx\; 0.0162
+\]
+Calculator check: \texttt{binompdf(10, 0.25, 6)} $\approx 0.0162$
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+\vspace{6pt}
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+  \item A fair die is rolled 8 times. Let $X =$ the number of 4s.\\
+        Binomial? \ans{Yes} \quad $X \sim B(8,\;1/6)$\\[4pt]
+        $P(X = 2) = \binom{8}{2}(1/6)^2(5/6)^6 = 28(0.02778)(0.4019) \approx \ans{0.2605}$
+
+  \item Cards are drawn without replacement from a standard deck.\\
+        Binomial? \ans{No} \quad Which condition fails? \ans{Independent --- sampling without replacement from 52 cards, and $5/52 \approx 9.6\% < 10\%$ is borderline, but strictly the trials are not independent because the composition of the deck changes. (Also, with a population of only 52 cards, the $10\%$ condition is not satisfied here.)}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

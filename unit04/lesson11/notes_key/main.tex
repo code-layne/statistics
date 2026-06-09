@@ -1,0 +1,106 @@
+%! AP Statistics — Unit 4, Lesson 4.11 — Guided Notes KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.11}{Guided Notes --- KEY}
+\namedateperiod
+
+\vspace{0.12in}
+
+\begin{objectivebox}
+\small By the end of this lesson, I will be able to\dots\\[4pt]
+\ans{Calculate the mean $\mu_X = np$ and standard deviation $\sigma_X = \sqrt{np(1-p)}$ for a binomial distribution.}\\[1pt]
+\ans{Interpret $\mu_X$ in context as the long-run average number of successes.}\\[1pt]
+\ans{Compute cumulative binomial probabilities using \texttt{binomcdf} and the complement rule.}
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\termblanklong{Mean of a binomial distribution} \ans{$\mu_X = np$ --- the average number of successes in many repetitions of the binomial experiment.}
+\termblanklong{Standard deviation of a binomial distribution} \ans{$\sigma_X = \sqrt{np(1-p)}$ --- measures the typical distance of $X$ from its mean.}
+\termblanklong{Cumulative binomial probability} \ans{$P(X \le k)$, the probability of at most $k$ successes; equals the sum of $P(X=0)$ through $P(X=k)$.}
+\termblanklong{binomcdf(n, p, k)} \ans{Calculator command that computes $P(X \le k)$ for $X \sim B(n,p)$.}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+\small\textbf{Opening scenario:} Archer, 90\% hit rate, 50 arrows.
+
+\vspace{6pt}
+How many hits do you expect? \ans{45}\\[6pt]
+\ans{Multiply the number of trials by the probability of success: $50 \times 0.90 = 45$.}
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Mean and Standard Deviation of a Binomial Distribution}
+\small
+For $X \sim B(n, p)$:
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.26\linewidth} X @{}}
+Mean & $\mu_X = \textcolor{keyred}{np}$ \\
+Standard deviation & $\sigma_X = \textcolor{keyred}{\sqrt{np(1-p)}}$ \\
+\end{tabularx}
+
+\vspace{8pt}
+\textbf{Archer example:} $n = 50$, $p = 0.90$
+\[
+  \mu_X = \textcolor{keyred}{50(0.90)} = \textcolor{keyred}{45}
+  \qquad
+  \sigma_X = \sqrt{\textcolor{keyred}{50(0.90)(0.10)}} = \textcolor{keyred}{\sqrt{4.5} \approx 2.12}
+\]
+
+\vspace{6pt}
+\textbf{Interpret $\mu_X$:}\\[4pt]
+\ans{If the archer competes in many 50-arrow competitions, she will average 45 hits per competition.}
+
+\vspace{6pt}
+\textbf{Interpret $\sigma_X$:}\\[4pt]
+\ans{Her number of hits typically varies from the mean of 45 by about 2.12 arrows.}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Cumulative Binomial Probabilities}
+\small
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.35\linewidth} X @{}}
+\texttt{binomcdf(n, p, k)} & gives $P(X \le k) = $ sum from $0$ to $k$ \ans{(cumulative)} \\
+$P(X \ge k)$ & $= 1 - P(X \le k-1) = 1 - \texttt{binomcdf(n, p,\;} k-1\texttt{)}$ \\
+$P(X > k)$ & $= 1 - P(X \le k) = 1 - \texttt{binomcdf(n, p,\;} k\texttt{)}$ \\
+\end{tabularx}
+
+\vspace{8pt}
+\textbf{Example:} $P(X \ge 48)$, $n=50$, $p=0.90$.
+
+\vspace{4pt}
+$P(X \ge 48) = 1 - P(X \le 47) = 1 - \texttt{binomcdf(50,\;0.90,\;47)} \approx \textcolor{keyred}{0.1117}$
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+
+  \item Returns scenario: $n=60$, $p=0.15$.
+        \begin{enumerate}[label=(\alph*), itemsep=5pt]
+          \item $\mu_X = \textcolor{keyred}{60(0.15) = 9}$ \quad $\sigma_X = \textcolor{keyred}{\sqrt{60(0.15)(0.85)} = \sqrt{7.65} \approx 2.77}$
+          \item \ans{If the store orders 60 items many times, it would average 9 returns per order.}
+          \item \texttt{binomcdf(60, 0.15, 5)} $\approx \ans{0.0673}$
+          \item $1 - \texttt{binomcdf(60, 0.15, 11)} \approx \ans{0.2588}$
+        \end{enumerate}
+
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

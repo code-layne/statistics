@@ -1,0 +1,105 @@
+%! AP Statistics — Unit 4, Lesson 4.8 — Homework
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.8}{Homework}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+
+\textbf{1.} $X$ = number of customer complaints received per day at a store.
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{}cccccc@{}}
+$x$ & 0 & 1 & 2 & 3 & 4 \\
+\hline
+$P(X=x)$ & 0.35 & 0.30 & 0.20 & 0.10 & 0.05 \\
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=6pt]
+  \item Compute $\mu_X$ using the computation table below.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.9}
+\begin{tabularx}{\linewidth}{@{} c c X @{}}
+$x$ & $P(X=x)$ & $x \cdot P(X=x)$ \\
+\hline
+0 & 0.35 & \blank{3cm} \\
+1 & 0.30 & \blank{3cm} \\
+2 & 0.20 & \blank{3cm} \\
+3 & 0.10 & \blank{3cm} \\
+4 & 0.05 & \blank{3cm} \\
+\hline
+& & $\mu_X =$ \blank{2cm} \\
+\end{tabularx}
+
+  \item Interpret $\mu_X$ in context.\\
+        \writeline\\[1pt]\writeline
+
+  \item Compute $\sigma_X$. (Show your variance computation.)
+
+        \vspace{0.5in}
+
+  \item Interpret $\sigma_X$ in context.\\
+        \writeline\\[1pt]\writeline
+\end{enumerate}
+
+\vspace{0.14in}
+
+\textbf{2.} A company insures a machine worth \$10{,}000. From historical data, the
+probability of a claim in a year is 0.04. If a claim occurs, the company pays \$10{,}000.
+Let $X$ = the amount paid.
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
+  \item Write the probability distribution for $X$.
+
+        \vspace{0.3in}
+
+  \item Find $\mu_X$. \quad \blank{4cm}
+  \item Interpret $\mu_X$ in context.\\
+        \writeline\\[1pt]\writeline
+\end{enumerate}
+
+\vspace{0.14in}
+
+\textbf{3.} AP-style free response. A random variable $W$ has mean $\mu_W = 4.5$ and
+standard deviation $\sigma_W = 2.1$.
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
+  \item Interpret $\mu_W = 4.5$ in the context of a random variable representing the
+        number of hours a student sleeps on school nights.\\
+        \writeline\\[1pt]\writeline
+
+  \item Interpret $\sigma_W = 2.1$ in the same context.\\
+        \writeline\\[1pt]\writeline
+\end{enumerate}
+
+\end{practicebox}
+
+\vspace{0.1in}
+
+\begin{extensionbox}
+\small
+\textbf{Extension --- optional.}
+A game pays \$0 or \$6, and you want to make it a ``fair game'' (expected net winnings = \$0).
+If the game costs \$2 to play, what must $P(\text{win \$6})$ be?
+Show your work.\\[4pt]
+\writeline\\[1pt]\writeline\\[1pt]\writeline
+\end{extensionbox}
+
+\vspace{0.1in}
+
+\begin{blurbbox}[Preview: Lesson 4.9]{sky}
+\small
+In Lesson 4.9 you will learn the rules for combining random variables: if $X$ and $Y$ are
+independent, then $\mu_{X+Y} = \mu_X + \mu_Y$ and $\sigma^2_{X+Y} = \sigma^2_X + \sigma^2_Y$.
+Think about why standard deviations don't simply add the way means do.
+\end{blurbbox}
+
+\end{document}

@@ -1,0 +1,84 @@
+%! AP Statistics — Unit 4, Lesson 4.7 — Homework (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.7}{Homework --- Answer Key}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+
+\textbf{1.} A spinner numbered 1--5.
+
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
+  \item \ans{Each $P(X=x) = 0.20$}
+
+  \item \ansline{All probabilities $= 0.20 \ge 0$; sum $= 5 \times 0.20 = 1.00$. Valid. \checkmark}
+
+  \item $P(X \ge 3) = $ \ans{$0.20+0.20+0.20=0.60$}
+
+  \item $P(2 \le X \le 4) = $ \ans{$0.20+0.20+0.20=0.60$}
+\end{enumerate}
+
+\vspace{0.14in}
+
+\textbf{2.} Broken eggs.
+
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
+  \item $P(Y=3) = $ \ans{$1 - (0.68+0.17+0.09+0.02) = 0.04$}
+  \item $P(Y \le 1) = $ \ans{$0.68+0.17=0.85$}
+  \item $P(Y \ge 1) = $ \ans{$1-0.68=0.32$}
+  \item \ansline{There is a 68\% probability that a randomly selected carton contains no broken eggs.}
+\end{enumerate}
+
+\vspace{0.14in}
+
+\textbf{3.} Valid distribution(s): \ans{(B) only.}
+
+\ansline{(A) invalid: $0.30+0.50+0.40=1.20 \ne 1$. (B) valid: all $\ge 0$, sum $= 1.00$. (C) invalid: $P(X=1)=-0.10 < 0$.}
+
+\vspace{0.14in}
+
+\textbf{4.} Homework hours.
+
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{@{} l X X X X @{}}
+$x$ & 0 & 1 & 2 & 3 \\
+\hline
+$P(X \le x)$ & \ans{0.05} & \ans{0.35} & \ans{0.80} & \ans{1.00} \\
+\end{tabularx}
+
+\vspace{6pt}
+$P(X \le 2) = $ \ans{0.80} \quad \ansline{There is an 80\% probability that a student spends 2 or fewer hours on homework per night.}
+
+\end{practicebox}
+
+\vspace{0.1in}
+
+\begin{extensionbox}
+\small
+\textbf{Extension.}
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+  \item \ansline{HH: $0.36$; HT: $0.24$; TH: $0.24$; TT: $0.16$}
+  \item \ans{$W=0$: $P=0.16$; $W=1$: $P=0.48$; $W=2$: $P=0.36$. Sum $= 1.00$. Valid.}
+
+  \item $P(W \ge 1) = $ \ans{$0.48+0.36=0.84$}
+\end{enumerate}
+\end{extensionbox}
+
+\vspace{0.1in}
+
+\begin{blurbbox}[Preview: Lesson 4.8]{sky}
+\small
+In Lesson 4.8 you will learn to compute the \textbf{mean (expected value)} and
+\textbf{standard deviation} of a discrete random variable. Think about this: if you
+played a game where $X$ = winnings and you know the distribution of $X$, how would you
+find your \emph{average} winnings per game in the long run?
+\end{blurbbox}
+
+\end{document}

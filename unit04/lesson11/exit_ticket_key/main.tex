@@ -1,0 +1,40 @@
+%! AP Statistics — Unit 4, Lesson 4.11 — Exit Ticket KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.11}{Exit Ticket --- KEY}
+\namedateperiod
+
+\vspace{0.14in}
+
+\begin{scenariobox}[Context]{sky}
+\small
+A manufacturer claims only 3\% of its products are defective. A store orders
+200 items. Assume the items are independent and the order is less than 10\%
+of all products ever made. Let $X =$ the number of defective items.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+
+  \item $X \sim B(200,\;0.03)$
+
+  \item
+  $\mu_X = 200(0.03) = \ans{6}$
+
+  $\sigma_X = \sqrt{200(0.03)(0.97)} = \sqrt{5.82} \approx \ans{2.41}$
+
+  \item \ans{If the store orders 200 items many times, the average number of defective items per order would be 6.}
+
+  \item $P(X \le 10) = \texttt{binomcdf(200, 0.03, 10)} \approx \ans{0.9179}$
+
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

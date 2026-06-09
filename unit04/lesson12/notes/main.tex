@@ -1,0 +1,146 @@
+%! AP Statistics — Unit 4, Lesson 4.12 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.12}{Guided Notes}
+\namedateperiod
+
+\vspace{0.12in}
+
+\begin{objectivebox}
+\small By the end of this lesson, I will be able to\dots\\[4pt]
+\writeline\\[1pt]
+\writeline\\[1pt]
+\writeline
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\termblanklong{Geometric random variable}
+\termblanklong{BITS conditions}
+\termblanklong{Geometric probability formula}
+\termblanklong{Mean of a geometric distribution}
+\termblanklong{geometpdf(p, k) / geometcdf(p, k)}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+\small\textbf{Opening scenario:} A basketball player makes 65\% of free throws.
+He keeps shooting until he makes one.
+
+\vspace{6pt}
+On average, how many shots do you expect him to need? \blank{3cm}\\[6pt]
+What values can $X$ take? \blank{6cm} Is there an upper limit? \blank{2cm}
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Geometric Settings --- BITS Conditions}
+\small
+A random variable $X$ follows a \textbf{geometric distribution} if all four
+\textbf{BITS} conditions are met. Compare to BINS:
+
+\vspace{8pt}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.06\linewidth}
+                                     >{\bfseries}p{0.30\linewidth} X
+                                     p{3.2cm} @{}}
+ & \textbf{BITS condition} & \textbf{What it means} & \textbf{Binomial analog} \\
+\hline
+B & Binary & \blank{4cm} & same \\
+I & Independent & \blank{4cm} & same \\
+T & Trials until \blank{2cm} success & Counting stops when the first \blank{2cm} occurs & N: fixed $n$ \\
+S & Same $p$ & \blank{4cm} & same \\
+\end{tabularx}
+
+\vspace{6pt}
+If all four conditions are met, write: $X \sim \text{Geom}(\blank{1.5cm})$
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{The Geometric Probability Formula and Mean}
+\small
+
+\textbf{Formula:} For $X \sim \text{Geom}(p)$, the probability that the first
+success occurs on trial $k$ is:
+\[
+  P(X = k) = (1-p)^{\blank{1cm}} \cdot p \qquad k = 1, 2, 3, \ldots
+\]
+
+\vspace{4pt}
+Why? Trials $1$ through $k-1$ must be \blank{3cm}, and trial $k$ must be a
+\blank{2cm}.
+
+\vspace{8pt}
+\textbf{Mean:} $\mu_X = \dfrac{1}{\blank{1cm}}$
+
+\vspace{4pt}
+\textbf{Interpretation:} ``In many repetitions of this geometric experiment, the
+average number of \blank{3cm} until the first \blank{3cm} would be $1/p$.''
+
+\vspace{8pt}
+\textbf{Calculator:}
+\begin{itemize}[itemsep=4pt]
+  \item \texttt{geometpdf(p, k)} $= P(X = k)$
+  \item \texttt{geometcdf(p, k)} $= P(X \le k)$
+  \item $P(X > k) = (1-p)^k = 1 - \texttt{geometcdf(p, k)}$
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Worked Example --- Free-Throw Shooting}
+\small
+\textbf{Context:} Basketball player, $p = 0.65$, shoots until first make.\\
+$X = $ \blank{7cm} \quad $X \sim \text{Geom}(\blank{1.5cm})$
+
+\vspace{6pt}
+\textbf{Check BITS:}\\[4pt]
+B: \blank{10cm}\\[4pt]
+I: \blank{10cm}\\[4pt]
+T: \blank{10cm}\\[4pt]
+S: \blank{10cm}
+
+\vspace{8pt}
+\textbf{Compute} $P(X = 3)$ (first make on the 3rd shot):
+\[
+  P(X = 3) = (1 - \blank{1.5cm})^{\blank{1cm}} \cdot \blank{1.5cm}
+           = (\blank{1.5cm})^2 \cdot \blank{1.5cm}
+           = \blank{3cm}
+\]
+Calculator: \texttt{geometpdf(}\blank{1cm}\texttt{,}\;3\texttt{)} $= $ \blank{2cm}
+
+\vspace{8pt}
+\textbf{Mean:} $\mu_X = \dfrac{1}{\blank{1.5cm}} \approx \blank{2cm}$
+
+\vspace{6pt}
+\textbf{Interpret $\mu_X$:} \writeline\\[1pt]\writeline
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+
+  \item A standard die is rolled until a 6 appears. Let $X =$ the number of
+  rolls. Assume $X \sim \text{Geom}(1/6)$.
+  \begin{enumerate}[label=(\alph*), itemsep=6pt]
+    \item Find $P(X = 4)$. Show formula setup.\\
+          \writeline
+    \item Find $\mu_X$ and interpret in context.\\
+          \writeline\\[1pt]\writeline
+    \item Find $P(X > 4) = (1-p)^4$. Interpret in one sentence.\\
+          \writeline\\[1pt]\writeline
+  \end{enumerate}
+
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

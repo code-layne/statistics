@@ -1,0 +1,213 @@
+%! AP Statistics — Unit 4, Lesson 4.5 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{graphicx}
+
+\newcommand{\UnitNumberName}{Unit 4: Probability, Random Variables, and Probability Distributions \quad}
+\newcommand{\LessonNumberName}{Lesson 4.5: Conditional Probability}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear\ (\MeetingLength) \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will calculate conditional probabilities using
+    the formula $P(A|B) = P(A \cap B)/P(B)$ and apply the multiplication rule
+    $P(A \cap B) = P(A) \cdot P(B|A)$, primarily from two-way tables (Big Idea: VAR-4).
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 3.A --- Determine Parameters for Probability Distributions}
+    \begin{itemize}
+        \item Calculate $P(A|B)$ using the conditional probability formula (VAR-4.D).
+        \item Apply the multiplication rule: $P(A \cap B) = P(A) \cdot P(B|A)$
+              (VAR-4.D.2).
+        \item Read a two-way table to identify $P(A \cap B)$ and marginal probabilities.
+        \item Clearly show notation setup on every problem --- AP exam requires
+              explicit identification of the conditioning event.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item $P(A|B)$ is the probability of $A$ given that $B$ has \emph{already occurred};
+              the sample space is restricted to $B$.
+        \item The formula $P(A|B) = P(A \cap B)/P(B)$ requires knowing both the joint
+              and marginal probabilities.
+        \item The multiplication rule rearranges the formula to find joint probabilities.
+        \item Two-way tables are the most common AP exam vehicle for conditional probability.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Conditional probability} $P(A|B)$ --- probability of $A$ given that $B$ has occurred
+        \item \textbf{Conditional probability formula} --- $P(A|B) = P(A \cap B) / P(B)$
+        \item \textbf{Conditioning event} --- the event in the denominator; the ``given'' event
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Multiplication rule} --- $P(A \cap B) = P(A) \cdot P(B|A)$
+        \item \textbf{Marginal probability} --- probability of a single event from a table total
+        \item \textbf{Joint probability} $P(A \cap B)$ --- probability both events occur (from a table cell)
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Review: $P(A \cap B)$ from Lesson 4.4; reading counts and totals from a
+              two-way table.
+        \item Ask: ``In the blood-type table, what fraction of \emph{all} patients had
+              Type A blood?'' (marginal probability)
+        \item Connect: ``Today we ask --- if I already know someone has Type A blood,
+              what's the probability they have the condition?'' (conditional)
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Connections Forward}
+    \begin{itemize}
+        \item Independence test: $P(A|B) = P(A)$? $\to$ Lesson 4.6
+        \item Addition rule uses complementary probability $\to$ Lesson 4.6
+        \item Conditional probability is foundational for all of Unit 5
+              (sampling distributions, inference)
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (4--5 min)}\\
+    Pose this question: ``Suppose I draw a card and tell you it's a face card.
+    Now what's the probability it's a king?''\\[4pt]
+    Ask students to estimate first, then reason: ``You're no longer picking from all
+    52 cards --- you're picking from the 12 face cards. The sample space shrank!''\\[4pt]
+    Transition: \textit{``Conditional probability is about restricted sample spaces ---
+    given that something has happened, how does the probability change?''}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15--18 min)}
+    \begin{enumerate}
+        \item Define $P(A|B)$ verbally: ``probability of $A$ \emph{given} $B$.''
+        \item Develop the formula from the restricted sample space idea.
+        \item Work through a complete two-way table example: sport preference $\times$
+              training frequency. Find $P(\text{prefers yoga} | \text{trains daily})$.
+        \item Show the setup explicitly: numerator = joint cell, denominator = row/column total.
+        \item Introduce the multiplication rule as a rearrangement. Work an example
+              using tree-diagram logic.
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Direct Instruction (10 min)}
+    \begin{itemize}
+        \item Emphasize notation: $P(A|B)$ is read ``$A$ given $B$.'' The vertical bar
+              does NOT mean ``divided by'' --- it means ``given that.''
+        \item Model the two-step setup:
+              (1) identify $P(A \cap B)$ = joint cell / grand total;
+              (2) identify $P(B)$ = column or row total / grand total;
+              (3) divide.
+        \item Show that the grand total cancels: conditional probability from a table
+              is just (joint cell) / (conditioning row or column total).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Active Monitoring}
+    \begin{itemize}
+        \item Common error: students use the grand total as the denominator instead of
+              the conditioning event total --- circulate and check setups.
+        \item Cold-call: ``What is the denominator of $P(\text{comedy} | \text{premium})$?
+              Where do you find it in the table?''
+        \item Check that students write the formula before plugging in numbers ---
+              AP exam graders reward setup.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Group Activity (10--12 min)}\\
+    Three-tier activity using a sport preference $\times$ training frequency table.
+    \begin{itemize}
+        \item Tier R: identify the numerator and denominator from the table for given
+              conditional probability expressions.
+        \item Tier A: compute multiple conditional probabilities, set up the
+              multiplication rule, interpret results in context.
+        \item Tier E: reverse the direction (find $P(B|A)$ vs.\ $P(A|B)$), apply
+              the multiplication rule to find a missing cell.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support}: Provide annotated table with rows/columns labeled
+              ``conditioning row'' and highlight the relevant cell.
+        \item \textit{Extension}: Present a scenario where $P(A|B) \neq P(B|A)$
+              and have students explain in context why the two values differ.
+        \item \textit{ELL}: Anchor phrase: ``Given that we know \_\_\_, the probability
+              of \_\_\_ is \_\_\_.''
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    Two items from a diet and health outcome two-way table:
+    \begin{enumerate}
+        \item Compute a conditional probability; show setup with formula.
+        \item Apply the multiplication rule to find a joint probability.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    Free-response style: given a two-way table, compute $P(A|B)$ and interpret in
+    context. Require students to write: ``The probability that \ldots given that
+    \ldots is $P = $ \_\_\_.''
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item Five problems using a school survey two-way table (preferred study
+              environment $\times$ GPA range). Mix of conditional probability
+              calculations and multiplication rule applications.
+        \item One free-response item requiring a complete verbal interpretation.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: Compute $P(A|B)$ and $P(A)$ for two events.
+              What happens if they are equal? Preview of independence.
+        \item \textit{Preview}: Lesson 4.6 --- when does knowing $B$ occurred
+              \emph{not} change the probability of $A$? That special case is
+              independence.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\end{document}

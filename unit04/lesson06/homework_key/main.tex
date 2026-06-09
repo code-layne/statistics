@@ -1,0 +1,63 @@
+%! AP Statistics — Unit 4, Lesson 4.6 — Homework KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.6}{Homework --- KEY}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+Streaming service $\times$ age group (300 subscribers):
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} l X X X r @{}}
+ & \textbf{Movies} & \textbf{TV Series} & \textbf{Documentaries} & \textbf{Total} \\
+\hline
+\textbf{Under 25}  & 50 & 60 & 10 & 120 \\
+\textbf{25--44}    & 40 & 50 & 30 & 120 \\
+\textbf{45+}       & 20 & 20 & 20 & 60  \\
+\hline
+\textbf{Total}     & 110 & 130 & 60 & 300 \\
+\end{tabularx}
+
+\vspace{8pt}
+\textbf{1.}
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=4pt]
+  \item \ans{$P(\text{Movies}) = 110/300 \approx 0.367$}
+  \item \ans{$P(\text{Movies}|\text{Under 25}) = 50/120 \approx 0.417$}
+  \item \ans{Since $0.367 \neq 0.417$, Movies and Under 25 are \textbf{not independent} --- subscribers under 25 are more likely to watch movies than the overall subscriber population.}
+\end{enumerate}
+
+\vspace{6pt}
+\textbf{2.} \ans{$P(\text{TV Series}) = 130/300$; $P(\text{25--44}) = 120/300$; $P(\text{TV Series} \cap \text{25--44}) = 50/300$.\\
+$P(\text{TV Series} \cup \text{25--44}) = 130/300 + 120/300 - 50/300 = 200/300 \approx 0.667$}
+
+\vspace{6pt}
+\textbf{3.}
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=4pt]
+  \item \ans{Yes, mutually exclusive. Each subscriber has exactly one primary content type; no subscriber is counted in both Movies and Documentaries.}
+  \item \ans{$P(\text{Movies} \cup \text{Docs}) = 110/300 + 60/300 - 0 = 170/300 \approx 0.567$}
+\end{enumerate}
+
+\vspace{6pt}
+\textbf{4.}
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=4pt]
+  \item \ans{No, the reasoning is incorrect. Independence is not about causation; it is about whether knowing one event changes the probability of another: the test is $P(A|B) = P(A)$.}
+  \item \ans{$P(\text{TV Series}) = 130/300 \approx 0.433$; $P(\text{TV Series}|\text{Under 25}) = 60/120 = 0.5$. Since $0.433 \neq 0.5$, TV Series and Under 25 are \textbf{not independent}.}
+\end{enumerate}
+
+\vspace{6pt}
+\textbf{5.} \ans{$P(\text{Docs}) = 60/300 = 0.2$; $P(\text{Docs}|\text{45+}) = 20/60 \approx 0.333$.\\
+Since $0.2 \neq 0.333$, Documentaries and 45+ are \textbf{not independent}. Subscribers aged 45 and older watch documentaries at a higher rate (33.3\%) than the overall subscriber base (20\%), indicating that age and content-type preference are related for this group.}
+
+\vspace{6pt}
+\textbf{6.} \ans{True. If $P(A|B) = P(A)$, then by the definition of conditional probability: $P(A|B) = P(A \cap B)/P(B)$, so $P(A \cap B) = P(A) \cdot P(B)$. Then $P(B|A) = P(A \cap B)/P(A) = P(A) \cdot P(B)/P(A) = P(B)$. So $P(B|A) = P(B)$. Independence is a symmetric relationship: if $A$ is independent of $B$, then $B$ is independent of $A$.}
+\end{practicebox}
+
+\end{document}

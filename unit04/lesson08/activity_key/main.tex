@@ -1,0 +1,94 @@
+%! AP Statistics — Unit 4, Lesson 4.8 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.8}{Group Activity: Expected Value and Spread --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=sky!60, colframe=navy, title=\textbf{Tier R --- Remediate},
+    arc=2mm, boxrule=0.8pt, left=4mm, right=4mm, top=3mm, bottom=3mm]
+\small
+
+\renewcommand{\arraystretch}{1.9}
+\begin{tabularx}{\linewidth}{@{} c c X @{}}
+$x$ & $P(X=x)$ & $x \cdot P(X=x)$ \\
+\hline
+0 & 0.40 & \ans{0.00} \\
+1 & 0.35 & \ans{0.35} \\
+2 & 0.15 & \ans{0.30} \\
+3 & 0.10 & \ans{0.30} \\
+\hline
+\textbf{Sum} & & $\mu_X =$ \ans{0.95} \\
+\end{tabularx}
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item See table.
+
+  \item \ansline{On average, a student sends about 0.95 text messages per class period in the long run.}
+
+  \item \ansline{No. You cannot send 0.95 texts; $\mu_X$ is a long-run average, not a single outcome.}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.12in}
+
+\begin{tcolorbox}[colback=goldbg!60, colframe=goldacc, title=\textbf{Tier A --- Approaching Proficiency},
+    arc=2mm, boxrule=0.8pt, left=4mm, right=4mm, top=3mm, bottom=3mm]
+\small
+
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} c c c c X @{}}
+$y$ & $P$ & $y \cdot P$ & $(y - \mu_Y)^2$ & $(y-\mu_Y)^2 \cdot P$ \\
+\hline
+0 & 0.20 & \ans{0.00} & \ans{$(0-1.40)^2=1.96$} & \ans{0.392} \\
+1 & 0.35 & \ans{0.35} & \ans{$(1-1.40)^2=0.16$} & \ans{0.056} \\
+2 & 0.30 & \ans{0.60} & \ans{$(2-1.40)^2=0.36$} & \ans{0.108} \\
+3 & 0.15 & \ans{0.45} & \ans{$(3-1.40)^2=2.56$} & \ans{0.384} \\
+\hline
+& & $\mu_Y=$ \ans{1.40} & & $\sigma^2_Y=$ \ans{0.940} \\
+\end{tabularx}
+
+\vspace{4pt}
+$\sigma_Y = $ \ans{$\sqrt{0.940} \approx 0.970$ hours}
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item \ansline{On average, a student exercises about 1.40 hours per week in the long run.}
+
+  \item \ansline{The number of hours exercised per week typically varies from the mean of 1.40 hours by about 0.97 hours.}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.12in}
+
+\begin{tcolorbox}[colback=greenbg!60, colframe=greenacc, title=\textbf{Tier E --- Extension},
+    arc=2mm, boxrule=0.8pt, left=4mm, right=4mm, top=3mm, bottom=3mm]
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item \ans{$\mu_X = \$0(0.60)+\$3(0.30)+\$10(0.10) = \$0+\$0.90+\$1.00=\$1.90$}\\
+        \ans{$\mu_Y = \$0(0.40)+\$2(0.40)+\$6(0.20) = \$0+\$0.80+\$1.20=\$2.00$}
+
+  \item \ans{$\sigma_X \approx \$2.84$; \quad $\sigma_Y \approx \$2.19$}
+
+        \begin{teachernote}
+        Game A: $\sigma^2_X=0.60(0-1.90)^2+0.30(3-1.90)^2+0.10(10-1.90)^2 \approx 8.09$; $\sigma_X \approx 2.84$.
+        Game B: $\sigma^2_Y=0.40(0-2.00)^2+0.40(2-2.00)^2+0.20(6-2.00)^2=1.60+0+3.20=4.80$; $\sigma_Y \approx 2.19$.
+        \end{teachernote}
+
+  \item \ansline{Game B has the higher expected prize (\$2.00 vs.\ \$1.90).}
+
+  \item \ansline{Game A is riskier ($\sigma_X \approx \$2.84 > \sigma_Y \approx \$2.19$).}
+
+  \item \ansline{Net winnings A: $\$1.90 - \$3 = -\$1.10$ per play. Net winnings B: $\$2.00-\$3=-\$1.00$ per play.}
+
+  \item \ansline{Game B is slightly better: higher expected net winnings ($-\$1.00$) and lower risk. However,}\\
+        \ansline{both games have negative expected net winnings, so neither is a good long-run bet.}
+\end{enumerate}
+\end{tcolorbox}
+
+\end{document}

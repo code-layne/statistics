@@ -1,0 +1,80 @@
+%! AP Statistics — Unit 4, Lesson 4.2 — Student Packet Cover Sheet
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{ltablex}
+\keepXColumns
+
+\begin{document}
+
+% Full-bleed navy banner
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[navy] (current page.north west)
+    rectangle ([yshift=-0.9in]current page.north east);
+\end{tikzpicture}
+\vspace{-0.8in}
+
+\begin{center}
+  {\color{white}\textbf{\LARGE AP Statistics}}\\[4pt]
+  {\color{skymid}\large\textbf{Unit 4: Probability, Random Variables, and Probability Distributions}}\\[6pt]
+  {\color{white}\textbf{\large Lesson 4.2 \quad Estimating Probabilities Using Simulation}}
+\end{center}
+
+\vspace{0.22in}
+\namedateperiod
+\vspace{0.18in}
+
+\begin{learningtargetbox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
+  \item \ldots{} design and run a simulation of a random process using an appropriate chance device.
+  \item \ldots{} use relative frequency of simulated outcomes to estimate probability of an event.
+  \item \ldots{} explain why more trials produce a more accurate probability estimate (Law of Large Numbers).
+\end{enumerate}
+\end{learningtargetbox}
+
+\vspace{0.14in}
+
+\begin{tocbox}
+\small
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{} c l X r @{}}
+\rowcolor{sky}
+\textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
+\midrule
+1 & Warm-Up       & Spiral review + relative frequency preview             & \blank{1.2cm} \\
+2 & Guided Notes  & Simulation design; law of large numbers                & \blank{1.2cm} \\
+3 & Group Activity & Design and run a simulation (genetics scenario)        & \blank{1.2cm} \\
+4 & Exit Ticket   & Marble-drawing simulation analysis                     & \blank{1.2cm} \\
+5 & Homework      & Full simulation design; law of large numbers reflection & \blank{1.2cm} \\
+\midrule
+  & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
+\end{tabularx}
+\end{tocbox}
+
+\vspace{0.14in}
+
+\begin{remindbox}
+\small
+The \textbf{most important idea in Lesson 4.2}: simulation is a tool for estimating
+probability --- the more trials you run, the closer your estimate gets to the true value.
+
+\vspace{6pt}
+\begin{tabularx}{\linewidth}{@{} >{\centering\arraybackslash\columncolor{goldbg}}p{0.06\linewidth}
+                                    X @{}}
+\textbf{\large!} &
+\textbf{Simulation = modeling randomness.}\enspace
+You do not need a formula to estimate a probability. Run the random process many times
+and compute the relative frequency of the outcome you care about. \\[6pt]
+\textbf{\large!} &
+\textbf{Law of Large Numbers.}\enspace
+The simulated (empirical) probability will fluctuate early on but will eventually
+stabilize near the true probability as trials increase. \\[6pt]
+\textbf{\large!} &
+\textbf{Design matters.}\enspace
+A good simulation correctly maps each possible outcome of the real process to a chance
+device value, and accounts for all possible outcomes. \\
+\end{tabularx}
+\end{remindbox}
+
+\end{document}

@@ -1,0 +1,97 @@
+%! AP Statistics — Unit 4, Lesson 4.10 — Group Activity KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.10}{Group Activity KEY: Is It Binomial?}
+\namepartnerperiod
+
+\vspace{0.1in}
+
+% ── TIER R ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=goldbg, colframe=goldacc, boxrule=1pt, arc=2mm,
+    title={\bfseries Tier R --- Key},
+    fonttitle=\small]
+\small
+
+\textbf{Scenario 1:} Flip until 3 heads.
+
+\begin{tabularx}{\linewidth}{@{} p{0.08\linewidth} X p{2.8cm} @{}}
+B: & \ans{Binary: each flip is heads (success) or tails (failure).} & \ans{Met} \\[4pt]
+I: & \ans{Independent: flips do not affect each other.} & \ans{Met} \\[4pt]
+N: & \ans{\textbf{Not met} --- $n$ is not fixed; you keep flipping until 3 heads.} & \ans{Not Met} \\[4pt]
+S: & \ans{Same: $p = 0.5$ on every flip.} & \ans{Met} \\[4pt]
+\end{tabularx}
+Verdict: \ans{Not Binomial --- $n$ is not fixed (this is a geometric-type setting).}
+
+\vspace{10pt}
+\textbf{Scenario 2:} 5 draws with replacement.
+
+\begin{tabularx}{\linewidth}{@{} p{0.08\linewidth} X p{2.8cm} @{}}
+B: & \ans{Binary: red (success) or blue (failure).} & \ans{Met} \\[4pt]
+I: & \ans{Independent: replacement makes each draw independent.} & \ans{Met} \\[4pt]
+N: & \ans{Fixed: $n = 5$ draws set in advance.} & \ans{Met} \\[4pt]
+S: & \ans{Same: $p = 3/10 = 0.3$ on every draw.} & \ans{Met} \\[4pt]
+\end{tabularx}
+Verdict: \ans{Binomial --- $X \sim B(5, 0.3)$.}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+% ── TIER A ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=1pt, arc=2mm,
+    title={\bfseries Tier A --- Key},
+    fonttitle=\small]
+\small
+
+\textbf{Scenario 3:} Smartphone defects, $n=12$, $p=0.05$.
+
+(a) BINS check:
+\begin{tabularx}{\linewidth}{@{} p{0.08\linewidth} X @{}}
+B: & \ans{Each phone is either defective (success) or not defective (failure).} \\[4pt]
+I: & \ans{The population is in the thousands; $12 \le 0.10 \times \text{thousands}$, so the $10\%$ condition is satisfied and independence is approximately met.} \\[4pt]
+N: & \ans{Fixed: $n = 12$ phones selected in advance.} \\[4pt]
+S: & \ans{Same: $p = 0.05$ for every phone.} \\[4pt]
+\end{tabularx}
+
+$X \sim B(12,\;0.05)$
+
+(b) $P(X = 1) = \binom{12}{1}(0.05)^1(0.95)^{11} = 12(0.05)(0.5688) \approx \ans{0.3413}$
+
+(c) $P(X = 0) = \binom{12}{0}(0.05)^0(0.95)^{12} = 1(1)(0.5404) \approx \ans{0.5404}$
+
+Calculator check: \texttt{binompdf(12, 0.05, 0)} $\approx \ans{0.5404}$
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+% ── TIER E ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=1pt, arc=2mm,
+    title={\bfseries Tier E --- Key},
+    fonttitle=\small]
+\small
+
+\textbf{Scenario 4:} 10 students from 80, $p = 0.20$.
+
+(a) \ans{$10\%$ condition: $n = 10 \le 0.10 \times 80 = 8$. \textbf{Not satisfied} --- $10 > 8$, so strict independence does not hold. However, in practice many textbooks and the AP exam still proceed with the binomial approximation here; students should note the caveat.}
+
+\begin{teachernote}
+Note: $10 > 8$ so the $10\%$ condition technically fails. A good answer acknowledges this but proceeds with the approximation as the problem instructs.
+\end{teachernote}
+
+(b) $X \approx B(10,\;0.20)$; \quad $P(X = 3) = \binom{10}{3}(0.20)^3(0.80)^7 = 120(0.008)(0.2097) \approx \ans{0.2013}$
+
+(c)
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{1.2cm} X X X X @{}}
+$k$ & 0 & 1 & 2 & 3 \\
+\hline
+$P(X=k)$ & \ans{0.1074} & \ans{0.2684} & \ans{0.3020} & \ans{0.2013} \\
+\end{tabularx}
+\vspace{2pt}
+\ans{Probabilities increase from $k=0$ to $k=2$ then decrease, consistent with the expected shape.}
+\end{tcolorbox}
+
+\end{document}

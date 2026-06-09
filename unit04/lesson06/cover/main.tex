@@ -1,0 +1,83 @@
+%! Independent Events and Unions — Unit 4, Lesson 4.6 — Student Packet Cover Sheet
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{ltablex}
+\keepXColumns
+
+\begin{document}
+
+% Full-bleed navy banner
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[navy] (current page.north west)
+    rectangle ([yshift=-0.9in]current page.north east);
+\end{tikzpicture}
+\vspace{-0.8in}
+
+\begin{center}
+  {\color{white}\textbf{\LARGE AP Statistics}}\\[4pt]
+  {\color{skymid}\large\textbf{Unit 4: Probability, Random Variables, and Probability Distributions}}\\[6pt]
+  {\color{white}\textbf{\large Lesson 4.6 \quad Independent Events and Unions of Events}}
+\end{center}
+
+\vspace{0.22in}
+\namedateperiod
+\vspace{0.18in}
+
+\begin{learningtargetbox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
+  \item \ldots{} determine whether two events are independent by checking whether
+        $P(A|B) = P(A)$ or equivalently $P(A \cap B) = P(A) \cdot P(B)$.
+  \item \ldots{} calculate $P(A \cup B)$ using the addition rule
+        $P(A \cup B) = P(A) + P(B) - P(A \cap B)$.
+  \item \ldots{} explain the difference between independent events and mutually
+        exclusive events, and why mutually exclusive events with positive probabilities
+        cannot be independent.
+\end{enumerate}
+\end{learningtargetbox}
+
+\vspace{0.14in}
+
+\begin{tocbox}
+\small
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{} c l X r @{}}
+\rowcolor{sky}
+\textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
+\midrule
+1 & Warm-Up        & Spiral review: conditional probability and mutually exclusive    & \blank{1.2cm} \\
+2 & Guided Notes   & Independence definition; addition rule; ME vs.\ independent      & \blank{1.2cm} \\
+3 & Group Activity & School program $\times$ satisfaction survey table                & \blank{1.2cm} \\
+4 & Exit Ticket    & School preferences two-way table                                 & \blank{1.2cm} \\
+5 & Homework       & Streaming service $\times$ age group table                       & \blank{1.2cm} \\
+\midrule
+  & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
+\end{tabularx}
+\end{tocbox}
+
+\vspace{0.14in}
+
+\begin{remindbox}
+\small
+The \textbf{two big ideas of Lesson 4.6}: independence and the addition rule.
+
+\vspace{6pt}
+\begin{tabularx}{\linewidth}{@{} >{\centering\arraybackslash\columncolor{goldbg}}p{0.06\linewidth}
+                                    X @{}}
+\textbf{\large!} &
+\textbf{Independence test: compare $P(A|B)$ to $P(A)$.}\enspace
+If they are equal, knowing $B$ did not change the probability of $A$ --- the
+events are independent. If they differ, the events are dependent. \\[6pt]
+\textbf{\large!} &
+\textbf{Addition rule: subtract the intersection to avoid double-counting.}\enspace
+$P(A \cup B) = P(A) + P(B) - P(A \cap B)$. For mutually exclusive events,
+$P(A \cap B) = 0$, so the rule simplifies. \\[6pt]
+\textbf{\large!} &
+\textbf{Mutually exclusive $\neq$ independent --- they are almost opposites.}\enspace
+If two events are mutually exclusive and both have positive probability, they
+are \emph{dependent}: knowing one occurred guarantees the other did not. \\
+\end{tabularx}
+\end{remindbox}
+
+\end{document}

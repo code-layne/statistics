@@ -1,0 +1,224 @@
+%! AP Statistics — Unit 4, Lesson 4.6 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{graphicx}
+
+\newcommand{\UnitNumberName}{Unit 4: Probability, Random Variables, and Probability Distributions \quad}
+\newcommand{\LessonNumberName}{Lesson 4.6: Independent Events and Unions of Events}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear\ (\MeetingLength) \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will determine whether two events are
+    independent using conditional probabilities, and calculate the probability of
+    the union of two events using the addition rule $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+    (Big Idea: VAR-4).
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 3.A --- Determine Parameters for Probability Distributions}
+    \begin{itemize}
+        \item Test for independence: $P(A|B) = P(A)$, or equivalently
+              $P(A \cap B) = P(A) \cdot P(B)$ (VAR-4.E.1, VAR-4.E.2).
+        \item Calculate $P(A \cup B)$ using the addition rule (VAR-4.E.4).
+        \item Distinguish independence from mutually exclusive --- the most
+              common AP exam confusion in this unit.
+        \item Verify independence from a two-way table.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item $A$ and $B$ are independent if knowing one does not change the
+              probability of the other: $P(A|B) = P(A)$.
+        \item If and only if independent: $P(A \cap B) = P(A) \cdot P(B)$.
+        \item The union $A \cup B$ means ``$A$ \emph{or} $B$ (or both).''
+        \item The addition rule subtracts $P(A \cap B)$ to avoid double-counting.
+        \item Mutually exclusive events with positive probability are \emph{dependent},
+              not independent.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Independent events} --- $P(A|B) = P(A)$; knowing $B$ does not change $P(A)$
+        \item \textbf{Dependent events} --- $P(A|B) \neq P(A)$; knowing $B$ changes $P(A)$
+        \item \textbf{Multiplication rule for independent events} --- $P(A \cap B) = P(A) \cdot P(B)$
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Union} $A \cup B$ --- outcomes in $A$ \emph{or} $B$ (or both)
+        \item \textbf{Addition rule} --- $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+        \item \textbf{Mutually exclusive $\neq$ independent} --- a critical distinction
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Review: conditional probability formula $P(A|B)$ (Lesson 4.5) and
+              mutually exclusive condition $P(A \cap B) = 0$ (Lesson 4.4).
+        \item From the diet/health table: ``Is the probability of a healthy outcome
+              the same for plant-based and omnivore dieters?'' (foreshadow independence)
+        \item Bridge: ``When the answer is YES, we have a special relationship
+              called independence.''
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Connections Forward}
+    \begin{itemize}
+        \item Independence is essential for probability calculations in Unit 5
+              (sampling distributions assume independence or near-independence).
+        \item Addition rule extends to complement rule applications.
+        \item Union probability appears throughout probability calculations on the AP exam.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (4--5 min)}\\
+    Present these two claims:
+    \begin{enumerate}
+        \item ``If I flip a fair coin twice, knowing the first flip was heads tells me
+              nothing about the second flip.''
+        \item ``If I draw two cards from a deck without replacement, knowing the first
+              was a heart changes the probability the second is a heart.''
+    \end{enumerate}
+    Ask: ``What's different about these two situations?''\\[4pt]
+    Transition: \textit{``When knowledge of one event doesn't change the probability
+    of another, the events are independent.''}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15--18 min)}
+    \begin{enumerate}
+        \item Define independence via $P(A|B) = P(A)$; develop equivalent form
+              $P(A \cap B) = P(A) \cdot P(B)$.
+        \item Check independence from a two-way table: compare $P(A|B)$ to $P(A)$.
+        \item Address the big confusion: mutually exclusive (with positive probabilities)
+              $\Rightarrow$ dependent, \emph{not} independent.
+        \item Define union $A \cup B$; develop the addition rule from the
+              double-counting argument.
+        \item Work a complete union example from the table.
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Direct Instruction (10 min)}
+    \begin{itemize}
+        \item Independence check from a table: compute $P(A)$ from the marginal,
+              then $P(A|B)$ from the cell; compare.
+        \item Show algebraic equivalence: $P(A|B) = P(A) \Leftrightarrow
+              P(A \cap B) = P(A) \cdot P(B)$.
+        \item Demonstrate the double-counting problem: add $P(A)$ + $P(B)$, then
+              subtract $P(A \cap B)$.
+        \item Emphasize: for mutually exclusive events, $P(A \cup B) = P(A) + P(B)$
+              (a special case, since $P(A \cap B) = 0$).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Active Monitoring}
+    \begin{itemize}
+        \item Watch for the ``independent = mutually exclusive'' confusion.
+              Pose directly: ``Can mutually exclusive events with positive probabilities
+              be independent? Why not?''
+        \item Check addition rule setup: students must subtract $P(A \cap B)$,
+              not add it.
+        \item Cold-call: ``If $P(A) = 0.3$ and $P(B) = 0.4$ and $A$, $B$ are
+              independent, what is $P(A \cap B)$?''
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Group Activity (10--12 min)}\\
+    Three-tier activity using a school program $\times$ satisfaction survey table.
+    \begin{itemize}
+        \item Tier R: identify $P(A)$, $P(A|B)$, and decide if they appear equal.
+        \item Tier A: formal independence check; apply the addition rule.
+        \item Tier E: compare independence and mutually exclusive; create a
+              scenario that demonstrates the distinction.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support}: Provide a fill-in template: ``$P(A) = \_\_\_$,
+              $P(A|B) = \_\_\_$. Since these are [equal / not equal], events $A$
+              and $B$ are [independent / dependent].''
+        \item \textit{Extension}: Prove algebraically that if $A$ and $B$ are
+              mutually exclusive and $P(A) > 0$, $P(B) > 0$, then they cannot be
+              independent.
+        \item \textit{ELL}: Venn diagram showing ``or means everything in either
+              circle, subtract the overlap.''
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    From a two-way table (school preferences survey):
+    \begin{enumerate}
+        \item Test whether two events are independent.
+        \item Compute $P(A \cup B)$ using the addition rule.
+        \item Identify whether two specific events are mutually exclusive
+              or independent (or neither, or both).
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    Multiple-choice: ``Events $A$ and $B$ are mutually exclusive. Which of the
+    following must be true?''\\
+    Options include: independent, $P(A \cap B) = 0$, $P(A \cup B) = P(A) \cdot P(B)$, etc.\\[4pt]
+    Answer: $P(A \cap B) = 0$.
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item Five to six problems using a school preferences two-way table:
+              independence tests, addition rule calculations, and the
+              mutually exclusive vs.\ independent distinction.
+        \item One free-response item requiring complete justification.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: Prove that if $P(A) > 0$ and $P(B) > 0$,
+              mutually exclusive events cannot be independent.
+        \item \textit{Preview}: Lessons 4.7--4.9 apply these rules to random
+              variables and probability distributions --- the same rules, with
+              variables rather than specific outcomes.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\end{document}

@@ -1,0 +1,146 @@
+%! AP Statistics — Unit 4, Lesson 4.11 — Group Activity
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.11}{Group Activity: Binomial Parameters in Context}
+\namepartnerperiod
+
+\vspace{0.1in}
+
+\begin{scenariobox}[Directions]{sky}
+\small
+Work through all three tiers. Show all formula setup before computing. Write
+complete-sentence interpretations where asked --- the AP exam requires this.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+% ── TIER R ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=goldbg, colframe=goldacc, boxrule=1pt, arc=2mm,
+    title={\bfseries Tier R \quad Remediate: Computing Mean and SD},
+    fonttitle=\small]
+\small
+
+For each binomial distribution, compute $\mu_X$ and $\sigma_X$, then write a
+one-sentence interpretation of $\mu_X$.
+
+\vspace{10pt}
+\textbf{(a)} $X \sim B(25, 0.40)$
+
+\vspace{4pt}
+$\mu_X = np = $ \blank{5cm} $= $ \blank{2cm}
+
+$\sigma_X = \sqrt{np(1-p)} = \sqrt{\blank{3cm}} \approx$ \blank{2cm}
+
+Interpretation of $\mu_X$: \writeline\\[1pt]\writeline
+
+\vspace{12pt}
+\textbf{(b)} $X \sim B(100, 0.08)$
+
+\vspace{4pt}
+$\mu_X = $ \blank{5cm} $= $ \blank{2cm}
+
+$\sigma_X = \sqrt{\blank{3cm}} \approx$ \blank{2cm}
+
+Interpretation of $\mu_X$: \writeline\\[1pt]\writeline
+\vspace{4pt}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+% ── TIER A ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=1pt, arc=2mm,
+    title={\bfseries Tier A \quad Approaching Proficiency: A Full Binomial Analysis},
+    fonttitle=\small]
+\small
+
+\textbf{Context:} A call center reports that 22\% of customer calls are resolved
+on the first attempt. On a busy afternoon, 80 calls come in. Assume $X \sim B(80, 0.22)$.
+
+\vspace{8pt}
+(a) Calculate $\mu_X$ and $\sigma_X$. Show formula setup.
+
+\vspace{4pt}
+$\mu_X = $ \blank{6cm} $= $ \blank{2cm}
+
+$\sigma_X = $ \blank{6cm} $\approx$ \blank{2cm}
+
+\vspace{8pt}
+(b) Interpret $\mu_X$ in context.
+
+\vspace{4pt}
+\writeline\\[1pt]\writeline
+
+\vspace{8pt}
+(c) Find $P(X \le 15)$. Write the calculator notation and the answer.
+
+\vspace{4pt}
+$P(X \le 15) = \texttt{binomcdf(}\blank{1cm}\texttt{,}\;\blank{1cm}\texttt{,}\;15\texttt{)} \approx $ \blank{2cm}
+
+\vspace{8pt}
+(d) Find $P(X \ge 20)$. Write the inequality rewrite, then the calculator notation.
+
+\vspace{4pt}
+$P(X \ge 20) = 1 - P(X \le \blank{1.5cm}) = 1 - \texttt{binomcdf(}\blank{1cm}\texttt{,}\;\blank{1cm}\texttt{,}\;\blank{1cm}\texttt{)} \approx $ \blank{2cm}
+
+\vspace{8pt}
+(e) Is 20 or more resolved calls on the first attempt \emph{unusually high}?
+Use $\mu_X$ and $\sigma_X$ to support your answer.
+
+\vspace{4pt}
+\writeline\\[1pt]\writeline
+\vspace{4pt}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+% ── TIER E ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=1pt, arc=2mm,
+    title={\bfseries Tier E \quad Extension: Comparing Two Binomials},
+    fonttitle=\small]
+\small
+
+\textbf{Context:} Two quality-control processes are being evaluated.
+\begin{itemize}[itemsep=3pt]
+  \item Process A: $n = 200$ items inspected, defect rate $p = 0.05$.
+  \item Process B: $n = 100$ items inspected, defect rate $p = 0.10$.
+\end{itemize}
+
+\vspace{6pt}
+(a) Compute $\mu_X$ and $\sigma_X$ for both processes.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{2cm} X X @{}}
+ & Process A & Process B \\
+\hline
+$\mu_X$ & \blank{4cm} & \blank{4cm} \\
+$\sigma_X$ & \blank{4cm} & \blank{4cm} \\
+\end{tabularx}
+
+\vspace{8pt}
+(b) Both processes have the same mean. Explain why in terms of the formulas.
+
+\vspace{4pt}
+\writeline\\[1pt]\writeline
+
+\vspace{8pt}
+(c) Which process has more variability? What does this mean practically for the
+quality-control engineer?
+
+\vspace{4pt}
+\writeline\\[1pt]\writeline
+
+\vspace{8pt}
+(d) Challenge: For a fixed $n$, what value of $p$ maximizes $\sigma_X$?
+Show a brief algebraic or numerical argument.
+
+\vspace{4pt}
+\writeline\\[1pt]\writeline\\[1pt]\writeline
+\vspace{4pt}
+\end{tcolorbox}
+
+\end{document}

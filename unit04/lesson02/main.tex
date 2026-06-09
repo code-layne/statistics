@@ -1,0 +1,222 @@
+%! AP Statistics — Unit 4, Lesson 4.2 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+\newcommand{\UnitNumberName}{Unit 4: Probability, Random Variables, and Probability Distributions \quad}
+\newcommand{\LessonNumberName}{Lesson 4.2: Estimating Probabilities Using Simulation}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will use simulation to estimate the probability
+    of an event, record relative frequencies, and observe the law of large numbers in action
+    (Big Idea: UNC-2).
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 3 --- Using Probability and Simulation}
+    \begin{itemize}
+        \item Estimate probabilities using simulation (Skill 3.A).
+        \item UNC-2.A: describe and run a simulation of a random process.
+        \item UNC-2.A.4--2.A.6: design simulation (assign values, run trials, record
+              outcomes) and use relative frequency to estimate probability.
+        \item Apply the law of large numbers (UNC-2.A.6).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item A simulation is a model of a random process using a chance device (coins,
+              dice, random number table, technology).
+        \item Relative frequency of simulated outcomes estimates probability.
+        \item As the number of trials increases, simulated (empirical) probabilities
+              approach the true probability (Law of Large Numbers).
+        \item Proper simulation design requires: identifying the random process, assigning
+              outcomes to chance values, and recording results systematically.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Simulation} --- a model of a random process using a chance device
+        \item \textbf{Trial} --- one run of a simulation
+        \item \textbf{Outcome} --- the result of a single trial
+        \item \textbf{Event} --- a collection of outcomes
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Relative frequency} --- (number of times event occurred) $\div$ (total trials)
+        \item \textbf{Empirical probability} --- probability estimated from simulation or real data
+        \item \textbf{Law of Large Numbers} --- as the number of trials increases, empirical
+              probability approaches the true probability
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Review: ``What pattern did we examine in Lesson 4.1?''
+        \item Connect: In 4.1 we asked ``Could chance produce this?'' --- today we build
+              a tool to actually answer that question.
+        \item Quick review: relative frequency from Unit 1 (frequency tables).
+        \item Prompt: \textit{``If I want to estimate how often a thumbtack lands point-up,
+              what would I do?''}
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Connections Forward}
+    \begin{itemize}
+        \item Formal probability rules $\to$ Lesson 4.3
+        \item Conditional probability $\to$ Lessons 4.4--4.5
+        \item Simulation as a check on probability calculations $\to$ throughout Unit 4
+        \item Inference: simulation as a model for the null distribution $\to$ Unit 6
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (5--7 min)}\\
+    Hold up a thumbtack. Ask: ``If I drop this 50 times, what fraction of the time will
+    it land point-up?'' Take student guesses. Then actually drop it (or simulate with a
+    coin): record each outcome. Compute the running relative frequency after 5, 10, 20,
+    50 drops. Plot it live.\\
+    Transition: \textit{``We just ran a simulation. Let's formalize what we did.''}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15--18 min)}
+    \begin{enumerate}
+        \item Define simulation; contrast with theoretical probability.
+        \item Simulation design framework: (a) identify the random process, (b) assign
+              values to outcomes, (c) use a chance device, (d) record relative frequency.
+        \item Work through example: a genetic carrier cross (each parent carries a
+              recessive gene). Use a coin to model each parent's allele. Two-coin trial
+              = one offspring.
+        \item Compute relative frequency after 10 and 30 trials; compare class results.
+        \item Law of Large Numbers: show a graph of relative frequency vs.\ number of
+              trials converging toward the true probability.
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Direct Instruction (10 min)}
+    \begin{itemize}
+        \item Project: ``A free-throw shooter makes 72\% of shots. Use a random number
+              table (digits 00--99) to simulate 20 shots: digits 00--71 = make, 72--99 =
+              miss. Estimate the probability of making 3 in a row.''
+        \item Walk through line-by-line reading of the random number table.
+        \item Record outcomes in a table; compute relative frequency.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Active Monitoring}
+    \begin{itemize}
+        \item Listen for: confusing ``outcome'' with ``event'' --- remind that an event is
+              a collection of outcomes.
+        \item Circulate: check that students are correctly identifying which digits
+              represent which outcomes.
+        \item Cold-call: ``How many trials would you need before you trust your simulated
+              probability? Why?''
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Partner Activity (8--10 min)}\\
+    Three-tier simulation activity: design and run a simulation for a genetics cross
+    scenario (Tier R), a multi-event sports scenario (Tier A), or a custom design task
+    (Tier E). Record results, compute relative frequencies, and compare to the true
+    probability if known.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support (Tier R)}: Provide a pre-filled outcome table; students
+              only need to run trials and record.
+        \item \textit{On-grade (Tier A)}: Students design and run the full simulation.
+        \item \textit{Extension (Tier E)}: Students run the simulation with 50 trials
+              and explain what happens to the estimate as trials increase.
+        \item \textit{ELL}: Vocabulary card with ``trial,'' ``outcome,'' and ``relative
+              frequency'' with visual examples.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    A bag contains 3 red and 7 blue marbles. A student draws one marble, records the
+    color, and replaces it. She repeats this 10 times and gets red 4 times.
+    \begin{enumerate}
+        \item What is the empirical probability of drawing red from her simulation?
+        \item What is the true probability of drawing red?
+        \item Does the law of large numbers predict these will get closer as she does
+              more trials? Explain.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{``A simulation is run 200 times to estimate the probability of getting at
+    least 2 heads in 3 coin flips. The event occurs in 146 of the 200 trials. Which
+    of the following is the best estimate of the probability?''}
+    \begin{enumerate}[label=(\Alph*)]
+        \item $200/146$
+        \item $146/200 = 0.73$
+        \item $3/8$
+        \item $5/8$
+    \end{enumerate}
+    Answer: (B) --- the empirical probability is $146/200 = 0.73$ (true value $= 0.5$;
+    more trials would make this estimate more accurate).
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item Design a simulation for a real-world scenario (health screening, genetics,
+              sports), run at least 20 trials, record outcomes, and compute relative
+              frequency.
+        \item Explain how the law of large numbers would affect the estimate if the number
+              of trials were increased to 500.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: Use a random number generator (calculator or app) to
+              run 100 trials and compare to the 20-trial estimate. Describe what you notice.
+        \item \textit{Preview}: Lesson 4.3 introduces formal probability rules --- the
+              true (theoretical) probabilities that simulation approximates. Think about what
+              makes a probability ``true'' rather than estimated.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\end{document}

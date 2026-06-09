@@ -1,0 +1,99 @@
+%! AP Statistics — Unit 4, Lesson 4.2 — Homework
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.2}{Homework}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+
+\textbf{1.} A weather app claims there is a 40\% chance of rain on any given
+day this week. Design a simulation to estimate the probability that it rains
+on at least 4 of the 7 days.
+
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
+  \item Describe your simulation design:
+        \begin{itemize}
+          \item Chance device: \writeline
+          \item How outcomes are assigned: \writeline
+          \item What one trial represents: \writeline
+          \item What the event of interest is: \writeline
+        \end{itemize}
+  \item Run 20 trials using random digits below.  (Let 0--3 = rain, 4--9 = no rain.)
+
+        {\small\texttt{7 3 0 5 2 8 9 1 4 6 2 7 1 5 8 3 0 4 9 7 6 2 0 1 5 8 3 2 4 1
+        9 5 7 0 6 4 3 8 1 2 5 7 9 0 6 4 2 3 8 1 7 6 5 0 4 2 8 3 1 9
+        1 4 7 2 5 8 0 3 6 9 4 1 2 0 5 8 3 7 6 1 2 0 4 8 3 5 9 1 7 6
+        0 3 8 5 2 9 4 1 7 6 3 0 5 8 2 1 4 7 9 6 2 3 0 1 8 5 7 4 6 9
+        5 1 3 8 0 6 2 7 4 9 3 0 1 6 5 2 8 4 7 9}}
+
+        \vspace{4pt}
+        Record the number of ``rain'' days for each set of 7 digits (one trial = 7 digits):
+
+        \vspace{6pt}
+        \renewcommand{\arraystretch}{1.6}
+        \begin{tabularx}{\linewidth}{@{} *{10}{>{\centering\arraybackslash}X} @{}}
+        T1 & T2 & T3 & T4 & T5 & T6 & T7 & T8 & T9 & T10 \\
+        \hline
+        \blank{0.6cm} & \blank{0.6cm} & \blank{0.6cm} & \blank{0.6cm} & \blank{0.6cm} &
+        \blank{0.6cm} & \blank{0.6cm} & \blank{0.6cm} & \blank{0.6cm} & \blank{0.6cm} \\
+        \end{tabularx}
+        \begin{tabularx}{\linewidth}{@{} *{10}{>{\centering\arraybackslash}X} @{}}
+        T11 & T12 & T13 & T14 & T15 & T16 & T17 & T18 & T19 & T20 \\
+        \hline
+        \blank{0.6cm} & \blank{0.6cm} & \blank{0.6cm} & \blank{0.6cm} & \blank{0.6cm} &
+        \blank{0.6cm} & \blank{0.6cm} & \blank{0.6cm} & \blank{0.6cm} & \blank{0.6cm} \\
+        \end{tabularx}
+
+  \item How many of your 20 trials had at least 4 rain days? \blank{2cm}
+  \item Empirical probability: $\hat{p} = \blank{3cm}$
+\end{enumerate}
+
+\vspace{8pt}
+\textbf{2.} A multiple-choice quiz has 5 questions, each with 4 answer choices (only one correct).
+A student guesses randomly on every question.
+
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
+  \item What is the probability of guessing any single question correctly? \blank{2cm}
+  \item Design a simulation using a single die (or random digits 1--4) to estimate the
+        probability that the student gets \textbf{at least 3 correct}.
+        Describe the design: \writeline\writeline
+  \item Run 15 trials. Record the number correct per trial:
+        \vspace{20pt}
+  \item Empirical probability of at least 3 correct: $\hat{p} = \blank{3cm}$
+\end{enumerate}
+
+\vspace{8pt}
+\textbf{3.} (AP-Style) A simulation is run 500 times to estimate the probability
+that a newborn is left-handed. In 65 of the 500 trials the simulated newborn is
+left-handed. Which of the following is the best description of the empirical
+probability?
+
+\begin{enumerate}[label=(\Alph*), leftmargin=2em, itemsep=4pt]
+  \item $500/65 \approx 7.69$
+  \item $65/500 = 0.13$
+  \item $500/65 = 0.13$
+  \item $65 \times 500 = 32{,}500$
+\end{enumerate}
+
+\vspace{8pt}
+\textbf{4.} \textit{Reflection:} Explain in your own words why the Law of Large Numbers
+matters when using simulation to estimate probability. What could go wrong if you based
+your estimate on only 5 trials?\\[6pt]
+\writeline\writeline\writeline
+
+\vspace{8pt}
+\textbf{Extension / Preview:} Use a calculator or app to run 50 random trials of a
+coin flip and plot the running relative frequency of heads after each trial. Describe
+the shape of the graph. (\textit{Preview: Lesson 4.3 derives the exact probability
+rules; today's simulation gives us the intuition for why those rules work.})
+
+\end{practicebox}
+
+\end{document}

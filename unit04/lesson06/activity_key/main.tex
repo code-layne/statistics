@@ -1,0 +1,80 @@
+%! AP Statistics — Unit 4, Lesson 4.6 — Activity KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.6}{Group Activity KEY: Independence, Unions, and the ME Distinction}
+\namepartnerperiod
+
+\vspace{0.1in}
+
+\begin{scenariobox}[Context]{sky}
+\small
+School program $\times$ satisfaction survey (250 students). Table for reference.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} l X X X r @{}}
+ & \textbf{Satisfied} & \textbf{Neutral} & \textbf{Dissatisfied} & \textbf{Total} \\
+\hline
+\textbf{STEM Club}  & 50 & 20 & 10 & 80  \\
+\textbf{Drama Club} & 40 & 20 & 10 & 70  \\
+\textbf{Neither}    & 40 & 30 & 30 & 100 \\
+\hline
+\textbf{Total}      & 130 & 70 & 50 & 250 \\
+\end{tabularx}
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\textbf{Tier R}
+\begin{practicebox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+  \item
+    \begin{enumerate}[label=(\alph*), itemsep=3pt]
+      \item \ans{$P(\text{Satisfied}) = 130/250 = 0.52$}
+      \item \ans{$P(\text{Satisfied}|\text{STEM}) = 50/80 = 0.625$}
+      \item \ans{No} \quad \ans{Dependent}
+    \end{enumerate}
+
+  \item
+    \begin{enumerate}[label=(\alph*), itemsep=3pt]
+      \item \ans{$P(\text{Satisfied}) = 130/250 = 0.52$}
+      \item \ans{$P(\text{Satisfied}|\text{Neither}) = 40/100 = 0.4$}
+      \item \ans{Dependent} (0.52 $\neq$ 0.4)
+    \end{enumerate}
+\end{enumerate}
+\end{practicebox}
+
+\vspace{0.08in}
+
+\textbf{Tier A}
+\begin{practicebox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item \ans{$P(\text{Satisfied}) = 130/250 = 0.52$; $P(\text{Satisfied}|\text{Drama}) = 40/70 \approx 0.571$.} \ans{Since $0.52 \neq 0.571$, Satisfied and Drama Club are \textbf{not independent} --- students in Drama Club are more likely to be satisfied than the overall student body.}
+
+  \item \ans{$80/250 + 130/250 - 50/250 = (80 + 130 - 50)/250 = 160/250 = 0.64$}
+
+  \item \ans{Yes, STEM and Drama are mutually exclusive (each student is in exactly one row; no student is in both clubs based on this table's structure). They are \emph{not} independent: if a student is in STEM, the probability they are in Drama is 0, but $P(\text{Drama}) = 70/250 = 0.28 \neq 0$. Mutually exclusive events with positive probabilities are always dependent.}
+\end{enumerate}
+\end{practicebox}
+
+\vspace{0.08in}
+
+\textbf{Tier E}
+\begin{practicebox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item \ans{Suppose $A$ and $B$ are mutually exclusive and independent. ME $\Rightarrow P(A \cap B) = 0$. Independence $\Rightarrow P(A \cap B) = P(A) \cdot P(B)$. So $P(A) \cdot P(B) = 0$. Since $P(A) > 0$ and $P(B) > 0$, their product cannot be 0 --- contradiction. Therefore mutually exclusive events with positive probabilities cannot be independent.}
+
+  \item \ans{False. For example, Satisfied and Drama Club are neither equal ($P(A|B) \neq P(A)$) nor mutually exclusive ($P(A \cap B) = 40/250 \neq 0$). Dependence simply means the conditional probability differs from the marginal; it does not imply the events cannot co-occur.}
+
+  \item \ans{Check Drama Club and Neutral: $P(\text{Neutral}) = 70/250 = 0.28$; $P(\text{Neutral}|\text{Drama}) = 20/70 \approx 0.286$. These are close but not exactly equal. In a real dataset it would be rare to have exact independence; ``approximately independent'' means the conditional probability is very close to the marginal probability, so knowing one event gives almost no information about the other.}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

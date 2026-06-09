@@ -1,0 +1,74 @@
+%! AP Statistics — Unit 4, Lesson 4.11 — Warm-Up KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.11}{Warm-Up --- Answer Key}
+\begin{tabularx}{\linewidth}{X X X}
+Name:\;\ans{Key} & Date:\; & Period:\;
+\end{tabularx}
+
+\vspace{0.3in}
+
+{\large\bfseries\color{navy} Part 1 \quad Spiral Review}
+
+\vspace{0.12in}
+
+\begin{enumerate}
+
+    \item $X \sim B(10, 0.3)$.
+    \begin{enumerate}[label=(\alph*), itemsep=8pt]
+        \item \ans{B: each trial is a success (probability 0.3) or failure. I: trials are independent. N: fixed $n=10$. S: same $p=0.3$ every trial.}
+        \item \ans{$P(X=4) = \binom{10}{4}(0.3)^4(0.7)^6 = 210(0.0081)(0.1176) \approx 0.2001$}
+    \end{enumerate}
+
+    \vspace{0.18in}
+
+    \item $X \sim B(3, 0.5)$.
+    \renewcommand{\arraystretch}{1.8}
+    \begin{tabularx}{\linewidth}{@{} >{\bfseries}p{1.4cm} X X X X @{}}
+    $x$ & 0 & 1 & 2 & 3 \\
+    \hline
+    $P(X=x)$ & \ans{0.125} & \ans{0.375} & \ans{0.375} & \ans{0.125} \\
+    \hline
+    $x \cdot P(X=x)$ & \ans{0} & \ans{0.375} & \ans{0.750} & \ans{0.375} \\
+    \end{tabularx}
+
+    \vspace{8pt}
+    $\mu_X = 0 + 0.375 + 0.750 + 0.375 = \ans{1.5}$
+
+    \vspace{0.18in}
+
+    \item \ans{$np = 3(0.5) = 1.5$. Yes --- the general formula and the shortcut $np$ give the same answer. The formula $\mu_X = np$ is simply an efficient way to compute the mean of any binomial distribution without summing every term.}
+
+\end{enumerate}
+
+\vspace{0.2in}
+
+{\large\bfseries\color{navy} Part 2 \quad Looking Ahead}
+
+\vspace{0.12in}
+
+\noindent Today we replace the long summation in Problem 2 with two simple formulas:
+$\mu_X = np$ and $\sigma_X = \sqrt{np(1-p)}$.
+
+\vspace{0.14in}
+
+\begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=0.8pt, arc=2mm,
+    left=4mm, right=4mm, top=3mm, bottom=3mm]
+    \small
+    \begin{itemize}[leftmargin=1.3em, itemsep=8pt]
+  \item $\mu_X = np$ is the expected (average) number of successes per experiment.
+  \item Always interpret $\mu_X$ with a sentence that references the context.
+  \item \texttt{binomcdf} gives cumulative probabilities --- useful when the event
+        involves a range of values like ``at most 5'' or ``at least 3.''
+    \end{itemize}
+\end{tcolorbox}
+
+\vspace{0.18in}
+
+\noindent\textcolor{slate}{\small Student responses will vary.}
+
+\end{document}

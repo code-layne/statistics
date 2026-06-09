@@ -1,0 +1,117 @@
+%! AP Statistics — Unit 4, Lesson 4.11 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.11}{Guided Notes}
+\namedateperiod
+
+\vspace{0.12in}
+
+\begin{objectivebox}
+\small By the end of this lesson, I will be able to\dots\\[4pt]
+\writeline\\[1pt]
+\writeline\\[1pt]
+\writeline
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\termblanklong{Mean of a binomial distribution}
+\termblanklong{Standard deviation of a binomial distribution}
+\termblanklong{Cumulative binomial probability}
+\termblanklong{binomcdf(n, p, k)}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+\small\textbf{Opening scenario:} A professional archer hits the target 90\% of the time.
+She shoots 50 arrows in a competition.
+
+\vspace{6pt}
+How many hits do you expect her to average across many competitions? \blank{2cm}\\[6pt]
+How did you reason that? \writeline\\[1pt]\writeline
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Mean and Standard Deviation of a Binomial Distribution}
+\small
+For $X \sim B(n, p)$:
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.26\linewidth} X @{}}
+Mean & $\mu_X = \blank{3cm}$ \\
+Standard deviation & $\sigma_X = \blank{5cm}$ \\
+\end{tabularx}
+
+\vspace{8pt}
+\textbf{Archer example:} $n = 50$, $p = 0.90$
+\[
+  \mu_X = \blank{3cm} = \blank{2cm}
+  \qquad
+  \sigma_X = \sqrt{\blank{3cm}} = \blank{2cm}
+\]
+
+\vspace{6pt}
+\textbf{Interpret $\mu_X$ in context:}\\[4pt]
+\writeline\\[1pt]\writeline
+
+\vspace{6pt}
+\textbf{Interpret $\sigma_X$ in context:}\\[4pt]
+\writeline
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Cumulative Binomial Probabilities}
+\small
+
+\textbf{Problem:} What if we want $P(X \ge 48)$, not just $P(X = 48)$?
+
+\vspace{6pt}
+Adding individual probabilities is impractical. Use the calculator.
+
+\vspace{8pt}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.35\linewidth} X @{}}
+\texttt{binomcdf(n, p, k)} & gives $P(X \;\blank{1.5cm}\; k) = $ sum from $0$ to $k$ \\
+$P(X \ge k)$ & $= 1 - P(X \le \blank{1.5cm}) = 1 - \texttt{binomcdf(n, p,} \blank{1cm}\texttt{)}$ \\
+$P(X > k)$ & $= 1 - P(X \le \blank{1.5cm}) = 1 - \texttt{binomcdf(n, p,} \blank{1cm}\texttt{)}$ \\
+\end{tabularx}
+
+\vspace{8pt}
+\textbf{Key boundary warning:} $P(X \ge k)$ and $P(X > k)$ use different values
+inside \texttt{binomcdf}. Always rewrite the inequality first.
+
+\vspace{8pt}
+\textbf{Example:} Find $P(X \ge 48)$ for the archer ($n=50$, $p=0.90$).
+
+\vspace{4pt}
+$P(X \ge 48) = 1 - P(X \le \blank{1.5cm}) = 1 - \texttt{binomcdf(}\blank{1cm}\texttt{,}\;\blank{1cm}\texttt{,}\;\blank{1cm}\texttt{)} = \blank{3cm}$
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+
+  \item A manufacturer claims 15\% of its items are returned.
+        A store buys 60 items. Let $X =$ the number returned. Assume $X \sim B(60, 0.15)$.
+        \begin{enumerate}[label=(\alph*), itemsep=6pt]
+          \item $\mu_X = $ \blank{3cm} \quad $\sigma_X = $ \blank{4cm}
+          \item Interpret $\mu_X$: \writeline\\[1pt]\writeline
+          \item Find $P(X \le 5)$: \texttt{binomcdf(}\blank{1cm}\texttt{,}\;\blank{1cm}\texttt{,}\;5\texttt{)} $\approx$ \blank{2cm}
+          \item Find $P(X \ge 12)$: $1 - \texttt{binomcdf(}\blank{1cm}\texttt{,}\;\blank{1cm}\texttt{,}\;\blank{1cm}\texttt{)} \approx$ \blank{2cm}
+        \end{enumerate}
+
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

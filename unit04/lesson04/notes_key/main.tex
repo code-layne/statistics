@@ -1,0 +1,151 @@
+%! AP Statistics — Unit 4, Lesson 4.4 — Guided Notes KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.4}{Guided Notes --- KEY}
+\namedateperiod
+
+\vspace{0.12in}
+
+\begin{objectivebox}
+\small By the end of this lesson, I will be able to\dots\\[4pt]
+\ans{Explain what mutually exclusive (disjoint) events are and how to identify them.}\\[1pt]
+\ans{Determine whether two events are mutually exclusive by checking whether any outcome belongs to both.}\\[1pt]
+\ans{Justify whether two events are mutually exclusive in context using a complete sentence.}
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\termblanklong{Joint probability $P(A \cap B)$} \ans{The probability that both event $A$ and event $B$ occur simultaneously.}
+\termblanklong{Intersection $A \cap B$} \ans{The set of all outcomes that belong to both event $A$ and event $B$.}
+\termblanklong{Mutually exclusive (disjoint) events} \ans{Two events that cannot both occur at the same time; they share no outcomes, so $P(A \cap B) = 0$.}
+\termblanklong{Sample space} \ans{The set of all possible outcomes of a chance process.}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+\small
+\textbf{Two scenarios:}
+\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+  \item A randomly selected student is enrolled in both AP Statistics and AP Calculus.
+  \item A randomly selected card from a standard deck is both a heart and a spade.
+\end{enumerate}
+\textbf{Which is impossible? Why?}\\[4pt]
+\ans{Scenario 2 is impossible. A card belongs to exactly one suit, so no card can be both a heart and a spade simultaneously. Scenario 1 is entirely possible --- a student can be enrolled in both courses at once.}
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Joint Probability and Intersections}
+\small
+\textbf{Definition:} The \textbf{joint probability} $P(A \cap B)$ is the probability that
+event $A$ \ans{occurs} and event $B$ \ans{occurs} simultaneously.
+
+\vspace{10pt}
+\textbf{Notation:} $A \cap B$ is read as ``$A$ \ans{and} $B$'' and represents all
+outcomes in \ans{both $A$ and $B$}.
+
+\vspace{10pt}
+\textbf{Two Venn Diagrams:}
+
+\vspace{6pt}
+\begin{minipage}[t]{0.46\linewidth}
+  \centering
+  \begin{tcolorbox}[colback=white, colframe=navy, arc=2mm, width=\linewidth,
+      left=2mm, right=2mm, top=2mm, bottom=2mm]
+    \centering\small
+    \textbf{Not Mutually Exclusive}\\[4pt]
+    \begin{tikzpicture}
+      \draw[navy,thick] (0,0) circle (0.7cm) node[left=0.55cm,navy]{\small$A$};
+      \draw[navy,thick] (0.9,0) circle (0.7cm) node[right=0.55cm,navy]{\small$B$};
+      \fill[sky,opacity=0.5] (0.45,0) ellipse (0.26cm and 0.55cm);
+      \node at (0.45,0) {\tiny$A\cap B$};
+    \end{tikzpicture}\\[4pt]
+    $P(A \cap B)$ \ans{$> 0$}
+  \end{tcolorbox}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.46\linewidth}
+  \centering
+  \begin{tcolorbox}[colback=white, colframe=navy, arc=2mm, width=\linewidth,
+      left=2mm, right=2mm, top=2mm, bottom=2mm]
+    \centering\small
+    \textbf{Mutually Exclusive}\\[4pt]
+    \begin{tikzpicture}
+      \draw[navy,thick] (-0.85,0) circle (0.7cm) node[navy]{\small$A$};
+      \draw[navy,thick] (0.85,0) circle (0.7cm) node[navy]{\small$B$};
+    \end{tikzpicture}\\[4pt]
+    $P(A \cap B) = $ \ans{$0$}
+  \end{tcolorbox}
+\end{minipage}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Mutually Exclusive Events}
+\small
+\textbf{Definition (VAR-4.C.2):} Two events $A$ and $B$ are \textbf{mutually exclusive}
+(also called \textbf{disjoint}) if \ans{they cannot occur at the same time (they share no outcomes)}.\\[6pt]
+Therefore, $P(A \cap B) = $ \ans{$0$}.
+
+\vspace{10pt}
+\textbf{How to check:}
+\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+  \item List the outcomes in event $A$: \ans{(list all elements of $A$)}
+  \item List the outcomes in event $B$: \ans{(list all elements of $B$)}
+  \item Ask: does any single outcome appear in \ans{both}?\\
+        If YES $\to$ \ans{NOT mutually exclusive} \quad If NO $\to$ \ans{mutually exclusive}
+\end{enumerate}
+
+\vspace{10pt}
+\textbf{Important:} Mutually exclusive $\neq$ \ans{independent} (coming in Lesson 4.6!).
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Worked Examples}
+\small
+\textbf{Example 1:} Roll a fair die. $A = \{\text{odd}\}$, $B = \{\text{even}\}$.
+\begin{itemize}[itemsep=3pt]
+  \item Outcomes in $A$: \ans{$\{1,3,5\}$}
+  \item Outcomes in $B$: \ans{$\{2,4,6\}$}
+  \item $A \cap B = $ \ans{$\varnothing$} \quad So: mutually exclusive? \ans{Yes}
+  \item $P(A \cap B) = $ \ans{$0$}
+\end{itemize}
+
+\vspace{8pt}
+\textbf{Example 2:} Draw a card. $A = \{\text{heart}\}$, $B = \{\text{face card}\}$.
+\begin{itemize}[itemsep=3pt]
+  \item Outcomes in both: \ans{Jack of hearts, Queen of hearts, King of hearts}
+  \item $A \cap B = \varnothing$? \ans{No} \quad So: mutually exclusive? \ans{No}
+  \item $P(A \cap B) = $ \ans{$3/52$}
+\end{itemize}
+
+\vspace{8pt}
+\textbf{AP Exam tip:} Always write a complete sentence justification:\\[4pt]
+``Events $A$ and $B$ \ans{are not} mutually exclusive because \ans{(state the shared outcome(s) in context)}.''
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+\vspace{6pt}
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+  \item \ans{Shared outcomes: a sophomore who is on the honor roll.} \quad ME? \ans{No}\\
+        \ans{A student can be both a sophomore and on the honor roll simultaneously, so the events are not mutually exclusive.}
+
+  \item \ans{Shared outcomes: July, August (31 days and in summer).} \quad ME? \ans{No}\\
+        \ans{July and August both have 31 days and are summer months, so the events share outcomes and are not mutually exclusive.}
+
+  \item \ans{Shared outcomes: $\{15\}$ --- but 15 is not in 1--10. So $\{$ none $\}$.} \quad ME? \ans{Yes}\\
+        \ans{No integer from 1--10 is a multiple of both 3 and 5 (15 is out of range), so the events are mutually exclusive.}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

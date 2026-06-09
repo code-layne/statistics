@@ -1,0 +1,231 @@
+%! AP Statistics — Unit 4, Lesson 4.1 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+\newcommand{\UnitNumberName}{Unit 4: Probability, Random Variables, and Probability Distributions \quad}
+\newcommand{\LessonNumberName}{Lesson 4.1: Introducing Statistics --- Random and Non-Random Patterns?}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will recognize that streaks, clusters, and
+    patterns in data can arise from pure chance, and that patterns alone do not confirm
+    a non-random process (Big Idea: VAR-1).
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 1 --- Selecting Statistical Methods}
+    \begin{itemize}
+        \item Identify questions suggested by patterns in data (Skill 1.A).
+        \item Recognize that patterns in data do not necessarily mean the variation is
+              non-random (VAR-1.F, VAR-1.F.1).
+        \item Bridge from Unit 3 (data collection) to Unit 4 (modeling randomness).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item Random processes can produce streaks, clusters, and patterns that look
+              non-random.
+        \item Asking ``Could chance alone explain this?'' is a foundational statistical
+              question.
+        \item Patterns in data inspire questions; confirming whether those patterns are
+              real requires more than observation.
+        \item This lesson sets up the entire unit: probability (4.3--4.6) and random
+              variables (4.7--4.12).
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Random process} --- a process whose outcome cannot be predicted
+              with certainty in advance
+        \item \textbf{Pattern} --- an apparent regularity in observed data
+        \item \textbf{Streak} --- a run of identical outcomes in sequence
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Random variation} --- natural fluctuation produced by chance alone
+        \item \textbf{Statistical question} --- a question that anticipates variability in
+              the data needed to answer it
+        \item \textbf{Cluster} --- an unusual concentration of outcomes in a small region
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Quick review: What is a \emph{statistical question}? (Unit 1)
+        \item Connect: Unit 3 asked how data are collected; Unit 4 asks how we model
+              the randomness that underlies data.
+        \item Prompt: \textit{``A basketball player makes 5 free throws in a row. Is she
+              on a `hot streak,' or could this happen by chance?''}
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Connections Forward}
+    \begin{itemize}
+        \item Simulation to estimate probability $\to$ Lesson 4.2
+        \item Formal probability rules $\to$ Lesson 4.3
+        \item Conditional probability $\to$ Lessons 4.4--4.5
+        \item Random variables and distributions $\to$ Lessons 4.7--4.12
+        \item Quantifying how unusual a pattern is $\to$ Unit 5 (inference)
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (5--7 min)}\\
+    Display three sequences of 20 coin-flip results:
+    \begin{itemize}
+        \item Sequence A: HHTHTTHHHTTHHTTHTHTH
+        \item Sequence B: HHHHHTTTTTHHHHHTTTTTT (10+10)
+        \item Sequence C: HTHTTHTHHHTTHTHTHHTH
+    \end{itemize}
+    Ask: ``Which sequence looks most like real coin flips? Which looks suspicious?''\\
+    Reveal: A and C were simulated; B was designed to \emph{look} suspicious. True
+    random sequences often contain long runs that surprise us.
+    Transition: \textit{``Our intuition about what looks random is often wrong.''}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15--18 min)}
+    \begin{enumerate}
+        \item Show a sequence of basketball free-throw outcomes: a player makes 7
+              consecutive shots. Ask: Does this prove she has a ``hot hand''?
+        \item Key idea (VAR-1.F.1): Patterns in data do not necessarily mean the
+              variation is non-random.
+        \item Walk through: a run of heads in 20 coin flips is not unlikely; calculate
+              intuitively (about a 12\% chance of a run of $\geq$5 in 20 flips).
+        \item Distinguish the question we \emph{see} from the question we \emph{should ask}:
+              ``Could this pattern have arisen by chance alone?''
+        \item Preview: The rest of Unit 4 builds the probability machinery to actually
+              answer that question.
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Direct Instruction (10 min)}
+    \begin{itemize}
+        \item Show three real-world patterns: a cancer cluster in a small town, a
+              winning streak in a sports team, a run of birth-year coincidences.
+        \item For each: What question does the pattern suggest? Is there a non-random
+              explanation? Could chance alone produce it?
+        \item Emphasize VAR-1.F: pattern $\neq$ non-random; we need to model chance
+              before drawing conclusions.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Active Monitoring}
+    \begin{itemize}
+        \item Listen for: ``of course that's not random!'' — redirect to ``How would you
+              test that?''
+        \item Cold-call: ``Give me one question this pattern suggests that we could
+              actually investigate with data.''
+        \item Circulate during guided notes; check that students distinguish the pattern
+              they observe from the claim they are tempted to make.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Partner Activity (8--10 min)}\\
+    Three-tier activity: students receive four scenarios (sports streaks, weather runs,
+    health clusters, social media trends) and for each:
+    \begin{enumerate}
+        \item State the pattern you observe.
+        \item Write a statistical question the pattern suggests.
+        \item Decide: Could chance alone produce this pattern?
+        \item What would convince you it is \emph{not} random?
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support (Tier R)}: Anchor prompt --- ``A pattern is surprising.
+              A non-random pattern has a \emph{cause}.'' Use guided sentence starters.
+        \item \textit{On-grade (Tier A)}: Explain why human-written ``random'' sequences
+              typically have too few long runs.
+        \item \textit{Extension (Tier E)}: Research the ``hot hand'' fallacy (Gilovich
+              et al., 1985). Summarize the statistical argument in 3 sentences.
+        \item \textit{ELL}: Vocabulary card with ``random,'' ``pattern,'' and ``streak.''
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    A student rolls a die 20 times and records: 3, 3, 3, 3, 5, 2, 1, 6, 3, 4,
+    5, 2, 3, 1, 6, 4, 4, 4, 4, 4.
+    \begin{enumerate}
+        \item Identify two patterns in this sequence.
+        \item Write one statistical question these patterns suggest.
+        \item Explain why these patterns alone do not prove the die is unfair.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{``A researcher notices that a small town had 6 leukemia cases in one year,
+    double the national average rate. Which best explains why this pattern alone does
+    not confirm an environmental cause?''}
+    \begin{enumerate}[label=(\Alph*)]
+        \item The sample size is too large to show a real pattern.
+        \item Random variation in small populations can produce clusters.
+        \item Leukemia rates never vary from the national average.
+        \item Six cases is not enough to calculate a probability.
+    \end{enumerate}
+    Answer: (B)
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item For four data patterns, write the statistical question each suggests and
+              evaluate whether chance alone is a plausible explanation.
+        \item Reflection: \textit{``Why is it dangerous to assume every pattern has a
+              non-random cause?''}
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: Find one news story describing a ``surprising'' streak
+              or cluster. Evaluate whether the reporting correctly distinguishes chance
+              from cause.
+        \item \textit{Preview}: Lesson 4.2 introduces simulation as a way to model what
+              chance alone would produce --- start thinking about how you would use coin
+              flips to estimate probability.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\end{document}
