@@ -1,0 +1,135 @@
+%! AP Statistics — Unit 4, Lesson 4.5 — Guided Notes KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.5}{Guided Notes --- KEY}
+\namedateperiod
+
+\vspace{0.12in}
+
+\begin{objectivebox}
+\small By the end of this lesson, I will be able to\dots\\[4pt]
+\ans{Calculate conditional probabilities using the formula $P(A|B) = P(A \cap B)/P(B)$.}\\[1pt]
+\ans{Read a two-way table to identify the joint probability and the conditioning event total.}\\[1pt]
+\ans{Apply the multiplication rule $P(A \cap B) = P(A) \cdot P(B|A)$ to find a joint probability.}
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\termblanklong{Conditional probability $P(A|B)$} \ans{The probability that event $A$ will occur given that event $B$ has already occurred; $P(A|B) = P(A \cap B)/P(B)$.}
+\termblanklong{Conditioning event} \ans{The event in the denominator of the conditional probability formula; the ``given'' event that restricts the sample space.}
+\termblanklong{Multiplication rule} \ans{$P(A \cap B) = P(A) \cdot P(B|A)$; used to find joint probability from marginal and conditional probabilities.}
+\termblanklong{Marginal probability} \ans{The probability of a single event, found from a row or column total in a two-way table.}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+\small
+\textbf{Card scenario:}
+\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+  \item \ans{$P(\text{King}) = 4/52 = 1/13 \approx 0.077$}
+  \item \ans{$P(\text{King}|\text{face card}) = 4/12 = 1/3 \approx 0.333$}
+  \item \ans{12 face cards; 4 of them are Kings.}
+\end{enumerate}
+\ans{The probability increased because knowing the card is a face card restricts the sample space from 52 cards to only the 12 face cards.}
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Conditional Probability (VAR-4.D.1)}
+\small
+\textbf{Definition:} The \textbf{conditional probability} $P(A|B)$ is the probability
+that event $A$ will occur \ans{given that} event $B$ \ans{has occurred}.
+
+\vspace{8pt}
+\textbf{Formula:}
+\[
+  P(A|B) = \frac{P(A \cap B)}{P(B)}, \quad \text{provided } P(B) \ans{> 0}.
+\]
+
+\vspace{6pt}
+\textbf{Interpretation:} Knowing $B$ occurred \ans{restricts} the sample space to only
+outcomes in $B$.
+
+\vspace{10pt}
+\textbf{From a two-way table:}
+\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+  \item Find $P(A \cap B)$ = \ans{joint cell count} $\div$ grand total
+  \item Find $P(B)$ = \ans{conditioning row or column total} $\div$ grand total
+  \item Compute $P(A|B)$ = \ans{joint cell count} $\div$ \ans{conditioning total} (the grand total cancels!)
+\end{enumerate}
+
+\vspace{8pt}
+\textbf{Short-cut for tables:} $P(A|B) = \dfrac{\text{count in both }A\text{ and }B}{\ans{\text{count in }B}}$
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Worked Example --- Two-Way Table}
+\small
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} l X X r @{}}
+ & \textbf{Trains Daily} & \textbf{Trains Weekly} & \textbf{Total} \\
+\hline
+\textbf{Runs}     & 24 & 16 & 40 \\
+\textbf{Swims}    & 18 & 22 & 40 \\
+\textbf{Cycles}   & 20 & 20 & 40 \\
+\hline
+\textbf{Total}    & 62 & 58 & 120 \\
+\end{tabularx}
+
+\vspace{8pt}
+\textbf{Find $P(\text{Runs} | \text{Trains Daily})$:}
+\begin{itemize}[itemsep=3pt]
+  \item $P(\text{Runs} \cap \text{Trains Daily}) = $ \ans{$24/120$}
+  \item $P(\text{Trains Daily}) = $ \ans{$62/120$}
+  \item $P(\text{Runs} | \text{Trains Daily}) = \dfrac{\ans{24/120}}{\ans{62/120}} = \dfrac{24}{62} \approx \ans{0.387}$
+\end{itemize}
+
+\vspace{6pt}
+\textbf{Interpret in context:} Among athletes who train daily,
+\ans{38.7}\% run.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Multiplication Rule (VAR-4.D.2)}
+\small
+\textbf{Rearranging the formula} gives the \textbf{multiplication rule}:
+\[
+  P(A \cap B) = P(A) \cdot P(B|A) = P(B) \cdot P(A|B)
+\]
+
+\vspace{6pt}
+\textbf{Use this when:} you know $P(A)$ and $P(B|A)$ and need to find \ans{$P(A \cap B)$}.
+
+\vspace{8pt}
+\textbf{Example:}
+\[
+  P(\text{Runs} \cap \text{Trains Daily}) = \textcolor{keyred}{\tfrac{62}{120}} \times \textcolor{keyred}{\tfrac{24}{62}} = \textcolor{keyred}{\tfrac{24}{120}} = \textcolor{keyred}{0.2}
+\]
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+\vspace{6pt}
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+  \item \ans{$18 \div 40 = 0.45$} (18 swimmers train daily; 40 swimmers total)
+
+  \item \ans{$20 \div 58 \approx 0.345$} (20 cyclists train weekly; 58 weekly trainers total)
+
+  \item \ans{$(58/120) \cdot (20/58) = 20/120 \approx 0.167$. Yes, matches the cell count 20.}
+
+  \item \ans{$P(\text{Runs}|\text{Trains Daily}) = 24/62 \approx 0.387$; $P(\text{Trains Daily}|\text{Runs}) = 24/40 = 0.6$. They are not equal --- the order of conditioning matters.}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

@@ -1,0 +1,81 @@
+%! AP Statistics — Unit 4, Lesson 4.2 — Group Activity KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.2}{Group Activity --- KEY}
+\namepartnerperiod
+
+\vspace{0.1in}
+
+\begin{scenariobox}[Context]{sky}
+\small
+Two parents each carry one copy of a recessive gene for a certain condition. Each parent
+passes one allele (D = dominant, r = recessive) to each child. A child has the condition
+only if they receive two recessive alleles (rr). Work through the tier your teacher assigns.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+% ── Tier R ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=goldbg, colframe=goldacc, boxrule=1pt, arc=2mm,
+    left=4mm, right=4mm, top=3mm, bottom=3mm,
+    title={\bfseries Tier R \enspace Remediate --- Run a Pre-Designed Simulation}]
+\small
+
+\textbf{Set-up:} Heads = D, Tails = r. One trial = two coin flips.
+
+\vspace{8pt}
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item \begin{teachernote}Answers vary by class run. With 20 trials, expect roughly 4--6 TT outcomes.\end{teachernote}
+  \item \ans{$\hat{p}$ = (number of TT) / 20. Typical range: 0.15--0.35 with 20 trials.}
+  \item \begin{teachernote}Pool class data; with 20 students $\times$ 20 trials = 400 total, expect $\hat{p}$ close to 0.25.\end{teachernote}
+  \item \ans{With more trials pooled, the class estimate should be closer to the true probability of 0.25 (= 1/4). This is the Law of Large Numbers in action.}
+\end{enumerate}
+
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+% ── Tier A ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=1pt, arc=2mm,
+    left=4mm, right=4mm, top=3mm, bottom=3mm,
+    title={\bfseries Tier A \enspace Approaching Proficiency --- Full Simulation Design}]
+\small
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item \ans{There are 15 two-digit numbers between 00 and 14 out of 100 total (00--99). Assigning 15 of the 100 equally likely digits to ``carrier'' gives each trial a 15/100 = 15\% probability of resulting in a carrier --- matching the stated probability.}
+  \item \begin{teachernote}Outcomes vary. Check that students correctly identify whether each two-digit number falls in 00--14 (carrier) or 15--99 (non-carrier).\end{teachernote}
+  \item \begin{teachernote}Accept any reasonable count near 4--5 out of 30 (expected: $30 \times 0.15 = 4.5$).\end{teachernote}
+  \item \ans{Answers vary. With only 30 trials, estimates will range roughly 0.07--0.27 due to random variation.}
+  \item \ans{Closer to 0.15. The Law of Large Numbers states that as the number of trials increases, the empirical probability approaches the true probability. With 300 trials, random fluctuations average out more, so the estimate will be more stable.}
+\end{enumerate}
+
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+% ── Tier E ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=1pt, arc=2mm,
+    left=4mm, right=4mm, top=3mm, bottom=3mm,
+    title={\bfseries Tier E \enspace Extension --- Design Your Own}]
+\small
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item \ans{A fair coin or a random integer generator (0--1, or digits 0--9).}
+          \item \ans{Heads (or digit 0--4) = correct guess; Tails (or digit 5--9) = wrong guess.}
+          \item \ans{One trial = 10 coin flips (or 10 random digits). Count how many are ``correct.'' Record the count.}
+          \item \ans{The event of interest = the trial produces 7 or more correct guesses.}
+        \end{enumerate}
+  \item \begin{teachernote}Results vary. With 25 trials, expect approximately 4--5 trials yielding $\geq$7 correct, since the true probability is $\approx 0.172$.\end{teachernote}
+  \item \begin{teachernote}Accept counts around 3--6 out of 25. $\hat{p}$ around 0.12--0.24 is reasonable.\end{teachernote}
+  \item \ans{The estimate should be in the neighborhood of 0.172 but with random variation. With more trials (e.g., 250), the Law of Large Numbers would produce an estimate reliably close to 0.172.}
+\end{enumerate}
+
+\end{tcolorbox}
+
+\end{document}

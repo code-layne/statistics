@@ -1,0 +1,138 @@
+%! AP Statistics — Unit 4, Lesson 4.8 — Group Activity
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.8}{Group Activity: Expected Value and Spread}
+\namepartnerperiod
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=sky!60, colframe=navy, title=\textbf{Tier R --- Remediate},
+    arc=2mm, boxrule=0.8pt, left=4mm, right=4mm, top=3mm, bottom=3mm]
+\small
+$X$ = number of text messages a student sends per class period.
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{}ccccc@{}}
+$x$ & 0 & 1 & 2 & 3 \\
+\hline
+$P(X=x)$ & 0.40 & 0.35 & 0.15 & 0.10 \\
+\end{tabular}
+\end{center}
+
+\renewcommand{\arraystretch}{1.9}
+\begin{tabularx}{\linewidth}{@{} c c X @{}}
+$x$ & $P(X=x)$ & $x \cdot P(X=x)$ \\
+\hline
+0 & 0.40 & \blank{3cm} \\
+1 & 0.35 & \blank{3cm} \\
+2 & 0.15 & \blank{3cm} \\
+3 & 0.10 & \blank{3cm} \\
+\hline
+\textbf{Sum} & & $\mu_X =$ \blank{2cm} \\
+\end{tabularx}
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item Fill in the computation table and find $\mu_X$.
+
+  \item Interpret $\mu_X$ in context.\\
+        \writeline\\[1pt]\writeline
+
+  \item Is $\mu_X$ a possible value of $X$? Explain.\\
+        \writeline
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.12in}
+
+\begin{tcolorbox}[colback=goldbg!60, colframe=goldacc, title=\textbf{Tier A --- Approaching Proficiency},
+    arc=2mm, boxrule=0.8pt, left=4mm, right=4mm, top=3mm, bottom=3mm]
+\small
+$Y$ = number of hours a student exercises per week.
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{}ccccc@{}}
+$y$ & 0 & 1 & 2 & 3 \\
+\hline
+$P(Y=y)$ & 0.20 & 0.35 & 0.30 & 0.15 \\
+\end{tabular}
+\end{center}
+
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} c c c c X @{}}
+$y$ & $P$ & $y \cdot P$ & $(y - \mu_Y)^2$ & $(y-\mu_Y)^2 \cdot P$ \\
+\hline
+0 & 0.20 & \blank{1.3cm} & \blank{1.8cm} & \blank{2cm} \\
+1 & 0.35 & \blank{1.3cm} & \blank{1.8cm} & \blank{2cm} \\
+2 & 0.30 & \blank{1.3cm} & \blank{1.8cm} & \blank{2cm} \\
+3 & 0.15 & \blank{1.3cm} & \blank{1.8cm} & \blank{2cm} \\
+\hline
+& & $\mu_Y=$ \blank{1cm} & & $\sigma^2_Y=$ \blank{1.5cm} \\
+\end{tabularx}
+
+\vspace{4pt}
+$\sigma_Y = $ \blank{3cm}
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item Interpret $\mu_Y$ in context.\\
+        \writeline\\[1pt]\writeline
+
+  \item Interpret $\sigma_Y$ in context.\\
+        \writeline\\[1pt]\writeline
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.12in}
+
+\begin{tcolorbox}[colback=greenbg!60, colframe=greenacc, title=\textbf{Tier E --- Extension},
+    arc=2mm, boxrule=0.8pt, left=4mm, right=4mm, top=3mm, bottom=3mm]
+\small
+Two carnival games each cost \$3 to play.
+
+\textbf{Game A:}
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}cccc@{}}
+Prize ($x$) & \$0 & \$3 & \$10 \\
+\hline
+$P(X=x)$ & 0.60 & 0.30 & 0.10 \\
+\end{tabular}
+\end{center}
+
+\textbf{Game B:}
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}cccc@{}}
+Prize ($y$) & \$0 & \$2 & \$6 \\
+\hline
+$P(Y=y)$ & 0.40 & 0.40 & 0.20 \\
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item Compute $\mu_X$ and $\mu_Y$.
+
+        \vspace{0.4in}
+
+  \item Compute $\sigma_X$ and $\sigma_Y$. (You may use a calculator for the arithmetic.)
+
+        \vspace{0.5in}
+
+  \item Which game has the higher expected prize? \blank{4cm}
+
+  \item Which game is riskier (higher $\sigma$)? \blank{4cm}
+
+  \item Define net winnings for each game (prize $-$ \$3). What is the expected
+        \emph{net} winnings per play for each game?\\
+        \writeline\\[1pt]\writeline
+
+  \item Which game would you choose? Justify using both $\mu$ and $\sigma$.\\
+        \writeline\\[1pt]\writeline\\[1pt]\writeline
+\end{enumerate}
+\end{tcolorbox}
+
+\end{document}

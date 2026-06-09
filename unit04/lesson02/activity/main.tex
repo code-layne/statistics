@@ -1,0 +1,137 @@
+%! AP Statistics — Unit 4, Lesson 4.2 — Group Activity
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.2}{Group Activity: Genetics Simulation Lab}
+\namepartnerperiod
+
+\vspace{0.1in}
+
+\begin{scenariobox}[Context]{sky}
+\small
+Two parents each carry one copy of a recessive gene for a certain condition. Each parent
+passes one allele (D = dominant, r = recessive) to each child. A child has the condition
+only if they receive two recessive alleles (rr). Work through the tier your teacher assigns.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+% ── Tier R ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=goldbg, colframe=goldacc, boxrule=1pt, arc=2mm,
+    left=4mm, right=4mm, top=3mm, bottom=3mm,
+    title={\bfseries Tier R \enspace Remediate --- Run a Pre-Designed Simulation}]
+\small
+
+\textbf{Set-up:} Use a coin to represent each parent's allele contribution.
+\begin{itemize}
+  \item Heads (H) = dominant allele (D)
+  \item Tails (T) = recessive allele (r)
+\end{itemize}
+One trial = flip two coins (one per parent). Record the two alleles the child receives.
+The \textbf{event of interest}: child gets TT (= rr, affected).
+
+\vspace{8pt}
+\textbf{Run 20 trials.} Record your results in the table:
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{} c c c c | c c c c | c c c c | c c c c | c c c c @{}}
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 \\
+\hline
+\blank{0.7cm} & \blank{0.7cm} & \blank{0.7cm} & \blank{0.7cm} &
+\blank{0.7cm} & \blank{0.7cm} & \blank{0.7cm} & \blank{0.7cm} &
+\blank{0.7cm} & \blank{0.7cm} & \blank{0.7cm} & \blank{0.7cm} &
+\blank{0.7cm} & \blank{0.7cm} & \blank{0.7cm} & \blank{0.7cm} &
+\blank{0.7cm} & \blank{0.7cm} & \blank{0.7cm} & \blank{0.7cm} \\
+\end{tabularx}
+
+\vspace{6pt}
+(Write HH, HT, TH, or TT for each trial)
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item How many trials resulted in TT? \blank{2cm}
+  \item What is your empirical probability? $\hat{p} = \blank{3cm}$
+  \item Combine results with the class. Class total: \blank{2cm} TT out of \blank{2cm} trials.
+        Class $\hat{p} = \blank{3cm}$
+  \item The true probability is $\frac{1}{4} = 0.25$. How does the class estimate compare?\\
+        \writeline
+\end{enumerate}
+
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+% ── Tier A ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=1pt, arc=2mm,
+    left=4mm, right=4mm, top=3mm, bottom=3mm,
+    title={\bfseries Tier A \enspace Approaching Proficiency --- Full Simulation Design}]
+\small
+
+\textbf{Scenario:} A hospital screens newborns for a genetic condition. Each baby
+independently has a 15\% chance of carrying at least one risk allele (based on population
+genetics data). Use a random number table or random integers (00--99) to simulate 30
+newborn screenings. Let 00--14 = ``carrier'' and 15--99 = ``non-carrier.''
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item Describe in your own words why assigning digits 00--14 correctly models a 15\%
+        probability.\\
+        \writeline\writeline
+  \item Obtain a row of random two-digit numbers from your teacher (or generate them).
+        Record 30 outcomes below:
+
+        \vspace{4pt}
+        \begin{tabularx}{\linewidth}{@{} *{15}{>{\centering\arraybackslash}X} @{}}
+        \blank{0.5cm} & \blank{0.5cm} & \blank{0.5cm} & \blank{0.5cm} & \blank{0.5cm} &
+        \blank{0.5cm} & \blank{0.5cm} & \blank{0.5cm} & \blank{0.5cm} & \blank{0.5cm} &
+        \blank{0.5cm} & \blank{0.5cm} & \blank{0.5cm} & \blank{0.5cm} & \blank{0.5cm} \\
+        \blank{0.5cm} & \blank{0.5cm} & \blank{0.5cm} & \blank{0.5cm} & \blank{0.5cm} &
+        \blank{0.5cm} & \blank{0.5cm} & \blank{0.5cm} & \blank{0.5cm} & \blank{0.5cm} &
+        \blank{0.5cm} & \blank{0.5cm} & \blank{0.5cm} & \blank{0.5cm} & \blank{0.5cm} \\
+        \end{tabularx}
+
+  \item Number of carriers: \blank{2cm} \quad Empirical probability: $\hat{p} = \blank{3cm}$
+  \item How close is your estimate to the true probability of 0.15? \writeline
+  \item If you repeated this simulation with 300 trials instead of 30, would you expect
+        your estimate to be closer to 0.15 or farther? Explain using the Law of Large Numbers.\\
+        \writeline\writeline
+\end{enumerate}
+
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+% ── Tier E ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=1pt, arc=2mm,
+    left=4mm, right=4mm, top=3mm, bottom=3mm,
+    title={\bfseries Tier E \enspace Extension --- Design Your Own}]
+\small
+
+\textbf{Scenario:} A taste-test researcher wants to estimate the probability that a
+randomly chosen person can correctly identify the brand of a cola drink in a blind
+taste test. Without any real ability, each guess is equally likely to be correct or
+incorrect.
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item Design a simulation to estimate the probability that a guesser with no real
+        ability gets at least 7 of 10 guesses correct. Describe your simulation clearly:
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item Chance device: \writeline
+          \item How values are assigned: \writeline
+          \item What constitutes one trial: \writeline
+          \item What the event of interest is: \writeline
+        \end{enumerate}
+  \item Run 25 trials and record outcomes:
+        \vspace{20pt}
+  \item Number of trials in which at least 7 of 10 were correct: \blank{2cm}\\
+        Empirical probability: $\hat{p} = \blank{3cm}$
+  \item The true probability of getting 7 or more correct by chance is approximately
+        0.172. How does your estimate compare? What would happen with more trials?\\
+        \writeline\writeline
+\end{enumerate}
+
+\end{tcolorbox}
+
+\end{document}

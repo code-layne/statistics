@@ -1,0 +1,138 @@
+%! AP Statistics — Unit 4, Lesson 4.9 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.9}{Guided Notes}
+\namedateperiod
+
+\vspace{0.12in}
+
+\begin{objectivebox}
+\small By the end of this lesson, I will be able to\dots\\[4pt]
+\writeline\\[1pt]
+\writeline\\[1pt]
+\writeline
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\termblanklong{Linear transformation ($W = a + bX$)}
+\termblanklong{Sum of random variables}
+\termblanklong{Difference of random variables}
+\termblanklong{Variance addition rule}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+\small
+Maya's lunch order: $\mu_X = \$6.00$, $\sigma_X = \$1.50$. \quad
+Jordan's lunch order: $\mu_Y = \$4.00$, $\sigma_Y = \$1.00$.\\[4pt]
+\textbf{Expected total bill:} \blank{4cm} \quad
+\textbf{SD of total bill:} \blank{4cm}\\[4pt]
+\textit{(Try adding the SDs first. Then try the correct method. Are they the same?)}
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Rule 1: Linear Transformation --- $W = a + bX$}
+\small
+
+Adding $a$ to $X$ \blank{3cm} the mean by $a$ but does \blank{3cm} change the spread.\\
+Multiplying $X$ by $b$ \blank{3cm} both the mean and the SD by $b$.
+
+\vspace{8pt}
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{@{}ll@{}}
+\hline
+$\mu_W = $ & \blank{6cm} \\
+$\sigma_W = $ & \blank{6cm} \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{8pt}
+\textbf{Example:} $X$ = goals per game; $\mu_X = 0.90$, $\sigma_X = 0.70$.
+Let $W = 3X$ (points per game, 3 points per goal).
+
+$\mu_W = $ \blank{4cm} \quad $\sigma_W = $ \blank{4cm}
+
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Rule 2: Sum of Independent Random Variables --- $T = X + Y$}
+\small
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{@{}ll@{}}
+\hline
+$\mu_T = $ & \blank{6cm} \\
+$\sigma^2_T = $ & \blank{8cm} (add \textbf{variances}, not SDs!) \\
+$\sigma_T = $ & \blank{6cm} \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{8pt}
+\textbf{Example:} Maya's bill ($\mu_X=6$, $\sigma^2_X=2.25$) + Jordan's bill ($\mu_Y=4$, $\sigma^2_Y=1.00$).
+
+$\mu_T = $ \blank{3cm} \quad $\sigma^2_T = $ \blank{3cm} \quad $\sigma_T = \sqrt{\blank{2cm}} = $ \blank{3cm}
+
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Rule 3: Difference of Independent Random Variables --- $D = X - Y$}
+\small
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{@{}ll@{}}
+\hline
+$\mu_D = $ & \blank{6cm} \\
+$\sigma^2_D = $ & \blank{8cm} (variances \textbf{still add}!) \\
+$\sigma_D = $ & \blank{6cm} \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{8pt}
+\textbf{Key insight:} When you subtract two random variables, the variance
+\blank{3cm} (increases / decreases / stays the same).
+
+\vspace{8pt}
+\textbf{Example:} Difference in bills (Maya $-$ Jordan).
+
+$\mu_D = $ \blank{3cm} \quad $\sigma^2_D = $ \blank{3cm} \quad $\sigma_D = $ \blank{3cm}
+
+Compare: $\sigma_T = $ \blank{2cm} and $\sigma_D = $ \blank{2cm}. Are they equal?  \blank{2cm}
+
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+$X$: $\mu_X = 50$, $\sigma_X = 8$, $\sigma^2_X = 64$.
+$Y$: $\mu_Y = 30$, $\sigma_Y = 5$, $\sigma^2_Y = 25$. ($X$ and $Y$ are independent.)
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item $T = X + Y$: \quad $\mu_T = $ \blank{2cm} \quad $\sigma^2_T = $ \blank{2cm} \quad
+        $\sigma_T = $ \blank{3cm}
+
+  \item $D = X - Y$: \quad $\mu_D = $ \blank{2cm} \quad $\sigma^2_D = $ \blank{2cm} \quad
+        $\sigma_D = $ \blank{3cm}
+
+  \item $W = 10 + 2X$: \quad $\mu_W = $ \blank{3cm} \quad $\sigma_W = $ \blank{3cm}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

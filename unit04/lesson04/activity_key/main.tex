@@ -1,0 +1,84 @@
+%! AP Statistics — Unit 4, Lesson 4.4 — Activity KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.4}{Group Activity KEY: Are These Events Mutually Exclusive?}
+\namepartnerperiod
+
+\vspace{0.1in}
+
+\begin{scenariobox}[Context]{sky}
+\small
+A large high school surveyed 200 students about their after-school activities and
+class standing. The two-way table below shows the results.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} l *{4}{X} r @{}}
+ & \textbf{Freshman} & \textbf{Sophomore} & \textbf{Junior} & \textbf{Senior} & \textbf{Total} \\
+\hline
+\textbf{Sports}    & 18 & 22 & 20 & 15 & 75  \\
+\textbf{Arts/Music}& 12 & 10 & 14 & 9  & 45  \\
+\textbf{Neither}   & 20 & 18 & 22 & 20 & 80  \\
+\hline
+\textbf{Total}     & 50 & 50 & 56 & 44 & 200 \\
+\end{tabularx}
+\end{scenariobox}
+
+\vspace{0.12in}
+
+\textbf{Tier R}
+\begin{practicebox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+  \item \ans{No.} \quad \ans{ME} --- A student cannot be both a freshman and a senior simultaneously.
+  \item \ans{Based on the table structure, each student is in exactly one row, so yes.} \quad \ans{ME}
+  \item \ans{Yes --- 20 juniors play sports.} \quad \ans{Not ME}
+  \item \ans{ME} --- The table separates Arts/Music and Neither into distinct rows; a student is in one or the other.
+\end{enumerate}
+\end{practicebox}
+
+\vspace{0.08in}
+
+\textbf{Tier A}
+\begin{practicebox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item
+    \begin{enumerate}[label=(\alph*), itemsep=4pt]
+      \item \ans{Not mutually exclusive. A student can be both a sophomore and in Sports --- there are 22 such students in the table.}
+      \item \ans{$P(A \cap B) = 22/200 = 0.11$}
+    \end{enumerate}
+
+  \item
+    \begin{enumerate}[label=(\alph*), itemsep=4pt]
+      \item \ans{Mutually exclusive. A student cannot be both a freshman and a senior at the same time; a student is in exactly one grade level.}
+      \item \ans{$P(A \cap B) = 0$}
+    \end{enumerate}
+
+  \item
+    \begin{enumerate}[label=(\alph*), itemsep=4pt]
+      \item \ans{Mutually exclusive (given the table design, each student is in exactly one activity row). No student appears in both the Sports row and the Arts/Music row.}
+      \item \ans{$P(A \cap B) = 0$; $P(A) = 75/200 = 0.375$}
+    \end{enumerate}
+\end{enumerate}
+\end{practicebox}
+
+\vspace{0.08in}
+
+\textbf{Tier E}
+\begin{practicebox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item \ans{Sample ME pair: Freshman and Senior. A student cannot be in both grade levels simultaneously. Sample not-ME pair: Junior and Sports. A junior can play sports (20 students in the table do), so the events share outcomes.}
+
+  \item \ans{The reasoning is incorrect. Mutually exclusive is determined by whether events share any outcomes, not by the size of their probabilities. For example, "Freshman" ($P = 50/200 = 0.25$) and "Senior" ($P = 44/200 = 0.22$) are mutually exclusive even though neither probability is "small."}
+
+  \item \ans{Counterexample: Flip a fair coin. $A = \{\text{heads}\}$, $B = \{\text{tails}\}$. Both have probability 0.5 --- not small at all --- and they are mutually exclusive because a coin cannot show both heads and tails on one flip.}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

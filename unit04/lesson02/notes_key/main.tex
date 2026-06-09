@@ -1,0 +1,115 @@
+%! AP Statistics — Unit 4, Lesson 4.2 — Guided Notes KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.2}{Guided Notes --- KEY}
+\namedateperiod
+
+\vspace{0.12in}
+
+\begin{objectivebox}
+\small By the end of this lesson, I will be able to\dots\\[4pt]
+\ans{Design and run a simulation of a random process using an appropriate chance device.}\\[1pt]
+\ans{Use relative frequency of simulated outcomes to estimate probability of an event.}\\[1pt]
+\ans{Explain why more trials produce a more accurate probability estimate (Law of Large Numbers).}
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\termblanklong{Simulation} \ans{A model of a random process using a chance device (coins, dice, random number generator, etc.) so that simulated outcomes closely match real-world outcomes.}
+\termblanklong{Trial} \ans{One run of a simulation — one complete execution of the random process being modeled.}
+\termblanklong{Outcome} \ans{The result of a single trial.}
+\termblanklong{Event} \ans{A collection of one or more outcomes.}
+\termblanklong{Relative frequency (empirical probability)} \ans{The proportion of trials in which a specified event occurs: (number of times event occurred) $\div$ (total number of trials).}
+\termblanklong{Law of Large Numbers} \ans{As the number of trials increases, the simulated (empirical) probability tends to get closer to the true probability.}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+\small
+A thumbtack is dropped 50 times. Tally the results and compute running relative frequency.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{@{} l c c c c c @{}}
+After $n$ drops: & 5 & 10 & 20 & 35 & 50 \\
+\hline
+Point-up count & \multicolumn{5}{c}{\textit{(will vary by class data)}} \\
+Relative freq. & \multicolumn{5}{c}{\textit{(will vary by class data)}} \\
+\end{tabularx}
+
+\vspace{6pt}
+\ans{The relative frequency starts out variable and gradually stabilizes near a consistent value as more drops are recorded --- illustrating the Law of Large Numbers.}
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Simulation Design Framework}
+\small
+
+\textbf{Key Idea (UNC-2.A.4):} Simulation is a way to model random events such that
+simulated outcomes \ans{closely match} real-world outcomes. All possible outcomes are
+associated with a value determined by \ans{chance}.
+
+\vspace{10pt}
+\textbf{Steps to Design a Simulation:}
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+  \item \ans{Identify the random process you want to model (e.g., flipping a coin, rolling a die, drawing a card).}
+  \item \ans{Assign values from your chance device to each possible outcome (e.g., H = make, T = miss).}
+  \item \ans{Choose a chance device whose probabilities match the real-world process (coin, die, RNG, table).}
+  \item \ans{Run trials; record the outcome of each trial in a systematic table.}
+  \item \ans{Compute relative frequency: $\hat{p} = \dfrac{\text{number of times event occurred}}{\text{total number of trials}}$}
+\end{enumerate}
+
+\vspace{10pt}
+\textbf{Example:} A genetic cross.
+\begin{itemize}[itemsep=4pt]
+  \item Chance device: \ans{A coin (H = dominant allele, T = recessive allele).}
+  \item Assign: \ans{H = dominant (D), T = recessive (r); flip twice per trial (once per parent).}
+  \item One trial = \ans{two coin flips (one allele from each parent), representing one offspring.}
+  \item Event: offspring gets TT (rr) = affected.
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{The Law of Large Numbers}
+\small
+\textbf{UNC-2.A.5:} The relative frequency of an outcome in simulated data can be used
+to \ans{estimate} the probability of that outcome.
+
+\vspace{8pt}
+\textbf{UNC-2.A.6 --- Law of Large Numbers:}\\
+As the number of trials \ans{increases}, the simulated (empirical) probability tends to
+get \ans{closer} to the \ans{true} probability.
+
+\vspace{8pt}
+\textbf{What this means in practice:}
+\begin{itemize}[itemsep=4pt]
+  \item With \ans{few (e.g., 5--10)} trials, relative frequency can vary a lot.
+  \item With \ans{many (e.g., 100+)} trials, relative frequency stabilizes near the true value.
+  \item A few unlucky trials early on \ans{do not} mean the estimate is wrong; it just takes more trials to stabilize.
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+Random number table: \texttt{39 48 54 70 29 73 41 61 85 33 \quad 17 56 88 12 65 09 42 99 77 23}
+
+\vspace{8pt}
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item \ans{39=M, 48=M, 54=M, 70=M, 29=M, 73=miss, 41=M, 61=M, 85=miss, 33=M, 17=M, 56=M, 88=miss, 12=M, 65=M, 09=M, 42=M, 99=miss, 77=miss, 23=M}
+  \item \ans{15 makes out of 20 shots.}
+  \item \ans{$\hat{p} = 15/20 = 0.75$}
+  \item \ans{0.75 is close to but slightly above the true probability of 0.72. This difference is expected from random variation with only 20 trials; more trials would bring the estimate closer to 0.72.}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

@@ -1,0 +1,116 @@
+%! AP Statistics — Unit 4, Lesson 4.5 — Group Activity
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.5}{Group Activity: Conditional Probability from Tables}
+\namepartnerperiod
+
+\vspace{0.1in}
+
+\begin{scenariobox}[Context]{sky}
+\small
+A fitness researcher surveyed 180 athletes about their preferred sport and
+how frequently they train. The results are shown below.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} l X X X r @{}}
+ & \textbf{Daily} & \textbf{3--4$\times$/week} & \textbf{1--2$\times$/week} & \textbf{Total} \\
+\hline
+\textbf{Running}  & 30 & 20 & 10 & 60 \\
+\textbf{Swimming} & 24 & 18 & 18 & 60 \\
+\textbf{Cycling}  & 18 & 22 & 20 & 60 \\
+\hline
+\textbf{Total}    & 72 & 60 & 48 & 180 \\
+\end{tabularx}
+
+\vspace{4pt}
+One athlete is selected at random.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+% ── TIER R ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=0.9pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm,
+    title={\bfseries\small Tier R --- Remediate: Identifying Numerators and Denominators},
+    fonttitle=\small]
+\small
+For each conditional probability expression, identify the numerator (joint count)
+and denominator (conditioning total) from the table. You do not need to compute yet.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{@{} l X X @{}}
+\textbf{Expression} & \textbf{Numerator (which cell?)} & \textbf{Denominator (which total?)} \\
+\hline
+$P(\text{Running} | \text{Daily})$ & \blank{3cm} & \blank{3cm} \\
+$P(\text{Daily} | \text{Swimming})$ & \blank{3cm} & \blank{3cm} \\
+$P(\text{Cycling} | \text{1--2$\times$/week})$ & \blank{3cm} & \blank{3cm} \\
+$P(\text{Swimming} | \text{3--4$\times$/week})$ & \blank{3cm} & \blank{3cm} \\
+\end{tabularx}
+
+\vspace{6pt}
+Now compute each probability above. Show your division.\\[6pt]
+$P(\text{Running}|\text{Daily}) = $ \blank{2cm} $\div$ \blank{2cm} $=$ \blank{3cm}\\[4pt]
+$P(\text{Daily}|\text{Swimming}) = $ \blank{2cm} $\div$ \blank{2cm} $=$ \blank{3cm}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+% ── TIER A ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm,
+    title={\bfseries\small Tier A --- Approaching Proficiency: Calculate, Apply, and Interpret},
+    fonttitle=\small]
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+  \item Compute the following conditional probabilities. Write the formula, substitute, and simplify.
+        \begin{enumerate}[label=(\alph*), itemsep=6pt]
+          \item $P(\text{Running} | \text{Daily})$: \blank{8cm}
+          \item $P(\text{Daily} | \text{Running})$: \blank{8cm}
+          \item Are these two values equal? What does that tell you? \writeline\writeline
+        \end{enumerate}
+
+  \item Apply the multiplication rule to verify your answer to (a).\\
+        $P(\text{Daily}) \cdot P(\text{Running}|\text{Daily}) = $\blank{3cm}$\times$\blank{3cm}$ = $\blank{3cm}\\
+        Does this equal $P(\text{Running} \cap \text{Daily})$ from the table? \blank{2cm}
+
+  \item Compute $P(\text{Cycling} | \text{3--4$\times$/week})$ and interpret in a complete sentence.\\
+        Calculation: \blank{6cm}\\
+        Interpretation: \writeline\writeline
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+% ── TIER E ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=goldbg, colframe=goldacc, boxrule=0.9pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm,
+    title={\bfseries\small Tier E --- Extension: Reverse Conditioning and Missing Values},
+    fonttitle=\small]
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+  \item Compare $P(\text{Swimming} | \text{Daily})$ and $P(\text{Daily} | \text{Swimming})$.
+        Compute both values, then explain in context why they are different and which
+        question each answers.\\
+        $P(\text{Swimming}|\text{Daily}) = $\blank{4cm} \quad $P(\text{Daily}|\text{Swimming}) = $\blank{4cm}\\
+        Explanation: \writeline\writeline\writeline
+
+  \item Suppose a new group of 30 athletes is added: 12 runners who train daily,
+        10 swimmers who train 3--4$\times$/week, and 8 cyclists who train 1--2$\times$/week.
+        Recompute $P(\text{Running} | \text{Daily})$ with the updated table.
+        Does the value increase, decrease, or stay the same? Explain why.\\
+        \writeline\writeline\writeline
+
+  \item Create a conditional probability question that could be answered using this table,
+        where the answer is greater than 0.5. Write the question, compute the answer,
+        and explain why it makes sense in context.\\
+        \writeline\writeline\writeline
+\end{enumerate}
+\end{tcolorbox}
+
+\end{document}

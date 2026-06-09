@@ -1,0 +1,49 @@
+%! AP Statistics — Unit 4, Lesson 4.10 — Exit Ticket KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.10}{Exit Ticket --- KEY}
+\namedateperiod
+
+\vspace{0.14in}
+
+\begin{scenariobox}[Context]{sky}
+\small
+A factory produces light bulbs, and historically 8\% of bulbs are defective.
+An inspector randomly selects 15 bulbs from a very large shipment.
+Let $X =$ the number of defective bulbs in the sample.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+
+  \item
+  \vspace{4pt}
+  B: \ans{Binary --- each bulb is either defective (success) or not defective (failure).}
+
+  I: \ans{Independent --- the shipment is very large, so $15 \le 10\%$ of the population; the $10\%$ condition is satisfied.}
+
+  N: \ans{Fixed --- $n = 15$ bulbs are selected in advance.}
+
+  S: \ans{Same --- $p = 0.08$ for every bulb.}
+
+  \item $X \sim B(15,\;0.08)$
+
+  \item
+  \[
+    P(X = 2) = \binom{15}{2}(0.08)^2(0.92)^{13}
+             = 105\,(0.0064)\,(0.3677)
+             \approx \ans{0.2470}
+  \]
+  Calculator check: \texttt{binompdf(15, 0.08, 2)} $\approx \ans{0.2470}$
+
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

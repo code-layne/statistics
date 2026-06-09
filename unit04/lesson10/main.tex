@@ -1,0 +1,236 @@
+%! AP Statistics — Unit 4, Lesson 4.10 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+\newcommand{\UnitNumberName}{Unit 4: Probability, Random Variables, and Probability Distributions \quad}
+\newcommand{\LessonNumberName}{Lesson 4.10: Introduction to the Binomial Distribution}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will determine whether a random variable follows
+    a binomial distribution by checking the BINS conditions, then compute a single
+    binomial probability $P(X = k)$ using the formula and calculator (Big Idea: UNC-3).
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 3.A --- Determining Distributions}
+    \begin{itemize}
+        \item Check the four BINS conditions in context: Binary, Independent, fixed
+              $N$ trials, Same probability $p$ (UNC-3.A).
+        \item If all four conditions are met, state $X \sim B(n, p)$.
+        \item Set up and compute a single probability $P(X = k)$ using the binomial
+              formula and \texttt{binompdf(n, p, k)}.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item Each BINS condition must be explicitly verified from the problem context.
+        \item The $10\%$ condition allows independence to be assumed when sampling
+              without replacement from a large population.
+        \item $P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$; the combination
+              $\binom{n}{k}$ counts the number of ways to arrange $k$ successes
+              among $n$ trials.
+        \item ``Binomial'' refers to the two outcomes: success and failure.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Binomial setting} --- four conditions (BINS) are satisfied
+        \item \textbf{Binomial random variable} --- counts successes in $n$ trials
+        \item \textbf{BINS conditions} --- Binary, Independent, fixed $N$, Same $p$
+        \item \textbf{$10\%$ condition} --- $n \le 0.10 \cdot N$ allows approximate
+              independence
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Binomial coefficient} $\binom{n}{k} = \dfrac{n!}{k!(n-k)!}$
+        \item \textbf{Binomial probability formula} ---
+              $P(X=k) = \binom{n}{k} p^k (1-p)^{n-k}$
+        \item \textbf{binompdf(n, p, k)} --- calculator command for $P(X = k)$
+        \item \textbf{Success / Failure} --- the two outcomes in a binary trial
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Quick review: What is a discrete random variable? (Lesson 4.5)
+        \item Connect: We described probability distributions with tables; now we
+              will use a formula to generate the whole distribution.
+        \item Prompt: \textit{``A basketball player makes 70\% of free throws.
+              If she shoots 5 in a row, list two things you'd need to assume to
+              model this situation simply.''}
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Connections Forward}
+    \begin{itemize}
+        \item Binomial mean and SD formulas $\to$ Lesson 4.11
+        \item Cumulative binomial probabilities $\to$ Lesson 4.11
+        \item Geometric distribution (trials until first success) $\to$ Lesson 4.12
+        \item Normal approximation to binomial $\to$ Unit 5
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Hook]{sky}
+    \textbf{Hook (4--5 min)}\\
+    Display: \textit{``A multiple-choice quiz has 10 questions, each with 4 options.
+    A student guesses randomly on every question. What is the probability of getting
+    exactly 6 correct?''} \\[4pt]
+    Let students estimate. Then reveal that this probability is about 1.6\% ---
+    surprisingly low given that the expected number correct is 2.5 out of 10.
+    Ask: \textit{``What information did you need to set up this problem?''} Draw out:
+    the number of trials, probability of success on each trial, and what counts as
+    a ``success.'' Transition: today we formalize this into the binomial distribution.
+\end{skillbox}
+
+\begin{skillbox}[Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Part 1 --- BINS Conditions (8--10 min)}
+    \begin{enumerate}
+        \item Introduce the acronym BINS. For each letter, give the
+              precise condition and a student-friendly checkpoint.
+        \item Work a ``yes'' example and a ``no'' example side by side.
+        \item Key point: sampling without replacement violates independence ---
+              but the $10\%$ condition allows us to proceed when $n \le 0.10N$.
+        \item Have students check BINS for the quiz context.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Part 2 --- Binomial Formula (8--10 min)}
+    \begin{enumerate}
+        \item Write $P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$.
+              Unpack each factor: the combination counts arrangements; $p^k$
+              is the probability of $k$ successes in a row; $(1-p)^{n-k}$
+              is the probability of $n-k$ failures.
+        \item Model: solve the quiz problem step by step ($n=10$, $p=0.25$, $k=6$).
+        \item Connect to calculator: \texttt{binompdf(10, 0.25, 6)}.
+        \item Emphasize: on the AP exam, show the formula setup even if you
+              use the calculator.
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Circulate \& Check For\ldots}
+    \begin{itemize}
+        \item Students who skip the BINS check and jump to the formula ---
+              require written justification of each condition.
+        \item Errors in evaluating $\binom{n}{k}$ (common: dividing $n!$ by $k!$
+              without also dividing by $(n-k)!$).
+        \item Confusing $p$ with $1-p$ (e.g., computing $P(\text{fail})^k$ instead
+              of $P(\text{success})^k$).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Cold-Call Prompts}
+    \begin{itemize}
+        \item ``Walk me through why the I condition is satisfied here.''
+        \item ``What does the $\binom{n}{k}$ term count in this problem?''
+        \item ``What would change in your formula if I asked for exactly 3
+              successes instead of exactly 6?''
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Three-Tier Activity (10--12 min)}
+    \begin{itemize}
+        \item \textbf{Tier R}: Given two scenarios, students identify which is/is not
+              a binomial setting and state which condition fails.
+        \item \textbf{Tier A}: Two scenarios that satisfy BINS; students compute
+              $P(X = k)$ using the formula and verify with \texttt{binompdf}.
+        \item \textbf{Tier E}: A context where the $10\%$ condition is the only way
+              independence can be justified; students argue in writing.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support}: Provide a BINS checklist card with a sentence starter
+              for each condition (``The outcomes are binary because\ldots'').
+        \item \textit{Extension}: Challenge students to build the full probability
+              distribution table for $n = 5$, $p = 0.3$ and verify that all
+              probabilities sum to 1.
+        \item \textit{ELL}: Post the BINS acronym with a visual for each letter.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    Scenario: \textit{``A factory produces light bulbs that are defective 8\% of the
+    time. An inspector randomly selects 15 bulbs.''} Students (1) verify BINS, (2)
+    define $X$, state its distribution, and (3) compute $P(X = 2)$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{``Which scenario does NOT satisfy all conditions for a binomial
+    distribution?''}
+    \begin{enumerate}[label=(\Alph*)]
+        \item Flipping a fair coin 20 times; $X =$ number of heads.
+        \item Drawing 5 cards from a deck without replacement; $X =$ number of aces.
+        \item Rolling a die 12 times; $X =$ number of 3s.
+        \item Asking 50 randomly selected voters if they approve of a law; sample
+              is less than 10\% of registered voters.
+    \end{enumerate}
+    Answer: (B) --- sampling without replacement and $n \ge 10\%$ of the deck.
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item Four scenarios: students check BINS and, where satisfied, compute
+              a specified $P(X = k)$ showing formula setup.
+        \item One problem asks students to compute $\binom{6}{2}$ by hand and
+              explain what the number represents.
+        \item AP-style free-response: a basketball shooting scenario with full
+              BINS justification.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: Build the complete distribution table for
+              $X \sim B(5, 0.4)$ and sketch its probability histogram.
+        \item \textit{Preview}: Lesson 4.11 introduces the binomial mean
+              $\mu_X = np$ and standard deviation $\sigma_X = \sqrt{np(1-p)}$
+              --- start thinking about what the ``average number of successes''
+              would be in today's quiz scenario.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\end{document}

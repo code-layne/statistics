@@ -1,0 +1,115 @@
+%! AP Statistics — Unit 4, Lesson 4.6 — Group Activity
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.6}{Group Activity: Independence, Unions, and the ME Distinction}
+\namepartnerperiod
+
+\vspace{0.1in}
+
+\begin{scenariobox}[Context]{sky}
+\small
+A school surveyed 250 students about their participation in an after-school program
+(STEM Club, Drama Club, Neither) and their satisfaction with school (Satisfied, Neutral, Dissatisfied).
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} l X X X r @{}}
+ & \textbf{Satisfied} & \textbf{Neutral} & \textbf{Dissatisfied} & \textbf{Total} \\
+\hline
+\textbf{STEM Club}  & 50 & 20 & 10 & 80  \\
+\textbf{Drama Club} & 40 & 20 & 10 & 70  \\
+\textbf{Neither}    & 40 & 30 & 30 & 100 \\
+\hline
+\textbf{Total}      & 130 & 70 & 50 & 250 \\
+\end{tabularx}
+
+\vspace{4pt}
+One student is selected at random.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+% ── TIER R ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=0.9pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm,
+    title={\bfseries\small Tier R --- Remediate: Reading the Independence Check},
+    fonttitle=\small]
+\small
+For each pair, compute $P(A)$ and $P(A|B)$. Circle \textbf{Independent} or \textbf{Dependent}.
+
+\vspace{6pt}
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+  \item $A = \{\text{Satisfied}\}$, $B = \{\text{STEM Club}\}$
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $P(\text{Satisfied}) = $ \blank{4cm} (use the Total row)
+          \item $P(\text{Satisfied} | \text{STEM Club}) = $ \blank{4cm}
+          \item Are (a) and (b) equal? \blank{2cm} \quad Circle: \textbf{Independent} / \textbf{Dependent}
+        \end{enumerate}
+
+  \item $A = \{\text{Satisfied}\}$, $B = \{\text{Neither}\}$
+        \begin{enumerate}[label=(\alph*), itemsep=4pt]
+          \item $P(\text{Satisfied}) = $ \blank{4cm}
+          \item $P(\text{Satisfied} | \text{Neither}) = $ \blank{4cm}
+          \item Circle: \textbf{Independent} / \textbf{Dependent}
+        \end{enumerate}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+% ── TIER A ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm,
+    title={\bfseries\small Tier A --- Approaching Proficiency: Compute and Interpret},
+    fonttitle=\small]
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+  \item Test whether ``Satisfied'' and ``Drama Club'' are independent. Show all work
+        and write a complete sentence conclusion.\\
+        $P(\text{Satisfied}) = $ \blank{3cm} \quad $P(\text{Satisfied}|\text{Drama}) = $ \blank{3cm}\\
+        Conclusion: \writeline\writeline
+
+  \item Use the addition rule to find $P(\text{STEM Club or Satisfied})$.\\
+        $P(\text{STEM}) = $ \blank{2cm}, $P(\text{Satisfied}) = $ \blank{2cm},
+        $P(\text{STEM} \cap \text{Satisfied}) = $ \blank{2cm}\\
+        $P(\text{STEM} \cup \text{Satisfied}) = $ \blank{2cm} $+$ \blank{2cm} $-$ \blank{2cm} $=$ \blank{2cm}
+
+  \item Are ``STEM Club'' and ``Drama Club'' mutually exclusive? Are they independent?
+        Explain both answers.\\
+        \writeline\writeline\writeline
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+% ── TIER E ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=goldbg, colframe=goldacc, boxrule=0.9pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm,
+    title={\bfseries\small Tier E --- Extension: Proving the ME/Independence Distinction},
+    fonttitle=\small]
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+  \item \textbf{Algebraic proof:} Suppose events $A$ and $B$ are mutually exclusive
+        with $P(A) > 0$ and $P(B) > 0$. Prove algebraically that $A$ and $B$ cannot
+        be independent. (\textit{Hint: If they were independent, what would $P(A \cap B)$
+        equal? What does ME say about $P(A \cap B)$? What contradiction arises?})\\
+        \writeline\writeline\writeline\writeline
+
+  \item \textbf{Evaluate this claim:} A student says: ``If $P(A|B) \neq P(A)$, the events
+        must be mutually exclusive.'' Use an example from this table to show the claim
+        is false.\\
+        \writeline\writeline\writeline
+
+  \item \textbf{Create your own:} Can you identify a pair of events in this table
+        that \emph{are approximately independent}? Compute $P(A)$ and $P(A|B)$ and
+        check. If no pair is perfectly independent, explain what ``approximately
+        independent'' would mean.\\
+        \writeline\writeline\writeline
+\end{enumerate}
+\end{tcolorbox}
+
+\end{document}

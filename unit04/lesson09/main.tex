@@ -1,0 +1,259 @@
+%! AP Statistics — Unit 4, Lesson 4.9 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\UnitNumberName}{Unit 4: Probability, Random Variables, and Probability Distributions \quad}
+\newcommand{\LessonNumberName}{Lesson 4.9: Combining Random Variables}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will determine the mean and variance of sums,
+    differences, and linear transformations of independent random variables, and explain
+    why variances add for independent variables while standard deviations do \emph{not}
+    (Big Idea: VAR-5).
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 3 --- Using Probability and Simulation}
+    \begin{itemize}
+        \item Determine parameters for sums and differences of independent RVs
+              (Skill 3.B; VAR-5.E): $\mu_{X \pm Y} = \mu_X \pm \mu_Y$;
+              $\sigma^2_{X \pm Y} = \sigma^2_X + \sigma^2_Y$.
+        \item Determine parameters for linear transformations $W = a + bX$
+              (Skill 3.B): $\mu_W = a + b\mu_X$; $\sigma_W = |b|\sigma_X$.
+        \item Describe the distribution of a linear combination of independent normal RVs
+              (Skill 3.C; VAR-5.F).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item Means always add (or subtract): $\mu_{X+Y} = \mu_X + \mu_Y$.
+        \item Variances always \emph{add} for independent RVs --- even for differences:
+              $\sigma^2_{X-Y} = \sigma^2_X + \sigma^2_Y$.
+        \item Standard deviations do \textbf{NOT} add: $\sigma_{X+Y} \ne \sigma_X + \sigma_Y$.
+        \item A linear transformation scales the SD by $|b|$ but does not affect shape
+              or independence.
+        \item If $X$ and $Y$ are both normally distributed and independent, then
+              $aX + bY$ is also normally distributed.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Linear transformation} ($W = a + bX$) --- shifts the distribution by
+              $a$; scales spread by $|b|$
+        \item \textbf{Sum of random variables} ($T = X + Y$) --- $\mu_T = \mu_X + \mu_Y$;
+              $\sigma^2_T = \sigma^2_X + \sigma^2_Y$ (if independent)
+        \item \textbf{Difference of random variables} ($D = X - Y$) ---
+              $\mu_D = \mu_X - \mu_Y$; $\sigma^2_D = \sigma^2_X + \sigma^2_Y$ (if independent)
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Independent random variables} --- the value of one gives no information
+              about the other; a necessary condition for the variance addition rules
+        \item \textbf{Variance addition rule} --- for \emph{independent} $X, Y$:
+              $\sigma^2_{X \pm Y} = \sigma^2_X + \sigma^2_Y$
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+    \begin{minipage}[t]{0.58\linewidth}\vspace{0pt}
+        \textbf{Prior Knowledge Check (3--4 min)}
+        \begin{itemize}
+            \item Review: $\mu_X$, $\sigma^2_X$, $\sigma_X$ from Lesson 4.8.
+            \item Prompt: \textit{``If one random variable has mean 4 and another has mean 7,
+                  what do you expect the mean of their sum to be?''}
+            \item Preview the key surprise: \textit{``What about the standard deviation of
+                  the sum --- is it $\sigma_X + \sigma_Y$?'' (It is \textbf{not}.)}
+        \end{itemize}
+        \textbf{Connections Forward}
+        \begin{itemize}
+            \item Binomial: $\mu = np$, $\sigma^2 = np(1-p)$ (Lesson 4.10)
+            \item Sampling distributions built on these rules (Unit 5)
+        \end{itemize}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
+        % Authored warm-up; see warmup/main.tex for spiral review problems.
+    \end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Hook]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (4--5 min)}\\
+    Two friends each buy one item at a food truck.
+    \begin{itemize}
+        \item Maya's order: $\mu_X = \$6.00$, $\sigma_X = \$1.50$
+        \item Jordan's order: $\mu_Y = \$4.00$, $\sigma_Y = \$1.00$
+    \end{itemize}
+    Ask: ``What is the expected total bill?'' (\$10.00 --- most students get this.)\\
+    Then ask: ``What is the standard deviation of the total bill?'' (\$2.50?
+    No --- it's $\sqrt{1.5^2 + 1.0^2} = \sqrt{3.25} \approx \$1.80$.)\\[4pt]
+    \textit{``Today we find out why standard deviations can't just be added.''}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15--18 min)}
+    \begin{enumerate}
+        \item Linear transformation $W = a + bX$: derive $\mu_W$ and $\sigma_W$.
+        \item Sum rule: $\mu_{X+Y}$ and $\sigma^2_{X+Y}$ for independent RVs.
+        \item Why $\sigma_{X+Y} \ne \sigma_X + \sigma_Y$: numerical counterexample.
+        \item Difference rule: $\mu_{X-Y}$ and $\sigma^2_{X-Y}$ --- variances still add!
+        \item Key insight: subtracting RVs \emph{increases} spread, not decreases it.
+        \item Normal combination: if $X \sim N$, $Y \sim N$, and they are independent,
+              then $aX + bY \sim N$.
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction: The Four Rules]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Rules Summary}
+    \renewcommand{\arraystretch}{1.6}
+    \begin{tabular}{@{}ll@{}}
+    \textbf{Transformation} & \textbf{Result} \\
+    \hline
+    $W = a + bX$ & $\mu_W = a + b\mu_X$ \\
+                 & $\sigma_W = |b|\sigma_X$ \\[4pt]
+    $T = X + Y$  & $\mu_T = \mu_X + \mu_Y$ \\
+    (indep.)     & $\sigma^2_T = \sigma^2_X + \sigma^2_Y$ \\[4pt]
+    $D = X - Y$  & $\mu_D = \mu_X - \mu_Y$ \\
+    (indep.)     & $\sigma^2_D = \sigma^2_X + \sigma^2_Y$ \\
+    \end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Worked Example: Food-Truck Bill}\\
+    $\mu_X = 6$, $\sigma^2_X = 2.25$; $\mu_Y = 4$, $\sigma^2_Y = 1.00$.\\[4pt]
+    $T = X + Y$:
+    \begin{itemize}
+        \item $\mu_T = 6 + 4 = \$10.00$
+        \item $\sigma^2_T = 2.25 + 1.00 = 3.25$
+        \item $\sigma_T = \sqrt{3.25} \approx \$1.80$
+    \end{itemize}
+    $D = X - Y$:
+    \begin{itemize}
+        \item $\mu_D = 6 - 4 = \$2.00$
+        \item $\sigma^2_D = 2.25 + 1.00 = 3.25$
+        \item $\sigma_D = \sqrt{3.25} \approx \$1.80$
+    \end{itemize}
+    Note: $\sigma_T = \sigma_D$ because variances always add!
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Circulate and Check}
+    \begin{itemize}
+        \item Most common error: adding standard deviations instead of variances.
+              Have a student demonstrate why $\sqrt{a^2+b^2} \ne a+b$ numerically.
+        \item For difference: check students are adding variances (not subtracting).
+        \item Cold-call: ``Why does $\sigma^2_{X-Y} = \sigma^2_X + \sigma^2_Y$?''
+        \item Cold-call: ``If I multiply $X$ by 3, what happens to $\sigma_X$?''
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Common Errors}
+    \begin{itemize}
+        \item $\sigma_{X+Y} = \sigma_X + \sigma_Y$ (the most common AP exam error).
+        \item $\sigma^2_{X-Y} = \sigma^2_X - \sigma^2_Y$ (subtracting variances).
+        \item Forgetting to take $|b|$ in the transformation rule (sign doesn't matter
+              for SD).
+        \item Applying variance addition rules to dependent random variables.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Activity Summary (10 min)}\\
+    Three-tier differentiated activity (see \texttt{activity/}):
+    \begin{itemize}
+        \item \textbf{Tier R:} Linear transformation only; find $\mu_W$ and $\sigma_W$.
+        \item \textbf{Tier A:} Sum and difference of two independent RVs; compute means
+              and SDs; interpret in context.
+        \item \textbf{Tier E:} Multi-step problem combining transformation and sum;
+              normal distribution application.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation Notes}
+    \begin{itemize}
+        \item \textit{Support}: Anchor chart with the four rules; require students to
+              write out variances before taking square roots.
+        \item \textit{ELL}: ``Variances add. Standard deviations do NOT.''
+        \item \textit{Extension}: Apply normal combination to find a probability for a
+              sum or difference of two independent normal RVs.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    $X$: $\mu_X = 50$, $\sigma_X = 8$; $Y$: $\mu_Y = 30$, $\sigma_Y = 5$ (independent).
+    \begin{enumerate}
+        \item Find $\mu_{X+Y}$ and $\sigma_{X+Y}$.
+        \item Find $\mu_{X-Y}$ and $\sigma_{X-Y}$.
+        \item Find $\mu_W$ and $\sigma_W$ for $W = 10 + 2X$.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{$X$ and $Y$ are independent. $\sigma_X = 3$, $\sigma_Y = 4$.
+    What is $\sigma_{X+Y}$?}
+    \begin{enumerate}[label=(\Alph*)]
+        \item 7
+        \item 5
+        \item 3.5
+        \item $\sqrt{7}$
+    \end{enumerate}
+    Answer: (B) $\sqrt{3^2 + 4^2} = \sqrt{25} = 5$.
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item Five problems: linear transformations, sums, differences, and a
+              normal combination; all require contextual interpretation.
+        \item Key emphasis: verify students add variances --- not SDs --- for
+              sums/differences.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: Find $P(X + Y > k)$ for two independent normal
+              RVs using the combination rules.
+        \item \textit{Preview}: Lesson 4.10 --- the \textbf{binomial distribution} is
+              a sum of $n$ independent Bernoulli trials; its mean $np$ and variance
+              $np(1-p)$ follow from today's rules.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\end{document}

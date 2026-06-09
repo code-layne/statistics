@@ -1,0 +1,83 @@
+%! AP Statistics — Unit 4, Lesson 4.9 — Student Packet Cover Sheet
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{ltablex}
+\keepXColumns
+
+\begin{document}
+
+% Full-bleed navy banner
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[navy] (current page.north west)
+    rectangle ([yshift=-0.9in]current page.north east);
+\end{tikzpicture}
+\vspace{-0.8in}
+
+\begin{center}
+  {\color{white}\textbf{\LARGE AP Statistics}}\\[4pt]
+  {\color{skymid}\large\textbf{Unit 4: Probability, Random Variables, and Probability Distributions}}\\[6pt]
+  {\color{white}\textbf{\large Lesson 4.9 \quad Combining Random Variables}}
+\end{center}
+
+\vspace{0.22in}
+\namedateperiod
+\vspace{0.18in}
+
+\begin{learningtargetbox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
+  \item \ldots{} find the mean and standard deviation of a linear transformation
+        $W = a + bX$ using $\mu_W = a + b\mu_X$ and $\sigma_W = |b|\sigma_X$.
+  \item \ldots{} find the mean and variance of the sum or difference of two independent
+        random variables using $\mu_{X \pm Y} = \mu_X \pm \mu_Y$ and
+        $\sigma^2_{X \pm Y} = \sigma^2_X + \sigma^2_Y$.
+  \item \ldots{} explain why variances add for independent random variables but
+        standard deviations do not.
+\end{enumerate}
+\end{learningtargetbox}
+
+\vspace{0.14in}
+
+\begin{tocbox}
+\small
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{} c l X r @{}}
+\rowcolor{sky}
+\textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
+\midrule
+1 & Warm-Up        & Spiral review: $\mu_X$ and $\sigma_X$ from Lesson 4.8 & \blank{1.2cm} \\
+2 & Guided Notes   & Transformation, sum, and difference rules              & \blank{1.2cm} \\
+3 & Group Activity & Applying combining rules in context (3 tiers)          & \blank{1.2cm} \\
+4 & Exit Ticket    & Sum and difference: food-truck context                 & \blank{1.2cm} \\
+5 & Homework       & Linear transformations; sums and differences           & \blank{1.2cm} \\
+\midrule
+  & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
+\end{tabularx}
+\end{tocbox}
+
+\vspace{0.14in}
+
+\begin{remindbox}
+\small
+The \textbf{most important idea in Lesson 4.9}: variances add; standard deviations do not.
+
+\vspace{6pt}
+\begin{tabularx}{\linewidth}{@{} >{\centering\arraybackslash\columncolor{goldbg}}p{0.06\linewidth}
+                                    X @{}}
+\textbf{\large!} &
+\textbf{Always add variances first.}\enspace
+To find the SD of a sum or difference, compute $\sigma^2_{X+Y} = \sigma^2_X + \sigma^2_Y$
+first, then take the square root. Never add standard deviations directly. \\[6pt]
+\textbf{\large!} &
+\textbf{Subtraction increases spread.}\enspace
+$\sigma^2_{X-Y} = \sigma^2_X + \sigma^2_Y$ --- the variance of a difference is
+\emph{larger} than either component's variance, not smaller. \\[6pt]
+\textbf{\large!} &
+\textbf{Independence is required.}\enspace
+The variance addition rule only applies to independent random variables. Always
+check for independence before using these formulas. \\
+\end{tabularx}
+\end{remindbox}
+
+\end{document}

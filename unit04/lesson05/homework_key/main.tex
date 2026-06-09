@@ -1,0 +1,64 @@
+%! AP Statistics — Unit 4, Lesson 4.5 — Homework KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.5}{Homework --- KEY}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+Study environment $\times$ GPA table (240 students):
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} l X X X r @{}}
+ & \textbf{Quiet Room} & \textbf{Music On} & \textbf{Group Study} & \textbf{Total} \\
+\hline
+\textbf{GPA 3.5--4.0} & 40 & 20 & 20 & 80 \\
+\textbf{GPA 3.0--3.4} & 30 & 30 & 30 & 90 \\
+\textbf{GPA below 3.0} & 20 & 30 & 20 & 70 \\
+\hline
+\textbf{Total}         & 90 & 80 & 70 & 240 \\
+\end{tabularx}
+
+\vspace{8pt}
+\textbf{1.}
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=4pt]
+  \item \ans{$P(A|B) = P(A \cap B)/P(B)$}
+  \item \ans{$40/240 = 1/6$}
+  \item \ans{$90/240 = 3/8$}
+  \item \ans{$(40/240)/(90/240) = 40/90 \approx 0.444$}
+  \item \ans{Among students who prefer studying in a quiet room, approximately 44.4\% have a GPA of 3.5--4.0.}
+\end{enumerate}
+
+\vspace{6pt}
+\textbf{2.} \ans{$30 \div 70 \approx 0.429$}
+
+\vspace{6pt}
+\textbf{3.}
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=4pt]
+  \item \ans{$70/240 \approx 0.292$}
+  \item \ans{$30/70 \approx 0.429$}
+  \item \ans{$(70/240)(30/70) = 30/240 = 0.125$. Table: $30/240 = 0.125$. Yes, they match.}
+\end{enumerate}
+
+\vspace{6pt}
+\textbf{4.}
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=4pt]
+  \item \ans{$P(\text{Quiet Room}|\text{GPA 3.5--4.0}) = 40/80 = 0.5$; $P(\text{GPA 3.5--4.0}|\text{Quiet Room}) = 40/90 \approx 0.444$.}
+  \item \ans{The claim is incorrect. The two expressions ask different questions and use different denominators. The first restricts to students with high GPAs; the second restricts to quiet-room studiers. The order of conditioning always matters.}
+\end{enumerate}
+
+\vspace{6pt}
+\textbf{5.} \ans{$P(\text{GPA 3.5--4.0}|\text{Music On}) = 20/80 = 0.25$.} \ans{Among students who prefer studying with music on, 25\% have a GPA between 3.5 and 4.0.}
+
+\vspace{6pt}
+\textbf{6.} \ans{$P(\text{Quiet Room}|\text{GPA 3.5--4.0}) = 40/80 = 0.5$; $P(\text{Quiet Room}) = 90/240 = 0.375$. The conditional probability is greater than the marginal probability, suggesting that students with high GPAs are more likely to prefer quiet study environments than the overall student population. If these two values were equal, the events would be independent --- they are not, so studying quietly appears to be associated with higher GPA. (This is the independence check we will formalize in Lesson 4.6.)}
+\end{practicebox}
+
+\end{document}

@@ -1,0 +1,143 @@
+%! AP Statistics — Unit 4, Lesson 4.3 — Student Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.3}{Guided Notes}
+\namedateperiod
+
+\vspace{0.12in}
+
+\begin{objectivebox}
+\small By the end of this lesson, I will be able to\dots\\[4pt]
+\writeline\\[1pt]
+\writeline\\[1pt]
+\writeline
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\termblanklong{Sample space ($S$)}
+\termblanklong{Event}
+\termblanklong{Equally likely outcomes}
+\termblanklong{Classical probability}
+\termblanklong{Complement ($E^c$)}
+\termblanklong{Complement rule}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+\small A bag holds 3 red and 5 blue poker chips.
+\begin{itemize}[itemsep=3pt]
+  \item List the sample space for one draw: $S = \{\ \blank{5cm}\ \}$
+  \item How many total outcomes? \blank{2cm}
+  \item How many outcomes are ``red''? \blank{2cm}
+  \item Probability of drawing red: $P(\text{red}) = \blank{3cm} = \blank{2cm}$
+\end{itemize}
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{The Classical Definition of Probability}
+\small
+\textbf{VAR-4.A.1 --- Sample Space:} The sample space is the set of all possible
+\blank{4cm} outcomes (no outcome counted \blank{3cm}).
+
+\vspace{8pt}
+\textbf{VAR-4.A.2 --- Classical Probability Formula} (equally likely outcomes):
+\[
+  P(E) = \frac{\blank{5cm}}{\blank{5cm}}
+\]
+
+\vspace{6pt}
+\textbf{VAR-4.A.3 --- Probability Range:} For any event $E$:
+$\blank{2cm} \le P(E) \le \blank{2cm}$
+
+\vspace{10pt}
+\textbf{Worked Example:} Roll one fair die. $S = \{1, 2, 3, 4, 5, 6\}$
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{@{} l X @{}}
+Event & Probability (show work) \\
+\hline
+$E_1$: roll a 5 & $P(E_1) = \blank{3cm}$ \\
+$E_2$: roll an even number & $P(E_2) = \blank{3cm}$ \\
+$E_3$: roll a number greater than 4 & $P(E_3) = \blank{3cm}$ \\
+\end{tabularx}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{The Complement Rule}
+\small
+\textbf{VAR-4.A.4 --- Complement:}\\
+The complement of $E$ (written $E^c$ or $E'$) is the event that $E$ \blank{3cm}.\\[6pt]
+\textbf{Complement Rule:} $P(E^c) = \blank{4cm}$\\[6pt]
+\textit{Why it works:} $P(E) + P(E^c) = \blank{2cm}$ because $E$ and $E^c$ together
+include \blank{5cm} in $S$.
+
+\vspace{10pt}
+\textbf{Worked Example:} Roll one fair die.
+\begin{itemize}[itemsep=4pt]
+  \item $P(\text{roll a 5}) = 1/6$, so $P(\text{NOT a 5}) = \blank{3cm}$
+  \item $P(\text{even}) = 1/2$, so $P(\text{odd}) = \blank{3cm}$
+  \item $P(\text{roll} > 4) = 1/3$, so $P(\text{roll} \le 4) = \blank{3cm}$
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Interpreting Probability --- Long Run}
+\small
+\textbf{VAR-4.B.1:} Probabilities of events in \blank{4cm} situations can be
+interpreted as the relative frequency with which the event will occur \blank{4cm}.
+
+\vspace{8pt}
+\textbf{How to write a long-run interpretation:}\\
+``If this random process is repeated many times, the event \blank{4cm} will occur in
+approximately \blank{3cm} of the repetitions.''
+
+\vspace{10pt}
+\textbf{Practice:} Write a long-run interpretation for each:
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+  \item $P(\text{rolling a 5}) = 1/6$:\\
+        \writeline
+  \item A weather forecast says $P(\text{rain tomorrow}) = 0.40$:\\
+        \writeline
+\end{enumerate}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small Two dice are rolled. The $6 \times 6$ outcome table is provided.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{@{} c | *{6}{>{\centering\arraybackslash}X} @{}}
+\textbf{Die 1 $\setminus$ Die 2} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} \\
+\hline
+\textbf{1} & (1,1) & (1,2) & (1,3) & (1,4) & (1,5) & (1,6) \\
+\textbf{2} & (2,1) & (2,2) & (2,3) & (2,4) & (2,5) & (2,6) \\
+\textbf{3} & (3,1) & (3,2) & (3,3) & (3,4) & (3,5) & (3,6) \\
+\textbf{4} & (4,1) & (4,2) & (4,3) & (4,4) & (4,5) & (4,6) \\
+\textbf{5} & (5,1) & (5,2) & (5,3) & (5,4) & (5,5) & (5,6) \\
+\textbf{6} & (6,1) & (6,2) & (6,3) & (6,4) & (6,5) & (6,6) \\
+\end{tabularx}
+
+\vspace{6pt}
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item Total outcomes: \blank{2cm}
+  \item $P(\text{sum} = 7)$: circle the outcomes, then calculate. $= \blank{3cm}$
+  \item $P(\text{sum} \geq 10) = \blank{3cm}$
+  \item $P(\text{NOT sum} \geq 10)$ using complement: $= \blank{3cm}$
+  \item Interpret $P(\text{sum} = 7) = 1/6$ in one sentence:
+        \writeline
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

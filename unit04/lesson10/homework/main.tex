@@ -1,0 +1,93 @@
+%! AP Statistics — Unit 4, Lesson 4.10 — Homework
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.10}{Homework}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+\textbf{Directions:} For each scenario, (a) check BINS and state whether the situation
+is a binomial setting, and (b) if yes, compute the requested probability showing the
+formula setup.
+
+\vspace{10pt}
+\textbf{1.} A basketball player makes 72\% of her free throws. She shoots 10 free
+throws in a game. Let $X =$ the number she makes.
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
+  \item Check BINS and state the distribution (or explain which condition fails).\\
+        \writeline\\[1pt]\writeline\\[1pt]\writeline
+  \item Find $P(X = 8)$. Show the formula and the numerical answer.\\
+        \writeline\\[1pt]\writeline
+\end{enumerate}
+
+\vspace{8pt}
+\textbf{2.} A survey asks 200 randomly selected adults (from a city of 500{,}000)
+whether they support a new recycling program. Historically 60\% support such
+programs. Let $X =$ the number who support the program.
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
+  \item Check BINS. Is the $10\%$ condition relevant here? Explain.\\
+        \writeline\\[1pt]\writeline
+  \item Find $P(X = 120)$ using \texttt{binompdf}. (No hand calculation required ---
+        just set up the calculator notation and record the result.)\\
+        \writeline
+\end{enumerate}
+
+\vspace{8pt}
+\textbf{3.} A class has 30 students. The teacher randomly calls on 6 students without
+replacement. 10 of the 30 students did not complete the homework.
+Let $X =$ the number called on who did not complete the homework.
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
+  \item Is this a binomial setting? Which condition(s), if any, are violated?\\
+        \writeline\\[1pt]\writeline
+  \item Check the $10\%$ condition: is $n \le 0.10 \times N$? Show the calculation.\\
+        \writeline
+\end{enumerate}
+
+\vspace{8pt}
+\textbf{4.} Evaluate $\binom{6}{2}$ by hand. Then explain in one sentence what this
+number represents in the context of a binomial experiment with $n = 6$ trials where
+you are interested in exactly 2 successes.
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
+  \item $\binom{6}{2} = $ \blank{3cm}
+  \item Interpretation: \writeline\\[1pt]\writeline
+\end{enumerate}
+
+\vspace{8pt}
+\textbf{5.} (AP-Style Free Response) \textit{A door-to-door salesperson visits
+8 houses. Based on past experience, the probability of making a sale at any given
+house is 0.15. Assume houses are independent.}
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
+  \item Define the random variable $X$ and state its distribution. Check BINS
+        briefly.\\
+        \writeline\\[1pt]\writeline
+  \item Calculate $P(X = 1)$. Show formula setup.\\
+        \writeline\\[1pt]\writeline
+  \item Calculate $P(X = 0)$. Interpret in context.\\
+        \writeline\\[1pt]\writeline
+\end{enumerate}
+
+\vspace{8pt}
+\textbf{6. Extension:} Build the complete probability distribution table for
+$X \sim B(5, 0.4)$ by computing $P(X = k)$ for $k = 0, 1, 2, 3, 4, 5$.
+Verify that the probabilities sum to 1.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{1.2cm} X X X X X X @{}}
+$k$ & 0 & 1 & 2 & 3 & 4 & 5 \\
+\hline
+$P(X=k)$ & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+\end{tabularx}
+
+\vspace{6pt}
+Sum $= $ \blank{2cm} (should equal 1)
+
+\end{practicebox}
+
+\end{document}

@@ -1,0 +1,149 @@
+%! AP Statistics — Unit 4, Lesson 4.10 — Group Activity
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.10}{Group Activity: Is It Binomial?}
+\namepartnerperiod
+
+\vspace{0.1in}
+
+\begin{scenariobox}[Directions]{sky}
+\small
+Work through the three tiers below. All group members should complete Tier A.
+Tier R provides extra support; Tier E is a challenge extension.
+Show all formula setup --- do not just write a calculator answer.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+% ── TIER R ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=goldbg, colframe=goldacc, boxrule=1pt, arc=2mm,
+    title={\bfseries Tier R \quad Remediate: Identifying Binomial Settings},
+    fonttitle=\small]
+\small
+For each scenario, check each BINS condition. Write a brief reason.
+Circle \textbf{Binomial} or \textbf{Not Binomial}.
+
+\vspace{8pt}
+\textbf{Scenario 1:} You flip a fair coin until you get 3 heads.
+Let $X =$ the number of flips needed.
+
+\vspace{4pt}
+\begin{tabularx}{\linewidth}{@{} p{0.08\linewidth} X p{2.8cm} @{}}
+B: & \blank{7cm} & Met \;/\; Not Met \\[6pt]
+I: & \blank{7cm} & Met \;/\; Not Met \\[6pt]
+N: & \blank{7cm} & Met \;/\; Not Met \\[6pt]
+S: & \blank{7cm} & Met \;/\; Not Met \\[6pt]
+\end{tabularx}
+\vspace{4pt}
+Verdict: \quad \textbf{Binomial} \qquad / \qquad \textbf{Not Binomial}
+
+\vspace{14pt}
+\textbf{Scenario 2:} A bag holds 3 red and 7 blue chips. You draw 5 chips
+\emph{with replacement}. Let $X =$ the number of red chips.
+
+\vspace{4pt}
+\begin{tabularx}{\linewidth}{@{} p{0.08\linewidth} X p{2.8cm} @{}}
+B: & \blank{7cm} & Met \;/\; Not Met \\[6pt]
+I: & \blank{7cm} & Met \;/\; Not Met \\[6pt]
+N: & \blank{7cm} & Met \;/\; Not Met \\[6pt]
+S: & \blank{7cm} & Met \;/\; Not Met \\[6pt]
+\end{tabularx}
+\vspace{4pt}
+Verdict: \quad \textbf{Binomial} \qquad / \qquad \textbf{Not Binomial}
+\vspace{4pt}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+% ── TIER A ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=1pt, arc=2mm,
+    title={\bfseries Tier A \quad Approaching Proficiency: Computing Binomial Probabilities},
+    fonttitle=\small]
+\small
+
+\textbf{Scenario 3:} A factory produces smartphones. Historically, 5\% of phones
+are defective. A quality inspector selects 12 phones at random from a large shipment
+(population size is in the thousands).
+
+\vspace{6pt}
+(a) Check BINS. For each condition, write a sentence from this context.
+
+\vspace{4pt}
+\begin{tabularx}{\linewidth}{@{} p{0.08\linewidth} X @{}}
+B: & \writeline \\[4pt]
+I: & \writeline \\[4pt]
+N: & \writeline \\[4pt]
+S: & \writeline \\[4pt]
+\end{tabularx}
+
+\vspace{4pt}
+State the distribution: $X \sim$ \blank{4cm}
+
+\vspace{10pt}
+(b) Find $P(X = 1)$ --- the probability that exactly 1 phone is defective.
+Show the formula setup.
+
+\vspace{4pt}
+\[
+P(X=1) = \binom{\quad}{\quad} (\quad)^1 (\quad)^{11} = \hspace{6cm}
+\]
+
+\vspace{14pt}
+(c) Find $P(X = 0)$ --- no defective phones.
+
+\vspace{4pt}
+\[
+P(X=0) = \hspace{8cm}
+\]
+
+\vspace{6pt}
+Calculator check: \texttt{binompdf(}\blank{1cm}\texttt{,}\;\blank{1cm}\texttt{,}\;\texttt{0)} $= $ \blank{2cm}
+\vspace{4pt}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+% ── TIER E ────────────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=1pt, arc=2mm,
+    title={\bfseries Tier E \quad Extension: The 10\% Condition and a Partial Distribution},
+    fonttitle=\small]
+\small
+
+\textbf{Scenario 4:} A small school has 80 students. A class of 10 is selected
+at random without replacement. Suppose 20\% of all students own a graphing calculator.
+Let $X =$ the number of students in the class who own a graphing calculator.
+
+\vspace{6pt}
+(a) Is the $10\%$ condition satisfied? Show the calculation and interpret.
+
+\vspace{4pt}
+\writeline\\[1pt]\writeline
+
+\vspace{8pt}
+(b) Assuming the $10\%$ condition allows you to proceed, state the approximate
+distribution of $X$ and compute $P(X = 3)$.
+
+\vspace{4pt}
+$X \approx B(\blank{2cm},\;\blank{2cm})$ \hspace{1cm}
+$P(X = 3) = $ \blank{5cm} $\approx$ \blank{2cm}
+
+\vspace{10pt}
+(c) Build the partial distribution table for $X = 0, 1, 2, 3$ and verify the
+probabilities are increasing then decreasing (the typical bell-shape pattern for
+a binomial with $p = 0.2$, $n = 10$).
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{1.2cm} X X X X @{}}
+$k$ & 0 & 1 & 2 & 3 \\
+\hline
+$P(X=k)$ & \blank{2cm} & \blank{2cm} & \blank{2cm} & \blank{2cm} \\
+\end{tabularx}
+\vspace{4pt}
+\end{tcolorbox}
+
+\end{document}

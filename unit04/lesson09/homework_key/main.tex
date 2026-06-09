@@ -1,0 +1,81 @@
+%! AP Statistics — Unit 4, Lesson 4.9 — Homework (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.9}{Homework --- Answer Key}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+
+\textbf{1.} $W = 3 + 5X$; $\mu_X = 20$, $\sigma_X = 4$.
+
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
+  \item $\mu_W = $ \ans{$3 + 5(20) = 103$}
+  \item $\sigma_W = $ \ans{$|5|(4) = 20$}
+  \item \ansline{$\mu_W$ increases by $5 \times 2 = 10$ (to 113).}
+\end{enumerate}
+
+\vspace{0.14in}
+
+\textbf{2.} Pizza and soda.
+
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
+  \item \ans{$\mu_{X+Y} = \$12+\$3 = \$15.00$.} \ansline{On average, a customer spends \$15.00 on a pizza and soda combined.}
+
+  \item \ans{$\sigma^2_{X+Y}=2.00^2+0.75^2=4.00+0.5625=4.5625$; $\sigma_{X+Y}=\sqrt{4.5625}\approx\$2.14$}
+
+  \item \ansline{The friend added standard deviations directly (\$2.00+\$0.75=\$2.75); you must add variances first, then take the square root.}
+\end{enumerate}
+
+\vspace{0.14in}
+
+\textbf{3.} Bowling.
+
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
+  \item \ans{$\mu_{A-B}=140-120=20$; $\sigma^2_{A-B}=18^2+15^2=324+225=549$; $\sigma_{A-B}=\sqrt{549}\approx 23.4$}
+
+  \item \ansline{On average, player A scores about 20 pins more than player B per game.}
+
+  \item \ansline{When subtracting two independent RVs, both contribute uncertainty; variances still add, giving a larger SD than either player's individual SD.}
+\end{enumerate}
+
+\vspace{0.14in}
+
+\textbf{4.} $\mu_X=5$, $\sigma_X=2$, $\mu_Y=3$, $\sigma_Y=4$.
+
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=8pt]
+  \item $\mu_{2X-Y} = $ \ans{$2(5)-3=7$}
+  \item \ans{$\sigma^2_{2X-Y}=(2)^2\sigma^2_X+\sigma^2_Y=4(4)+16=16+16=32$; $\sigma_{2X-Y}=\sqrt{32}=4\sqrt{2}\approx 5.66$}
+\end{enumerate}
+
+\end{practicebox}
+
+\vspace{0.1in}
+
+\begin{extensionbox}
+\small
+\textbf{Extension.}
+\begin{enumerate}[leftmargin=1.5em, itemsep=6pt]
+  \item \ans{$\mu_T=100+80=180$; $\sigma^2_T=15^2+12^2=225+144=369$; $\sigma_T=\sqrt{369}\approx 19.21$. $T \sim N(180,19.21)$.}
+
+  \item \ans{$z=(200-180)/19.21\approx 1.04$; $P(T>200)=P(Z>1.04)\approx 0.1492$.}
+\end{enumerate}
+\end{extensionbox}
+
+\vspace{0.1in}
+
+\begin{blurbbox}[Preview: Lesson 4.10]{sky}
+\small
+In Lesson 4.10 you will meet the \textbf{binomial distribution} --- a special discrete
+distribution for the count of ``successes'' in $n$ independent trials. Its mean $\mu = np$
+and variance $\sigma^2 = np(1-p)$ follow directly from the rules you learned today.
+\end{blurbbox}
+
+\end{document}

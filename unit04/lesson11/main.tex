@@ -1,0 +1,240 @@
+%! AP Statistics — Unit 4, Lesson 4.11 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+\newcommand{\UnitNumberName}{Unit 4: Probability, Random Variables, and Probability Distributions \quad}
+\newcommand{\LessonNumberName}{Lesson 4.11: Parameters for a Binomial Distribution}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will calculate and interpret the mean and
+    standard deviation of a binomial distribution using the formulas $\mu_X = np$
+    and $\sigma_X = \sqrt{np(1-p)}$, and compute cumulative binomial probabilities
+    using \texttt{binomcdf} (Big Idea: UNC-3).
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skills 3.B and 4.B}
+    \begin{itemize}
+        \item Calculate $\mu_X = np$ and $\sigma_X = \sqrt{np(1-p)}$ for
+              $X \sim B(n, p)$ (UNC-3.B, Skill 3.B).
+        \item Interpret $\mu_X$ in context: ``In many repetitions of this
+              binomial experiment, the average number of successes would be
+              $np$.'' (UNC-3.C, Skill 4.B).
+        \item Compute cumulative probabilities $P(X \le k)$ with
+              \texttt{binomcdf(n, p, k)} and $P(X \ge k)$ via complement.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item $\mu_X = np$ and $\sigma_X = \sqrt{np(1-p)}$ are derived from the
+              general formulas for a discrete RV, applied to the binomial.
+        \item \texttt{binomcdf(n, p, k)} $= P(X \le k)$ (adds up from $0$ to $k$).
+        \item $P(X \ge k) = 1 - P(X \le k-1) = 1 - \texttt{binomcdf(n, p, k-1)}$.
+        \item On the AP exam, always show the formula setup for $\mu_X$ and
+              $\sigma_X$ before plugging in numbers.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Mean of a binomial} --- $\mu_X = np$
+        \item \textbf{Standard deviation of a binomial} ---
+              $\sigma_X = \sqrt{np(1-p)}$
+        \item \textbf{Cumulative binomial probability} ---
+              $P(X \le k) = \sum_{j=0}^{k} \binom{n}{j}p^j(1-p)^{n-j}$
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{binomcdf(n, p, k)} --- calculator command for $P(X \le k)$
+        \item \textbf{Complement rule for binomcdf} ---
+              $P(X \ge k) = 1 - \texttt{binomcdf(n, p, k-1)}$
+        \item \textbf{Interpretation of $\mu_X$} --- long-run average number of
+              successes per experiment
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Review: How do we interpret the mean $\mu_X$ of any discrete random
+              variable? (Lesson 4.6)
+        \item Connect: Last lesson we computed $P(X = k)$; today we summarize the
+              whole distribution with just two numbers: $\mu_X$ and $\sigma_X$.
+        \item Prompt: \textit{``If a binomial experiment has $n = 20$ trials and
+              $p = 0.5$, what would you expect the average number of successes
+              to be? How did you get that?''}
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Connections Forward}
+    \begin{itemize}
+        \item Geometric mean $\mu_X = 1/p$ $\to$ Lesson 4.12
+        \item Large-sample normal approximation to binomial $\to$ Unit 5
+        \item Sampling distributions: $\mu_{\hat{p}} = p$,
+              $\sigma_{\hat{p}} = \sqrt{p(1-p)/n}$ mirror these formulas $\to$
+              Unit 5
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Hook]{sky}
+    \textbf{Hook (4--5 min)}\\
+    Display: \textit{``A professional archer hits the target 90\% of the time.
+    She shoots 50 arrows. About how many do you expect her to hit?
+    How spread out would her totals be across many competitions?''}\\[4pt]
+    Most students will guess $45$ (correct!). Ask them how they reasoned that.
+    Draw out the idea of multiplying $n \times p$.
+    Then ask about spread --- introduce the idea that $\sigma_X$ quantifies
+    variability around that average.
+    Transition: \textit{``Today we derive and practice exact formulas for both
+    the center and the spread of a binomial distribution.''}
+\end{skillbox}
+
+\begin{skillbox}[Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Part 1 --- Mean and SD Formulas (8 min)}
+    \begin{enumerate}
+        \item State $\mu_X = np$ and $\sigma_X = \sqrt{np(1-p)}$; briefly show
+              these come from applying the general discrete RV formulas to a
+              binomial (optional derivation).
+        \item Model with the archer: $\mu_X = 50(0.9) = 45$;
+              $\sigma_X = \sqrt{50(0.9)(0.1)} \approx 2.12$.
+        \item Interpret $\mu_X$: \textit{``If she competes in many 50-shot
+              competitions, she will average 45 hits per competition.''}
+        \item Interpret $\sigma_X$: typical deviation from the mean.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Part 2 --- Cumulative Probabilities (8--10 min)}
+    \begin{enumerate}
+        \item Define $P(X \le k)$ and explain why it's impractical to add
+              individual probabilities by hand for large $n$.
+        \item Calculator: \texttt{binomcdf(n, p, k)} gives the cumulative sum.
+        \item Model: $P(X \ge 48) = 1 - \texttt{binomcdf(50, 0.9, 47)}$.
+        \item AP exam note: show each step ---
+              write ``$1 - P(X \le 47)$'' before invoking \texttt{binomcdf}.
+        \item Boundary attention: $P(X > k) = 1 - \texttt{binomcdf(n, p, k)}$
+              vs.\ $P(X \ge k) = 1 - \texttt{binomcdf(n, p, k-1)}$.
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Circulate \& Check For\ldots}
+    \begin{itemize}
+        \item Forgetting the square root when computing $\sigma_X$.
+        \item Off-by-one errors: $P(X \ge k)$ vs.\ $P(X > k)$ --- require
+              students to write the inequality before using \texttt{binomcdf}.
+        \item Interpretation errors: $\mu_X$ describes long-run average,
+              not a guaranteed outcome for any single experiment.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Cold-Call Prompts}
+    \begin{itemize}
+        \item ``Interpret $\mu_X = 45$ in a sentence a non-statistics student
+              could understand.''
+        \item ``Why is $P(X \ge 48)$ not the same as
+              $1 - \texttt{binomcdf(50, 0.9, 48)}$?''
+        \item ``If $p$ were 0.5 instead of 0.9, would $\sigma_X$ be larger
+              or smaller? Why?''
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Three-Tier Activity (10--12 min)}
+    \begin{itemize}
+        \item \textbf{Tier R}: Given $n$ and $p$, compute $\mu_X$ and $\sigma_X$
+              and fill in a complete sentence interpretation of $\mu_X$.
+        \item \textbf{Tier A}: Compute $\mu_X$, $\sigma_X$, and a cumulative
+              probability from a contextual scenario.
+        \item \textbf{Tier E}: Compare two binomial distributions by computing
+              their means and SDs; determine which is more variable and explain why.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support}: Formula strip with $\mu_X = np$ and
+              $\sigma_X = \sqrt{np(1-p)}$; step-by-step model computation.
+        \item \textit{Extension}: Explore how $\sigma_X$ varies as $p$ changes
+              from 0 to 1 for a fixed $n$; find the value of $p$ that maximizes
+              $\sigma_X$.
+        \item \textit{ELL}: Sentence frames for interpretation prompts.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    Scenario: \textit{``A manufacturer claims 3\% of its products are defective.
+    A store orders 200 items.''} Students compute $\mu_X$, $\sigma_X$,
+    $P(X \le 10)$, and interpret $\mu_X$ in context.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{``For $X \sim B(40, 0.25)$, which gives $P(X \ge 12)$?''}
+    \begin{enumerate}[label=(\Alph*)]
+        \item $1 - \texttt{binomcdf(40, 0.25, 12)}$
+        \item $\texttt{binomcdf(40, 0.25, 12)}$
+        \item $1 - \texttt{binomcdf(40, 0.25, 11)}$
+        \item $\texttt{binompdf(40, 0.25, 12)}$
+    \end{enumerate}
+    Answer: (C)
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item Four scenarios: compute $\mu_X$, $\sigma_X$, and interpret each
+              in context.
+        \item Two cumulative probability problems using \texttt{binomcdf}.
+        \item AP free-response: full solution showing formula, calculator
+              notation, and interpretation.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: Show that $\sigma_X$ is maximized when
+              $p = 0.5$ for any fixed $n$. Why does this make intuitive sense?
+        \item \textit{Preview}: Lesson 4.12 introduces the geometric distribution
+              --- a setting where we count trials until the \emph{first} success
+              rather than fixing $n$ in advance.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\end{document}

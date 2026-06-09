@@ -1,0 +1,64 @@
+%! AP Statistics — Unit 4, Lesson 4.4 — Homework KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.4}{Homework --- KEY}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+A hospital recorded blood type and a health outcome for 240 patients.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} l X X X X r @{}}
+ & \textbf{Type A} & \textbf{Type B} & \textbf{Type AB} & \textbf{Type O} & \textbf{Total} \\
+\hline
+\textbf{Condition present}  & 30 & 20 & 10 & 40 & 100 \\
+\textbf{Condition absent}   & 50 & 30 & 20 & 40 & 140 \\
+\hline
+\textbf{Total}              & 80 & 50 & 30 & 80 & 240 \\
+\end{tabularx}
+
+\vspace{8pt}
+\textbf{1.}
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
+  \item \ans{Yes, mutually exclusive. A patient has exactly one blood type; no patient can have both Type A and Type O blood simultaneously.}
+  \item \ans{$P(A \cap B) = 0$}
+  \item \ans{$P(A) = 80/240 \approx 0.333$; $P(B) = 80/240 \approx 0.333$}
+\end{enumerate}
+
+\vspace{6pt}
+\textbf{2.}
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
+  \item \ans{Not mutually exclusive. A patient can have Type B blood and have the condition present at the same time --- there are 20 such patients in the table.}
+  \item \ans{$P(C \cap D) = 20/240 \approx 0.083$}
+\end{enumerate}
+
+\vspace{6pt}
+\textbf{3.}
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
+  \item \ans{Yes, mutually exclusive. A patient is either diagnosed with the condition or not --- these two outcomes cannot both be true for the same patient at the same time.}
+  \item \ans{$P(E \cap F) = 0$}
+\end{enumerate}
+
+\vspace{6pt}
+\textbf{4.}
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
+  \item \ans{Incorrect. The student's reasoning confuses "not guaranteed to overlap" with "cannot overlap." The table shows 30 patients with both Type A blood and the condition present, so the intersection is not empty.}
+  \item \ans{Events "Type A blood" and "condition present" are \textbf{not} mutually exclusive because there are 30 patients in the sample who have both Type A blood and the condition, so both events can occur simultaneously.}
+\end{enumerate}
+
+\vspace{6pt}
+\textbf{5.} \ans{Yes. Any of the other three blood type events (Type A, Type B, or Type O) is mutually exclusive with event $G$ (Type AB), because each patient has exactly one blood type. There are three such events.}
+
+\vspace{6pt}
+\textbf{6.} \ans{Yes, it makes intuitive sense. If two events are mutually exclusive and one occurs, you know with certainty the other did NOT occur --- so knowing one event completely changes the probability of the other (from its original value to 0). This means mutually exclusive events with positive probabilities are actually \emph{dependent}, not independent --- a key distinction to explore in Lesson 4.6.}
+\end{practicebox}
+
+\end{document}

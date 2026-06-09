@@ -1,0 +1,46 @@
+%! AP Statistics — Unit 4, Lesson 4.5 — Exit Ticket KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.5}{Exit Ticket --- KEY}
+\namedateperiod
+
+\vspace{0.14in}
+
+\begin{scenariobox}[Context]{sky}
+\small
+A nutritionist studied the relationship between diet type and a health outcome
+for 200 adults.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} l X X X r @{}}
+ & \textbf{Plant-based} & \textbf{Omnivore} & \textbf{Keto} & \textbf{Total} \\
+\hline
+\textbf{Healthy outcome}  & 50 & 40 & 30 & 120 \\
+\textbf{At-risk outcome}  & 10 & 40 & 30 & 80 \\
+\hline
+\textbf{Total}            & 60 & 80 & 60 & 200 \\
+\end{tabularx}
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=12pt]
+  \item $P(\text{Healthy}|\text{Plant-based}) = \dfrac{P(\text{Healthy} \cap \text{Plant-based})}{P(\text{Plant-based})} = \dfrac{\textcolor{keyred}{50/200}}{\textcolor{keyred}{60/200}} = \dfrac{50}{60} \approx \textcolor{keyred}{0.833}$
+
+        \ans{Among adults who follow a plant-based diet, approximately 83.3\% had a healthy outcome.}
+
+  \item \ans{$P(\text{Keto}) = 60/200 = 0.3$; $P(\text{At-risk}|\text{Keto}) = 30/60 = 0.5$}\\
+        \ans{$P(\text{Keto} \cap \text{At-risk}) = 0.3 \times 0.5 = 0.15 = 30/200$. Matches the table cell: 30.}
+
+  \item \ans{$P(\text{Healthy}|\text{Plant-based}) = 50/60 \approx 0.833$; $P(\text{Healthy}|\text{Omnivore}) = 40/80 = 0.5$. The two values are not equal, so the claim is incorrect. Adults following a plant-based diet had a higher conditional probability of a healthy outcome than omnivores.}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

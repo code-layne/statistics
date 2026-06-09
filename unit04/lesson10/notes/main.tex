@@ -1,0 +1,142 @@
+%! AP Statistics — Unit 4, Lesson 4.10 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.10}{Guided Notes}
+\namedateperiod
+
+\vspace{0.12in}
+
+\begin{objectivebox}
+\small By the end of this lesson, I will be able to\dots\\[4pt]
+\writeline\\[1pt]
+\writeline\\[1pt]
+\writeline
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\termblanklong{Binomial setting}
+\termblanklong{Binomial random variable}
+\termblanklong{BINS conditions}
+\termblanklong{$10\%$ condition}
+\termblanklong{Binomial coefficient $\binom{n}{k}$}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+\small\textbf{Opening question:} A multiple-choice quiz has 10 questions, each with 4 choices.
+A student guesses randomly on every question.
+
+\vspace{6pt}
+Estimate the probability of getting \emph{exactly} 6 correct: \blank{3cm}\\[6pt]
+What three pieces of information do you need to set up this problem?\\[4pt]
+\writeline\\[1pt]\writeline
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{The BINS Conditions for a Binomial Setting}
+\small
+A random variable $X$ follows a \textbf{binomial distribution} if all four
+\textbf{BINS} conditions are met:
+
+\vspace{8pt}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries\color{navy}}p{0.06\linewidth}
+                                     >{\bfseries}p{0.28\linewidth} X @{}}
+B & Binary outcomes &
+  Each trial has exactly \blank{3cm} outcomes: \blank{2cm} or \blank{2cm}. \\
+I & Independent trials &
+  The outcome of one trial \blank{4cm} another trial.
+  Use the \blank{2cm} condition when sampling without replacement. \\
+N & Fixed number of trials &
+  The number of trials $n$ is \blank{4cm} in advance. \\
+S & Same probability &
+  The probability of success $p$ is \blank{4cm} on every trial. \\
+\end{tabularx}
+
+\vspace{8pt}
+If all four conditions are met, write: $X \sim B(\blank{1.5cm},\;\blank{1.5cm})$
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{The Binomial Probability Formula}
+\small
+
+For $X \sim B(n, p)$, the probability of exactly $k$ successes is:
+\[
+  P(X = k) \;=\; \binom{n}{k}\,p^k\,(1-p)^{n-k}
+\]
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.22\linewidth} X @{}}
+$\binom{n}{k} = \dfrac{n!}{k!(n-k)!}$ & counts the number of \blank{5cm}
+  in which $k$ successes can occur among $n$ trials. \\
+$p^k$ & the probability of \blank{5cm} in exactly $k$ trials. \\
+$(1-p)^{n-k}$ & the probability of \blank{5cm} in the remaining $n-k$ trials. \\
+\end{tabularx}
+
+\vspace{8pt}
+\textbf{Calculator:} \texttt{binompdf(}$n$\texttt{,}\;$p$\texttt{,}\;$k$\texttt{)}
+gives $P(X = k)$ directly.
+
+\vspace{8pt}
+\textbf{AP Exam reminder:} Always show the formula setup even if you use the
+calculator. Write $\binom{n}{k}p^k(1-p)^{n-k}$ with numbers substituted before
+computing.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Worked Example --- Random Guessing}
+\small
+\textbf{Context:} 10-question quiz, 4 choices per question, student guesses randomly.\\
+$n = \blank{1.5cm}$, \quad $p = \blank{1.5cm}$, \quad success $= $ \blank{3cm}
+
+\vspace{6pt}
+\textbf{Check BINS:}\\[4pt]
+B: \blank{10cm}\\[4pt]
+I: \blank{10cm}\\[4pt]
+N: \blank{10cm}\\[4pt]
+S: \blank{10cm}
+
+\vspace{6pt}
+$X \sim B(\blank{1.5cm},\;\blank{1.5cm})$
+
+\vspace{8pt}
+\textbf{Compute} $P(X = 6)$:
+\[
+  P(X=6) \;=\; \binom{\blank{1cm}}{\blank{1cm}}\,(\blank{2cm})^6\,(\blank{2cm})^4
+             \;=\; \blank{3cm} \;\approx\; \blank{2cm}
+\]
+Calculator check: \texttt{binompdf(}\blank{1cm}\texttt{,}\;\blank{1cm}\texttt{,}\;\blank{1cm}\texttt{)}
+$= $ \blank{2cm}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small For each scenario, (a) check BINS and state whether it is a binomial setting,
+and (b) if yes, compute the requested probability.
+
+\vspace{6pt}
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+  \item A fair die is rolled 8 times. Let $X =$ the number of 4s. \\
+        Binomial? \blank{1.5cm} \quad If yes, state $X \sim$ \blank{3cm}\\[4pt]
+        Find $P(X = 2)$: \blank{9cm}
+
+  \item Cards are drawn without replacement from a standard 52-card deck.
+        $X =$ the number of aces in 5 draws.\\
+        Binomial? \blank{1.5cm} \quad Which condition fails? \blank{7cm}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

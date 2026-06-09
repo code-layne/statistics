@@ -1,0 +1,86 @@
+%! AP Statistics — Unit 4, Lesson 4.10 — Student Packet Cover Sheet
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{ltablex}
+\keepXColumns
+
+\begin{document}
+
+% Full-bleed navy banner
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[navy] (current page.north west)
+    rectangle ([yshift=-0.9in]current page.north east);
+\end{tikzpicture}
+\vspace{-0.8in}
+
+\begin{center}
+  {\color{white}\textbf{\LARGE AP Statistics}}\\[4pt]
+  {\color{skymid}\large\textbf{Unit 4: Probability, Random Variables, and Probability Distributions}}\\[6pt]
+  {\color{white}\textbf{\large Lesson 4.10 \quad Introduction to the Binomial Distribution}}
+\end{center}
+
+\vspace{0.22in}
+\namedateperiod
+\vspace{0.18in}
+
+\begin{learningtargetbox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
+  \item \ldots{} determine whether a random variable is binomial by checking the four
+        BINS conditions (Binary, Independent, fixed $N$, Same $p$) and stating
+        $X \sim B(n, p)$ when all conditions are met.
+  \item \ldots{} compute a single binomial probability $P(X = k)$ using the formula
+        $\binom{n}{k}p^k(1-p)^{n-k}$ and verify with \texttt{binompdf}$(n,p,k)$.
+\end{enumerate}
+\end{learningtargetbox}
+
+\vspace{0.14in}
+
+\begin{tocbox}
+\small
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{} c l X r @{}}
+\rowcolor{sky}
+\textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
+\midrule
+1 & Warm-Up        & Spiral review: discrete RVs, combinations, probability rules & \blank{1.2cm} \\
+2 & Guided Notes   & BINS conditions; binomial formula; \texttt{binompdf}          & \blank{1.2cm} \\
+3 & Group Activity & Identifying binomial settings; computing $P(X=k)$             & \blank{1.2cm} \\
+4 & Exit Ticket    & Light-bulb defect scenario                                    & \blank{1.2cm} \\
+5 & Homework       & Four binomial scenarios with formula setup                    & \blank{1.2cm} \\
+\midrule
+  & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
+\end{tabularx}
+\end{tocbox}
+
+\vspace{0.14in}
+
+\begin{remindbox}
+\small
+The \textbf{most important idea in Lesson 4.10}: before using any binomial formula,
+check \textbf{all four BINS conditions} in writing.
+
+\vspace{6pt}
+\begin{tabularx}{\linewidth}{@{} >{\centering\arraybackslash\columncolor{goldbg}}p{0.06\linewidth}
+                                    X @{}}
+\textbf{\large B} &
+\textbf{Binary outcomes.}\enspace
+Every trial must produce exactly one of two outcomes (success or failure).
+Clearly define which outcome is ``success.'' \\[6pt]
+\textbf{\large I} &
+\textbf{Independent trials.}\enspace
+The outcome of one trial does not affect others.
+When sampling without replacement, use the $10\%$ condition:
+$n \le 0.10 \times N$. \\[6pt]
+\textbf{\large N} &
+\textbf{Fixed number of trials.}\enspace
+The total number of trials $n$ is set in advance --- you do not
+keep going until a success occurs. \\[6pt]
+\textbf{\large S} &
+\textbf{Same probability.}\enspace
+The probability of success $p$ is the same on every trial.
+\end{tabularx}
+\end{remindbox}
+
+\end{document}

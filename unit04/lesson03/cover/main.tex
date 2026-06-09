@@ -1,0 +1,80 @@
+%! AP Statistics — Unit 4, Lesson 4.3 — Student Packet Cover Sheet
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{ltablex}
+\keepXColumns
+
+\begin{document}
+
+% Full-bleed navy banner
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[navy] (current page.north west)
+    rectangle ([yshift=-0.9in]current page.north east);
+\end{tikzpicture}
+\vspace{-0.8in}
+
+\begin{center}
+  {\color{white}\textbf{\LARGE AP Statistics}}\\[4pt]
+  {\color{skymid}\large\textbf{Unit 4: Probability, Random Variables, and Probability Distributions}}\\[6pt]
+  {\color{white}\textbf{\large Lesson 4.3 \quad Introduction to Probability}}
+\end{center}
+
+\vspace{0.22in}
+\namedateperiod
+\vspace{0.18in}
+
+\begin{learningtargetbox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=5pt]
+  \item \ldots{} calculate the probability of an event using sample spaces and the classical definition.
+  \item \ldots{} apply the complement rule to find $P(E^c) = 1 - P(E)$.
+  \item \ldots{} interpret a probability as the long-run relative frequency of an event.
+\end{enumerate}
+\end{learningtargetbox}
+
+\vspace{0.14in}
+
+\begin{tocbox}
+\small
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{} c l X r @{}}
+\rowcolor{sky}
+\textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
+\midrule
+1 & Warm-Up       & Spiral review + probability preview                    & \blank{1.2cm} \\
+2 & Guided Notes  & Sample spaces; classical probability; complement rule   & \blank{1.2cm} \\
+3 & Group Activity & Cards/spinner: probability and complement calculations  & \blank{1.2cm} \\
+4 & Exit Ticket   & Spinner with 8 equal sections                          & \blank{1.2cm} \\
+5 & Homework      & Multi-scenario probability practice                     & \blank{1.2cm} \\
+\midrule
+  & \multicolumn{2}{r}{\textbf{Total}} & \blank{1.2cm} \\
+\end{tabularx}
+\end{tocbox}
+
+\vspace{0.14in}
+
+\begin{remindbox}
+\small
+The \textbf{most important ideas in Lesson 4.3}: probability is a number between 0 and 1
+that measures how likely an event is in the long run.
+
+\vspace{6pt}
+\begin{tabularx}{\linewidth}{@{} >{\centering\arraybackslash\columncolor{goldbg}}p{0.06\linewidth}
+                                    X @{}}
+\textbf{\large!} &
+\textbf{Classical probability formula.}\enspace
+When all outcomes are equally likely:
+$P(E) = \dfrac{\text{number of outcomes in }E}{\text{total number of outcomes in }S}$. \\[6pt]
+\textbf{\large!} &
+\textbf{Complement rule.}\enspace
+$P(E^c) = 1 - P(E)$. Often it is easier to calculate the probability of the complement
+and subtract from 1. \\[6pt]
+\textbf{\large!} &
+\textbf{Long-run interpretation.}\enspace
+$P(E) = 0.3$ means: if we repeat this random process many times, event $E$ will occur
+in about 30\% of the repetitions. \\
+\end{tabularx}
+\end{remindbox}
+
+\end{document}

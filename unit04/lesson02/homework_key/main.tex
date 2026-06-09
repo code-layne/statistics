@@ -1,0 +1,58 @@
+%! AP Statistics — Unit 4, Lesson 4.2 — Homework KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.2}{Homework --- KEY}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+
+\textbf{1.} Rain simulation.
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
+  \item \ans{Chance device: single random digits 0--9. Digits 0--3 = rain (40\%), digits 4--9 = no rain (60\%). One trial = 7 consecutive random digits = one week. Event of interest = 4 or more of the 7 digits are in 0--3.}
+  \item \begin{teachernote}
+    Reading the first 140 digits in groups of 7: expected outcome around 5--7 of the 20 trials have $\geq$4 rain days. The true probability is $P(X \geq 4)$ where $X \sim \text{Bin}(7, 0.4) \approx 0.290$.
+  \end{teachernote}
+  \item \begin{teachernote}Answers vary; expect roughly 3--8 out of 20 trials.\end{teachernote}
+  \item \ans{$\hat{p}$ = (count) / 20. Should be in the range 0.10--0.45 with 20 trials.}
+\end{enumerate}
+
+\vspace{6pt}
+\textbf{2.} Multiple-choice guessing.
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
+  \item \ans{$P(\text{correct}) = 1/4 = 0.25$}
+  \item \ans{Use digits 1--4 (or 0--3). Digit 1 = correct, digits 2--4 = wrong. One trial = 5 digits. Count how many 1s appear. Event of interest = count $\geq 3$.}
+  \item \begin{teachernote}Results vary. True probability of $\geq 3$ correct with $n=5$, $p=0.25$: $\approx 0.104$. With 15 trials expect 0--2 successes.\end{teachernote}
+  \item \ans{$\hat{p}$ = (successes) / 15. Reasonable range: 0.00--0.20.}
+\end{enumerate}
+
+\vspace{6pt}
+\textbf{3.} AP-Style: \ans{(B)} \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+\begin{enumerate}[label=(\Alph*), leftmargin=2em, itemsep=2pt]
+  \item Incorrect --- this flips the numerator and denominator.
+  \item \textbf{Correct} --- the empirical probability is (number of times event occurred) $\div$ (total trials) $= 65/500 = 0.13$.
+  \item Incorrect --- this is the same numerical value but written with the wrong ratio.
+  \item Incorrect --- multiplication is not the correct operation here.
+\end{enumerate}
+
+\vspace{6pt}
+\textbf{4.} Reflection:
+\begin{teachernote}
+Strong responses should state: (a) With few trials, the relative frequency fluctuates widely --- you might get 0 or 5 heads in 5 flips just by chance, giving estimates of 0 or 1.0. (b) The Law of Large Numbers guarantees that with many trials, these random fluctuations average out and the estimate converges to the true probability. (c) Five trials is too few to trust any estimate.
+\end{teachernote}
+
+\vspace{6pt}
+\textbf{Extension / Preview:}
+\begin{teachernote}
+Students should describe a graph that starts with a lot of up-and-down variation in the first 10--15 trials, then gradually smooths out and approaches 0.50. This is the classic Law of Large Numbers graph.
+\end{teachernote}
+
+\end{practicebox}
+
+\end{document}

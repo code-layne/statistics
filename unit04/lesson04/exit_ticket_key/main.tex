@@ -1,0 +1,47 @@
+%! AP Statistics — Unit 4, Lesson 4.4 — Exit Ticket KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.4}{Exit Ticket --- KEY}
+\namedateperiod
+
+\vspace{0.14in}
+
+\begin{scenariobox}[Context]{sky}
+\small
+A survey of 150 streaming service subscribers asked about their favorite genre and
+their subscription tier. The results are shown below.
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} l X X X r @{}}
+ & \textbf{Basic} & \textbf{Standard} & \textbf{Premium} & \textbf{Total} \\
+\hline
+\textbf{Drama}   & 20 & 25 & 15 & 60 \\
+\textbf{Comedy}  & 18 & 20 & 12 & 50 \\
+\textbf{Documentary} & 8 & 15 & 17 & 40 \\
+\hline
+\textbf{Total}   & 46 & 60 & 44 & 150 \\
+\end{tabularx}
+
+\vspace{4pt}
+One subscriber is selected at random.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+  \item \ans{Yes, $A$ and $B$ are mutually exclusive. The table assigns each subscriber to exactly one favorite genre, so no subscriber can prefer both Drama and Comedy simultaneously. Therefore $P(A \cap B) = 0$.}
+
+  \item \ans{Yes, $C$ and $D$ are mutually exclusive. A subscriber has exactly one subscription tier; no one can hold both a Basic and a Premium subscription at the same time. $P(C \cap D) = 0$.}
+
+  \item \ans{$P(E \cap F) = 25/150 \approx 0.167$. Since $P(E \cap F) \neq 0$, events $E$ and $F$ are \textbf{not} mutually exclusive --- there are 25 subscribers who prefer Drama \emph{and} have a Standard subscription.}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

@@ -1,0 +1,215 @@
+%! AP Statistics — Unit 4, Lesson 4.3 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+\newcommand{\UnitNumberName}{Unit 4: Probability, Random Variables, and Probability Distributions \quad}
+\newcommand{\LessonNumberName}{Lesson 4.3: Introduction to Probability}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will calculate and interpret probabilities for
+    simple events and their complements using sample spaces and the classical definition
+    of probability (Big Idea: VAR-4).
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skills 3.A and 4.B}
+    \begin{itemize}
+        \item Calculate $P(E)$ for equally likely outcomes (VAR-4.A, Skill 3.A).
+        \item Apply the complement rule: $P(E^c) = 1 - P(E)$ (VAR-4.A.4).
+        \item Interpret probability as long-run relative frequency (VAR-4.B.1, Skill 4.B).
+        \item List sample spaces using tables or tree diagrams (VAR-4.A.1).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item The sample space is the complete set of non-overlapping outcomes.
+        \item Classical probability: $P(E) = \dfrac{\text{outcomes in }E}{\text{total outcomes}}$
+              (when all outcomes are equally likely).
+        \item Probability is always between 0 and 1, inclusive.
+        \item The complement of $E$ contains all outcomes NOT in $E$; $P(E^c) = 1 - P(E)$.
+        \item Probability means: in the long run, $E$ occurs in this fraction of trials.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Sample space ($S$)} --- the set of all possible non-overlapping outcomes
+        \item \textbf{Event} --- a subset of the sample space
+        \item \textbf{Equally likely outcomes} --- each outcome has the same probability
+        \item \textbf{Classical probability} ---
+              $P(E) = \dfrac{|E|}{|S|}$ when outcomes are equally likely
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Complement ($E^c$ or $E'$)} --- the event that $E$ does \emph{not} occur
+        \item \textbf{Complement rule} --- $P(E^c) = 1 - P(E)$
+        \item \textbf{Long-run frequency interpretation} --- $P(E)$ = the relative frequency
+              with which $E$ occurs in many independent repetitions
+        \item \textbf{Tree diagram} --- a tool for listing multi-stage sample spaces
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Review: ``What did our simulation estimate? What is the \emph{true} probability
+              the simulation approximates?'' (Lesson 4.2)
+        \item Connect: today we calculate the true (theoretical) probability using sample
+              spaces and counting, rather than running trials.
+        \item Prompt: \textit{``If I roll a fair die, how likely is it to get a number
+              greater than 4?''}
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Connections Forward}
+    \begin{itemize}
+        \item Two-way tables and conditional probability $\to$ Lessons 4.4--4.5
+        \item Mutually exclusive and independent events $\to$ Lesson 4.6
+        \item Discrete random variables $\to$ Lessons 4.7--4.8
+        \item Long-run frequency interpretation underpins all of Unit 6 inference
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (5--7 min)}\\
+    Show a bag with 3 red and 5 blue poker chips. Ask: ``If I reach in without looking,
+    what's the chance I pull out a red chip?'' Take guesses. Then ask:
+    ``What if I could list every possible draw? Could I calculate the exact probability
+    without needing to actually pull chips?''\\
+    Transition: \textit{``That's what the classical definition of probability lets us do.''}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15--18 min)}
+    \begin{enumerate}
+        \item Define sample space; practice listing $S$ for: one coin, two coins, one die.
+        \item Classical probability formula; worked example with a fair die.
+        \item Properties: $0 \le P(E) \le 1$; $P(S) = 1$.
+        \item Complement rule: what does ``not $E$'' look like in the sample space? How does
+              $P(E^c) = 1 - P(E)$ follow from $P(S) = 1$?
+        \item Interpretation: ``If we repeated this process many times, how often
+              would we expect $E$?'' --- connect to Lesson 4.2 and the LLN.
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Direct Instruction (10 min)}
+    \begin{itemize}
+        \item Use a two-way table for rolling two dice. Build the $6 \times 6 = 36$ outcome
+              table together. Calculate: $P(\text{sum} = 7)$, $P(\text{sum} \geq 10)$,
+              $P(\text{NOT sum} = 7)$ using the complement rule.
+        \item Emphasize VAR-4.B.1: ``$P(\text{sum} = 7) = 6/36 = 1/6$ means that if we
+              rolled two dice over and over, about 1 in every 6 rolls would sum to 7.''
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Active Monitoring}
+    \begin{itemize}
+        \item Watch for: students writing probabilities greater than 1 --- review that
+              $P(E) \leq 1$ always.
+        \item Watch for: not listing the complete sample space (missing outcomes).
+        \item Cold-call: ``How do you know your sample space is complete?''
+        \item Cold-call: ``In plain English, what does $P(\text{rain}) = 0.3$ mean?''
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Partner Activity (8--10 min)}\\
+    Three-tier activity using a standard deck of cards (or a spinner with labeled
+    sections). Students list sample spaces, calculate probabilities, use the
+    complement rule, and interpret results in context.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support (Tier R)}: Partially completed sample space; students
+              fill in and count.
+        \item \textit{On-grade (Tier A)}: Build full sample space and calculate several
+              probabilities including complement.
+        \item \textit{Extension (Tier E)}: Multi-stage sample spaces with tree diagrams;
+              interpret probability in context.
+        \item \textit{ELL}: Visual sample-space table with color coding.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    A spinner is divided into 8 equal sections numbered 1--8.
+    \begin{enumerate}
+        \item List the sample space.
+        \item Calculate $P(\text{even number})$.
+        \item Calculate $P(\text{not even number})$ using the complement rule.
+        \item Interpret $P(\text{even}) = 0.5$ in a sentence using the phrase
+              ``in the long run.''
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{``A bag holds 4 green, 3 yellow, and 1 purple marble. If one marble is
+    drawn at random, what is the probability that it is NOT yellow?''}
+    \begin{enumerate}[label=(\Alph*)]
+        \item $3/8$
+        \item $1/8$
+        \item $5/8$
+        \item $4/8$
+    \end{enumerate}
+    Answer: (C) --- $P(\text{not yellow}) = 1 - 3/8 = 5/8$.
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item For 4--5 scenarios (dice, cards, spinners, health statistics), list or
+              describe the sample space, calculate probabilities, apply the complement
+              rule, and interpret results in context.
+        \item One AP-style free-response problem requiring full communication of reasoning.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: The Addition Rule for mutually exclusive events
+              ($P(A \cup B) = P(A) + P(B)$) --- what happens when events are NOT mutually
+              exclusive?
+        \item \textit{Preview}: Lesson 4.4 introduces two-way frequency tables and
+              conditional probability. How might ``given that'' change a probability?
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\end{document}

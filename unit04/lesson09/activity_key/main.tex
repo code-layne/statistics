@@ -1,0 +1,87 @@
+%! AP Statistics — Unit 4, Lesson 4.9 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.9}{Group Activity: Combining Random Variables --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=sky!60, colframe=navy, title=\textbf{Tier R --- Remediate},
+    arc=2mm, boxrule=0.8pt, left=4mm, right=4mm, top=3mm, bottom=3mm]
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+  \item $W = X + 4$:
+        \begin{enumerate}[label=(\alph*), itemsep=6pt]
+          \item $\mu_W = $ \ans{$14 + 4 = 18$}
+          \item $\sigma_W = $ \ans{3 (unchanged)}
+          \item \ansline{Adding a constant shifts all scores by the same amount; gaps between scores stay the same.}
+        \end{enumerate}
+
+  \item $V = 1.5X$:
+        \begin{enumerate}[label=(\alph*), itemsep=6pt]
+          \item $\mu_V = $ \ans{$1.5 \times 14 = 21$}
+          \item $\sigma_V = $ \ans{$1.5 \times 3 = 4.5$}
+        \end{enumerate}
+
+  \item $W = 4 + 1.5X$:
+        \begin{enumerate}[label=(\alph*), itemsep=6pt]
+          \item $\mu_W = $ \ans{$4 + 1.5(14) = 25$}
+          \item $\sigma_W = $ \ans{$|1.5|(3) = 4.5$}
+        \end{enumerate}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.12in}
+
+\begin{tcolorbox}[colback=goldbg!60, colframe=goldacc, title=\textbf{Tier A --- Approaching Proficiency},
+    arc=2mm, boxrule=0.8pt, left=4mm, right=4mm, top=3mm, bottom=3mm]
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+  \item $T = A + B$:
+        \begin{enumerate}[label=(\alph*), itemsep=6pt]
+          \item $\mu_T = $ \ans{$15+12=27$ points}
+          \item $\sigma^2_T = $ \ans{$4^2+3^2=16+9=25$}
+          \item $\sigma_T = $ \ans{$\sqrt{25}=5$ points}
+        \end{enumerate}
+
+  \item $D = A - B$:
+        \begin{enumerate}[label=(\alph*), itemsep=6pt]
+          \item $\mu_D = $ \ans{$15-12=3$ points}
+          \item $\sigma^2_D = $ \ans{$4^2+3^2=25$}
+          \item $\sigma_D = $ \ans{5 points}
+        \end{enumerate}
+
+  \item \ansline{Yes, $\sigma_T = \sigma_D = 5$. The same variances are added in both cases; only the mean changes.}
+
+  \item \ansline{On average, the two-player team scores 27 points per round in the long run.}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.12in}
+
+\begin{tcolorbox}[colback=greenbg!60, colframe=greenacc, title=\textbf{Tier E --- Extension},
+    arc=2mm, boxrule=0.8pt, left=4mm, right=4mm, top=3mm, bottom=3mm]
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+  \item \ans{$\mu_T = 8.00+5.00=\$13.00$; $\sigma^2_T=1.5^2+2.0^2=2.25+4.00=6.25$; $\sigma_T=\$2.50$}
+
+  \item \ansline{Yes. The sum of two independent normal RVs is also normal. $T \sim N(13, 2.50)$.}
+
+  \item \ans{$z = (15-13)/2.50 = 0.80$; $P(T>15)=P(z>0.80)\approx 0.2119$.}
+
+        \begin{teachernote}
+        Students should sketch the normal curve, shade the area to the right of 15, then look up $z=0.80$. $P(Z>0.80)=1-0.7881=0.2119$.
+        \end{teachernote}
+
+  \item \ans{$\mu_P=3(8)+5=\$29.00$; $\sigma^2_P=(3)^2(1.5^2)+(2.0^2)=9(2.25)+4=20.25+4=24.25$; $\sigma_P=\sqrt{24.25}\approx\$4.92$}
+
+  \item \ans{$z=(30-29)/4.92\approx 0.20$; $P(P>30)=P(z>0.20)\approx 0.4207$.}
+\end{enumerate}
+\end{tcolorbox}
+
+\end{document}

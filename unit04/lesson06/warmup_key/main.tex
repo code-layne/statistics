@@ -1,0 +1,78 @@
+%! AP Statistics — Unit 4, Lesson 4.6 — Warm-Up KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.6}{Warm-Up --- Answer Key}
+\begin{tabularx}{\linewidth}{X X X}
+Name:\;\ans{Key} & Date:\; & Period:\;
+\end{tabularx}
+
+\vspace{0.3in}
+
+{\large\bfseries\color{navy} Part 1 \quad Spiral Review}
+
+\vspace{0.12in}
+
+\begin{enumerate}
+
+    \item
+    \vspace{6pt}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\linewidth}{@{} l X X X r @{}}
+     & \textbf{Plant-based} & \textbf{Omnivore} & \textbf{Keto} & \textbf{Total} \\
+    \hline
+    \textbf{Healthy outcome}  & 50 & 40 & 30 & 120 \\
+    \textbf{At-risk outcome}  & 10 & 40 & 30 & 80 \\
+    \hline
+    \textbf{Total}            & 60 & 80 & 60 & 200 \\
+    \end{tabularx}
+    \vspace{6pt}
+    \begin{enumerate}[label=(\alph*), itemsep=6pt]
+        \item \ans{$120/200 = 0.6$}
+        \item \ans{$50/60 \approx 0.833$}
+        \item \ans{$40/80 = 0.5$}
+        \item \ans{No --- $0.833 \neq 0.6$ and $0.5 \neq 0.6$. Knowing the diet type changes the probability of a healthy outcome, so diet and health outcome are not independent.}
+    \end{enumerate}
+
+    \vspace{0.16in}
+
+    \item \ans{$P(A \cap B) = 0$}; \ans{$P(A|B) = P(A)$}
+
+    \vspace{0.16in}
+
+    \item
+    \begin{enumerate}[label=(\alph*), itemsep=6pt]
+        \item \ans{Some subscribers might prefer both genres (if the survey allowed multiple selections), and we would be counting them twice --- inflating the probability.}
+        \item \ans{$P(\text{Drama} \cap \text{Comedy})$}
+    \end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.28in}
+
+{\large\bfseries\color{navy} Part 2 \quad Looking Ahead}
+
+\vspace{0.12in}
+
+\noindent Today we formalize two ideas: \textbf{independence} and \textbf{unions} of events.
+
+\vspace{0.14in}
+
+\begin{tcolorbox}[colback=greenbg, colframe=greenacc, boxrule=0.8pt, arc=2mm,
+    left=4mm, right=4mm, top=3mm, bottom=3mm]
+    \small
+    \begin{itemize}[leftmargin=1.3em, itemsep=8pt]
+      \item Two events are \textbf{independent} if $P(A|B) = P(A)$ (knowing $B$ doesn't change $A$'s probability).
+      \item The probability of a \textbf{union} is: $P(A \cup B) = P(A) + P(B) - P(A \cap B)$.
+      \item \textbf{Independent $\neq$ Mutually exclusive.} These are different concepts!
+    \end{itemize}
+\end{tcolorbox}
+
+\vspace{0.2in}
+
+\noindent\textcolor{slate}{\small Student responses will vary.}
+
+\end{document}

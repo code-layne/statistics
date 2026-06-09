@@ -1,0 +1,50 @@
+%! AP Statistics — Unit 4, Lesson 4.12 — Exit Ticket KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.12}{Exit Ticket --- KEY}
+\namedateperiod
+
+\vspace{0.14in}
+
+\begin{scenariobox}[Context]{sky}
+\small
+A quality inspector tests items from an assembly line one at a time until
+finding the first defective item. Each item has a 12\% chance of being
+defective, and items are independent. Let $X =$ the number of items
+inspected until (and including) the first defective one.
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+
+  \item
+  B: \ans{Binary --- each item is either defective (success) or non-defective (failure).}
+
+  I: \ans{Independent --- items are independent (given in the problem).}
+
+  T: \ans{Trials until first success --- testing continues until the first defective item.}
+
+  S: \ans{Same $p = 0.12$ for every item.}
+
+  $X \sim \text{Geom}(0.12)$
+
+  \item
+  \[
+    P(X = 3) = (0.88)^{2} \cdot (0.12) = (0.7744)(0.12) \approx \ans{0.0929}
+  \]
+
+  \item $\mu_X = 1/0.12 \approx \ans{8.33}$
+
+  \ans{If the inspector tests items many times until finding the first defective one, the average number of items inspected per defective find would be about 8.33.}
+
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

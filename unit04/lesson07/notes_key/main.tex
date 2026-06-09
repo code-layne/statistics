@@ -1,0 +1,151 @@
+%! AP Statistics — Unit 4, Lesson 4.7 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.7}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.12in}
+
+\begin{objectivebox}
+\small By the end of this lesson, I will be able to\dots\\[4pt]
+\ans{Represent a probability distribution for a discrete random variable as a table or histogram and verify validity.}\\[1pt]
+\ans{Build a cumulative probability distribution and use it to answer probability questions.}\\[1pt]
+\ans{Interpret a probability distribution by describing shape, center, and spread in context.}
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\termblanklong{Random variable} \ans{A variable whose value is a numerical outcome of a random process.}
+\termblanklong{Discrete random variable} \ans{A random variable that takes a countable number of values, each with an associated probability.}
+\termblanklong{Probability distribution} \ans{A table, graph, or function giving $P(X=x)$ for every possible value of $X$.}
+\termblanklong{Probability histogram} \ans{A bar graph with values of $X$ on the horizontal axis and $P(X=x)$ on the vertical axis.}
+\termblanklong{Cumulative probability distribution} \ans{A table or function giving $P(X \le x)$ for each value of $X$.}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+\small\textbf{Number of pets owned per household:}
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}ccccc@{}}
+Pets ($x$) & 0 & 1 & 2 & 3 \\
+\hline
+Probability & 0.30 & 0.40 & 0.20 & 0.10 \\
+\end{tabular}
+\end{center}
+\textbf{What is $P(X \le 1)$?} \quad \ans{$0.30 + 0.40 = 0.70$} \quad
+\textbf{What must the probabilities sum to?} \quad \ans{1}
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Random Variables and Probability Distributions}
+\small
+
+\textbf{Definition:} A \textbf{random variable} is a variable whose value is a
+\ans{numerical outcome} of a random process.
+
+\vspace{8pt}
+A \textbf{discrete random variable} can take a \ans{countable} number of values.
+Each value has a probability associated with it.
+
+\vspace{10pt}
+\textbf{Valid Probability Distribution --- Two Conditions:}
+\begin{enumerate}[leftmargin=2em, itemsep=4pt]
+  \item Each probability: \ans{$P(X=x) \ge 0$ (between 0 and 1)}
+  \item Sum of all probabilities: \ans{$\sum P(X=x) = 1$}
+\end{enumerate}
+
+\vspace{10pt}
+\textbf{Example:} $X$ = number of siblings for a randomly chosen student.
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabularx}{\linewidth}{@{} l X X X X X @{}}
+$x$ & 0 & 1 & 2 & 3 & 4 \\
+\hline
+$P(X=x)$ & \ans{0.15} & \ans{0.40} & \ans{0.30} & \ans{0.10} & \ans{0.05} \\
+\end{tabularx}
+
+\vspace{8pt}
+Check conditions: \quad (1) \ans{All values $\ge 0$} \quad (2) \ans{$0.15+0.40+0.30+0.10+0.05 = 1.00$ \checkmark}
+
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Cumulative Probability Distribution}
+\small
+
+$P(X \le x)$ = the probability that $X$ is \ans{less than or equal to $x$}.
+
+\vspace{8pt}
+\textbf{Example:} Use the siblings distribution above.
+
+\renewcommand{\arraystretch}{1.7}
+\begin{tabularx}{\linewidth}{@{} l X X X X X @{}}
+$x$ & 0 & 1 & 2 & 3 & 4 \\
+\hline
+$P(X=x)$ & 0.15 & 0.40 & 0.30 & 0.10 & 0.05 \\
+$P(X \le x)$ & \ans{0.15} & \ans{0.55} & \ans{0.85} & \ans{0.95} & \ans{1.00} \\
+\end{tabularx}
+
+\vspace{8pt}
+$P(X \ge 3) = $ \ans{$0.10 + 0.05 = 0.15$}
+
+\vspace{8pt}
+Interpret $P(X \le 2) = 0.85$ in context:\\
+\ansline{There is an 85\% probability that a randomly chosen student has 2 or fewer siblings.}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Interpreting a Probability Distribution}
+\small
+
+When you describe a probability distribution, discuss \textbf{three things}:
+
+\vspace{6pt}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} p{2.2cm} X @{}}
+\textbf{Shape} & \ans{Skewed left, skewed right, roughly symmetric, or uniform} \\
+\textbf{Center} & Where are the probabilities \ans{concentrated (most likely values)}? \\
+\textbf{Spread} & How \ans{spread out or concentrated} are the values? \\
+\end{tabularx}
+
+\vspace{8pt}
+\textbf{Interpretation of the siblings distribution in context:}\\
+\ansline{The distribution is right-skewed. Most students have 1 or 2 siblings (70\% combined),}\\
+\ansline{and few students have 3 or 4 siblings. The most likely outcome is 1 sibling.}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+$X$ = number of cars owned per household.
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}ccccc@{}}
+$x$ & 0 & 1 & 2 & 3 \\
+\hline
+$P(X=x)$ & 0.10 & 0.40 & 0.35 & 0.15 \\
+\end{tabular}
+\end{center}
+\begin{enumerate}[leftmargin=1.5em, itemsep=8pt]
+  \item \ans{$0.10+0.40+0.35+0.15=1.00$ and all values $\ge 0$. Valid. \checkmark}
+  \item $P(X = 2) = $ \ans{$0.35$}
+  \item $P(X \le 1) = $ \ans{$0.10+0.40=0.50$}
+  \item $P(X \ge 2) = $ \ans{$0.35+0.15=0.50$}
+  \item \ansline{There is a 50\% probability that a randomly chosen household owns 2 or more cars.}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

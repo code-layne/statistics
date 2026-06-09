@@ -1,0 +1,161 @@
+%! AP Statistics — Unit 4, Lesson 4.6 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.6}{Guided Notes}
+\namedateperiod
+
+\vspace{0.12in}
+
+\begin{objectivebox}
+\small By the end of this lesson, I will be able to\dots\\[4pt]
+\writeline\\[1pt]
+\writeline\\[1pt]
+\writeline
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\termblanklong{Independent events}
+\termblanklong{Dependent events}
+\termblanklong{Multiplication rule (independent events)}
+\termblanklong{Union $A \cup B$}
+\termblanklong{Addition rule}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+\small
+\textbf{Two situations:}
+\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+  \item Flipping a fair coin twice: does the first flip affect the second?
+        \blank{3cm}
+  \item Drawing two cards \emph{without} replacement: does the first card
+        affect the probability of the second? \blank{3cm}
+\end{enumerate}
+\textbf{What is the key difference?}\\[4pt]
+\writeline
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Independent Events (VAR-4.E.1, VAR-4.E.2)}
+\small
+\textbf{Definition:} Events $A$ and $B$ are \textbf{independent} if knowing whether
+$A$ occurred \blank{5cm} the probability that $B$ will occur.
+
+\vspace{8pt}
+\textbf{Test for independence:}
+\[
+  A \text{ and } B \text{ are independent} \iff P(A|B) = \blank{2cm}
+\]
+
+\vspace{4pt}
+\textbf{Equivalent condition:}
+\[
+  A \text{ and } B \text{ are independent} \iff P(A \cap B) = \blank{2cm} \cdot \blank{2cm}
+\]
+
+\vspace{8pt}
+\textbf{From a two-way table:}
+\begin{enumerate}[leftmargin=1.5em, itemsep=4pt]
+  \item Calculate $P(A)$ from the \blank{4cm}.
+  \item Calculate $P(A|B)$ from the \blank{4cm}.
+  \item Compare: if $P(A|B)$ \blank{3cm} $P(A)$, independent; otherwise \blank{3cm}.
+\end{enumerate}
+
+\vspace{8pt}
+\textbf{Important:} Mutually exclusive (with $P(A) > 0$ and $P(B) > 0$) $\Rightarrow$
+events are \blank{5cm}. Why?\\[4pt]
+If $A$ and $B$ are ME and $A$ occurs, then $P(B|A) = $ \blank{2cm}, but $P(B) > 0$.
+So $P(B|A) \neq P(B)$, which means they are \blank{3cm}.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Union and the Addition Rule (VAR-4.E.3, VAR-4.E.4)}
+\small
+\textbf{Union:} $A \cup B$ is the event that \blank{2cm} or \blank{2cm} (or both) occurs.
+
+\vspace{8pt}
+\textbf{Addition Rule:}
+\[
+  P(A \cup B) = P(A) + P(B) - \blank{3cm}
+\]
+
+\vspace{4pt}
+\textbf{Why subtract?} If we just add $P(A) + P(B)$, the outcomes in $A \cap B$ are
+\blank{4cm}, so we subtract once.
+
+\vspace{8pt}
+\textbf{Special case --- Mutually Exclusive events:}\\
+If $P(A \cap B) = 0$, then $P(A \cup B) = $ \blank{4cm}
+
+\vspace{8pt}
+\textbf{Special case --- Independent events:}\\
+If $A$ and $B$ are independent: $P(A \cap B) = P(A) \cdot P(B)$, so
+$P(A \cup B) = P(A) + P(B) - \blank{4cm}$
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Worked Example}
+\small
+A school surveyed 200 students: preferred extracurricular (Sports, Arts, Neither) and grade (10th, 11th).
+
+\vspace{4pt}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{@{} l X X r @{}}
+ & \textbf{10th Grade} & \textbf{11th Grade} & \textbf{Total} \\
+\hline
+\textbf{Sports} & 40 & 60 & 100 \\
+\textbf{Arts}   & 30 & 30 & 60  \\
+\textbf{Neither}& 20 & 20 & 40  \\
+\hline
+\textbf{Total}  & 90 & 110 & 200 \\
+\end{tabularx}
+
+\vspace{8pt}
+\textbf{Independence check: Are ``Sports'' and ``10th Grade'' independent?}
+\begin{itemize}[itemsep=3pt]
+  \item $P(\text{Sports}) = $ \blank{3cm}
+  \item $P(\text{Sports}|\text{10th}) = $ \blank{3cm}
+  \item Equal? \blank{2cm} \quad Independent? \blank{2cm}
+\end{itemize}
+
+\vspace{8pt}
+\textbf{Addition Rule: Find $P(\text{Sports or 10th Grade})$.}
+\begin{itemize}[itemsep=3pt]
+  \item $P(\text{Sports}) = $ \blank{3cm}
+  \item $P(\text{10th Grade}) = $ \blank{3cm}
+  \item $P(\text{Sports} \cap \text{10th}) = $ \blank{3cm}
+  \item $P(\text{Sports} \cup \text{10th}) = $ \blank{3cm} $+$ \blank{3cm} $-$ \blank{3cm} $=$ \blank{3cm}
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small Use the extracurricular/grade table above.
+
+\vspace{6pt}
+\begin{enumerate}[leftmargin=1.5em, itemsep=10pt]
+  \item Are ``Arts'' and ``11th Grade'' independent? Show your work.\\
+        $P(\text{Arts}) = $ \blank{3cm} \quad $P(\text{Arts}|\text{11th}) = $ \blank{3cm}\\
+        Conclusion: \writeline
+
+  \item Find $P(\text{Arts or 11th Grade})$.\\
+        \blank{3cm} $+$ \blank{3cm} $-$ \blank{3cm} $=$ \blank{3cm}
+
+  \item Are ``Sports'' and ``Arts'' mutually exclusive? \blank{2cm} Are they independent?
+        \blank{2cm}\\
+        Explain the difference: \writeline\writeline
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

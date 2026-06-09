@@ -1,0 +1,64 @@
+%! AP Statistics — Unit 4, Lesson 4.10 — Homework KEY
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 4, Lesson 4.10}{Homework --- KEY}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\small
+
+\textbf{1.} Basketball free throws, $n=10$, $p=0.72$.
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
+  \item \ans{B: each shot is made (success) or missed (failure). I: shots are independent. N: fixed $n=10$. S: same $p=0.72$. All conditions met. $X \sim B(10, 0.72)$.}
+  \item \ans{$P(X=8) = \binom{10}{8}(0.72)^8(0.28)^2 = 45(0.0722)(0.0784) \approx 0.2548$}
+\end{enumerate}
+
+\vspace{6pt}
+\textbf{2.} Survey, $n=200$, $p=0.60$.
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
+  \item \ans{B: support (yes) or not (no). I: $200 \le 0.10 \times 500{,}000 = 50{,}000$ so the $10\%$ condition is satisfied. N: fixed $n=200$. S: same $p=0.60$. The $10\%$ condition is relevant because we sample without replacement from the city.}
+  \item \ans{\texttt{binompdf(200, 0.60, 120)} $\approx 0.0553$}
+\end{enumerate}
+
+\vspace{6pt}
+\textbf{3.} Calling on students without replacement, $n=6$, $N=30$.
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
+  \item \ans{Strictly not binomial because selection is without replacement (the probability of choosing a non-completer changes each draw). However, check the $10\%$ condition.}
+  \item \ans{$n = 6$, $0.10 \times N = 0.10 \times 30 = 3$. Since $6 > 3$, the $10\%$ condition is \emph{not} satisfied --- independence cannot be assumed and this is not approximately binomial.}
+\end{enumerate}
+
+\vspace{6pt}
+\textbf{4.}
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
+  \item \ans{$\binom{6}{2} = \dfrac{6!}{2! \cdot 4!} = \dfrac{6 \times 5}{2} = 15$}
+  \item \ans{There are 15 different arrangements (orderings) in which exactly 2 successes can occur among 6 independent trials.}
+\end{enumerate}
+
+\vspace{6pt}
+\textbf{5.} Door-to-door salesperson, $n=8$, $p=0.15$.
+\begin{enumerate}[label=(\alph*), leftmargin=2em, itemsep=5pt]
+  \item \ans{$X =$ number of sales in 8 houses. B: sale or no sale. I: houses are independent (given). N: fixed $n=8$. S: same $p=0.15$. So $X \sim B(8, 0.15)$.}
+  \item \ans{$P(X=1) = \binom{8}{1}(0.15)^1(0.85)^7 = 8(0.15)(0.3206) \approx 0.3847$}
+  \item \ans{$P(X=0) = \binom{8}{0}(0.15)^0(0.85)^8 = (0.85)^8 \approx 0.2725$. In context: there is about a 27.3\% probability that the salesperson makes no sales at all during an 8-house visit.}
+\end{enumerate}
+
+\vspace{6pt}
+\textbf{6. Extension:} $X \sim B(5, 0.4)$.
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{1.2cm} X X X X X X @{}}
+$k$ & 0 & 1 & 2 & 3 & 4 & 5 \\
+\hline
+$P(X=k)$ & \ans{0.0778} & \ans{0.2592} & \ans{0.3456} & \ans{0.2304} & \ans{0.0768} & \ans{0.0102} \\
+\end{tabularx}
+
+\vspace{6pt}
+Sum $= $ \ans{$0.0778+0.2592+0.3456+0.2304+0.0768+0.0102 = 1.000$} \checkmark
+\end{practicebox}
+
+\end{document}
