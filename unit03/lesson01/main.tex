@@ -1,0 +1,224 @@
+%! AP Statistics — Unit 3, Lesson 3.1 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\newcommand{\UnitNumberName}{Unit 3: Collecting Data \quad}
+\newcommand{\LessonNumberName}{Lesson 3.1: Introducing Statistics --- Do the Data We Collected Tell the Truth?}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear\ (\MeetingLength) \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will recognize that the method used to collect
+    data determines the trustworthiness of conclusions --- methods that do not rely on
+    chance can produce biased, untrustworthy results (Big Idea: VAR).
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 1 --- Selecting Statistical Methods}
+    \begin{itemize}
+        \item Identify a statistical question about a data collection method (Skill 1.A).
+        \item Recognize that methods not relying on chance produce untrustworthy
+              conclusions (VAR-1.E, VAR-1.E.1).
+        \item Transition from Unit 2 (describing relationships) to Unit 3 (how data
+              are gathered).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item The way data are collected determines what conclusions are valid.
+        \item ``Convenient'' data often reflect the preferences of who chose to respond,
+              not the broader population.
+        \item Chance-based methods are the foundation of trustworthy statistics.
+        \item This lesson sets up the entire unit: sampling (3.2--3.4) and
+              experiments (3.5--3.7).
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Data collection method} --- the procedure used to gather information
+        \item \textbf{Chance-based method} --- selection that relies on a random mechanism
+        \item \textbf{Non-chance method} --- selection based on convenience, judgment, or
+              voluntary participation
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Trustworthy conclusion} --- a result that can be generalized to the
+              population of interest
+        \item \textbf{Bias} --- a systematic tendency for the data to misrepresent the
+              population
+        \item \textbf{Anecdotal evidence} --- informal evidence based on a few cases, not
+              a systematic sample
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Quick review: ``What is a confounding variable?'' (Unit 2)
+        \item Connect: Unit 2 found associations --- Unit 3 asks how we should collect
+              data so our conclusions mean something.
+        \item Prompt: \textit{``If I want to know whether energy drinks improve test
+              scores, how should I collect the data?''}
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Connections Forward}
+    \begin{itemize}
+        \item Observational studies vs.\ experiments $\to$ Lesson 3.2
+        \item Random sampling methods $\to$ Lesson 3.3
+        \item Bias in non-random samples $\to$ Lesson 3.4
+        \item Experimental design $\to$ Lessons 3.5--3.6
+        \item Causal inference $\to$ Lesson 3.7
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (5--7 min)}\\
+    Display three ``survey results'':
+    \begin{itemize}
+        \item A grocery store places a comment card near the exit --- 12 customers
+              return it, all complaining about prices.
+        \item A news website polls online visitors about a new school bond.
+        \item A researcher randomly dials 400 phone numbers.
+    \end{itemize}
+    Ask: ``Which result would you trust most? Why?''\\
+    Transition: \textit{``The answer depends entirely on HOW the data were collected.''}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15--18 min)}
+    \begin{enumerate}
+        \item Define data collection method; show that the same question yields
+              different answers depending on who is asked and how.
+        \item Contrast: ``I asked my friends'' vs.\ ``I used a random number generator.''
+        \item Key idea (VAR-1.E.1): non-chance methods produce results that may
+              systematically misrepresent the population.
+        \item Counter-intuitive point: a large non-random sample is \emph{not} more
+              trustworthy than a small random one (Literary Digest 1936 example).
+        \item Preview road map: rest of Unit 3 develops chance-based and well-designed
+              methods for both surveys and experiments.
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Direct Instruction (10 min)}
+    \begin{itemize}
+        \item Work through 3 data collection scenarios. For each: (a) Was chance used?
+              (b) Whose opinions are represented? (c) Can we trust the conclusion for
+              the whole population?
+        \item Emphasize VAR-1.E.1: non-chance methods produce untrustworthy conclusions
+              because the sample may not represent the population.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Active Monitoring}
+    \begin{itemize}
+        \item Listen for: ``bigger sample = more trustworthy'' --- address with the
+              Literary Digest example.
+        \item Cold-call: ``Tell me one reason the online poll result might not represent
+              the population.''
+        \item Circulate during guided notes; check students can distinguish chance from
+              non-chance selection.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Partner Activity (8--10 min)}\\
+    Four data collection scenarios. Partners decide:
+    \begin{enumerate}
+        \item Was chance used to select individuals?
+        \item Who is represented and who is left out?
+        \item Can conclusions be trusted for the population?
+        \item What one change would make the data more trustworthy?
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support}: Anchor chart --- ``Was chance used? YES $\to$ more
+              trustworthy. NO $\to$ less trustworthy.''
+        \item \textit{Extension}: Research the 1936 Literary Digest poll. Write a
+              paragraph explaining why 2.4 million surveys produced the wrong prediction.
+        \item \textit{ELL}: Vocabulary card with ``chance,'' ``sample,'' and
+              ``population'' in accessible language.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    Scenario: \textit{``A principal wants to know how students feel about the new lunch
+    menu. She asks all 30 students in her AP Statistics class to fill out a survey.''}
+    \begin{enumerate}
+        \item Was chance used to select these students?
+        \item Why might these results not represent all students?
+        \item Suggest one change that would make the data more trustworthy.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{``A TV station asks viewers to call in and vote on a new city ordinance.
+    Of 3{,}000 callers, 78\% oppose it. Which best explains why this may not be a
+    trustworthy estimate of public opinion?''}
+    \begin{enumerate}[label=(\Alph*)]
+        \item The sample size is too small.
+        \item Only viewers with strong opinions are likely to call in.
+        \item The ordinance is too controversial to survey fairly.
+        \item Television viewers are a representative cross-section of the public.
+    \end{enumerate}
+    Answer: (B)
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item For 4 real-world scenarios, identify whether chance was used, who is
+              represented, and whether results are trustworthy.
+        \item Reflection: \textit{``Why isn't a large sample size enough to guarantee
+              trustworthy data?''}
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: Look up the 1936 Literary Digest poll. Explain why
+              10 million surveys led to the wrong prediction.
+        \item \textit{Preview}: Lesson 3.2 introduces the formal distinction between
+              observational studies and experiments --- start thinking about what
+              ``imposing a treatment'' means.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\end{document}

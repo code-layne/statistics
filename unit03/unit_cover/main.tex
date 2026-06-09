@@ -1,0 +1,100 @@
+%! AP Statistics — Unit 3 Cover Sheet
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+%=============================================================================
+\begin{document}
+
+% ── Full-bleed navy banner ────────────────────────────────────────────────────
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[navy] (current page.north west)
+    rectangle ([yshift=-1.4in]current page.north east);
+\end{tikzpicture}
+\vspace{-1.3in}
+
+\begin{center}
+  {\color{white}\bfseries\fontsize{28}{34}\selectfont AP Statistics}\\[8pt]
+  {\color{goldacc}\bfseries\Large Shepherd \quad 2026--2027}\\[14pt]
+  {\color{white}\bfseries\LARGE Unit 3: Collecting Data}\\[4pt]
+\end{center}
+
+\vspace{0.30in}
+
+% ── Unit overview ─────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=sky,colframe=navy,boxrule=0.9pt,arc=2mm,
+    left=4mm,right=4mm,top=3mm,bottom=3mm]
+  \textbf{Unit Overview.}\quad
+  Unit 3 examines how data are collected and why the collection method determines
+  what conclusions can validly be drawn.  Students begin by questioning whether data
+  collected without chance can be trusted, then distinguish observational studies from
+  experiments.  The sampling half of the unit covers simple random, stratified, cluster,
+  and systematic samples, and identifies the bias sources that arise when chance is
+  absent.  The experimental half introduces the components and principles of
+  well-designed experiments --- random assignment, control, replication, blinding, and
+  blocking --- and closes with the logic of statistical inference: how random assignment
+  allows researchers to attribute statistically significant differences to the treatments.
+\end{tcolorbox}
+
+\vspace{0.22in}
+
+% ── Lessons in this unit ──────────────────────────────────────────────────────
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Lessons in This Unit]{goldbox}
+\begin{tabularx}{\linewidth}{@{} c >{\bfseries}p{0.44\linewidth} X @{}}
+  \textbf{\#} & \textbf{Title} & \textbf{Focus} \\
+  \hline
+  3.1 & Introducing Statistics: Do the Data We Collected Tell the Truth?
+    & Questioning collection methods; chance vs.\ non-chance data. \\
+  \hline
+  3.2 & Introduction to Planning a Study
+    & Population vs.\ sample; observational study vs.\ experiment; generalization. \\
+  \hline
+  3.3 & Random Sampling and Data Collection
+    & SRS, stratified, cluster, systematic, and census; choosing a method. \\
+  \hline
+  3.4 & Potential Problems with Sampling
+    & Voluntary response, undercoverage, nonresponse, and question-wording bias. \\
+  \hline
+  3.5 & Introduction to Experimental Design
+    & Components of experiments; principles of well-designed experiments; blocking. \\
+  \hline
+  3.6 & Selecting an Experimental Design
+    & Choosing among completely randomized, block, and matched-pairs designs. \\
+  \hline
+  3.7 & Inference and Experiments
+    & Statistically significant results; causal conclusions; scope of inference. \\
+  \hline
+\end{tabularx}
+\end{skillbox}
+
+\vspace{0.18in}
+
+% ── Standards covered ─────────────────────────────────────────────────────────
+\begin{skillbox}[AP Statistics Big Ideas \& Learning Objectives --- Unit 3]{greenbox}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.14\linewidth} X @{}}
+  VAR-1.E & Identify questions to be answered about data collection methods;
+            recognize that non-chance methods result in untrustworthy conclusions. \\
+  DAT-2.A & Identify the type of study (observational vs.\ experiment); distinguish
+            population from sample. \\
+  DAT-2.B & Identify appropriate generalizations from observational studies;
+            recognize that causation cannot be established from observational data. \\
+  DAT-2.C & Identify and describe sampling methods: SRS, stratified, cluster,
+            systematic, and census. \\
+  DAT-2.D & Explain why a particular sampling method is or is not appropriate for
+            a given situation. \\
+  DAT-2.E & Identify potential sources of bias: voluntary response, undercoverage,
+            nonresponse, and response bias. \\
+  VAR-3.A & Identify the components of an experiment: experimental units, factors,
+            treatments, response variable, and confounding variables. \\
+  VAR-3.B & Describe the elements of a well-designed experiment: comparison, random
+            assignment, replication, and control of confounding variables. \\
+  VAR-3.C & Compare experimental designs: completely randomized, single- and
+            double-blind, control group, block design, and matched pairs. \\
+  VAR-3.D & Explain why a particular experimental design is appropriate. \\
+  VAR-3.E & Interpret results of a well-designed experiment; determine whether
+            differences are statistically significant and what scope of inference applies. \\
+\end{tabularx}
+\end{skillbox}
+
+\end{document}

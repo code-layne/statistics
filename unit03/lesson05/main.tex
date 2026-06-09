@@ -1,0 +1,236 @@
+%! AP Statistics — Unit 3, Lesson 3.5 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\newcommand{\UnitNumberName}{Unit 3: Collecting Data \quad}
+\newcommand{\LessonNumberName}{Lesson 3.5: Introduction to Experimental Design}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear\ (\MeetingLength) \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will identify the components of a well-designed
+    experiment, describe the four principles of experimental design, and compare
+    completely randomized, block, and matched-pairs designs (Big Idea: VAR).
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 1 --- Selecting Statistical Methods}
+    \begin{itemize}
+        \item Identify the components of an experiment (VAR-3.A, Skill 1.C).
+        \item Describe elements of a well-designed experiment (VAR-3.B, Skill 1.B).
+        \item Compare experimental designs: CRD, block, matched pairs (VAR-3.C,
+              Skill 1.C).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item Four principles: comparison, random assignment, replication, control.
+        \item Random \emph{assignment} (not selection) is what allows causal conclusions.
+        \item Completely randomized design: all units randomly assigned to treatments.
+        \item Block design: units grouped by a blocking variable; randomize within
+              blocks to reduce variability.
+        \item Matched pairs: a special block design with pairs of similar units.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Experimental unit} --- the individual assigned to a treatment
+        \item \textbf{Factor (explanatory variable)} --- a variable whose levels are
+              intentionally manipulated
+        \item \textbf{Treatment} --- a specific level or combination of levels of the
+              factor(s)
+        \item \textbf{Response variable} --- the outcome measured after treatments
+        \item \textbf{Confounding variable} --- related to factor and response; can
+              create a false perception of association
+        \item \textbf{Control group} --- receives no treatment or a placebo
+        \item \textbf{Placebo} --- an inactive treatment; controls for the placebo effect
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Random assignment} --- experimental units assigned to treatments
+              by chance; balances confounding variables
+        \item \textbf{Replication} --- more than one experimental unit per treatment group
+        \item \textbf{Single-blind} --- subjects don't know which treatment they receive
+        \item \textbf{Double-blind} --- neither subjects nor evaluators know which
+              treatment subjects receive
+        \item \textbf{Block design} --- experimental units grouped by a blocking
+              variable; treatments assigned randomly within each block
+        \item \textbf{Matched pairs} --- a block design with two units per block (or
+              same unit receives both treatments)
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Recall: ``What is the difference between an observational study and an
+              experiment?'' (Lesson 3.2)
+        \item Recall: ``What is a confounding variable?'' (Unit 2, Lesson 3.2)
+        \item Transition: ``Experiments are designed to \emph{eliminate} confounding.
+              Today we learn how.''
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Connections Forward}
+    \begin{itemize}
+        \item Choosing the right design for a given situation $\to$ Lesson 3.6
+        \item Interpreting experiment results; statistical significance $\to$ Lesson 3.7
+        \item Significance testing for experiments $\to$ Units 6--9
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (5--7 min)}\\
+    Scenario: \textit{``I want to test whether a new study app improves test scores.
+    I let students choose whether to use it. App users score 8 points higher. Can I
+    conclude the app works?''}\\[4pt]
+    Students discuss: ``What's wrong with this study?'' (Selection bias: motivated
+    students choose to use the app.)\\[4pt]
+    Transition: \textit{``An experiment randomly assigns which students use the app,
+    eliminating that problem.''}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15--18 min)}
+    \begin{enumerate}
+        \item Identify components: experimental units, factor, treatments, response,
+              confounding variable.
+        \item Four principles of well-designed experiments (VAR-3.B.1):
+              (a) comparison, (b) random assignment, (c) replication,
+              (d) control of confounding.
+        \item Completely randomized design: all units randomly assigned to treatments;
+              diagram.
+        \item Blinding: single-blind and double-blind; placebo effect.
+        \item Block design: reduce variability by blocking on a variable (e.g., gender);
+              randomize within blocks.
+        \item Matched pairs: pairs of similar units; one per treatment. OR same unit
+              gets both treatments in random order.
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Direct Instruction (10 min)}
+    \begin{itemize}
+        \item Worked example: testing a new fertilizer on corn plants. Identify
+              units, factor, treatments, response, and potential confounds. Design a
+              CRD, then a block design blocking on soil type.
+        \item Key distinction: blocking variable is a known source of variability that
+              we want to \emph{remove} from the error, not a treatment we are testing.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Active Monitoring}
+    \begin{itemize}
+        \item Listen for: confusing random \emph{assignment} with random \emph{selection}.
+        \item Cold-call: ``If I don't randomly assign, which principle of good
+              experimental design am I violating?''
+        \item Check that students can draw a diagram of the design (units $\to$ random
+              assignment $\to$ treatment groups $\to$ response).
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Partner Activity (8--10 min)}\\
+    Three experiment descriptions. Partners:
+    \begin{enumerate}
+        \item Identify experimental units, factor(s), treatments, and response.
+        \item Identify the design type (CRD, block, or matched pairs).
+        \item Identify whether blinding is used and what type.
+        \item State one potential confounding variable and how the design controls it.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support}: Diagram template --- boxes for units, random
+              assignment arrow, treatment boxes, response measurement.
+        \item \textit{Extension}: Design a double-blind experiment to test whether a
+              new energy drink improves reaction time. Explain each design choice.
+        \item \textit{ELL}: Visual experiment diagram with labels in both English and
+              L1 if available.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    Scenario: \textit{``Researchers recruit 60 volunteers to test a new headache
+    medication. Half receive the drug; half receive a sugar pill. Neither group
+    knows which they received. Researchers measure headache severity after 1 hour.''}
+    \begin{enumerate}
+        \item Identify: experimental units, treatment(s), response variable.
+        \item What design is this? (CRD, block, or matched pairs?)
+        \item What type of blinding is used?
+        \item Why is random assignment essential?
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{``In an experiment testing whether music improves focus, students are
+    randomly assigned to study with music or in silence for 30 minutes, then take
+    a quiz. Researchers block by grade level (9th vs.\ 12th). What is the purpose
+    of blocking?''}
+    \begin{enumerate}[label=(\Alph*)]
+        \item To create larger treatment groups
+        \item To reduce variability due to grade-level differences
+        \item To ensure all students take the same quiz
+        \item To prevent the placebo effect
+    \end{enumerate}
+    Answer: (B)
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item For 4 experiment descriptions: identify units/factor/treatments/response,
+              classify the design, identify type of blinding, and evaluate whether the
+              four principles of good design are met.
+        \item Reflection: \textit{``Why does random \emph{assignment} (not just random
+              selection) allow us to conclude causation?''}
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: Research a famous clinical trial (e.g., Salk
+              polio vaccine, 1954). Identify the components of the experimental design
+              and explain why it was double-blind.
+        \item \textit{Preview}: Lesson 3.6 asks you to choose the \emph{best} design
+              for a given situation --- think about what factors matter when choosing
+              between CRD, block, and matched pairs.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\end{document}
