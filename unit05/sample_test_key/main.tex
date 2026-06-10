@@ -1,0 +1,121 @@
+%! AP Statistics — Unit 5 Sample Test (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 5}{Sample Test --- Sampling Distributions --- Answer Key}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=sky,colframe=navy,boxrule=0.8pt,arc=2mm,
+    left=3mm,right=3mm,top=2mm,bottom=2mm]
+\textbf{For teacher use only.} Full worked answers are shown. MC answer summary: B C C C D B B C B C.
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\noindent\textbf{Part I --- Multiple Choice}
+
+\begin{enumerate}
+  \item \ans{(B) The distribution of all possible values of a statistic over all possible samples. That is the definition of a sampling distribution.}
+
+  \item \ans{(B) $z = (75-69.2)/3.6 \approx 1.61$; $P(Z>1.61) \approx 0.0537$.}
+
+  \item \ans{(C) $\sigma_{\bar{x}} = \sigma/\sqrt{n} = 10/\sqrt{25} = 10/5 = 2$.}
+
+  \item \ans{(C) The CLT requires $n \ge 30$ (or a normal population). Option (A) is sufficient but not necessary; (D) is the Large Counts condition for proportions.}
+
+  \item \ans{(D) The sample maximum is biased high --- it consistently overestimates the population maximum.}
+
+  \item \ans{(B) $\sigma_{\hat{p}} = \sqrt{0.40(0.60)/100} = \sqrt{0.0024} \approx 0.0490$.}
+
+  \item \ans{(B) $\sigma_{\bar{x}} = 16/\sqrt{64} = 2$; $z = (122-120)/2 = 1.00$; $P(\bar{x}>122) = 1-0.8413 = 0.1587$.}
+
+  \item \ans{(C) The Large Counts condition: $np \ge 10$ and $n(1-p) \ge 10$.}
+
+  \item \ans{(B) $\mu_{\bar{x}_1-\bar{x}_2} = \mu_1 - \mu_2 = 80 - 75 = 5$.}
+
+  \item \ans{(C) Larger $n$ reduces $\sigma_{\bar{x}} = \sigma/\sqrt{n}$, narrowing the sampling distribution around the true parameter.}
+\end{enumerate}
+
+\vspace{0.15in}
+\noindent\rule{\linewidth}{0.4pt}
+
+\noindent\textbf{Part II --- Free Response}
+
+\begin{enumerate}
+\setcounter{enumi}{10}
+
+  \item Exercise habits, $p = 0.28$, $n = 200$.
+
+        \begin{enumerate}[label=(\alph*)]
+          \item \ans{(1) \textbf{Random:} stated --- the sample is a random sample. \checkmark\\
+                (2) \textbf{10\% condition:} $n = 200 \le 10\%$ of all adults (millions). \checkmark\\
+                (3) \textbf{Large Counts:} $np = 200(0.28) = 56 \ge 10$; $n(1-p) = 200(0.72) = 144 \ge 10$. \checkmark\\
+                All conditions met; use the normal model for $\hat{p}$.}
+
+          \item \ans{$\mu_{\hat{p}} = 0.28$;\quad $\sigma_{\hat{p}} = \sqrt{0.28(0.72)/200} = \sqrt{0.001008} \approx 0.03175$.}
+
+          \item \ans{$z = (0.32 - 0.28)/0.03175 \approx 1.260$. $P(\hat{p}>0.32) = P(Z>1.260) \approx 1 - 0.8962 = 0.1038$. About 10.4\%.}
+
+          \item \ansline{If the true proportion of adults who exercise at least 5 days per week is 28\%, there is approximately a 10.4\% chance that a random sample of 200 adults would yield a sample proportion of more than 32\%.}
+        \end{enumerate}
+
+\begin{teachernote}
+Award partial credit on (c) if the student correctly standardizes but makes a minor arithmetic error. Require a sentence with context for full credit on (d).
+\end{teachernote}
+
+  \item Bolt lengths $N(50, 1.5)$.
+
+        \begin{enumerate}[label=(\alph*)]
+          \item \ans{$z = (51.5-50)/1.5 = 1.00$; $P(X>51.5) = 1-0.8413 = 0.1587$. About 15.9\%.}
+
+          \item \ans{(1) \textbf{Random:} stated. \checkmark\\
+                (2) \textbf{10\%:} $36 \le 10\%$ of all bolts produced. \checkmark\\
+                (3) \textbf{Normal/Large Sample:} population is approximately normal. \checkmark\\
+                All conditions met.}
+
+          \item \ans{$\mu_{\bar{x}} = 50$ mm;\quad $\sigma_{\bar{x}} = 1.5/\sqrt{36} = 0.25$ mm.}
+
+          \item \ans{$z = (50.5-50)/0.25 = 2.00$; $P(\bar{x}>50.5) = 1-0.9772 = 0.0228$. About 2.3\%.}
+
+          \item \ansline{The probability for a single bolt (15.9\%) is much larger than for the sample mean (2.3\%). Averaging 36 bolts cancels out individual extremes: the standard error ($\sigma_{\bar{x}} = 0.25$) is much smaller than the population SD ($\sigma = 1.5$), so sample means are far less variable than individual measurements.}
+
+          \item \ans{$z = (49.4-50)/0.25 = -2.40$; $P(\bar{x}<49.4) = P(Z<-2.40) \approx 0.0082$. About 0.82\%. This is unusual (probability $< 5\%$); such a sample mean would occur by chance less than 1\% of the time and warrants investigation.}
+        \end{enumerate}
+
+  \item Homework completion, two schools.
+
+        \begin{enumerate}[label=(\alph*)]
+          \item \ans{$n_1 p_1 = 120(0.65) = 78 \ge 10$. \checkmark\\
+                $n_1(1-p_1) = 120(0.35) = 42 \ge 10$. \checkmark\\
+                $n_2 p_2 = 150(0.58) = 87 \ge 10$. \checkmark\\
+                $n_2(1-p_2) = 150(0.42) = 63 \ge 10$. \checkmark\\
+                All four Large Counts conditions met.}
+
+          \item \ans{$\mu_{\hat{p}_1-\hat{p}_2} = 0.65 - 0.58 = 0.07$.\\
+                $\sigma = \sqrt{0.65(0.35)/120 + 0.58(0.42)/150} = \sqrt{0.001896 + 0.001624} = \sqrt{0.003520} \approx 0.05933$.}
+
+          \item \ans{$z = (0.15 - 0.07)/0.05933 \approx 1.348$; $P(\hat{p}_1-\hat{p}_2>0.15) \approx 1-0.9112 = 0.0888 \approx 8.9\%$.}
+        \end{enumerate}
+
+\end{enumerate}
+
+\vspace{0.15in}
+\noindent\rule{\linewidth}{0.4pt}
+\begin{center}
+  \textbf{MC Answer Key:} 1-B \; 2-B \; 3-C \; 4-C \; 5-D \; 6-B \; 7-B \; 8-C \; 9-B \; 10-C
+\end{center}
+
+\begin{teachernote}
+\textbf{Scoring guidance.} Free response is scored holistically: award points for correct conditions
+checked, correct formulas stated, correct calculations shown, and contextual interpretations. A
+correct answer with no work earns at most 50\% on calculation steps. Context is required in
+interpretations --- deduct 1 point if the student gives a correct probability statement but omits
+reference to the real-world scenario.
+\end{teachernote}
+
+\end{document}
