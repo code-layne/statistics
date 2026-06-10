@@ -1,0 +1,55 @@
+%! Carrying Out a Test for the Difference of Two Population Proportions — Unit 6, Lesson 6.11 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.11}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.15in}
+
+\textbf{Directions:} Full four-step procedure. $\alpha = 0.05$.
+
+\begin{scenariobox}[Scenario 1 --- Volunteering Rates]{sky}
+City M: 78/260. City N: 84/210.
+
+\begin{enumerate}[label=\arabic*.]
+  \item \ansline{$p_M$ = true proportion of City M adults who volunteered; $p_N$ = same for City N.\\
+        $H_0: p_M=p_N$; $H_a: p_M \ne p_N$ (two-sided).}
+
+  \item $\hat p_M=78/260=0.300$; $\hat p_N=84/210=0.400$; $\hat p_c=(78+84)/(260+210)=162/470\approx0.345$.\\
+        \textbf{Random:} \ansline{Both independently randomly sampled.}\\
+        \textbf{Large Counts ($\hat p_c=0.345$):} $260(0.345)=89.7$, $260(0.655)=170.3$, $210(0.345)=72.5$, $210(0.655)=137.6$ --- \ans{all $\ge10$. \checkmark}\\
+        \textbf{10\%:} \ansline{Assumed.}
+
+  \item $SE=\sqrt{0.345(0.655)(1/260+1/210)}=\sqrt{0.226(0.008624)}=\sqrt{0.001949}\approx0.04415$\\
+        $z=(0.300-0.400)/0.04415=-0.100/0.04415\approx\ans{-2.27}$\\
+        $p\text{-value}=2 \times P(Z<-2.27)\approx2(0.0116)=\ans{0.023}$
+
+  \item \ansline{Since $p$-value $= 0.023 \le \alpha = 0.05$, we reject $H_0$. We have convincing evidence that the proportions of adults who volunteered in the past year differ between City M and City N.}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 2 --- Flu Shot Acceptance]{sky}
+18--34: 63/210. 55+: 112/280.
+
+\begin{enumerate}[label=\arabic*.]
+  \item \ansline{$p_Y$ = true proportion of 18--34 year olds who got a flu shot; $p_O$ = same for 55+ year olds.\\
+        $H_0: p_Y=p_O$; $H_a: p_Y<p_O$ (one-sided left: younger adults less likely).}
+
+  \item $\hat p_Y=63/210=0.300$; $\hat p_O=112/280=0.400$; $\hat p_c=(63+112)/(210+280)=175/490\approx0.357$.\\
+        Large Counts: $210(0.357)=74.97$, $210(0.643)=135$, $280(0.357)=100$, $280(0.643)=180$ --- \ans{all $\ge10$. \checkmark}\\
+        Random/10\%: \ansline{Both randomly sampled; assumed $\le10\%$ of each age group.}
+
+  \item $SE=\sqrt{0.357(0.643)(1/210+1/280)}=\sqrt{0.2295(0.008333)}=\sqrt{0.001913}\approx0.04374$\\
+        $z=(0.300-0.400)/0.04374\approx\ans{-2.29}$\\
+        $p\text{-value}=P(Z<-2.29)\approx\ans{0.011}$
+
+  \item \ansline{Since $p$-value $= 0.011 \le \alpha = 0.05$, we reject $H_0$. We have convincing evidence that adults aged 18--34 are less likely to get a flu shot than adults aged 55+.}
+\end{enumerate}
+\end{scenariobox}
+
+\end{document}

@@ -1,0 +1,88 @@
+%! Introducing Statistics: Why Be Normal? — Unit 6, Lesson 6.1 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.1}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{enumerate}
+  \item \ansline{identify whether a research question calls for a confidence interval or a significance test}
+  \item \ansline{verify the conditions needed to use a normal model for inference on a population proportion}
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\termblanklong{Statistical inference} \ansline{using sample data to draw conclusions about an unknown population parameter}
+\termblanklong{Confidence interval} \ansline{a range of plausible values for an unknown parameter, constructed from sample data}
+\termblanklong{Significance test (hypothesis test)} \ansline{a procedure for deciding whether sample data provide sufficient evidence against a specific claim about a parameter}
+\termblanklong{Null hypothesis ($H_0$)} \ansline{the default claim about the parameter, assumed true unless evidence suggests otherwise}
+\termblanklong{Alternative hypothesis ($H_a$)} \ansline{the claim we seek statistical evidence for; it contradicts $H_0$}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{The Big Shift: From Unit 5 to Unit 6}
+\textbf{Unit 5 question:} Given $p = 0.60$ and $n = 100$, what is the probability that
+$\hat p > 0.65$?
+
+\textbf{Unit 6 question:} Given $\hat p = 0.65$ and $n = 100$, what can we say about
+the \emph{unknown} population proportion $p$?
+
+The key: since the sampling distribution of $\hat p$ is approximately
+\ans{normal} when conditions are met, we can \ansline{work backwards from $\hat p$ to estimate or test claims about the unknown parameter $p$}.
+
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Two Types of Inference}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{@{} >{\bfseries}p{0.20\linewidth} p{0.36\linewidth} p{0.36\linewidth} @{}}
+  & \textbf{Confidence Interval} & \textbf{Significance Test} \\
+  \hline
+  Goal    & \ansline{Estimate the value of an unknown parameter} & \ansline{Decide if data provide evidence against a specific parameter value} \\
+  Question asked & ``Where is \ans{$p$}?'' & ``Is \ans{$p_0$} consistent with my data?'' \\
+  Answer gives & A range of \ans{plausible} values & A decision: reject or \ans{fail to reject} $H_0$ \\
+\end{tabular}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Conditions for Using a Normal Model}
+Before using any inference procedure in Unit 6, verify:
+
+\begin{enumerate}
+  \item \textbf{Random:} The data come from \ansline{a random sample or randomized experiment}.
+  \item \textbf{Large Counts:} Both $n\hat{p} \ge$ \ans{10} and $n(1-\hat{p}) \ge$ \ans{10}.
+  \item \textbf{Independence (10\% rule):} If sampling without replacement, $n \le$ \ans{10\% of $N$}.
+\end{enumerate}
+
+When all three conditions are met, the sampling distribution of $\hat p$ is approximately
+\ans{normal} with mean \ans{$p$} and standard deviation \ans{$\sqrt{p(1-p)/n}$}.
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+\textbf{Quick Check.} Classify each research question as calling for a \emph{confidence interval}
+(CI) or a \emph{significance test} (Test).
+
+\begin{enumerate}
+  \item ``What proportion of U.S. adults exercise daily?'' \hfill \ans{CI}
+  \item ``Is there evidence that more than half of students prefer online homework?'' \hfill \ans{Test}
+  \item ``We want to estimate, within 3 percentage points, the rate of vaccine hesitancy.''
+        \hfill \ans{CI}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

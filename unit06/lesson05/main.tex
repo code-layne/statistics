@@ -1,0 +1,136 @@
+%! Interpreting p-Values — Unit 6, Lesson 6.5 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\UnitNumberName}{Unit 6: Inference for Categorical Data: Proportions \quad}
+\newcommand{\LessonNumberName}{Lesson 6.5: Interpreting p-Values}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will compute a $p$-value from a $z$-statistic
+    using the standard normal distribution and correctly interpret the $p$-value as the
+    probability of obtaining a result at least as extreme as the observed, assuming $H_0$
+    is true (Big Idea: VAR/DAT).
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+    \begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+        \textbf{AP Skills}
+        \begin{itemize}[leftmargin=1.2em]
+            \item \textbf{3.D} --- Calculate the test statistic and $p$-value
+            \item \textbf{4.B} --- Interpret the $p$-value in context
+        \end{itemize}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+        \textbf{Key Understandings (VAR-6.G, DAT-3.A)}
+        \begin{itemize}[leftmargin=1.2em]
+            \item The test statistic is $z = (\hat p - p_0)/\sqrt{p_0(1-p_0)/n}$
+            \item $p$-value = probability, assuming $H_0$ true, of a result at least as extreme as observed
+            \item One-sided test: $p$-value is one tail; two-sided: multiply by 2
+            \item A small $p$-value is evidence against $H_0$, not evidence the alternative is true
+        \end{itemize}
+    \end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\linewidth}{@{} p{0.22\linewidth} X @{}}
+        \textbf{$p$-value}   & $P(\text{stat at least as extreme} \mid H_0 \text{ true})$; a probability between 0 and 1 \\
+        \textbf{``Extreme''} & In the direction of $H_a$: left tail ($<$), right tail ($>$), both tails ($\ne$) \\
+        \textbf{Evidence}    & Smaller $p$-value = stronger evidence against $H_0$; $p$-value near 1 = weak evidence \\
+        \textbf{Two-sided $p$-value} & $2P(Z \ge |z|)$ because extreme values can fall in either tail \\
+    \end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+    \begin{tabularx}{\linewidth}{@{}X@{}}
+        \begin{minipage}[t]{\linewidth}\vspace{0pt}
+            Please see attached spiral review.\\[2pt]
+            \textit{Skills reviewed:} computing $z$ for a one-sample proportion test;
+            using Table B or \texttt{normalcdf} to find normal probabilities;
+            identifying tail direction from $H_a$.
+        \end{minipage}
+    \end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Hook]{sky}
+    \textbf{``Was it luck?''} \\[3pt]
+    A contestant on a game show correctly guesses 8 out of 10 answers. The host claims they
+    were guessing randomly ($p = 0.5$). Ask students: ``Is 8/10 surprising under the
+    hypothesis of random guessing?'' Compute $P(\hat p \ge 0.8 \mid p=0.5)$ together:
+    $z \approx 1.90$, $P \approx 0.029$. \textit{``This probability --- 0.029 --- is what
+    statisticians call the $p$-value.''} Discuss what it means.
+\end{skillbox}
+
+\begin{skillbox}[Lesson]{sky}
+    \begin{enumerate}[leftmargin=1.4em, label=\arabic*.]
+        \item \textbf{$p$-value definition.} Formal statement: assuming $H_0$ is true,
+              the $p$-value is the probability of obtaining a sample result as extreme as or
+              more extreme than the observed result, in the direction specified by $H_a$.
+              Emphasize: a $p$-value is NOT the probability that $H_0$ is true.
+
+        \item \textbf{Finding the $p$-value from $z$.}
+              \begin{itemize}
+                  \item $H_a: p > p_0$: $p$-value $= P(Z \ge z) = 1 - \Phi(z)$
+                  \item $H_a: p < p_0$: $p$-value $= P(Z \le z) = \Phi(z)$
+                  \item $H_a: p \ne p_0$: $p$-value $= 2P(Z \ge |z|)$
+              \end{itemize}
+              Show Table B lookup and \texttt{normalcdf} on the calculator.
+
+        \item \textbf{Interpretation template.} ``Assuming [null hypothesis in context], there
+              is a [p-value] probability of observing a sample proportion of [value] or
+              [more/less extreme] by chance alone.'' Emphasize: interpret in context, not just
+              as a number.
+
+        \item \textbf{What $p$-value does NOT mean.} It does not mean: (1)~the probability
+              $H_0$ is true; (2)~the probability the result was due to chance; (3)~the
+              probability $H_a$ is true.
+    \end{enumerate}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+    \textbf{Watch for:}
+    \begin{itemize}[leftmargin=1.2em]
+        \item ``The $p$-value is the probability that $H_0$ is true'' --- most common error; address firmly
+        \item Wrong tail direction (e.g., computing right-tail $p$-value for $H_a: p < p_0$)
+        \item Forgetting to double the tail probability for a two-sided test
+        \item Using the $p$-value to ``prove'' $H_a$ rather than just providing evidence
+    \end{itemize}
+    \textbf{Cold-call:} ``If we got $p\text{-value} = 0.42$, does that mean there's a 42\% chance
+    $H_0$ is true?'' (No --- redirect to the correct interpretation.)
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+    See attached activity. Groups receive three scenarios with $z$-values computed; they
+    find $p$-values, identify the correct tail, and write interpretations.\\[4pt]
+    \textbf{Tier R:} Table provided; focus on identifying the correct tail and interpreting.\\
+    \textbf{Tier A:} Compute $p$-value and write full interpretations.\\
+    \textbf{Tier E:} Explain why doubling the $p$-value is necessary for a two-sided test.
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+    \textbf{Exit Ticket:} Given $z$ and the direction of $H_a$, students find the $p$-value
+    and write a complete contextual interpretation. \\[4pt]
+    \textbf{Look for:} Correct tail direction; $p$-value computed correctly; no ``probability
+    $H_0$ is true'' language.
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+    \textbf{Homework:} Four $p$-value problems: compute $p$-value from $z$, write interpretation,
+    identify tail direction. \\[4pt]
+    \textbf{Extension:} If $z = 1.96$ for a two-sided test, what is the $p$-value? Connect
+    to the 95\% confidence interval: $p$-value $= 1 - C = 0.05$ at the boundary.\\[4pt]
+    \textbf{Preview:} Lesson 6.6 introduces the significance level $\alpha$ and the formal
+    reject/fail-to-reject decision.
+\end{skillbox}
+\end{document}

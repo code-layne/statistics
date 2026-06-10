@@ -1,0 +1,61 @@
+%! Carrying Out a Test for the Difference of Two Population Proportions — Unit 6, Lesson 6.11 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.11}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{objectivebox}
+\textbf{Lesson 6.11 Objectives:} Carry out the \textit{Do} and \textit{Conclude} steps
+of a two-sample $z$-test for $p_1-p_2$. \hfill \textit{VAR-6.K, DAT-3.C--D, Skills 3.E \& 4.E}
+\end{objectivebox}
+
+\begin{notesbox}{Test Statistic}
+\[z = \frac{\hat p_1 - \hat p_2}{\sqrt{\hat p_c(1-\hat p_c)\!\left(\dfrac{1}{n_1}+\dfrac{1}{n_2}\right)}}\]
+Note: use \textbf{$\hat p_c$} in the denominator (not $\hat p_1$ or $\hat p_2$).
+\end{notesbox}
+
+\begin{notesbox}{$p$-Value Direction}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{@{} p{0.38\linewidth} p{0.55\linewidth} @{}}
+$H_a: p_1 > p_2$ & $p$-value $=$ \ans{$P(Z > z)$ (right tail)} \\
+$H_a: p_1 < p_2$ & $p$-value $=$ \ans{$P(Z < z)$ (left tail)} \\
+$H_a: p_1 \ne p_2$ & $p$-value $=$ \ans{$2 \times P(Z > |z|)$ (both tails)} \\
+\end{tabular}
+\end{notesbox}
+
+\begin{notesbox}{Conclusion Template}
+``Since $p$-value $=$ \ans{0.051} \ans{$>$} $\alpha =$ \ans{0.05},
+we \ans{fail to reject} $H_0$.
+We \ans{do not} have convincing evidence that \ans{the error rates differ between the new app and old app groups}.''
+\end{notesbox}
+
+\begin{notesbox}{Worked Example --- App Error Rates}
+$\hat p_A=0.140$, $\hat p_B=0.200$, $\hat p_c=0.170$, $n=300$ each. $H_a: p_A\ne p_B$. $\alpha=0.05$.
+
+\textit{Do:}\\
+$SE = \sqrt{\ans{0.170}(1-\ans{0.170})(1/300+1/300)}
+    = \sqrt{\ans{0.1411} \times \ans{0.00667}} = \sqrt{\ans{0.000941}} \approx \ans{0.0307}$\\[6pt]
+$z = \dfrac{0.140 - 0.200}{\ans{0.0307}} = \dfrac{\ans{-0.060}}{\ans{0.0307}} \approx \ans{-1.95}$\\[6pt]
+$p\text{-value} = 2 \times P(Z < \ans{-1.95}) \approx 2(0.0256) \approx \ans{0.051}$
+
+\textit{Conclude:}\\
+\ansline{Since $p$-value $= 0.051 > \alpha = 0.05$, we fail to reject $H_0$. We do not have convincing evidence that the error rates of the new app and old app differ.}
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Try It:} Old line: 36/400, New line: 20/400, $\hat p_c=0.070$. $H_a: p_O>p_N$. $\alpha=0.05$.
+
+$SE = \sqrt{0.070(0.930)(1/400+1/400)} = \sqrt{0.06510 \times 0.005} = \sqrt{0.000326} \approx \ans{0.0180}$\\
+$z = (36/400 - 20/400)/0.0180 = (0.090 - 0.050)/0.0180 = 0.040/0.0180 \approx \ans{2.22}$\\
+$p\text{-value} = P(Z > 2.22) \approx \ans{0.013}$\\
+\ansline{Since $p$-value $= 0.013 \le \alpha = 0.05$, we reject $H_0$. We have convincing evidence that the old production line has a higher defect rate than the new production line.}
+\end{practicebox}
+
+\end{document}

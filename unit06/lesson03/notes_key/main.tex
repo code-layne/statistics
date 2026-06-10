@@ -1,0 +1,91 @@
+%! Justifying a Claim Based on a Confidence Interval for a Population Proportion — Unit 6, Lesson 6.3 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.3}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{objectivebox}
+Interpret confidence intervals for population proportions and use them to evaluate claims.
+\end{objectivebox}
+
+\begin{notesbox}{What Does ``95\% Confident'' Really Mean?}
+A confidence level does \textbf{not} mean there is a 95\% probability that $p$ lies in this
+specific interval. Instead, it means: \\[4pt]
+\textit{If we were to take \ans{many repeated} samples and build a CI from each, about \ans{95}\%
+of the resulting intervals would \ans{contain the true parameter $p$}.} \\[4pt]
+The true parameter $p$ is \ans{fixed (not random)} --- it is either in the interval or it isn't. What is
+random is \ans{the sample, and therefore the interval itself}.
+
+\vspace{4pt}
+\textbf{Common errors to avoid:}
+\begin{itemize}
+  \item[\textbf{$\times$}] ``There is a 95\% probability that $p$ is in the interval'' --- wrong! The interval is fixed.
+  \item[\textbf{$\times$}] ``95\% of all data values are in the interval'' --- wrong! The interval estimates $p$, not data.
+  \item[\checkmark] \ans{``We are 95\% confident that this interval captures the true proportion \ldots''}
+\end{itemize}
+\end{notesbox}
+
+\begin{notesbox}{Complete Interpretation Template}
+\begin{center}
+\begin{tcolorbox}[colback=goldbg, colframe=goldacc, boxrule=0.8pt, width=0.92\linewidth]
+``We are \ans{$C$}\% confident that the interval from \ans{lower} to \ans{upper}
+captures the true \ans{proportion (or other parameter)} of \ans{[describe population].}''
+\end{tcolorbox}
+\end{center}
+
+\vspace{4pt}
+Three required elements: \quad (1) \ans{confidence level} \quad (2) \ans{interval bounds} \quad (3) \ans{parameter in context}
+\end{notesbox}
+
+\begin{notesbox}{Using a CI to Evaluate a Claim}
+If a researcher claims a specific value $p_0$:
+\begin{itemize}
+  \item If $p_0$ is \textbf{inside} the CI $\Rightarrow$ $p_0$ is \ans{consistent/plausible} with the data.
+        We \ans{cannot rule out} the claim.
+  \item If $p_0$ is \textbf{outside} the CI $\Rightarrow$ the data provide \ans{evidence}
+        against the claim at the \ans{corresponding} significance level.
+\end{itemize}
+
+\textbf{Example:} A CI for the proportion of students who prefer online homework is $(0.54, 0.68)$.
+\begin{itemize}
+  \item A principal claims the proportion is 0.60.  Is 0.60 plausible? \ans{Yes}  Because: \ans{0.60 is inside the interval}
+  \item A teacher claims the proportion is 0.75.  Is 0.75 plausible? \ans{No}  Because: \ans{0.75 is outside the interval}
+\end{itemize}
+\end{notesbox}
+
+\begin{notesbox}{Width of a CI: Effects of $n$ and $C$}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} p{0.33\linewidth} X @{}}
+  \textbf{Change} & \textbf{Effect on width} \\ \hline
+  Increase $n$ (hold $C$ fixed)     & Width \ans{decreases} because $SE_{\hat p} = \sqrt{\hat p(1-\hat p)/n}$ \ans{decreases} \\
+  Decrease $n$ (hold $C$ fixed)     & Width \ans{increases} \\
+  Increase $C$ (hold $n$ fixed)     & Width \ans{increases} because $z^*$ \ans{increases} \\
+  Decrease $C$ (hold $n$ fixed)     & Width \ans{decreases} \\
+\end{tabularx}
+
+\vspace{4pt}
+\textbf{Key insight:} To halve the margin of error, you must multiply $n$ by \ans{4}.
+\end{notesbox}
+
+\begin{practicebox}
+A 95\% CI for the proportion of voters who support Measure B is $(0.47, 0.55)$.
+
+\begin{enumerate}[label=\alph*.]
+  \item Write a complete interpretation of this interval.
+        \ansline{We are 95\% confident that the interval from 0.47 to 0.55 captures the true proportion of all voters who support Measure B.}
+  \item A campaign manager claims that more than half of voters support Measure B ($p > 0.50$).
+        Is this claim supported by the CI? Explain.
+        \ansline{Not definitively. The value 0.50 is inside the interval, so the claim is not established --- the data are consistent with both majority and minority support.}
+  \item Would a 99\% CI be wider or narrower? Why?
+        \ansline{Wider --- a higher confidence level requires a larger $z^*$, increasing the margin of error.}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

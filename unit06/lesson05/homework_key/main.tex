@@ -1,0 +1,44 @@
+%! Interpreting p-Values — Unit 6, Lesson 6.5 — Homework (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.5}{Homework --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{enumerate}
+
+  \item $p$-values:
+        \begin{enumerate}[label=\alph*.]
+          \item Tail: \ans{right} \quad $p$-value $= P(Z\ge1.88) =$ \ans{$0.0301$}
+          \item Tail: \ans{left}  \quad $p$-value $= P(Z\le-2.31) =$ \ans{$0.0104$}
+          \item Tail: \ans{both}  \quad $p$-value $= 2P(Z\ge2.05) = 2(0.0202) =$ \ans{$0.0404$}
+        \end{enumerate}
+
+  \item Customer satisfaction:
+        \begin{enumerate}[label=\alph*.]
+          \item \ans{$H_0: p=0.80$; $H_a: p<0.80$}
+          \item $\hat p = $ \ans{$185/250=0.74$} \quad $z \approx$ \ans{$\dfrac{0.74-0.80}{\sqrt{0.80(0.20)/250}}=-2.37$} \quad $p$-value $\approx$ \ans{$P(Z\le-2.37)=0.0089$}
+          \item \ansline{Assuming 80\% of customers are satisfied, there is a 0.89\% probability of observing a sample proportion of 0.74 or lower by chance alone.}
+        \end{enumerate}
+
+  \item Error corrections:
+        \begin{enumerate}[label=\alph*.]
+          \item \ansline{Error: ``due to chance'' is not the correct phrasing. Correct: a $p$-value of 0.03 means that \emph{if $H_0$ were true}, there is a 3\% probability of observing a result at least this extreme.}
+          \item \ansline{Error: a large $p$-value does not prove $H_0$ --- it simply means the data don't provide strong evidence against it. We fail to reject $H_0$, but cannot accept it as true.}
+        \end{enumerate}
+
+\end{enumerate}
+
+\begin{reflectionbox}
+\textbf{Preview:} Lesson 6.6 introduces the significance level $\alpha$ and the formal
+reject/fail-to-reject decision rule. You will compare the $p$-value to $\alpha$ to make
+a formal conclusion about $H_0$ --- and write that conclusion in context.
+\end{reflectionbox}
+
+\end{document}

@@ -1,0 +1,27 @@
+%! Setting Up a Test for the Difference of Two Population Proportions — Unit 6, Lesson 6.10 — Exit Ticket (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.10}{Exit Ticket --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+Weekday: 24/320. Weekend: 22/200.
+
+\textit{State:} \ansline{$p_W$ = true proportion of weekday discharges readmitted within 30 days; $p_E$ = same for weekend discharges.\\
+$H_0: p_W = p_E$; $H_a: p_W < p_E$ (testing whether weekday rate is lower). One-sided left.}
+
+\textit{Plan:} $\hat p_W = 24/320 = \ans{0.075}$; $\hat p_E = 22/200 = \ans{0.110}$; \quad
+$\hat p_c = (24+22)/(320+200) = 46/520 = \ans{0.0885}$
+
+\textbf{Random:} \ansline{Records from random samples of weekday and weekend discharges --- assumed.}\\
+\textbf{Large Counts (using $\hat p_c \approx 0.0885$):}\\
+$320(0.0885)=28.3$, $320(0.9115)=291.7$, $200(0.0885)=17.7$, $200(0.9115)=182.3$ --- \ans{all $\ge10$. \checkmark}\\
+\textbf{10\%:} \ansline{Assumed both samples $\le10\%$ of all discharges in each day group.}
+
+\end{document}

@@ -1,0 +1,49 @@
+%! Setting Up a Test for a Population Proportion — Unit 6, Lesson 6.4 — Homework (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.4}{Homework --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+\textit{For each problem, state $H_0$ and $H_a$, verify conditions, and compute $z$.}
+
+\begin{enumerate}
+
+  \item CDC smoking rate test:
+        \begin{enumerate}[label=\alph*.]
+          \item $H_0$: \ans{$p=0.18$} \quad $H_a$: \ans{$p\ne0.18$} \quad Type: \ans{two-sided}
+          \item \ansline{Random (SRS --- met); Large Counts: $450(0.18)=81\ge10$, $450(0.82)=369\ge10$ --- met; 10\% met.}
+          \item $\hat p = $ \ans{$72/450=0.16$} \quad $z = \dfrac{0.16-0.18}{\sqrt{0.18(0.82)/450}} = \dfrac{-0.02}{0.01810} \approx$ \ans{$-1.11$}
+        \end{enumerate}
+
+  \item Seed germination test:
+        \begin{enumerate}[label=\alph*.]
+          \item \ansline{$H_0: p=0.85$; $H_a: p<0.85$ (one-sided). The researcher thinks the rate is \emph{lower} than claimed.}
+          \item \ansline{Random (assumed random planting --- met); Large Counts: $200(0.85)=170\ge10$, $200(0.15)=30\ge10$ --- met; 10\% met.}
+          \item $\hat p = $ \ans{$162/200=0.81$} \quad $z \approx$ \ans{$\dfrac{0.81-0.85}{\sqrt{0.85(0.15)/200}} = \dfrac{-0.04}{0.02525} \approx -1.58$}
+        \end{enumerate}
+
+  \item Extracurricular participation test:
+        \begin{enumerate}[label=\alph*.]
+          \item \ansline{$H_0: p=0.70$; $H_a: p>0.70$ (one-sided --- parent group believes it increased)}
+          \item \ansline{Random (SRS --- met); Large Counts: $180(0.70)=126\ge10$, $180(0.30)=54\ge10$ --- met; 10\% met.}
+          \item $z \approx$ \ans{$\dfrac{0.75-0.70}{\sqrt{0.70(0.30)/180}} = \dfrac{0.05}{0.03416} \approx 1.46$}
+        \end{enumerate}
+
+  \item \textbf{Reflection:} \ansline{If the researcher believed the county rate was \emph{higher}, $H_a$ would change to $p > 0.18$ (one-sided). The hypotheses and conditions remain the same; only the direction of $H_a$ changes, affecting which tail the $p$-value is computed from.}
+
+\end{enumerate}
+
+\begin{reflectionbox}
+\textbf{Preview:} In Lesson 6.5 you will use the test statistic $z$ to find the $p$-value
+and interpret it as evidence against $H_0$. The $p$-value answers: ``If $H_0$ were true,
+how likely is a sample result at least this extreme?''
+\end{reflectionbox}
+
+\end{document}

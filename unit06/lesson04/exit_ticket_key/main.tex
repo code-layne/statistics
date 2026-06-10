@@ -1,0 +1,34 @@
+%! Setting Up a Test for a Population Proportion — Unit 6, Lesson 6.4 — Exit Ticket (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.4}{Exit Ticket --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+A city transportation department reports that 55\% of commuters use public transit. A policy
+researcher believes the actual proportion has \emph{fallen below} 55\%. She randomly surveys
+240 commuters and finds 120 use public transit.
+
+\begin{enumerate}
+  \item State hypotheses.
+        $H_0$: \ans{$p = 0.55$} \quad $H_a$: \ans{$p < 0.55$}
+
+  \item Verify conditions.
+        \begin{itemize}
+          \item Random: \ans{SRS stated --- met}
+          \item Large Counts: \ans{$240(0.55)=132\ge10$; $240(0.45)=108\ge10$ --- met}
+          \item 10\% rule: \ans{$240 \le 0.10\times$(all commuters) --- met}
+        \end{itemize}
+
+  \item Compute the test statistic. \quad ($\hat p = $ \ans{$120/240=0.50$})
+
+        $z = \dfrac{0.50 - 0.55}{\sqrt{0.55(0.45)/240}} = \dfrac{-0.05}{0.03212} \approx$ \ans{$-1.56$}
+\end{enumerate}
+
+\end{document}

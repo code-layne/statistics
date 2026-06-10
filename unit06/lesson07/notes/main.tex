@@ -1,0 +1,66 @@
+%! Potential Errors When Performing Tests — Unit 6, Lesson 6.7 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.7}{Guided Notes}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{objectivebox}
+Define Type I and Type II errors in context and explain how $\alpha$, $n$, and effect size
+affect the power of a hypothesis test.
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{Type I error}] Rejecting $H_0$ when $H_0$ is actually \blank{2cm}. ``False \blank{3cm}.''  $P(\text{Type I}) = $ \blank{1.5cm}.
+  \item[\termblanklong{Type II error}] Failing to reject $H_0$ when $H_a$ is actually \blank{2cm}. ``False \blank{3cm}.''  $P(\text{Type II}) = \beta$.
+  \item[\termblanklong{Power}] $1 - \beta$; the probability of \blank{7cm} when $H_a$ is true.
+\end{description}
+\end{vocabbox}
+
+\begin{notesbox}{The 2×2 Error Table}
+\renewcommand{\arraystretch}{2.2}
+\begin{tabularx}{\linewidth}{@{} l X X @{}}
+  & \textbf{Reject $H_0$} & \textbf{Fail to Reject $H_0$} \\ \hline
+  \textbf{$H_0$ is true}  & \blank{3cm} \newline $P = \alpha$ & Correct decision \\
+  \textbf{$H_a$ is true}  & Correct decision \newline $P = $ \blank{1.5cm} (Power) & \blank{3cm} \newline $P = \beta$ \\
+\end{tabularx}
+\end{notesbox}
+
+\begin{notesbox}{Describing Errors in Context}
+Always write in terms of the \emph{specific} scenario, not just abstract $H_0$ and $H_a$.\\[4pt]
+\textbf{Template --- Type I:} ``A Type I error would mean concluding \blank{6cm} [restate $H_a$ in plain language] when in fact \blank{5cm} [restate $H_0$].''\\[4pt]
+\textbf{Template --- Type II:} ``A Type II error would mean failing to detect that \blank{6cm} [restate $H_a$] even though it is true.''
+\end{notesbox}
+
+\begin{notesbox}{Power and Factors That Affect It}
+Power $= 1 - \beta = P(\text{reject } H_0 \mid H_a \text{ true})$.\\[4pt]
+\textbf{Power increases when:}
+\begin{enumerate}[leftmargin=1.5em]
+  \item $n$ \blank{3cm} (reduces $SE$, easier to detect true effect)
+  \item $\alpha$ \blank{3cm} (wider rejection region, but more Type I errors)
+  \item True effect size \blank{3cm} (true $p$ farther from $p_0$)
+\end{enumerate}
+
+\vspace{4pt}
+\textbf{Trade-off:} Decreasing $\alpha$ (reducing Type I errors) \blank{3cm} power (increases \blank{2cm} errors).
+\end{notesbox}
+
+\begin{practicebox}
+A pharmaceutical company tests a new pain drug. $H_0$: the drug is no more effective than a
+placebo ($p = 0.50$); $H_a$: the drug is more effective ($p > 0.50$).
+
+\begin{enumerate}[label=\alph*.]
+  \item Describe a Type I error in this context. \writelines{2}
+  \item Describe a Type II error in this context. \writelines{2}
+  \item In the drug testing context, which error is more problematic? Explain. \writelines{2}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

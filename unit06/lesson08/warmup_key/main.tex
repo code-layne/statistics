@@ -1,0 +1,30 @@
+%! Confidence Intervals for the Difference of Two Proportions — Unit 6, Lesson 6.8 — Warm-Up (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.8}{Warm-Up --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+League A: $n_1=150$, $\hat p_1=0.48$. League B: $n_2=120$, $\hat p_2=0.35$.
+
+\begin{enumerate}
+  \item $\hat p_1 - \hat p_2 = $ \ans{$0.48 - 0.35 = 0.13$}
+
+  \item Large Counts:
+        \begin{itemize}
+          \item $n_1\hat p_1 = $ \ans{$72$} $\ge10$? \ans{Yes} \quad $n_1(1-\hat p_1) = $ \ans{$78$} $\ge10$? \ans{Yes}
+          \item $n_2\hat p_2 = $ \ans{$42$} $\ge10$? \ans{Yes} \quad $n_2(1-\hat p_2) = $ \ans{$78$} $\ge10$? \ans{Yes}
+        \end{itemize}
+
+  \item $SE = \sqrt{\dfrac{\hat p_1(1-\hat p_1)}{n_1} + \dfrac{\hat p_2(1-\hat p_2)}{n_2}}$ \quad \textit{(numerators: $\hat p_i(1-\hat p_i)$ for each group)}
+
+  \item $SE = \sqrt{\dfrac{0.48(0.52)}{150} + \dfrac{0.35(0.65)}{120}} = \sqrt{0.001664 + 0.001896} = \sqrt{0.003560} \approx$ \ans{$0.0597$}
+\end{enumerate}
+
+\end{document}

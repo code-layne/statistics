@@ -1,0 +1,236 @@
+%! AP Statistics — Unit 6, Lesson 6.1 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\newcommand{\UnitNumberName}{Unit 6: Inference for Categorical Data: Proportions \quad}
+\newcommand{\LessonNumberName}{Lesson 6.1: Introducing Statistics --- Why Be Normal?}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will recognize that distributions of sample statistics
+    can vary in shape across repeated samples from the same population, and frame the central
+    question of inference: when should we trust that a pattern in data reflects a true population
+    characteristic rather than random chance? (Big Idea: VAR)
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 1 --- Selecting Statistical Methods}
+    \begin{itemize}
+        \item Identify questions suggested by variation in shapes of distributions
+              of samples taken from the same population (Skill 1.A; VAR-1.H).
+        \item Bridge: Unit 5 built sampling distributions --- Unit 6 uses them to
+              make formal decisions about population parameters.
+        \item Recognize that shape variation may be random (due to chance) or
+              non-random (due to a real population effect): VAR-1.H.1.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item The question of inference: ``Is the pattern I see in my sample strong
+              enough to be convincing evidence about the population?''
+        \item Confidence intervals answer: ``Where is the parameter likely to be?''
+        \item Significance tests answer: ``Is a claimed parameter value consistent
+              with my data?''
+        \item This lesson is a framing lesson (not assessed in the CED) that sets
+              the stage for Lessons 6.2--6.11.
+        \item Normal distributions will be used to model sampling distributions ---
+              hence the title ``Why Be Normal?''
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Statistical inference} --- using sample data to draw conclusions
+              about a population parameter
+        \item \textbf{Confidence interval} --- a range of plausible values for an
+              unknown parameter
+        \item \textbf{Significance test} --- a procedure for deciding whether data
+              provide sufficient evidence against a claim about a parameter
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Null hypothesis ($H_0$)} --- the default claim about a parameter
+        \item \textbf{Alternative hypothesis ($H_a$)} --- the claim we seek evidence for
+        \item \textbf{$p$-value} --- the probability of observing results at least as
+              extreme as those observed, assuming $H_0$ is true
+        \item \textbf{Normal model} --- the key distribution for inference on proportions
+              and means (from Unit 5)
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Unit 5: Sampling distribution of $\hat p$ --- shape, center $\mu_{\hat p} = p$,
+              spread $\sigma_{\hat p} = \sqrt{p(1-p)/n}$.
+        \item Unit 5: Large Counts condition ($np \ge 10$, $n(1-p) \ge 10$) ensures
+              the sampling distribution is approximately normal.
+        \item Connect: We used sampling distributions to compute probabilities of outcomes
+              from known populations. Now the population is \emph{unknown} --- we flip the question.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Connections Forward}
+    \begin{itemize}
+        \item Confidence intervals for one proportion $\to$ Lessons 6.2--6.3
+        \item Significance tests for one proportion $\to$ Lessons 6.4--6.6
+        \item Type I/II errors and power $\to$ Lesson 6.7
+        \item Two-sample procedures $\to$ Lessons 6.8--6.11
+        \item Inference for means $\to$ Unit 7
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (5--7 min)}\\
+    Display: A news headline reads ``Survey: 53\% of voters support Candidate A.''
+    A second headline the same day reads: ``New poll: only 47\% back Candidate A.''\\[4pt]
+    Ask: ``Can both be right? What should we believe?''\\[4pt]
+    Reveal: Both are plausible outcomes of random sampling from the same electorate.
+    The questions of Unit 6: \textbf{How do we use sample data to estimate the true
+    proportion? How do we test whether a claim about the true proportion is supported?}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15 min)}
+    \begin{enumerate}
+        \item Revisit the sampling distribution of $\hat p$ from Unit 5: shape is
+              approximately normal when Large Counts holds; center is $p$; SD is
+              $\sqrt{p(1-p)/n}$.
+        \item The key idea: if $\hat p$ varies predictably around $p$, we can
+              \emph{work backwards} from $\hat p$ to estimate $p$, or to test a
+              claimed value of $p$.
+        \item Preview the two big inference tools: a \textbf{confidence interval}
+              captures $p$ with a stated level of certainty; a \textbf{significance
+              test} evaluates evidence against a specific value of $p$.
+        \item Briefly show how both tools rely on the normal model for $\hat p$.
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Direct Instruction (8 min)}
+    \begin{itemize}
+        \item Compare the Unit 5 question (``Given $p = 0.6$, what is the probability
+              that $\hat p > 0.65$?'') with the Unit 6 question (``Given $\hat p = 0.65$,
+              what can we say about $p$?'').
+        \item Introduce the ``inversion'' idea: inference flips probability from forward
+              (known $p$, unknown $\hat p$) to backward (known $\hat p$, unknown $p$).
+        \item Emphasize: the normal model still does the work because the sampling
+              distribution is approximately normal when conditions are met.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Active Monitoring}
+    \begin{itemize}
+        \item Listen for students confusing a confidence interval with a sampling
+              distribution probability. Redirect: ``A CI is a range for the parameter,
+              not for the statistic.''
+        \item Cold-call: ``What conditions must hold before we can use a normal model
+              for $\hat p$?''
+        \item Check warm-up for fluency with the Large Counts condition and $SE_{\hat p}$.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Partner Activity (8--10 min)}\\
+    Three survey scenarios with different sample proportions and sample sizes.
+    For each:
+    \begin{enumerate}
+        \item Verify Large Counts holds.
+        \item Compute $SE_{\hat p}$.
+        \item Sketch the approximate sampling distribution.
+        \item Identify what inference tool you would use (CI or test) to answer
+              the research question.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support (Tier R)}: Provide the formula for $SE_{\hat p}$ and a
+              completed example. Ask students to identify the inference goal only.
+        \item \textit{On-grade (Tier A)}: Complete all four steps for each scenario.
+        \item \textit{Extension (Tier E)}: For one scenario, describe how the interval
+              would change if $n$ were quadrupled. How does that change $SE_{\hat p}$?
+        \item \textit{ELL}: Bilingual card --- ``confidence interval / intervalo de confianza,''
+              ``significance test / prueba de significancia.''
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}
+    \begin{enumerate}
+        \item A random sample of 200 students finds $\hat p = 0.64$ use school
+              transportation. State the research question as an inference question
+              (estimate or test?).
+        \item Verify the Large Counts condition for this sample.
+        \item Calculate $SE_{\hat p}$. Show your work.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{A researcher collects a random sample and computes $\hat p = 0.42$. She wants
+    to decide whether the population proportion is higher than 0.35. The appropriate
+    next step is to:}
+    \begin{enumerate}[label=(\Alph*)]
+        \item Compute the population proportion.
+        \item Perform a significance test.
+        \item Compute a confidence interval for $\hat p$.
+        \item Re-sample with a larger $n$.
+    \end{enumerate}
+    Answer: (B)
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item For three given scenarios (each with a context, $n$, and $\hat p$):
+              (a) verify Large Counts; (b) compute $SE_{\hat p}$; (c) classify the
+              research question as estimation or hypothesis testing.
+        \item Reflection: ``Why is the normal model essential for the inference
+              procedures we'll study in Unit 6?''
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: Research a published poll. Identify the sample proportion,
+              sample size, and state whether the researchers appear to have reported a CI
+              or conducted a significance test.
+        \item \textit{Preview}: Lesson 6.2 introduces the one-sample $z$-interval for
+              a population proportion --- the first complete inference procedure.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\end{document}

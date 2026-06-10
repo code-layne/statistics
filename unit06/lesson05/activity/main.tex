@@ -1,0 +1,62 @@
+%! Interpreting p-Values — Unit 6, Lesson 6.5 — Group Activity
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.5}{Group Activity}
+\namepartnerperiod
+
+\vspace{0.15in}
+
+\textit{Each scenario gives you hypotheses, sample data, and a $z$-statistic. Compute the
+$p$-value, then write a complete contextual interpretation.}
+
+\begin{scenariobox}[Scenario 1 --- Library Card Usage]{sky}
+The city library reports 45\% of residents hold a valid library card. A local advocacy group
+believes the true proportion in a new neighborhood is \emph{higher}. From 200 randomly selected
+residents, 100 hold a card. $H_0: p = 0.45$; $H_a: p > 0.45$. $z \approx 1.42$.
+
+\begin{enumerate}[label=\alph*.]
+  \item Which tail? \blank{3cm} \quad $p$-value $= P(Z \ge 1.42) = $ \blank{3cm}
+  \item Write a complete contextual interpretation.
+        \writelines{3}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 2 --- Sleep Habits]{sky}
+A study reports 30\% of college students get 8 or more hours of sleep per night. A health
+researcher believes the true proportion has \emph{changed}. From 180 randomly selected
+college students, 45 report getting 8+ hours. $H_0: p = 0.30$; $H_a: p \ne 0.30$. $z \approx -1.37$.
+
+\begin{enumerate}[label=\alph*.]
+  \item Which tail? \blank{3cm} \quad $p$-value $= 2P(Z \le -1.37) = $ \blank{3cm}
+  \item Write a complete contextual interpretation.
+        \writelines{3}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 3 --- Recycling]{sky}
+An environmental group claims more than 60\% of households recycle. A city official is
+skeptical the rate is that high. From 400 randomly selected households, 228 recycle.
+$H_0: p = 0.60$; $H_a: p < 0.60$. $z \approx -0.73$.
+
+\begin{enumerate}[label=\alph*.]
+  \item Which tail? \blank{3cm} \quad $p$-value $= P(Z \le -0.73) = $ \blank{3cm}
+  \item Write a complete contextual interpretation.
+        \writelines{3}
+  \item Based solely on the size of this $p$-value, does the evidence against $H_0$ seem
+        strong or weak? \writelines{2}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{reflectionbox}
+Looking at all three $p$-values: Scenario 1 ($\approx0.078$), Scenario 2 ($\approx0.171$),
+Scenario 3 ($\approx0.233$). In which scenario is the evidence against $H_0$ strongest?
+Explain why using the definition of the $p$-value, not just the number.
+\writelines{3}
+\end{reflectionbox}
+
+\end{document}

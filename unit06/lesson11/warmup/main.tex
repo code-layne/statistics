@@ -1,0 +1,35 @@
+%! Carrying Out a Test for the Difference of Two Population Proportions — Unit 6, Lesson 6.11 — Warm-Up
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.11}{Warm-Up}
+\namedateperiod
+
+\vspace{0.15in}
+
+\textbf{Spiral: Completing the Test Setup.}
+A researcher tests whether the proportion of adults in two counties who exercise regularly
+differs. County 1: 144 of 360. County 2: 112 of 320. Use $\alpha = 0.05$.
+
+Last lesson: \textbf{State + Plan} (already done below). Today: \textbf{Do + Conclude}.
+
+\textit{State:} $H_0: p_1=p_2$; $H_a: p_1 \ne p_2$ (two-sided).\\
+\textit{Plan:} $\hat p_c = (144+112)/(360+320) = 256/680 \approx 0.376$. Conditions met.
+
+\begin{enumerate}
+  \item Compute $\hat p_1$ and $\hat p_2$. \writeline
+
+  \item Compute the $SE$ using $\hat p_c$:
+        $SE = \sqrt{\hat p_c(1-\hat p_c)(1/360 + 1/320)}$. \writelines{2}
+
+  \item Compute the test statistic $z = (\hat p_1 - \hat p_2)/SE$. \writeline
+
+  \item For a two-sided test, describe how you would find the $p$-value from $z$.
+        \writeline
+\end{enumerate}
+
+\end{document}

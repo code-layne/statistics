@@ -1,0 +1,119 @@
+%! Justifying a Claim Based on a Confidence Interval for a Difference of Population Proportions — Unit 6, Lesson 6.9 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\UnitNumberName}{Unit 6: Inference for Categorical Data: Proportions \quad}
+\newcommand{\LessonNumberName}{Lesson 6.9: Justifying a Claim Based on a Confidence Interval for a Difference of Population Proportions}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will interpret a two-sample $z$-interval for
+    $p_1 - p_2$ and use it to evaluate claims about the difference of two population proportions,
+    with emphasis on whether the interval contains 0. (Big Idea: UNC)
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+    \begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+        \textbf{AP Skills}
+        \begin{itemize}[leftmargin=1.2em]
+            \item \textbf{3.D} --- Interpret a two-sample $z$-interval for $p_1-p_2$
+            \item \textbf{4.B} --- Justify a claim about $p_1-p_2$ using a CI
+        \end{itemize}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+        \textbf{Key Understandings (UNC-4.M--N)}
+        \begin{itemize}[leftmargin=1.2em]
+            \item Correct interpretation includes both population descriptions and confidence level
+            \item If 0 is \textit{not} in the interval $\Rightarrow$ evidence of a difference
+            \item If 0 \textit{is} in the interval $\Rightarrow$ no convincing evidence of a difference
+            \item Sign of the interval indicates which proportion is larger
+        \end{itemize}
+    \end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\linewidth}{@{} p{0.26\linewidth} X @{}}
+        \textbf{Plausible value} & A value that could be the true parameter; all values in the CI are plausible \\
+        \textbf{No difference} & $p_1-p_2=0$; the CI contains 0 $\Rightarrow$ 0 is a plausible difference \\
+        \textbf{Sign of CI} & Entirely positive $\Rightarrow p_1>p_2$; entirely negative $\Rightarrow p_1<p_2$ \\
+    \end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+    \begin{tabularx}{\linewidth}{@{}X@{}}
+        \begin{minipage}[t]{\linewidth}\vspace{0pt}
+            Please see attached spiral review.\\[2pt]
+            \textit{Skills reviewed:} constructing a two-sample $z$-interval; four Large Counts;
+            SE formula; interpreting a one-sample CI.
+        \end{minipage}
+    \end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Hook]{sky}
+    \textbf{``Does the new app work better for younger users?''} \\[3pt]
+    Present: a 95\% CI for $p_{18-34} - p_{35+}$ is $(0.02, 0.14)$. Ask:
+    ``What does this tell us? Does it prove a difference? What if the CI were $(-0.03, 0.11)$?''
+    Drive home the key question: \textit{Does the interval contain 0?}
+\end{skillbox}
+
+\begin{skillbox}[Lesson]{sky}
+    \begin{enumerate}[leftmargin=1.4em, label=\arabic*.]
+        \item \textbf{Interpret the interval.} Template: ``We are [C\%] confident that the true
+              difference ($p_1-p_2$) in [context] is between [lower] and [upper].''
+
+        \item \textbf{The zero rule.}
+              \begin{itemize}
+                \item 0 \textbf{not} in the interval $\Rightarrow$ 0 is \textit{not} plausible
+                      $\Rightarrow$ convincing evidence that $p_1 \ne p_2$.
+                \item 0 \textbf{in} the interval $\Rightarrow$ 0 is plausible
+                      $\Rightarrow$ no convincing evidence of a difference.
+              \end{itemize}
+
+        \item \textbf{Direction of the effect.} Sign of the entire interval tells which group
+              has the higher proportion.
+
+        \item \textbf{Worked example.} 95\% CI for $p_F - p_M = (-0.049, 0.149)$.
+              Since 0 is in the interval, we cannot conclude that proportions differ.
+    \end{enumerate}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+    \textbf{Watch for:}
+    \begin{itemize}[leftmargin=1.2em]
+        \item Saying ``we are 95\% confident that the interval contains the true difference''
+              (confusing the CI with a probability statement about the interval)
+        \item Concluding a difference exists when 0 is in the interval
+        \item Missing the direction of the effect (sign of the interval)
+    \end{itemize}
+    \textbf{Cold-call:} ``The 95\% CI for $p_A - p_B$ is $(-0.12, -0.02)$.
+    What does this tell us about $p_A$ vs.\ $p_B$?''
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+    See attached activity. Students interpret provided CIs and build conclusions.\\[4pt]
+    \textbf{Tier R:} Interpretation sentence frame provided.\\
+    \textbf{Tier A:} Full interpretation + zero-rule decision.\\
+    \textbf{Tier E:} Extension: why does interval width affect reliability of the conclusion?
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+    \textbf{Exit Ticket:} Given a two-sample CI, write a full interpretation and evaluate a claim.\\[4pt]
+    \textbf{Look for:} Both population descriptions; confidence level; correct zero-rule decision.
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+    \textbf{Homework:} Two problems interpreting given CIs and one full build-and-interpret.\\[4pt]
+    \textbf{Preview:} Lesson 6.10 introduces hypothesis testing for the difference of two proportions.
+\end{skillbox}
+\end{document}

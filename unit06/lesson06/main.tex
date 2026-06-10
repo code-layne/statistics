@@ -1,0 +1,127 @@
+%! Concluding a Test for a Population Proportion — Unit 6, Lesson 6.6 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\UnitNumberName}{Unit 6: Inference for Categorical Data: Proportions \quad}
+\newcommand{\LessonNumberName}{Lesson 6.6: Concluding a Test for a Population Proportion}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will compare a $p$-value to the significance level
+    $\alpha$, make a formal reject/fail-to-reject decision, and write a complete conclusion
+    in context linking the decision to the original research question (Big Idea: DAT).
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+    \begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+        \textbf{AP Skills}
+        \begin{itemize}[leftmargin=1.2em]
+            \item \textbf{4.B} --- Interpret the conclusion in context
+            \item \textbf{4.E} --- Make and justify a reject/fail-to-reject decision
+        \end{itemize}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+        \textbf{Key Understandings (DAT-3.B)}
+        \begin{itemize}[leftmargin=1.2em]
+            \item $\alpha$ is the threshold $p$-value for rejection; common values: 0.05, 0.01, 0.10
+            \item Reject $H_0$ when $p\text{-value} \le \alpha$; fail to reject when $p\text{-value} > \alpha$
+            \item ``Reject $H_0$'' provides evidence for $H_a$; ``fail to reject'' does not prove $H_0$
+            \item Conclusions must be written in context, not just as a statistical decision
+        \end{itemize}
+    \end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\linewidth}{@{} p{0.28\linewidth} X @{}}
+        \textbf{Significance level} $\alpha$ & Pre-chosen threshold; probability of rejecting $H_0$ when it is actually true \\
+        \textbf{Reject $H_0$}      & When $p\text{-value} \le \alpha$; data provide sufficient evidence for $H_a$ \\
+        \textbf{Fail to reject $H_0$} & When $p\text{-value} > \alpha$; insufficient evidence against $H_0$ \\
+        \textbf{Statistically significant} & A result is significant at level $\alpha$ if $p\text{-value} \le \alpha$ \\
+        \textbf{Conclusion in context} & States the decision in terms of the original research question and population \\
+    \end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+    \begin{tabularx}{\linewidth}{@{}X@{}}
+        \begin{minipage}[t]{\linewidth}\vspace{0pt}
+            Please see attached spiral review.\\[2pt]
+            \textit{Skills reviewed:} computing $p$-values from $z$; identifying tail direction;
+            interpreting a $p$-value.
+        \end{minipage}
+    \end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Hook]{sky}
+    \textbf{``What's your threshold?''} \\[3pt]
+    Ask: \textit{``How unusual does something have to be before you'd believe it wasn't just
+    luck?''} Poll students: 10\%? 5\%? 1\%? Connect to the idea that statisticians choose a
+    threshold ($\alpha$) before seeing the data. Display the widget-defect example from Lesson 6.5
+    ($p$-value $\approx 0.055$): at $\alpha=0.05$, fail to reject; at $\alpha=0.10$, reject.
+    Same data, different thresholds --- discuss.
+\end{skillbox}
+
+\begin{skillbox}[Lesson]{sky}
+    \begin{enumerate}[leftmargin=1.4em, label=\arabic*.]
+        \item \textbf{Significance level.} $\alpha$ must be chosen \emph{before} collecting data.
+              Common values: 0.05 (default in most AP problems), 0.01 (stringent), 0.10 (lenient).
+              Explain: $\alpha$ is the probability of a Type I error (rejecting a true $H_0$).
+
+        \item \textbf{Decision rule.}
+              $p$-value $\le \alpha$ $\Rightarrow$ reject $H_0$;
+              $p$-value $> \alpha$ $\Rightarrow$ fail to reject $H_0$.
+              Show with a number line: $\alpha=0.05$, reject region is left of 0.05.
+
+        \item \textbf{Conclusion template.} Two-part conclusion:
+              (1)~Decision: ``Because $p$-value [$ \le$ / $>$] $\alpha$, we [reject / fail to reject] $H_0$.''
+              (2)~Context: ``We [have / do not have] sufficient evidence that [restate $H_a$ in context].''
+              Never say ``accept $H_0$'' or ``prove $H_a$.''
+
+        \item \textbf{Complete four-step procedure.} State $\to$ Plan $\to$ Do $\to$ Conclude.
+              Walk through a complete example from scratch using the widget problem.
+    \end{enumerate}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+    \textbf{Watch for:}
+    \begin{itemize}[leftmargin=1.2em]
+        \item ``Accept $H_0$'' language --- always ``fail to reject''
+        \item ``Prove $H_a$'' language --- evidence for, not proof
+        \item Forgetting to state $\alpha$ before comparing
+        \item Comparing $z$ to $\alpha$ instead of $p$-value to $\alpha$
+    \end{itemize}
+    \textbf{Cold-call:} ``If $p$-value $= 0.03$ and $\alpha=0.01$, what's the decision?''
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+    See attached activity. Groups run the full four-step procedure for three scenarios.\\[4pt]
+    \textbf{Tier R:} Conclusion sentence frame provided.\\
+    \textbf{Tier A:} Full four-step procedure with given $\alpha$.\\
+    \textbf{Tier E:} Extension: explain how choosing $\alpha=0.01$ vs.\ $\alpha=0.05$ changes
+    the practical meaning of the conclusion.
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+    \textbf{Exit Ticket:} Complete the Conclude step: given $p$-value and $\alpha$, make the
+    decision and write the conclusion in context. \\[4pt]
+    \textbf{Look for:} Correct comparison, correct decision language, context included.
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+    \textbf{Homework:} Three complete four-step tests from start to finish.\\[4pt]
+    \textbf{Extension:} Describe a real scenario where $\alpha=0.01$ would be more appropriate
+    than $\alpha=0.05$ and explain why.\\[4pt]
+    \textbf{Preview:} Lesson 6.7 covers Type I/II errors and power --- the consequences of
+    choosing a particular $\alpha$.
+\end{skillbox}
+\end{document}

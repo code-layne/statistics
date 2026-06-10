@@ -1,0 +1,79 @@
+%! Interpreting p-Values — Unit 6, Lesson 6.5 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.5}{Guided Notes}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{objectivebox}
+Compute and interpret a $p$-value from a one-sample $z$-test statistic for a proportion.
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{$p$-value}] The probability of observing a sample result as extreme as or
+    more extreme than the one obtained, \emph{assuming \blank{2cm} is true}. A probability between
+    \blank{1.5cm} and \blank{1.5cm}.
+  \item[\termblanklong{``As extreme''}] In the direction(s) specified by \blank{3cm}.
+\end{description}
+\end{vocabbox}
+
+\begin{notesbox}{Finding the $p$-Value: Which Tail?}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} p{0.22\linewidth} X X @{}}
+  $H_a$         & \textbf{``Extreme'' means} & \textbf{$p$-value formula} \\ \hline
+  $p > p_0$     & $z$ is \blank{3cm}         & $P(Z \ge z) = 1 - \Phi(z)$ \\
+  $p < p_0$     & $z$ is \blank{3cm}         & $P(Z \le z) = \Phi(z)$ \\
+  $p \ne p_0$   & $|z|$ is \blank{3cm}       & $2P(Z \ge |z|)$ \\
+\end{tabularx}
+\end{notesbox}
+
+\begin{notesbox}{Interpreting the $p$-Value}
+\textbf{Template:} ``Assuming [restate $H_0$ in context], there is a \blank{2cm} probability
+of observing \blank{6cm} (or more extreme) by chance alone.''
+
+\vspace{4pt}
+\textbf{Critical errors to avoid:}
+\begin{itemize}
+  \item[\textbf{$\times$}] ``The $p$-value is the probability that $H_0$ is \blank{2cm}''
+  \item[\textbf{$\times$}] ``The $p$-value is the probability the result was due to \blank{2cm}''
+  \item[\checkmark] ``Assuming $H_0$ is true, \blank{6cm}''
+\end{itemize}
+\end{notesbox}
+
+\begin{notesbox}{Worked Example: Defective Widget Rate}
+A manufacturer claims 10\% defect rate ($p_0=0.10$). A random sample of 150 widgets finds
+$\hat p = 22/150 \approx 0.147$. Test $H_a: p \ne 0.10$ (two-sided). $z \approx 1.92$.
+
+\begin{itemize}
+  \item Direction: two-sided, so $p$-value $= 2P(Z \ge \blank{1.5cm}) = 2(1-\Phi(\blank{1.5cm})) = 2(\blank{2cm}) \approx$ \blank{2cm}
+  \item Interpret: ``Assuming 10\% of widgets are defective, there is a \blank{2cm} probability
+        of obtaining a sample proportion as far from 0.10 as 0.147 by \blank{3cm} alone.''
+\end{itemize}
+\end{notesbox}
+
+\begin{notesbox}{What the $p$-Value Does NOT Tell You}
+\begin{enumerate}
+  \item The $p$-value is \textbf{not} the probability \blank{8cm} is true.
+  \item A large $p$-value does \textbf{not} \blank{8cm} $H_0$.
+  \item A small $p$-value does \textbf{not} mean the effect is \blank{4cm} significant.
+\end{enumerate}
+\end{notesbox}
+
+\begin{practicebox}
+For each scenario, identify the correct tail and compute the $p$-value.
+
+\begin{enumerate}[label=\alph*.]
+  \item $H_a: p > 0.60$, $z = 1.45$. Tail: \blank{2cm} \quad $p$-value $=$ \blank{3cm}
+  \item $H_a: p < 0.30$, $z = -2.10$. Tail: \blank{2cm} \quad $p$-value $=$ \blank{3cm}
+  \item $H_a: p \ne 0.50$, $z = -1.75$. Tail: \blank{2cm} \quad $p$-value $=$ \blank{3cm}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

@@ -1,0 +1,37 @@
+%! Introducing Statistics: Why Be Normal? — Unit 6, Lesson 6.1 — Warm-Up (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.1}{Warm-Up --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{notesbox}{Spiral Review --- Sampling Distributions (Unit 5)}
+\textbf{1.} A random sample of $n = 150$ adults is drawn from a large population in which
+$p = 0.40$ support a new park proposal.
+
+\begin{enumerate}[label=\alph*.]
+  \item Verify the Large Counts condition for this scenario.
+        \ansline{$np = 150(0.40) = 60 \ge 10$ \checkmark \quad $n(1-p) = 150(0.60) = 90 \ge 10$ \checkmark \quad Large Counts condition is met.}
+
+  \item Calculate the mean and standard deviation of the sampling distribution of $\hat p$.
+
+        $\mu_{\hat p} = $ \ans{$0.40$} \hfill
+        $\sigma_{\hat p} = \sqrt{\dfrac{p(1-p)}{n}} = $ \ans{$\sqrt{0.40(0.60)/150} \approx 0.0400$}
+
+  \item Describe the shape of the sampling distribution of $\hat p$.
+        \ansline{Approximately normal, because the Large Counts condition is satisfied.}
+\end{enumerate}
+
+\vspace{0.14in}
+\textbf{2.} In Unit 5, you used a \emph{known} population proportion $p$ to compute
+probabilities for $\hat p$. In Unit 6, $p$ is \ans{unknown}. We will
+instead use $\hat p$ to \ansline{estimate or test claims about the unknown population proportion $p$}.
+\end{notesbox}
+
+\end{document}

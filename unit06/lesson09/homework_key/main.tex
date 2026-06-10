@@ -1,0 +1,41 @@
+%! Justifying a Claim Based on a Confidence Interval for a Difference of Population Proportions — Unit 6, Lesson 6.9 — Homework (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.9}{Homework --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{enumerate}
+
+\item \textbf{Interpret and Evaluate.} 99\% CI for $p_{\text{city}} - p_{\text{suburb}} = (-0.06, 0.22)$.
+
+\begin{enumerate}[label=\alph*.]
+  \item \ansline{We are 99\% confident that the true difference ($p_{\text{city}} - p_{\text{suburb}}$) in the proportions of city and suburban residents who use public transit is between $-0.06$ and $0.22$.}
+  \item \ansline{No. The interval $(-0.06, 0.22)$ contains 0, so 0 is a plausible value for $p_{\text{city}} - p_{\text{suburb}}$. There is not convincing evidence at the 99\% confidence level that city residents use public transit at a higher rate.}
+  \item \ansline{Possibly. A lower confidence level (80\%) produces a narrower interval, which might or might not contain 0. We cannot be certain without computing the 80\% CI.}
+\end{enumerate}
+
+\item \textbf{Full Procedure.} $\hat p_A = 0.73$, $n_1=400$; $\hat p_B = 0.65$, $n_2=350$.
+
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{Random:} \ansline{Both samples were independently and randomly selected --- stated.}
+        \textbf{Large Counts:} $400(0.73)=292$, $400(0.27)=108$, $350(0.65)=228$, $350(0.35)=123$ --- \ans{all $\ge10$. \checkmark}\\
+        \textbf{10\%:} \ansline{Assumed both samples are $\le10\%$ of their hospital populations.}
+  \item $SE = \sqrt{0.73(0.27)/400 + 0.65(0.35)/350} = \sqrt{0.000493 + 0.000650} = \sqrt{0.001143} \approx 0.0338$\\
+        $CI = (0.73-0.65) \pm 1.960(0.0338) = 0.08 \pm 0.0662 = (\ans{0.014}, \ans{0.146})$
+  \item \ansline{We are 95\% confident that the true difference ($p_A - p_B$) in the proportions of patients discharged within 3 days at hospitals A and B is between 0.014 and 0.146. Since the interval is entirely positive and does not contain 0, there is convincing evidence that Hospital A has a higher early discharge rate than Hospital B.}
+\end{enumerate}
+
+\end{enumerate}
+
+\begin{reflectionbox}
+\textbf{Preview:} Lesson 6.10 introduces hypothesis testing for the difference of two proportions using a pooled proportion $\hat p_c$.
+\end{reflectionbox}
+
+\end{document}

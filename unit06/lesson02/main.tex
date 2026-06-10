@@ -1,0 +1,145 @@
+%! Constructing a Confidence Interval for a Population Proportion — Unit 6, Lesson 6.2 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\UnitNumberName}{Unit 6: Inference for Categorical Data: Proportions \quad}
+\newcommand{\LessonNumberName}{Lesson 6.2: Constructing a Confidence Interval for a Population Proportion}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will construct a one-sample $z$-interval for
+    a population proportion by verifying conditions, computing the margin of error, and
+    writing a complete interval estimate (Big Idea: UNC).
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+    \begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+        \textbf{AP Skills}
+        \begin{itemize}[leftmargin=1.2em]
+            \item \textbf{1.D} --- Identify an appropriate inference procedure
+            \item \textbf{3.D} --- Calculate point estimates, standard errors, and interval estimates
+            \item \textbf{4.C} --- Verify conditions for inference and explain consequences if unmet
+        \end{itemize}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+        \textbf{Key Understandings (UNC-4.A--E)}
+        \begin{itemize}[leftmargin=1.2em]
+            \item A one-sample $z$-interval estimates an unknown population proportion $p$
+            \item Three conditions must be verified: Random, Large Counts, 10\% rule
+            \item $SE_{\hat p} = \sqrt{\hat p(1-\hat p)/n}$; margin of error $= z^* \cdot SE_{\hat p}$
+            \item The interval is $\hat p \pm z^*\sqrt{\hat p(1-\hat p)/n}$; critical values depend on $C$
+            \item Sample size to achieve a target margin of error: $n \ge \left(z^*/m\right)^2 \hat p(1-\hat p)$
+        \end{itemize}
+    \end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\linewidth}{@{} p{0.26\linewidth} X @{}}
+        \textbf{Confidence interval}    & An interval estimate that captures the true parameter with a specified level of confidence \\
+        \textbf{Confidence level} $C$   & The long-run percentage of intervals that would contain $p$ if the procedure were repeated many times \\
+        \textbf{Critical value} $z^*$   & The $z$-score such that $C\%$ of the standard normal distribution lies between $-z^*$ and $z^*$ \\
+        \textbf{Margin of error}        & $z^* \cdot SE_{\hat p}$; half-width of the interval \\
+        \textbf{Standard error}         & $SE_{\hat p} = \sqrt{\hat p(1-\hat p)/n}$; estimates the SD of the sampling distribution \\
+        \textbf{10\% condition}         & Population must be at least $10n$ for the $SE$ formula to be valid \\
+    \end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+    \begin{tabularx}{\linewidth}{@{}X@{}}
+        \begin{minipage}[t]{\linewidth}\vspace{0pt}
+            Please see attached spiral review.\\[2pt]
+            \textit{Skills reviewed:} sampling distributions of $\hat p$; $\mu_{\hat p}$ and
+            $\sigma_{\hat p}$; Large Counts condition; standard normal $z$-scores;
+            identifying confidence interval vs.\ significance test situations.
+        \end{minipage}
+    \end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Hook]{sky}
+    \textbf{``How confident are you?''} \\[3pt]
+    Display the prompt: \textit{``A Gallup poll of 1,000 randomly selected U.S.\ adults found that
+    52\% approve of the president's job performance. A headline reads: `52\% of Americans approve.'
+    Is that statement accurate? How do you know?''} \\[3pt]
+    After brief pair-share: \textit{``Today we build the tool that turns a single sample proportion
+    into a trustworthy range --- a confidence interval.''}
+\end{skillbox}
+
+\begin{skillbox}[Lesson]{sky}
+    \begin{enumerate}[leftmargin=1.4em, label=\arabic*.]
+        \item \textbf{State \& verify conditions.} Using the Gallup example, verify (a)~Random
+              (SRS stated), (b)~Large Counts ($1000(0.52)=520\ge10$; $1000(0.48)=480\ge10$),
+              (c)~10\% rule ($1000 \le 0.10 \times \text{all U.S.\ adults}$). Emphasize: use
+              $\hat p$, not $p_0$, for Large Counts in a CI.
+
+        \item \textbf{Derive the formula.} Start with the sampling distribution:
+              $\hat p \sim N\!\left(p,\,\sqrt{p(1-p)/n}\right)$ approximately. Replace unknown $p$
+              with $\hat p$ in the SE. The interval is: $\hat p \pm z^*\sqrt{\hat p(1-\hat p)/n}$.
+
+        \item \textbf{Critical values.} Common values: $z^*_{90\%}=1.645$, $z^*_{95\%}=1.960$,
+              $z^*_{99\%}=2.576$. Show how to obtain from Table B or \texttt{invNorm}.
+
+        \item \textbf{Compute \& interpret.} Gallup: $0.52 \pm 1.960\sqrt{0.52(0.48)/1000}
+              \approx 0.52 \pm 0.031 = (0.489,\,0.551)$. Interpretation script:
+              \textit{``We are 95\% confident that the interval from 0.489 to 0.551
+              captures the true proportion of all U.S.\ adults who approve.''}
+
+        \item \textbf{Factors affecting width.} Increase $C$ → wider; increase $n$ → narrower.
+              Quick sketches on the board.
+
+        \item \textbf{Sample size formula.} Solve $z^*\sqrt{\hat p(1-\hat p)/n} \le m$ for $n$:
+              $n \ge \left(z^*/m\right)^2\!\hat p(1-\hat p)$. Use $\hat p = 0.5$ for worst case
+              when no prior estimate is available. Always round \emph{up}.
+    \end{enumerate}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+    \textbf{Circulate \& check for:}
+    \begin{itemize}[leftmargin=1.2em]
+        \item Students checking Large Counts with $p_0$ instead of $\hat p$ (CI error vs.\ test error)
+        \item Forgetting to square $z^*/m$ in the sample-size formula, or rounding down
+        \item Interpretation: ``probability'' vs.\ ``confident'' --- correct firmly; the interval is fixed once computed
+        \item Missing units or context in interpretations
+    \end{itemize}
+    \textbf{Cold-call prompts:} ``What changes if we use 99\% confidence instead of 95\%?'' \quad
+    ``Why do we use $\hat p$ in the SE for a CI but $p_0$ in a test?''
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+    See attached group activity. Students work through three scenarios requiring condition
+    verification, interval construction, and interpretation.\\[4pt]
+    \textbf{Tier R (Reaching):} Scaffold condition-check table provided; focus on formula
+    application and interpretation script. \\
+    \textbf{Tier A (At Standard):} Full procedure with all three scenarios; include margin-of-error
+    comparison question. \\
+    \textbf{Tier E (Exceeding):} Extension: determine minimum sample size for a given margin of
+    error; explore how changing $\hat p$ toward 0.5 increases required $n$.
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+    \textbf{Exit Ticket} (last 5 minutes): Students receive a single scenario with $n$, $\hat p$,
+    and confidence level given. Tasks: verify conditions, compute $SE_{\hat p}$, construct the
+    interval, and write a complete interpretation. \\[4pt]
+    \textbf{Look for:} Correct $z^*$ selection; $\hat p$ used in SE; full-sentence interpretation
+    with parameter and confidence level; numeric interval rounded appropriately.
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+    \textbf{Homework:} Three scenarios requiring a full one-sample $z$-interval procedure (conditions
+    $\to$ formula $\to$ interval $\to$ interpretation), plus a sample-size calculation problem.\\[4pt]
+    \textbf{Extension:} Research question --- if the margin of error is halved, by what factor must
+    $n$ increase? Verify algebraically. \\[4pt]
+    \textbf{Preview:} Lesson 6.3 focuses on \emph{interpreting} confidence intervals --- what
+    ``95\% confident'' really means and how to use an interval to evaluate a claim.
+\end{skillbox}
+\end{document}

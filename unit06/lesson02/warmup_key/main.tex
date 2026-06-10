@@ -1,0 +1,44 @@
+%! Constructing a Confidence Interval for a Population Proportion — Unit 6, Lesson 6.2 — Warm-Up (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.2}{Warm-Up --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+A random sample of 400 high school students was asked whether they have a part-time
+job. Suppose the true population proportion is $p = 0.35$.
+
+\begin{enumerate}
+  \item Describe the sampling distribution of $\hat p$. Include shape, mean, and standard
+        deviation (verify conditions first).
+
+        \begin{itemize}
+          \item \textbf{Random:} \ans{SRS stated --- met}
+          \item \textbf{Large Counts:} $np = $ \ans{$400(0.35)=140$} $\ge 10$? \ans{Yes} \quad $n(1-p) = $ \ans{$400(0.65)=260$} $\ge 10$? \ans{Yes}
+          \item \textbf{Shape:} \ans{Approximately normal (Large Counts met)}
+          \item $\mu_{\hat p} = $ \ans{$0.35$}
+          \item $\sigma_{\hat p} = \sqrt{p(1-p)/n} = $ \ans{$\sqrt{0.35(0.65)/400} \approx 0.0239$}
+        \end{itemize}
+
+  \item Find the probability that $\hat p$ is greater than 0.39.
+        \vspace{0.05in}
+
+        $z = \dfrac{\hat p - p}{\sigma_{\hat p}} = \dfrac{0.39 - \ans{0.35}}{\ans{0.0239}} = $ \ans{$1.67$}
+
+        \vspace{0.05in}
+        $P(\hat p > 0.39) = P(z > \ans{1.67}) = $ \ans{$0.0475$}
+
+  \item In Lesson 6.2 you will flip the question: instead of knowing $p$ and finding
+        probabilities, you will know $\hat p$ and \emph{estimate} $p$. Write one sentence
+        describing why this is a useful change of perspective.
+
+        \ansline{In practice we almost never know $p$, so the ability to estimate it from $\hat p$ is essential for drawing conclusions about populations.}
+\end{enumerate}
+
+\end{document}

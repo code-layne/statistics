@@ -1,0 +1,126 @@
+%! Constructing a Confidence Interval for a Population Proportion — Unit 6, Lesson 6.2 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.2}{Guided Notes}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{objectivebox}
+Construct and interpret a one-sample $z$-interval for a population proportion using
+the procedure: \textbf{State} conditions, \textbf{Plan}, \textbf{Do}, \textbf{Conclude}.
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{Confidence interval}] An interval estimate of a population parameter
+        computed from sample data; written as $\hat p \pm ME$.
+  \item[\termblanklong{Confidence level} $C$] The long-run \blank{4cm} of intervals produced
+        by the procedure that \blank{5cm}.
+  \item[\termblanklong{Critical value} $z^*$] The $z$-score such that \blank{4cm}\% of the
+        standard normal distribution falls between $-z^*$ and $z^*$.
+  \item[\termblanklong{Margin of error}] $ME = z^* \cdot SE_{\hat p}$; the \blank{3cm} of the
+        interval from $\hat p$ to either endpoint.
+  \item[\termblanklong{Standard error}] $SE_{\hat p} = \sqrt{\hat p(1-\hat p)/n}$; estimates
+        \blank{6cm}.
+\end{description}
+\end{vocabbox}
+
+\begin{notesbox}{Conditions for a One-Sample $z$-Interval for $p$}
+Check \textbf{all three} conditions before constructing the interval.
+
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} p{0.22\linewidth} X p{0.18\linewidth} @{}}
+  \textbf{Condition} & \textbf{How to verify} & \textbf{Use if unmet} \\ \hline
+  \textbf{Random}     & \blank{7cm} & --- \\
+  \textbf{Large Counts} & $n\hat p \ge$ \blank{1.2cm} and $n(1-\hat p) \ge$ \blank{1.2cm} & Use $p_0$ in a test \\
+  \textbf{10\% Rule}  & Population $\ge$ \blank{5cm} & Finite population correction \\
+\end{tabularx}
+\end{notesbox}
+
+\begin{notesbox}{The One-Sample $z$-Interval Formula}
+\begin{center}
+  $\hat p \pm z^* \sqrt{\dfrac{\hat p(1-\hat p)}{n}}$
+  \qquad\qquad
+  \begin{tabular}{@{}cl@{}}
+    $\hat p$  & = \blank{5cm} \\[6pt]
+    $z^*$     & = \blank{5cm} \\[6pt]
+    $n$       & = \blank{5cm} \\
+  \end{tabular}
+\end{center}
+
+\vspace{4pt}
+\textbf{Common critical values:}
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{} c c @{}}
+  \textbf{Confidence level} & $z^*$ \\ \hline
+  90\% & \blank{2.5cm} \\
+  95\% & \blank{2.5cm} \\
+  99\% & \blank{2.5cm} \\
+\end{tabular}
+\end{center}
+\end{notesbox}
+
+\begin{notesbox}{Worked Example: Gallup Approval Poll}
+A Gallup poll of 1{,}000 randomly selected U.S.\ adults found $\hat p = 0.52$ approve of the
+president's job performance. Construct a 95\% confidence interval for the true proportion.
+
+\textbf{State:} Parameter: \blank{8cm}
+
+\textbf{Plan:} Check conditions:
+\begin{itemize}
+  \item Random: \blank{7cm}
+  \item Large Counts: \blank{7cm}
+  \item 10\%: \blank{7cm}
+\end{itemize}
+
+\textbf{Do:}
+\[
+  \hat p \pm z^* \sqrt{\frac{\hat p(1-\hat p)}{n}}
+  = \blank{1.5cm} \pm \blank{1.5cm}\sqrt{\frac{\blank{2cm}}{\blank{1.5cm}}}
+  = \blank{1.5cm} \pm \blank{1.5cm}
+  = (\blank{2cm},\; \blank{2cm})
+\]
+
+\textbf{Conclude:} We are \blank{1.5cm}\% confident that the interval from \blank{1.5cm} to
+\blank{1.5cm} captures the true proportion of \blank{8cm}.
+\end{notesbox}
+
+\begin{notesbox}{Factors Affecting Width \& Sample Size}
+\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+  \textbf{Width increases when:}
+  \begin{itemize}
+    \item Confidence level \blank{2cm} (higher $z^*$)
+    \item Sample size \blank{2cm} (larger $SE$)
+  \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+  \textbf{Sample size formula} (target margin of error $m$):
+  \[n \ge \left(\frac{z^*}{m}\right)^2 \hat p(1-\hat p)\]
+  Use $\hat p = \blank{1cm}$ if no prior estimate exists. Always round \blank{2cm}.
+\end{minipage}
+\end{notesbox}
+
+\begin{practicebox}
+A survey of 250 randomly selected college students found 165 own a streaming service
+subscription. Find a 90\% confidence interval for the true proportion of college students
+who own such a subscription. Verify conditions and write a complete interpretation.
+
+\vspace{0.05in}
+$\hat p = $ \blank{2.5cm} \quad Conditions: \blank{8cm}
+
+\vspace{0.06in}
+$CI: $ \blank{1.5cm} $\pm$ \blank{1.5cm} $\cdot \sqrt{\dfrac{\blank{2cm}}{\blank{1.5cm}}}
+= ($ \blank{2.5cm}, \blank{2.5cm}$)$
+
+\vspace{0.06in}
+Interpret: \writelines{2}
+\end{practicebox}
+
+\end{document}

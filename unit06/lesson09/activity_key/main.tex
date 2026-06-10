@@ -1,0 +1,49 @@
+%! Justifying a Claim Based on a Confidence Interval for a Difference of Population Proportions — Unit 6, Lesson 6.9 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.9}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.15in}
+
+\textbf{Directions:} For each scenario, a confidence interval has already been computed.
+Interpret the interval and use it to evaluate the given claim.
+
+\begin{scenariobox}[Scenario 1 --- Teen Driving]{sky}
+A 95\% CI for $p_{\text{senior}} - p_{\text{junior}}$ is $(0.12, 0.28)$.
+
+\begin{enumerate}[label=\arabic*.]
+  \item \ansline{We are 95\% confident that the true difference ($p_{\text{senior}} - p_{\text{junior}}$) in the proportions of seniors and juniors who have their own car is between 0.12 and 0.28.}
+  \item Contains 0? \ans{No}
+  \item \ansline{Yes. Since the entire interval $(0.12, 0.28)$ is positive and does not contain 0, there is convincing evidence that a higher proportion of seniors than juniors have their own car.}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 2 --- Homework Completion]{sky}
+A 90\% CI for $p_A - p_B$ is $(-0.08, 0.14)$.
+
+\begin{enumerate}[label=\arabic*.]
+  \item \ansline{We are 90\% confident that the true difference ($p_A - p_B$) in the proportions of students in Class A and Class B who complete homework on time is between $-0.08$ and $0.14$.}
+  \item \ansline{No. Since the interval $(-0.08, 0.14)$ contains 0, we cannot conclude there is a difference in homework completion rates between the two classes.}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 3 --- Build and Interpret]{sky}
+
+\begin{enumerate}[label=\arabic*.]
+  \item $\hat p_P = 0.38$, $\hat p_Q = 0.29$.\\
+        $320(0.38)=122$, $320(0.62)=198$, $280(0.29)=81$, $280(0.71)=199$ --- \ans{all $\ge10$. \checkmark}
+
+  \item $SE = \sqrt{0.38(0.62)/320 + 0.29(0.71)/280} = \sqrt{0.000736 + 0.000736} = \sqrt{0.001472} \approx 0.0384$\\
+        $CI = (0.38-0.29) \pm 1.960(0.0384) = 0.09 \pm 0.0752 = (\ans{0.015}, \ans{0.165})$
+
+  \item \ansline{We are 95\% confident that the true difference ($p_P - p_Q$) in the proportions of City P and City Q adults who commute by public transportation is between 0.015 and 0.165. Since the interval is entirely positive and does not contain 0, there is convincing evidence that City P has a higher public transportation commute rate than City Q.}
+\end{enumerate}
+\end{scenariobox}
+
+\end{document}

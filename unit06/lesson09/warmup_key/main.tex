@@ -1,0 +1,29 @@
+%! Justifying a Claim Based on a Confidence Interval for a Difference of Population Proportions — Unit 6, Lesson 6.9 — Warm-Up (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.9}{Warm-Up --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+A health researcher collected independent random samples from two age groups to compare the
+proportion who reported getting at least 7 hours of sleep per night.
+Group 1 (adults aged 18--34): $n_1 = 200$, $\hat p_1 = 0.54$.
+Group 2 (adults aged 35--54): $n_2 = 180$, $\hat p_2 = 0.46$.
+
+\begin{enumerate}
+  \item Point estimate: $\hat p_1 - \hat p_2 = $ \ans{$0.54 - 0.46 = 0.08$}
+
+  \item $SE = \sqrt{0.54(0.46)/200 + 0.46(0.54)/180} = \sqrt{0.001242 + 0.001380} = \sqrt{0.002622} \approx \ans{0.0512}$
+
+  \item Interval: $(\ans{-0.021}, \ans{0.181})$
+
+  \item Contains 0? \ans{Yes} \quad \ansline{Since 0 is in the interval, there is no convincing evidence of a difference between the proportions of 18--34 year olds and 35--54 year olds who get at least 7 hours of sleep per night.}
+\end{enumerate}
+
+\end{document}

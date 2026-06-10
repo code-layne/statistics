@@ -1,0 +1,61 @@
+%! Potential Errors When Performing Tests — Unit 6, Lesson 6.7 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.7}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{objectivebox}
+Define Type I and Type II errors in context and explain how $\alpha$, $n$, and effect size
+affect the power of a hypothesis test.
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{Type I error}] Rejecting $H_0$ when $H_0$ is actually \ans{true}. ``False \ans{positive}.''  $P(\text{Type I}) = $ \ans{$\alpha$}.
+  \item[\termblanklong{Type II error}] Failing to reject $H_0$ when $H_a$ is actually \ans{true}. ``False \ans{negative}.''  $P(\text{Type II}) = \beta$.
+  \item[\termblanklong{Power}] $1 - \beta$; the probability of \ans{correctly rejecting $H_0$} when $H_a$ is true.
+\end{description}
+\end{vocabbox}
+
+\begin{notesbox}{The 2×2 Error Table}
+\renewcommand{\arraystretch}{2.2}
+\begin{tabularx}{\linewidth}{@{} l X X @{}}
+  & \textbf{Reject $H_0$} & \textbf{Fail to Reject $H_0$} \\ \hline
+  \textbf{$H_0$ is true}  & \ans{Type I error} \newline $P = \alpha$ & Correct decision \\
+  \textbf{$H_a$ is true}  & Correct decision \newline $P = $ \ans{$1-\beta$} (Power) & \ans{Type II error} \newline $P = \beta$ \\
+\end{tabularx}
+\end{notesbox}
+
+\begin{notesbox}{Describing Errors in Context}
+Templates are context-dependent — use the specific scenario details. No fill-in needed; see worked examples in class.
+\end{notesbox}
+
+\begin{notesbox}{Power and Factors That Affect It}
+Power $= 1 - \beta$. \textbf{Power increases when:}
+\begin{enumerate}[leftmargin=1.5em]
+  \item $n$ \ans{increases} (reduces $SE$, easier to detect true effect)
+  \item $\alpha$ \ans{increases} (wider rejection region, but more Type I errors)
+  \item True effect size \ans{increases} (true $p$ farther from $p_0$)
+\end{enumerate}
+
+\textbf{Trade-off:} Decreasing $\alpha$ \ans{decreases} power (increases \ans{Type II} errors).
+\end{notesbox}
+
+\begin{practicebox}
+Drug testing: $H_0$: drug is no more effective than placebo; $H_a$: drug is more effective.
+
+\begin{enumerate}[label=\alph*.]
+  \item \ansline{Type I error: concluding the drug is more effective than the placebo when it actually isn't. The drug would be approved even though it provides no real benefit.}
+  \item \ansline{Type II error: failing to detect that the drug is more effective than the placebo, even though it truly is. A beneficial drug would not be approved.}
+  \item \ansline{Both matter: Type I could harm patients (ineffective drug approved); Type II could deny patients a useful treatment. Context determines which is worse. Many regulatory contexts prioritize controlling Type I (set low $\alpha$), but may sacrifice power.}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

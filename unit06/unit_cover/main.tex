@@ -1,0 +1,101 @@
+%! AP Statistics — Unit 6 Cover Sheet
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+% ── Full-bleed navy banner ────────────────────────────────────────────────────
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[navy] (current page.north west)
+    rectangle ([yshift=-1.4in]current page.north east);
+\end{tikzpicture}
+\vspace{-1.3in}
+
+\begin{center}
+  {\color{white}\bfseries\fontsize{28}{34}\selectfont AP Statistics}\\[8pt]
+  {\color{goldacc}\bfseries\Large Shepherd \quad 2026--2027}\\[14pt]
+  {\color{white}\bfseries\LARGE Unit 6: Inference for Categorical Data: Proportions}\\[4pt]
+\end{center}
+
+\vspace{0.30in}
+
+% ── Unit overview ─────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=sky,colframe=navy,boxrule=0.9pt,arc=2mm,
+    left=4mm,right=4mm,top=3mm,bottom=3mm]
+  \textbf{Unit Overview.}\quad
+  Unit 6 introduces formal statistical inference --- the process of using sample data to draw
+  conclusions about unknown population parameters. Students begin with confidence intervals for
+  a single population proportion and learn to verify conditions, construct intervals, interpret
+  them correctly, and justify claims. They then extend these ideas to significance testing:
+  stating hypotheses, calculating test statistics and $p$-values, making decisions, and stating
+  conclusions in context. The unit closes by examining potential errors in inference (Type I,
+  Type II, power) and by extending all procedures to the two-sample case: confidence intervals
+  and significance tests for a difference between two population proportions. This unit establishes
+  the reasoning framework applied in every subsequent inference unit.
+\end{tcolorbox}
+
+\vspace{0.22in}
+
+% ── Lessons in this unit ──────────────────────────────────────────────────────
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Lessons in This Unit]{goldbox}
+\begin{tabularx}{\linewidth}{@{} c >{\bfseries}p{0.46\linewidth} X @{}}
+  \textbf{\#} & \textbf{Title} & \textbf{Focus} \\
+  \hline
+  6.1  & Introducing Statistics: Why Be Normal?
+       & Distribution shape variation; bridge from sampling distributions to inference. \\
+  \hline
+  6.2  & Constructing a Confidence Interval for a Population Proportion
+       & One-sample $z$-interval; conditions; $SE_{\hat p}$; margin of error; sample size. \\
+  \hline
+  6.3  & Justifying a Claim Based on a Confidence Interval for a Population Proportion
+       & Interpreting CIs; width vs.\ $n$ and $C$; justifying claims. \\
+  \hline
+  6.4  & Setting Up a Test for a Population Proportion
+       & $H_0$ and $H_a$; one-sample $z$-test; checking conditions ($np_0 \ge 10$, etc.). \\
+  \hline
+  6.5  & Interpreting $p$-Values
+       & Test statistic $z$; $p$-value definition and interpretation; null distribution. \\
+  \hline
+  6.6  & Concluding a Test for a Population Proportion
+       & Significance level $\alpha$; reject / fail to reject; conclusion in context. \\
+  \hline
+  6.7  & Potential Errors When Performing Tests
+       & Type I / Type II errors; power; factors affecting error probabilities. \\
+  \hline
+  6.8  & Confidence Intervals for the Difference of Two Proportions
+       & Two-sample $z$-interval for $p_1 - p_2$; conditions; formula and calculation. \\
+  \hline
+  6.9  & Justifying a Claim Based on a CI for a Difference of Population Proportions
+       & Interpreting two-sample CIs; justifying claims about differences. \\
+  \hline
+  6.10 & Setting Up a Test for the Difference of Two Population Proportions
+       & $H_0{:}\;p_1 = p_2$; two-sample $z$-test; conditions with pooled proportion $\hat p_c$. \\
+  \hline
+  6.11 & Carrying Out a Test for the Difference of Two Population Proportions
+       & Pooled $z$-statistic; $p$-value; decision and conclusion in context. \\
+  \hline
+\end{tabularx}
+\end{skillbox}
+
+\vspace{0.18in}
+
+% ── Standards covered ─────────────────────────────────────────────────────────
+\begin{skillbox}[AP Statistics Big Ideas \& Learning Objectives --- Unit 6]{greenbox}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.14\linewidth} X @{}}
+  VAR-1.H  & Identify questions suggested by variation in shapes of distributions of samples. \\
+  UNC-4.A--E & Identify, verify conditions, calculate, and interpret a one-sample $z$-interval for $p$. \\
+  UNC-4.F--H & Interpret CI; justify claim; relate width to $n$ and $C$. \\
+  VAR-6.D--F & State $H_0$/$H_a$; identify one-sample $z$-test; verify conditions for testing $p$. \\
+  VAR-6.G  & Calculate $z$-statistic and $p$-value for a one-sample proportion test. \\
+  DAT-3.A--B & Interpret $p$-value; decide to reject or fail to reject $H_0$; state conclusion. \\
+  UNC-5.A--D & Define, calculate, and interpret Type I/II errors and power. \\
+  UNC-4.I--L & Identify, verify conditions, and calculate a two-sample $z$-interval for $p_1-p_2$. \\
+  UNC-4.M--N & Interpret and justify claims from a two-sample CI for a difference. \\
+  VAR-6.H--J & State hypotheses; identify two-sample $z$-test; verify conditions using $\hat p_c$. \\
+  VAR-6.K; DAT-3.C--D & Calculate pooled $z$-statistic; interpret $p$-value; conclude in context. \\
+\end{tabularx}
+\end{skillbox}
+
+\end{document}

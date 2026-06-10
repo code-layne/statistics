@@ -1,0 +1,41 @@
+%! Constructing a Confidence Interval for a Population Proportion — Unit 6, Lesson 6.2 — Exit Ticket (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.2}{Exit Ticket --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+A random sample of 180 adult dog owners found that 126 say their dog sleeps in the bedroom.
+Construct a 95\% confidence interval for the true proportion of adult dog owners whose dog
+sleeps in the bedroom.
+
+\begin{enumerate}
+  \item \textbf{State} the parameter of interest.
+        \ansline{$p$ = true proportion of all adult dog owners whose dog sleeps in the bedroom}
+
+  \item \textbf{Plan}: Verify all three conditions.
+        \begin{itemize}
+          \item Random: \ans{SRS stated --- condition met}
+          \item Large Counts: $n\hat p = $ \ans{$180(0.70)=126$} \quad $n(1-\hat p) = $ \ans{$180(0.30)=54$} \quad Both $\ge 10$? \ans{Yes}
+          \item 10\% rule: \ans{$180 \le 0.10\times$(all adult dog owners) --- met}
+        \end{itemize}
+
+  \item \textbf{Do}: Compute the interval. ($\hat p = $ \ans{$126/180 \approx 0.700$})
+
+        \[
+          \hat p \pm z^* \sqrt{\frac{\hat p(1-\hat p)}{n}}
+          = \ans{0.700} \pm \ans{1.960}\sqrt{\frac{\ans{0.700(0.300)}}{\ans{180}}}
+          = (\ans{0.633},\; \ans{0.767})
+        \]
+
+  \item \textbf{Conclude}: Write a complete interpretation.
+        \ansline{We are 95\% confident that the interval from 0.633 to 0.767 captures the true proportion of all adult dog owners whose dog sleeps in the bedroom.}
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,43 @@
+%! Interpreting p-Values — Unit 6, Lesson 6.5 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.5}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.15in}
+
+\textit{Each scenario gives you hypotheses, sample data, and a $z$-statistic. Compute the
+$p$-value, then write a complete contextual interpretation.}
+
+\begin{scenariobox}[Scenario 1 --- Library Card Usage]{sky}
+\begin{enumerate}[label=\alph*.]
+  \item Which tail? \ans{Right} \quad $p$-value $= P(Z \ge 1.42) = $ \ans{$0.0778$}
+  \item \ansline{Assuming 45\% of residents hold library cards, there is a 7.78\% probability of observing a sample proportion of 0.50 or higher by chance alone.}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 2 --- Sleep Habits]{sky}
+\begin{enumerate}[label=\alph*.]
+  \item Which tail? \ans{Both} \quad $p$-value $= 2P(Z \le -1.37) = $ \ans{$2(0.0853)=0.1706$}
+  \item \ansline{Assuming 30\% of college students get 8+ hours of sleep, there is a 17.1\% probability of observing a sample proportion as far from 0.30 as 0.25 by chance alone.}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 3 --- Recycling]{sky}
+\begin{enumerate}[label=\alph*.]
+  \item Which tail? \ans{Left} \quad $p$-value $= P(Z \le -0.73) = $ \ans{$0.2327$}
+  \item \ansline{Assuming 60\% of households recycle, there is a 23.3\% probability of observing a sample proportion of 0.57 or lower by chance alone.}
+  \item \ansline{Weak evidence --- a $p$-value of 0.233 means results at least this extreme occur frequently (23\% of the time) even when $H_0$ is true. This does not support rejecting $H_0$.}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{reflectionbox}
+\ansline{Scenario 1 has the smallest $p$-value ($\approx0.078$), so evidence against $H_0$ is strongest there. A small $p$-value means the observed result would be unlikely if $H_0$ were true --- so we have more reason to doubt $H_0$. In Scenario 3, a $p$-value of 0.233 means results this extreme occur frequently under $H_0$, so the data provide little evidence against it.}
+\end{reflectionbox}
+
+\end{document}

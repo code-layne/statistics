@@ -1,0 +1,36 @@
+%! Potential Errors When Performing Tests — Unit 6, Lesson 6.7 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.7}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.15in}
+
+\begin{scenariobox}[Scenario 1 --- Airport Security]{sky}
+\begin{enumerate}[label=\alph*.]
+  \item \ansline{Type I error: flagging a passenger for additional screening when they actually pose no security threat (false alarm; an innocent person is inconvenienced).}
+  \item \ansline{Type II error: not flagging a passenger who actually does pose a security threat (a dangerous person passes screening undetected).}
+  \item \ansline{Type II error is more serious --- a missed security threat could result in violence or terrorism. A false positive (Type I) is merely an inconvenience.}
+  \item \ansline{Larger $n$ (more screeners/data) increases power --- the test is more likely to correctly detect a true threat.}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 2 --- New Vaccine Efficacy]{sky}
+\begin{enumerate}[label=\alph*.]
+  \item \ansline{Type I error: concluding the vaccine reduces infection when it actually doesn't. The vaccine would be approved and administered even though it provides no real benefit and may have side effects.}
+  \item \ansline{Type II error: failing to detect that the vaccine actually does reduce infection. A beneficial vaccine would not be approved, denying protection to the public.}
+  \item \ansline{Switching to $\alpha=0.05$ increases power (easier to reject $H_0$) but also increases the probability of a Type I error from 0.01 to 0.05.}
+  \item \ansline{Recommend $\alpha=0.01$ for a vaccine trial. Approving an ineffective vaccine (Type I error) is very costly --- it could replace a proven vaccine and cause harm. The stringent threshold is worth the lower power.}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{reflectionbox}
+\ansline{Reducing $\alpha$ (fewer Type I errors) comes at the cost of increased $\beta$ (more Type II errors) and lower power. A researcher might accept a higher Type I error rate when the cost of missing a true effect (Type II error) is severe --- for example, in exploratory research where failing to detect a real signal would mean discarding a potentially important finding.}
+\end{reflectionbox}
+
+\end{document}

@@ -1,0 +1,87 @@
+%! Constructing a Confidence Interval for a Population Proportion — Unit 6, Lesson 6.2 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.2}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.15in}
+
+\textit{For each scenario, complete the four-step inference procedure:
+\textbf{State} the parameter, \textbf{Plan} (verify conditions), \textbf{Do} (compute the interval),
+and \textbf{Conclude} (interpret in context).}
+
+\begin{scenariobox}[Scenario 1 --- Teen Screen Time]{sky}
+A researcher randomly selects 320 teenagers and asks whether they spend more than 4 hours
+per day on screens. 176 say yes. Construct a 95\% confidence interval for the true proportion.
+
+\textbf{State:} $p = $ \ansline{true proportion of all teenagers who spend more than 4 hours/day on screens}
+
+\textbf{Plan:}
+\begin{itemize}
+  \item Random: \ans{SRS stated --- met}
+  \item Large Counts: $n\hat p = $ \ans{$320(0.55)=176$}, $n(1-\hat p) = $ \ans{$320(0.45)=144$} \quad Both $\ge 10$? \ans{Yes}
+  \item 10\% rule: \ans{$320 \le 0.10\times$(all teenagers) --- met}
+\end{itemize}
+
+\textbf{Do:} $\hat p = $ \ans{$176/320=0.55$}
+
+\[
+  \hat p \pm z^* \sqrt{\frac{\hat p(1-\hat p)}{n}}
+  = \ans{0.55} \pm \ans{1.960}\sqrt{\frac{\ans{0.55(0.45)}}{\ans{320}}}
+  = 0.55 \pm 0.055
+  = (\ans{0.495},\; \ans{0.605})
+\]
+
+\textbf{Conclude:} \ansline{We are 95\% confident the interval (0.495, 0.605) captures the true proportion of all teenagers who spend more than 4 hours/day on screens.}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 2 --- Organic Food Preferences]{sky}
+A random survey of 500 grocery shoppers finds 215 regularly buy organic produce. Construct
+a 99\% confidence interval for the true proportion of shoppers who buy organic produce.
+
+\textbf{State:} \ansline{$p$ = true proportion of all grocery shoppers who regularly buy organic produce}
+
+\textbf{Plan:} (verify all three conditions)
+\begin{itemize}
+  \item Random: \ans{SRS stated --- met}
+  \item Large Counts: \ans{$500(0.43)=215\ge10$; $500(0.57)=285\ge10$ --- met}
+  \item 10\%: \ans{$500 \le 0.10\times$(all shoppers) --- met}
+\end{itemize}
+
+\textbf{Do:} $\hat p = 215/500 = 0.43$
+\[
+  CI = \ans{0.43} \pm \ans{2.576}\sqrt{\frac{\ans{0.43(0.57)}}{\ans{500}}}
+     = (\ans{0.373},\; \ans{0.487})
+\]
+
+\textbf{Conclude:} \ansline{We are 99\% confident the interval (0.373, 0.487) captures the true proportion of all grocery shoppers who regularly buy organic produce.}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 3 --- Sample Size Planning]{sky}
+A university wants to estimate the proportion of students who commute to campus. The
+administration wants a 95\% confidence interval with a margin of error no larger than 0.04.
+No prior estimate is available.
+
+\begin{enumerate}[label=\alph*.]
+  \item What value should you use for $\hat p$ when no prior estimate exists, and why?
+        \ansline{Use $\hat p = 0.5$ because it maximizes $\hat p(1-\hat p)$, giving the most conservative (largest) required sample size and ensuring the margin of error condition is met.}
+
+  \item Calculate the minimum required sample size.
+        \[n \ge \left(\frac{z^*}{m}\right)^2 \hat p(1-\hat p) = \left(\frac{\ans{1.960}}{\ans{0.04}}\right)^2 (\ans{0.5})(\ans{0.5}) = \ans{600.25}\]
+        Minimum $n = $ \ans{601} (round \underline{up}).
+\end{enumerate}
+\end{scenariobox}
+
+\begin{reflectionbox}
+Compare your intervals from Scenarios 1 and 2. Even though Scenario 2 used a higher
+confidence level, how did the width compare? What two competing forces explain this?
+
+\ansline{Scenario 2's interval (width $\approx 0.114$) is actually wider than Scenario 1's (width $\approx 0.110$) despite a larger sample size, because the 99\% confidence level requires a larger $z^*$ (2.576 vs.\ 1.960), which dominates the extra precision from $n=500$ vs.\ $n=320$.}
+\end{reflectionbox}
+
+\end{document}

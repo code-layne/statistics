@@ -1,0 +1,41 @@
+%! Potential Errors When Performing Tests — Unit 6, Lesson 6.7 — Homework (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.7}{Homework --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{enumerate}
+
+  \item Blood pressure test:
+        \begin{enumerate}[label=\alph*.]
+          \item \ansline{Type I error: concluding that more than 10\% of adults in the city have high blood pressure when the true rate is actually 10\%. The health department would allocate resources for a problem that doesn't exist.}
+          \item \ansline{Type II error: failing to detect that more than 10\% of adults have high blood pressure when the true rate exceeds 10\%. The department would miss a public health problem.}
+          \item \ansline{Power would be higher when $p=0.20$ than when $p=0.12$ because the true proportion is farther from $p_0=0.10$, making the effect easier to detect.}
+        \end{enumerate}
+
+  \item Reading intervention:
+        \begin{enumerate}[label=\alph*.]
+          \item \ansline{From the principal's perspective, a Type II error (missing a real benefit) is more costly --- a genuinely effective intervention would not be implemented, and students would be denied an improvement in their education. A Type I error means implementing an ineffective program, wasting resources but not directly harming students.}
+          \item \ansline{Increasing from $n=60$ to $n=240$ increases power (reduces $SE$) and decreases $\beta$ (probability of Type II error), making the test more sensitive to a real improvement.}
+        \end{enumerate}
+
+  \item True/False:
+        \begin{enumerate}[label=\alph*.]
+          \item \ans{F} \ansline{Reducing $\alpha$ decreases power (makes it harder to reject $H_0$), increasing $\beta$.}
+          \item \ans{F} \ansline{A Type II error occurs when we \emph{fail to} reject $H_0$. Specifically, it happens when $H_0$ is NOT rejected but $H_a$ is actually true.}
+        \end{enumerate}
+
+\end{enumerate}
+
+\begin{reflectionbox}
+\textbf{Preview:} Lesson 6.8 introduces the two-sample $z$-interval for $p_1 - p_2$.
+\end{reflectionbox}
+
+\end{document}

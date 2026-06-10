@@ -1,0 +1,67 @@
+%! Introducing Statistics: Why Be Normal? — Unit 6, Lesson 6.1 — Homework
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.1}{Homework}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{enumerate}
+
+  \item For each scenario, (a) verify the Large Counts condition, (b) calculate $SE_{\hat p}$,
+        and (c) identify the inference goal as \emph{confidence interval} (CI) or
+        \emph{significance test} (Test).
+
+        \begin{enumerate}[label=\alph*.]
+          \item[\textbf{I.}] A poll of 350 randomly selected registered voters finds $\hat p = 0.58$
+                support a ballot measure. Researchers want to estimate the true proportion
+                of all registered voters who support it.
+                \begin{itemize}
+                  \item Large Counts: \blank{7cm} \quad Met? \blank{1.5cm}
+                  \item $SE_{\hat p} = $ \blank{6cm}
+                  \item Inference goal: \blank{4cm}
+                \end{itemize}
+
+          \item[\textbf{II.}] A nutritionist claims that 30\% of teenagers eat breakfast daily.
+                A researcher surveys 90 randomly selected teenagers and finds $\hat p = 0.24$.
+                She wants to test whether the true proportion is less than 30\%.
+                \begin{itemize}
+                  \item Large Counts (use $p_0 = 0.30$): \blank{5.5cm} \quad Met? \blank{1.5cm}
+                  \item $SE_{\hat p} = \sqrt{\hat p(1-\hat p)/n} = $ \blank{5cm}
+                  \item Inference goal: \blank{4cm}
+                \end{itemize}
+
+          \item[\textbf{III.}] A manufacturing plant samples 500 units and finds $\hat p = 0.03$
+                are defective. Quality control wants to report a range for the true defect rate.
+                \begin{itemize}
+                  \item Large Counts: \blank{7cm} \quad Met? \blank{1.5cm}
+                  \item $SE_{\hat p} = $ \blank{6cm}
+                  \item Inference goal: \blank{4cm}
+                \end{itemize}
+        \end{enumerate}
+
+  \item Complete the table comparing confidence intervals and significance tests.
+
+        \renewcommand{\arraystretch}{2.0}
+        \begin{tabular}{@{} >{\bfseries}p{0.24\linewidth} p{0.34\linewidth} p{0.34\linewidth} @{}}
+          & \textbf{Confidence Interval} & \textbf{Significance Test} \\
+          \hline
+          Research goal & \writeline & \writeline \\
+          Key output    & \writeline & \writeline \\
+          Based on      & \multicolumn{2}{l}{Normal sampling distribution of $\hat p$ (when conditions met)} \\
+        \end{tabular}
+
+\end{enumerate}
+
+\begin{reflectionbox}
+\textbf{Preview:} Lesson 6.2 introduces the one-sample $z$-interval for a population
+proportion --- the first complete inference procedure. Review the formula
+$\hat p \pm z^* \sqrt{\hat p(1-\hat p)/n}$ and think about what each part represents.
+\end{reflectionbox}
+
+\end{document}

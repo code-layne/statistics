@@ -1,0 +1,32 @@
+%! Potential Errors When Performing Tests — Unit 6, Lesson 6.7 — Warm-Up (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.7}{Warm-Up --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+Mercury contamination test: $H_0: p=0.05$ vs.\ $H_a: p>0.05$.
+
+\begin{enumerate}
+  \item Agency rejects $H_0$; true $p = 0.05$.
+        \begin{enumerate}[label=\alph*.]
+          \item Error type: \ans{Type I error}
+          \item \ansline{The agency concluded fish are contaminated above the safe limit when the true contamination rate is actually 5\% (within safe limits). This is a false positive.}
+          \item $P(\text{Type I}) = $ \ans{$\alpha = 0.05$}
+        \end{enumerate}
+
+  \item Agency fails to reject $H_0$; true $p = 0.09$.
+        \begin{enumerate}[label=\alph*.]
+          \item Error type: \ans{Type II error}
+          \item \ansline{The agency concluded there is insufficient evidence of contamination above 5\%, when the fish are actually contaminated at a rate of 9\%. This is a false negative --- the agency missed real contamination.}
+          \item \ansline{Type II is more serious here --- failing to detect real contamination puts the public at risk of mercury poisoning. A Type I error would close the lake unnecessarily, but a Type II error could harm human health.}
+        \end{enumerate}
+\end{enumerate}
+
+\end{document}

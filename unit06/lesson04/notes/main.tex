@@ -1,0 +1,88 @@
+%! Setting Up a Test for a Population Proportion — Unit 6, Lesson 6.4 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.4}{Guided Notes}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{objectivebox}
+Set up a one-sample $z$-test for a population proportion: state hypotheses, verify conditions,
+and compute the test statistic.
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{Null hypothesis} $H_0$] States that \blank{6cm}. For a proportion test: $H_0: p = $ \blank{1.5cm}
+  \item[\termblanklong{Alternative hypothesis} $H_a$] States that \blank{6cm}. Chosen \blank{5cm} seeing data.
+  \item[\termblanklong{Null value} $p_0$] The specific proportion value assumed true under \blank{2cm}.
+  \item[\termblanklong{One-sided test}] $H_a: p <$ \blank{1.2cm} or $H_a: p >$ \blank{1.2cm}; used when the research question is \blank{3cm}.
+  \item[\termblanklong{Two-sided test}] $H_a: p \ne$ \blank{1.2cm}; used when looking for \blank{5cm}.
+\end{description}
+\end{vocabbox}
+
+\begin{notesbox}{Writing Hypotheses}
+\textbf{Template:} Always state in terms of the \emph{population} parameter $p$ (not $\hat p$).
+
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} p{0.44\linewidth} X @{}}
+  \textbf{Research Question} & \textbf{Hypotheses} \\ \hline
+  Is $p$ greater than some value $p_0$? & $H_0: p = p_0$ \quad $H_a: p >$ \blank{1.5cm} \\
+  Is $p$ less than some value $p_0$?    & $H_0: p = p_0$ \quad $H_a: p <$ \blank{1.5cm} \\
+  Has $p$ changed from $p_0$?           & $H_0: p = p_0$ \quad $H_a: p \ne$ \blank{1.5cm} \\
+\end{tabularx}
+\end{notesbox}
+
+\begin{notesbox}{Conditions for a One-Sample $z$-Test for $p$}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} p{0.22\linewidth} X p{0.22\linewidth} @{}}
+  \textbf{Condition} & \textbf{How to verify} & \textbf{Key difference from CI} \\ \hline
+  Random     & \blank{7cm} & Same \\
+  Large Counts & $n\cdot$\blank{1.5cm}$\ge 10$ and $n(1-$\blank{1.5cm}$)\ge 10$ & Use $p_0$, not $\hat p$ \\
+  10\% rule  & \blank{7cm} & Same \\
+\end{tabularx}
+\end{notesbox}
+
+\begin{notesbox}{Test Statistic}
+\begin{center}
+$z = \dfrac{\hat p - p_0}{\sqrt{\dfrac{p_0(1-p_0)}{n}}}$
+\end{center}
+
+\begin{itemize}
+  \item Numerator: \blank{7cm}
+  \item Denominator: \blank{7cm} (standard deviation of $\hat p$ \emph{assuming $H_0$ is true})
+  \item Interpretation: \blank{8cm}
+\end{itemize}
+\end{notesbox}
+
+\begin{notesbox}{Worked Example: Coin Fairness}
+A researcher flips a coin 80 times and gets $\hat p = 0.60$ heads. Test whether the coin is
+unfair (i.e., $p \ne 0.5$).
+
+\textbf{State:} $H_0$: \blank{3cm} \quad $H_a$: \blank{3cm}
+
+\textbf{Plan:} Conditions: Random (\blank{3cm}); Large Counts: $80(0.5) = $ \blank{1.5cm} $\ge 10$? \blank{1cm};
+$80(0.5) = $ \blank{1.5cm} $\ge 10$? \blank{1cm}; 10\% rule: \blank{2cm}.
+
+\textbf{Do:} $z = \dfrac{\hat p - p_0}{\sqrt{p_0(1-p_0)/n}} = \dfrac{\blank{1.5cm} - \blank{1.5cm}}{\sqrt{\blank{2cm}/\blank{1.5cm}}} = $ \blank{2cm}
+\end{notesbox}
+
+\begin{practicebox}
+A nutrition label claims 20\% of adults meet the daily recommended fiber intake. A health
+researcher believes the true proportion is \emph{lower}. She surveys 200 randomly selected
+adults and finds 30 meet the requirement.
+
+\begin{itemize}
+  \item $H_0$: \blank{4cm} \quad $H_a$: \blank{4cm}
+  \item Large Counts: $200(0.20) = $ \blank{2cm} $\ge 10$? \blank{1cm} \quad $200(0.80) = $ \blank{2cm} $\ge 10$? \blank{1cm}
+  \item $\hat p = 30/200 = $ \blank{1.5cm}
+  \item $z = \dfrac{\blank{1.5cm} - \blank{1.5cm}}{\sqrt{\blank{2cm}/\blank{2cm}}} = $ \blank{2cm}
+\end{itemize}
+\end{practicebox}
+
+\end{document}

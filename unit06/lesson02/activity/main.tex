@@ -1,0 +1,84 @@
+%! Constructing a Confidence Interval for a Population Proportion — Unit 6, Lesson 6.2 — Group Activity
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.2}{Group Activity}
+\namepartnerperiod
+
+\vspace{0.15in}
+
+\textit{For each scenario, complete the four-step inference procedure:
+\textbf{State} the parameter, \textbf{Plan} (verify conditions), \textbf{Do} (compute the interval),
+and \textbf{Conclude} (interpret in context).}
+
+\begin{scenariobox}[Scenario 1 --- Teen Screen Time]{sky}
+A researcher randomly selects 320 teenagers and asks whether they spend more than 4 hours
+per day on screens. 176 say yes. Construct a 95\% confidence interval for the true proportion.
+
+\textbf{State:} $p = $ \writelines{1}
+
+\textbf{Plan:}
+\begin{itemize}
+  \item Random: \blank{7cm}
+  \item Large Counts: $n\hat p = $ \blank{2.5cm}, $n(1-\hat p) = $ \blank{2.5cm} \quad Both $\ge 10$? \blank{1cm}
+  \item 10\% rule: \blank{5cm}
+\end{itemize}
+
+\textbf{Do:} $\hat p = $ \blank{2cm}
+
+\[
+  \hat p \pm z^* \sqrt{\frac{\hat p(1-\hat p)}{n}}
+  = \blank{1.5cm} \pm \blank{1.5cm}\sqrt{\frac{\blank{2cm}}{\blank{1.5cm}}}
+  = \blank{1.5cm} \pm \blank{1.5cm}
+  = (\blank{2.5cm},\; \blank{2.5cm})
+\]
+
+\textbf{Conclude:} \writelines{2}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 2 --- Organic Food Preferences]{sky}
+A random survey of 500 grocery shoppers finds 215 regularly buy organic produce. Construct
+a 99\% confidence interval for the true proportion of shoppers who buy organic produce.
+
+\textbf{State:} \writelines{1}
+
+\textbf{Plan:} (verify all three conditions)
+\begin{itemize}
+  \item[] \writelines{3}
+\end{itemize}
+
+\textbf{Do:}
+\[
+  CI = \blank{1.5cm} \pm \blank{1.5cm}\sqrt{\frac{\blank{2cm}}{\blank{1.5cm}}}
+     = (\blank{2.5cm},\; \blank{2.5cm})
+\]
+
+\textbf{Conclude:} \writelines{2}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 3 --- Sample Size Planning]{sky}
+A university wants to estimate the proportion of students who commute to campus. The
+administration wants a 95\% confidence interval with a margin of error no larger than 0.04.
+No prior estimate is available.
+
+\begin{enumerate}[label=\alph*.]
+  \item What value should you use for $\hat p$ when no prior estimate exists, and why?
+        \writelines{2}
+
+  \item Calculate the minimum required sample size.
+        \[n \ge \left(\frac{z^*}{m}\right)^2 \hat p(1-\hat p) = \left(\frac{\blank{1.5cm}}{\blank{1.5cm}}\right)^2 (\blank{1.5cm})(\blank{1.5cm}) = \blank{3cm}\]
+        Minimum $n = $ \blank{2cm} (round \underline{\hspace{1.5cm}}).
+\end{enumerate}
+\end{scenariobox}
+
+\begin{reflectionbox}
+Compare your intervals from Scenarios 1 and 2. Even though Scenario 2 used a higher
+confidence level, how did the width compare? What two competing forces explain this?
+\writelines{3}
+\end{reflectionbox}
+
+\end{document}

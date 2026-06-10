@@ -1,0 +1,91 @@
+%! Justifying a Claim Based on a Confidence Interval for a Population Proportion — Unit 6, Lesson 6.3 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.3}{Guided Notes}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{objectivebox}
+Interpret confidence intervals for population proportions and use them to evaluate claims.
+\end{objectivebox}
+
+\begin{notesbox}{What Does ``95\% Confident'' Really Mean?}
+A confidence level does \textbf{not} mean there is a 95\% probability that $p$ lies in this
+specific interval. Instead, it means: \\[4pt]
+\textit{If we were to take \blank{4cm} samples and build a CI from each, about \blank{2cm}\%
+of the resulting intervals would \blank{5cm}.} \\[4pt]
+The true parameter $p$ is \blank{4cm} --- it is either in the interval or it isn't. What is
+random is \blank{7cm}.
+
+\vspace{4pt}
+\textbf{Common errors to avoid:}
+\begin{itemize}
+  \item[\textbf{$\times$}] ``There is a 95\% probability that $p$ is in the interval'' --- wrong! The interval is fixed.
+  \item[\textbf{$\times$}] ``95\% of all data values are in the interval'' --- wrong! The interval estimates $p$, not data.
+  \item[\checkmark] \blank{9cm}
+\end{itemize}
+\end{notesbox}
+
+\begin{notesbox}{Complete Interpretation Template}
+\begin{center}
+\begin{tcolorbox}[colback=goldbg, colframe=goldacc, boxrule=0.8pt, width=0.92\linewidth]
+``We are \blank{2cm}\% confident that the interval from \blank{2cm} to \blank{2cm}
+captures the true \blank{5cm} of \blank{5cm}[population].''
+\end{tcolorbox}
+\end{center}
+
+\vspace{4pt}
+Three required elements: \quad (1) \blank{3.5cm} \quad (2) \blank{4cm} \quad (3) \blank{4cm}
+\end{notesbox}
+
+\begin{notesbox}{Using a CI to Evaluate a Claim}
+If a researcher claims a specific value $p_0$:
+\begin{itemize}
+  \item If $p_0$ is \textbf{inside} the CI $\Rightarrow$ $p_0$ is \blank{3.5cm} with the data.
+        We \blank{4cm} the claim.
+  \item If $p_0$ is \textbf{outside} the CI $\Rightarrow$ the data provide \blank{4cm}
+        against the claim at the \blank{3cm} significance level.
+\end{itemize}
+
+\textbf{Example:} A CI for the proportion of students who prefer online homework is $(0.54, 0.68)$.
+\begin{itemize}
+  \item A principal claims the proportion is 0.60.  Is 0.60 plausible? \blank{3cm}  Because: \blank{3cm}
+  \item A teacher claims the proportion is 0.75.  Is 0.75 plausible? \blank{3cm}  Because: \blank{3cm}
+\end{itemize}
+\end{notesbox}
+
+\begin{notesbox}{Width of a CI: Effects of $n$ and $C$}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} p{0.33\linewidth} X @{}}
+  \textbf{Change} & \textbf{Effect on width} \\ \hline
+  Increase $n$ (hold $C$ fixed)     & Width \blank{3cm} because $SE_{\hat p} = \sqrt{\hat p(1-\hat p)/n}$ \blank{2cm} \\
+  Decrease $n$ (hold $C$ fixed)     & Width \blank{3cm} \\
+  Increase $C$ (hold $n$ fixed)     & Width \blank{3cm} because $z^*$ \blank{2cm} \\
+  Decrease $C$ (hold $n$ fixed)     & Width \blank{3cm} \\
+\end{tabularx}
+
+\vspace{4pt}
+\textbf{Key insight:} To halve the margin of error, you must multiply $n$ by \blank{1.5cm}.
+\end{notesbox}
+
+\begin{practicebox}
+A 95\% CI for the proportion of voters who support Measure B is $(0.47, 0.55)$.
+
+\begin{enumerate}[label=\alph*.]
+  \item Write a complete interpretation of this interval.
+        \writelines{2}
+  \item A campaign manager claims that more than half of voters support Measure B ($p > 0.50$).
+        Is this claim supported by the CI? Explain.
+        \writelines{2}
+  \item Would a 99\% CI be wider or narrower? Why?
+        \writelines{1}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

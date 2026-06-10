@@ -1,0 +1,130 @@
+%! Setting Up a Test for a Population Proportion — Unit 6, Lesson 6.4 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\UnitNumberName}{Unit 6: Inference for Categorical Data: Proportions \quad}
+\newcommand{\LessonNumberName}{Lesson 6.4: Setting Up a Test for a Population Proportion}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will state null and alternative hypotheses for a
+    one-sample $z$-test for a population proportion, verify conditions using $p_0$, and
+    identify the test as one-sided or two-sided (Big Idea: VAR).
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+    \begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+        \textbf{AP Skills}
+        \begin{itemize}[leftmargin=1.2em]
+            \item \textbf{1.D} --- Identify an appropriate hypothesis test
+            \item \textbf{4.C} --- Verify conditions for a significance test
+        \end{itemize}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+        \textbf{Key Understandings (VAR-6.D--F)}
+        \begin{itemize}[leftmargin=1.2em]
+            \item $H_0$ states $p = p_0$; $H_a$ is $p < p_0$, $p > p_0$, or $p \ne p_0$
+            \item Conditions: Random, Large Counts ($np_0 \ge 10$ and $n(1-p_0) \ge 10$), 10\% rule
+            \item Large Counts uses $p_0$ (the null value), not $\hat p$, unlike a CI
+            \item The direction of $H_a$ is determined by the research question, not by the data
+        \end{itemize}
+    \end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\linewidth}{@{} p{0.26\linewidth} X @{}}
+        \textbf{Null hypothesis} $H_0$     & The default claim; states $p = p_0$ for a one-sample proportion test \\
+        \textbf{Alternative hypothesis} $H_a$ & The research claim; one-sided ($<$ or $>$) or two-sided ($\ne$) \\
+        \textbf{Null value} $p_0$          & The specific proportion value assumed true under $H_0$ \\
+        \textbf{One-sided test}            & $H_a: p < p_0$ or $H_a: p > p_0$; directional research question \\
+        \textbf{Two-sided test}            & $H_a: p \ne p_0$; non-directional; looking for any difference \\
+        \textbf{Test statistic} $z$        & $z = \dfrac{\hat p - p_0}{\sqrt{p_0(1-p_0)/n}}$; standardizes $\hat p$ assuming $H_0$ true \\
+    \end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+    \begin{tabularx}{\linewidth}{@{}X@{}}
+        \begin{minipage}[t]{\linewidth}\vspace{0pt}
+            Please see attached spiral review.\\[2pt]
+            \textit{Skills reviewed:} interpreting confidence intervals; using $p_0$ vs.\ $\hat p$;
+            identifying inference context (CI vs.\ test); normal distribution $z$-scores.
+        \end{minipage}
+    \end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Hook]{sky}
+    \textbf{``Is the coin fair?''} \\[3pt]
+    Flip a coin 40 times (or simulate). Suppose you get 26 heads. Someone claims the coin is
+    fair ($p = 0.5$). Is 26 heads unusual enough to doubt that? Write $H_0$ and $H_a$, then
+    discuss: \textit{``We need a systematic way to decide if sample evidence is strong enough
+    to contradict a claim --- that's hypothesis testing.''}
+\end{skillbox}
+
+\begin{skillbox}[Lesson]{sky}
+    \begin{enumerate}[leftmargin=1.4em, label=\arabic*.]
+        \item \textbf{Writing hypotheses.} Always state $H_0: p = p_0$ and choose $H_a$ based
+              on the research question \emph{before} seeing data. Show three examples: a new
+              drug (one-sided $>$), a study claiming a specific rate changed (two-sided), and
+              a safety inspection (one-sided $<$). Emphasize: $H_a$ encodes direction of interest.
+
+        \item \textbf{Conditions.} Three conditions, same names as CI but Large Counts uses $p_0$:
+              $np_0 \ge 10$ and $n(1-p_0) \ge 10$. Explain why: under $H_0$, $p = p_0$ is
+              assumed true; we build the sampling distribution under $H_0$.
+
+        \item \textbf{The test statistic.}
+              $z = \dfrac{\hat p - p_0}{\sqrt{p_0(1-p_0)/n}}$.
+              Interpret: ``how many standard deviations is $\hat p$ from the null value?''
+              Demonstrate with the coin example: $z = (0.65 - 0.5)/\sqrt{0.5(0.5)/40} \approx 1.90$.
+
+        \item \textbf{Common errors.} Using $\hat p$ instead of $p_0$ in SE; swapping $H_0$ and
+              $H_a$; choosing direction after seeing data (data snooping).
+    \end{enumerate}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+    \textbf{Watch for:}
+    \begin{itemize}[leftmargin=1.2em]
+        \item Large Counts checked with $\hat p$ instead of $p_0$
+        \item $H_a$ chosen after looking at whether $\hat p > p_0$ or $\hat p < p_0$
+        \item Writing $H_0: \hat p = p_0$ instead of $H_0: p = p_0$
+    \end{itemize}
+    \textbf{Cold-call:} ``A researcher says `the data show $\hat p = 0.62 > 0.5$, so $H_a: p > 0.5$.'
+    What's wrong with this reasoning?''
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+    See attached group activity. Students practice writing hypotheses, verifying conditions,
+    and computing the test statistic for multiple scenarios.\\[4pt]
+    \textbf{Tier R:} Sentence frames for $H_0$/$H_a$; checklist for conditions; $z$ formula given.\\
+    \textbf{Tier A:} Full setup with three scenarios of varying direction.\\
+    \textbf{Tier E:} Extension: explain why using $\hat p$ in the SE of the test statistic
+    would be a conceptual error.
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+    \textbf{Exit Ticket:} Students state hypotheses, verify conditions, and compute $z$ for a
+    single scenario. \\[4pt]
+    \textbf{Look for:} $H_0: p = p_0$; correct $H_a$ direction; $p_0$ used in Large Counts
+    and SE denominator; $z$ computed correctly.
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+    \textbf{Homework:} Four hypothesis-setup problems requiring hypotheses, condition
+    verification, and $z$ calculation. \\[4pt]
+    \textbf{Extension:} What happens to $z$ if we double $n$ while holding $\hat p$ and $p_0$
+    fixed? Verify algebraically. \\[4pt]
+    \textbf{Preview:} Lesson 6.5 introduces the $p$-value --- how to use the test statistic
+    to measure the strength of evidence against $H_0$.
+\end{skillbox}
+\end{document}

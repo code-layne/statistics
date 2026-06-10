@@ -1,0 +1,126 @@
+%! Constructing a Confidence Interval for a Population Proportion — Unit 6, Lesson 6.2 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.2}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{objectivebox}
+Construct and interpret a one-sample $z$-interval for a population proportion using
+the procedure: \textbf{State} conditions, \textbf{Plan}, \textbf{Do}, \textbf{Conclude}.
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{Confidence interval}] An interval estimate of a population parameter
+        computed from sample data; written as $\hat p \pm ME$.
+  \item[\termblanklong{Confidence level} $C$] The long-run \ans{percentage} of intervals produced
+        by the procedure that \ans{contain the true parameter $p$}.
+  \item[\termblanklong{Critical value} $z^*$] The $z$-score such that \ans{$C$}\% of the
+        standard normal distribution falls between $-z^*$ and $z^*$.
+  \item[\termblanklong{Margin of error}] $ME = z^* \cdot SE_{\hat p}$; the \ans{half-width} of the
+        interval from $\hat p$ to either endpoint.
+  \item[\termblanklong{Standard error}] $SE_{\hat p} = \sqrt{\hat p(1-\hat p)/n}$; estimates
+        \ans{the standard deviation of the sampling distribution of $\hat p$}.
+\end{description}
+\end{vocabbox}
+
+\begin{notesbox}{Conditions for a One-Sample $z$-Interval for $p$}
+Check \textbf{all three} conditions before constructing the interval.
+
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} p{0.22\linewidth} X p{0.18\linewidth} @{}}
+  \textbf{Condition} & \textbf{How to verify} & \textbf{Use if unmet} \\ \hline
+  \textbf{Random}     & \ans{Data come from a random sample or randomized experiment} & --- \\
+  \textbf{Large Counts} & $n\hat p \ge$ \ans{10} and $n(1-\hat p) \ge$ \ans{10} & Use $p_0$ in a test \\
+  \textbf{10\% Rule}  & Population $\ge$ \ans{$10n$} & Finite population correction \\
+\end{tabularx}
+\end{notesbox}
+
+\begin{notesbox}{The One-Sample $z$-Interval Formula}
+\begin{center}
+  $\hat p \pm z^* \sqrt{\dfrac{\hat p(1-\hat p)}{n}}$
+  \qquad\qquad
+  \begin{tabular}{@{}cl@{}}
+    $\hat p$  & = \ans{sample proportion} \\[6pt]
+    $z^*$     & = \ans{critical value for confidence level $C$} \\[6pt]
+    $n$       & = \ans{sample size} \\
+  \end{tabular}
+\end{center}
+
+\vspace{4pt}
+\textbf{Common critical values:}
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{} c c @{}}
+  \textbf{Confidence level} & $z^*$ \\ \hline
+  90\% & \ans{1.645} \\
+  95\% & \ans{1.960} \\
+  99\% & \ans{2.576} \\
+\end{tabular}
+\end{center}
+\end{notesbox}
+
+\begin{notesbox}{Worked Example: Gallup Approval Poll}
+A Gallup poll of 1{,}000 randomly selected U.S.\ adults found $\hat p = 0.52$ approve of the
+president's job performance. Construct a 95\% confidence interval for the true proportion.
+
+\textbf{State:} Parameter: \ans{$p$ = true proportion of all U.S.\ adults who approve}
+
+\textbf{Plan:} Check conditions:
+\begin{itemize}
+  \item Random: \ans{SRS stated --- condition met}
+  \item Large Counts: \ans{$1000(0.52)=520 \ge 10$ and $1000(0.48)=480 \ge 10$ --- met}
+  \item 10\%: \ans{$1000 \le 0.10\times$(all U.S.\ adults) --- met}
+\end{itemize}
+
+\textbf{Do:}
+\[
+  \hat p \pm z^* \sqrt{\frac{\hat p(1-\hat p)}{n}}
+  = \ans{0.52} \pm \ans{1.960}\sqrt{\frac{\ans{0.52(0.48)}}{\ans{1000}}}
+  = 0.52 \pm 0.031
+  = (\ans{0.489},\; \ans{0.551})
+\]
+
+\textbf{Conclude:} We are \ans{95}\% confident that the interval from \ans{0.489} to
+\ans{0.551} captures the true proportion of \ans{all U.S.\ adults who approve of the president's job performance}.
+\end{notesbox}
+
+\begin{notesbox}{Factors Affecting Width \& Sample Size}
+\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+  \textbf{Width increases when:}
+  \begin{itemize}
+    \item Confidence level \ans{increases} (higher $z^*$)
+    \item Sample size \ans{decreases} (larger $SE$)
+  \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+  \textbf{Sample size formula} (target margin of error $m$):
+  \[n \ge \left(\frac{z^*}{m}\right)^2 \hat p(1-\hat p)\]
+  Use $\hat p = \ans{0.5}$ if no prior estimate exists. Always round \ans{up}.
+\end{minipage}
+\end{notesbox}
+
+\begin{practicebox}
+A survey of 250 randomly selected college students found 165 own a streaming service
+subscription. Find a 90\% confidence interval for the true proportion of college students
+who own such a subscription. Verify conditions and write a complete interpretation.
+
+\vspace{0.05in}
+$\hat p = $ \ans{$165/250 = 0.66$} \quad Conditions: \ans{Random (SRS); LC: $250(0.66)=165\ge10$, $250(0.34)=85\ge10$; 10\%: met}
+
+\vspace{0.06in}
+$CI: $ \ans{0.66} $\pm$ \ans{1.645} $\cdot \sqrt{\dfrac{\ans{0.66(0.34)}}{\ans{250}}}
+= ($ \ans{0.611}, \ans{0.709}$)$
+
+\vspace{0.06in}
+Interpret: \ansline{We are 90\% confident the interval (0.611, 0.709) captures the true proportion of all college students who own a streaming service subscription.}
+\end{practicebox}
+
+\end{document}

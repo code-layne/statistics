@@ -1,0 +1,41 @@
+%! Justifying a Claim Based on a Confidence Interval for a Population Proportion — Unit 6, Lesson 6.3 — Warm-Up (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.3}{Warm-Up --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+A random sample of 360 college students found 198 who said they regularly eat breakfast.
+
+\begin{enumerate}
+  \item Verify the three conditions for a one-sample $z$-interval.
+        \begin{itemize}
+          \item Random: \ans{SRS stated --- met}
+          \item Large Counts: \ans{$360(0.55)=198\ge10$; $360(0.45)=162\ge10$ --- met}
+          \item 10\% rule: \ans{$360 \le 0.10\times$(all college students) --- met}
+        \end{itemize}
+
+  \item Construct a 95\% confidence interval for $p$, the true proportion of all college
+        students who regularly eat breakfast. Show all work.
+
+        $\hat p = $ \ans{$198/360 \approx 0.550$}
+
+        \[
+          \hat p \pm z^* \sqrt{\frac{\hat p(1-\hat p)}{n}}
+          = \ans{0.550} \pm \ans{1.960}\sqrt{\frac{\ans{0.550(0.450)}}{\ans{360}}}
+          = (\ans{0.499},\; \ans{0.601})
+        \]
+
+  \item Based on your interval, is the value $p = 0.60$ plausible? Is $p = 0.52$ plausible?
+        Explain briefly.
+
+        \ansline{$p=0.60$ is barely outside the interval (0.499, 0.601), so it is not plausible at the 95\% confidence level. $p=0.52$ is inside the interval, so it is a plausible value for the true proportion.}
+\end{enumerate}
+
+\end{document}

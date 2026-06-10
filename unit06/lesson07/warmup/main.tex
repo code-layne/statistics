@@ -1,0 +1,35 @@
+%! Potential Errors When Performing Tests — Unit 6, Lesson 6.7 — Warm-Up
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.7}{Warm-Up}
+\namedateperiod
+
+\vspace{0.15in}
+
+An environmental agency tests whether mercury contamination in a lake's fish is above the
+safe limit of 5\% ($H_0: p = 0.05$ vs.\ $H_a: p > 0.05$, $\alpha = 0.05$).
+
+\begin{enumerate}
+  \item After testing 300 randomly selected fish, the agency gets $p\text{-value} = 0.038$ and
+        \emph{rejects} $H_0$. However, the true contamination rate is actually 5\%.
+        \begin{enumerate}[label=\alph*.]
+          \item What kind of error did the agency make? \blank{3cm}
+          \item Describe this error in context. \writelines{2}
+          \item What is the probability of this type of error? \blank{2cm}
+        \end{enumerate}
+
+  \item Alternatively, suppose the true contamination rate is actually 9\%, but a different
+        sample of 300 fish yields $p\text{-value} = 0.07$, so the agency \emph{fails to reject} $H_0$.
+        \begin{enumerate}[label=\alph*.]
+          \item What kind of error occurred? \blank{3cm}
+          \item Describe this error in context. \writelines{2}
+          \item In this scenario, which error seems more serious and why? \writelines{2}
+        \end{enumerate}
+\end{enumerate}
+
+\end{document}

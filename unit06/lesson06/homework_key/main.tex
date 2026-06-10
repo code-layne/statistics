@@ -1,0 +1,40 @@
+%! Concluding a Test for a Population Proportion — Unit 6, Lesson 6.6 — Homework (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.6}{Homework --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{enumerate}
+
+  \item Website visitors ($n=350$, 126 visited):
+        \textbf{State:} \ansline{$H_0: p=0.40$; $H_a: p<0.40$; $\alpha=0.05$}
+        \textbf{Plan:} \ansline{Random (SRS --- met); LC: $350(0.40)=140\ge10$, $350(0.60)=210\ge10$ --- met; 10\% met.}
+        \textbf{Do:} $\hat p = $ \ans{$126/350=0.36$} \quad $z \approx$ \ans{$\dfrac{0.36-0.40}{\sqrt{0.40(0.60)/350}}\approx-1.53$} \quad $p$-value $\approx$ \ans{$P(Z\le-1.53)=0.063$}
+        \textbf{Conclude:} \ansline{Because $p$-value $=0.063>\alpha=0.05$, we fail to reject $H_0$. We do not have sufficient evidence that the proportion of adults who visited the site is lower than 40\%.}
+
+  \item Extracurricular activities ($n=250$, 193 participate):
+        \textbf{State:} \ansline{$H_0: p=0.72$; $H_a: p\ne0.72$; $\alpha=0.05$}
+        \textbf{Plan:} \ansline{Random (SRS --- met); LC: $250(0.72)=180\ge10$, $250(0.28)=70\ge10$ --- met; 10\% met.}
+        \textbf{Do:} $\hat p = $ \ans{$193/250=0.772$} \quad $z \approx$ \ans{$\dfrac{0.772-0.72}{\sqrt{0.72(0.28)/250}}\approx1.81$} \quad $p$-value $\approx$ \ans{$2P(Z\ge1.81)=2(0.035)=0.070$}
+        \textbf{Conclude:} \ansline{Because $p$-value $=0.070>\alpha=0.05$, we fail to reject $H_0$. We do not have sufficient evidence that the participation rate in the district differs from 72\%.}
+
+  \item Bottled water contamination ($n=400$, 26 exceed):
+        \textbf{State:} \ansline{$H_0: p=0.05$; $H_a: p>0.05$; $\alpha=0.01$}
+        \textbf{Plan:} \ansline{Random (SRS --- met); LC: $400(0.05)=20\ge10$, $400(0.95)=380\ge10$ --- met; 10\% met.}
+        \textbf{Do:} $\hat p = $ \ans{$26/400=0.065$} \quad $z \approx$ \ans{$\dfrac{0.065-0.05}{\sqrt{0.05(0.95)/400}}\approx1.38$} \quad $p$-value $\approx$ \ans{$P(Z\ge1.38)=0.084$}
+        \textbf{Conclude:} \ansline{Because $p$-value $=0.084>\alpha=0.01$, we fail to reject $H_0$. We do not have sufficient evidence that the contamination rate exceeds 5\%.}
+
+\end{enumerate}
+
+\begin{reflectionbox}
+\textbf{Preview:} Lesson 6.7 introduces Type I errors, Type II errors, and power.
+\end{reflectionbox}
+
+\end{document}
