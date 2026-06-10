@@ -1,0 +1,237 @@
+%! AP Statistics — Unit 5, Lesson 5.1 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\newcommand{\UnitNumberName}{Unit 5: Sampling Distributions \quad}
+\newcommand{\LessonNumberName}{Lesson 5.1: Introducing Statistics --- Why Is My Sample Not Like Yours?}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will recognize that statistics computed from
+    different random samples of the same population will vary, and that this sample-to-sample
+    variation is itself a predictable, structured phenomenon --- not simply error
+    (Big Idea: VAR).
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 1 --- Selecting Statistical Methods}
+    \begin{itemize}
+        \item Identify questions suggested by variation in statistics across samples
+              from the same population (Skill 1.A).
+        \item Recognize that sample statistics vary from sample to sample even when
+              drawn from the same population (VAR-1.G, VAR-1.G.1).
+        \item Bridge from Unit 4 (probability \& distributions) to Unit 5
+              (sampling distributions and inference).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item Variation in statistics across repeated samples may be random or
+              non-random.
+        \item The key question for the unit: ``How much should we expect sample
+              statistics to vary just by chance?''
+        \item Understanding sample-to-sample variability is the foundation for all
+              of Units 6--9 (inference).
+        \item This lesson is a framing lesson (not assessed in the CED) that sets
+              the conceptual stage for the unit.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Statistic} --- a number computed from sample data
+        \item \textbf{Parameter} --- a fixed (usually unknown) number describing a
+              population
+        \item \textbf{Sampling variability} --- the natural tendency of a statistic to
+              take different values across different samples
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Sampling distribution} --- the distribution of a statistic over
+              all possible samples of a fixed size from a population
+        \item \textbf{Random variation} --- fluctuation due to chance alone
+        \item \textbf{Bias} --- systematic tendency to over- or under-estimate a
+              parameter (preview for Lesson 5.4)
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Review: What is the difference between a \emph{statistic} and a
+              \emph{parameter}? (Unit 1)
+        \item Connect: Unit 4 built probability models for random variables; Unit 5
+              applies that machinery to the statistics we actually compute from data.
+        \item Prompt: \textit{``Two students each survey 30 classmates about hours
+              of sleep. They get different means. Why?''}
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Connections Forward}
+    \begin{itemize}
+        \item Normal distribution as a probability model $\to$ Lesson 5.2
+        \item Central Limit Theorem $\to$ Lesson 5.3
+        \item Bias and unbiased estimators $\to$ Lesson 5.4
+        \item Sampling distributions for proportions $\to$ Lessons 5.5--5.6
+        \item Sampling distributions for means $\to$ Lessons 5.7--5.8
+        \item Formal inference using these distributions $\to$ Units 6--9
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (5--7 min)}\\
+    Display the following scenario:\\[4pt]
+    \textit{A polling agency reports that 54\% of a sample of 500 voters support a
+    ballot measure. A rival agency samples 500 different voters and gets 51\%. A third
+    agency gets 56\%.}\\[4pt]
+    Ask: ``Are these agencies lying? Did they make mistakes?''\\[4pt]
+    Reveal: All three results can easily come from the same population --- the variation
+    is simply \emph{sampling variability}. The real question is: \textbf{How much
+    variation should we expect?}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15 min)}
+    \begin{enumerate}
+        \item Show three samples of size 10 drawn from a jar of colored chips (or
+              simulate via applet). Compute the sample proportion of red for each.
+              Record on board.
+        \item Ask: \textbf{``Why do these proportions differ?''} (Samples are random;
+              different chips get selected.)
+        \item Ask: \textbf{``If we took 1000 such samples, what would that collection of
+              proportions look like?''} Introduce the term \emph{sampling distribution}.
+        \item Key idea (VAR-1.G.1): variation across samples from the same population
+              may be random --- and that is \emph{expected}, not a flaw.
+        \item Preview: The rest of Unit 5 will describe the exact shape, center, and
+              spread of these sampling distributions so we can use them for inference.
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Direct Instruction (8--10 min)}
+    \begin{itemize}
+        \item Distinguish: distribution of a \emph{population} vs.\ distribution of a
+              \emph{sample} vs.\ \emph{sampling distribution} of a statistic.
+        \item Use a Desmos applet or class simulation: repeatedly draw samples of size
+              $n = 30$ from a known population and plot the sample means. Observe the
+              shape of the resulting dot-plot.
+        \item Emphasize: the sampling distribution has its own center and spread ---
+              these are not random but are determined by the population parameter and $n$.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Active Monitoring}
+    \begin{itemize}
+        \item Listen for students conflating ``the sample'' with ``the sampling
+              distribution'' --- redirect: \textit{``One sample gives one dot; the
+              sampling distribution is the whole collection of dots.''}
+        \item Cold-call: ``Name one question about a population that sampling
+              variability makes harder to answer.''
+        \item Check warm-up for confusion between statistic and parameter.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Partner Activity (8--10 min)}\\
+    Four scenario cards (each describes a study with two different sample results):
+    \begin{enumerate}
+        \item State whether the difference is likely due to sampling variability or a
+              real population difference.
+        \item Identify the statistic and (if stated) the parameter.
+        \item Write a question the sampling variability raises that we cannot yet answer.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support (Tier R)}: Anchor sentence --- ``A statistic changes from
+              sample to sample. A parameter stays fixed.'' Provide sentence frames.
+        \item \textit{On-grade (Tier A)}: Explain conceptually why increasing sample
+              size might reduce sampling variability.
+        \item \textit{Extension (Tier E)}: Sketch the sampling distribution of the
+              sample mean for $n = 5$ vs.\ $n = 50$. Predict: center? spread? shape?
+        \item \textit{ELL}: Bilingual vocabulary card for statistic / parameter /
+              sampling variability.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}
+    \begin{enumerate}
+        \item A nationwide survey of 1,000 adults finds that 62\% support a new policy.
+              A local survey of 50 adults finds 55\%. Explain why these results are not
+              necessarily contradictory.
+        \item What is the difference between a \emph{statistic} and a \emph{parameter}?
+              Give one example of each from the scenario above.
+        \item In your own words, what is a sampling distribution?
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{A researcher takes repeated random samples of size 40 from a large population
+    and records the sample mean each time. The collection of all these sample means is
+    best described as:}
+    \begin{enumerate}[label=(\Alph*)]
+        \item The population distribution
+        \item A single sample distribution
+        \item The sampling distribution of the sample mean
+        \item The parameter of interest
+    \end{enumerate}
+    Answer: (C)
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item For three real-world scenarios, identify the statistic, the parameter, and
+              whether sampling variability could explain any observed difference between
+              two reported statistics.
+        \item Reflection: \textit{``Why is it important to understand sampling variability
+              before performing formal inference?''}
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: Find a news article reporting two poll results on the
+              same topic. Evaluate whether the difference is likely due to sampling
+              variability or a real population difference.
+        \item \textit{Preview}: Lesson 5.2 revisits the normal distribution --- the
+              key tool for describing what sampling distributions look like.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\end{document}

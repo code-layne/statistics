@@ -1,0 +1,127 @@
+%! AP Statistics — Unit 5, Lesson 5.2 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.2}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{enumerate}
+  \item \ansline{calculate the probability that a normally distributed variable falls in a given interval using z-scores and/or technology}
+  \item \ansline{determine the boundary value(s) of a normal interval associated with a given area (inverse normal)}
+  \item \ansline{assess whether the normal distribution is an appropriate model for a given distribution}
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\termblanklong{Continuous random variable}
+\ansline{A variable that can take any value within a specified domain; every interval within the domain has a probability associated with it.}
+\termblanklong{Normal distribution}
+\ansline{A symmetric, bell-shaped probability distribution described by mean $\mu$ and standard deviation $\sigma$.}
+\termblanklong{z-score}
+\ansline{$z = (x-\mu)/\sigma$ --- the number of standard deviations $x$ is above or below the mean.}
+\termblanklong{Standard normal distribution}
+\ansline{The normal distribution with mean 0 and standard deviation 1; $Z \sim N(0,1)$.}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+Adult male heights $\sim N(69.2, 3.6)$. Estimate the fraction of adult males taller
+than 6 feet (72 in) from the histogram, then we will calculate exactly.
+
+My estimate: \textit{(varies)} \qquad Calculated answer: \ans{$\approx 0.22$ (22\%)}
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Normal Distributions: Key Facts}
+Notation: $X \sim N(\mu, \sigma)$ means $X$ is normally distributed with mean
+\ans{$\mu$} and standard deviation \ans{$\sigma$}.
+
+The \textbf{area} under the curve over an interval equals \ans{the probability that $X$ falls in that interval} (VAR-6.A.3).
+
+\textbf{z-score formula:} $z = $ \ans{$(x - \mu)/\sigma$} \hfill
+means $z$ is the number of \ans{standard deviations} that $x$ is from the mean.
+
+\textbf{68--95--99.7 Rule:}
+\begin{itemize}
+  \item $P(\mu - \sigma < X < \mu + \sigma) \approx $ \ans{0.68}
+  \item $P(\mu - 2\sigma < X < \mu + 2\sigma) \approx $ \ans{0.95}
+  \item $P(\mu - 3\sigma < X < \mu + 3\sigma) \approx $ \ans{0.997}
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Calculating Normal Probabilities}
+\textbf{Forward probability} (area given a boundary):
+\begin{enumerate}
+  \item Sketch and shade the curve. Label \ans{$\mu$} and \ans{$x$}.
+  \item Compute the z-score: $z = \frac{x - \mu}{\sigma} = $ \ans{$(x - \mu)/\sigma$}
+  \item Use table or \texttt{normalcdf(lower, upper, $\mu$, $\sigma$)} $=$ \ans{result from table/tech}
+  \item Interpret in context: ``The probability that \ldots'' \ansline{[full contextual sentence]}
+\end{enumerate}
+
+\vspace{0.06in}
+\textbf{Example:} $X \sim N(69.2, 3.6)$. Find $P(X > 72)$.\\[4pt]
+$z = \frac{72 - 69.2}{3.6} = $ \ans{$0.78$} \qquad
+$P(X > 72) = 1 - P(Z < \ans{0.78}) = 1 - $ \ans{$0.7823$} $\approx$ \ans{$0.2177$}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Finding a Boundary Value (Inverse Normal)}
+\textbf{Inverse normal} (boundary given an area):
+\begin{enumerate}
+  \item Sketch and shade the curve. Label the given \ans{area/percentile}.
+  \item Find the z-score: $z^* = $ \ans{invNorm(area)} (from table or \texttt{invNorm}).
+  \item Solve for $x$: $x = \mu + z^*\sigma = $ \ans{specific calculation}
+\end{enumerate}
+
+\vspace{0.06in}
+\textbf{Example:} $X \sim N(69.2, 3.6)$. Find the 90th percentile.\\[4pt]
+$z^* = $ \ans{$1.28$} \qquad
+$x = 69.2 + (\ans{1.28})(3.6) = $ \ans{$73.8$} inches
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{When Is the Normal Model Appropriate? (VAR-6.C)}
+The normal model is appropriate when the distribution is \ans{approximately symmetric}
+and \ans{bell-shaped (unimodal, with tails tapering off evenly on both sides)}.
+
+\begin{itemize}
+  \item Heights of adult males \hfill \ans{appropriate} (approximately / not appropriate)
+  \item Number of heads in 5 coin flips \hfill \ans{not appropriate} (discrete / skewed)
+  \item Average of 100 random observations (by CLT) \hfill \ans{appropriate} (CLT applies)
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+$X \sim N(500, 100)$ (SAT Math scores).
+\begin{enumerate}
+  \item Find $P(X > 650)$. Show all steps including a sketch.\\[4pt]
+        \ans{$z = (650-500)/100 = 1.50$; $P(X>650) = 1 - 0.9332 = 0.0668$. About 6.7\% of students score above 650.}
+
+        \vspace{1.0in}
+
+  \item Find the SAT Math score at the 25th percentile.\\[4pt]
+        \ans{$z = \text{invNorm}(0.25) \approx -0.674$; $x = 500 + (-0.674)(100) \approx 433$.}
+
+        \vspace{0.8in}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

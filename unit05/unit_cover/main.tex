@@ -1,0 +1,92 @@
+%! AP Statistics — Unit 5 Cover Sheet
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+% ── Full-bleed navy banner ────────────────────────────────────────────────────
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[navy] (current page.north west)
+    rectangle ([yshift=-1.4in]current page.north east);
+\end{tikzpicture}
+\vspace{-1.3in}
+
+\begin{center}
+  {\color{white}\bfseries\fontsize{28}{34}\selectfont AP Statistics}\\[8pt]
+  {\color{goldacc}\bfseries\Large Shepherd \quad 2026--2027}\\[14pt]
+  {\color{white}\bfseries\LARGE Unit 5: Sampling Distributions}\\[4pt]
+\end{center}
+
+\vspace{0.30in}
+
+% ── Unit overview ─────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=sky,colframe=navy,boxrule=0.9pt,arc=2mm,
+    left=4mm,right=4mm,top=3mm,bottom=3mm]
+  \textbf{Unit Overview.}\quad
+  Unit 5 builds the theoretical bridge between data and inference. Students begin by
+  formalizing the concept of a sampling distribution --- the distribution of a statistic
+  over all possible samples --- and revisiting the Normal distribution as the key model.
+  The Central Limit Theorem explains why sample means cluster normally around the true
+  mean even when individual values are skewed, and why larger samples produce more precise
+  estimates. The unit then derives formulas for the center, spread, and shape of the
+  sampling distributions of $\hat{p}$, $\hat{p}_1 - \hat{p}_2$, $\bar{x}$, and
+  $\bar{x}_1 - \bar{x}_2$ --- the four statistics on which all inference in Units 6--9
+  is built. Students learn to check conditions rigorously and compute probabilities for
+  each statistic using the normal approximation.
+\end{tcolorbox}
+
+\vspace{0.22in}
+
+% ── Lessons in this unit ──────────────────────────────────────────────────────
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Lessons in This Unit]{goldbox}
+\begin{tabularx}{\linewidth}{@{} c >{\bfseries}p{0.46\linewidth} X @{}}
+  \textbf{\#} & \textbf{Title} & \textbf{Focus} \\
+  \hline
+  5.1 & Introducing Statistics: Why Is My Sample Not Like Yours?
+      & Statistics vs.\ parameters; sampling variability; sampling distributions defined. \\
+  \hline
+  5.2 & The Normal Distribution, Revisited
+      & $X \sim N(\mu,\sigma)$; forward and inverse normal probability; model appropriateness. \\
+  \hline
+  5.3 & The Central Limit Theorem
+      & CLT conditions; $\mu_{\bar{x}} = \mu$; $\sigma_{\bar{x}} = \sigma/\sqrt{n}$; shape. \\
+  \hline
+  5.4 & Biased and Unbiased Point Estimates
+      & Unbiased estimators ($\bar{x}$, $\hat{p}$, $s^2$); variability decreases with $n$. \\
+  \hline
+  5.5 & Sampling Distributions for Sample Proportions
+      & $\mu_{\hat{p}} = p$; $\sigma_{\hat{p}} = \sqrt{p(1{-}p)/n}$; Large Counts condition. \\
+  \hline
+  5.6 & Sampling Distributions for Differences in Sample Proportions
+      & $\mu = p_1{-}p_2$; $\sigma = \sqrt{p_1(1{-}p_1)/n_1 + p_2(1{-}p_2)/n_2}$; 4 counts. \\
+  \hline
+  5.7 & Sampling Distributions for Sample Means
+      & $\mu_{\bar{x}} = \mu$; $\sigma_{\bar{x}} = \sigma/\sqrt{n}$; Normal/Large Sample. \\
+  \hline
+  5.8 & Sampling Distributions for Differences in Sample Means
+      & $\mu = \mu_1{-}\mu_2$; $\sigma = \sqrt{\sigma_1^2/n_1 + \sigma_2^2/n_2}$; conditions. \\
+  \hline
+\end{tabularx}
+\end{skillbox}
+
+\vspace{0.18in}
+
+% ── Standards covered ─────────────────────────────────────────────────────────
+\begin{skillbox}[AP Statistics Big Ideas \& Learning Objectives --- Unit 5]{greenbox}
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.14\linewidth} X @{}}
+  VAR-1.G  & Identify statistics and parameters; describe the effect of sampling variability. \\
+  VAR-6.A  & Determine probabilities for a normal random variable. \\
+  VAR-6.B  & Use the inverse normal to find values given probabilities. \\
+  VAR-6.C  & Determine whether a normal model is appropriate for a given distribution. \\
+  UNC-3.H  & Apply the Central Limit Theorem to the sampling distribution of $\bar{x}$. \\
+  UNC-3.I--J & Define unbiased estimators; explain how $n$ affects variability. \\
+  UNC-3.K--M & Describe center, spread, and shape for the sampling distribution of $\hat{p}$. \\
+  UNC-3.N--P & Describe the sampling distribution of $\hat{p}_1 - \hat{p}_2$. \\
+  UNC-3.Q--S & Describe center, spread, and shape for the sampling distribution of $\bar{x}$. \\
+  UNC-3.T--V & Describe the sampling distribution of $\bar{x}_1 - \bar{x}_2$. \\
+\end{tabularx}
+\end{skillbox}
+
+\end{document}

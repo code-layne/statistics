@@ -1,0 +1,44 @@
+%! AP Statistics — Unit 5, Lesson 5.5 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.5}{Lesson Plan}
+
+\begin{objectivebox}
+\textbf{Topic:} 5.5 — Sampling Distributions for Sample Proportions\\
+\textbf{Enduring Understanding:} UNC-3\\
+\textbf{Learning Objectives:} UNC-3.K, UNC-3.L, UNC-3.M\\
+\textbf{Essential Knowledge:} UNC-3.K.1; UNC-3.L.1--L.2; UNC-3.M.1--M.3\\
+\textbf{Mathematical Practice:} 3.C — Verify conditions; 4.B — Connect representations
+\end{objectivebox}
+
+\begin{learningtargetbox}
+By the end of this lesson, students will be able to:
+\begin{itemize}
+  \item State that $\mu_{\hat{p}} = p$ and $\sigma_{\hat{p}} = \sqrt{p(1-p)/n}$.
+  \item Check conditions ($np \ge 10$ and $n(1-p) \ge 10$; 10\% rule) for using the normal model.
+  \item Find probabilities involving $\hat{p}$ using the normal approximation.
+\end{itemize}
+\end{learningtargetbox}
+
+\begin{vocabbox}
+sampling distribution of $\hat{p}$, $\mu_{\hat{p}}$, $\sigma_{\hat{p}}$, Large Counts condition ($np \ge 10$, $n(1-p) \ge 10$), 10\% condition
+\end{vocabbox}
+
+\begin{hookbox}
+\textbf{Hook — Election Poll (5 min):} A poll of 400 likely voters finds $\hat{p} = 0.52$ support candidate A (true $p = 0.50$). A second poll of 400 finds $\hat{p} = 0.47$. How can the same candidate get such different results? Today's lesson explains the sampling distribution of $\hat{p}$.
+\end{hookbox}
+
+\begin{notesbox}
+\textbf{Direct Instruction (15 min):} Derive $\mu_{\hat{p}} = p$ (unbiased) and $\sigma_{\hat{p}} = \sqrt{p(1-p)/n}$ from the connection $\hat{p} = X/n$ where $X \sim B(n, p)$. Present conditions for normal approximation. Work through a full probability example.
+\end{notesbox}
+
+\begin{reflectionbox}
+\textbf{Exit Ticket + Homework:} Check conditions and compute $P(\hat{p} > k)$ for a realistic scenario.\\
+\textbf{AP Connection:} UNC-3.K--M are tested nearly every year; these formulas must be memorized.
+\end{reflectionbox}
+
+\end{document}

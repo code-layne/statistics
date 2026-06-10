@@ -1,0 +1,224 @@
+%! AP Statistics — Unit 5, Lesson 5.2 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\UnitNumberName}{Unit 5: Sampling Distributions \quad}
+\newcommand{\LessonNumberName}{Lesson 5.2: The Normal Distribution, Revisited}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will calculate probabilities for a normal
+    distribution using z-scores and technology, determine intervals associated with
+    given areas, and assess when the normal distribution is an appropriate model
+    (Big Idea: VAR).
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 3 --- Using Probability and Simulation}
+    \begin{itemize}
+        \item Calculate probabilities for normal distributions using z-scores or
+              technology (Skill 3.A; VAR-6.A).
+        \item Determine boundary values for a given area using z-scores or a standard
+              normal table (Skill 3.A; VAR-6.B).
+        \item Assess whether the normal distribution is appropriate to model an unknown
+              distribution (Skill 3.C; VAR-6.C).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item A continuous random variable can take any value in a domain; area under
+              the normal curve equals probability (VAR-6.A.1--3).
+        \item Boundary values of a normal interval are found with z-scores or
+              technology (VAR-6.B.1--2).
+        \item Normal distributions can approximate other symmetric, bell-shaped
+              distributions (VAR-6.C.1).
+        \item This lesson is preparation for the sampling distributions in Lessons
+              5.5--5.8, which are all approximately normal.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{@{}lX@{}}
+    \textbf{Continuous random variable} & A variable that can take any value in a
+    specified domain; every interval has an associated probability.\\
+    \textbf{Normal distribution} & A symmetric, bell-shaped probability distribution
+    described by mean $\mu$ and standard deviation $\sigma$.\\
+    \textbf{z-score} & \TallMath{z = \dfrac{x - \mu}{\sigma}} --- number of standard
+    deviations $x$ is from the mean.\\
+    \textbf{Standard normal} & Normal distribution with $\mu = 0$, $\sigma = 1$.\\
+    \textbf{Area under curve} & Equals the probability that $X$ falls in that interval.\\
+\end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Review: Shape, center, and spread of a normal distribution (Unit 1).
+        \item Recall: How to compute a z-score (Unit 1, Lesson 1.9).
+        \item Prompt: \textit{``SAT scores are approximately normal with $\mu = 1060$
+              and $\sigma = 195$. What is the z-score for a score of 1255? What does
+              that tell us?''}
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Connections Forward}
+    \begin{itemize}
+        \item Normal probabilities for a population $\to$ today
+        \item Sampling distributions are approximately normal $\to$ Lessons 5.5--5.8
+        \item Use normal model for inference on proportions $\to$ Unit 6
+        \item Use normal model for inference on means $\to$ Unit 7
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (5 min)}\\
+    Display a histogram of adult heights in the U.S. (approximately normal,
+    $\mu = 69.2$ in, $\sigma = 3.6$ in for males).\\[4pt]
+    Ask: ``What fraction of adult males are taller than 6 feet (72 in)?'' Let students
+    estimate from the histogram.\\[4pt]
+    Reveal: We can compute this exactly using the normal model --- and the answer is
+    about 19\%. Today's lesson shows how.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (18--20 min)}
+    \begin{enumerate}
+        \item \textbf{Review:} $X \sim N(\mu, \sigma)$ notation; bell curve symmetry;
+              the 68--95--99.7 rule.
+        \item \textbf{Forward probability} (area to the left/right of a value):
+              compute $z$, then use table or technology.
+        \item \textbf{Middle area} (area between two values): subtract two left-tail
+              probabilities.
+        \item \textbf{Inverse normal} (finding $x$ given area): work backward using
+              z-score formula or \texttt{invNorm}.
+        \item \textbf{Two-sided area:} identifying most extreme $p\%$ requires
+              splitting into two tails (VAR-6.B.2d).
+        \item Assess appropriateness: use normal only when distribution is
+              approximately symmetric and bell-shaped (VAR-6.C.1).
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Worked Example: Forward Probability}\\
+    $X \sim N(69.2, 3.6)$. Find $P(X > 72)$.
+    \begin{enumerate}
+        \item Compute $z = \frac{72 - 69.2}{3.6} \approx 0.78$.
+        \item $P(Z > 0.78) = 1 - 0.7823 = 0.2177$.
+        \item Interpret: About 22\% of adult males are taller than 72 in.
+    \end{enumerate}
+    \textbf{Worked Example: Inverse Normal}\\
+    What height is the 90th percentile?
+    \begin{enumerate}
+        \item Find $z$ with $P(Z < z) = 0.90$ $\Rightarrow$ $z \approx 1.28$.
+        \item $x = \mu + z\sigma = 69.2 + 1.28(3.6) \approx 73.8$ in.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Active Monitoring}
+    \begin{itemize}
+        \item Watch for students who do not sketch the curve and shade --- require a
+              sketch and label of the mean before computing.
+        \item Cold-call: ``Is this a left-tail or right-tail probability? How do you
+              know?''
+        \item Check that students subtract from 1 for right-tail areas and divide by 2
+              for two-tailed ``most extreme'' problems.
+        \item Common error: using the z-score itself as the probability --- redirect to
+              the table or \texttt{normalcdf}.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Partner Activity (10 min)}\\
+    Three-context activity (birth weights, standardized test scores, daily rainfall):
+    \begin{enumerate}
+        \item Calculate a forward probability (shade and label).
+        \item Calculate a probability between two values.
+        \item Find a value given a percentile (inverse normal).
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support (Tier R)}: Provide a z-table and a formula card; focus on
+              steps 1 and 2 only.
+        \item \textit{On-grade (Tier A)}: Complete all three problems; write full
+              contextual interpretations.
+        \item \textit{Extension (Tier E)}: Solve the most-extreme-$p\%$ problem (two
+              tails); critique whether the normal model is appropriate for the context.
+        \item \textit{ELL}: Label curve diagram vocabulary in students' first language.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    SAT scores $\sim N(1060, 195)$.
+    \begin{enumerate}
+        \item Find the probability that a randomly selected student scored above 1300.
+        \item Find the SAT score at the 75th percentile.
+        \item Is it appropriate to use the normal model here? Explain.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{$X \sim N(50, 8)$. Which is closest to $P(34 < X < 66)$?}
+    \begin{enumerate}[label=(\Alph*)]
+        \item 0.68
+        \item 0.95
+        \item 0.997
+        \item 0.50
+    \end{enumerate}
+    Answer: (B) (two SDs on each side $\approx 0.95$)
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item Six normal-probability problems covering forward, backward, and between
+              scenarios across three contexts (heights, weights, exam scores).
+        \item One ``appropriateness'' question: given a histogram, decide whether a
+              normal model is appropriate and justify.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: Investigate the effect of $\sigma$ on normal
+              probability: for fixed $\mu = 100$, compare $P(X > 110)$ when
+              $\sigma = 5$, 10, 20. What pattern do you notice?
+        \item \textit{Preview}: Lesson 5.3 introduces the Central Limit Theorem ---
+              which states that sample means form an approximately normal distribution
+              for large enough samples, even when the population isn't normal.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\end{document}

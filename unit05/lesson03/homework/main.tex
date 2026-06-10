@@ -1,0 +1,60 @@
+%! AP Statistics — Unit 5, Lesson 5.3 — Homework
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.3}{Homework}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{enumerate}
+
+  \item The weights of apples at a grocery store are approximately normally distributed
+        with $\mu = 182$ g and $\sigma = 20$ g. A sample of $n = 16$ apples is selected.
+        \begin{enumerate}[label=\alph*.]
+          \item Verify all three conditions for using the normal model for $\bar{x}$.
+                \writelines{3}
+          \item Find $\mu_{\bar{x}}$ and $\sigma_{\bar{x}}$.
+                \vspace{0.6in}
+          \item Find $P(\bar{x} > 190)$.
+                \vspace{0.9in}
+          \item Find the value $m$ such that $P(\bar{x} > m) = 0.25$. Interpret in context.
+                \vspace{0.9in}
+        \end{enumerate}
+
+  \item The number of customers entering a coffee shop each hour has a right-skewed
+        distribution with $\mu = 28$ and $\sigma = 9$. A manager tracks hourly customer
+        counts for a random sample of $n = 36$ hours.
+        \begin{enumerate}[label=\alph*.]
+          \item Can the normal model be used for $\bar{x}$? Justify using all three conditions.
+                \writelines{3}
+          \item Find $P(26 < \bar{x} < 31)$.
+                \vspace{0.9in}
+        \end{enumerate}
+
+  \item A population has $\mu = 100$, $\sigma = 25$, and is uniform (not normal).
+        \begin{enumerate}[label=\alph*.]
+          \item For $n = 4$: can we use the normal model for $\bar{x}$? Why or why not?
+                \writelines{2}
+          \item For $n = 64$: find $\sigma_{\bar{x}}$ and $P(\bar{x} < 97)$.
+                \vspace{0.9in}
+        \end{enumerate}
+
+\end{enumerate}
+
+\begin{extensionbox}
+\textbf{Extension (optional).}
+For a population with $\mu = 50$ and $\sigma = 20$, how large must $n$ be so that
+$P(|\bar{x} - 50| < 2) \ge 0.95$? (\textit{Hint:} This is equivalent to $P(-2 < \bar{x} - 50 < 2) \ge 0.95$.
+Use the $z$-score formula and the fact that $P(-1.96 < Z < 1.96) \approx 0.95$.)
+\end{extensionbox}
+
+\begin{reflectionbox}
+\textbf{Preview:} Lesson 5.4 asks: among all the statistics we could compute from a sample, which ones give us a ``fair'' estimate of the population parameter? That idea is called \emph{unbiasedness}.
+\end{reflectionbox}
+
+\end{document}

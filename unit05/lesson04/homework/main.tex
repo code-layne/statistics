@@ -1,0 +1,65 @@
+%! AP Statistics — Unit 5, Lesson 5.4 — Homework
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.4}{Homework}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{enumerate}
+
+  \item For each statistic, state whether it is an \emph{unbiased} or \emph{biased}
+        estimator of the corresponding population parameter. If biased, state the direction.
+        \begin{enumerate}[label=\alph*.]
+          \item Sample mean $\bar{x}$ as an estimator of $\mu$.
+                \writelines{1}
+          \item Sample proportion $\hat{p}$ as an estimator of $p$.
+                \writelines{1}
+          \item Sample minimum as an estimator of population minimum.
+                \writelines{1}
+          \item Sample variance $s^2$ (using $n-1$) as an estimator of $\sigma^2$.
+                \writelines{1}
+        \end{enumerate}
+
+  \item A population of daily step counts has $\mu = 8{,}500$ steps and $\sigma = 2{,}200$.
+        \begin{enumerate}[label=\alph*.]
+          \item Find $\sigma_{\bar{x}}$ for $n = 121$.
+                \vspace{0.5in}
+          \item How does $\sigma_{\bar{x}}$ change if $n$ increases from 121 to 484?
+                Show calculations.
+                \vspace{0.6in}
+          \item Interpret the change in part (b) in a sentence.
+                \writelines{2}
+        \end{enumerate}
+
+  \item A simulation repeatedly takes samples of size $n = 50$ from a right-skewed
+        population with $\mu = 30$ and $\sigma = 8$ and records $\bar{x}$ each time.
+        After 1000 trials, the average of all the $\bar{x}$ values is 30.1.
+        \begin{enumerate}[label=\alph*.]
+          \item Is this evidence that $\bar{x}$ is biased? Explain why or why not.
+                \writelines{2}
+          \item What would you expect the average of all $\bar{x}$ values to equal
+                in the long run?
+                \writelines{1}
+        \end{enumerate}
+
+\end{enumerate}
+
+\begin{extensionbox}
+\textbf{Extension (optional).}
+Two estimators of the same parameter both have $\sigma = 5$. Estimator A is unbiased
+($E(A) = \theta$). Estimator B is biased: $E(B) = \theta + 2$. Compute the mean
+squared error (MSE = bias$^2$ + variance) for each. Which has smaller MSE?
+\end{extensionbox}
+
+\begin{reflectionbox}
+\textbf{Preview:} Lesson 5.5 applies what you know about unbiasedness and the CLT to the
+sample proportion $\hat{p}$. You'll derive the center, spread, and shape of the
+sampling distribution of $\hat{p}$.
+\end{reflectionbox}
+
+\end{document}
