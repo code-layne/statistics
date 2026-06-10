@@ -63,9 +63,13 @@ The `\TallMath` helper used for tall inline math is defined per-document where n
 Lesson-plan boxes take a background color as the last argument (use the aliases `goldbox`,
 `greenbox`, `redbox`, or palette colors like `sky`):
 ```latex
-\begin{skillbox}[Priority Ideas \& Skills]{goldbox} ... \end{skillbox}   % breakable
-\begin{fixedskillbox}[Spiral Review]{sky} ... \end{fixedskillbox}        % no page break
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox} ... \end{skillbox}
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky} ... \end{skillbox}
 ```
+
+> **`fixedskillbox` does not exist.** The only lesson-plan box environment is `skillbox`.
+> Using `fixedskillbox` produces "Environment fixedskillbox undefined" every time.
+> Every box in a lesson plan — skills, vocab, hook, spiral review, monitoring, etc. — uses `skillbox`.
 
 Titled student boxes (title is fixed by the environment unless it takes an argument):
 
@@ -103,6 +107,45 @@ Reusable component-identification table (AP Stats):
 with `\ans{…}`/`\ansline{…}` and mark correct multiple-choice options, e.g.
 `\textcolor{keyred}{\textbf{$\leftarrow$ correct}}`. The key and blank must stay structurally
 identical so they paginate the same way.
+
+### `\ans{}` is a TEXT-MODE macro — hard rules that recur every lesson
+
+`\ans{text}` expands to `\textcolor{keyred}{\textbf{#1}}`. Its argument is typeset in **text
+mode**. Violating either rule below causes a compile error on every lesson.
+
+**Rule A — Never place `\ans{}` inside `$...$` or `\[...\]`.**
+
+The call site must be in text mode. Close math, call `\ans{}`, reopen math if needed.
+
+```latex
+% WRONG — \ans inside math delimiters:
+$SE = \dfrac{\ans{0.8}}{\sqrt{\ans{25}}}$
+$t = \dfrac{\ans{17.6} - \ans{18}}{\ans{0.16}}$
+
+% RIGHT — close math, then \ans, then reopen:
+$SE = \dfrac{s}{\sqrt{n}} = $ \ans{$0.8 / \sqrt{25} \approx 0.16$}
+$t = $ \ans{$(17.6 - 18)/0.16 = {-2.50}$}
+
+% ALSO RIGHT — in-formula slots use {\color{keyred}\mathbf{...}}:
+$SE = \dfrac{{\color{keyred}\mathbf{0.8}}}{\sqrt{{\color{keyred}\mathbf{25}}}} \approx $ \ans{0.16}
+```
+
+**Rule B — Never put math-only commands bare inside `\ans{}`.**
+
+Math-only commands (`\sqrt`, `\dfrac`, `\hat`, `\overline`, `\ne`, `_`, `^`, etc.) fail in text
+mode. Wrap them in `$...$` inside `\ans{}`:
+
+```latex
+% WRONG:
+\ans{\sqrt{n}}   \ans{s/\sqrt{n}}   \ans{\hat p}
+
+% RIGHT:
+\ans{$\sqrt{n}$}   \ans{$s/\sqrt{n}$}   \ans{$\hat p$}
+```
+
+**After writing each key file:** grep for `\\ans{` and verify every hit is in text mode (not
+between `$...$`). If the argument contains a backslash, confirm it is not a bare math-only
+command.
 
 ## Color palette (from `-colors`)
 

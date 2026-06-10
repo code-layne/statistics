@@ -39,6 +39,105 @@ pedagogical order into `lessonYY_student.pdf` (cover + blank components) and `le
 to `pdfunite` from the source tree with no compile step — so dropping in a ready-made PDF is all
 that's needed (Step 4).
 
+## Multi-lesson dispatch — REQUIRED when generating more than one lesson
+
+**When the request covers two or more lessons, do NOT author them sequentially.**
+Spawn one subagent per lesson in a single message using the `Agent` tool, each briefed
+with the lesson number, CED topic content, and a pointer to this skill. The coordinator
+(this agent) gathers CED content first (Step 0–1 below, once), then fans out.
+
+Pattern for a two-lesson request:
+
+```
+# Coordinator does once:
+- detect prefix, read one model lesson, extract CED topics for L7.4 and L7.5
+
+# Then in ONE message, spawn two agents in parallel:
+Agent(lesson=7.4, ced_content=..., model_lesson_path=...)
+Agent(lesson=7.5, ced_content=..., model_lesson_path=...)
+
+# Each subagent runs Steps 2–5 independently and reports back.
+```
+
+Each subagent receives: (a) the extracted CED content for its single lesson,
+(b) the path of one model lesson to mirror, (c) the known-errors checklist below,
+and (d) instructions to build and verify before returning. The coordinator collects
+results and opens one PR covering all lessons.
+
+## Hard constraints — read before authoring a single line
+
+These rules are non-negotiable. They recur every lesson if not followed.
+
+### 1. One page: warmup and exit ticket
+
+The warmup and exit ticket (blank AND key) must each fit on **exactly one printed page**.
+Design to fit one page from the start — do not draft long and trim later.
+Budget: `\pageheader` + `\namedateperiod` + content ≈ 3–4 questions max.
+
+After building, verify before moving on:
+```bash
+pdftoppm -r 72 target/unitXX/lessonYY/warmup/main.pdf /tmp/wm \
+  && ls /tmp/wm*.ppm | wc -l     # must print 1
+pdftoppm -r 72 target/unitXX/lessonYY/exit_ticket/main.pdf /tmp/et \
+  && ls /tmp/et*.ppm | wc -l     # must print 1
+```
+If either prints > 1: cut a question, rebuild, re-check. Do not continue until both return 1.
+Same check for their keys.
+
+### 2. No "sketch the…" questions
+
+Never ask students to draw, sketch, or construct a graph freehand anywhere (warmup,
+exit ticket, notes, activity, homework). Replace with: (a) a pre-drawn figure to
+read/interpret, (b) a table to fill in, or (c) a computation question.
+
+### 3. `\ans{}` is a TEXT-MODE macro — two hard rules
+
+`\ans{text}` expands to `\textcolor{keyred}{\textbf{#1}}`. Its argument is text mode.
+
+**Rule A — `\ans{}` must NEVER appear inside `$...$` or `\[...\]`.**
+Close math first, call `\ans{}`, reopen math if needed.
+
+```latex
+% WRONG — causes compile error every time:
+$SE = \dfrac{\ans{0.8}}{\sqrt{\ans{25}}}$
+
+% RIGHT — close math, then \ans, then reopen:
+$SE = \dfrac{s}{\sqrt{n}} = $ \ans{$0.8 / \sqrt{25} \approx 0.16$}
+
+% ALSO RIGHT — in-formula filled slots use {\color{keyred}\mathbf{...}}:
+$SE = \dfrac{{\color{keyred}\mathbf{0.8}}}{\sqrt{{\color{keyred}\mathbf{25}}}} \approx $ \ans{0.16}
+```
+
+**Rule B — Never put math-only commands bare inside `\ans{}`.**
+`\sqrt`, `\dfrac`, `\hat`, `\overline`, `\ne`, `_`, `^` fail in text mode.
+Wrap them in `$...$` inside `\ans{}`:
+
+```latex
+% WRONG:  \ans{\sqrt{n}}   \ans{s/\sqrt{n}}   \ans{\hat p}
+% RIGHT:  \ans{$\sqrt{n}$} \ans{$s/\sqrt{n}$} \ans{$\hat p$}
+```
+
+After writing each key file, grep for `\\ans{` and confirm every hit is in text mode.
+
+### 4. `fixedskillbox` does not exist — use `skillbox`
+
+The only lesson-plan box environment is `skillbox`. `fixedskillbox` is not defined and
+causes "Environment fixedskillbox undefined" every time.
+
+```latex
+% WRONG:  \begin{fixedskillbox}[...]{sky}
+% RIGHT:  \begin{skillbox}[...]{sky}
+```
+
+After writing each lesson plan, grep for `fixedskillbox` and confirm zero hits.
+
+### 5. Other known-bad patterns (do not use)
+
+- `\ding{55}` — `pifont` not loaded; use `\textbf{$\times$}` instead
+- bare `gold` color — use `goldbg` / `goldacc`
+- `\usepackage{apstats-boxes}` in a key file — keys use `apstats-key` only (it includes boxes)
+- `fixedskillbox` anywhere (see rule 4)
+
 ## Workflow
 
 Follow these steps in order. Read the referenced files as you reach each step rather than
@@ -164,3 +263,6 @@ build system. Details and troubleshooting in `references/build.md`.
 - Mirror an existing built lesson for tone and preamble; the live project overrides this doc.
 - Keep blank and key documents in lockstep — the key is the blank with answers filled in.
 - Don't modify `shared/` or the Makefiles to make a lesson build; fix the lesson's `.tex`.
+- **Multi-lesson requests → parallel subagents.** See "Multi-lesson dispatch" above.
+- **One-page warmup and exit ticket** — verify with `pdftoppm` after every build. See "Hard constraints" above.
+- **`\ans{}` in text mode only; `skillbox` not `fixedskillbox`** — grep-check every file before building. See "Hard constraints" above.
