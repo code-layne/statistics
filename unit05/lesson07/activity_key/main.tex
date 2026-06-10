@@ -1,0 +1,46 @@
+%! AP Statistics — Unit 5, Lesson 5.7 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.7}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier R --- Remediate}]
+\begin{enumerate}
+  \item \ans{Random: stated. 10\%: $16 \le 10\%$ of large shipment. Normal/Large: population is approximately normal. All conditions met.}
+  \item \ans{$\mu_{\bar{x}} = 70$ mg; $\sigma_{\bar{x}} = 8/\sqrt{16} = 2$ mg.}
+  \item \ans{$z = (73-70)/2 = 1.50$; $P(\bar{x}>73) = 1-0.9332 = 0.0668$. About 6.7\%.}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier A --- Approaching Proficiency}]
+\begin{enumerate}
+  \item \ans{Random: stated. 10\%: $50 \le 10\%$ of all customers. Normal/Large: $n=50\ge30$ --- yes. All conditions met; normal model appropriate by CLT.}
+  \item \ans{$\mu_{\bar{x}} = 8.2$ min; $\sigma_{\bar{x}} = 3.5/\sqrt{50} \approx 0.4950$ min.}
+  \item \ans{$z = (9-8.2)/0.4950 \approx 1.616$; $P > 9 \approx 1-0.9469 = 0.0531 \approx 5.3\%$.}
+  \item \ans{$z = \text{invNorm}(0.95) \approx 1.645$; $c = 8.2 + 1.645(0.4950) \approx 9.01$ min. In 5\% of samples of 50 customers, the mean wait time exceeds 9.01 minutes.}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier E --- Extension}]
+\begin{enumerate}
+  \item \ans{No. $n=4<30$ and the population is right-skewed. Neither the Normal nor Large Sample condition is met.}
+  \item \ans{Random: stated. 10\%: yes. Large: $n=36\ge30$. $\sigma_{\bar{x}} = 60/\sqrt{36}=10$ hr. $z=(490-480)/10=1.00$; $P>490\approx1-0.8413=0.1587\approx15.9\%$.}
+  \item \ans{$z=\text{invNorm}(0.025)\approx-1.960$; $c=480+(-1.960)(10)\approx460.4$ hr. In 2.5\% of samples of 36 batteries, the sample mean lifetime is less than 460.4 hours.}
+  \item \ans{$P(|\bar{x}-480|>15) = P(\bar{x}<465) + P(\bar{x}>495)$. $z = \pm15/10 = \pm1.50$; $P = 2(0.0668) = 0.1336$. About 13.4\%.}
+\end{enumerate}
+\end{tcolorbox}
+
+\end{document}

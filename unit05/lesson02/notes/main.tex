@@ -1,0 +1,122 @@
+%! AP Statistics — Unit 5, Lesson 5.2 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.2}{Guided Notes}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{enumerate}
+  \item \writeline
+  \item \writeline
+  \item \writeline
+\end{enumerate}
+\end{objectivebox}
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\termblanklong{Continuous random variable}
+\termblanklong{Normal distribution}
+\termblanklong{z-score}
+\termblanklong{Standard normal distribution}
+\end{vocabbox}
+
+\vspace{0.1in}
+
+\begin{hookbox}
+Adult male heights $\sim N(69.2, 3.6)$. Estimate the fraction of adult males taller
+than 6 feet (72 in) from the histogram (shown on board), then we will calculate exactly.
+
+My estimate: \blank{3cm} \qquad Calculated answer: \blank{3cm}
+\end{hookbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Normal Distributions: Key Facts}
+Notation: $X \sim N(\mu, \sigma)$ means $X$ is normally distributed with mean
+\blank{3cm} and standard deviation \blank{3cm}.
+
+The \textbf{area} under the curve over an interval equals \blank{6cm} (VAR-6.A.3).
+
+\textbf{z-score formula:} $z = $ \blank{4cm} \hfill
+means $z$ is the number of \blank{4cm} that $x$ is from the mean.
+
+\textbf{68--95--99.7 Rule:}
+\begin{itemize}
+  \item $P(\mu - \sigma < X < \mu + \sigma) \approx $ \blank{2cm}
+  \item $P(\mu - 2\sigma < X < \mu + 2\sigma) \approx $ \blank{2cm}
+  \item $P(\mu - 3\sigma < X < \mu + 3\sigma) \approx $ \blank{2cm}
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Calculating Normal Probabilities}
+\textbf{Forward probability} (area given a boundary):
+\begin{enumerate}
+  \item Sketch and shade the curve. Label \blank{3cm} and \blank{3cm}.
+  \item Compute the z-score: $z = \frac{x - \mu}{\sigma} = $ \blank{4cm}
+  \item Use table or \texttt{normalcdf(lower, upper, $\mu$, $\sigma$)} $=$ \blank{3cm}
+  \item Interpret in context: ``The probability that \ldots'' \writeline
+\end{enumerate}
+
+\vspace{0.06in}
+\textbf{Example:} $X \sim N(69.2, 3.6)$. Find $P(X > 72)$.\\[4pt]
+$z = \frac{72 - 69.2}{3.6} = $ \blank{2.5cm} \qquad
+$P(X > 72) = 1 - P(Z < \blank{1.5cm}) = 1 - $ \blank{2cm} $\approx$ \blank{2cm}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{Finding a Boundary Value (Inverse Normal)}
+\textbf{Inverse normal} (boundary given an area):
+\begin{enumerate}
+  \item Sketch and shade the curve. Label the given \blank{3cm}.
+  \item Find the z-score: $z^* = $ \blank{3cm} (from table or \texttt{invNorm}).
+  \item Solve for $x$: $x = \mu + z^*\sigma = $ \blank{6cm}
+\end{enumerate}
+
+\vspace{0.06in}
+\textbf{Example:} $X \sim N(69.2, 3.6)$. Find the 90th percentile.\\[4pt]
+$z^* = $ \blank{2.5cm} \qquad
+$x = 69.2 + (\blank{2cm})(3.6) = $ \blank{3cm} inches
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{notesbox}{When Is the Normal Model Appropriate? (VAR-6.C)}
+The normal model is appropriate when the distribution is \blank{6cm}
+and \blank{8cm}.
+
+Circle the correct answer for each:
+\begin{itemize}
+  \item Heights of adult males \hfill (appropriate / not appropriate)
+  \item Number of heads in 5 coin flips \hfill (appropriate / not appropriate)
+  \item Average of 100 random observations (by CLT) \hfill (appropriate / not appropriate)
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.1in}
+
+\begin{practicebox}
+$X \sim N(500, 100)$ (SAT Math scores).
+\begin{enumerate}
+  \item Find $P(X > 650)$. Show all steps including a sketch.
+
+        \vspace{1.0in}
+
+  \item Find the SAT Math score at the 25th percentile.
+
+        \vspace{0.8in}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

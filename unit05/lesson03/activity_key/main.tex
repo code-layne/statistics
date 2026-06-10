@@ -1,0 +1,49 @@
+%! AP Statistics — Unit 5, Lesson 5.3 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.3}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier R --- Remediate}]
+\textbf{Context: Granola bar weights.}
+\begin{enumerate}
+  \item \ans{Random: stated. Independence: $16 \le 10\%$ of all bars produced --- yes. Normal/Large Sample: population is approximately normal --- yes. All conditions met.}
+  \item \ans{$\mu_{\bar{x}} = 45$ g; $\sigma_{\bar{x}} = 4/\sqrt{16} = 1$ g.}
+  \item \ans{$z_1 = (43-45)/1 = -2.00$; $z_2 = (47-45)/1 = 2.00$; $P(-2<Z<2) = 0.9772 - 0.0228 = 0.9544$. About 95.4\%.}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier A --- Approaching Proficiency}]
+\textbf{Context: Commute times.}
+\begin{enumerate}
+  \item \ans{Random: stated. Independence: $50 \le 10\%$ of commuters in a large city --- yes. Large Sample: $n = 50 \ge 30$ --- yes. Appropriate to model $\bar{x}$ as normal (by CLT).}
+  \item \ans{$\mu_{\bar{x}} = 32$ min; $\sigma_{\bar{x}} = 11/\sqrt{50} \approx 1.556$ min.}
+  \item \ans{$z = (35-32)/1.556 \approx 1.93$; $P(\bar{x}>35) = 1 - 0.9732 = 0.0268$. About 2.7\%.}
+  \item \ans{$z = \text{invNorm}(0.10) \approx -1.282$; $c = 32 + (-1.282)(1.556) \approx 30.0$ min. There is a 10\% chance that the sample mean commute time for 50 commuters is less than 30.0 minutes.}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier E --- Extension}]
+\textbf{Context: ATM withdrawals.}
+\begin{enumerate}
+  \item \ans{No. $n = 9 < 30$ and the population is right-skewed (not normal). The CLT does not apply; we cannot use the normal model for $\bar{x}$.}
+  \item \ans{$\mu_{\bar{x}} = \$65$; $\sigma_{\bar{x}} = 30/\sqrt{64} = \$3.75$. $z = (70-65)/3.75 = 1.33$; $P(\bar{x}>70) = 1 - 0.9082 = 0.0918$. About 9.2\%.}
+  \item \ans{$30/\sqrt{n} \le 3 \Rightarrow \sqrt{n} \ge 10 \Rightarrow n \ge 100$. Need at least 100 observations.}
+  \item \ansline{No, the claim is incorrect. The CLT says the \emph{sampling distribution of the mean} becomes approximately normal with large $n$ --- not that individual values change. The individual withdrawal amounts remain right-skewed regardless of sample size.}
+\end{enumerate}
+\end{tcolorbox}
+
+\end{document}

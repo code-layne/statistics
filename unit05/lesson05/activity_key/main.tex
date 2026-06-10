@@ -1,0 +1,46 @@
+%! AP Statistics — Unit 5, Lesson 5.5 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.5}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier R --- Remediate}]
+\begin{enumerate}
+  \item \ans{Random: stated. 10\%: $200 \le 10\%$ of large population --- yes. Large Counts: $np = 200(0.10) = 20 \ge 10$; $n(1-p) = 200(0.90) = 180 \ge 10$. All conditions met.}
+  \item \ans{$\mu_{\hat{p}} = 0.10$; $\sigma_{\hat{p}} = \sqrt{0.10(0.90)/200} = \sqrt{0.00045} \approx 0.02121$.}
+  \item \ans{$z = (0.08 - 0.10)/0.02121 \approx -0.943$; $P(\hat{p} < 0.08) \approx 0.1729$. About 17.3\%.}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier A --- Approaching Proficiency}]
+\begin{enumerate}
+  \item \ans{Random: stated. 10\%: $250 \le 10\%$ of large county adults --- yes. Large Counts: $np=180 \ge 10$; $n(1-p)=70 \ge 10$. All met; normal model appropriate.}
+  \item \ans{$\mu_{\hat{p}} = 0.72$; $\sigma_{\hat{p}} = \sqrt{0.72(0.28)/250} \approx 0.02840$.}
+  \item \ans{$z_1 = (0.68-0.72)/0.02840 \approx -1.408$; $z_2 = (0.76-0.72)/0.02840 \approx 1.408$; $P \approx 0.9204 - 0.0796 = 0.8408$. About 84.1\%.}
+  \item \ans{$z = \text{invNorm}(0.90) \approx 1.282$; $\hat{p} = 0.72 + 1.282(0.02840) \approx 0.756$. In 10\% of random samples of 250 adults, more than 75.6\% will be vaccinated.}
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=redbg, colframe=black!40, boxrule=0.6pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm, title=\textbf{Tier E --- Extension}]
+\begin{enumerate}
+  \item \ans{$np = 60(0.05) = 3 < 10$. Large Counts not met --- the normal model is \emph{not} appropriate for $n = 60$.}
+  \item \ans{$n=200$: $np=10 \ge 10$; $n(1-p)=190 \ge 10$ --- barely met. $\sigma_{\hat{p}} = \sqrt{0.05(0.95)/200} \approx 0.01541$. $z = (0.08-0.05)/0.01541 \approx 1.947$; $P(\hat{p}>0.08) \approx 1-0.9742 = 0.0258 \approx 2.6\%$.}
+  \item \ans{$\sqrt{0.05(0.95)/n} \le 0.01 \Rightarrow 0.0475/n \le 0.0001 \Rightarrow n \ge 475$.}
+  \item \ansline{As $n$ increases: shape becomes more approximately normal (Large Counts more easily satisfied); center stays at $p = 0.05$ (unbiased); spread decreases ($\sigma_{\hat{p}}$ shrinks as $n$ grows). The distribution becomes narrower and more bell-shaped.}
+\end{enumerate}
+\end{tcolorbox}
+
+\end{document}

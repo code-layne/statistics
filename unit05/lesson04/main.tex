@@ -1,0 +1,56 @@
+%! AP Statistics — Unit 5, Lesson 5.4 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.4}{Lesson Plan}
+
+\begin{objectivebox}
+\textbf{Topic:} 5.4 — Biased and Unbiased Point Estimates\\
+\textbf{Enduring Understanding:} UNC-3\\
+\textbf{Learning Objectives:} UNC-3.I (bias); UNC-3.J (variability)\\
+\textbf{Essential Knowledge:} UNC-3.I.1--I.2; UNC-3.J.1--J.2\\
+\textbf{Mathematical Practices:} 4.B (connect representations); 3.B (apply procedures)
+\end{objectivebox}
+
+\begin{learningtargetbox}
+By the end of this lesson, students will be able to:
+\begin{itemize}
+  \item Define bias and explain what makes an estimator unbiased.
+  \item Identify $\bar{x}$, $\hat{p}$, $s^2$ as unbiased estimators of $\mu$, $p$, $\sigma^2$.
+  \item Explain how sample size affects variability (spread) of an estimator.
+\end{itemize}
+\end{learningtargetbox}
+
+\begin{vocabbox}
+point estimator, point estimate, unbiased estimator, bias, variability of an estimator, sampling variability
+\end{vocabbox}
+
+\begin{hookbox}
+\textbf{Hook — Dart Board Analogy (5 min):} Show four dart patterns (accurate/precise, accurate/not precise, biased/precise, biased/not precise). Which pattern best describes a good statistical estimator? Connect to bias and variability.
+\end{hookbox}
+
+\begin{notesbox}
+\textbf{Direct Instruction (15 min):}
+\begin{enumerate}
+  \item Distinguish point estimator (the rule) from point estimate (the computed value).
+  \item Unbiased: $E(\hat{\theta}) = \theta$; the sampling distribution is centered at the parameter.
+  \item Unbiased estimators: $\bar{x}$ for $\mu$; $\hat{p}$ for $p$; $s^2$ for $\sigma^2$ (using $n-1$).
+  \item Biased: sample range, sample maximum. Connect to why we divide by $n-1$.
+  \item Variability: larger $n$ $\Rightarrow$ smaller spread $\Rightarrow$ better precision.
+\end{enumerate}
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Guided Practice + Activity (20 min):} Simulation-style activity — students compute $\bar{x}$ from several small samples, pool class results, and observe that class means cluster around $\mu$, confirming unbiasedness.
+\end{practicebox}
+
+\begin{reflectionbox}
+\textbf{Exit Ticket (5 min):} Identify estimator type; interpret bias/unbiased; effect of doubling $n$.\\
+\textbf{Homework:} Concept and calculation problems on bias and variability.\\
+\textbf{AP Connection:} UNC-3.I--J directly tested; unbiasedness is justified in inference justifications.
+\end{reflectionbox}
+
+\end{document}

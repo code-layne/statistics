@@ -1,0 +1,49 @@
+%! AP Statistics — Unit 5, Lesson 5.6 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.6}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{notesbox}
+\textbf{Formulas}
+\begin{itemize}
+  \item Center: \ans{$p_1 - p_2$}
+  \item Spread: \ans{$\sqrt{p_1(1-p_1)/n_1 + p_2(1-p_2)/n_2}$}
+  \item Shape: approximately normal when all \ans{four} Large Counts conditions are met.
+\end{itemize}
+\end{notesbox}
+
+\begin{notesbox}
+\textbf{Conditions}
+
+Large Counts: $n_1 p_1 \ge$ \ans{10}; $n_1(1-p_1) \ge$ \ans{10}; $n_2 p_2 \ge$ \ans{10}; $n_2(1-p_2) \ge$ \ans{10}
+\end{notesbox}
+
+\begin{notesbox}
+\textbf{Worked Example: Rural/Urban policy support}
+\ans{Random: both stated. 10\%: both $\le 10\%$ of respective populations. Independent groups: stated. Large Counts: $200(0.58)=116$, $200(0.42)=84$, $250(0.44)=110$, $250(0.56)=140$ --- all $\ge 10$.}
+
+$\mu_D = $ \ans{$0.58 - 0.44 = 0.14$}
+
+$\sigma_D = $ \ans{$\sqrt{0.58(0.42)/200 + 0.44(0.56)/250} = \sqrt{0.001218 + 0.000985} \approx \sqrt{0.002203} \approx 0.04693$}
+
+$P(D > 0.20)$: \ans{$z = (0.20 - 0.14)/0.04693 \approx 1.278$; $P \approx 1 - 0.8993 = 0.1007 \approx 10.1\%$.}
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Quick Check: Teens}
+\begin{enumerate}
+  \item \ans{$n_1 p_1 = 86.4$; $n_1(1-p_1) = 33.6$; $n_2 p_2 = 91$; $n_2(1-p_2) = 49$. All $\ge 10$. Conditions met.}
+  \item \ans{$\mu = 0.72-0.65 = 0.07$; $\sigma = \sqrt{0.72(0.28)/120 + 0.65(0.35)/140} = \sqrt{0.001680+0.001625} \approx \sqrt{0.003305} \approx 0.05749$.}
+  \item \ans{$z = (0.10-0.07)/0.05749 \approx 0.522$; $P > 0.10 \approx 1 - 0.6991 = 0.3009 \approx 30.1\%$.}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

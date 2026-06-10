@@ -1,0 +1,87 @@
+%! AP Statistics — Unit 5, Lesson 5.7 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.7}{Guided Notes}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{objectivebox}
+\textbf{Learning Targets}
+\begin{enumerate}
+  \item I can state $\mu_{\bar{x}} = \mu$ and $\sigma_{\bar{x}} = \sigma/\sqrt{n}$.
+  \item I can check the Normal/Large Sample condition for $\bar{x}$.
+  \item I can compute probabilities for $\bar{x}$ using the normal model.
+\end{enumerate}
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{Sampling distribution of $\bar{x}$}] the distribution of all possible values of \blank{0.5in} from samples of size \blank{0.3in}.
+  \item[\termblanklong{Standard error of $\bar{x}$}] $\sigma_{\bar{x}} = \sigma/\sqrt{n}$; measures the \blank{1.5in} of the sampling distribution.
+  \item[\termblanklong{Normal/Large Sample condition}] population is normal OR $n \ge$ \blank{0.4in}.
+\end{description}
+\end{vocabbox}
+
+\begin{notesbox}
+\textbf{Sampling Distribution of $\bar{x}$} (UNC-3.Q, R, S)
+
+\medskip
+\begin{tabular}{@{} p{0.2\linewidth} p{0.72\linewidth} @{}}
+\textbf{Center:} & $\mu_{\bar{x}} = $ \blank{1.0in} \\[12pt]
+\textbf{Spread:} & $\sigma_{\bar{x}} = $ \TallMath{\dfrac{\blank{0.6in}}{\blank{0.6in}}} \\[14pt]
+\textbf{Shape:} & Normal if population is \blank{1.2in}, OR approximately normal if $n \ge$ \blank{0.4in}. \\
+\end{tabular}
+\end{notesbox}
+
+\begin{notesbox}
+\textbf{Conditions for Using the Normal Model for $\bar{x}$}
+
+\begin{enumerate}
+  \item \textbf{Random:} \blank{2.5in}
+  \item \textbf{10\% condition:} $n \le 0.10 \cdot N$ (ensures independence when sampling WOR)
+  \item \textbf{Normal/Large Sample:} population is normal OR $n \ge $ \blank{0.4in}
+\end{enumerate}
+\end{notesbox}
+
+\begin{notesbox}
+\textbf{Worked Example.} Cereal box weights: $\mu = 500$ g, $\sigma = 15$ g, $n = 36$.
+The machine is recalibrated if $\bar{x} < 495$ g.
+
+\medskip
+\textit{Check conditions:}
+\begin{enumerate}
+  \item Random: \writelines{1}
+  \item 10\%: \writelines{1}
+  \item Normal/Large Sample: \writelines{1}
+\end{enumerate}
+
+$\mu_{\bar{x}} = $ \blank{0.5in} \hspace{1cm} $\sigma_{\bar{x}} = $ \blank{1.2in}
+
+\medskip
+$P(\bar{x} < 495) = $ \writelines{2}
+
+How often is the machine recalibrated by chance alone? \writelines{1}
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Quick Check}
+
+Blood pressure readings for adults are approximately normal with $\mu = 120$ mmHg and
+$\sigma = 18$ mmHg. A clinic measures a random sample of $n = 9$ patients.
+\begin{enumerate}
+  \item Check conditions for using the normal model for $\bar{x}$.
+        \writelines{2}
+  \item Find $\mu_{\bar{x}}$ and $\sigma_{\bar{x}}$.
+        \vspace{0.5in}
+  \item Find $P(115 \le \bar{x} \le 125)$.
+        \vspace{0.8in}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

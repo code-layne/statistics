@@ -1,0 +1,47 @@
+%! AP Statistics — Unit 5, Lesson 5.4 — Homework (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.4}{Homework --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{enumerate}
+
+  \item
+        \begin{enumerate}[label=\alph*.]
+          \item \ans{Unbiased: $E(\bar{x}) = \mu$.}
+          \item \ans{Unbiased: $E(\hat{p}) = p$.}
+          \item \ans{Biased high: the sample minimum is always $\ge$ the population minimum, so on average it overestimates the population minimum.}
+          \item \ans{Unbiased: dividing by $n-1$ corrects for the tendency of sample deviations to underestimate population deviations.}
+        \end{enumerate}
+
+  \item
+        \begin{enumerate}[label=\alph*.]
+          \item \ans{$\sigma_{\bar{x}} = 2200/\sqrt{121} = 2200/11 = 200$ steps.}
+          \item \ans{$n = 484$: $\sigma_{\bar{x}} = 2200/\sqrt{484} = 2200/22 = 100$ steps. Standard error halved.}
+          \item \ansline{Increasing the sample size from 121 to 484 (quadrupling it) cuts the variability of the sample mean in half, so the estimate of average daily steps will be twice as precise.}
+        \end{enumerate}
+
+  \item
+        \begin{enumerate}[label=\alph*.]
+          \item \ansline{No. Sampling variability means that any finite simulation will not produce \emph{exactly} 30. The value 30.1 is very close to 30 and is consistent with random chance; it does not suggest bias.}
+          \item \ansline{30 --- the population mean $\mu$, because $\bar{x}$ is an unbiased estimator.}
+        \end{enumerate}
+
+\end{enumerate}
+
+\begin{extensionbox}
+\textbf{Extension.}
+\ans{Both have variance $\sigma^2 = 25$. Estimator A: $\text{MSE} = 0^2 + 25 = 25$. Estimator B: $\text{MSE} = 2^2 + 25 = 29$. Estimator A has smaller MSE --- unbiasedness wins here because both have equal variance.}
+\end{extensionbox}
+
+\begin{reflectionbox}
+\textbf{Preview:} Lesson 5.5 derives center, spread, and shape for the sampling distribution of $\hat{p}$.
+\end{reflectionbox}
+
+\end{document}

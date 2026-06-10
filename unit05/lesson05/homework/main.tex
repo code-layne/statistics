@@ -1,0 +1,64 @@
+%! AP Statistics — Unit 5, Lesson 5.5 — Homework
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.5}{Homework}
+\namedateperiod
+
+\vspace{0.15in}
+
+For each problem, check all conditions before computing probabilities.
+
+\begin{enumerate}
+
+  \item According to a national survey, 38\% of high school students participate in at
+        least one sport ($p = 0.38$). A random sample of $n = 180$ high school students
+        is selected.
+        \begin{enumerate}[label=\alph*.]
+          \item Check all three conditions for using the normal model for $\hat{p}$.
+                \writelines{3}
+          \item Find $\mu_{\hat{p}}$ and $\sigma_{\hat{p}}$.
+                \vspace{0.5in}
+          \item Find $P(\hat{p} > 0.42)$.
+                \vspace{0.9in}
+          \item Find the value $c$ such that $P(\hat{p} < c) = 0.05$. Interpret.
+                \vspace{0.9in}
+        \end{enumerate}
+
+  \item In a large city, 15\% of residents ride public transit daily ($p = 0.15$).
+        \begin{enumerate}[label=\alph*.]
+          \item For $n = 40$: check the Large Counts condition. Is the normal model appropriate?
+                \writelines{2}
+          \item For $n = 100$: check all conditions and find $P(0.10 \le \hat{p} \le 0.20)$.
+                \vspace{1.0in}
+        \end{enumerate}
+
+  \item A bag contains 60\% red chips and 40\% blue chips ($p = 0.60$ red). Random samples
+        of $n$ chips are drawn with replacement.
+        \begin{enumerate}[label=\alph*.]
+          \item Find $\sigma_{\hat{p}}$ for $n = 25$, $n = 100$, and $n = 400$.
+                \vspace{0.7in}
+          \item Describe how $\sigma_{\hat{p}}$ changes as $n$ increases. What does this
+                mean for estimation?
+                \writelines{2}
+        \end{enumerate}
+
+\end{enumerate}
+
+\begin{extensionbox}
+\textbf{Extension (optional).}
+A candidate believes she has 52\% support ($p = 0.52$). Her campaign polls $n = 600$
+likely voters. Find the probability that the poll shows her trailing (i.e., $\hat{p} < 0.50$).
+Interpret your answer in the context of polling uncertainty.
+\end{extensionbox}
+
+\begin{reflectionbox}
+\textbf{Preview:} Lesson 5.6 extends these ideas to \emph{differences} between two sample
+proportions $\hat{p}_1 - \hat{p}_2$ --- useful for comparing two groups.
+\end{reflectionbox}
+
+\end{document}

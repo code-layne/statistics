@@ -1,0 +1,73 @@
+%! AP Statistics — Unit 5, Lesson 5.8 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.8}{Guided Notes}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{objectivebox}
+\textbf{Learning Targets}
+\begin{enumerate}
+  \item I can state the center and spread of the sampling distribution of $\bar{x}_1 - \bar{x}_2$.
+  \item I can check conditions for using the normal model.
+  \item I can compute probabilities for $\bar{x}_1 - \bar{x}_2$.
+\end{enumerate}
+\end{objectivebox}
+
+\begin{notesbox}
+\textbf{Sampling Distribution of $\bar{x}_1 - \bar{x}_2$} (UNC-3.T, U, V)
+
+\medskip
+\begin{tabular}{@{} p{0.2\linewidth} p{0.72\linewidth} @{}}
+\textbf{Center:} & $\mu_{\bar{x}_1-\bar{x}_2} = $ \blank{1.5in} \\[12pt]
+\textbf{Spread:} & $\sigma_{\bar{x}_1-\bar{x}_2} = $ \TallMath{\sqrt{\dfrac{\blank{0.5in}^2}{\blank{0.4in}} + \dfrac{\blank{0.5in}^2}{\blank{0.4in}}}} \\[16pt]
+\textbf{Shape:} & Normal/approximately normal when both groups satisfy the \blank{2.0in} condition. \\
+\end{tabular}
+\end{notesbox}
+
+\begin{notesbox}
+\textbf{Conditions for $\bar{x}_1 - \bar{x}_2$}
+
+\begin{enumerate}
+  \item \textbf{Random (both groups):} each sample is a random sample.
+  \item \textbf{10\% condition (both groups):} $n_1 \le 0.10 N_1$ and $n_2 \le 0.10 N_2$.
+  \item \textbf{Independence between groups:} the two samples are \blank{1.5in}.
+  \item \textbf{Normal/Large Sample (each group):} each population is normal OR each $n \ge$ \blank{0.4in}.
+\end{enumerate}
+\end{notesbox}
+
+\begin{notesbox}
+\textbf{Worked Example.} Sleep hours: Women $\mu_1 = 7.1$, $\sigma_1 = 1.2$, $n_1 = 50$.
+Men: $\mu_2 = 6.8$, $\sigma_2 = 1.4$, $n_2 = 50$.
+
+\medskip
+\textit{Check conditions:} \writelines{3}
+
+$\mu_{\bar{x}_1-\bar{x}_2} = $ \blank{0.5in}
+
+$\sigma_{\bar{x}_1-\bar{x}_2} = $ \blank{2.5in}
+
+$P(\bar{x}_1 - \bar{x}_2 > 1.0) = $ \writelines{2}
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Quick Check}
+
+Brand A batteries: $\mu_1 = 480$ hr, $\sigma_1 = 60$, $n_1 = 36$.
+Brand B batteries: $\mu_2 = 450$ hr, $\sigma_2 = 80$, $n_2 = 49$.
+
+\begin{enumerate}
+  \item Find $\mu_{\bar{x}_1-\bar{x}_2}$ and $\sigma_{\bar{x}_1-\bar{x}_2}$.
+        \vspace{0.6in}
+  \item Find $P(\bar{x}_1 - \bar{x}_2 > 40)$.
+        \vspace{0.8in}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

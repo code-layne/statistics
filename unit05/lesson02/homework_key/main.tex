@@ -1,0 +1,49 @@
+%! AP Statistics — Unit 5, Lesson 5.2 — Homework (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.2}{Homework --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{enumerate}
+
+  \item Women's heights $N(64.0, 2.8)$.
+        \begin{enumerate}[label=\alph*.]
+          \item \ans{$z = (60-64)/2.8 \approx -1.43$; $P(X<60) = P(Z<-1.43) \approx 0.0764$.}
+          \item \ans{$z_1 = (62-64)/2.8 \approx -0.71$, $z_2 = (68-64)/2.8 \approx 1.43$; $P(62<X<68) = 0.9236 - 0.2389 \approx 0.6847$.}
+          \item \ans{$z = \text{invNorm}(0.90) \approx 1.282$; $x = 64 + 1.282(2.8) \approx 67.6$ in.}
+          \item \ansline{Approximately 90\% of women are shorter than 67.6 inches; the 90th percentile height for women is about 67.6 inches.}
+        \end{enumerate}
+
+  \item Egg mass $N(62, 5)$ g.
+        \begin{enumerate}[label=\alph*.]
+          \item \ans{$z = (63-62)/5 = 0.20$; $P(X>63) = 1 - 0.5793 \approx 0.4207$. About 42\% of eggs are large.}
+          \item \ans{Top 15\%: $z = \text{invNorm}(0.85) \approx 1.036$; $x = 62 + 1.036(5) \approx 67.2$ g. Extra-large eggs weigh at least 67.2 g.}
+        \end{enumerate}
+
+  \item Text messages.
+        \begin{enumerate}[label=\alph*.]
+          \item \ansline{No. The normal model requires a symmetric, bell-shaped distribution. A strongly right-skewed distribution does not satisfy this condition, so the normal model is not appropriate for the individual observations.}
+          \item \ansline{By the Central Limit Theorem (Lesson 5.3), if the student takes many random samples and computes sample means, those sample means will be approximately normally distributed for large enough sample sizes --- even though the original distribution is skewed.}
+        \end{enumerate}
+
+\end{enumerate}
+
+\begin{extensionbox}
+\textbf{Extension.} $N(200, 35)$; most extreme 4\% (2\% in each tail).\\
+\ans{$z = \pm\text{invNorm}(0.02) \approx \pm 2.054$. Lower: $200 - 2.054(35) \approx 128$ mg/dL. Upper: $200 + 2.054(35) \approx 272$ mg/dL. Adults with cholesterol below 128 or above 272 mg/dL require medical monitoring.}
+\end{extensionbox}
+
+\begin{reflectionbox}
+\textbf{Preview:} Lesson 5.3 introduces the Central Limit Theorem, which explains why
+sampling distributions of means are approximately normal --- even for non-normal
+populations --- when samples are large enough.
+\end{reflectionbox}
+
+\end{document}

@@ -1,0 +1,34 @@
+%! AP Statistics — Unit 5, Lesson 5.2 — Exit Ticket (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.2}{Exit Ticket --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+SAT scores are approximately normally distributed with $\mu = 1060$ and $\sigma = 195$.
+
+\begin{enumerate}
+  \item Find the probability that a randomly selected student scored \emph{above} 1300.
+
+        \ans{$z = (1300 - 1060)/195 \approx 1.23$; $P(X > 1300) = 1 - P(Z < 1.23) = 1 - 0.8907 = 0.1093$. About 10.9\% of students score above 1300.}
+
+        \vspace{1.5in}
+
+  \item Find the SAT score at the \textbf{75th percentile}.
+
+        \ans{$z = \text{invNorm}(0.75) \approx 0.674$; $x = 1060 + 0.674(195) \approx 1191$. The 75th percentile is approximately 1191.}
+
+        \vspace{1.2in}
+
+  \item Is it appropriate to use the normal model for SAT scores?
+
+        \ansline{Yes. SAT scores are designed to be approximately normally distributed across a large population, so the bell-shaped model is appropriate. (Also accept: large sample sizes + central limit theorem; historically confirmed bell-shaped distribution.)}
+\end{enumerate}
+
+\end{document}

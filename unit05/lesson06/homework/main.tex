@@ -1,0 +1,54 @@
+%! AP Statistics — Unit 5, Lesson 5.6 — Homework
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.6}{Homework}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{enumerate}
+
+  \item A national survey finds that 48\% of men and 61\% of women report reading for
+        pleasure at least once a week ($p_1 = 0.48$ for men, $p_2 = 0.61$ for women).
+        Random samples of 200 men ($n_1 = 200$) and 220 women ($n_2 = 220$) are selected.
+        \begin{enumerate}[label=\alph*.]
+          \item Check all conditions for using the normal model for $\hat{p}_1 - \hat{p}_2$.
+                \writelines{3}
+          \item Find $\mu_{\hat{p}_1-\hat{p}_2}$ and $\sigma_{\hat{p}_1-\hat{p}_2}$.
+                \vspace{0.5in}
+          \item Find $P(\hat{p}_1 - \hat{p}_2 < -0.20)$.
+                \vspace{0.9in}
+          \item Interpret your answer to (c) in context.
+                \writelines{2}
+        \end{enumerate}
+
+  \item In one region, 25\% of households compost ($p_1 = 0.25$, $n_1 = 160$). In a
+        second region, 18\% compost ($p_2 = 0.18$, $n_2 = 200$). The samples are
+        independent random samples from large populations.
+        \begin{enumerate}[label=\alph*.]
+          \item Check the four Large Counts conditions.
+                \vspace{0.5in}
+          \item Find $P(\hat{p}_1 - \hat{p}_2 > 0.12)$.
+                \vspace{0.9in}
+        \end{enumerate}
+
+\end{enumerate}
+
+\begin{extensionbox}
+\textbf{Extension (optional).}
+Suppose $p_1 = p_2 = 0.50$ and $n_1 = n_2 = n$. Show algebraically that
+$\sigma_{\hat{p}_1-\hat{p}_2} = \sqrt{1/n}$ and find the smallest $n$ such that
+$\sigma_{\hat{p}_1-\hat{p}_2} \le 0.05$.
+\end{extensionbox}
+
+\begin{reflectionbox}
+\textbf{Preview:} Lesson 5.7 shifts focus from proportions to \emph{means}: the sampling
+distribution of $\bar{x}$ and the connection to the Central Limit Theorem.
+\end{reflectionbox}
+
+\end{document}

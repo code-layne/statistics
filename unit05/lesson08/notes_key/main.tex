@@ -1,0 +1,52 @@
+%! AP Statistics — Unit 5, Lesson 5.8 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.8}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{notesbox}
+\textbf{Formulas}
+\begin{itemize}
+  \item Center: \ans{$\mu_1 - \mu_2$}
+  \item Spread: \ans{$\sqrt{\sigma_1^2/n_1 + \sigma_2^2/n_2}$}
+  \item Shape: normal when both groups satisfy \ans{Normal/Large Sample} condition.
+\end{itemize}
+\end{notesbox}
+
+\begin{notesbox}
+\textbf{Conditions}
+\begin{enumerate}
+  \item Random: both stated.
+  \item 10\%: both $\le 10\%$ of respective populations.
+  \item Independent groups: the two samples are \ans{drawn separately / independent of each other}.
+  \item Normal/Large Sample for each group: $n \ge$ \ans{30}.
+\end{enumerate}
+\end{notesbox}
+
+\begin{notesbox}
+\textbf{Worked Example: Sleep hours}
+\ans{Random: both stated. 10\%: both $\le 10\%$ of all women/men. Independent: separate samples. Normal/Large: both $n=50\ge30$. All conditions met.}
+
+$\mu = $ \ans{$7.1 - 6.8 = 0.3$ hr}
+
+$\sigma = $ \ans{$\sqrt{1.2^2/50 + 1.4^2/50} = \sqrt{0.0288+0.0392} = \sqrt{0.0680} \approx 0.2608$ hr}
+
+$P > 1.0$: \ans{$z = (1.0-0.3)/0.2608 \approx 2.684$; $P \approx 1-0.9964 = 0.0036 \approx 0.4\%$.}
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Quick Check: Batteries}
+\begin{enumerate}
+  \item \ans{$\mu = 480-450 = 30$ hr; $\sigma = \sqrt{60^2/36 + 80^2/49} = \sqrt{100 + 130.61} \approx \sqrt{230.61} \approx 15.19$ hr.}
+  \item \ans{$z = (40-30)/15.19 \approx 0.658$; $P > 40 \approx 1-0.7449 = 0.2551 \approx 25.5\%$.}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

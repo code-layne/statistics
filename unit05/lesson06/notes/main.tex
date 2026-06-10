@@ -1,0 +1,76 @@
+%! AP Statistics — Unit 5, Lesson 5.6 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.6}{Guided Notes}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{objectivebox}
+\textbf{Learning Targets}
+\begin{enumerate}
+  \item I can state the formulas for center and spread of the sampling distribution of $\hat{p}_1 - \hat{p}_2$.
+  \item I can check all four Large Counts conditions.
+  \item I can compute probabilities for $\hat{p}_1 - \hat{p}_2$ using the normal model.
+\end{enumerate}
+\end{objectivebox}
+
+\begin{notesbox}
+\textbf{Sampling Distribution of $\hat{p}_1 - \hat{p}_2$} (UNC-3.N, O, P)
+
+\medskip
+\begin{tabular}{@{} p{0.2\linewidth} p{0.72\linewidth} @{}}
+\textbf{Center:} & $\mu_{\hat{p}_1 - \hat{p}_2} = $ \blank{1.5in} \\[12pt]
+\textbf{Spread:} & $\sigma_{\hat{p}_1-\hat{p}_2} = $ \TallMath{\sqrt{\dfrac{\blank{1.2in}}{\blank{0.5in}} + \dfrac{\blank{1.2in}}{\blank{0.5in}}}} \\[16pt]
+\textbf{Shape:} & Approximately normal when all \blank{0.3in} Large Counts conditions are met. \\
+\end{tabular}
+\end{notesbox}
+
+\begin{notesbox}
+\textbf{Conditions for $\hat{p}_1 - \hat{p}_2$}
+
+\begin{enumerate}
+  \item \textbf{Random (Group 1):} sample 1 is a \blank{2.0in}.
+  \item \textbf{Random (Group 2):} sample 2 is a \blank{2.0in}.
+  \item \textbf{10\% (Independence within each group):} $n_1 \le 0.10 N_1$ and $n_2 \le 0.10 N_2$.
+  \item \textbf{Independence between groups:} the two samples are \blank{2.0in}.
+  \item \textbf{Large Counts (all four):}
+        $n_1 p_1 \ge $ \blank{0.3in},\quad $n_1(1-p_1) \ge $ \blank{0.3in},\quad
+        $n_2 p_2 \ge $ \blank{0.3in},\quad $n_2(1-p_2) \ge $ \blank{0.3in}
+\end{enumerate}
+\end{notesbox}
+
+\begin{notesbox}
+\textbf{Worked Example.}
+A polling firm surveys 200 rural adults ($n_1 = 200$, $p_1 = 0.58$ support a policy)
+and 250 urban adults ($n_2 = 250$, $p_2 = 0.44$). Let $D = \hat{p}_1 - \hat{p}_2$.
+
+\medskip
+\textit{Check conditions:} \writelines{4}
+
+$\mu_D = $ \blank{1in} \hspace{1cm} $\sigma_D = $ \blank{2.2in}
+
+\medskip
+$P(D > 0.20) = $ \writelines{2}
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Quick Check}
+
+Male teens: $p_1 = 0.72$, $n_1 = 120$. Female teens: $p_2 = 0.65$, $n_2 = 140$.
+\begin{enumerate}
+  \item Check the four Large Counts conditions.
+        \vspace{0.5in}
+  \item Find $\mu_{\hat{p}_1 - \hat{p}_2}$ and $\sigma_{\hat{p}_1 - \hat{p}_2}$.
+        \vspace{0.5in}
+  \item Find $P(\hat{p}_1 - \hat{p}_2 > 0.10)$.
+        \vspace{0.8in}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

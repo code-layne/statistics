@@ -1,0 +1,78 @@
+%! AP Statistics — Unit 5, Lesson 5.4 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.4}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{objectivebox}
+\textbf{Learning Targets}
+\begin{enumerate}
+  \item I can define bias and explain what makes an estimator unbiased.
+  \item I can identify $\bar{x}$, $\hat{p}$, and $s^2$ as unbiased estimators.
+  \item I can explain how sample size affects the variability of an estimator.
+\end{enumerate}
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[Point estimator] \ans{formula/rule}
+  \item[Point estimate] \ans{specific number/value}
+  \item[Unbiased estimator] centered at the \ans{parameter}
+  \item[Bias] systematic over- or under-estimation
+\end{description}
+\end{vocabbox}
+
+\begin{notesbox}
+\textbf{Unbiased Estimators}
+
+\begin{center}
+\begin{tabular}{@{} l c c @{}}
+\hline
+\textbf{Statistic} & \textbf{Estimates} & \textbf{Unbiased?} \\
+\hline
+$\bar{x}$ & $\mu$ & \ans{Yes} \\
+$\hat{p}$ & $p$ & \ans{Yes} \\
+$s^2$ & $\sigma^2$ & \ans{Yes} \\
+Sample range & pop.\ range & \ans{No (biased low)} \\
+\hline
+\end{tabular}
+\end{center}
+
+\ansline{Dividing by $n-1$ corrects for the fact that sample deviations tend to be smaller than population deviations. Using $n$ in the denominator would systematically underestimate $\sigma^2$.}
+\end{notesbox}
+
+\begin{notesbox}
+\textbf{Variability}
+\begin{itemize}
+  \item Larger $n$ $\Rightarrow$ \ans{smaller} spread; Smaller $n$ $\Rightarrow$ \ans{larger} spread
+  \item Doubling $n$: multiplies $\sigma_{\bar{x}}$ by \ans{$1/\sqrt{2} \approx 0.707$}
+  \item Quadrupling $n$: multiplies $\sigma_{\bar{x}}$ by \ans{$1/2$}
+  \item $n=16$: \ans{6}; $n=64$: \ans{3}
+\end{itemize}
+\end{notesbox}
+
+\begin{notesbox}
+\textbf{Bias vs.\ Variability}
+\begin{itemize}
+  \item Low bias, low variability: \ans{darts clustered near the bullseye — ideal}
+  \item Low bias, high variability: \ans{darts centered on bullseye but spread widely}
+  \item High bias, low variability: \ans{darts clustered tightly but far from bullseye}
+  \item Most desirable: \ans{Low bias, low variability (accurate and precise).}
+\end{itemize}
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Quick Check}
+\begin{enumerate}
+  \item \ansline{Unbiased. The sampling distribution of the sample median is centered at the population median (\$58,000), so $E(\text{median}) = \text{population median}$ --- the definition of unbiased.}
+  \item \ans{$30/\sqrt{n} \le 3 \Rightarrow \sqrt{n} \ge 10 \Rightarrow n \ge 100$. Need at least $n = 100$.}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

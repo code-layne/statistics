@@ -1,0 +1,52 @@
+%! AP Statistics — Unit 5, Lesson 5.7 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.7}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{vocabbox}
+\begin{itemize}
+  \item Sampling distribution of $\bar{x}$: values of \ans{$\bar{x}$} from samples of size \ans{$n$}.
+  \item Standard error: measures the \ans{spread/variability} of the sampling distribution.
+  \item Normal/Large Sample: population normal OR $n \ge$ \ans{30}.
+\end{itemize}
+\end{vocabbox}
+
+\begin{notesbox}
+\textbf{Formulas}
+\begin{itemize}
+  \item Center: \ans{$\mu$}
+  \item Spread: \ans{$\sigma/\sqrt{n}$}
+  \item Shape: \ans{normally distributed; 30}
+\end{itemize}
+\end{notesbox}
+
+\begin{notesbox}
+\textbf{Worked Example: Cereal boxes, $\mu=500$, $\sigma=15$, $n=36$}
+\begin{enumerate}
+  \item \ans{Random: stated.}
+  \item \ans{10\%: $36 \le 10\%$ of all boxes produced --- yes.}
+  \item \ans{Normal/Large: $n = 36 \ge 30$ --- yes.}
+\end{enumerate}
+$\mu_{\bar{x}} = $ \ans{500 g}; $\sigma_{\bar{x}} = $ \ans{$15/\sqrt{36} = 2.5$ g}
+
+$P(\bar{x}<495)$: \ans{$z = (495-500)/2.5 = -2.00$; $P(Z<-2.00) = 0.0228$. About 2.3\% of the time.}
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Quick Check: Blood pressure, $N(120,18)$, $n=9$}
+\begin{enumerate}
+  \item \ans{Random: stated. 10\%: yes. Normal/Large: population is approximately normal --- yes. All conditions met.}
+  \item \ans{$\mu_{\bar{x}} = 120$; $\sigma_{\bar{x}} = 18/\sqrt{9} = 6$ mmHg.}
+  \item \ans{$z_1 = (115-120)/6 \approx -0.833$; $z_2 = (125-120)/6 \approx 0.833$; $P \approx 0.7977 - 0.2023 = 0.5954 \approx 59.5\%$.}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

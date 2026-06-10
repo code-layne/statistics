@@ -1,0 +1,99 @@
+%! AP Statistics — Unit 5, Lesson 5.4 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.4}{Guided Notes}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{objectivebox}
+\textbf{Learning Targets}
+\begin{enumerate}
+  \item I can define bias and explain what makes an estimator unbiased.
+  \item I can identify $\bar{x}$, $\hat{p}$, and $s^2$ as unbiased estimators.
+  \item I can explain how sample size affects the variability of an estimator.
+\end{enumerate}
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{Point estimator}] a \blank{1.5in} (formula) used to estimate a population parameter.
+  \item[\termblanklong{Point estimate}] the \blank{1.5in} (number) computed from sample data.
+  \item[\termblanklong{Unbiased estimator}] a statistic whose sampling distribution is centered at the \blank{1.2in}: $E(\hat{\theta}) = \theta$.
+  \item[\termblanklong{Bias}] when $E(\hat{\theta}) \ne \theta$; the estimator \emph{systematically} over- or under-estimates the parameter.
+\end{description}
+\end{vocabbox}
+
+\begin{notesbox}
+\textbf{Unbiased Estimators} (UNC-3.I)
+
+\begin{center}
+\begin{tabular}{@{} l c c @{}}
+\hline
+\textbf{Statistic} & \textbf{Estimates} & \textbf{Unbiased?} \\
+\hline
+Sample mean $\bar{x}$ & $\mu$ & \blank{0.5in} \\
+Sample proportion $\hat{p}$ & $p$ & \blank{0.5in} \\
+Sample variance $s^2$ (divides by $n-1$) & $\sigma^2$ & \blank{0.5in} \\
+Sample range (max $-$ min) & population range & \blank{0.5in} \\
+\hline
+\end{tabular}
+\end{center}
+
+\medskip
+Why divide by $n-1$ for variance? \writelines{2}
+\end{notesbox}
+
+\begin{notesbox}
+\textbf{Variability of Estimators} (UNC-3.J)
+
+\medskip
+\begin{tabular}{@{} p{0.45\linewidth} p{0.45\linewidth} @{}}
+Larger $n$ $\Rightarrow$ \blank{1.2in} spread & Smaller $n$ $\Rightarrow$ \blank{1.2in} spread
+\end{tabular}
+
+\medskip
+For the sampling distribution of $\bar{x}$: $\sigma_{\bar{x}} = \sigma/\sqrt{n}$.
+\begin{itemize}
+  \item Doubling $n$ multiplies $\sigma_{\bar{x}}$ by \blank{0.5in}.
+  \item Quadrupling $n$ multiplies $\sigma_{\bar{x}}$ by \blank{0.5in}.
+\end{itemize}
+
+\textit{Worked example.} A population has $\sigma = 24$.
+\begin{itemize}
+  \item $n = 16$: $\sigma_{\bar{x}} = $ \blank{0.5in} \hspace{0.5cm} $n = 64$: $\sigma_{\bar{x}} = $ \blank{0.5in}
+\end{itemize}
+\end{notesbox}
+
+\begin{notesbox}
+\textbf{Bias vs.\ Variability — The Dart Board}
+
+\medskip
+\begin{tabular}{@{} p{0.2\linewidth} p{0.7\linewidth} @{}}
+Low bias, low variability & \blank{3.5in} \\[6pt]
+Low bias, high variability & \blank{3.5in} \\[6pt]
+High bias, low variability & \blank{3.5in} \\
+\end{tabular}
+
+\medskip
+Which is most desirable for a statistical estimator? \writelines{1}
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Quick Check}
+\begin{enumerate}
+  \item A researcher records the \emph{median} salary in many random samples of size 40.
+        The distribution of sample medians is centered at \$58,000, which equals the
+        population median. Is the sample median a biased or unbiased estimator? Explain.
+        \writelines{2}
+  \item For the estimator $\bar{x}$ from a population with $\sigma = 30$: how large
+        must $n$ be so that $\sigma_{\bar{x}} \le 3$?
+        \vspace{0.6in}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

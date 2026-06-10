@@ -1,0 +1,86 @@
+%! AP Statistics — Unit 5, Lesson 5.3 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 5, Lesson 5.3}{Guided Notes}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{objectivebox}
+\textbf{Learning Targets}
+\begin{enumerate}
+  \item I can state the Central Limit Theorem and its conditions.
+  \item I can compute $\mu_{\bar{x}}$ and $\sigma_{\bar{x}}$ for a sampling distribution of $\bar{x}$.
+  \item I can determine when it is appropriate to use a normal model for $\bar{x}$.
+\end{enumerate}
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{Central Limit Theorem}] states that when a random sample of size $n$ is drawn from \emph{any} population with mean $\mu$ and standard deviation $\sigma$, the sampling distribution of $\bar{x}$ is approximately \blank{1.2in} when $n$ is sufficiently large.
+  \item[\termblanklong{Standard error of $\bar{x}$}] the standard deviation of the sampling distribution: $\sigma_{\bar{x}} = \sigma/\sqrt{n}$.
+  \item[\termblanklong{Independence condition}] each observation must be independent; when sampling without replacement, $n \le$ \blank{0.5in}\% of the population.
+\end{description}
+\end{vocabbox}
+
+\begin{hookbox}
+\textbf{Hook — Candy Machine:} A machine fills bags with $\mu = 50$ candies and $\sigma = 12$.
+\begin{itemize}
+  \item Single bag: standard deviation = \blank{0.5in}
+  \item Mean of $n = 36$ bags: $\sigma_{\bar{x}} = 12/\sqrt{36} = $ \blank{0.5in}
+\end{itemize}
+Why does averaging reduce variability?
+\writelines{2}
+\end{hookbox}
+
+\begin{notesbox}
+\textbf{Central Limit Theorem — Three Key Facts}
+
+\medskip
+\begin{tabular}{@{} p{0.3\linewidth} p{0.6\linewidth} @{}}
+\textbf{Center:} & $\mu_{\bar{x}} = $ \blank{1in} \\[8pt]
+\textbf{Spread:} & $\sigma_{\bar{x}} = $ \blank{1.2in} \\[8pt]
+\textbf{Shape:} & Approximately \blank{1.2in} when $n \ge 30$ OR when the population is \blank{1.2in} \\
+\end{tabular}
+\end{notesbox}
+
+\begin{notesbox}
+\textbf{Conditions for Using the Normal Model for $\bar{x}$} (UNC-3.H.3--H.5)
+
+Check \emph{all three}:
+\begin{enumerate}
+  \item \textbf{Random:} the sample is a \blank{2.5in}.
+  \item \textbf{Independence (10\% condition):} $n \le 10\%$ of \blank{1.5in}.
+  \item \textbf{Normal/Large Sample:} population is normal, OR \blank{0.6in}.
+\end{enumerate}
+
+\medskip
+\textit{Worked Example.} Household incomes: $\mu = \$58{,}000$, $\sigma = \$21{,}000$.
+Sample of $n = 49$ households. Are conditions met?
+
+\writelines{3}
+
+$\mu_{\bar{x}} = $ \blank{1in} \hspace{1cm} $\sigma_{\bar{x}} = $ \blank{1in}
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Quick Check}
+\begin{enumerate}
+  \item A population has $\mu = 80$, $\sigma = 15$, and is heavily left-skewed. For $n = 40$:
+        \begin{enumerate}[label=\alph*.]
+          \item $\mu_{\bar{x}} = $ \blank{0.6in} \hspace{1cm} $\sigma_{\bar{x}} = $ \blank{0.8in}
+          \item Is the sampling distribution of $\bar{x}$ approximately normal? Why?
+                \writelines{2}
+        \end{enumerate}
+  \item Same population, now $n = 9$. Is the sampling distribution of $\bar{x}$ approximately
+        normal? Why or why not?
+        \writelines{2}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}
