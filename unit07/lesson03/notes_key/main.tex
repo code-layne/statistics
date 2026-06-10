@@ -1,7 +1,7 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.3 — Guided Notes (Answer Key)
+%! AP Statistics — Unit 7, Lesson 7.3 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{apstats-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -9,11 +9,92 @@
 \pageheader{Unit 7, Lesson 7.3}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+    \item[$\square$] \ansline{Write a correct interpretation of a confidence interval for a population mean.}
+    \item[$\square$] \ansline{Explain what ``$C$\% confident'' means in terms of repeated sampling.}
+    \item[$\square$] \ansline{Identify the relationships between $n$, $C$, and the width of a CI.}
+    \item[$\square$] \ansline{Use a confidence interval to justify or assess a claim about a population mean.}
+\end{itemize}
+\end{objectivebox}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{vocabbox}
+\termblanklong{Interpretation of a confidence interval}
+\ansline{``We are $C$\% confident that the interval $(\ell, u)$ captures the true mean [quantity] for [population].''}
+
+\termblanklong{``$C$\% confident'' (what it really means)}
+\ansline{In repeated random sampling with the same $n$, approximately $C$\% of all confidence intervals constructed this way will capture the true $\mu$. It is a statement about the procedure, not about any one interval.}
+
+\termblanklong{Width of a confidence interval}
+\ansline{$2 \times ME = 2t^* \cdot s/\sqrt{n}$; decreases as $n$ increases; increases as $C$ increases.}
+
+\termblanklong{Justifying a claim using a CI}
+\ansline{If the claimed value $\mu_0$ lies outside the CI, there is convincing evidence against the claim. If $\mu_0$ is inside the CI, the data do not provide convincing evidence against it.}
+\end{vocabbox}
+
+\begin{hookbox}
+Correct interpretation: \ans{B} \quad Why is A wrong?
+\ansline{A uses ``probability,'' implying $\mu$ is random. In reality $\mu$ is fixed --- the interval either captures it or it doesn't. ``Confident'' describes our trust in the procedure.}
+\end{hookbox}
+
+\begin{notesbox}{Correct Interpretation Template (UNC-4.S)}
+``We are \ans{$C$}\% confident that the interval
+(\ans{$\ell$},\ \ans{$u$}) \ans{[units]}
+captures the true mean \ans{[quantity]} for \ans{[population]}.''
+
+\textbf{What does ``$C$\% confident'' mean?}\\
+In \ans{repeated random sampling} with the same $n$, approximately \ans{$C$}\% of
+all confidence intervals constructed this way will capture the true mean $\mu$.
+
+\textbf{Three common errors:}
+\begin{enumerate}
+    \item Using ``\ans{probability}'' instead of ``confident.''
+    \item Failing to reference the \ans{sample context} or \ans{population} (UNC-4.S.3).
+    \item Claiming the interval contains \ans{$C$}\% of the data values.
+\end{enumerate}
 \end{notesbox}
+
+\begin{notesbox}{Width of a Confidence Interval (UNC-4.U)}
+Width $= 2 \times ME = 2 \cdot t^* \cdot s/\sqrt{n}$
+
+\vspace{0.1in}
+\begin{tabular}{lll}
+    \textbf{Change} & \textbf{Effect on Width} & \textbf{Why} \\
+    \hline
+    Increase $n$ & \ans{decreases} & $ME \propto 1/\sqrt{n}$; to halve width, \ans{quadruple} $n$ \\
+    Increase $C$ & \ans{increases} & Larger $t^*$ is needed \\
+    Increase $s$ & \ans{increases} & More variability in the data \\
+\end{tabular}
+
+Quadrupling $n$ \ans{halves} the width.
+\end{notesbox}
+
+\begin{notesbox}{Justifying a Claim Using a CI (UNC-4.T)}
+\vspace{0.1in}
+\begin{tabular}{ll}
+    \textbf{If $\mu_0$ is outside the CI} & \ans{Convincing} evidence that $\mu \ne \mu_0$ \\
+    \textbf{If $\mu_0$ is inside the CI} & \ans{Insufficient / not convincing} evidence against the claim \\
+\end{tabular}
+
+\textbf{Example:} Sodium CI $= (2615, 3065)$ mg. Claimed value: $\mu_0 = 2300$ mg.
+
+Inside or outside? \ans{Outside (2300 $<$ 2615).}
+
+Conclusion: \ansline{Because 2300 mg lies below the entire interval, the data provide convincing evidence that the true mean daily sodium intake for college students exceeds 2300 mg.}
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Guided Practice:} 90\% CI: $(18.3, 24.7)$ min. Claimed mean: 20 min.
+
+\begin{enumerate}
+  \item Correct interpretation:
+        \ansline{We are 90\% confident that the interval (18.3, 24.7) minutes captures the true mean wait time at the clinic.}
+  \item Does the CI provide convincing evidence against 20 minutes?
+        \ansline{No: 20 is inside the interval (18.3, 24.7), so the data do not provide convincing evidence that the true mean differs from 20 minutes.}
+  \item Effect of quadrupling $n$:
+        \ansline{The margin of error is halved (since $ME \propto 1/\sqrt{n}$ and $\sqrt{4n}/\sqrt{n} = 2$). The interval width is halved as well.}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

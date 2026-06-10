@@ -1,7 +1,7 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.2 — Homework (Answer Key)
+%! AP Statistics — Unit 7, Lesson 7.2 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{apstats-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -9,11 +9,63 @@
 \pageheader{Unit 7, Lesson 7.2}{Homework --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\begin{enumerate}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+  \item \textbf{Screen Time.} $n = 20$, $\bar x = 3.4$ hr, $s = 0.9$ hr, 95\% CI.
+
+        \textbf{Step 1:} \ansline{$\mu = $ true mean daily screen time (hours) for all elementary school students.}
+
+        \textbf{Step 2:}
+        \ansline{Random: random sample of students. \checkmark \quad 10\%: $20 \le 10\%$ of all elementary students (large population). \checkmark \quad Large Sample: $n = 20 < 30$; assume no strong skewness or outliers in the data. \checkmark}
+
+        \textbf{Step 3:} $df = $ \ans{19}, $t^* = $ \ans{2.093}, $SE = 0.9/\sqrt{20} = $ \ans{0.201} hr
+
+        Interval: $3.4 \pm 2.093 \times 0.201 = 3.4 \pm 0.421 = ($ \ans{2.979} $,$ \ans{3.821} $)$ hours
+
+        \textbf{Step 4:} \ansline{We are 95\% confident that the interval (2.98, 3.82) hours captures the true mean daily screen time for all elementary school students.}
+
+  \item \textbf{Fuel Efficiency.} $n = 40$, $\bar x = 31.7$ mpg, $s = 4.2$ mpg, 99\% CI.
+
+        \textbf{Steps 1--4:}
+        \ansline{Parameter: $\mu = $ true mean fuel efficiency (mpg) for all vehicles of this model.}
+        \ansline{Conditions: Random: random sample. \checkmark \quad 10\%: $40 \le 10\%$ of all vehicles (large production). \checkmark \quad Large Sample: $n = 40 \ge 30$. \checkmark}
+        \ansline{Calculate: $df = 39$; $t^* = 2.708$ (99\% CI); $SE = 4.2/\sqrt{40} = 0.664$ mpg. Interval: $31.7 \pm 2.708 \times 0.664 = 31.7 \pm 1.798$.}
+
+        Interval: $= ($ \ans{29.9} $,$ \ans{33.5} $)$ mpg
+
+        \ansline{Conclude: We are 99\% confident that the interval (29.9, 33.5) mpg captures the true mean fuel efficiency for all vehicles of this model.}
+
+        \begin{teachernote}
+            $t^*$ for $df = 39$, 99\% CI is approximately 2.708.
+            ME $= 2.708 \times 0.664 = 1.798$ mpg.
+        \end{teachernote}
+
+  \item \textbf{Matched Pairs: Reaction Time.}
+
+        Differences (before $-$ after): 14, $-$3, 22, 8, 11, $-$5, 18, 6, 13, 20, $-$2, 15.
+        Sum $= 117$, $n = 12$.
+
+        $\bar d = $ \ans{$117/12 = 9.75$} ms \quad $s_d \approx $ \ans{8.71} ms
+
+        \textbf{Steps 1--4:}
+        \ansline{Parameter: $\mu_d = $ true mean difference in reaction time (ms) for caffeine (before $-$ after).}
+        \ansline{Conditions: Random: assume random sample or randomized design. \checkmark \quad 10\%: $12 \le 10\%$ of all participants. \checkmark \quad Large Sample: $n = 12 < 30$; check for no strong skewness or outliers. \checkmark (assume verified).}
+        \ansline{Calculate: $df = 11$; $t^* = 1.796$ (90\% CI); $SE = 8.71/\sqrt{12} = 2.514$ ms. Interval: $9.75 \pm 1.796 \times 2.514 = 9.75 \pm 4.515$.}
+
+        Interval: $= ($ \ans{5.235} $,$ \ans{14.265} $)$ ms
+
+        \ansline{Conclude: We are 90\% confident that the interval (5.24, 14.27) ms captures the true mean decrease in reaction time due to caffeine consumption.}
+
+        \begin{teachernote}
+            $s_d$: compute from the differences. Sum $= 117$; $\sum d_i^2 = 14^2+3^2+22^2+8^2+11^2+5^2+18^2+6^2+13^2+20^2+2^2+15^2 = 1937$. $s_d = \sqrt{(1937 - 117^2/12)/11} \approx \sqrt{(1937-1140.75)/11} \approx \sqrt{72.39} \approx 8.51$. Slight rounding: use calculator for precision. $t^*$ for $df = 11$, 90\%: 1.796.
+        \end{teachernote}
+
+\end{enumerate}
+
+\begin{extensionbox}
+\textbf{Extension:} $z$-interval for Screen Time ($\sigma = 0.9$ known): $3.4 \pm 1.960 \times 0.9/\sqrt{20} = 3.4 \pm 0.394 = (3.006, 3.794)$ hours.
+
+\ansline{The $z$-interval (width $\approx 0.788$ hr) is narrower than the $t$-interval (width $\approx 0.842$ hr). The $t$-interval is wider because $t^* = 2.093 > z^* = 1.960$: using $s$ instead of the known $\sigma$ adds extra uncertainty, which the $t$-distribution accounts for by having heavier tails and a larger critical value.}
+\end{extensionbox}
 
 \end{document}

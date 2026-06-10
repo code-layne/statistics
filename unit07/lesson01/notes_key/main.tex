@@ -1,19 +1,117 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.1 — Guided Notes (Answer Key)
+%! AP Statistics — Unit 7, Lesson 7.1 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
 \pageheader{Unit 7, Lesson 7.1}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+    \item[$\square$] \ansline{Describe and identify Type I and Type II errors in context.}
+    \item[$\square$] \ansline{Explain how $\alpha$ controls the Type I error rate and affects Type II error.}
+    \item[$\square$] \ansline{Explain why inference for means uses the $t$-distribution instead of $z$.}
+\end{itemize}
+\end{objectivebox}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{vocabbox}
+\termblanklong{Type I error}
+\ansline{Rejecting a true null hypothesis (false positive); probability $= \alpha$.}
+
+\termblanklong{Type II error}
+\ansline{Failing to reject a false null hypothesis (false negative); probability $= \beta$.}
+
+\termblanklong{Significance level ($\alpha$)}
+\ansline{The maximum tolerable probability of a Type I error; set before data collection.}
+
+\termblanklong{$t$-distribution}
+\ansline{A family of bell-shaped, symmetric distributions with heavier tails than the normal; used when $\sigma$ is unknown and $s$ is substituted.}
+\end{vocabbox}
+
+\begin{hookbox}
+\textbf{Discussion:} A drug trial finds a statistically significant result. A follow-up
+study contradicts it. How is this possible?
+
+\begin{teachernote}
+    Both studies may have been conducted correctly. If the initial study committed a Type I
+    error (rejected a true $H_0$), a follow-up study using a different sample is likely to
+    fail to reject $H_0$. This is why replication is essential in science.
+\end{teachernote}
+\end{hookbox}
+
+\begin{notesbox}{Errors in Statistical Inference}
+An inference procedure can produce two types of incorrect decisions:
+
+\renewcommand{\arraystretch}{2}
+\begin{tabularx}{\linewidth}{lXX}
+    & \textbf{$H_0$ is True} & \textbf{$H_0$ is False} \\
+    \hline
+    \textbf{Reject $H_0$} & \ans{Type I error} & Correct decision \\
+    \textbf{Fail to reject $H_0$} & Correct decision & \ans{Type II error} \\
+\end{tabularx}
+
+\vspace{0.2in}
+\textbf{Type I error:} rejecting a \ans{true} null hypothesis. \\[4pt]
+The probability of a Type I error $=$ \ans{$\alpha$} (the significance level).
+
+\vspace{0.15in}
+\textbf{Type II error:} failing to reject a \ans{false} null hypothesis. \\[4pt]
+The probability of a Type II error $= \beta$ (beta). \textbf{Power} $= 1 - \beta$.
 \end{notesbox}
+
+\begin{notesbox}{The Trade-off Between Error Types}
+\textbf{Key Principle:} For a fixed sample size, decreasing the probability of one type
+of error \ans{increases} the probability of the other.
+
+\vspace{0.1in}
+If we lower $\alpha$ from 0.05 to 0.01:
+\begin{itemize}
+    \item Type I error rate \ans{decreases}
+    \item Type II error rate \ans{increases}
+    \item Power \ans{decreases}
+\end{itemize}
+
+\vspace{0.1in}
+To reduce \emph{both} error rates simultaneously, we must \ans{increase the sample size $n$}.
+\end{notesbox}
+
+\begin{notesbox}{Connecting to Unit 7 --- Why the $t$-Distribution?}
+In Unit 6, inference for proportions used the \ans{normal ($z$)} distribution because
+$\sigma_{\hat p} = \sqrt{p(1-p)/n}$ could be estimated from the hypothesized $p$.
+
+For means, $\sigma$ is \ans{rarely known in practice}, so we substitute the sample standard
+deviation $s$. This introduces extra variability, producing the \ans{$t$}-distribution.
+
+\vspace{0.1in}
+The $t$-statistic: \quad $t = \dfrac{\bar x - \mu_0}{s/\sqrt{n}}$ \quad follows a
+$t$-distribution with $df = $ \ans{$n - 1$} degrees of freedom.
+
+\vspace{0.1in}
+The $t$-distribution has \ans{heavier} tails than the standard normal.
+As $df$ increases, the $t$-distribution approaches the \ans{standard normal ($z$)} distribution.
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Guided Practice:} A hospital tests whether a new pain medication reduces
+average recovery time below 14 days ($H_0{:}\ \mu = 14$, $H_a{:}\ \mu < 14$).
+
+\begin{enumerate}
+  \item Describe a Type I error in context.
+        \ansline{Concluding the medication reduces mean recovery time below 14 days when it actually does not.}
+
+  \item Describe a Type II error in context.
+        \ansline{Failing to conclude the medication reduces mean recovery time when it actually does reduce it below 14 days.}
+
+  \item Which error is more costly for patients? Explain.
+        \ansline{Answers vary. A Type I error means giving patients an ineffective drug; a Type II error means withholding a beneficial one. Both are costly; the answer depends on context and risk tolerance.}
+
+  \item If $\alpha$ is lowered from 0.05 to 0.01, describe the effect on both
+        error types.
+        \ansline{Type I error rate decreases (from 5\% to 1\%). Type II error rate increases (we require stronger evidence to reject, so we are more likely to miss a real effect). Power decreases.}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

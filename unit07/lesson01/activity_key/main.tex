@@ -1,19 +1,81 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.1 — Group Activity (Answer Key)
+%! AP Statistics — Unit 7, Lesson 7.1 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
 \pageheader{Unit 7, Lesson 7.1}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
+\textbf{Directions:} Work with your partner on each scenario. For each, (a) state the
+hypotheses, (b) describe a Type I error in context, (c) describe a Type II error in
+context, and (d) decide which error is more costly and explain why.
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Scenario 1 --- School Nurse Study}\\
+A school nurse believes the mean number of sick days per year for students at her school
+differs from the district average of 5 days.
+
+\begin{enumerate}[label=\alph*.]
+  \item State the hypotheses:
+        $H_0$: The mean number of sick days is \ans{5} days.
+        $H_a$: The mean number of sick days is \ans{not equal to} 5 days.
+
+  \item Describe a Type I error in context:
+        \ansline{Concluding the mean number of sick days differs from 5 when it actually equals 5 days.}
+
+  \item Describe a Type II error in context:
+        \ansline{Failing to conclude the mean differs from 5 days when it actually does differ.}
+
+  \item Which error is more costly?
+        \begin{teachernote}
+            Both are defensible. Type I: the nurse wastes resources investigating a
+            non-existent problem. Type II: a real health concern goes unaddressed.
+        \end{teachernote}
+        \ansline{Answers vary --- accept either with reasonable justification.}
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Scenario 2 --- Bottling Plant Quality Control}\\
+A factory bottles fruit juice. The label states 12 fl oz per bottle.
+
+\begin{enumerate}[label=\alph*.]
+  \item State the hypotheses:
+        \ansline{$H_0{:}\ \mu = 12$ fl oz; $H_a{:}\ \mu \ne 12$ fl oz}
+
+  \item Describe a Type I error in context:
+        \ansline{Concluding the mean fill differs from 12 fl oz when it actually equals 12 fl oz --- the factory halts production unnecessarily.}
+
+  \item Describe a Type II error in context:
+        \ansline{Failing to conclude the mean fill differs from 12 fl oz when it actually does --- underfilled or overfilled bottles continue to be sold.}
+
+  \item Which error is more costly?
+        \ansline{For the company: Type I (unnecessary production shutdowns cost money). For consumers: Type II (they receive systematically underfilled bottles). Both perspectives are valid.}
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Scenario 3 --- Clinical Drug Trial}
+
+\begin{enumerate}[label=\alph*.]
+  \item Error types in context:
+        \ansline{Type I ($\alpha = 0.01$): approving an antibiotic that does not actually reduce infection duration below 7 days --- patients are given an ineffective drug. Type II: failing to approve an effective antibiotic --- patients miss out on a beneficial treatment.}
+
+  \item Counterargument to raising $\alpha$ to 0.10:
+        \ansline{Raising $\alpha$ to 0.10 increases the Type I error rate tenfold --- a 10\% chance of approving an ineffective drug. In a clinical context, the consequences of treating patients with a drug that doesn't work (and potentially has side effects) can be severe. Keeping $\alpha = 0.01$ prioritizes patient safety.}
+
+  \item Effect of increasing $n$:
+        \ansline{With $\alpha$ held constant at 0.01 and a larger sample ($n = 200$), the test has more power to detect a real effect. The Type II error rate $\beta$ decreases and power $= 1 - \beta$ increases. The Type I error rate remains 0.01 (controlled by $\alpha$, not $n$).}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

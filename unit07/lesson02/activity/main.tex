@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.2 — Group Activity
+%! AP Statistics — Unit 7, Lesson 7.2 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
@@ -9,11 +9,102 @@
 \pageheader{Unit 7, Lesson 7.2}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
+\textbf{Directions:} For each problem, use the full four-step procedure (Parameter,
+Conditions, Calculate, Conclude). Show all work.
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Sleep Study.} A school counselor wants to estimate the mean nightly sleep
+duration for students at her school. A random sample of 25 students yields
+$\bar x = 6.8$ hours and $s = 1.2$ hours.
+
+Construct a 90\% confidence interval for the true mean nightly sleep duration.
+
+\textbf{Step 1 --- Parameter:} $\mu = $ \writeline
+
+\textbf{Step 2 --- Conditions:} (conditions are pre-verified for you)
+\begin{itemize}
+    \item Random: random sample of students. \checkmark
+    \item 10\%: $25 \le 10\%$ of all students at the school. \checkmark
+    \item Large Sample: $n = 25 < 30$; assume counselor verified no strong skewness or
+          outliers in the data. \checkmark
+\end{itemize}
+
+\textbf{Step 3 --- Calculate:}
+
+$df = $ \blank{2cm} \quad $t^* = $ \blank{2.5cm} (from $t$-table, 90\% CI)
+
+$SE = s/\sqrt{n} = 1.2/\sqrt{25} = $ \blank{2.5cm}
+
+$ME = t^* \cdot SE = $ \blank{4cm}
+
+Interval: $\bar x \pm ME = 6.8 \pm $ \blank{2cm} $= ($ \blank{2cm} $,$ \blank{2cm} $)$ hours
+
+\textbf{Step 4 --- Conclude:} \writelines{2}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Commute Times.} A city planner wants to estimate the mean commute time for
+workers in a downtown district. A random sample of 36 workers is taken; summary
+statistics: $\bar x = 28.4$ min, $s = 9.6$ min.
+
+Construct a 95\% confidence interval for the true mean commute time. Use all four
+steps and verify conditions explicitly.
+
+\vspace{0.1in}
+\textbf{Step 1:} \writeline
+
+\textbf{Step 2 --- Conditions:} \writelines{4}
+
+\textbf{Step 3:}
+
+$df = $ \blank{2cm} \quad $t^* = $ \blank{2.5cm} \quad $SE = $ \blank{2.5cm}
+
+Interval: \blank{10cm} $= ($ \blank{2cm} $,$ \blank{2cm} $)$ min
+
+\textbf{Step 4:} \writelines{2}
+
+\vspace{0.05in}
+\textbf{Bonus:} How wide must the interval be? How could the planner halve the margin
+of error? \writelines{2}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Matched-Pairs: Step-Count Intervention.} A fitness researcher measured daily
+step counts for 12 participants before and after a 4-week intervention. The differences
+(after $-$ before, in thousands of steps) are:
+
+\medskip
+\begin{center}
+\begin{tabular}{cccccccccccc}
+1.2 & 0.8 & $-0.3$ & 2.1 & 1.5 & 0.6 & 1.8 & $-0.1$ & 2.4 & 0.9 & 1.3 & 1.7
+\end{tabular}
+\end{center}
+\medskip
+
+Compute $\bar d$ and $s_d$, verify conditions, and construct a 95\% CI for the mean
+change in daily step count. Then interpret the interval and assess whether the data
+provide convincing evidence that the intervention increased step counts on average.
+
+$\bar d = $ \blank{3cm} \quad $s_d = $ \blank{3cm} \quad $n = $ \blank{2cm}
+
+\vspace{0.1in}
+\textbf{Step 2 --- Conditions:} \writelines{3}
+
+\textbf{Step 3:} $df = $ \blank{2cm} \quad $t^* = $ \blank{2.5cm}
+
+Interval: $\bar d \pm t^* \cdot s_d/\sqrt{n} = $ \blank{8cm} $= ($ \blank{2cm} $,$ \blank{2cm} $)$ thousands of steps
+
+\textbf{Step 4 and claim assessment:} \writelines{3}
+
+\end{tcolorbox}
 
 \end{document}

@@ -1,7 +1,7 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.3 — Warm-Up (Answer Key)
+%! AP Statistics — Unit 7, Lesson 7.3 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{apstats-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -11,9 +11,35 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\textbf{95\% CI for mean sodium intake: $(2615, 3065)$ mg}
+
+\begin{enumerate}
+
+  \item Three interpretations:
+
+        \begin{enumerate}[label=\Alph*.]
+          \item ``There is a 95\% probability that the true mean sodium intake is
+                between 2615 and 3065 mg.''
+
+                Error: \ansline{Uses ``probability'' --- implies $\mu$ is random. $\mu$ is fixed; it is either in the interval or not. Use ``confident'' instead.}
+
+          \item ``We are 95\% confident that the interval (2615, 3065) mg captures
+                the true mean daily sodium intake for all college students.''
+
+                Error: \ans{None --- this is the correct interpretation.} \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+
+          \item ``95\% of all college students have a daily sodium intake between
+                2615 and 3065 mg.''
+
+                Error: \ansline{Confuses a CI for the parameter $\mu$ with a range for individual data values. A CI estimates the mean, not individual observations.}
+        \end{enumerate}
+
+  \item Does $(0.546, 0.734)$ provide convincing evidence against $p = 0.80$?
+        \ansline{Yes: the claimed value 0.80 lies outside the interval (0.546, 0.734), so the data provide convincing evidence that the true proportion differs from 0.80.}
+
+  \item Effect of doubling $n$:
+        \ansline{The margin of error would decrease by a factor of $1/\sqrt{2} \approx 0.707$ --- approximately 29\% smaller --- because $ME \propto 1/\sqrt{n}$ and $\sqrt{40}/\sqrt{20} = \sqrt{2}$.}
+
+\end{enumerate}
 
 \end{document}

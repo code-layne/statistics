@@ -1,7 +1,7 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.1 — Warm-Up (Answer Key)
+%! AP Statistics — Unit 7, Lesson 7.1 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{apstats-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -11,9 +11,58 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+A researcher conducts a study to determine whether the mean daily screen time for
+teenagers differs from 7 hours. She takes a random sample of 40 teenagers and finds
+$\bar x = 7.6$ hours with $s = 1.4$ hours.
+
+\begin{enumerate}
+  \item From Unit 5, describe the sampling distribution of $\bar x$ (assuming the
+        population is approximately normal). Include shape, center, and standard deviation.
+
+        \begin{itemize}
+          \item \textbf{Shape:} \ans{Approximately normal (CLT applies, $n = 40 \ge 30$)}
+          \item \textbf{Center:} $\mu_{\bar x} = $ \ans{$\mu = 7$ hours (under $H_0$)}
+          \item \textbf{Spread:} $\sigma_{\bar x} = \sigma/\sqrt{n} \approx s/\sqrt{n} = $
+                \ans{$1.4/\sqrt{40} \approx 0.221$ hours}
+        \end{itemize}
+
+        \vspace{0.05in}
+
+  \item The researcher tests $H_0{:}\ \mu = 7$ vs.\ $H_a{:}\ \mu \ne 7$ at $\alpha = 0.05$.
+        She rejects $H_0$.
+
+        \begin{enumerate}[label=\alph*.]
+          \item If the true mean daily screen time is actually 7 hours, what type of
+                error did the researcher commit? \quad
+                \textcolor{keyred}{\textbf{Type I}} \quad (Type II) \quad (No error)
+
+                \vspace{0.05in}
+          \item What is the probability that the researcher commits this type of error,
+                assuming the test was conducted correctly?
+                \ans{$\alpha = 0.05$ (5\%)}
+        \end{enumerate}
+
+        \vspace{0.05in}
+
+  \item Suppose instead the researcher \emph{fails to reject} $H_0$, but the true
+        mean screen time is actually 8 hours.
+
+        \begin{enumerate}[label=\alph*.]
+          \item What type of error has the researcher committed? \quad
+                (Type I) \quad \textcolor{keyred}{\textbf{Type II}} \quad (No error)
+
+                \vspace{0.05in}
+          \item In Unit 7 we will study procedures for \emph{means} using the
+                $t$-distribution. Write one question you have about how errors in
+                inference for means differ from errors in inference for proportions.
+
+                \begin{teachernote}
+                    Accept any reasonable question. The Type I error rate is still
+                    controlled by $\alpha$ regardless of whether we use $z$ or $t$.
+                    Substituting $s$ for $\sigma$ does not change the Type I error rate;
+                    it changes the critical value from $z^*$ to $t^*$.
+                \end{teachernote}
+        \end{enumerate}
+\end{enumerate}
 
 \end{document}

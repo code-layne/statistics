@@ -1,7 +1,7 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.2 — Guided Notes (Answer Key)
+%! AP Statistics — Unit 7, Lesson 7.2 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{apstats-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -9,11 +9,102 @@
 \pageheader{Unit 7, Lesson 7.2}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+    \item[$\square$] \ansline{Describe the $t$-distribution and explain how it differs from the standard normal.}
+    \item[$\square$] \ansline{Identify and verify the conditions for a one-sample $t$-interval.}
+    \item[$\square$] \ansline{Calculate a one-sample $t$-interval: $\bar x \pm t^* \cdot s/\sqrt{n}$.}
+    \item[$\square$] \ansline{Apply the one-sample $t$-interval to a matched-pairs design using differences.}
+\end{itemize}
+\end{objectivebox}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{vocabbox}
+\termblanklong{$t$-distribution}
+\ansline{A symmetric, bell-shaped family of distributions with heavier tails than $N(0,1)$; used when $\sigma$ is unknown and $s$ is substituted; indexed by degrees of freedom.}
+
+\termblanklong{Degrees of freedom ($df$)}
+\ansline{For a one-sample $t$-procedure: $df = n - 1$.}
+
+\termblanklong{Standard error of $\bar x$ ($SE_{\bar x}$)}
+\ansline{$SE_{\bar x} = s/\sqrt{n}$; estimates the standard deviation of the sampling distribution of $\bar x$.}
+
+\termblanklong{Critical value $t^*$}
+\ansline{The positive value such that the area between $-t^*$ and $t^*$ under the $t$-curve equals $C$; found from the $t$-table with $df = n - 1$.}
+
+\termblanklong{One-sample $t$-interval}
+\ansline{$\bar x \pm t^* \cdot s/\sqrt{n}$; the appropriate CI for a population mean when $\sigma$ is unknown.}
+
+\termblanklong{Matched-pairs design}
+\ansline{A design where each observation in one group is paired with an observation in the other; analyzed by computing differences and applying a one-sample $t$-procedure.}
+\end{vocabbox}
+
+\begin{hookbox}
+Why can't we use a $z$-interval for the sodium example?
+\ansline{$\sigma$ (the true population standard deviation of sodium intake) is unknown. A $z$-interval requires $\sigma$; substituting $s$ changes the distribution of the standardized statistic from $z$ to $t$.}
+\end{hookbox}
+
+\begin{notesbox}{The $t$-Distribution (VAR-7.A)}
+When we substitute $s$ for $\sigma$, the statistic $t = \dfrac{\bar x - \mu}{s/\sqrt{n}}$
+follows a \ans{$t$}-distribution.
+
+\textbf{Properties:}
+\begin{itemize}
+    \item Bell-shaped, \ans{symmetric}, centered at \ans{0}.
+    \item Heavier tails than the standard normal.
+    \item Degrees of freedom: $df = n - $ \ans{1}.
+    \item As $df$ \ans{increases}, the $t$-distribution approaches $N(0, 1)$.
+\end{itemize}
+
+For 95\% CI with $n = 20$: $df = $ \ans{19}, $t^* = $ \ans{2.093}.
+\end{notesbox}
+
+\begin{notesbox}{Conditions for a One-Sample $t$-Interval (UNC-4.P)}
+\begin{enumerate}
+    \item \textbf{Random:} Data come from a \ans{random sample} or randomized experiment.
+    \item \textbf{10\%:} $n \le $ \ans{10}\%$ \cdot N$ (if sampling w/o replacement).
+    \item \textbf{Large Sample:}
+          \begin{itemize}
+              \item $n \ge $ \ans{30}: condition met.
+              \item $n < $ \ans{30}: data show no strong \ans{skewness} or \ans{outliers}.
+          \end{itemize}
+\end{enumerate}
+\end{notesbox}
+
+\begin{notesbox}{The One-Sample $t$-Interval Formula (UNC-4.Q, UNC-4.R)}
+\renewcommand{\arraystretch}{2}
+\begin{tabularx}{\linewidth}{lX}
+    Point estimate & $\bar x$ \\
+    Standard error & $SE_{\bar x} = s/\sqrt{n}$ \\
+    Margin of error & $ME = t^* \cdot s/\sqrt{n}$ \\
+    \textbf{Interval} & $\bar x \pm t^* \cdot s/\sqrt{n}$ \\
+\end{tabularx}
+
+\textbf{Sodium example:} $df = $ \ans{19}, $t^* = $ \ans{2.093},
+$SE = 480/\sqrt{20} = $ \ans{107.3} mg
+
+Interval: $2840 \pm 2.093 \cdot 107.3 = 2840 \pm 224.6
+= ($ \ans{2615} $,$ \ans{3065} $)$ mg
+\end{notesbox}
+
+\begin{notesbox}{The Four-Step Procedure (PCCF)}
+\begin{enumerate}
+    \item \textbf{Parameter:} \ansline{$\mu = $ the true mean [quantity] for [population].}
+    \item \textbf{Conditions:} Random, 10\%, Large Sample --- all verified.
+    \item \textbf{Calculate:} $\bar x \pm t^* \cdot s/\sqrt{n}$
+    \item \textbf{Conclude:} ``We are \ans{$C$}\% confident that the interval captures
+          the true mean \ans{[quantity]} for \ans{[population]}.''
+\end{enumerate}
+\end{notesbox}
+
+\begin{notesbox}{Matched-Pairs Design (UNC-4.O.3)}
+\begin{enumerate}
+    \item Compute $d_i = x_{i,1} - x_{i,2}$.
+          Order of subtraction: \ansline{Define clearly (e.g., after $-$ before), and use consistently.}
+    \item $\bar d = $ \ans{mean of the differences} \quad $s_d = $ \ans{SD of the differences}.
+    \item Interval: $\bar d \pm t^* \cdot s_d/\sqrt{n}$, $df = n - 1$,
+          where $n = $ number of \ans{pairs}.
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

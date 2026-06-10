@@ -1,19 +1,106 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.1 — Guided Notes
+%! AP Statistics — Unit 7, Lesson 7.1 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 7, Lesson 7.1}{Guided Notes}
 \namedateperiod
 
-\vspace{0.15in}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+\end{itemize}
+\end{objectivebox}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{vocabbox}
+\termblanklong{Type I error}
+\termblanklong{Type II error}
+\termblanklong{Significance level ($\alpha$)}
+\termblanklong{$t$-distribution}
+\end{vocabbox}
+
+\begin{hookbox}
+\textbf{Discussion:} A drug trial finds a statistically significant result. A follow-up
+study contradicts it. How is this possible?
+
+\writelines{3}
+\end{hookbox}
+
+\begin{notesbox}{Errors in Statistical Inference}
+An inference procedure can produce two types of incorrect decisions:
+
+\renewcommand{\arraystretch}{2}
+\begin{tabularx}{\linewidth}{lXX}
+    & \textbf{$H_0$ is True} & \textbf{$H_0$ is False} \\
+    \hline
+    \textbf{Reject $H_0$} & \blank{3cm} & Correct decision \\
+    \textbf{Fail to reject $H_0$} & Correct decision & \blank{3cm} \\
+\end{tabularx}
+
+\vspace{0.2in}
+\textbf{Type I error:} rejecting a \blank{3cm} null hypothesis. \\[4pt]
+The probability of a Type I error $=$ \blank{2cm} (the significance level).
+
+\vspace{0.15in}
+\textbf{Type II error:} failing to reject a \blank{3cm} null hypothesis. \\[4pt]
+The probability of a Type II error $= \beta$ (beta). \textbf{Power} $= 1 - \beta$.
 \end{notesbox}
+
+\begin{notesbox}{The Trade-off Between Error Types}
+\textbf{Key Principle:} For a fixed sample size, decreasing the probability of one type
+of error \blank{4cm} the probability of the other.
+
+\vspace{0.1in}
+If we lower $\alpha$ from 0.05 to 0.01:
+\begin{itemize}
+    \item Type I error rate \blank{2cm} (decreases / increases)
+    \item Type II error rate \blank{2cm} (decreases / increases)
+    \item Power \blank{2cm} (decreases / increases)
+\end{itemize}
+
+\vspace{0.1in}
+To reduce \emph{both} error rates simultaneously, we must \blank{5cm}.
+\end{notesbox}
+
+\begin{notesbox}{Connecting to Unit 7 --- Why the $t$-Distribution?}
+In Unit 6, inference for proportions used the \blank{2cm} distribution because
+$\sigma_{\hat p} = \sqrt{p(1-p)/n}$ could be estimated from the hypothesized $p$.
+
+For means, $\sigma$ is \blank{4cm}, so we substitute the sample standard deviation
+$s$. This introduces extra variability, producing the \blank{3cm}-distribution.
+
+\vspace{0.1in}
+The $t$-statistic: \quad $t = \dfrac{\bar x - \mu_0}{s/\sqrt{n}}$ \quad follows a
+$t$-distribution with $df = $ \blank{2cm} degrees of freedom.
+
+\vspace{0.1in}
+The $t$-distribution has \blank{4cm} tails than the standard normal (more / fewer).
+As $df$ increases, the $t$-distribution approaches the \blank{3cm} distribution.
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Guided Practice:} A hospital tests whether a new pain medication reduces
+average recovery time below 14 days ($H_0{:}\ \mu = 14$, $H_a{:}\ \mu < 14$).
+
+\begin{enumerate}
+  \item Describe a Type I error in context.
+        \writelines{2}
+
+  \item Describe a Type II error in context.
+        \writelines{2}
+
+  \item Which error is more costly for patients? Explain.
+        \writelines{2}
+
+  \item If $\alpha$ is lowered from 0.05 to 0.01, describe the effect on both
+        error types.
+        \writelines{2}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}
