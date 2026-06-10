@@ -1,0 +1,73 @@
+%! Justifying a Claim Based on a Confidence Interval for a Population Proportion — Unit 6, Lesson 6.3 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.3}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.15in}
+
+\textit{Each scenario gives you a computed confidence interval. Interpret it, evaluate the
+stated claim, and answer the follow-up question.}
+
+\begin{scenariobox}[Scenario 1 --- Flu Vaccine Uptake]{sky}
+A random sample of 500 adults found $\hat p = 0.46$ received a flu vaccine last season.
+A 95\% CI yields $(0.417, 0.503)$.
+
+\begin{enumerate}[label=\alph*.]
+  \item Write a complete interpretation of this interval.
+        \ansline{We are 95\% confident that the interval from 0.417 to 0.503 captures the true proportion of all adults who received a flu vaccine last season.}
+
+  \item A public health official claims that fewer than half of adults get the flu vaccine
+        ($p < 0.50$). Does the CI support, refute, or neither support nor refute this claim?
+        \ansline{Neither clearly --- the value 0.50 is barely inside the interval (0.417, 0.503), so the claim is plausible but not definitively established. The data are consistent with both $p<0.50$ and $p\ge0.50$.}
+
+  \item How would the width change if $n=2000$? Would the claim evaluation change?
+        \ansline{Width would decrease (larger sample reduces $SE$), so the CI would be narrower and more precise. The claim evaluation might change if the narrower interval excluded 0.50.}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 2 --- Recycling Habits]{sky}
+A survey of 280 randomly selected households found 196 recycle regularly. A 90\% CI
+yields $(0.652, 0.748)$.
+
+\begin{enumerate}[label=\alph*.]
+  \item Write a complete interpretation.
+        \ansline{We are 90\% confident that the interval from 0.652 to 0.748 captures the true proportion of all households in the city that recycle regularly.}
+
+  \item A city council member claims that exactly 70\% of households recycle regularly.
+        Is this claim plausible based on the CI?
+        \ansline{Yes --- 0.70 falls inside (0.652, 0.748), so a true proportion of 70\% is plausible given the data.}
+
+  \item A second council member says ``At least two-thirds of households recycle.''
+        Does the CI support this?
+        \ansline{Yes --- the entire interval is above $2/3 \approx 0.667$, so the data provide strong evidence that $p > 2/3$.}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 3 --- Social Media Use]{sky}
+A random sample of 150 employees found $\hat p = 0.54$ use social media during work hours.
+A 99\% CI yields $(0.437, 0.643)$.
+
+\begin{enumerate}[label=\alph*.]
+  \item A manager claims the proportion is 0.50. Is this plausible? \ans{Yes} Explain: \ansline{0.50 is inside (0.437, 0.643).}
+
+  \item A different manager claims the proportion is 0.65. Is this plausible? \ans{No} Explain: \ansline{0.65 is outside (0.437, 0.643); data provide evidence against $p=0.65$.}
+
+  \item Why is this 99\% CI unusually wide?
+        \ansline{Small sample ($n=150$) means large $SE$; high confidence level (99\%) means large $z^*=2.576$. Both forces increase width.}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{reflectionbox}
+Based on all three scenarios, write a general rule for when a CI provides clear evidence
+against a claim vs.\ when the evidence is inconclusive.
+
+\ansline{A CI provides clear evidence \emph{against} a claimed value $p_0$ when $p_0$ lies \emph{outside} the interval --- the data suggest $p_0$ is not plausible. The evidence is inconclusive when $p_0$ is \emph{inside} the interval; the claim is consistent with the data but not proven.}
+\end{reflectionbox}
+
+\end{document}

@@ -1,0 +1,60 @@
+%! Carrying Out a Test for the Difference of Two Population Proportions — Unit 6, Lesson 6.11 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.11}{Guided Notes}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{objectivebox}
+\textbf{Lesson 6.11 Objectives:} Carry out the \textit{Do} and \textit{Conclude} steps
+of a two-sample $z$-test for $p_1-p_2$. \hfill \textit{VAR-6.K, DAT-3.C--D, Skills 3.E \& 4.E}
+\end{objectivebox}
+
+\begin{notesbox}{Test Statistic}
+\[z = \frac{\hat p_1 - \hat p_2}{\sqrt{\hat p_c(1-\hat p_c)\!\left(\dfrac{1}{n_1}+\dfrac{1}{n_2}\right)}}\]
+Note: use \textbf{$\hat p_c$} in the denominator (not $\hat p_1$ or $\hat p_2$).
+\end{notesbox}
+
+\begin{notesbox}{$p$-Value Direction}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{@{} p{0.38\linewidth} p{0.55\linewidth} @{}}
+$H_a: p_1 > p_2$ & $p$-value $=$ \blank{5cm} \\
+$H_a: p_1 < p_2$ & $p$-value $=$ \blank{5cm} \\
+$H_a: p_1 \ne p_2$ & $p$-value $=$ \blank{5cm} \\
+\end{tabular}
+\end{notesbox}
+
+\begin{notesbox}{Conclusion Template}
+``Since $p\text{-value} = \blank{2cm}$ $[\,> \text{ or } \le\,]$ $\alpha = \blank{1.5cm}$,
+we $[\text{fail to reject} / \text{reject}]$ $H_0$.
+We $[\text{do not} / \text{do}]$ have convincing evidence that \blank{8cm}.''
+\end{notesbox}
+
+\begin{notesbox}{Worked Example --- App Error Rates (continued)}
+From Lesson 6.10: $\hat p_A=0.140$, $\hat p_B=0.200$, $\hat p_c=0.170$, $n_A=n_B=300$.
+$H_a: p_A \ne p_B$. $\alpha=0.05$.
+
+\textit{Do:}\\
+$SE = \sqrt{\blank{3cm}(1-\blank{3cm})(1/300+1/300)}
+    = \sqrt{\blank{3cm} \times \blank{3cm}} = \sqrt{\blank{3cm}} \approx$ \blank{2cm}\\[6pt]
+$z = \dfrac{0.140 - 0.200}{\blank{2.5cm}} = \dfrac{\blank{2cm}}{\blank{2cm}} \approx$ \blank{2cm}\\[6pt]
+$p\text{-value} = 2 \times P(Z < \blank{2cm}) \approx$ \blank{2cm}
+
+\textit{Conclude:}\\
+\writelines{2}
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Try It:} Return to the Defect Rate problem from Lesson 6.10 homework.
+Old: 36/400. New: 20/400. $\hat p_c = 0.070$. $H_a: p_O > p_N$. $\alpha = 0.05$.
+Compute $z$ and the $p$-value, then conclude.
+\writelines{4}
+\end{practicebox}
+
+\end{document}

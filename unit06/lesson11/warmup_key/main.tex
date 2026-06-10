@@ -1,0 +1,27 @@
+%! Carrying Out a Test for the Difference of Two Population Proportions — Unit 6, Lesson 6.11 — Warm-Up (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.11}{Warm-Up --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+\textbf{Spiral: Completing the Test Setup.}
+County 1: 144/360. County 2: 112/320. $\hat p_c \approx 0.376$. $\alpha=0.05$.
+
+\begin{enumerate}
+  \item $\hat p_1 = 144/360 = \ans{0.400}$; \quad $\hat p_2 = 112/320 = \ans{0.350}$.
+
+  \item $SE = \sqrt{0.376(0.624)(1/360+1/320)} = \sqrt{0.234624 \times 0.005903} = \sqrt{0.001385} \approx \ans{0.0372}$
+
+  \item $z = (0.400 - 0.350)/0.0372 = 0.050/0.0372 \approx \ans{1.34}$
+
+  \item \ansline{For a two-sided test: $p$-value $= 2 \times P(Z > 1.34) \approx 2(0.0901) = 0.180$. Since $0.180 > 0.05$, fail to reject $H_0$.}
+\end{enumerate}
+
+\end{document}

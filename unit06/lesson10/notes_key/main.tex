@@ -1,0 +1,74 @@
+%! Setting Up a Test for the Difference of Two Population Proportions — Unit 6, Lesson 6.10 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.10}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{objectivebox}
+\textbf{Lesson 6.10 Objectives:} Set up a two-sample $z$-test for the difference of two population
+proportions: state hypotheses, compute $\hat p_c$, and verify conditions. \hfill \textit{VAR-6.H--J, Skills 1.E \& 4.C}
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{pooled proportion ($\hat p_c$)}]
+        The combined success proportion under $H_0: p_1=p_2$:
+        $\hat p_c = \dfrac{n_1\hat p_1 + n_2\hat p_2}{n_1+n_2}$. Used for Large Counts in a two-sample test.
+\end{description}
+\end{vocabbox}
+
+\begin{notesbox}{Hypotheses}
+$H_0$: \ans{$p_1 = p_2$} \quad ($p_1 - p_2 = \ans{0}$)\\[6pt]
+$H_a$ (choose one): \quad
+$p_1$ \ans{$>$} $p_2$ \quad or \quad $p_1$ \ans{$<$} $p_2$ \quad or \quad $p_1$ \ans{$\ne$} $p_2$
+\end{notesbox}
+
+\begin{notesbox}{Pooled Proportion}
+Under $H_0: p_1=p_2$, both groups share one unknown proportion. We estimate it by pooling:
+\[\hat p_c = \frac{n_1\hat p_1 + n_2\hat p_2}{n_1+n_2}
+           = \frac{\ans{\text{total successes}}}{{\color{keyred}n_1+n_2}}\]
+Use $\hat p_c$ (not $\hat p_1$ or $\hat p_2$) for the \textbf{Large Counts} condition.
+\end{notesbox}
+
+\begin{notesbox}{Conditions}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{@{} p{0.22\linewidth} p{0.72\linewidth} @{}}
+\textbf{Random}     & \ansline{Both samples are independent random samples or from randomized experiments.} \\
+\textbf{Large Counts} & All four values $\ge 10$: \\
+                    & $n_1\hat p_c = \ans{51}$, \quad $n_1(1-\hat p_c) = \ans{249}$ \\
+                    & $n_2\hat p_c = \ans{51}$, \quad $n_2(1-\hat p_c) = \ans{249}$ \\
+\textbf{10\%}       & $n_1 \le 10\%$ of pop.\ 1 \textbf{and} $n_2 \le 10\%$ of pop.\ 2 \\
+\end{tabular}
+\end{notesbox}
+
+\begin{notesbox}{Worked Example --- App Error Rates}
+Group A (new app): 42 errors in 300 tasks. Group B (old app): 60 errors in 300 tasks.
+
+\textit{State:} $H_0$: \ans{$p_A = p_B$} (error rates are equal); $H_a$: \ans{$p_A \ne p_B$} (two-sided, error rates differ)
+
+\textit{Plan:} $\hat p_A = \ans{0.140}$, $\hat p_B = \ans{0.200}$. \quad
+$\hat p_c = \dfrac{\ans{42+60}}{\ans{600}} = \ans{0.170}$
+
+\textbf{Random:} \ansline{Both groups randomly assigned --- stated.} \\
+\textbf{Large Counts:} $300(\ans{0.17}) = \ans{51}$, $300(1-\ans{0.17}) = \ans{249}$ --- \ans{all $\ge10$ for both groups. \checkmark}\\
+\textbf{10\%:} \ansline{300 tasks per group well below 10\% of all tasks --- reasonable to assume.}
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Try It:} Program 1: 56/80. Program 2: 44/80. $H_0: p_1=p_2$; $H_a: p_1 \ne p_2$.
+
+$\hat p_c = (56+44)/(80+80) = 100/160 = \ans{0.625}$
+
+\textbf{Random:} \ansline{Random samples from each program --- assumed.}\\
+\textbf{Large Counts:} $80(0.625)=50$, $80(0.375)=30$ --- \ans{all $\ge10$. \checkmark}\\
+\textbf{10\%:} \ansline{Assumed both samples $\le10\%$ of all program participants.}
+\end{practicebox}
+
+\end{document}

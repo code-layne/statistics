@@ -1,0 +1,33 @@
+%! Justifying a Claim Based on a Confidence Interval for a Population Proportion — Unit 6, Lesson 6.3 — Exit Ticket (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.3}{Exit Ticket --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+A random sample of 220 high school students found that 143 prefer to study with music
+playing. A 90\% confidence interval for the true proportion is $(0.592, 0.709)$.
+
+\begin{enumerate}
+  \item Write a complete interpretation of this confidence interval.
+        \ansline{We are 90\% confident that the interval from 0.592 to 0.709 captures the true proportion of all high school students who prefer to study with music playing.}
+
+  \item A researcher claims that exactly 65\% of high school students prefer to study with
+        music. Is this claim plausible based on the interval? Explain.
+        \ansline{Yes --- 0.65 lies inside (0.592, 0.709), so a true proportion of 65\% is consistent with the data.}
+
+  \item A school principal claims that \emph{more than} 70\% of students prefer studying
+        with music. Does the CI support or refute this claim? Explain.
+        \ansline{Refute --- the value 0.70 lies inside the interval but very close to the upper bound; values above 0.709 are outside the interval. The data do not provide evidence that $p>0.70$.}
+
+  \item Explain in one sentence what ``90\% confident'' means about the procedure.
+        \ansline{If we used this procedure to build many confidence intervals from repeated random samples, about 90\% of those intervals would contain the true population proportion.}
+\end{enumerate}
+
+\end{document}

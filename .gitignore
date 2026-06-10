@@ -4,3 +4,8 @@ target
 .stamps
 .claude/worktrees
 .claire
+**/*.aux
+**/*.log
+**/*.pdf
+**/*.fls
+**/*.fdb_latexmk

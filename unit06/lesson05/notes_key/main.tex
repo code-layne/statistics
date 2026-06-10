@@ -1,0 +1,76 @@
+%! Interpreting p-Values — Unit 6, Lesson 6.5 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.5}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{objectivebox}
+Compute and interpret a $p$-value from a one-sample $z$-test statistic for a proportion.
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{$p$-value}] The probability of observing a sample result as extreme as or
+    more extreme than the one obtained, \emph{assuming \ans{$H_0$} is true}. A probability between
+    \ans{0} and \ans{1}.
+  \item[\termblanklong{``As extreme''}] In the direction(s) specified by \ans{$H_a$}.
+\end{description}
+\end{vocabbox}
+
+\begin{notesbox}{Finding the $p$-Value: Which Tail?}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} p{0.22\linewidth} X X @{}}
+  $H_a$         & \textbf{``Extreme'' means} & \textbf{$p$-value formula} \\ \hline
+  $p > p_0$     & $z$ is \ans{large/positive} & $P(Z \ge z) = 1 - \Phi(z)$ \\
+  $p < p_0$     & $z$ is \ans{small/negative} & $P(Z \le z) = \Phi(z)$ \\
+  $p \ne p_0$   & $|z|$ is \ans{large}        & $2P(Z \ge |z|)$ \\
+\end{tabularx}
+\end{notesbox}
+
+\begin{notesbox}{Interpreting the $p$-Value}
+\textbf{Template:} ``Assuming [restate $H_0$ in context], there is a \ans{[p-value]} probability
+of observing \ans{a sample proportion as extreme as the one obtained} (or more extreme) by chance alone.''
+
+\vspace{4pt}
+\textbf{Critical errors to avoid:}
+\begin{itemize}
+  \item[\textbf{$\times$}] ``The $p$-value is the probability that $H_0$ is \ans{true}''
+  \item[\textbf{$\times$}] ``The $p$-value is the probability the result was due to \ans{chance}'' (incorrect phrasing)
+  \item[\checkmark] ``Assuming $H_0$ is true, \ans{[state the probability of the observed or more extreme result]}''
+\end{itemize}
+\end{notesbox}
+
+\begin{notesbox}{Worked Example: Defective Widget Rate}
+$z \approx 1.92$; $H_a: p \ne 0.10$ (two-sided).
+
+\begin{itemize}
+  \item $p$-value $= 2P(Z \ge \ans{1.92}) = 2(1-\Phi(\ans{1.92})) = 2(\ans{0.0274}) \approx$ \ans{$0.0548$}
+  \item Interpret: ``Assuming 10\% of widgets are defective, there is a \ans{0.0548} probability
+        of obtaining a sample proportion as far from 0.10 as 0.147 by \ans{chance} alone.''
+\end{itemize}
+\end{notesbox}
+
+\begin{notesbox}{What the $p$-Value Does NOT Tell You}
+\begin{enumerate}
+  \item The $p$-value is \textbf{not} the probability \ans{$H_0$} is true.
+  \item A large $p$-value does \textbf{not} \ans{prove or confirm} $H_0$.
+  \item A small $p$-value does \textbf{not} mean the effect is \ans{practically} significant.
+\end{enumerate}
+\end{notesbox}
+
+\begin{practicebox}
+\begin{enumerate}[label=\alph*.]
+  \item $H_a: p > 0.60$, $z = 1.45$. Tail: \ans{right} \quad $p$-value $=$ \ans{$P(Z\ge1.45)=0.0735$}
+  \item $H_a: p < 0.30$, $z = -2.10$. Tail: \ans{left} \quad $p$-value $=$ \ans{$P(Z\le-2.10)=0.0179$}
+  \item $H_a: p \ne 0.50$, $z = -1.75$. Tail: \ans{both} \quad $p$-value $=$ \ans{$2P(Z\le-1.75)=2(0.0401)=0.0802$}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

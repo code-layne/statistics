@@ -1,0 +1,32 @@
+%! Setting Up a Test for a Population Proportion — Unit 6, Lesson 6.4 — Warm-Up (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.4}{Warm-Up --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+A 95\% CI for the proportion of students who own a pet is $(0.43, 0.57)$.
+
+\begin{enumerate}
+  \item Write a complete interpretation of this CI.
+        \ansline{We are 95\% confident that the interval from 0.43 to 0.57 captures the true proportion of all students who own a pet.}
+
+  \item A school board member claims 60\% of students own a pet. Is this plausible?
+        \ansline{No --- 0.60 is outside (0.43, 0.57). The data provide evidence against the claim that $p = 0.60$.}
+
+  \item Write the null and alternative hypotheses for testing whether $p \ne 0.50$.
+
+        $H_0$: \ans{$p = 0.50$}  \quad $H_a$: \ans{$p \ne 0.50$}
+
+  \item In a hypothesis test, you would use \ans{$p_0$ (the null value)} in Large Counts,
+        because we build the sampling distribution \emph{assuming $H_0$ is true}, so the true
+        proportion is $p_0$, not $\hat p$.
+\end{enumerate}
+
+\end{document}

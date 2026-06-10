@@ -1,0 +1,51 @@
+%! Potential Errors When Performing Tests — Unit 6, Lesson 6.7 — Group Activity
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.7}{Group Activity}
+\namepartnerperiod
+
+\vspace{0.15in}
+
+\textit{For each scenario, describe both types of error in context, identify which is more
+serious, and answer the follow-up question about power.}
+
+\begin{scenariobox}[Scenario 1 --- Airport Security Screening]{sky}
+An airport uses a screening algorithm that flags passengers for additional searches. The
+hypotheses are: $H_0$: the passenger poses no security threat; $H_a$: the passenger poses a
+security threat.
+
+\begin{enumerate}[label=\alph*.]
+  \item Describe a Type I error in context. \writelines{2}
+  \item Describe a Type II error in context. \writelines{2}
+  \item Which error is more serious in this setting, and why? \writelines{2}
+  \item The airport doubles the number of screeners so that $n$ effectively increases. How
+        does this affect the power of the test? \writelines{2}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 2 --- New Vaccine Efficacy]{sky}
+A new vaccine is tested: $H_0$: the vaccine is no better than placebo ($p = 0.50$);
+$H_a$: the vaccine reduces infection ($p < 0.50$). The test uses $\alpha = 0.01$.
+
+\begin{enumerate}[label=\alph*.]
+  \item Describe a Type I error in context. \writelines{2}
+  \item Describe a Type II error in context. \writelines{2}
+  \item If researchers switch to $\alpha = 0.05$ instead, how does power change?
+        How does the Type I error probability change? \writelines{2}
+  \item Would you recommend $\alpha = 0.01$ or $\alpha = 0.05$ for a vaccine trial?
+        Justify your answer. \writelines{2}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{reflectionbox}
+Summarize the trade-off between Type I and Type II errors in one or two sentences.
+Under what circumstances might a researcher intentionally accept a higher Type I error rate?
+\writelines{3}
+\end{reflectionbox}
+
+\end{document}

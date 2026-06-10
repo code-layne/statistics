@@ -1,0 +1,35 @@
+%! Confidence Intervals for the Difference of Two Proportions — Unit 6, Lesson 6.8 — Exit Ticket (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.8}{Exit Ticket --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+A school district surveyed random samples of middle and high school students about daily
+reading habits. Among 160 middle schoolers, 72 reported reading for pleasure at least
+30 minutes per day. Among 140 high schoolers, 49 reported the same.
+
+Construct and interpret a 95\% confidence interval for $p_M - p_H$, the difference in the
+proportions of middle and high school students who read for pleasure at least 30 minutes per day.
+
+\textit{State:} \ansline{We will construct a 95\% two-sample $z$-interval for $p_M - p_H$, where $p_M$ = true proportion of middle schoolers and $p_H$ = true proportion of high schoolers who read for pleasure $\ge30$ min/day.}
+
+\textit{Plan --- Check Conditions:}\\
+\textbf{Random:} \ansline{Both samples were randomly selected --- stated.}\\
+\textbf{Large Counts:} $160(0.45)=72$, $160(0.55)=88$, $140(0.35)=49$, $140(0.65)=91$ --- \ans{all $\ge10$. \checkmark}\\
+\textbf{10\%:} \ansline{160 $\le10\%$ of all middle schoolers; 140 $\le10\%$ of all high schoolers --- assumed.}
+
+\textit{Do:}\\
+$\hat p_M = 72/160 = 0.45$; \quad $\hat p_H = 49/140 = 0.35$; \quad $\hat p_M - \hat p_H = \ans{0.10}$\\
+$SE = \sqrt{0.45(0.55)/160 + 0.35(0.65)/140} = \sqrt{0.001547 + 0.001625} = \sqrt{0.003172} \approx \ans{0.0563}$\\
+$CI = 0.10 \pm 1.960(0.0563) = 0.10 \pm 0.1103 = (\ans{-0.010}, \ans{0.210})$
+
+\textit{Conclude:} \ansline{We are 95\% confident that the true difference in the proportions of middle and high school students who read for pleasure at least 30 minutes per day ($p_M - p_H$) is between $-0.010$ and $0.210$. Since the interval contains 0, we cannot conclude there is a significant difference.}
+
+\end{document}

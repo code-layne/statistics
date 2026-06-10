@@ -1,0 +1,51 @@
+%! Setting Up a Test for the Difference of Two Population Proportions — Unit 6, Lesson 6.10 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.10}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.15in}
+
+\textbf{Directions:} For each scenario, complete the \textit{State} and \textit{Plan} steps only.
+
+\begin{scenariobox}[Scenario 1 --- Online vs.\ In-Person Test Preparation]{sky}
+Online: 84/140. In-person: 105/160.
+
+\begin{enumerate}[label=\arabic*.]
+  \item \ansline{$p_1$ = true proportion of online students who pass; $p_2$ = true proportion of in-person students who pass.}
+
+  \item \ansline{$H_0: p_1=p_2$ (pass rates are equal). $H_a: p_1\ne p_2$ (pass rates differ). Two-sided.}
+
+  \item $\hat p_1 = 84/140 = \ans{0.600}$; \quad $\hat p_2 = 105/160 = \ans{0.656}$; \quad
+        $\hat p_c = (84+105)/(140+160) = 189/300 = \ans{0.630}$
+
+  \item \textbf{Random:} \ansline{Both groups randomly sampled --- assumed.}\\
+        \textbf{Large Counts (using $\hat p_c=0.63$):}\\
+        $140(0.63)=88.2$, $140(0.37)=51.8$, $160(0.63)=100.8$, $160(0.37)=59.2$ --- \ans{all $\ge10$. \checkmark}\\
+        \textbf{10\%:} \ansline{Assumed both samples $\le10\%$ of all students in each preparation method.}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 2 --- Seatbelt Compliance Among Teen Drivers]{sky}
+16-year-olds: 18 of 90 not belted. 17-year-olds: 12 of 110 not belted.
+
+\begin{enumerate}[label=\arabic*.]
+  \item \ansline{$p_{16}$ = true proportion of 16-year-olds not wearing a seat belt; $p_{17}$ = same for 17-year-olds.\\
+        $H_0: p_{16}=p_{17}$; $H_a: p_{16}>p_{17}$ (one-sided, right).}
+
+  \item $\hat p_{16} = 18/90 = \ans{0.200}$; \quad $\hat p_{17} = 12/110 = \ans{0.109}$; \quad
+        $\hat p_c = (18+12)/(90+110) = 30/200 = \ans{0.150}$
+
+  \item \textbf{Random:} \ansline{Random roadside check --- stated.}\\
+        \textbf{Large Counts (using $\hat p_c=0.15$):}\\
+        $90(0.15)=13.5$, $90(0.85)=76.5$, $110(0.15)=16.5$, $110(0.85)=93.5$ --- \ans{all $\ge10$. \checkmark}\\
+        \textbf{10\%:} \ansline{Assumed both samples $\le10\%$ of all teen drivers in each age group.}
+\end{enumerate}
+\end{scenariobox}
+
+\end{document}

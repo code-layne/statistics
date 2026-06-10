@@ -1,0 +1,50 @@
+%! Setting Up a Test for a Population Proportion — Unit 6, Lesson 6.4 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.4}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.15in}
+
+\textit{For each scenario, (a) state $H_0$ and $H_a$, (b) identify the test as one-sided or
+two-sided and justify, (c) verify conditions, and (d) calculate the test statistic $z$.}
+
+\begin{scenariobox}[Scenario 1 --- Voter Turnout]{sky}
+\begin{enumerate}[label=\alph*.]
+  \item $H_0$: \ans{$p = 0.40$} \quad $H_a$: \ans{$p \ne 0.40$} \quad One-sided or two-sided? \ans{Two-sided (``changed'')}
+  \item Conditions:
+        \begin{itemize}
+          \item Random: \ans{SRS stated --- met}
+          \item Large Counts: \ans{$300(0.40)=120\ge10$; $300(0.60)=180\ge10$ --- met}
+          \item 10\%: \ans{$300 \le 0.10\times$(all registered voters) --- met}
+        \end{itemize}
+  \item $\hat p = $ \ans{$105/300=0.35$} \quad $z = \dfrac{\ans{0.35} - \ans{0.40}}{\sqrt{\ans{0.40(0.60)}/\ans{300}}} = \dfrac{-0.05}{0.02828} \approx$ \ans{$-1.77$}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 2 --- Medication Effectiveness]{sky}
+\begin{enumerate}[label=\alph*.]
+  \item $H_0$: \ans{$p = 0.75$} \quad $H_a$: \ans{$p < 0.75$} \quad One-sided or two-sided? \ans{One-sided (``lower'')}
+  \item Conditions: \ansline{Random (SRS from records --- met); Large Counts: $160(0.75)=120\ge10$, $160(0.25)=40\ge10$ --- met; 10\%: met.}
+  \item $\hat p = $ \ans{$108/160=0.675$} \quad $z = \dfrac{0.675-0.75}{\sqrt{0.75(0.25)/160}} = \dfrac{-0.075}{0.03423} \approx$ \ans{$-2.19$}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 3 --- Organic Milk]{sky}
+\begin{enumerate}[label=\alph*.]
+  \item \ansline{$H_0: p=0.30$; $H_a: p>0.30$ (one-sided). The manager believes her store has a \emph{higher} rate, so the direction is ``greater than.''}
+  \item \ansline{Random (SRS of shoppers --- met); Large Counts: $90(0.30)=27\ge10$, $90(0.70)=63\ge10$ --- met; 10\% met.}
+  \item $\hat p = 34/90 \approx 0.378$ \quad \ansline{$z = (0.378-0.30)/\sqrt{0.30(0.70)/90} = 0.078/0.04830 \approx 1.61$}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{reflectionbox}
+\ansline{Choose a one-sided $H_a$ when the research question asks specifically whether $p$ is \emph{greater than} or \emph{less than} $p_0$. Choose two-sided when asking whether $p$ is \emph{different} from $p_0$, with no prior direction. Choosing after seeing the data is data snooping --- it inflates the probability of a false rejection because you are selecting the direction most favorable to rejecting $H_0$.}
+\end{reflectionbox}
+
+\end{document}

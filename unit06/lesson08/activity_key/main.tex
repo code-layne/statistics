@@ -1,0 +1,54 @@
+%! Confidence Intervals for the Difference of Two Proportions — Unit 6, Lesson 6.8 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.8}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.15in}
+
+\begin{scenariobox}[Scenario 1 --- Social Media Use by Grade Level]{sky}
+A researcher surveyed random samples of high school students to compare social media use.
+Among 180 sophomores, 126 reported using social media more than 3 hours per day.
+Among 210 seniors, 168 reported the same.
+
+\begin{enumerate}[label=\arabic*.]
+  \item \ansline{$p_1$ = true proportion of all sophomores using social media $>3$ hr/day; $p_2$ = true proportion of all seniors using social media $>3$ hr/day.}
+
+  \item $\hat p_1 = 126/180 = 0.700$; $\hat p_2 = 168/210 = 0.800$; $\hat p_1 - \hat p_2 = \ans{-0.100}$.
+
+  \item \textbf{Random:} \ansline{Both groups independently and randomly sampled --- stated.}
+        \textbf{Large Counts:} $180(0.700)=126$, $180(0.300)=54$, $210(0.800)=168$, $210(0.200)=42$ --- \ans{all $\ge10$. \checkmark}\\
+        \textbf{10\%:} \ansline{180 sophomores $\le10\%$ of all sophomores; 210 seniors $\le10\%$ of all seniors --- assumed.}
+
+  \item $SE = \sqrt{0.700(0.300)/180 + 0.800(0.200)/210}
+            = \sqrt{0.001167 + 0.000762} = \sqrt{0.001929} \approx \ans{0.0439}$
+
+  \item $CI = -0.100 \pm 1.960(0.0439) = -0.100 \pm 0.0860 = (\ans{-0.186}, \ans{-0.014})$
+
+  \item \ansline{We are 95\% confident that the true difference in the proportions of sophomores and seniors using social media more than 3 hours per day ($p_1 - p_2$) is between $-0.186$ and $-0.014$. Since the interval is entirely negative, there is evidence that seniors use social media more than sophomores.}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 2 --- Flu Vaccination Rates]{sky}
+A public health department took independent random samples to compare flu vaccination rates
+between two counties. In County A ($n_1 = 300$), 204 residents had received a flu vaccine.
+In County B ($n_2 = 250$), 145 had.
+
+\begin{enumerate}[label=\arabic*.]
+  \item $\hat p_A = 204/300 = 0.680$; $\hat p_B = 145/250 = 0.580$; $\hat p_A - \hat p_B = \ans{0.100}$.
+
+  \item Large Counts: $300(0.68)=204$, $300(0.32)=96$, $250(0.58)=145$, $250(0.42)=105$ --- \ans{all $\ge10$. \checkmark}
+
+  \item $SE = \sqrt{0.68(0.32)/300 + 0.58(0.42)/250} = \sqrt{0.000725 + 0.000974} = \sqrt{0.001699} \approx 0.0412$\\
+        $CI = 0.100 \pm 2.576(0.0412) = 0.100 \pm 0.1061 = (\ans{-0.006}, \ans{0.206})$
+
+  \item \ansline{We are 99\% confident the true difference in vaccination rates ($p_A - p_B$) is between $-0.006$ and $0.206$. Since the interval contains 0, we cannot conclude at the 99\% confidence level that County A's rate is higher than County B's.}
+\end{enumerate}
+\end{scenariobox}
+
+\end{document}

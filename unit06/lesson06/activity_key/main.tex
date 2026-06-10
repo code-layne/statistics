@@ -1,0 +1,51 @@
+%! Concluding a Test for a Population Proportion — Unit 6, Lesson 6.6 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.6}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.15in}
+
+\textit{Complete the full four-step procedure for each scenario.}
+
+\begin{scenariobox}[Scenario 1 --- Smartphone Use]{sky}
+$n=120$; 108 own smartphones.
+
+\textbf{State:} $H_0$: \ans{$p=0.85$} \quad $H_a$: \ans{$p>0.85$} \quad $\alpha = $ \ans{0.05}
+
+\textbf{Plan:} \ansline{Random (SRS stated --- met); LC: $120(0.85)=102\ge10$, $120(0.15)=18\ge10$ --- met; 10\% met.}
+
+\textbf{Do:} $\hat p = $ \ans{$108/120=0.90$} \quad $z = \dfrac{0.90-0.85}{\sqrt{0.85(0.15)/120}} \approx$ \ans{$1.58$}
+
+$p$-value $= P(Z\ge1.58) \approx$ \ans{$0.057$}
+
+\textbf{Conclude:} Because $p$-value \ans{$>$} $\alpha$, we \ans{fail to reject} $H_0$.
+\ansline{We do not have sufficient evidence that the proportion of students at this school who own a smartphone is greater than 85\%.}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 2 --- Coffee Drinkers]{sky}
+$n=200$; 118 drink coffee.
+
+\textbf{State:} $H_0$: \ans{$p=0.64$} \quad $H_a$: \ans{$p\ne0.64$} \quad $\alpha = $ \ans{0.01}
+
+\textbf{Plan:} \ansline{Random (SRS --- met); LC: $200(0.64)=128\ge10$, $200(0.36)=72\ge10$ --- met; 10\% met.}
+
+\textbf{Do:} $\hat p = $ \ans{$118/200=0.59$} \quad $z \approx$ \ans{$\dfrac{0.59-0.64}{\sqrt{0.64(0.36)/200}}\approx-1.47$} \quad $p$-value $\approx$ \ans{$2(0.0708)=0.142$}
+
+\textbf{Conclude:} \ansline{Because $p$-value $=0.142 > \alpha=0.01$, we fail to reject $H_0$. We do not have sufficient evidence that the proportion of adults in this town who drink coffee daily differs from the national rate of 64\%.}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 3 --- Voter Turnout]{sky}
+$p\text{-value}\approx0.077$; $\alpha=0.10$.
+
+\textbf{Conclude:} \ansline{Because $p$-value $=0.077 \le \alpha=0.10$, we reject $H_0$. We have sufficient evidence that voter turnout in the city differs from 40\%.}
+
+Would the conclusion change at $\alpha=0.05$? \ansline{Yes --- at $\alpha=0.05$, $p$-value $=0.077 > 0.05$, so we would fail to reject $H_0$. The choice of $\alpha$ matters.}
+\end{scenariobox}
+
+\end{document}

@@ -1,0 +1,120 @@
+%! Carrying Out a Test for the Difference of Two Population Proportions — Unit 6, Lesson 6.11 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\UnitNumberName}{Unit 6: Inference for Categorical Data: Proportions \quad}
+\newcommand{\LessonNumberName}{Lesson 6.11: Carrying Out a Test for the Difference of Two Population Proportions}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will carry out a two-sample $z$-test for the
+    difference of two population proportions: compute the test statistic using the pooled
+    proportion, find and interpret the $p$-value, and write a complete conclusion. (Big Ideas: VAR, DAT)
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+    \begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+        \textbf{AP Skills}
+        \begin{itemize}[leftmargin=1.2em]
+            \item \textbf{3.E} --- Calculate $z$ and $p$-value for two-sample test
+            \item \textbf{4.E} --- Conclude a two-sample $z$-test
+        \end{itemize}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+        \textbf{Key Understandings (VAR-6.K, DAT-3.C--D)}
+        \begin{itemize}[leftmargin=1.2em]
+            \item $z = \dfrac{\hat p_1 - \hat p_2}{\sqrt{\hat p_c(1-\hat p_c)\!\left(\tfrac{1}{n_1}+\tfrac{1}{n_2}\right)}}$
+            \item $p$-value direction matches $H_a$
+            \item Reject $H_0$ if $p\text{-value} \le \alpha$; fail to reject if $p\text{-value} > \alpha$
+            \item Conclusion: decision + context + $\alpha$ reference
+        \end{itemize}
+    \end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\linewidth}{@{} p{0.26\linewidth} X @{}}
+        \textbf{Two-sample $z$-test statistic} &
+            $z = \dfrac{(\hat p_1-\hat p_2) - 0}{\sqrt{\hat p_c(1-\hat p_c)(1/n_1+1/n_2)}}$ \\
+        \textbf{$p$-value (two-sample)} & Same interpretation as one-sample: probability of a
+            statistic as extreme or more extreme, assuming $H_0$ true \\
+    \end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+    \begin{tabularx}{\linewidth}{@{}X@{}}
+        \begin{minipage}[t]{\linewidth}\vspace{0pt}
+            Please see attached spiral review.\\[2pt]
+            \textit{Skills reviewed:} two-sample test setup ($H_0$, $\hat p_c$, conditions);
+            one-sample $z$-test statistic and $p$-value; conclusion template.
+        \end{minipage}
+    \end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Hook]{sky}
+    \textbf{Continuing the app example.} Remind students: last lesson we set up the test
+    (State + Plan). Today: Do + Conclude. Compute $z$ from $\hat p_c$ and the observed
+    difference, get the $p$-value, and decide. Ask: ``If the $p$-value is 0.04 and $\alpha=0.05$,
+    what do we conclude?''
+\end{skillbox}
+
+\begin{skillbox}[Lesson]{sky}
+    \begin{enumerate}[leftmargin=1.4em, label=\arabic*.]
+        \item \textbf{Test statistic formula.}
+              $z = \dfrac{\hat p_1 - \hat p_2}{\sqrt{\hat p_c(1-\hat p_c)\!\left(\dfrac{1}{n_1}+\dfrac{1}{n_2}\right)}}$.
+              Note: the numerator under $H_0$ is $\hat p_1 - \hat p_2 - 0 = \hat p_1-\hat p_2$.
+
+        \item \textbf{$p$-value direction.}
+              $H_a: p_1>p_2$ $\Rightarrow$ right tail; $H_a: p_1<p_2$ $\Rightarrow$ left tail;
+              $H_a: p_1\ne p_2$ $\Rightarrow$ two tails (double).
+
+        \item \textbf{Worked example.} App: $\hat p_c=0.17$; $\hat p_A-\hat p_B=-0.06$.\\
+              $z = -0.06/\sqrt{0.17(0.83)(1/300+1/300)} = -0.06/0.0307 \approx -1.95$.\\
+              Two-sided $p$-value $= 2\times P(Z<-1.95) \approx 2(0.0256) = 0.051$.\\
+              At $\alpha=0.05$: fail to reject $H_0$.
+
+        \item \textbf{Conclusion template.} ``Since $p\text{-value} = [x] [> / \le] \alpha = [y]$,
+              we [fail to reject / reject] $H_0$. We [do/do not] have convincing evidence
+              that [context: $p_1 \ne p_2$ / $p_1>p_2$ / $p_1<p_2$].''
+    \end{enumerate}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+    \textbf{Watch for:}
+    \begin{itemize}[leftmargin=1.2em]
+        \item Using $\hat p_1$ or $\hat p_2$ in the SE denominator instead of $\hat p_c$
+        \item Wrong tail direction for the $p$-value
+        \item Conclusion without context or without comparing $p$-value to $\alpha$
+    \end{itemize}
+    \textbf{Cold-call:} ``What is the key difference between the SE formula for a two-sample
+    CI and the SE formula for a two-sample test?''
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+    See attached activity. Full four-step procedure for two scenarios.\\[4pt]
+    \textbf{Tier R:} Formula sheet; conclusion template provided.\\
+    \textbf{Tier A:} Full procedure with $z$-table reference.\\
+    \textbf{Tier E:} Extension: compare test conclusion to a 95\% CI for the same data.
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+    \textbf{Exit Ticket:} Complete the \textit{Do} and \textit{Conclude} steps for a scenario
+    already set up (State + Plan given).\\[4pt]
+    \textbf{Look for:} $\hat p_c$ used in denominator; $p$-value direction; complete conclusion.
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+    \textbf{Homework:} Two full four-step tests from start to finish.\\[4pt]
+    \textbf{Preview:} Unit 6 is complete. Begin Unit 7 review and exam prep.
+\end{skillbox}
+\end{document}

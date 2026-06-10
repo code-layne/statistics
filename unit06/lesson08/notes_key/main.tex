@@ -1,0 +1,98 @@
+%! Confidence Intervals for the Difference of Two Proportions — Unit 6, Lesson 6.8 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.8}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{objectivebox}
+\textbf{Lesson 6.8 Objectives:} Construct and interpret a two-sample $z$-interval for the
+difference of two population proportions $p_1 - p_2$. \hfill \textit{UNC-4.I--L, Skills 3.D \& 4.C}
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{two-sample $z$-interval}] A confidence interval for $p_1 - p_2$ based on
+        the point estimate $\hat p_1 - \hat p_2$ and the two-sample standard error.
+  \item[\termblanklong{Large Counts (2-sample)}] All four products must be $\ge 10$:
+        $n_1\hat p_1$, $n_1(1-\hat p_1)$, $n_2\hat p_2$, $n_2(1-\hat p_2)$.
+  \item[\termblanklong{10\% condition (2-sample)}] Each sample must be at most 10\% of its own
+        population.
+\end{description}
+\end{vocabbox}
+
+\begin{notesbox}{From One-Sample to Two-Sample}
+In a one-sample $z$-interval we estimate a \ans{single} proportion $p$.\\[4pt]
+Now we have \textbf{two} unknown proportions and we want to estimate their
+\textbf{difference} $p_1 - p_2$.\\[4pt]
+Point estimate: $\hat p_1 - \hat p_2 = \ans{0.60} - \ans{0.55} = \ans{0.05}$ (using the worked example below)
+\end{notesbox}
+
+\begin{notesbox}{Conditions for a Two-Sample $z$-Interval}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{@{} p{0.22\linewidth} p{0.72\linewidth} @{}}
+\textbf{Random}     & Both samples are independent \ans{random samples} or from independent
+                      randomized experiments. \\
+\textbf{Large Counts} & All \textbf{four} values $\ge 10$: \\
+                    & $n_1\hat p_1 = \ans{120}$, \quad $n_1(1-\hat p_1) = \ans{80}$ \\
+                    & $n_2\hat p_2 = \ans{99}$, \quad $n_2(1-\hat p_2) = \ans{81}$ \\
+\textbf{10\%}       & $n_1 \le \ans{10}$\% of population 1 \textbf{and}
+                      $n_2 \le \ans{10}$\% of population 2 \\
+\end{tabular}
+\end{notesbox}
+
+\begin{notesbox}{Formula}
+\[(\hat p_1 - \hat p_2) \pm z^* \cdot \underbrace{\sqrt{\dfrac{\hat p_1(1-\hat p_1)}{n_1}
+    + \dfrac{\hat p_2(1-\hat p_2)}{n_2}}}_{SE}\]
+\vspace{4pt}
+Critical values: $z^*_{90\%}=1.645$, \quad $z^*_{95\%}=1.960$, \quad $z^*_{99\%}=2.576$
+\end{notesbox}
+
+\begin{notesbox}{Worked Example --- AP Chemistry Plans}
+200 female students: $\hat p_1 = \frac{120}{200} = 0.60$. \quad
+180 male students: $\hat p_2 = \frac{99}{180} = 0.55$. \quad 95\% CI.
+
+\textit{State:} We will construct a 95\% two-sample $z$-interval for $p_F - p_M$, the difference
+in the proportions of female and male students planning to take AP Chemistry.
+
+\textit{Plan --- Conditions:}\\
+\textbf{Random:} \ansline{Both groups were independently and randomly sampled.} \\
+\textbf{Large Counts:} $n_1\hat p_1 = \ans{120}$, $n_1(1-\hat p_1) = \ans{80}$,
+$n_2\hat p_2 = \ans{99}$, $n_2(1-\hat p_2) = \ans{81}$ \quad All $\ge 10$? \ans{Yes}\\
+\textbf{10\%:} \ansline{200 female students $\le10\%$ of all female students; 180 male $\le10\%$ of all male students.} \\[4pt]
+
+\textit{Do:}\\
+$SE = \sqrt{\dfrac{0.60(0.40)}{200}+\dfrac{0.55(0.45)}{180}}
+     = \sqrt{\ans{0.00120}+\ans{0.001375}} = \sqrt{\ans{0.002575}} \approx \ans{0.0507}$ \\[8pt]
+$z^* = \ans{1.960}$ \quad (95\%)\\[4pt]
+$CI = (0.60 - 0.55) \pm \ans{1.960}\times\ans{0.0507} = 0.05 \pm \ans{0.0994}
+    = (\ans{-0.049}, \ans{0.149})$
+
+\textit{Conclude:}\\
+We are 95\% confident that the true difference in the proportions ($p_F - p_M$) of female
+and male students planning to take AP Chemistry is between \ans{$-0.049$} and \ans{$0.149$}.
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Try It:} A random sample of 250 urban residents found 145 own a smartphone.
+A random sample of 200 rural residents found 100 own one.
+Construct a 90\% confidence interval for $p_U - p_R$.
+
+\textit{State:} 90\% two-sample $z$-interval for $p_U - p_R$.
+
+\textit{Plan:} Random: stated. Large Counts: \ans{$145, 105, 100, 100$} — all $\ge10$. 10\%: \ans{assumed}.
+
+\textit{Do:} $\hat p_U = 0.58$, $\hat p_R = 0.50$.\\
+$SE = \sqrt{0.58(0.42)/250 + 0.50(0.50)/200} = \sqrt{0.000974+0.00125} = \sqrt{0.002224} \approx 0.0472$\\
+$CI = (0.58-0.50) \pm 1.645(0.0472) = 0.08 \pm 0.0777 = (\ans{0.002},\ans{0.158})$
+
+\textit{Conclude:} \ansline{We are 90\% confident the true difference in smartphone ownership rates ($p_U - p_R$) is between 0.002 and 0.158.}
+\end{practicebox}
+
+\end{document}

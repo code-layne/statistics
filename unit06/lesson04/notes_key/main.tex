@@ -1,0 +1,88 @@
+%! Setting Up a Test for a Population Proportion — Unit 6, Lesson 6.4 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.4}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{objectivebox}
+Set up a one-sample $z$-test for a population proportion: state hypotheses, verify conditions,
+and compute the test statistic.
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{Null hypothesis} $H_0$] States that \ans{the population proportion equals a specific value $p_0$}. For a proportion test: $H_0: p = $ \ans{$p_0$}
+  \item[\termblanklong{Alternative hypothesis} $H_a$] States that \ans{the population proportion differs from $p_0$}. Chosen \ans{before} seeing data.
+  \item[\termblanklong{Null value} $p_0$] The specific proportion value assumed true under \ans{$H_0$}.
+  \item[\termblanklong{One-sided test}] $H_a: p <$ \ans{$p_0$} or $H_a: p >$ \ans{$p_0$}; used when the research question is \ans{directional}.
+  \item[\termblanklong{Two-sided test}] $H_a: p \ne$ \ans{$p_0$}; used when looking for \ans{any difference from $p_0$}.
+\end{description}
+\end{vocabbox}
+
+\begin{notesbox}{Writing Hypotheses}
+\textbf{Template:} Always state in terms of the \emph{population} parameter $p$ (not $\hat p$).
+
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} p{0.44\linewidth} X @{}}
+  \textbf{Research Question} & \textbf{Hypotheses} \\ \hline
+  Is $p$ greater than some value $p_0$? & $H_0: p = p_0$ \quad $H_a: p >$ \ans{$p_0$} \\
+  Is $p$ less than some value $p_0$?    & $H_0: p = p_0$ \quad $H_a: p <$ \ans{$p_0$} \\
+  Has $p$ changed from $p_0$?           & $H_0: p = p_0$ \quad $H_a: p \ne$ \ans{$p_0$} \\
+\end{tabularx}
+\end{notesbox}
+
+\begin{notesbox}{Conditions for a One-Sample $z$-Test for $p$}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} p{0.22\linewidth} X p{0.22\linewidth} @{}}
+  \textbf{Condition} & \textbf{How to verify} & \textbf{Key difference from CI} \\ \hline
+  Random     & \ans{Data from a random sample or randomized experiment} & Same \\
+  Large Counts & $n\cdot$\ans{$p_0$}$\ge 10$ and $n(1-$\ans{$p_0$}$)\ge 10$ & Use $p_0$, not $\hat p$ \\
+  10\% rule  & \ans{Population $\ge 10n$} & Same \\
+\end{tabularx}
+\end{notesbox}
+
+\begin{notesbox}{Test Statistic}
+\begin{center}
+$z = \dfrac{\hat p - p_0}{\sqrt{\dfrac{p_0(1-p_0)}{n}}}$
+\end{center}
+
+\begin{itemize}
+  \item Numerator: \ans{distance from sample proportion to null value}
+  \item Denominator: \ans{$\sqrt{p_0(1-p_0)/n}$} (standard deviation of $\hat p$ assuming $H_0$ is true)
+  \item Interpretation: \ans{number of standard deviations $\hat p$ is from $p_0$ under $H_0$}
+\end{itemize}
+\end{notesbox}
+
+\begin{notesbox}{Worked Example: Coin Fairness}
+A researcher flips a coin 80 times and gets $\hat p = 0.60$ heads. Test whether the coin is
+unfair.
+
+\textbf{State:} $H_0$: \ans{$p = 0.5$} \quad $H_a$: \ans{$p \ne 0.5$}
+
+\textbf{Plan:} Random (\ans{assumed random}); Large Counts: $80(0.5) = $ \ans{40} $\ge 10$? \ans{Yes};
+$80(0.5) = $ \ans{40} $\ge 10$? \ans{Yes}; 10\% rule: \ans{met}.
+
+\textbf{Do:} $z = \dfrac{0.60 - 0.50}{\sqrt{0.50(0.50)/80}} = \dfrac{0.10}{0.0559} \approx $ \ans{$1.79$}
+\end{notesbox}
+
+\begin{practicebox}
+A nutrition label claims 20\% of adults meet the daily recommended fiber intake. A health
+researcher believes the true proportion is \emph{lower}. She surveys 200 randomly selected
+adults and finds 30 meet the requirement.
+
+\begin{itemize}
+  \item $H_0$: \ans{$p = 0.20$} \quad $H_a$: \ans{$p < 0.20$}
+  \item Large Counts: $200(0.20) = $ \ans{40} $\ge 10$? \ans{Yes} \quad $200(0.80) = $ \ans{160} $\ge 10$? \ans{Yes}
+  \item $\hat p = 30/200 = $ \ans{$0.15$}
+  \item $z = \dfrac{\ans{0.15} - \ans{0.20}}{\sqrt{\ans{0.20(0.80)}/\ans{200}}} = \dfrac{-0.05}{0.0283} \approx $ \ans{$-1.77$}
+\end{itemize}
+\end{practicebox}
+
+\end{document}

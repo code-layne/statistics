@@ -1,0 +1,67 @@
+%! Introducing Statistics: Why Be Normal? — Unit 6, Lesson 6.1 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.1}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.15in}
+
+\begin{scenariobox}[Scenario Cards: Inference or Not?]{sky}
+For each scenario below, your group will: (A) verify or deny the Large Counts condition,
+(B) compute $SE_{\hat p}$ if conditions are met, and (C) identify the appropriate inference
+goal (confidence interval or significance test).
+\end{scenariobox}
+
+\vspace{0.1in}
+
+\textbf{Scenario 1.} A high school randomly selects 80 of its 900 students and finds that
+52 students ($\hat p = 0.65$) prefer block scheduling. The administration wants to estimate
+the true proportion of all students who prefer block scheduling.
+
+\begin{enumerate}[label=\alph*.]
+  \item Large Counts check: $n\hat p = $ \ans{52} \quad $n(1-\hat p) = $ \ans{28} \quad Met? \ans{Yes}
+  \item 10\% rule: $n = 80 \le 10\% \times 900 = 90$? \hfill Met? \ans{Yes}
+  \item $SE_{\hat p} = \sqrt{\hat p(1-\hat p)/n} = $ \ans{$\sqrt{0.65(0.35)/80} \approx 0.0533$}
+  \item Inference goal: \textbf{Confidence Interval} \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+\end{enumerate}
+
+\vspace{0.15in}
+
+\textbf{Scenario 2.} A pediatrician claims that 25\% of children in a community are not
+vaccinated against flu. A public health researcher surveys 120 randomly selected children
+and finds $\hat p = 0.31$ unvaccinated. The researcher wants to know if the true rate
+exceeds 25\%.
+
+\begin{enumerate}[label=\alph*.]
+  \item Large Counts check (use $p_0 = 0.25$): $np_0 = $ \ans{30} \quad $n(1-p_0) = $ \ans{90} \quad Met? \ans{Yes}
+  \item $SE_{\hat p} = \sqrt{\hat p(1-\hat p)/n} = $ \ans{$\sqrt{0.31(0.69)/120} \approx 0.0422$}
+  \item Inference goal: \textbf{Significance Test} \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item Write the research question as an inequality about $p$: \ansline{$H_a{:}\; p > 0.25$ (the true proportion of unvaccinated children exceeds 25\%)}
+\end{enumerate}
+
+\vspace{0.15in}
+
+\textbf{Scenario 3.} A tech company surveys a random sample of 200 users and finds
+$\hat p = 0.48$ are satisfied with a new feature. The marketing team wants to report
+a plausible range for the true satisfaction rate to company leadership.
+
+\begin{enumerate}[label=\alph*.]
+  \item Large Counts check: $n\hat p = $ \ans{96} \quad $n(1-\hat p) = $ \ans{104} \quad Met? \ans{Yes}
+  \item $SE_{\hat p} = $ \ans{$\sqrt{0.48(0.52)/200} \approx 0.0353$}
+  \item Inference goal: \textbf{Confidence Interval} \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+\end{enumerate}
+
+\vspace{0.15in}
+
+\begin{reflectionbox}
+\textbf{Wrap-Up Discussion.} How does knowing $SE_{\hat p}$ help you understand how
+precise your estimate of $p$ will be? What happens to $SE_{\hat p}$ as $n$ increases?
+\ansline{A smaller $SE_{\hat p}$ means the sample proportion is more likely to be close to $p$, giving a more precise estimate. As $n$ increases, $SE_{\hat p} = \sqrt{p(1-p)/n}$ decreases (the interval narrows).}
+\end{reflectionbox}
+
+\end{document}

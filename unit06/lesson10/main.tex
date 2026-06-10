@@ -1,0 +1,114 @@
+%! Setting Up a Test for the Difference of Two Population Proportions — Unit 6, Lesson 6.10 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\UnitNumberName}{Unit 6: Inference for Categorical Data: Proportions \quad}
+\newcommand{\LessonNumberName}{Lesson 6.10: Setting Up a Test for the Difference of Two Population Proportions}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will set up a two-sample $z$-test for the
+    difference of two population proportions, including stating hypotheses and verifying conditions
+    using the pooled proportion $\hat p_c$. (Big Idea: VAR)
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+    \begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+        \textbf{AP Skills}
+        \begin{itemize}[leftmargin=1.2em]
+            \item \textbf{1.E} --- State $H_0$ and $H_a$ for two proportions
+            \item \textbf{4.C} --- Verify conditions using $\hat p_c$
+        \end{itemize}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+        \textbf{Key Understandings (VAR-6.H--J)}
+        \begin{itemize}[leftmargin=1.2em]
+            \item $H_0: p_1 = p_2$ (equivalently $p_1 - p_2 = 0$)
+            \item $H_a$: $p_1>p_2$, $p_1<p_2$, or $p_1\ne p_2$
+            \item $\hat p_c = \dfrac{n_1\hat p_1 + n_2\hat p_2}{n_1+n_2}$
+            \item Large Counts: $n_i\hat p_c \ge 10$ and $n_i(1-\hat p_c)\ge 10$ (four values)
+        \end{itemize}
+    \end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\linewidth}{@{} p{0.26\linewidth} X @{}}
+        \textbf{Pooled proportion} & $\hat p_c = \dfrac{n_1\hat p_1 + n_2\hat p_2}{n_1+n_2}$; the combined success count divided by combined sample size; used for Large Counts under $H_0: p_1=p_2$ \\
+        \textbf{Two-sided test} & $H_a: p_1 \ne p_2$; reject when $p$-value $\le\alpha$ \\
+        \textbf{One-sided test} & $H_a: p_1>p_2$ or $p_1<p_2$ \\
+    \end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+    \begin{tabularx}{\linewidth}{@{}X@{}}
+        \begin{minipage}[t]{\linewidth}\vspace{0pt}
+            Please see attached spiral review.\\[2pt]
+            \textit{Skills reviewed:} one-sample $z$-test setup ($H_0$, $H_a$, Large Counts
+            using $p_0$); two-sample CI conditions review.
+        \end{minipage}
+    \end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Hook]{sky}
+    \textbf{``Did the new app reduce errors equally for both groups?''} \\[3pt]
+    Group A (new app): 42 errors in 300 tasks. Group B (old app): 60 errors in 300 tasks.
+    Ask: ``How would we test whether the error rates truly differ? What's our null hypothesis?''
+    Connect: under $H_0$, we pool data because we assume $p_1=p_2$.
+\end{skillbox}
+
+\begin{skillbox}[Lesson]{sky}
+    \begin{enumerate}[leftmargin=1.4em, label=\arabic*.]
+        \item \textbf{Hypotheses.} $H_0: p_1 = p_2$ (or equivalently $p_1-p_2=0$).
+              $H_a$ is one of: $p_1>p_2$, $p_1<p_2$, $p_1\ne p_2$.
+
+        \item \textbf{Pooled proportion.} Under $H_0$ both groups share the same $p$,
+              so we pool: $\hat p_c = \dfrac{n_1\hat p_1 + n_2\hat p_2}{n_1+n_2}$.
+              Key: use $\hat p_c$ --- not $\hat p_1$ or $\hat p_2$ --- for Large Counts.
+
+        \item \textbf{Conditions.} Random (both samples), Large Counts (all four products with $\hat p_c \ge 10$), 10\% (each sample).
+
+        \item \textbf{Example.} App data: $\hat p_c = (42+60)/(300+300) = 102/600 = 0.17$.
+              Large Counts: $300(0.17)=51 \ge 10$, $300(0.83)=249 \ge 10$ (same for both groups).
+    \end{enumerate}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+    \textbf{Watch for:}
+    \begin{itemize}[leftmargin=1.2em]
+        \item Using $\hat p_1$ or $\hat p_2$ for Large Counts (should use $\hat p_c$)
+        \item Writing $H_0: p_1 - p_2 = 0$ without connecting to $p_1=p_2$
+        \item Confusing pooling (tests) with non-pooling (CIs)
+    \end{itemize}
+    \textbf{Cold-call:} ``Why do we use $\hat p_c$ for Large Counts in a test but $\hat p_1$
+    and $\hat p_2$ in a CI?''
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+    See attached activity. Students state hypotheses and verify conditions for two scenarios.\\[4pt]
+    \textbf{Tier R:} Pooled proportion formula provided; Large Counts table scaffolded.\\
+    \textbf{Tier A:} Full setup (State + Plan).\\
+    \textbf{Tier E:} Extension: when would using $\hat p_1$ instead of $\hat p_c$ matter most?
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+    \textbf{Exit Ticket:} Given a scenario, write $H_0$/$H_a$, compute $\hat p_c$, and verify
+    conditions.\\[4pt]
+    \textbf{Look for:} Correct hypothesis form; $\hat p_c$ formula applied correctly; all four Large Counts checked.
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+    \textbf{Homework:} Two full State + Plan problems.\\[4pt]
+    \textbf{Preview:} Lesson 6.11 completes the test: compute $z$, find $p$-value, conclude.
+\end{skillbox}
+\end{document}

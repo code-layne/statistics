@@ -1,0 +1,89 @@
+%! Confidence Intervals for the Difference of Two Proportions — Unit 6, Lesson 6.8 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.8}{Guided Notes}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{objectivebox}
+\textbf{Lesson 6.8 Objectives:} Construct and interpret a two-sample $z$-interval for the
+difference of two population proportions $p_1 - p_2$. \hfill \textit{UNC-4.I--L, Skills 3.D \& 4.C}
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{two-sample $z$-interval}] A confidence interval for $p_1 - p_2$ based on
+        the point estimate $\hat p_1 - \hat p_2$ and the two-sample standard error.
+  \item[\termblanklong{Large Counts (2-sample)}] All four products must be $\ge 10$:
+        $n_1\hat p_1$, $n_1(1-\hat p_1)$, $n_2\hat p_2$, $n_2(1-\hat p_2)$.
+  \item[\termblanklong{10\% condition (2-sample)}] Each sample must be at most 10\% of its own
+        population.
+\end{description}
+\end{vocabbox}
+
+\begin{notesbox}{From One-Sample to Two-Sample}
+In a one-sample $z$-interval we estimate a \blank{4cm} proportion $p$.\\[4pt]
+Now we have \textbf{two} unknown proportions and we want to estimate their
+\textbf{difference} $p_1 - p_2$.\\[4pt]
+Point estimate: $\hat p_1 - \hat p_2 = $ \blank{3cm}$- $\blank{3cm} $=$ \blank{3cm}
+\end{notesbox}
+
+\begin{notesbox}{Conditions for a Two-Sample $z$-Interval}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{@{} p{0.22\linewidth} p{0.72\linewidth} @{}}
+\textbf{Random}     & Both samples are independent \blank{4cm} or from independent
+                      randomized experiments. \\
+\textbf{Large Counts} & All \textbf{four} values $\ge 10$: \\
+                    & $n_1\hat p_1 = $ \blank{2cm}, \quad $n_1(1-\hat p_1) = $ \blank{2cm} \\
+                    & $n_2\hat p_2 = $ \blank{2cm}, \quad $n_2(1-\hat p_2) = $ \blank{2cm} \\
+\textbf{10\%}       & $n_1 \le $ \blank{2cm}\% of population 1 \textbf{and}
+                      $n_2 \le $ \blank{2cm}\% of population 2 \\
+\end{tabular}
+\end{notesbox}
+
+\begin{notesbox}{Formula}
+\[(\hat p_1 - \hat p_2) \pm z^* \cdot \underbrace{\sqrt{\dfrac{\hat p_1(1-\hat p_1)}{n_1}
+    + \dfrac{\hat p_2(1-\hat p_2)}{n_2}}}_{SE}\]
+\vspace{4pt}
+Critical values: $z^*_{90\%}=1.645$, \quad $z^*_{95\%}=1.960$, \quad $z^*_{99\%}=2.576$
+\end{notesbox}
+
+\begin{notesbox}{Worked Example --- AP Chemistry Plans}
+200 female students: $\hat p_1 = \frac{120}{200} = 0.60$. \quad
+180 male students: $\hat p_2 = \frac{99}{180} = 0.55$. \quad 95\% CI.
+
+\textit{State:} We will construct a 95\% two-sample $z$-interval for $p_F - p_M$, the difference
+in the proportions of female and male students planning to take AP Chemistry.
+
+\textit{Plan --- Conditions:}\\
+\textbf{Random:} \blank{7cm} \\
+\textbf{Large Counts:} $n_1\hat p_1 = $ \blank{2cm}, $n_1(1-\hat p_1) = $ \blank{2cm},
+$n_2\hat p_2 = $ \blank{2cm}, $n_2(1-\hat p_2) = $ \blank{2cm} \quad All $\ge 10$? \blank{1.5cm}\\
+\textbf{10\%:} \blank{7cm} \\[4pt]
+
+\textit{Do:}\\
+$SE = \sqrt{\dfrac{0.60(0.40)}{200}+\dfrac{0.55(0.45)}{180}}
+     = \sqrt{\blank{3cm}+\blank{3cm}} = \sqrt{\blank{3cm}} \approx $ \blank{2cm} \\[8pt]
+$z^* = $ \blank{1.5cm} \quad (95\%)\\[4pt]
+$CI = (0.60 - 0.55) \pm \blank{1.5cm}\times\blank{2cm} = 0.05 \pm \blank{2cm}
+    = ($ \blank{2.5cm}$,$ \blank{2.5cm}$)$
+
+\textit{Conclude:}\\
+We are 95\% confident that the true difference in the proportions ($p_F - p_M$) of female
+and male students planning to take AP Chemistry is between \blank{2cm} and \blank{2cm}.
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Try It:} A random sample of 250 urban residents found 145 own a smartphone.
+A random sample of 200 rural residents found 100 own one.
+Construct a 90\% confidence interval for $p_U - p_R$.
+\writelines{6}
+\end{practicebox}
+
+\end{document}

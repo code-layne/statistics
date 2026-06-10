@@ -1,0 +1,140 @@
+%! Justifying a Claim Based on a Confidence Interval for a Population Proportion — Unit 6, Lesson 6.3 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\UnitNumberName}{Unit 6: Inference for Categorical Data: Proportions \quad}
+\newcommand{\LessonNumberName}{Lesson 6.3: Justifying a Claim Based on a Confidence Interval for a Population Proportion}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will interpret confidence intervals for population
+    proportions, describe the meaning of the confidence level, and use confidence intervals
+    to evaluate claims about a parameter (Big Idea: UNC).
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+    \begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+        \textbf{AP Skills}
+        \begin{itemize}[leftmargin=1.2em]
+            \item \textbf{4.B} --- Interpret statistical results in context
+            \item \textbf{4.E} --- Justify a claim using a confidence interval
+        \end{itemize}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+        \textbf{Key Understandings (UNC-4.F--H)}
+        \begin{itemize}[leftmargin=1.2em]
+            \item A confidence interval interpretation must reference the parameter, the interval bounds, and the confidence level
+            \item ``95\% confident'' means the procedure produces intervals that capture $p$ 95\% of the time in repeated sampling, \textit{not} that this interval has a 95\% probability of containing $p$
+            \item A CI can be used to evaluate a claim: if the claimed value falls \emph{outside} the interval, the data provide evidence against the claim
+            \item Wider intervals result from higher confidence levels or smaller sample sizes
+        \end{itemize}
+    \end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\linewidth}{@{} p{0.28\linewidth} X @{}}
+        \textbf{Plausible value}   & A value consistent with the data; falls inside the confidence interval \\
+        \textbf{Not plausible}     & A claimed value that falls outside the CI; the data provide evidence against it \\
+        \textbf{Width of a CI}     & $2 \times ME = 2z^*\sqrt{\hat p(1-\hat p)/n}$; decreases with larger $n$, increases with larger $C$ \\
+        \textbf{Coverage rate}     & The proportion of all possible intervals (from repeated sampling) that capture the true parameter \\
+    \end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+    \begin{tabularx}{\linewidth}{@{}X@{}}
+        \begin{minipage}[t]{\linewidth}\vspace{0pt}
+            Please see attached spiral review.\\[2pt]
+            \textit{Skills reviewed:} constructing a one-sample $z$-interval (full procedure);
+            identifying critical values $z^*$; verifying conditions; margin of error calculation.
+        \end{minipage}
+    \end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Hook]{sky}
+    \textbf{``Did the pollster lie?''} \\[3pt]
+    Display a news headline: \textit{``Poll: 48\% of likely voters prefer Candidate A
+    (margin of error $\pm$3\%, 95\% confidence).''} Ask: \textit{``A campaign manager says
+    `our candidate has majority support.' Based on this headline alone, is that claim
+    supported?''} After pair-share: \textit{``Today we learn exactly how to answer this
+    question --- using a confidence interval to evaluate a claim.''}
+\end{skillbox}
+
+\begin{skillbox}[Lesson]{sky}
+    \begin{enumerate}[leftmargin=1.4em, label=\arabic*.]
+        \item \textbf{What ``confidence'' really means.} Simulation: show 20 intervals from
+              repeated samples (use a pre-made image or class simulation). About 19 of 20 contain
+              the true $p$ --- that is what 95\% means. The \emph{procedure} is 95\% reliable;
+              this particular interval either does or doesn't contain $p$.
+
+        \item \textbf{Correct interpretation script.} Emphasize three required elements:
+              (a)~confidence level, (b)~interval bounds with units, (c)~parameter in plain language.
+              \textit{``We are 95\% confident that the interval from [lower] to [upper] captures
+              the true proportion of [population and characteristic].''}
+              Contrast with the two classic errors: (i)~``there is a 95\% probability that $p$
+              lies in this interval'' and (ii)~``95\% of all data values fall in this interval.''
+
+        \item \textbf{Using a CI to evaluate a claim.}
+              Rule: if the claimed value $p_0$ lies \emph{outside} the interval, the data provide
+              evidence against the claim at the corresponding significance level. If $p_0$ falls
+              \emph{inside}, the claim is plausible (not proven). Apply to the headline: CI is
+              $(0.45, 0.51)$ --- the value 0.50 is inside, so majority support is plausible but
+              not established.
+
+        \item \textbf{Effect of $n$ and $C$ on width.} Hold $\hat p$ fixed; show how increasing
+              $n$ by factor 4 halves the width. Increasing $C$ from 95\% to 99\% widens the
+              interval --- a precision--confidence trade-off.
+    \end{enumerate}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+    \textbf{Watch for:}
+    \begin{itemize}[leftmargin=1.2em]
+        \item Probability language in interpretations: ``the probability that $p$ is in the
+              interval'' --- redirect to ``the procedure captures $p$ 95\% of the time''
+        \item Claiming a CI ``proves'' a value rather than deems it ``plausible''
+        \item Evaluating a claim with ``greater than'' logic when the CI straddles 0.5
+        \item Confusing ``95\% of data'' with ``95\% of intervals''
+    \end{itemize}
+    \textbf{Cold-call:} ``If I repeat this study 200 times with different samples, how many of
+    my 95\% CIs would you expect to contain the true $p$?''
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+    See attached group activity. Groups receive three inference scenarios, each with a
+    computed CI; they interpret the interval, evaluate a given claim, and explain what
+    changes if the confidence level or sample size changes.\\[4pt]
+    \textbf{Tier R:} Interpretation sentence frame provided; focus on claim evaluation. \\
+    \textbf{Tier A:} Full interpretation + claim evaluation + one width-change question. \\
+    \textbf{Tier E:} Extension asks how the interpretation changes if conditions are barely
+    met vs.\ comfortably met.
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+    \textbf{Exit Ticket:} Given a computed 90\% CI for a proportion, students write a
+    correct interpretation, evaluate a researcher's claim that $p > 0.6$, and explain what
+    ``90\% confident'' means about the procedure. \\[4pt]
+    \textbf{Look for:} All three interpretation elements present; correct claim language;
+    no probability error.
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+    \textbf{Homework:} Three CI scenarios requiring interpretation and claim evaluation;
+    one question on the effect of changing $n$ or $C$ on width. \\[4pt]
+    \textbf{Extension:} Explain why a 95\% CI gives ``weaker'' evidence against a claim
+    than a 99\% CI for the same data. \\[4pt]
+    \textbf{Preview:} Lesson 6.4 introduces hypothesis testing for proportions --- the
+    formal procedure when we want to decide whether data support or refute a specific claim
+    about $p$.
+\end{skillbox}
+\end{document}

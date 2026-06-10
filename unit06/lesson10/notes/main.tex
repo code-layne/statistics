@@ -1,0 +1,74 @@
+%! Setting Up a Test for the Difference of Two Population Proportions — Unit 6, Lesson 6.10 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.10}{Guided Notes}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{objectivebox}
+\textbf{Lesson 6.10 Objectives:} Set up a two-sample $z$-test for the difference of two population
+proportions: state hypotheses, compute $\hat p_c$, and verify conditions. \hfill \textit{VAR-6.H--J, Skills 1.E \& 4.C}
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{pooled proportion ($\hat p_c$)}]
+        The combined success proportion under $H_0: p_1=p_2$:
+        $\hat p_c = \dfrac{n_1\hat p_1 + n_2\hat p_2}{n_1+n_2}$. Used for Large Counts in a two-sample test.
+\end{description}
+\end{vocabbox}
+
+\begin{notesbox}{Hypotheses}
+$H_0$: \blank{6cm} \quad ($p_1 - p_2 = $ \blank{1.5cm})\\[6pt]
+$H_a$ (choose one): \quad
+$p_1 \blank{1cm} p_2$ \quad or \quad $p_1 \blank{1cm} p_2$ \quad or \quad $p_1 \blank{1cm} p_2$
+\end{notesbox}
+
+\begin{notesbox}{Pooled Proportion}
+Under $H_0: p_1=p_2$, both groups share one unknown proportion. We estimate it by pooling:
+\[\hat p_c = \frac{n_1\hat p_1 + n_2\hat p_2}{n_1+n_2}
+           = \frac{\text{\blank{4cm}}}{\text{\blank{3cm}}}\]
+Use $\hat p_c$ (not $\hat p_1$ or $\hat p_2$) for the \textbf{Large Counts} condition.
+\end{notesbox}
+
+\begin{notesbox}{Conditions}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{@{} p{0.22\linewidth} p{0.72\linewidth} @{}}
+\textbf{Random}     & \blank{8cm} \\
+\textbf{Large Counts} & All four values $\ge 10$: \\
+                    & $n_1\hat p_c = $ \blank{2.5cm}, \quad $n_1(1-\hat p_c) = $ \blank{2.5cm} \\
+                    & $n_2\hat p_c = $ \blank{2.5cm}, \quad $n_2(1-\hat p_c) = $ \blank{2.5cm} \\
+\textbf{10\%}       & $n_1 \le 10\%$ of pop.\ 1 \textbf{and} $n_2 \le 10\%$ of pop.\ 2 \\
+\end{tabular}
+\end{notesbox}
+
+\begin{notesbox}{Worked Example --- App Error Rates}
+Group A (new app): 42 errors in 300 tasks. Group B (old app): 60 errors in 300 tasks.
+Test at $\alpha=0.05$: do the error rates differ?
+
+\textit{State:} $H_0$: \blank{6cm}; $H_a$: \blank{6cm}
+
+\textit{Plan:} $\hat p_A = $ \blank{2cm}, $\hat p_B = $ \blank{2cm}. \quad
+$\hat p_c = \dfrac{\blank{3cm}}{\blank{2cm}} = $ \blank{2cm}
+
+\textbf{Random:} \blank{6cm} \\
+\textbf{Large Counts:} $300(\blank{2cm}) = $ \blank{2cm}, $300(1-\blank{2cm}) = $ \blank{2cm} \quad (same for both groups).\\
+\textbf{10\%:} \blank{6cm}
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Try It:} Researchers compare pass rates for a certification exam between two training
+programs. Program 1: 56 of 80 passed. Program 2: 44 of 80 passed.
+Is there evidence that the pass rates differ ($\alpha=0.05$)?
+
+State $H_0$ and $H_a$, compute $\hat p_c$, and verify conditions.
+\writelines{5}
+\end{practicebox}
+
+\end{document}

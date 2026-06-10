@@ -1,0 +1,129 @@
+%! Potential Errors When Performing Tests — Unit 6, Lesson 6.7 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\UnitNumberName}{Unit 6: Inference for Categorical Data: Proportions \quad}
+\newcommand{\LessonNumberName}{Lesson 6.7: Potential Errors When Performing Tests}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will define Type I and Type II errors in context,
+    explain how each is related to $\alpha$ and power, and describe factors that increase
+    the power of a hypothesis test (Big Idea: UNC).
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+    \begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+        \textbf{AP Skills}
+        \begin{itemize}[leftmargin=1.2em]
+            \item \textbf{4.B} --- Interpret Type I and II errors in context
+            \item \textbf{4.E} --- Describe consequences of errors and factors affecting power
+        \end{itemize}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+        \textbf{Key Understandings (UNC-5.A--D)}
+        \begin{itemize}[leftmargin=1.2em]
+            \item Type I error: rejecting $H_0$ when it is actually true; $P(\text{Type I}) = \alpha$
+            \item Type II error: failing to reject $H_0$ when it is actually false; $P(\text{Type II}) = \beta$
+            \item Power $= 1 - \beta = P(\text{reject } H_0 \mid H_a \text{ true})$
+            \item Power increases with: larger $n$, larger $\alpha$, larger true effect size (distance between $p_0$ and true $p$)
+        \end{itemize}
+    \end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\linewidth}{@{} p{0.24\linewidth} X @{}}
+        \textbf{Type I error}  & Rejecting $H_0$ when $H_0$ is true; a ``false positive''; $P = \alpha$ \\
+        \textbf{Type II error} & Failing to reject $H_0$ when $H_a$ is true; a ``false negative''; $P = \beta$ \\
+        \textbf{Power}         & $1-\beta$; probability of correctly rejecting $H_0$ when $H_a$ is true \\
+        \textbf{Trade-off}     & Decreasing $\alpha$ reduces Type I error but increases Type II error (lower power) \\
+    \end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+    \begin{tabularx}{\linewidth}{@{}X@{}}
+        \begin{minipage}[t]{\linewidth}\vspace{0pt}
+            Please see attached spiral review.\\[2pt]
+            \textit{Skills reviewed:} reject/fail-to-reject decisions; $\alpha$ and $p$-value comparison;
+            writing conclusions in context.
+        \end{minipage}
+    \end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Hook]{sky}
+    \textbf{``Fire alarm or false alarm?''} \\[3pt]
+    Display the 2×2 table: ``Fire alarm goes off'' vs.\ ``There is/is not a fire.'' Map to
+    hypothesis testing: Type I error = fire alarm when no fire (annoying but safe); Type II
+    error = no alarm when there is a fire (dangerous). Ask: \textit{``In a medical test for
+    cancer, which error is more costly? Does it depend on the consequence?''}
+\end{skillbox}
+
+\begin{skillbox}[Lesson]{sky}
+    \begin{enumerate}[leftmargin=1.4em, label=\arabic*.]
+        \item \textbf{The 2×2 error table.} Draw the table: rows = true state ($H_0$ true or $H_a$ true);
+              columns = decision (reject or fail to reject). Fill in: correct rejection, correct fail-to-reject,
+              Type I error, Type II error. $P(\text{Type I}) = \alpha$.
+
+        \item \textbf{Contextual interpretation.} Students must describe errors in context, not just
+              in abstract terms. Example: ``A Type I error would mean concluding the new drug is
+              effective when it actually isn't.''
+
+        \item \textbf{Power.} Power $= 1-\beta$. Higher power = more sensitive test. Show: if
+              the true proportion is far from $p_0$, power is higher; if close, power is lower.
+
+        \item \textbf{Factors increasing power.}
+              \begin{itemize}
+                  \item Larger $n$ (reduces $\sigma_{\hat p}$, easier to detect effect)
+                  \item Larger $\alpha$ (easier to reject, but more Type I errors)
+                  \item Larger true effect (further $p$ is from $p_0$)
+              \end{itemize}
+              Trade-off: reducing Type I error (smaller $\alpha$) reduces power (increases Type II).
+
+        \item \textbf{Choosing $\alpha$ in practice.} Medical/safety contexts: use $\alpha=0.01$ to
+              minimize false positives. Exploratory research: $\alpha=0.10$ acceptable.
+    \end{enumerate}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+    \textbf{Watch for:}
+    \begin{itemize}[leftmargin=1.2em]
+        \item Confusing which error is which (mnemonic: Type I = false \textbf{I}ndictment)
+        \item Generic descriptions not in context
+        \item Claiming ``power is the probability $H_a$ is true'' --- it's the probability of detecting $H_a$
+    \end{itemize}
+    \textbf{Cold-call:} ``If we lower $\alpha$ from 0.05 to 0.01, what happens to the power of the test?''
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+    See attached activity. Groups analyze scenarios, describe errors in context, and evaluate
+    how sample size affects power.\\[4pt]
+    \textbf{Tier R:} Completed 2×2 table; focus on contextual interpretation.\\
+    \textbf{Tier A:} Full analysis of errors and power.\\
+    \textbf{Tier E:} Extension: for a given scenario, estimate the effect on power if $n$ quadruples.
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+    \textbf{Exit Ticket:} Given a scenario with a specific context, students describe both types of
+    error and identify which is more serious and why.\\[4pt]
+    \textbf{Look for:} Errors stated in context; correct identification of more-serious error with justification.
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+    \textbf{Homework:} Contextual error descriptions for three scenarios; one power question.\\[4pt]
+    \textbf{Extension:} Why would a researcher prefer a two-sided test even when they suspect
+    the direction? Discuss the impact on power. \\[4pt]
+    \textbf{Preview:} Lesson 6.8 begins the two-sample inference procedures, starting with the
+    two-sample $z$-interval for $p_1 - p_2$.
+\end{skillbox}
+\end{document}

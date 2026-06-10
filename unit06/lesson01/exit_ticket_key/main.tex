@@ -1,0 +1,37 @@
+%! Introducing Statistics: Why Be Normal? — Unit 6, Lesson 6.1 — Exit Ticket (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 6, Lesson 6.1}{Exit Ticket --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+\begin{enumerate}
+  \item A random sample of 200 students finds that 128 ($\hat p = 0.64$) use school
+        transportation. The principal wants to estimate the true proportion of all
+        students at the school who use school transportation.
+
+        \begin{enumerate}[label=\alph*.]
+          \item Is this a confidence interval or a significance test situation? Explain.
+                \ansline{Confidence interval --- the goal is to estimate the unknown proportion $p$, not to test a specific claimed value.}
+
+          \item Verify the Large Counts condition.
+                \ansline{$n\hat p = 200(0.64) = 128 \ge 10$ \checkmark \quad $n(1-\hat p) = 200(0.36) = 72 \ge 10$ \checkmark \quad Condition met.}
+
+          \item Calculate $SE_{\hat p}$. Show your work.
+
+                $SE_{\hat p} = \sqrt{\dfrac{\hat p(1-\hat p)}{n}} = $ \ans{$\sqrt{0.64(0.36)/200} \approx 0.0339$}
+        \end{enumerate}
+
+  \item The appropriate inference procedure when the research goal is to estimate an
+        unknown population proportion is called a \ans{confidence interval}.
+        The appropriate procedure when testing a specific claimed value of $p$ is
+        called a \ans{significance test (hypothesis test)}.
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,122 @@
+%! Confidence Intervals for the Difference of Two Proportions — Unit 6, Lesson 6.8 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\UnitNumberName}{Unit 6: Inference for Categorical Data: Proportions \quad}
+\newcommand{\LessonNumberName}{Lesson 6.8: Confidence Intervals for the Difference of Two Proportions}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will construct a two-sample $z$-interval for the
+    difference of two population proportions $p_1 - p_2$, verifying conditions including the
+    Large Counts condition for each group (Big Idea: UNC).
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+    \begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+        \textbf{AP Skills}
+        \begin{itemize}[leftmargin=1.2em]
+            \item \textbf{3.D} --- Calculate a two-sample $z$-interval for $p_1 - p_2$
+            \item \textbf{4.C} --- Verify conditions for two-sample inference
+        \end{itemize}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.48\linewidth}\vspace{0pt}
+        \textbf{Key Understandings (UNC-4.I--L)}
+        \begin{itemize}[leftmargin=1.2em]
+            \item Point estimate: $\hat p_1 - \hat p_2$
+            \item Large Counts: $n_1\hat p_1$, $n_1(1-\hat p_1)$, $n_2\hat p_2$, $n_2(1-\hat p_2)$ all $\ge 10$
+            \item $SE = \sqrt{\dfrac{\hat p_1(1-\hat p_1)}{n_1} + \dfrac{\hat p_2(1-\hat p_2)}{n_2}}$
+            \item Interval: $(\hat p_1-\hat p_2) \pm z^*\cdot SE$
+        \end{itemize}
+    \end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabularx}{\linewidth}{@{} p{0.26\linewidth} X @{}}
+        \textbf{Two-sample $z$-interval} & CI for $p_1-p_2$; uses $\hat p_1-\hat p_2 \pm z^*SE$ \\
+        \textbf{Large Counts (2-sample)} & Four products must all be $\ge 10$: $n_1\hat p_1$, $n_1(1-\hat p_1)$, $n_2\hat p_2$, $n_2(1-\hat p_2)$ \\
+        \textbf{10\% condition (2-sample)} & Each sample $\le 10\%$ of its respective population \\
+        \textbf{Random (2-sample)} & Both samples are independent random samples or from randomized experiments \\
+    \end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+    \begin{tabularx}{\linewidth}{@{}X@{}}
+        \begin{minipage}[t]{\linewidth}\vspace{0pt}
+            Please see attached spiral review.\\[2pt]
+            \textit{Skills reviewed:} one-sample $z$-interval procedure; Large Counts condition;
+            interpreting a confidence interval; $SE$ formula for a single proportion.
+        \end{minipage}
+    \end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Hook]{sky}
+    \textbf{``Girls vs.\ boys in AP classes.''} \\[3pt]
+    Present: a random sample of 200 female students found 120 plan to take AP Chemistry.
+    A random sample of 180 male students found 99 plan to take it. Ask: ``Do these two
+    proportions differ? By how much? And how confident are we?'' Connect to the two-sample
+    CI as the tool for comparing proportions between groups.
+\end{skillbox}
+
+\begin{skillbox}[Lesson]{sky}
+    \begin{enumerate}[leftmargin=1.4em, label=\arabic*.]
+        \item \textbf{Transition from one-sample to two-sample.} Now $p_1$ and $p_2$ are both
+              unknown. We estimate $p_1 - p_2$ with $\hat p_1 - \hat p_2$.
+
+        \item \textbf{Three conditions} (apply to each group):
+              Random (independent samples), Large Counts ($n_i\hat p_i \ge 10$ and $n_i(1-\hat p_i) \ge 10$,
+              four values total), 10\% (each sample $\le 10\%$ of its population).
+
+        \item \textbf{Formula.}
+              $SE = \sqrt{\dfrac{\hat p_1(1-\hat p_1)}{n_1} + \dfrac{\hat p_2(1-\hat p_2)}{n_2}}$
+              Interval: $(\hat p_1 - \hat p_2) \pm z^* \cdot SE$
+
+        \item \textbf{Worked example.} AP Chemistry: $\hat p_1=0.60$, $n_1=200$; $\hat p_2=0.55$, $n_2=180$.
+              95\% CI: $SE \approx 0.0502$; CI $= 0.05 \pm 0.098 = (-0.048, 0.148)$.
+
+        \item \textbf{Interpretation.} Always include: ``the difference $p_1 - p_2$,'' both
+              population descriptions, and the confidence level.
+    \end{enumerate}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+    \textbf{Watch for:}
+    \begin{itemize}[leftmargin=1.2em]
+        \item Checking only two Large Counts values instead of all four
+        \item Adding $SE^2$ values without taking a square root
+        \item Interpreting the CI as the probability that $p_1=p_2$
+        \item Using the pooled formula (that's for hypothesis tests, not CIs)
+    \end{itemize}
+    \textbf{Cold-call:} ``If the 95\% CI for $p_1-p_2$ is $(-0.05, 0.15)$, can we conclude
+    the two proportions differ?''
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+    See attached activity. Groups verify conditions, compute the CI, and interpret.\\[4pt]
+    \textbf{Tier R:} Formula sheet provided; Large Counts checklist with four slots.\\
+    \textbf{Tier A:} Full procedure.\\
+    \textbf{Tier E:} Extension: what changes when $n_1 \ne n_2$?
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+    \textbf{Exit Ticket:} Single two-sample CI problem from State through Conclude.\\[4pt]
+    \textbf{Look for:} All four Large Counts verified; SE computed correctly; complete interpretation.
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+    \textbf{Homework:} Two two-sample CI problems from start to finish.\\[4pt]
+    \textbf{Preview:} Lesson 6.9 focuses on interpreting two-sample CIs --- especially what it
+    means when the interval contains 0 vs.\ when it doesn't.
+\end{skillbox}
+\end{document}
