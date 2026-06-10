@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.5 — Guided Notes (Answer Key)
+%! Carrying Out a Test for a Population Mean — Unit 7, Lesson 7.5 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
@@ -11,9 +11,104 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+  \item \ansline{Calculate the $t$-statistic and find the $p$-value for a one-sample or matched-pairs $t$-test.}
+  \item \ansline{Interpret the $p$-value in context, referencing $H_0$ being true.}
+  \item \ansline{Compare $p$ to $\alpha$ and write a complete conclusion in context.}
+\end{itemize}
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{$t$-statistic}]
+        $t = \dfrac{\bar x - \mu_0}{{\color{keyred}\mathbf{s/\sqrt{n}}}}$ \quad with $df = $ \ans{$n-1$}. \quad
+        Measures distance of $\bar x$ from $\mu_0$ in \ans{standard error} units.
+  \item[\termblanklong{Standard error of $\bar x$}]
+        $SE_{\bar x} = \dfrac{s}{\sqrt{n}}$\,. \quad Estimates ${\color{keyred}\boldsymbol{\sigma_{\bar x}}}$ when $\sigma$ is unknown.
+  \item[\termblanklong{$p$-value}]
+        Probability of observing a $t$-statistic as \ans{extreme (or more extreme) as the one computed},
+        \emph{assuming \ans{$H_0$} is true}.
+  \item[\termblanklong{Significance level ($\alpha$)}]
+        The threshold for rejection; typically \ans{0.05} unless stated otherwise.
+\end{description}
+\end{vocabbox}
+
+\begin{notesbox}{Do: Compute the $t$-Statistic}
+\begin{center}
+  $t = \dfrac{\bar x - \mu_0}{s / \sqrt{n}}$
+\end{center}
+
+\begin{itemize}
+  \item Numerator $(\bar x - \mu_0)$: \ans{how far the sample mean is from the null value}
+  \item Denominator $(s/\sqrt{n})$: the \ans{standard error} of $\bar x$ (standard error)
+\end{itemize}
+
+\medskip
+\textbf{Worked Example: Cereal Boxes.}
+$H_0: \mu = 18$, $H_a: \mu < 18$, $n = 25$, $\bar x = 17.6$, $s = 0.8$, $df = 24$.
+
+\medskip
+$SE = \dfrac{s}{\sqrt{n}} = \dfrac{{\color{keyred}\mathbf{0.8}}}{\sqrt{{\color{keyred}\mathbf{25}}}} = $ \ans{0.16}
+\hfill
+$t = \dfrac{{\color{keyred}\mathbf{17.6}} - {\color{keyred}\mathbf{18}}}{{\color{keyred}\mathbf{0.16}}} = $ \ans{$-2.50$}
+
+Interpretation: $\bar x = 17.6$ is \ans{2.50} standard errors \ans{below} the null value of 18 oz.
 \end{notesbox}
+
+\begin{notesbox}{Do: Find the $p$-Value}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} p{0.30\linewidth} X X @{}}
+  \textbf{$H_a$ direction} & \textbf{$p$-value formula} & \textbf{TI-84 command} \\ \hline
+  $H_a: \mu < \mu_0$ & $P(t < t_{\text{obs}})$ & \texttt{tcdf($-10^{99}$, $t$, df)} \\
+  $H_a: \mu > \mu_0$ & $P(t > t_{\text{obs}})$ & \texttt{tcdf($t$, $10^{99}$, df)} \\
+  $H_a: \mu \ne \mu_0$ & $2 \cdot P(t > |t_{\text{obs}}|)$ & \texttt{2$\times$tcdf($|t|$, $10^{99}$, df)} \\
+\end{tabularx}
+
+\medskip
+\textit{Cereal (one-sided, left):} $p = \texttt{tcdf}(-10^{99},$ \ans{$-2.50$}, \ans{24}$) \approx$ \ans{$0.010$}
+\end{notesbox}
+
+\begin{notesbox}{Conclude: Interpret $p$ and Make a Decision}
+\textbf{Interpreting the $p$-value (DAT-3.E):}
+
+``Assuming the null hypothesis is true ($\mu = \mu_0$), there is a [p-value] probability of
+observing a sample mean as \ans{far below (or further)} as $\bar x = $ \ans{17.6} by chance alone.''
+
+\medskip
+\textit{Cereal ($p \approx 0.010$):} \ansline{If the true mean weight is 18 oz, there is only a 1.0\% chance of getting $\bar x \le 17.6$ oz in a random sample of 25 boxes.}
+
+\medskip
+\textbf{Decision Rule (DAT-3.F):}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} p{0.30\linewidth} X @{}}
+  If $p \le \alpha$ & \ans{Reject} $H_0$. The data provide \ans{convincing/sufficient} evidence against $H_0$. \\
+  If $p > \alpha$   & \ans{Fail to reject} $H_0$. The data do \emph{not} provide sufficient evidence. \\
+\end{tabularx}
+
+\medskip
+\textbf{Conclusion Template:}
+
+``Because $p = $ \ans{0.010} [is/is not] less than $\alpha = $ \ans{0.05}, we [reject / fail to
+reject] $H_0$. We [have/do not have] convincing evidence that [state $H_a$ in context].''
+
+\medskip
+\textit{Cereal:} \ansline{Because $p = 0.010 < \alpha = 0.05$, we reject $H_0$. We have convincing evidence that the true mean weight of cereal boxes is less than 18 oz.}
+\end{notesbox}
+
+\begin{practicebox}
+Using the sodium example from the warm-up: $t \approx 1.71$, $df = 34$, $H_a: \mu > 2400$.
+
+\begin{itemize}
+  \item $p$-value: \texttt{tcdf}(\ans{1.71}, $10^{99}$, \ans{34}) $\approx$ \ans{0.048}
+
+  \item Interpret the $p$-value: \ansline{If the true mean sodium intake is 2,400 mg, there is about a 4.8\% chance of observing $\bar x \ge 2{,}510$ mg in a random sample of 35 adults.}
+
+  \item At $\alpha = 0.05$: [reject / \textcolor{keyred}{\textbf{reject}}] $H_0$ because \ans{$p \approx 0.048 < 0.05$}.
+
+  \item Write the conclusion: \ansline{Because $p \approx 0.048 < \alpha = 0.05$, we reject $H_0$. We have convincing evidence that the true mean daily sodium intake for adults is higher than 2,400 mg.}
+\end{itemize}
+\end{practicebox}
 
 \end{document}

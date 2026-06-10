@@ -31,8 +31,7 @@ AP tags and list review topics):
    Selecting Statistical Methods"). Right: "Key Understandings" paraphrased from the EKs.
 4. **Vocabulary, Concepts & Theorems** — `skillbox{greenbox}`, a `tabularx` term/definition
    table (use `\TallMath{...}` for tall formulas).
-5. **Activate Prior Knowledge & Spiral Review** — `fixedskillbox{sky}`; left lists the
-   reviewed skills, right shows the warm-up thumbnail via `\includegraphics[page=1]{warmup/main}`.
+5. **Activate Prior Knowledge & Spiral Review** — `skillbox{sky}` (**not** `fixedskillbox` — that environment does not exist); left lists the reviewed skills, right shows the warm-up thumbnail via `\includegraphics[page=1]{warmup/main}`.
 6. **Hook** — `skillbox{sky}`: the entry question or scenario.
 7. **Lesson** (and optional **Lesson (cont.)**) — `skillbox{sky}` with `\begin{multicols}{2}`;
    the worked instructional progression, bolding the questions you'll pose.

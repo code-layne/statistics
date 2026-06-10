@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.4 — Homework
+%! Setting Up a Test for a Population Mean — Unit 7, Lesson 7.4 — Homework
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
@@ -11,9 +11,83 @@
 
 \vspace{0.15in}
 
-% TODO: author the Homework. See references/components.md for the expected structure.
-\begin{notesbox}{Homework}
-\writelines{4}
-\end{notesbox}
+\textit{For each problem: (a) name the inference method and df; (b) state $H_0$ and $H_a$;
+(c) verify both conditions. Show all work.}
+
+\begin{enumerate}
+
+\item \textbf{Water Temperature.} \quad
+A marine biologist believes the mean water temperature at a reef has risen above the historical
+average of 77$^\circ$F. She randomly collects 28 temperature readings; the data are slightly
+right-skewed with no outliers. The sample standard deviation is 2.3$^\circ$F.
+
+\begin{enumerate}[label=\alph*.]
+  \item Method: \blank{5.5cm} \quad $df = $ \blank{1.5cm}
+  \item $H_0$: \blank{4.5cm} \quad $H_a$: \blank{4.5cm}
+  \item Conditions:
+        \begin{itemize}
+          \item Random: \writeline
+          \item Normal ($n < 30$): \writeline
+        \end{itemize}
+\end{enumerate}
+\vspace{0.1in}
+
+\item \textbf{Delivery Times.} \quad
+An online retailer claims the mean delivery time for orders is 3 days. A consumer group
+believes the true mean is \emph{different} from 3 days. They randomly audit 55 recent orders.
+
+\begin{enumerate}[label=\alph*.]
+  \item Method: \blank{5.5cm} \quad $df = $ \blank{1.5cm}
+  \item $H_0$: \blank{4.5cm} \quad $H_a$: \blank{4.5cm}
+  \item Conditions:
+        \begin{itemize}
+          \item Random: \writeline
+          \item Normal: \writeline
+        \end{itemize}
+\end{enumerate}
+\vspace{0.1in}
+
+\item \textbf{Matched Pairs: Reaction Time.} \quad
+A researcher tests whether a new app reduces reaction time. Ten participants each complete
+a reaction-time task \emph{before} and \emph{after} using the app for two weeks. The
+differences (before $-$ after) show a roughly symmetric distribution with no outliers.
+
+\begin{enumerate}[label=\alph*.]
+  \item Define the order of subtraction and the parameter $\mu_d$:
+
+        $d_i = $ \blank{3cm} $-$ \blank{3cm} \quad; \quad $\mu_d = $ \blank{6cm}
+
+  \item Method: \blank{5cm} \quad $df = $ \blank{1.5cm}
+  \item $H_0$: \blank{4cm} \quad $H_a$: \blank{4cm}
+  \item Conditions:
+        \begin{itemize}
+          \item Random/Independence: \writeline
+          \item Normal ($n < 30$): \writeline
+        \end{itemize}
+\end{enumerate}
+\vspace{0.1in}
+
+\item \textbf{AP-Style.} \quad
+\textit{A researcher collects a random sample of 12 observations to test $H_0: \mu = 50$ vs.\
+$H_a: \mu \ne 50$. She verifies that the dotplot of the data shows moderate right skewness and
+no outliers. Which of the following best describes the Normal condition?}
+
+\begin{enumerate}[label=(\Alph*)]
+  \item The condition is met because $n = 12$ is large enough for the CLT.
+  \item The condition is not met; moderate right skewness with $n < 30$ violates the condition.
+  \item The condition is met; moderate skewness with no outliers is acceptable for $n < 30$.
+  \item The condition cannot be evaluated without knowing the population standard deviation.
+\end{enumerate}
+\vspace{0.06in}
+Answer: \blank{1.5cm} \quad Brief justification: \writeline
+
+\end{enumerate}
+
+\begin{extensionbox}
+A statistician says: ``When $n$ is small and the data are not Normal, I can use a sign test or
+Wilcoxon signed-rank test instead of a $t$-test.'' Research what a \textbf{nonparametric test}
+is and explain in 2--3 sentences why these alternatives exist and what trade-off they involve.
+\writelines{3}
+\end{extensionbox}
 
 \end{document}

@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.5 — Warm-Up (Answer Key)
+%! Carrying Out a Test for a Population Mean — Unit 7, Lesson 7.5 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
@@ -11,9 +11,35 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Spiral Review --- Setting Up a $t$-Test (Lesson 7.4)}
+
+A nutritionist claims the mean daily sodium intake of adults is 2,400 mg. A health researcher
+believes the true mean is \emph{higher}. She takes a random sample of 35 adults.
+$\bar x = 2{,}510$ mg and $s = 380$ mg. A histogram of the data shows a roughly symmetric
+distribution with no outliers.
+
+\textbf{1.} Name the inference method and give the degrees of freedom.
+
+\quad Method: \ans{one-sample $t$-test for $\mu$} \quad $df = $ \ans{34}
+
+\textbf{2.} State hypotheses.
+
+\quad $H_0$: \ans{$\mu = 2400$} \quad $H_a$: \ans{$\mu > 2400$}
+
+\textbf{3.} Verify both conditions.
+\begin{itemize}
+  \item Random: \ansline{Random sample of 35 adults --- condition met.}
+  \item Normal: \ansline{$n = 35 \ge 30$; CLT applies --- condition met.}
+\end{itemize}
+
+\textbf{4.} Using the formula $t = \dfrac{\bar x - \mu_0}{s / \sqrt{n}}$, compute the
+$t$-statistic. Show your work.
+
+\vspace{0.15in}
+$SE = \dfrac{s}{\sqrt{n}} = \dfrac{{\color{keyred}\mathbf{380}}}{\sqrt{{\color{keyred}\mathbf{35}}}} \approx $ \ans{64.24}
+\hfill
+$t = \dfrac{{\color{keyred}\mathbf{2510}} - {\color{keyred}\mathbf{2400}}}{{\color{keyred}\mathbf{64.24}}} \approx $ \ans{1.71}
+
 \end{notesbox}
 
 \end{document}

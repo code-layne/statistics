@@ -64,8 +64,10 @@ Lesson-plan boxes take a background color as the last argument (use the aliases 
 `greenbox`, `redbox`, or palette colors like `sky`):
 ```latex
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox} ... \end{skillbox}   % breakable
-\begin{fixedskillbox}[Spiral Review]{sky} ... \end{fixedskillbox}        % no page break
+\begin{skillbox}[Activate Prior Knowledge]{sky} ... \end{skillbox}       % also skillbox
 ```
+
+> **`fixedskillbox` does not exist** — there is only `skillbox`. Never write `fixedskillbox`.
 
 Titled student boxes (title is fixed by the environment unless it takes an argument):
 

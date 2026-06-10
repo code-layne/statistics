@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.5 — Group Activity (Answer Key)
+%! Carrying Out a Test for a Population Mean — Unit 7, Lesson 7.5 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
@@ -11,9 +11,83 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\textit{Complete all four steps (State, Plan, Do, Conclude) for each scenario. Show all work
+for the $t$-statistic and $p$-value calculations.}
+
+\begin{scenariobox}[Scenario 1 --- Commute Times]{sky}
+\textbf{Tier A \& R.} \quad
+A city transportation authority claims the mean commute time for residents is 30 minutes.
+A local newspaper believes commutes are longer. Reporters randomly survey 22 commuters and
+record their one-way commute time (min). Results: $\bar x = 33.4$ min, $s = 6.8$ min.
+A dotplot of the data shows a roughly symmetric distribution with no outliers.
+
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{State:} $H_0$: \ans{$\mu = 30$} \quad $H_a$: \ans{$\mu > 30$}
+  \item \textbf{Plan:} Method: \ans{one-sample $t$-test for $\mu$}, $df = $ \ans{21}. Conditions:
+        \begin{itemize}
+          \item Random: \ansline{Random sample of 22 commuters --- met.}
+          \item Normal: \ansline{$n = 22 < 30$; dotplot is roughly symmetric with no outliers --- met.}
+        \end{itemize}
+  \item \textbf{Do:} $SE = \dfrac{s}{\sqrt{n}} = $ \ans{$6.8/\sqrt{22} \approx 1.450$} \quad
+        $t = \dfrac{\bar x - \mu_0}{SE} = $ \ans{$(33.4 - 30)/1.450$} $\approx$ \ans{$2.34$}
+
+        $p$-value: \texttt{tcdf}(\ans{2.34}, $10^{99}$, \ans{21}) $\approx$ \ans{$0.015$}
+
+  \item \textbf{Conclude:} At $\alpha = 0.05$: \ans{reject} $H_0$ because \ans{$p \approx 0.015 < 0.05$}.
+        \ansline{Because $p \approx 0.015 < \alpha = 0.05$, we reject $H_0$. We have convincing evidence that the true mean commute time is longer than 30 minutes.}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 2 --- Caffeine Content]{sky}
+\textbf{Tier A \& R.} \quad
+An energy drink brand labels its cans ``80 mg caffeine.'' A consumer-safety group believes
+the true mean caffeine content \emph{differs} from 80 mg. The group randomly tests 40 cans.
+$\bar x = 83.2$ mg, $s = 8.5$ mg. ($n = 40$; assume CLT applies.)
+
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{State:} $H_0$: \ans{$\mu = 80$} \quad $H_a$: \ans{$\mu \ne 80$}
+  \item \textbf{Plan:} Method: \ans{one-sample $t$-test for $\mu$}, $df = $ \ans{39}. Conditions met (state briefly):
+        \ansline{Random (given); Normal: $n = 40 \ge 30$, CLT applies --- both met.}
+  \item \textbf{Do:} $SE = $ \ans{$8.5/\sqrt{40} \approx 1.344$} \quad $t = $ \ans{$(83.2-80)/1.344$} $\approx$ \ans{$2.38$}
+
+        $p$-value (two-sided): $2 \times \texttt{tcdf}$(\ans{2.38}, $10^{99}$, \ans{39}) $\approx$ \ans{$0.022$}
+
+  \item \textbf{Conclude:} \ansline{Because $p \approx 0.022 < \alpha = 0.05$, we reject $H_0$. We have convincing evidence that the true mean caffeine content differs from 80 mg.}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 3 --- Matched Pairs: Exercise \& Resting Heart Rate]{sky}
+\textbf{Tier A \& E.} \quad
+A researcher believes a 6-week aerobic exercise program reduces resting heart rate. Eight
+volunteers had their resting heart rate (bpm) measured before and after the program.
+The differences $d_i = \text{before} - \text{after}$ for the 8 volunteers are:
+$\{5, 8, 3, 11, 2, 7, 4, 6\}$.
+$\bar d = 5.75$, $s_d = 2.87$. A dotplot of the differences is roughly symmetric with no outliers.
+
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{State:} Parameter $\mu_d = $ \ans{true mean difference in resting heart rate (before $-$ after) for volunteers following this program}.
+        $H_0$: \ans{$\mu_d = 0$} \quad $H_a$: \ans{$\mu_d > 0$}
+
+  \item \textbf{Plan:} Method: \ans{matched-pairs $t$-test for $\mu_d$}, $df = $ \ans{7}. Conditions:
+        \begin{itemize}
+          \item Independence: \ansline{Volunteers are independent of one another --- met; 8 differences are treated as one sample.}
+          \item Normal ($n < 30$): \ansline{$n = 8 < 30$; dotplot of differences is roughly symmetric with no outliers --- met.}
+        \end{itemize}
+
+  \item \textbf{Do:} $SE_d = \dfrac{s_d}{\sqrt{n}} = \dfrac{{\color{keyred}\mathbf{2.87}}}{\sqrt{{\color{keyred}\mathbf{8}}}} \approx$ \ans{1.015}
+
+        $t = \dfrac{\bar d - 0}{SE_d} = \dfrac{{\color{keyred}\mathbf{5.75}}}{{\color{keyred}\mathbf{1.015}}} \approx$ \ans{$5.67$}
+
+        $p$-value: \texttt{tcdf}(\ans{5.67}, $10^{99}$, \ans{7}) $\approx$ \ans{$0.0004$}
+
+  \item \textbf{Conclude:} At $\alpha = 0.05$: \ansline{Because $p \approx 0.0004 < \alpha = 0.05$, we reject $H_0$. We have convincing evidence that the exercise program reduces resting heart rate (true mean difference before $-$ after is greater than 0).}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{teachernote}
+Scenario 3 produces a very small $p$-value. Use it to reinforce: a tiny $p$-value is strong
+evidence against $H_0$, but does not tell us the \emph{size} of the effect --- a follow-up
+confidence interval for $\mu_d$ would be appropriate to report the magnitude.
+\end{teachernote}
 
 \end{document}

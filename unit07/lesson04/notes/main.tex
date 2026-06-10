@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.4 — Guided Notes
+%! Setting Up a Test for a Population Mean — Unit 7, Lesson 7.4 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
@@ -11,9 +11,116 @@
 
 \vspace{0.15in}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+  \item \writeline
+  \item \writeline
+  \item \writeline
+\end{itemize}
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{One-sample $t$-test for $\mu$}]
+        Used when \blank{6cm}; uses the $t$-distribution with $df = $ \blank{1.5cm}.
+  \item[\termblanklong{Null hypothesis ($H_0$)}]
+        States that $\mu = $ \blank{2cm} (the \blank{4cm} value). Written \emph{before} seeing data.
+  \item[\termblanklong{Alternative hypothesis ($H_a$)}]
+        States the \blank{6cm}. Can be one-sided ($<$ or $>$) or two-sided ($\ne$).
+  \item[\termblanklong{Matched pairs}]
+        Data collected in \blank{5cm} (e.g., before/after, two treatments on the same subject).
+        We compute \blank{5cm} and apply a one-sample $t$-test to the differences; $\mu_d$ is
+        the parameter.
+\end{description}
+\end{vocabbox}
+
+\begin{hookbox}
+A consumer group weighs a random sample of 25 cereal boxes labeled ``Net weight: 18 oz'' and
+finds $\bar x = 17.6$ oz, $s = 0.8$ oz. The population SD $\sigma$ is \blank{5cm}.
+
+Question: Does the data give evidence that boxes are being \blank{4cm}?
+\end{hookbox}
+
+\begin{notesbox}{Step 1: Choose the Inference Method}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} p{0.42\linewidth} X @{}}
+  \textbf{Situation} & \textbf{Method} \\ \hline
+  Testing a claim about $\mu$; $\sigma$ is \emph{known} & one-sample \blank{2cm}-test (rare) \\
+  Testing a claim about $\mu$; $\sigma$ is \emph{unknown} & one-sample \blank{2cm}-test \\
+  Data in pairs (before/after); testing $\mu_d$ & \blank{5cm} $t$-test \\
+\end{tabularx}
+
+\medskip
+\textit{Cereal boxes: $\sigma$ unknown, $n = 25$ $\Rightarrow$ use a} \blank{3cm}\textit{-test with $df = $} \blank{2cm}.
 \end{notesbox}
+
+\begin{notesbox}{Step 2: Write Hypotheses}
+Always use the \emph{population} parameter ($\mu$ or $\mu_d$), not $\bar x$ or $\bar d$.
+
+\medskip
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} p{0.44\linewidth} X @{}}
+  \textbf{Research Question} & \textbf{Hypotheses} \\ \hline
+  Is $\mu$ \emph{less than} $\mu_0$? & $H_0: \mu = \mu_0$ \quad $H_a: \mu$ \blank{2cm} $\mu_0$ \\
+  Is $\mu$ \emph{greater than} $\mu_0$? & $H_0: \mu = \mu_0$ \quad $H_a: \mu$ \blank{2cm} $\mu_0$ \\
+  Has $\mu$ \emph{changed} from $\mu_0$? & $H_0: \mu = \mu_0$ \quad $H_a: \mu$ \blank{2cm} $\mu_0$ \\
+\end{tabularx}
+
+\medskip
+\textit{Cereal:} $H_0$: \blank{4cm} \qquad $H_a$: \blank{4cm} \quad
+Direction: \blank{3cm} because \blank{5cm}.
+\end{notesbox}
+
+\begin{notesbox}{Step 3: Verify Conditions (VAR-7.D)}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} p{0.22\linewidth} X p{0.28\linewidth} @{}}
+  \textbf{Condition} & \textbf{How to verify} & \textbf{Note} \\ \hline
+  \textbf{Random} & Data from a \blank{4cm} sample or \blank{5cm} experiment. & Same for all tests \\
+  \textbf{10\% rule} & When sampling without replacement: \blank{2cm} $\le 10\%$ of $N$. & Same for all tests \\
+  \textbf{Normal} ($n \ge 30$) & CLT applies; sampling distribution of $\bar x$ is approximately normal. & Use when $n \ge 30$ \\
+  \textbf{Normal} ($n < 30$) & Examine a dotplot/boxplot: sample distribution should have no \blank{5cm} or \blank{4cm}. & Use when $n < 30$ \\
+\end{tabularx}
+
+\medskip
+\textit{Cereal ($n = 25$):}
+\begin{itemize}
+  \item Random: \writeline
+  \item 10\% rule: \writeline
+  \item Normal: \writeline
+\end{itemize}
+\end{notesbox}
+
+\begin{notesbox}{Matched Pairs: A Special Case}
+Eight athletes record their resting heart rate (bpm) \emph{before} and \emph{after} a
+12-week training program. We want to know whether training \emph{reduced} resting heart rate.
+
+\begin{enumerate}
+  \item Define the order of subtraction (before data): \quad $d_i = $ \blank{4cm} $-$ \blank{4cm}
+
+  \item Compute differences $d_i$ for each athlete, then find $\bar d$ and $s_d$.
+        (Instructor will fill in data in class.)
+
+  \item Parameter: $\mu_d = $ \blank{7cm}
+
+  \item Hypotheses: $H_0$: \blank{3.5cm} \quad $H_a$: \blank{3.5cm}
+
+  \item Method: one-sample $t$-test on the \blank{8cm} with $df = $ \blank{1.5cm}.
+\end{enumerate}
+\end{notesbox}
+
+\begin{practicebox}
+A nutritionist claims the mean daily sodium intake for adults is 2,400 mg. A health researcher
+believes it is \emph{higher}. She surveys 35 randomly selected adults and records their daily
+intake; the dotplot shows no strong skewness or outliers.
+
+\begin{itemize}
+  \item Name the inference method: \blank{5cm} \quad $df = $ \blank{1.5cm}
+  \item $H_0$: \blank{4cm} \quad $H_a$: \blank{4cm}
+  \item Random: \blank{6cm}
+  \item 10\% rule: \blank{6cm}
+  \item Normal: \blank{6cm}
+\end{itemize}
+\end{practicebox}
 
 \end{document}

@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.5 — Exit Ticket (Answer Key)
+%! Carrying Out a Test for a Population Mean — Unit 7, Lesson 7.5 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
@@ -11,9 +11,28 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+A physical education teacher claims the mean number of push-ups students can complete is
+24. A fitness researcher believes students can do \emph{more} than 24 push-ups on average.
+She randomly tests 18 students. $\bar x = 27.1$, $s = 6.3$. The dotplot is roughly symmetric
+with no outliers. All conditions have been verified.
+
+\begin{enumerate}
+  \item Compute the $t$-statistic. Show your work.
+
+        $SE = \dfrac{s}{\sqrt{n}} = $ \ans{$6.3/\sqrt{18} \approx 1.485$} \qquad
+        $t = \dfrac{\bar x - \mu_0}{SE} = $ \ans{$(27.1 - 24)/1.485$} $\approx$ \ans{$2.09$}
+
+  \item Find the $p$-value. Circle the correct TI-84 command, then give the result.
+
+        \texttt{tcdf($-10^{99}$, $t$, df)} \quad OR \quad \ans{\texttt{tcdf($t$, $10^{99}$, df)}} \quad
+        $p \approx$ \ans{$0.026$}
+
+        \begin{teachernote}
+        \texttt{tcdf(2.09, $10^{99}$, 17) $\approx$ 0.026}. Right-tail because $H_a: \mu > 24$.
+        \end{teachernote}
+
+  \item At $\alpha = 0.05$, write a complete conclusion in context.
+        \ansline{Because $p \approx 0.026 < \alpha = 0.05$, we reject $H_0$. We have convincing evidence that the true mean number of push-ups students can complete is greater than 24.}
+\end{enumerate}
 
 \end{document}
