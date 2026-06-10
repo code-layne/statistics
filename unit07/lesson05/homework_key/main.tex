@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.5 — Homework (Answer Key)
+%! Carrying Out a Test for a Population Mean — Unit 7, Lesson 7.5 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
@@ -11,9 +11,64 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\textit{Complete all four SPDC steps for each problem. Show all computations.}
+
+\begin{enumerate}
+
+\item \textbf{Plant Growth.}
+
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{State:} $H_0$: \ans{$\mu = 12$} \quad $H_a$: \ans{$\mu > 12$}
+  \item \textbf{Plan:} Method: \ans{one-sample $t$-test for $\mu$}, $df = $ \ans{24}. Conditions:
+        \begin{itemize}
+          \item Random: \ansline{Random assignment of 25 plants --- met.}
+          \item Normal ($n < 30$): \ansline{$n = 25 < 30$; dotplot is roughly symmetric, no outliers --- met.}
+        \end{itemize}
+  \item \textbf{Do:} $SE = $ \ans{$3.2/\sqrt{25} = 0.64$} \quad $t \approx$ \ans{$2.50$} \quad
+        $p \approx$ \texttt{tcdf}(\ans{2.50}, $10^{99}$, \ans{24}) $\approx$ \ans{$0.010$}
+  \item \textbf{Conclude:} \ansline{Because $p \approx 0.010 < \alpha = 0.05$, we reject $H_0$. We have convincing evidence that the true mean plant height under the new fertilizer is greater than 12 cm.}
+\end{enumerate}
+
+\item \textbf{Exam Score Study.}
+
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{State:} $H_0$: \ans{$\mu = 500$} \quad $H_a$: \ans{$\mu \ne 500$}
+  \item \textbf{Plan:} Method: \ans{one-sample $t$-test for $\mu$}, $df = $ \ans{44}. Conditions (brief): \ansline{Random sample; $n = 45 \ge 30$ (CLT) --- both met.}
+  \item \textbf{Do:} $SE = $ \ans{$60/\sqrt{45} \approx 8.944$} \quad $t \approx$ \ans{$-1.68$}
+
+        $p$ (two-sided) $\approx 2 \times \texttt{tcdf}($\ans{1.68}, $10^{99}$, \ans{44}$) \approx$ \ans{$0.100$}
+
+  \item \textbf{Conclude:} \ansline{Because $p \approx 0.100 > \alpha = 0.05$, we fail to reject $H_0$. We do not have convincing evidence that the true mean placement score at this campus differs from 500.}
+\end{enumerate}
+
+\item \textbf{Matched Pairs: Study Techniques.}
+
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{State:} $\mu_d = $ \ans{true mean difference in quiz score (flashcards $-$ no flashcards) for students using this study approach}. \quad $H_0$: \ans{$\mu_d = 0$} \quad $H_a$: \ans{$\mu_d > 0$}
+  \item \textbf{Plan:} Method: \ans{matched-pairs $t$-test for $\mu_d$}, $df = $ \ans{9}. Conditions:
+        \begin{itemize}
+          \item Independence: \ansline{10 students independently tested; differences are independent --- met.}
+          \item Normal ($n < 30$): \ansline{$n = 10 < 30$; boxplot of differences is roughly symmetric with no outliers --- met.}
+        \end{itemize}
+  \item \textbf{Do:} $SE_d = \dfrac{s_d}{\sqrt{n}} \approx$ \ans{$2.97/\sqrt{10} \approx 0.939$} \quad
+        $t = \dfrac{\bar d - 0}{SE_d} \approx$ \ans{$4.8/0.939 \approx 5.11$}
+
+        $p \approx$ \ans{\texttt{tcdf(5.11, $10^{99}$, 9)} $\approx 0.0003$}
+
+  \item \textbf{Conclude:} \ansline{Because $p \approx 0.0003 < \alpha = 0.05$, we reject $H_0$. We have convincing evidence that using flashcards improves quiz scores on average (true mean difference $> 0$).}
+\end{enumerate}
+
+\end{enumerate}
+
+\begin{reflectionbox}
+\ansline{Failing to reject $H_0$ does not mean $H_0$ is true. It means the data did not provide sufficient evidence to reject it. $p = 0.08$ says: ``If $H_0$ were true, an 8\% chance of results this extreme is not surprising enough for us to conclude $H_0$ is false.'' The null could still be false --- we just don't have enough evidence.}
+\end{reflectionbox}
+
+\begin{extensionbox}
+(a) \ansline{Choosing $H_a$ after seeing the data inflates the Type I error rate (data snooping / ``p-hacking'') --- the $p$-value is no longer valid because the direction was chosen to favor rejection.}
+(b)\,One-sided left $p \approx$ \texttt{tcdf}$(-10^{99}, -1.68, 44) \approx 0.050$.
+(c)\,One-sided $p \approx 0.050$ vs.\ two-sided $p \approx 0.100$: one-sided is half as large,
+which is exactly why choosing direction after seeing data is not valid.
+\end{extensionbox}
 
 \end{document}

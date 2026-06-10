@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.4 — Warm-Up (Answer Key)
+%! Setting Up a Test for a Population Mean — Unit 7, Lesson 7.4 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
@@ -11,9 +11,40 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Spiral Review --- The $t$-Distribution \& Sampling Distributions (Unit 7, Lessons 7.1--7.3)}
+
+\textbf{1.} A $t$-distribution with 14 degrees of freedom is used to model the sampling
+distribution of $\bar x$ from a sample of size $n = 15$.
+
+\begin{enumerate}[label=\alph*.]
+  \item How does the shape of a $t$-distribution compare to the standard normal ($z$) distribution?
+        Circle the best description.
+
+        \quad (A) Shorter tails, taller peak \quad (B) Identical \quad \ans{(C) Heavier tails, shorter peak} \quad (D) Skewed right
+
+  \item As degrees of freedom increase, the $t$-distribution becomes \ans{closer to / approaches}
+        the standard normal distribution.
+
+  \item Why do we use a $t$-distribution instead of a $z$-distribution when making inferences
+        about a population mean? \ansline{Because $\sigma$ is unknown; we estimate it with $s$, which adds extra variability --- the $t$-distribution accounts for this uncertainty.}
+\end{enumerate}
+
+\vspace{0.12in}
+\textbf{2.} A school nutritionist wants to test whether the mean number of grams of sugar in
+students' lunches differs from the district target of 30 g.
+
+\begin{enumerate}[label=\alph*.]
+  \item She knows $\bar x = 33.4$ g and $s = 5.2$ g from a random sample of $n = 22$ lunches,
+        but $\sigma$ is unknown. Should she use a $z$-test or a $t$-test? \ans{$t$-test}
+
+        Explain: \ansline{$\sigma$ is unknown; we only have $s$, so a $t$-test is required.}
+
+  \item State the degrees of freedom she would use. \quad $df = n - 1 = $ \ans{21}
+
+  \item The sample is taken from a population of 640 students.
+        Is the 10\% condition met? \ans{Yes} Show: \ans{$22 \le 0.10 \times 640 = 64$}
+\end{enumerate}
+
 \end{notesbox}
 
 \end{document}

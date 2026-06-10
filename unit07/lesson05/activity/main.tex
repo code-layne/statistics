@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.5 — Group Activity
+%! Carrying Out a Test for a Population Mean — Unit 7, Lesson 7.5 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
@@ -11,9 +11,77 @@
 
 \vspace{0.15in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\textit{Complete all four steps (State, Plan, Do, Conclude) for each scenario. Show all work
+for the $t$-statistic and $p$-value calculations.}
+
+\begin{scenariobox}[Scenario 1 --- Commute Times]{sky}
+\textbf{Tier A \& R.} \quad
+A city transportation authority claims the mean commute time for residents is 30 minutes.
+A local newspaper believes commutes are longer. Reporters randomly survey 22 commuters and
+record their one-way commute time (min). Results: $\bar x = 33.4$ min, $s = 6.8$ min.
+A dotplot of the data shows a roughly symmetric distribution with no outliers.
+
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{State:} $H_0$: \blank{4cm} \quad $H_a$: \blank{4cm}
+  \item \textbf{Plan:} Method: \blank{5cm}, $df = $ \blank{1.5cm}. Conditions:
+        \begin{itemize}
+          \item Random: \writeline
+          \item Normal: \writeline
+        \end{itemize}
+  \item \textbf{Do:} $SE = \dfrac{s}{\sqrt{n}} = $ \blank{3cm} \quad
+        $t = \dfrac{\bar x - \mu_0}{SE} = $ \blank{4cm} $\approx$ \blank{2cm}
+
+        $p$-value: \texttt{tcdf}(\blank{2cm}, $10^{99}$, \blank{2cm}) $\approx$ \blank{2cm}
+
+  \item \textbf{Conclude:} At $\alpha = 0.05$: [reject / fail to reject] $H_0$ because \blank{4cm}.
+        \writeline
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 2 --- Caffeine Content]{sky}
+\textbf{Tier A \& R.} \quad
+An energy drink brand labels its cans ``80 mg caffeine.'' A consumer-safety group believes
+the true mean caffeine content \emph{differs} from 80 mg. The group randomly tests 40 cans.
+$\bar x = 83.2$ mg, $s = 8.5$ mg. ($n = 40$; assume CLT applies.)
+
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{State:} $H_0$: \blank{4cm} \quad $H_a$: \blank{4cm}
+  \item \textbf{Plan:} Method: \blank{5cm}, $df = $ \blank{1.5cm}. Conditions met (state briefly):
+        \writeline
+  \item \textbf{Do:} $SE = $ \blank{3cm} \quad $t = $ \blank{4cm} $\approx$ \blank{2cm}
+
+        $p$-value (two-sided): $2 \times \texttt{tcdf}$(\blank{2cm}, $10^{99}$, \blank{2cm}) $\approx$ \blank{2cm}
+
+  \item \textbf{Conclude:} \writelines{2}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 3 --- Matched Pairs: Exercise \& Resting Heart Rate]{sky}
+\textbf{Tier A \& E.} \quad
+A researcher believes a 6-week aerobic exercise program reduces resting heart rate. Eight
+volunteers had their resting heart rate (bpm) measured before and after the program.
+The differences $d_i = \text{before} - \text{after}$ for the 8 volunteers are:
+$\{5, 8, 3, 11, 2, 7, 4, 6\}$.
+$\bar d = 5.75$, $s_d = 2.87$. A dotplot of the differences is roughly symmetric with no outliers.
+
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{State:} Parameter $\mu_d = $ \blank{6cm}.
+        $H_0$: \blank{3.5cm} \quad $H_a$: \blank{3.5cm}
+
+  \item \textbf{Plan:} Method: \blank{5.5cm}, $df = $ \blank{1.5cm}. Conditions:
+        \begin{itemize}
+          \item Independence: \writeline
+          \item Normal ($n < 30$): \writeline
+        \end{itemize}
+
+  \item \textbf{Do:} $SE_d = \dfrac{s_d}{\sqrt{n}} = \dfrac{\blank{2cm}}{\sqrt{\blank{1.5cm}}} \approx$ \blank{2cm}
+
+        $t = \dfrac{\bar d - 0}{SE_d} = \dfrac{\blank{2cm}}{\blank{2cm}} \approx$ \blank{2cm}
+
+        $p$-value: \texttt{tcdf}(\blank{2cm}, $10^{99}$, \blank{2cm}) $\approx$ \blank{2cm}
+
+  \item \textbf{Conclude:} At $\alpha = 0.05$: \writelines{2}
+\end{enumerate}
+\end{scenariobox}
 
 \end{document}

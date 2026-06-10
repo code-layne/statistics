@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.5 — Exit Ticket
+%! Carrying Out a Test for a Population Mean — Unit 7, Lesson 7.5 — Exit Ticket
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
@@ -11,9 +11,24 @@
 
 \vspace{0.15in}
 
-% TODO: author the Exit Ticket. See references/components.md for the expected structure.
-\begin{notesbox}{Exit Ticket}
-\writelines{4}
-\end{notesbox}
+A physical education teacher claims the mean number of push-ups students can complete is
+24. A fitness researcher believes students can do \emph{more} than 24 push-ups on average.
+She randomly tests 18 students. $\bar x = 27.1$, $s = 6.3$. The dotplot is roughly symmetric
+with no outliers. All conditions have been verified.
+
+\begin{enumerate}
+  \item Compute the $t$-statistic. Show your work.
+
+        $SE = \dfrac{s}{\sqrt{n}} = $ \blank{3.5cm} \qquad
+        $t = \dfrac{\bar x - \mu_0}{SE} = $ \blank{4cm} $\approx$ \blank{2cm}
+
+  \item Find the $p$-value. Circle the correct TI-84 command, then give the result.
+
+        \texttt{tcdf($-10^{99}$, $t$, df)} \quad OR \quad \texttt{tcdf($t$, $10^{99}$, df)} \quad
+        $p \approx$ \blank{2cm}
+
+  \item At $\alpha = 0.05$, write a complete conclusion in context.
+        \writelines{3}
+\end{enumerate}
 
 \end{document}

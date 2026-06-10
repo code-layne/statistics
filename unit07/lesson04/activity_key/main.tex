@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.4 — Group Activity (Answer Key)
+%! Setting Up a Test for a Population Mean — Unit 7, Lesson 7.4 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
@@ -11,9 +11,85 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\textit{For each scenario, (a) name the appropriate inference method, (b) state $H_0$ and
+$H_a$ (including the direction of $H_a$), and (c) verify both conditions. Do \textbf{not}
+compute a test statistic yet.}
+
+\begin{scenariobox}[Scenario A --- Sleep Duration]{sky}
+\textbf{Tier A \& R.} \quad
+The American Academy of Sleep Medicine recommends that teenagers get at least 8 hours of sleep
+per night. A school counselor believes students at her school sleep \emph{less} than 8 hours
+on average. She randomly selects 20 students and records their nightly sleep duration (hours).
+The dotplot shows the distribution is roughly symmetric with no outliers.
+
+\begin{enumerate}[label=\alph*.]
+  \item Inference method: \ans{one-sample $t$-test for $\mu$} \quad $df = $ \ans{19}
+  \item $H_0$: \ans{$\mu = 8$} \quad $H_a$: \ans{$\mu < 8$}
+
+        Direction of $H_a$: \ans{left (one-sided)} \quad Justify: \ansline{The counselor believes students sleep \emph{less than} 8 hours --- not just different.}
+
+  \item Conditions:
+        \begin{itemize}
+          \item Random: \ansline{Random sample of 20 students --- met.}
+          \item Normal ($n = 20 < 30$): \ansline{Dotplot shows roughly symmetric, no outliers --- Normal condition met.}
+        \end{itemize}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario B --- Package Weights]{sky}
+\textbf{Tier A \& R.} \quad
+A snack company labels its chip bags ``Net weight: 1.5 oz.'' A quality-control inspector
+suspects the \emph{true mean} weight differs from 1.5 oz. She randomly selects 40 bags and
+weighs each one. The histogram of weights appears approximately bell-shaped.
+
+\begin{enumerate}[label=\alph*.]
+  \item Inference method: \ans{one-sample $t$-test for $\mu$} \quad $df = $ \ans{39}
+  \item $H_0$: \ans{$\mu = 1.5$} \quad $H_a$: \ans{$\mu \ne 1.5$}
+
+        Direction of $H_a$: \ans{two-sided} \quad Justify: \ansline{The question is whether the weight \emph{differs} --- no specific direction stated.}
+
+  \item Conditions:
+        \begin{itemize}
+          \item Random: \ansline{Random sample of 40 bags --- met.}
+          \item Normal ($n = 40 \ge 30$): \ansline{$n = 40 \ge 30$; CLT applies --- met.}
+        \end{itemize}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario C --- Matched Pairs: Reading Fluency]{sky}
+\textbf{Tier A \& E.} \quad
+A reading specialist administers a fluency test to 12 students at the beginning and end of a
+semester-long intervention. She wants to determine whether the intervention \emph{improved}
+reading speed (words per minute). The differences (end $-$ begin) are available for analysis.
+A boxplot of the differences shows no strong skewness or outliers.
+
+\begin{enumerate}[label=\alph*.]
+  \item What type of data is this? Circle: \quad one sample \quad \ans{matched pairs}
+
+  \item Define the parameter $\mu_d$ in context: \ansline{The true mean difference in reading speed (end $-$ begin) for all students in this intervention program.}
+
+  \item Define the order of subtraction and state hypotheses:
+
+        $d_i = $ \ans{end} $-$ \ans{begin} \qquad $H_0$: \ans{$\mu_d = 0$} \quad $H_a$: \ans{$\mu_d > 0$}
+
+  \item Verify conditions:
+        \begin{itemize}
+          \item Random/Independence: \ansline{Students were treated as a convenience sample from the intervention group --- discuss whether this meets the random condition; note any limitation.}
+          \item Normal ($n = 12 < 30$): \ansline{Boxplot of differences shows no strong skewness or outliers --- Normal condition met.}
+        \end{itemize}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{reflectionbox}
+Scenarios A and B both involve unknown $\sigma$. What is the key difference in the Normal
+condition check between them? Why does sample size matter here?
+\ansline{Scenario A: $n = 20 < 30$ --- must inspect the sample distribution (dotplot/boxplot) for strong skewness or outliers.}
+\ansline{Scenario B: $n = 40 \ge 30$ --- CLT guarantees approximate normality regardless of population shape; no graph check needed.}
+\end{reflectionbox}
+
+\begin{teachernote}
+Scenario C is intentionally ambiguous about randomness. Use it to discuss the difference between
+a convenience sample and a random sample, and how to note limitations in the conclusion.
+\end{teachernote}
 
 \end{document}

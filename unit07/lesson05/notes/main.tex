@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.5 — Guided Notes
+%! Carrying Out a Test for a Population Mean — Unit 7, Lesson 7.5 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
@@ -11,9 +11,104 @@
 
 \vspace{0.15in}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+  \item \writeline
+  \item \writeline
+  \item \writeline
+\end{itemize}
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{$t$-statistic}]
+        $t = \dfrac{\bar x - \mu_0}{\blank{3cm}}$ \quad with $df = $ \blank{2cm}. \quad
+        Measures distance of $\bar x$ from $\mu_0$ in \blank{4cm} units.
+  \item[\termblanklong{Standard error of $\bar x$}]
+        $SE_{\bar x} = \dfrac{s}{\sqrt{n}}$\,. \quad Estimates \blank{3cm} when $\sigma$ is unknown.
+  \item[\termblanklong{$p$-value}]
+        Probability of observing a $t$-statistic as \blank{7cm},
+        \emph{assuming \blank{3cm} is true}.
+  \item[\termblanklong{Significance level ($\alpha$)}]
+        The threshold for rejection; typically \blank{1.5cm} unless stated otherwise.
+\end{description}
+\end{vocabbox}
+
+\begin{notesbox}{Do: Compute the $t$-Statistic}
+\begin{center}
+  $t = \dfrac{\bar x - \mu_0}{s / \sqrt{n}}$
+\end{center}
+
+\begin{itemize}
+  \item Numerator $(\bar x - \mu_0)$: \blank{8cm}
+  \item Denominator $(s/\sqrt{n})$: the \blank{5cm} of $\bar x$ (standard error)
+\end{itemize}
+
+\medskip
+\textbf{Worked Example: Cereal Boxes.}
+$H_0: \mu = 18$, $H_a: \mu < 18$, $n = 25$, $\bar x = 17.6$, $s = 0.8$, $df = 24$.
+
+\medskip
+$SE = \dfrac{s}{\sqrt{n}} = \dfrac{\blank{1.5cm}}{\sqrt{\blank{1.5cm}}} = $ \blank{2cm}
+\hfill
+$t = \dfrac{\blank{1.5cm} - \blank{1.5cm}}{\blank{2cm}} = $ \blank{2cm}
+
+Interpretation: $\bar x = 17.6$ is \blank{2cm} standard errors \blank{2cm} the null value of 18 oz.
 \end{notesbox}
+
+\begin{notesbox}{Do: Find the $p$-Value}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} p{0.30\linewidth} X X @{}}
+  \textbf{$H_a$ direction} & \textbf{$p$-value formula} & \textbf{TI-84 command} \\ \hline
+  $H_a: \mu < \mu_0$ & $P(t < t_{\text{obs}})$ & \texttt{tcdf($-10^{99}$, $t$, df)} \\
+  $H_a: \mu > \mu_0$ & $P(t > t_{\text{obs}})$ & \texttt{tcdf($t$, $10^{99}$, df)} \\
+  $H_a: \mu \ne \mu_0$ & $2 \cdot P(t > |t_{\text{obs}}|)$ & \texttt{2$\times$tcdf($|t|$, $10^{99}$, df)} \\
+\end{tabularx}
+
+\medskip
+\textit{Cereal (one-sided, left):} $p = \texttt{tcdf}(-10^{99},$ \blank{2cm}, \blank{2cm}$) \approx$ \blank{2cm}
+\end{notesbox}
+
+\begin{notesbox}{Conclude: Interpret $p$ and Make a Decision}
+\textbf{Interpreting the $p$-value (DAT-3.E):}
+
+``Assuming the null hypothesis is true ($\mu = \mu_0$), there is a [p-value] probability of
+observing a sample mean as \blank{4cm} as $\bar x = $ \blank{2cm} by chance alone.''
+
+\medskip
+\textit{Cereal ($p \approx 0.010$):} \writeline
+
+\medskip
+\textbf{Decision Rule (DAT-3.F):}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} p{0.30\linewidth} X @{}}
+  If $p \le \alpha$ & \blank{4cm} $H_0$. The data provide \blank{5cm} evidence against $H_0$. \\
+  If $p > \alpha$   & \blank{6cm} $H_0$. The data do \emph{not} provide sufficient evidence. \\
+\end{tabularx}
+
+\medskip
+\textbf{Conclusion Template:}
+
+``Because $p = $ \blank{2cm} [is/is not] less than $\alpha = $ \blank{1.5cm}, we [reject / fail to
+reject] $H_0$. We [have/do not have] convincing evidence that [state $H_a$ in context].''
+
+\medskip
+\textit{Cereal:} \writelines{2}
+\end{notesbox}
+
+\begin{practicebox}
+Using the sodium example from the warm-up: $t \approx 1.71$, $df = 34$, $H_a: \mu > 2400$.
+
+\begin{itemize}
+  \item $p$-value: \texttt{tcdf}(\blank{2cm}, $10^{99}$, \blank{2cm}) $\approx$ \blank{2cm}
+
+  \item Interpret the $p$-value: \writelines{2}
+
+  \item At $\alpha = 0.05$: [reject / fail to reject] $H_0$ because \blank{5cm}.
+
+  \item Write the conclusion: \writelines{2}
+\end{itemize}
+\end{practicebox}
 
 \end{document}

@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.4 — Homework (Answer Key)
+%! Setting Up a Test for a Population Mean — Unit 7, Lesson 7.4 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
@@ -11,9 +11,65 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\textit{For each problem: (a) name the inference method and df; (b) state $H_0$ and $H_a$;
+(c) verify both conditions. Show all work.}
+
+\begin{enumerate}
+
+\item \textbf{Water Temperature.}
+
+\begin{enumerate}[label=\alph*.]
+  \item Method: \ans{one-sample $t$-test for $\mu$} \quad $df = $ \ans{27}
+  \item $H_0$: \ans{$\mu = 77$} \quad $H_a$: \ans{$\mu > 77$}
+  \item Conditions:
+        \begin{itemize}
+          \item Random: \ansline{28 readings were randomly collected --- met.}
+          \item Normal ($n < 30$): \ansline{$n = 28 < 30$; data are slightly right-skewed with no outliers. Slight skewness with no outliers is generally acceptable for small samples --- Normal condition met.}
+        \end{itemize}
+\end{enumerate}
+
+\item \textbf{Delivery Times.}
+
+\begin{enumerate}[label=\alph*.]
+  \item Method: \ans{one-sample $t$-test for $\mu$} \quad $df = $ \ans{54}
+  \item $H_0$: \ans{$\mu = 3$} \quad $H_a$: \ans{$\mu \ne 3$}
+  \item Conditions:
+        \begin{itemize}
+          \item Random: \ansline{Random audit of 55 orders --- met.}
+          \item Normal: \ansline{$n = 55 \ge 30$; CLT applies regardless of shape --- met.}
+        \end{itemize}
+\end{enumerate}
+
+\item \textbf{Matched Pairs: Reaction Time.}
+
+\begin{enumerate}[label=\alph*.]
+  \item $d_i = $ \ans{before} $-$ \ans{after} \quad; \quad $\mu_d = $ \ans{true mean difference in reaction time (before $-$ after) for all participants using the app}
+  \item Method: \ans{matched-pairs $t$-test for $\mu_d$} \quad $df = $ \ans{9}
+  \item $H_0$: \ans{$\mu_d = 0$} \quad $H_a$: \ans{$\mu_d > 0$}
+  \item Conditions:
+        \begin{itemize}
+          \item Random/Independence: \ansline{10 participants; assume a random assignment or representative sample. Differences are independent if participants are independent.}
+          \item Normal ($n < 30$): \ansline{$n = 10 < 30$; distribution of differences is roughly symmetric with no outliers --- met.}
+        \end{itemize}
+\end{enumerate}
+
+\item \textbf{AP-Style.}
+
+\begin{enumerate}[label=(\Alph*)]
+  \item The condition is met because $n = 12$ is large enough for the CLT.
+  \item The condition is not met; moderate right skewness with $n < 30$ violates the condition.
+  \item The condition is met; moderate skewness with no outliers is acceptable for $n < 30$. \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+  \item The condition cannot be evaluated without knowing the population standard deviation.
+\end{enumerate}
+Answer: \ans{C} \quad Brief justification: \ansline{When $n < 30$, we check that the sample shows no strong skewness or outliers. Moderate skewness without outliers is generally acceptable. (A) is wrong because $n = 12$ is not large enough for CLT.}
+
+\end{enumerate}
+
+\begin{extensionbox}
+Extension answers will vary. Key ideas: nonparametric tests (sign test, Wilcoxon signed-rank)
+make fewer assumptions about the population distribution; trade-off is that they are generally
+less powerful (less likely to detect a true effect) than the $t$-test when the $t$-test's
+assumptions are satisfied.
+\end{extensionbox}
 
 \end{document}

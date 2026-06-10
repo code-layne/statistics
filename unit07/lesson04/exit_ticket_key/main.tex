@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.4 — Exit Ticket (Answer Key)
+%! Setting Up a Test for a Population Mean — Unit 7, Lesson 7.4 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
@@ -11,9 +11,35 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+A physician believes the mean systolic blood pressure of adults in her practice is
+\emph{higher} than the national average of 120 mmHg. She randomly selects 18 patients
+and records their systolic blood pressure. A dotplot of the data shows a roughly symmetric
+distribution with one mild outlier.
+
+\begin{enumerate}
+  \item Name the appropriate inference method and give the degrees of freedom.
+
+        Method: \ans{one-sample $t$-test for $\mu$} \quad $df = $ \ans{17}
+
+  \item State hypotheses.
+
+        $H_0$: \ans{$\mu = 120$} \quad $H_a$: \ans{$\mu > 120$}
+
+  \item Verify conditions. \textit{Be specific --- use numbers and describe what you see in the data.}
+        \begin{itemize}
+          \item Random: \ansline{The 18 patients were randomly selected --- Random condition met.}
+          \item 10\% rule: \ansline{$18 \le 10\%$ of all patients in the practice (assuming more than 180 patients) --- met.}
+          \item Normal ($n < 30$): \ansline{$n = 18 < 30$; dotplot shows roughly symmetric with one mild outlier. A single mild outlier in a symmetric distribution is generally acceptable --- Normal condition is borderline but likely met; proceed with caution.}
+
+                Can the test proceed? \ans{Yes, with caution} \quad Explain: \ansline{The distribution is roughly symmetric; one mild outlier is not a severe violation. Proceed, but note the limitation.}
+        \end{itemize}
+\end{enumerate}
+
+\begin{teachernote}
+Use the ``mild outlier'' scenario to spark discussion: one clear outlier in a sample of 18
+may still be acceptable if the rest of the distribution is symmetric. A severe outlier or
+strong skewness would be cause to not proceed. Encourage students to describe both what they
+see and their judgment about whether the condition is met.
+\end{teachernote}
 
 \end{document}

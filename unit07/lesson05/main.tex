@@ -1,12 +1,10 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.5 — Lesson Plan
+%! Carrying Out a Test for a Population Mean — Unit 7, Lesson 7.5 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
-\graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\UnitNumberName}{Unit 7: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 7.5: TODO: Lesson Title}
+\newcommand{\UnitNumberName}{Unit 7: Inference for Quantitative Data: Means \quad}
+\newcommand{\LessonNumberName}{Lesson 7.5: Carrying Out a Test for a Population Mean}
 
 \begin{document}
 \begin{center}
@@ -16,55 +14,262 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will carry out a one-sample $t$-test or
+    matched-pairs $t$-test by computing the $t$-statistic, finding and interpreting the
+    $p$-value, and making and justifying a formal conclusion about a population mean ---
+    using the decision rule that compares $p$ to the significance level $\alpha$.
+    (Big Ideas: VAR, DAT)
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 3 --- Using Probability \& Simulation}
+    \begin{itemize}
+        \item Calculate the $t$-test statistic $t = \dfrac{\bar x - \mu_0}{s/\sqrt{n}}$
+              and find the $p$-value (Skill 3.E; VAR-7.E).
+    \end{itemize}
+    \textbf{AP Skill 4 --- Statistical Argumentation}
+    \begin{itemize}
+        \item Interpret the $p$-value of a one-sample $t$-test in context, recognizing
+              it is computed \emph{assuming $H_0$ is true} (Skill 4.B; DAT-3.E).
+        \item Justify a claim about the population by comparing $p$ to $\alpha$ and
+              writing a conclusion in context (Skill 4.E; DAT-3.F).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item The $t$-statistic measures how many standard errors $\bar x$ is from $\mu_0$,
+              using $s/\sqrt{n}$ as the standard error.
+        \item The $p$-value is the probability of a result as extreme or more extreme,
+              \emph{given} $H_0$ is true --- not the probability $H_0$ is true.
+        \item Decision rule: if $p \le \alpha$, reject $H_0$; if $p > \alpha$, fail to
+              reject $H_0$. Never ``accept'' $H_0$.
+        \item The conclusion restates the decision in terms of the original research question,
+              with appropriate uncertainty language (``at the $\alpha$ significance level'').
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{$t$-statistic} --- $t = \dfrac{\bar x - \mu_0}{s/\sqrt{n}}$; measures
+              distance of $\bar x$ from $\mu_0$ in standard error units
+        \item \textbf{Standard error of $\bar x$} --- $SE_{\bar x} = s/\sqrt{n}$; estimates
+              $\sigma_{\bar x}$ when $\sigma$ is unknown
+        \item \textbf{$p$-value} --- probability of observing a $t$-statistic as extreme or
+              more extreme than the computed one, assuming $H_0$ is true
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Significance level ($\alpha$)} --- the threshold for rejection; typically
+              0.05 unless otherwise stated
+        \item \textbf{Reject $H_0$} --- if $p \le \alpha$; data provide sufficient evidence
+              against $H_0$
+        \item \textbf{Fail to reject $H_0$} --- if $p > \alpha$; data do not provide sufficient
+              evidence against $H_0$ (this is NOT the same as proving $H_0$ true)
+        \item \textbf{Four-step structure} --- State, Plan, Do, Conclude (SPDC)
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
-\end{fixedskillbox}
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+    \textbf{Spiral Review (warm-up)}
+    \begin{itemize}
+        \item Lesson 7.4: identify the $t$-test, state $H_0$ and $H_a$, verify conditions
+        \item Unit 6: the four-step inference structure (State, Plan, Do, Conclude) for a
+              $z$-test --- same structure applies here
+        \item Reading $t$-tables: find $p$-value from $t$-statistic and $df$ (or use
+              \texttt{tcdf} on the TI-84)
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
+    % Authored warm-up compiles to target/ --- no source PDF to embed here.
+\end{minipage}
+\end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\begin{minipage}[t]{0.55\linewidth}
+    \textbf{Finishing the Cereal Box Test (3--4 min)}\\
+    Return to the hook from Lesson 7.4: a consumer group weighed 25 cereal boxes labeled
+    18 oz and got $\bar x = 17.6$ oz, $s = 0.8$ oz. We already set up the test:
+    $H_0: \mu = 18$, $H_a: \mu < 18$, conditions verified.\\[4pt]
+    Now ask: ``What is the actual $t$-statistic? Is $\bar x = 17.6$ oz far enough below 18 oz
+    to convince us the company is under-filling?''\\[4pt]
+    Reveal: $t = \dfrac{17.6 - 18}{0.8/\sqrt{25}} = \dfrac{-0.4}{0.16} = -2.50$.\\[4pt]
+    ``How do we turn this $t$ into a probability (a $p$-value)?''
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.40\linewidth}
+    \textbf{What You Already Know}
+    \begin{itemize}
+        \item The $t$-statistic formula is structurally identical to the $z$-statistic:
+              $\text{statistic} = \dfrac{\text{estimate} - \text{null value}}{\text{SE}}$
+        \item The $p$-value always answers: ``If $H_0$ were true, how likely is a result
+              this extreme (or more so)?''
+        \item The decision rule ($p \le \alpha$ $\Rightarrow$ reject) is the same as
+              in Unit 6.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{skillbox}[Lesson: Computing $t$ and Finding $p$]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{The $t$-Statistic}
+    \[
+      t = \frac{\bar x - \mu_0}{s/\sqrt{n}} \quad \text{with } df = n - 1
+    \]
+    \begin{itemize}
+        \item $\bar x - \mu_0$: how far the sample mean is from the null value
+        \item $s/\sqrt{n}$: standard error of $\bar x$ (estimated, since $\sigma$ is unknown)
+        \item The result follows a $t$-distribution with $df = n - 1$ when conditions are met
+    \end{itemize}
+    \textit{Cereal: $t = -2.50$, $df = 24$.}\\
+    Interpretation: $\bar x = 17.6$ is 2.50 standard errors \emph{below} the null value of 18 oz.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Finding the $p$-Value}
+    \begin{itemize}
+        \item \textbf{One-sided ($H_a: \mu < \mu_0$):} $p = P(t < t_{\text{obs}})$ with $df = n-1$
+        \item \textbf{One-sided ($H_a: \mu > \mu_0$):} $p = P(t > t_{\text{obs}})$
+        \item \textbf{Two-sided ($H_a: \mu \ne \mu_0$):} $p = 2 \cdot P(t > |t_{\text{obs}}|)$
+    \end{itemize}
+    \textbf{On TI-84:} \texttt{tcdf(lower, upper, df)}\\
+    \textit{Cereal: $p = $ \texttt{tcdf}$(-10^{99}, -2.50, 24) \approx 0.010$.}\\[4pt]
+    \textbf{Table B:} find $df = 24$ row; $t = 2.50$ falls between $t^* = 2.492$ ($p = 0.01$, one-tail).
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Lesson (cont.): Interpret and Conclude]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Interpreting the $p$-Value (DAT-3.E)}\\
+    The $p$-value is the probability of observing a sample mean as far below 18 oz as 17.6 oz
+    (or farther), \emph{if the true mean weight really is 18 oz}.\\[6pt]
+    \textit{Cereal: $p \approx 0.010$.} ``If boxes truly average 18 oz, there's only a 1.0\%
+    chance of seeing $\bar x \le 17.6$ oz in a sample of 25 by chance alone.''\\[4pt]
+    Common error: ``There is a 1\% chance $H_0$ is true.'' This is wrong --- $p$ is computed
+    \emph{assuming} $H_0$ is true.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Formal Decision and Conclusion (DAT-3.F)}\\
+    Compare $p$ to $\alpha = 0.05$:
+    \begin{itemize}
+        \item $p = 0.010 \le 0.05$ $\Rightarrow$ \textbf{Reject $H_0$}.
+    \end{itemize}
+    \textbf{Conclusion template:}\\
+    ``Because $p = 0.010 < \alpha = 0.05$, we reject $H_0$. We have convincing evidence that
+    the true mean weight of cereal boxes is less than 18 oz.''\\[4pt]
+    \textit{Key phrases:} ``convincing evidence that [context of $H_a$]'' when rejecting;
+    ``not sufficient evidence that [\ldots]'' when failing to reject.
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Circulate and Check}
+    \begin{itemize}
+        \item $t$-formula: students use $s$ (not $\sigma$) in the denominator.
+        \item $p$-value direction matches $H_a$ (left-tail for $<$, right-tail for $>$,
+              two-tail for $\ne$).
+        \item $p$-value interpretation references $H_0$ being true, not the probability
+              that $H_0$ is true.
+        \item Conclusion is in context, references $\alpha$, and does not say ``accept $H_0$.''
+        \item Matched pairs: $t$-statistic computed on $\bar d$ and $s_d$, not on original data.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Cold-Call Prompts}
+    \begin{itemize}
+        \item ``What does the denominator $s/\sqrt{n}$ represent?''
+        \item ``The $p$-value is 0.07 and $\alpha = 0.05$. What do you conclude?''
+        \item ``Can we say the null hypothesis is true if we fail to reject it? Why not?''
+        \item ``If $H_a$ is two-sided, how does the $p$-value calculation change?''
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{multicols}{3}
+    \textbf{Tier R --- Remediate}
+    \begin{itemize}
+        \item Provide a formula strip: $t = (\bar x - \mu_0)/(s/\sqrt{n})$ and a completed
+              $p$-value example from the TI-84.
+        \item Focus on plugging in values and writing the conclusion sentence.
+        \item Scenarios A and B only.
+    \end{itemize}
+    \columnbreak
+    \textbf{Tier A --- Approaching}
+    \begin{itemize}
+        \item Complete all three scenarios from hook to conclusion.
+        \item Interpret the $p$-value in a sentence for each.
+    \end{itemize}
+    \columnbreak
+    \textbf{Tier E --- Extension}
+    \begin{itemize}
+        \item Complete all scenarios including the matched-pairs problem.
+        \item For one scenario: explain how a larger $n$ would change $SE$ and $t$,
+              and predict whether the $p$-value would increase or decrease.
+    \end{itemize}
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    Context: Mean commute time. $H_0: \mu = 30$ min, $H_a: \mu > 30$ min.
+    Random sample of 22 commuters: $\bar x = 33.4$ min, $s = 6.8$ min; distribution is
+    approximately normal.
+    \begin{enumerate}
+        \item Compute $t$.
+        \item Find the $p$-value (assume $p \approx 0.022$).
+        \item Write the conclusion at $\alpha = 0.05$.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{A student computes $t = -1.85$ with $df = 19$ for a two-sided test. The
+    $p$-value is approximately 0.08. At $\alpha = 0.05$, the correct conclusion is:}
+    \begin{enumerate}[label=(\Alph*)]
+        \item Reject $H_0$; $p < \alpha$.
+        \item Fail to reject $H_0$; there is not sufficient evidence.
+        \item Accept $H_0$; the data support the null.
+        \item Reject $H_a$; the data are consistent with $H_0$.
+    \end{enumerate}
+    Answer: (B)
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework Overview}
+    \begin{itemize}
+        \item Three full SPDC problems: one one-sided, one two-sided, one matched-pairs.
+        \item Students compute $t$, find $p$, write interpretation and conclusion.
+        \item Reflection: ``Explain, in plain language, what it means to fail to reject
+              $H_0$. Is this the same as proving the null is true?''
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension:} For a two-sided test with $t = 2.10$ and $df = 15$,
+              find the $p$-value using both Table B and the TI-84. Compare.
+        \item \textit{Preview:} Lesson 7.6 examines Type I and Type II errors and the
+              power of a significance test --- consequences of the decisions we made today.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
+
 \end{document}

@@ -1,12 +1,10 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.4 — Lesson Plan
+%! Setting Up a Test for a Population Mean — Unit 7, Lesson 7.4 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
-\graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\UnitNumberName}{Unit 7: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 7.4: TODO: Lesson Title}
+\newcommand{\UnitNumberName}{Unit 7: Inference for Quantitative Data: Means \quad}
+\newcommand{\LessonNumberName}{Lesson 7.4: Setting Up a Test for a Population Mean}
 
 \begin{document}
 \begin{center}
@@ -16,55 +14,281 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will identify when a one-sample $t$-test (or
+    matched-pairs $t$-test) is appropriate, write null and alternative hypotheses in terms
+    of a population mean, and verify the conditions for inference --- recognizing that the
+    $t$-distribution models the variation of sample means when $\sigma$ is unknown.
+    (Big Idea: VAR)
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 1 --- Selecting Statistical Methods}
+    \begin{itemize}
+        \item Identify an appropriate inference method for significance tests about a
+              population mean with unknown $\sigma$ (Skill 1.E; VAR-7.B).
+        \item Identify null and alternative hypotheses for a one-sample $t$-test or a
+              matched-pairs $t$-test (Skill 1.F; VAR-7.C).
+    \end{itemize}
+    \textbf{AP Skill 4 --- Statistical Argumentation}
+    \begin{itemize}
+        \item Verify that conditions for inference apply: independence and approximately
+              normal sampling distribution (Skill 4.C; VAR-7.D).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item When $\sigma$ is unknown, use a one-sample $t$-test; the $t$-statistic
+              replaces $z$ and accounts for the additional uncertainty in estimating $\sigma$.
+        \item Matched-pairs data: find the differences first, then treat the set of
+              differences as a single quantitative sample and apply one-sample $t$-procedures.
+        \item The null hypothesis specifies $\mu = \mu_0$; the alternative reflects the
+              direction of the research question (one- or two-sided).
+        \item Two conditions to verify: (1) random/randomized; (2) sampling distribution
+              of $\bar x$ is approximately normal (CLT applies when $n \ge 30$; check for
+              strong skew/outliers when $n < 30$).
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{One-sample $t$-test for $\mu$} --- a significance test used when
+              $\sigma$ is unknown; uses the $t$-distribution with $n-1$ degrees of freedom
+        \item \textbf{Null hypothesis ($H_0$)} --- $H_0: \mu = \mu_0$; the default claim
+              about the population mean
+        \item \textbf{Alternative hypothesis ($H_a$)} --- $H_a: \mu < \mu_0$,
+              $H_a: \mu > \mu_0$, or $H_a: \mu \ne \mu_0$; stated before seeing data
+        \item \textbf{Null value ($\mu_0$)} --- the specific mean value claimed under $H_0$
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Degrees of freedom (df)} --- $df = n - 1$; determines the shape
+              of the $t$-distribution used for inference
+        \item \textbf{Matched pairs} --- data collected in pairs (before/after, two
+              treatments on same subject); differences $d_i = x_{1i} - x_{2i}$ are the
+              sample; $\mu_d$ is the parameter of interest
+        \item \textbf{Independence condition} --- random sample or randomized experiment;
+              if sampling without replacement, $n \le 10\%$ of $N$
+        \item \textbf{Normal condition} --- $n \ge 30$ (CLT) or sample distribution free
+              of strong skew and outliers when $n < 30$
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
-\end{fixedskillbox}
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+    \textbf{Spiral Review (warm-up)}
+    \begin{itemize}
+        \item $t$-distribution: shape, degrees of freedom, comparison with the standard
+              normal ($z$) distribution --- from Lesson 7.1
+        \item When the sampling distribution of $\bar x$ is approximately normal:
+              CLT ($n \ge 30$) and the Normal condition for small samples --- Lesson 7.2
+        \item Connecting Unit 6: the logic of a significance test (hypotheses,
+              conditions, test statistic, $p$-value, conclusion) transfers directly
+              from proportions to means
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
+    % Authored warm-up compiles to target/ — no source PDF to embed here.
+\end{minipage}
+\end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\begin{minipage}[t]{0.55\linewidth}
+    \textbf{Does That Package Weigh What It Says? (3--4 min)}\\
+    Display a cereal box labeled ``Net weight: 18 oz.'' A consumer-advocacy group weighs
+    a random sample of 25 boxes and records an average of 17.6 oz with a standard deviation
+    of 0.8 oz.\\[4pt]
+    Ask: ``Is 17.6 oz just random variation, or is the company under-filling?''\\[4pt]
+    Key discussion points:
+    \begin{itemize}
+        \item We have $\bar x$ and $s$ but \emph{not} $\sigma$ --- so a $z$-test won't work.
+        \item We need a procedure designed for unknown $\sigma$: the $t$-test.
+        \item Before we compute anything, we need to \textbf{set up} the test: choose
+              a method, write hypotheses, and verify conditions.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.40\linewidth}
+    \textbf{Bridge from Unit 6}\\
+    In Unit 6 we tested claims about $p$ using a $z$-statistic:
+    $z = \dfrac{\hat p - p_0}{\sqrt{p_0(1-p_0)/n}}$\\[6pt]
+    In Unit 7 we test claims about $\mu$ using a $t$-statistic:
+    $t = \dfrac{\bar x - \mu_0}{s/\sqrt{n}}$\\[6pt]
+    Same four-step structure; different parameter and distribution.
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{skillbox}[Lesson: Choosing the Method]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{One-Sample $t$-Test vs.\ $z$-Test}
+    \begin{enumerate}
+        \item If $\sigma$ is \emph{known} $\to$ use a $z$-test (rare in practice).
+        \item If $\sigma$ is \emph{unknown} (most real data) $\to$ use a \textbf{one-sample
+              $t$-test for $\mu$} with $df = n - 1$.
+        \item If data come in \textbf{matched pairs} $\to$ compute differences, define
+              $\mu_d$, and run a one-sample $t$-test on the differences.
+    \end{enumerate}
+    \textit{The cereal-box example: $\sigma$ unknown, $n = 25$ boxes --- use a $t$-test.}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Matched-Pairs Setup}\\
+    Example: Eight runners recorded their mile time before and after altitude training.
+    \begin{itemize}
+        \item Compute $d_i = \text{before}_i - \text{after}_i$ for each runner.
+        \item The parameter is $\mu_d =$ mean difference in mile times for all runners.
+        \item $H_0: \mu_d = 0$ (no change); $H_a: \mu_d > 0$ (times improved).
+        \item Apply a one-sample $t$-test to the eight differences.
+    \end{itemize}
+    \textit{Key: define the order of subtraction \textbf{before} computing differences.}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Lesson (cont.): Hypotheses \& Conditions]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Writing Hypotheses}
+    \begin{itemize}
+        \item Always in terms of the \emph{population} parameter ($\mu$ or $\mu_d$),
+              never the sample statistic ($\bar x$ or $\bar d$).
+        \item $H_0: \mu = \mu_0$ (e.g., $H_0: \mu = 18$)
+        \item Choose $H_a$ based on the research question --- \emph{before} seeing data:
+              \begin{itemize}
+                  \item ``Is $\mu$ \emph{less than} $\mu_0$?'' $\to H_a: \mu < \mu_0$
+                  \item ``Is $\mu$ \emph{greater than} $\mu_0$?'' $\to H_a: \mu > \mu_0$
+                  \item ``Has $\mu$ \emph{changed}?'' $\to H_a: \mu \ne \mu_0$
+              \end{itemize}
+    \end{itemize}
+    \textit{Cereal box: $H_0: \mu = 18$; $H_a: \mu < 18$ (under-filling claim).}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Verifying Conditions (VAR-7.D)}
+    \begin{enumerate}
+        \item \textbf{Random/Independence:}
+              \begin{itemize}
+                  \item Data from a random sample or randomized experiment.
+                  \item If sampling without replacement: $n \le 10\%$ of $N$.
+              \end{itemize}
+        \item \textbf{Normal (sampling distribution of $\bar x$):}
+              \begin{itemize}
+                  \item $n \ge 30$: CLT guarantees approximate normality regardless of
+                        population shape.
+                  \item $n < 30$: Check that the sample distribution has no strong
+                        skewness or outliers (examine a dotplot or boxplot of the data).
+              \end{itemize}
+    \end{enumerate}
+    \textit{Cereal: $n = 25 < 30$ --- we must examine the sample distribution for
+    skewness and outliers.}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Circulate and Check}
+    \begin{itemize}
+        \item Students correctly identify $t$-test (not $z$) because $\sigma$ is unknown.
+        \item Hypotheses state $\mu$ (not $\bar x$); $\mu_0$ is the null value from context.
+        \item Alternative hypothesis direction matches the research question; chosen
+              \emph{before} examining data.
+        \item Matched-pairs: differences computed with a \emph{defined} order of subtraction.
+        \item Normal condition: $n < 30$ triggers a check of sample shape, not an assumption.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Cold-Call Prompts}
+    \begin{itemize}
+        \item ``Why can't we use a $z$-test here?''
+        \item ``What does $\mu_0 = 18$ represent in context?''
+        \item ``If I told you the company \emph{wanted} to prove they were under-filling,
+              should that change $H_a$? Why?''
+        \item ``For matched pairs, what changes in the setup compared to a single sample?''
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{multicols}{3}
+    \textbf{Tier R --- Remediate}
+    \begin{itemize}
+        \item Provide a side-by-side template: ``$H_0: \mu =$ \_\_\_, $H_a: \mu$ (circle:
+              $<$ / $>$ / $\ne$) \_\_\_'' and the two-condition checklist.
+        \item Focus on choosing the direction of $H_a$ from a plain-English research question.
+        \item Activity: Scenarios A and B only.
+    \end{itemize}
+    \columnbreak
+    \textbf{Tier A --- Approaching}
+    \begin{itemize}
+        \item Complete all three activity scenarios independently.
+        \item Justify each condition in writing with numbers from the context.
+    \end{itemize}
+    \columnbreak
+    \textbf{Tier E --- Extension}
+    \begin{itemize}
+        \item Complete all scenarios plus the matched-pairs scenario.
+        \item Explain: ``If $n = 12$ and the dotplot shows mild right skew with no outliers,
+              can we proceed? What if there is a clear outlier?''
+    \end{itemize}
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    A sleep researcher believes the average number of hours teenagers sleep per night is
+    \emph{less} than the recommended 8 hours. She randomly surveys 20 teens and finds
+    $\bar x = 7.2$ hr, $s = 1.1$ hr.
+    \begin{enumerate}
+        \item Name the appropriate inference method and explain why.
+        \item State $H_0$ and $H_a$.
+        \item Verify both conditions. (A dotplot shows no strong skew or outliers.)
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{A factory produces bolts with a target mean diameter of 10.0 mm. Quality control
+    randomly samples 18 bolts and finds $\bar x = 9.85$ mm, $s = 0.22$ mm, with a roughly
+    symmetric distribution. Which setup is correct?}
+    \begin{enumerate}[label=(\Alph*)]
+        \item $z$-test; $H_0: \bar x = 10.0$, $H_a: \bar x \ne 10.0$
+        \item $t$-test; $H_0: \mu = 10.0$, $H_a: \mu \ne 10.0$ \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+        \item $t$-test; $H_0: \mu = 9.85$, $H_a: \mu < 10.0$
+        \item $z$-test; $H_0: \mu = 10.0$, $H_a: \mu < 10.0$
+    \end{enumerate}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework Overview}
+    \begin{itemize}
+        \item Four contexts (including one matched-pairs scenario): identify the method,
+              state hypotheses, and verify conditions. No computation of $t$ yet.
+        \item Students write a one-sentence justification for the direction of $H_a$
+              in each problem.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension:} A student sets $H_a: \mu < 8$ \emph{after} seeing
+              $\bar x = 7.2$. Explain what is wrong with this approach and why it inflates
+              the Type I error rate.
+        \item \textit{Preview:} Lesson 7.5 carries out the test --- compute the
+              $t$-statistic, find the $p$-value, and write a conclusion.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
+
 \end{document}

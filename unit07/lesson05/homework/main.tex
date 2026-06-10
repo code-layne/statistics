@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.5 — Homework
+%! Carrying Out a Test for a Population Mean — Unit 7, Lesson 7.5 — Homework
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
@@ -11,9 +11,82 @@
 
 \vspace{0.15in}
 
-% TODO: author the Homework. See references/components.md for the expected structure.
-\begin{notesbox}{Homework}
-\writelines{4}
-\end{notesbox}
+\textit{Complete all four SPDC steps for each problem. Show all computations.}
+
+\begin{enumerate}
+
+\item \textbf{Plant Growth.} \quad
+A botanist claims that a new fertilizer increases mean plant height beyond the historical
+average of 12 cm after 4 weeks. She randomly assigns 25 plants to the new fertilizer.
+$\bar x = 13.6$ cm, $s = 3.2$ cm. A dotplot of plant heights shows a roughly symmetric
+distribution with no outliers.
+
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{State:} $H_0$: \blank{4cm} \quad $H_a$: \blank{4cm}
+  \item \textbf{Plan:} Method: \blank{5cm}, $df = $ \blank{1.5cm}. Conditions:
+        \begin{itemize}
+          \item Random: \writeline
+          \item Normal ($n < 30$): \writeline
+        \end{itemize}
+  \item \textbf{Do:} $SE = $ \blank{3cm} \quad $t \approx$ \blank{2.5cm} \quad
+        $p \approx$ \texttt{tcdf}(\blank{2cm}, $10^{99}$, \blank{2cm}) $\approx$ \blank{2cm}
+  \item \textbf{Conclude:} \writelines{2}
+\end{enumerate}
+
+\vspace{0.08in}
+
+\item \textbf{Exam Score Study.} \quad
+A university testing center claims the mean score on a standardized placement exam is 500.
+A professor suspects the mean score at her campus is \emph{different} from 500. A random
+sample of 45 students from her campus yields $\bar x = 485$, $s = 60$.
+
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{State:} $H_0$: \blank{4cm} \quad $H_a$: \blank{4cm}
+  \item \textbf{Plan:} Method: \blank{5cm}, $df = $ \blank{1.5cm}. Conditions (brief): \writeline
+  \item \textbf{Do:} $SE = $ \blank{3cm} \quad $t \approx$ \blank{2.5cm}
+
+        $p$ (two-sided) $\approx 2 \times \texttt{tcdf}($\blank{3cm}, $10^{99}$, \blank{2cm}$) \approx$ \blank{2cm}
+
+  \item \textbf{Conclude:} \writelines{2}
+\end{enumerate}
+
+\vspace{0.08in}
+
+\item \textbf{Matched Pairs: Study Techniques.} \quad
+An educational researcher wants to know whether using flashcards improves quiz scores.
+Ten students each take a quiz on two equivalent topics: once without flashcards and once
+after using flashcards for one week. The differences $d_i = \text{flashcards} - \text{no flashcards}$
+are: $\{4, 7, -1, 5, 9, 3, 6, 2, 8, 5\}$. \quad $\bar d = 4.8$, $s_d = 2.97$.
+A boxplot of the differences is roughly symmetric with no outliers.
+
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{State:} $\mu_d = $ \blank{6cm}. \quad $H_0$: \blank{3cm} \quad $H_a$: \blank{3cm}
+  \item \textbf{Plan:} Method: \blank{5cm}, $df = $ \blank{1.5cm}. Conditions:
+        \begin{itemize}
+          \item Independence: \writeline
+          \item Normal ($n < 30$): \writeline
+        \end{itemize}
+  \item \textbf{Do:} $SE_d = \dfrac{s_d}{\sqrt{n}} \approx$ \blank{2.5cm} \quad
+        $t = \dfrac{\bar d - 0}{SE_d} \approx$ \blank{2.5cm}
+
+        $p \approx$ \blank{4cm}
+
+  \item \textbf{Conclude:} \writelines{2}
+\end{enumerate}
+
+\end{enumerate}
+
+\begin{reflectionbox}
+A student says: ``We got $p = 0.08$, so we know the null hypothesis is probably true.''
+Explain what is wrong with this statement. What does ``fail to reject $H_0$'' actually mean?
+\writelines{3}
+\end{reflectionbox}
+
+\begin{extensionbox}
+For Problem 2, suppose the professor changes her hypotheses to $H_a: \mu < 500$ after seeing
+that $\bar x = 485$. (a) Explain why this is a problem. (b) Compute the new (incorrect)
+$p$-value using the one-sided left tail. (c) Compare it to the two-sided result.
+\writelines{3}
+\end{extensionbox}
 
 \end{document}
