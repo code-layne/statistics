@@ -1,12 +1,10 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.2 — Lesson Plan
+%! AP Statistics — Unit 7, Lesson 7.2 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
-\graphicspath{{images/}}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\UnitNumberName}{Unit 7: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 7.2: TODO: Lesson Title}
+
+\newcommand{\UnitNumberName}{Unit 7: Inference for Quantitative Data: Means \quad}
+\newcommand{\LessonNumberName}{Lesson 7.2: Constructing a Confidence Interval for a Population Mean}
 
 \begin{document}
 \begin{center}
@@ -16,55 +14,252 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will describe $t$-distributions, verify conditions
+    for a one-sample $t$-interval, and construct a confidence interval to estimate a
+    population mean when $\sigma$ is unknown. (Big Ideas: VAR, UNC)
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 3 --- Using Probability \& Simulation}
+    \begin{itemize}
+        \item Describe $t$-distributions (Skill 3.C; VAR-7.A).
+        \item Identify the one-sample $t$-interval as the appropriate procedure for a
+              population mean when $\sigma$ is unknown (Skill 1.D; UNC-4.O).
+        \item Verify Random, 10\% (if sampling w/o replacement), and Large Sample
+              conditions (Skill 4.C; UNC-4.P).
+        \item Determine margin of error using $t^*$ and $SE_{\bar x} = s/\sqrt{n}$
+              (Skill 3.D; UNC-4.Q).
+        \item Calculate the $t$-interval: $\bar x \pm t^* \cdot s/\sqrt{n}$
+              (Skill 3.D; UNC-4.R).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item The $t$-distribution replaces $z$ when $\sigma$ is unknown; it has
+              heavier tails and depends on degrees of freedom $df = n - 1$.
+        \item As $df$ increases the $t$-distribution approaches the standard normal.
+        \item The matched-pairs design is treated as one sample of \emph{differences}
+              --- inference proceeds exactly as for a single population mean.
+        \item The critical value $t^*$ is found from a $t$-table or calculator using
+              $df = n - 1$ and the desired confidence level $C$.
+        \item Formula (not memorized; derived from the general form on the formula
+              sheet): $\bar x \pm t^* \cdot \dfrac{s}{\sqrt{n}}$.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{lX}
+    \textbf{$t$-distribution} &
+        A family of bell-shaped, symmetric distributions indexed by degrees of freedom
+        $df$; heavier tails than the standard normal because $s$ introduces extra
+        variability (VAR-7.A.1) \\
+    \textbf{Degrees of freedom ($df$)} &
+        For a one-sample $t$-interval or $t$-test: $df = n - 1$ (VAR-7.A.2) \\
+    \textbf{Standard error of $\bar x$} &
+        $SE_{\bar x} = s/\sqrt{n}$ --- estimates the SD of the sampling distribution
+        of $\bar x$ (UNC-4.Q.2) \\
+    \textbf{Critical value $t^*$} &
+        Upper tail area $= (1 - C)/2$; found from a $t$-table with $df = n - 1$
+        (UNC-4.Q.1) \\
+    \textbf{Margin of error} &
+        $ME = t^* \cdot s/\sqrt{n}$; the half-width of the interval (UNC-4.Q.3) \\
+    \textbf{One-sample $t$-interval} &
+        $\bar x \pm t^* \cdot s/\sqrt{n}$; appropriate when $\sigma$ is unknown
+        (UNC-4.O.1, UNC-4.R.2) \\
+    \textbf{Matched-pairs design} &
+        Compute the difference for each pair; treat the differences as a single
+        sample and proceed as a one-sample $t$-interval (UNC-4.O.3) \\
+\end{tabularx}
 \end{skillbox}
 
-\begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
-\end{fixedskillbox}
-
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Unit 5: sampling distribution of $\bar x$: shape (CLT), center
+              $\mu$, spread $\sigma/\sqrt{n}$.
+        \item Unit 6: one-sample $z$-interval for $p$ --- structure statistic $\pm$
+              critical value $\times$ SE; conditions (Random, Large Counts, 10\%).
+        \item Unit 5: why using $s$ instead of $\sigma$ introduces extra uncertainty
+              (Lesson 7.1).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Connections Forward}
+    \begin{itemize}
+        \item Interpreting and justifying a $t$-interval claim $\to$ Lesson 7.3
+        \item One-sample $t$-test for a population mean $\to$ Lessons 7.4--7.5
+        \item Two-sample $t$-interval for a difference of means $\to$ Lesson 7.6
+        \item Matched-pairs $t$-interval and $t$-test (revisited) $\to$ Lesson 7.5
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (5--7 min)}\\
+    Display: A nutritionist records the daily sodium intake (mg) for a random sample
+    of 20 college students: $\bar x = 2{,}840$ mg, $s = 480$ mg.
+    The recommended daily maximum is 2{,}300 mg.\\[4pt]
+    Ask: ``Can we estimate the true mean sodium intake for all college students? What
+    tool do we need --- and why can't we just use a $z$-interval?''\\[4pt]
+    Reveal: We don't know the population SD $\sigma$, so we substitute $s$ and use
+    the $t$-distribution.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15 min)}
+    \begin{enumerate}
+        \item Introduce the $t$-distribution: bell-shaped, symmetric, centered at 0.
+              Heavier tails than $N(0,1)$ because $s$ varies from sample to sample
+              (VAR-7.A.1). As $df$ increases, the $t$ approaches $z$ (VAR-7.A.2).
+        \item Show $t$-table usage: for $C = 95\%$ and $df = 19$, find
+              $t^* = 2.093$.
+        \item Verify conditions for the sodium example:
+              \textbf{Random} (random sample), \textbf{10\%} ($20 \le 10\%$ of all
+              college students), \textbf{Large Sample} ($n = 20 < 30$, so check for
+              strong skewness/outliers in the data).
+        \item Compute: $\bar x \pm t^* \cdot s/\sqrt{n} = 2840 \pm 2.093 \cdot 480/\sqrt{20}
+              = 2840 \pm 224.6 = (2615.4,\ 3064.6)$ mg.
+    \end{enumerate}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{skillbox}[Explicit Instruction: One-Sample $t$-Interval Procedure]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Four-Step Template (PCCF)}
+    \begin{enumerate}
+        \item \textbf{Parameter}: Define $\mu$ = true mean [quantity] for [population].
+        \item \textbf{Conditions}:
+              \begin{itemize}
+                  \item \textit{Random}: random sample or randomized experiment.
+                  \item \textit{10\%}: $n \le 10\% N$ (if w/o replacement).
+                  \item \textit{Large Sample}: $n \ge 30$, \emph{or} sample data show
+                        no strong skewness or outliers.
+              \end{itemize}
+        \item \textbf{Calculate}: $\bar x \pm t^* \cdot \dfrac{s}{\sqrt{n}}$,
+              where $t^*$ uses $df = n-1$ and confidence level $C$.
+        \item \textbf{Conclude}: Interpret the interval in context.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Matched-Pairs Extension}\\
+    When data come in pairs (before/after, treatment/control on the same subject):
+    \begin{enumerate}
+        \item Compute $d_i = x_{i,1} - x_{i,2}$ for each pair.
+        \item Find $\bar d$ and $s_d$.
+        \item Apply the one-sample $t$-interval to the differences:
+              $\bar d \pm t^* \cdot s_d/\sqrt{n}$, where $n$ = number of pairs
+              and $df = n - 1$ (UNC-4.O.3).
+        \item Define order of subtraction clearly --- it determines the sign of
+              the difference.
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Circulate and Check}
+    \begin{itemize}
+        \item Ensure students use $t^*$ (not $z^*$) and the correct $df = n - 1$.
+        \item Listen for confusion between the $t$-table and $z$-table; redirect to
+              the $t$-table row matching $df$ and confidence level.
+        \item Verify condition write-ups are in context, not just ``yes/no.''
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Cold-Call Prompts}
+    \begin{itemize}
+        \item ``Why is the $t$-interval wider than a $z$-interval for the same
+              data and confidence level?''
+        \item ``If $n = 200$, how close is $t^*$ to $z^*$ for 95\% confidence?
+              Why?''
+        \item ``How do you check the Large Sample condition when $n < 30$?''
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Partner Activity (10--12 min)}\\
+    Scenario A: Sleep study --- 25 college students, $\bar x = 6.8$ hr,
+    $s = 1.2$ hr. Build a 90\% confidence interval for the true mean sleep time.\\[4pt]
+    Scenario B: Matched-pairs step-count tracker --- 15 participants before and
+    after an intervention. Use the differences to build a 95\% CI for the mean
+    change in daily steps.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support (Tier R)}: Conditions pre-verified; students only
+              find $t^*$, calculate, and write the interval.
+        \item \textit{On-grade (Tier A)}: Full four-step procedure for both scenarios.
+        \item \textit{Extension (Tier E)}: How large must $n$ be for the margin of
+              error in Scenario A to be at most 0.3 hr? Set up and solve the equation.
+        \item \textit{ELL}: Formula-sheet reference card; key terms glossed in
+              English and Spanish.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}
+    \begin{enumerate}
+        \item A random sample of 16 water bottles has mean volume $\bar x = 498$ mL
+              and $s = 6$ mL. Verify the conditions and construct a 95\% confidence
+              interval for the true mean volume.
+        \item Interpret your interval in context (one sentence).
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{A researcher computes a 95\% $t$-interval for a population mean using
+    $n = 20$ observations. She then repeats the study with $n = 80$. Assuming similar
+    sample standard deviations, the new interval will be:}
+    \begin{enumerate}[label=(\Alph*)]
+        \item About the same width.
+        \item About half as wide.
+        \item About twice as wide.
+        \item About four times as wide.
+    \end{enumerate}
+    Answer: (B) — $ME \propto s/\sqrt{n}$; quadrupling $n$ halves the ME.
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item Three problems: each provides $n$, $\bar x$, $s$, and a confidence
+              level. Students perform the full four-step procedure, including condition
+              verification and a contextual interpretation.
+        \item One matched-pairs problem: a ``before and after'' design where students
+              compute differences, find $\bar d$ and $s_d$, and build the interval.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: If $\sigma$ were actually known to be 500 mg for
+              the sodium example, compute the $z$-interval and compare the width to
+              the $t$-interval. Explain the difference.
+        \item \textit{Preview}: Lesson 7.3 focuses on \emph{interpreting} the interval
+              correctly and using it to justify claims about the population mean.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
+
 \end{document}

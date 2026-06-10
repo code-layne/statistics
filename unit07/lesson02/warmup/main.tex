@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.2 — Warm-Up
+%! AP Statistics — Unit 7, Lesson 7.2 — Warm-Up
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
@@ -11,9 +11,32 @@
 
 \vspace{0.15in}
 
-% TODO: author the Warm-Up. See references/components.md for the expected structure.
-\begin{notesbox}{Warm-Up}
-\writelines{4}
-\end{notesbox}
+From Unit 6, the one-sample $z$-interval for a proportion has the form
+$\hat p \pm z^* \sqrt{\hat p(1 - \hat p)/n}$.
+
+\begin{enumerate}
+  \item A random sample of 100 adults finds 64 support a new policy. Verify
+        conditions and construct a 95\% CI for the true proportion.
+
+        \begin{itemize}
+          \item \textbf{Random:} \blank{5cm}
+          \item \textbf{Large Counts:} $n\hat p = $ \blank{2cm}$ \ge 10$? \blank{1cm}
+                \quad $n(1-\hat p) = $ \blank{2cm}$ \ge 10$? \blank{1cm}
+          \item $\hat p = $ \blank{2cm} \quad $z^* = $ \blank{2cm}
+          \item $95\%$ CI: \blank{8cm} $= ($ \blank{2cm} $,$ \blank{2cm} $)$
+        \end{itemize}
+
+  \item Now suppose we want to estimate a population \emph{mean} instead of a
+        proportion. We know $\bar x = 42$, $s = 8$, $n = 36$, but $\sigma$ is unknown.
+
+        \begin{enumerate}[label=\alph*.]
+          \item Why can't we use a $z$-interval for this situation?
+                \writelines{2}
+
+          \item What distribution should we use instead, and what parameter(s)
+                determine its shape?
+                \writelines{2}
+        \end{enumerate}
+\end{enumerate}
 
 \end{document}

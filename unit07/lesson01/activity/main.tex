@@ -1,19 +1,81 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.1 — Group Activity
+%! AP Statistics — Unit 7, Lesson 7.1 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 7, Lesson 7.1}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
+\textbf{Directions:} Work with your partner on each scenario. For each, (a) state the
+hypotheses, (b) describe a Type I error in context, (c) describe a Type II error in
+context, and (d) decide which error is more costly and explain why.
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Scenario 1 --- School Nurse Study}\\
+A school nurse believes the mean number of sick days per year for students at her school
+differs from the district average of 5 days.
+
+\begin{enumerate}[label=\alph*.]
+  \item State the hypotheses in words (they are given as a starting point):
+        $H_0$: The mean number of sick days is \blank{3cm} days.
+        $H_a$: The mean number of sick days is \blank{4cm} 5 days.
+
+        \vspace{0.05in}
+
+  \item Describe a Type I error in context (use the sentence frame):
+        ``Concluding the mean number of sick days \blank{5cm} when it
+        actually \blank{5cm}.''
+        \writelines{1}
+
+  \item Describe a Type II error in context:
+        ``Failing to conclude \blank{5cm} when it actually \blank{5cm}.''
+        \writelines{1}
+
+  \item Which error is more costly? Circle one: \quad \textbf{Type I} \quad \textbf{Type II}
+        \writelines{1}
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Scenario 2 --- Bottling Plant Quality Control}\\
+A factory bottles fruit juice. The label states 12 fl oz per bottle. Quality control
+tests $H_0{:}\ \mu = 12$ fl oz against $H_a{:}\ \mu \ne 12$ fl oz using $\alpha = 0.05$.
+
+\begin{enumerate}[label=\alph*.]
+  \item State the hypotheses in symbols. \writeline
+
+  \item Describe a Type I error in context. \writelines{2}
+
+  \item Describe a Type II error in context. \writelines{2}
+
+  \item Which error is more costly for the company? Which is more costly for
+        consumers? Explain. \writelines{3}
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Scenario 3 --- Clinical Drug Trial}\\
+A pharmaceutical company tests whether a new antibiotic reduces mean infection duration
+below 7 days. They set $\alpha = 0.01$ to minimize the risk of approving an ineffective drug.
+
+\begin{enumerate}[label=\alph*.]
+  \item Describe both error types in context and identify the consequences of each. \writelines{4}
+
+  \item The FDA reviewer argues that $\alpha$ should be raised to 0.10 to avoid missing
+        effective drugs. Write a counterargument explaining the trade-off. \writelines{3}
+
+  \item If the sample size is increased from $n = 50$ to $n = 200$ (with $\alpha = 0.01$
+        unchanged), what happens to the Type II error rate and power? Explain. \writelines{3}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

@@ -1,19 +1,36 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.1 — Exit Ticket (Answer Key)
+%! AP Statistics — Unit 7, Lesson 7.1 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
 \pageheader{Unit 7, Lesson 7.1}{Exit Ticket --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
+A quality-control engineer tests whether the mean fill volume of juice bottles differs
+from the labeled amount of 12 fl oz. The hypotheses are $H_0{:}\ \mu = 12$ vs.\
+$H_a{:}\ \mu \ne 12$, with $\alpha = 0.05$.
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}
+
+  \item Describe in context what it would mean to commit a \textbf{Type I error}.
+
+        \ansline{Concluding that the mean fill volume differs from 12 fl oz when it actually equals 12 fl oz --- the engineer halts production unnecessarily.}
+
+  \item Describe in context what it would mean to commit a \textbf{Type II error}.
+
+        \ansline{Failing to conclude that the mean fill volume differs from 12 fl oz when it actually does differ --- bottles continue to be incorrectly filled.}
+
+  \item The engineer decides to use $\alpha = 0.10$ instead of $\alpha = 0.05$.
+        Describe the effect on each error rate.
+
+        \begin{itemize}
+            \item Type I error rate: \ans{increases} (from 5\% to 10\%)
+            \item Type II error rate: \ans{decreases} (easier to reject $H_0$, so less likely to miss a real difference)
+        \end{itemize}
+
+\end{enumerate}
 
 \end{document}

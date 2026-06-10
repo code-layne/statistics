@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.3 — Guided Notes
+%! AP Statistics — Unit 7, Lesson 7.3 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
@@ -9,11 +9,106 @@
 \pageheader{Unit 7, Lesson 7.3}{Guided Notes}
 \namedateperiod
 
-\vspace{0.15in}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+\end{itemize}
+\end{objectivebox}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{vocabbox}
+\termblanklong{Interpretation of a confidence interval}
+\termblanklong{``$C$\% confident'' (what it really means)}
+\termblanklong{Width of a confidence interval}
+\termblanklong{Justifying a claim using a CI}
+\end{vocabbox}
+
+\begin{hookbox}
+From Lesson 7.2: \textbf{95\% CI for mean sodium intake: $(2615, 3065)$ mg.}
+
+Below are two interpretations. Which is correct? What is wrong with the other?
+
+\begin{itemize}
+    \item[A.] ``There is a 95\% probability that the true mean is between 2615 and 3065 mg.''
+    \item[B.] ``We are 95\% confident that the interval (2615, 3065) mg captures
+              the true mean daily sodium intake for all college students.''
+\end{itemize}
+
+Correct: \blank{2cm} \quad Why is the other wrong? \writelines{2}
+\end{hookbox}
+
+\begin{notesbox}{Correct Interpretation Template (UNC-4.S)}
+``We are \blank{2cm}\% confident that the interval
+$(\rule{1.5cm}{0.4pt},\ \rule{1.5cm}{0.4pt})$ \blank{2cm}
+captures the true mean \blank{4cm} for \blank{4cm}.''
+
+\vspace{0.1in}
+\textbf{What does ``$C$\% confident'' actually mean?} (UNC-4.S.1)\\
+In \blank{8cm} with the same $n$, approximately \blank{2cm}\% of
+all confidence intervals constructed this way will capture the true mean $\mu$.
+
+\vspace{0.1in}
+\textbf{Three common errors to avoid:}
+\begin{enumerate}
+    \item Using ``\blank{4cm}'' instead of ``confident'' (implies $\mu$ is random).
+    \item Failing to reference the \blank{4cm} or \blank{4cm} (UNC-4.S.3).
+    \item Claiming the interval contains \blank{4cm}\% of the data values (wrong ---
+          it estimates the \blank{4cm}, not individual values).
+\end{enumerate}
 \end{notesbox}
+
+\begin{notesbox}{Width of a Confidence Interval (UNC-4.U)}
+Width $= 2 \times ME = 2 \cdot t^* \cdot \dfrac{s}{\sqrt{n}}$
+
+\vspace{0.1in}
+\begin{tabular}{lll}
+    \textbf{Change} & \textbf{Effect on Width} & \textbf{Why} \\
+    \hline
+    Increase $n$ & Width \blank{3cm} & $ME \propto 1/\sqrt{n}$; to halve width, \blank{4cm} $n$ \\
+    Increase $C$ & Width \blank{3cm} & Larger $t^*$ is needed \\
+    Increase $s$ & Width \blank{3cm} & More variability in the data \\
+\end{tabular}
+
+\vspace{0.1in}
+Width is proportional to $1/\sqrt{n}$: quadrupling $n$ \blank{4cm} the width (UNC-4.U.2).
+\end{notesbox}
+
+\begin{notesbox}{Justifying a Claim Using a CI (UNC-4.T)}
+Given a confidence interval $(\ell, u)$ and a claimed value $\mu_0$:
+
+\vspace{0.1in}
+\begin{tabular}{ll}
+    \textbf{If $\mu_0$ is outside the CI} & \blank{6cm} evidence that
+          $\mu \ne \mu_0$ \\
+    \textbf{If $\mu_0$ is inside the CI} & \blank{6cm} evidence against the claim \\
+\end{tabular}
+
+\vspace{0.1in}
+\textbf{Example:} Sodium CI $= (2615, 3065)$ mg. Claimed value: $\mu_0 = 2300$ mg.
+
+Is 2300 inside or outside the interval? \blank{3cm}
+
+Conclusion: \writelines{2}
+
+\vspace{0.1in}
+\textbf{One-sided claims:} If the claim is ``$\mu > 2500$,'' check whether
+\blank{6cm} of the CI lies above 2500.
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Guided Practice:} A 90\% CI for the mean wait time at a clinic is
+$(18.3, 24.7)$ minutes. The clinic manager claims the mean wait time is 20 minutes.
+
+\begin{enumerate}
+  \item Write a correct interpretation of the interval. \writelines{2}
+  \item Does the interval provide convincing evidence against the manager's claim?
+        Explain. \writelines{2}
+  \item If the sample size were quadrupled (same $\bar x$ and $s$), describe the
+        effect on the margin of error and the interval width. \writelines{2}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

@@ -1,19 +1,70 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.3 — Group Activity (Answer Key)
+%! AP Statistics — Unit 7, Lesson 7.3 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
 \pageheader{Unit 7, Lesson 7.3}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\textbf{CI 1:} 95\% $t$-interval for mean math score: $(72.1, 84.3)$ points, $n = 30$.
+
+\begin{enumerate}[label=\alph*.]
+  \item Correct interpretation:
+        \ansline{We are 95\% confident that the interval (72.1, 84.3) points captures the true mean math test score for all eighth graders in this district.}
+
+  \item Claim: mean $= 70$. Evidence against?
+        \textcolor{keyred}{\textbf{Yes}} \quad (No)
+
+        \ansline{70 points lies below the entire interval (72.1, 84.3), so the data provide convincing evidence that the true mean score differs from (specifically, exceeds) 70 points.}
+
+  \item Effect of $n = 120$ vs.\ $n = 30$:
+        \ansline{The margin of error would be smaller --- by a factor of $\sqrt{30/120} = \sqrt{1/4} = 1/2$. Quadrupling the sample size halves the margin of error.}
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{CI 2:} 90\% $t$-interval for mean 5K time: $(24.6, 29.8)$ min, $n = 25$.
+
+\begin{enumerate}[label=\alph*.]
+  \item Correct interpretation:
+        \ansline{We are 90\% confident that the interval (24.6, 29.8) minutes captures the true mean 5K finish time for all adult runners.}
+
+  \item Claim: mean $= 30$ min. Evidence against?
+        \ansline{Yes: 30 minutes lies just above the interval (24.6, 29.8). Because 30 is not captured by the interval, the data provide convincing evidence that the true mean finish time differs from 30 minutes (specifically, is less than 30 minutes).}
+
+  \item Effect of raising $C$ to 99\%:
+        \ansline{A higher confidence level requires a larger $t^*$, which increases the margin of error and therefore widens the interval. The interval would be wider than (24.6, 29.8).}
+
+  \item Claim: mean $> 25$ min. Supported?
+        \ansline{Not definitively: the interval (24.6, 29.8) includes values below 25 (specifically, 24.6 to 25.0), so the data do not provide convincing evidence that the mean exceeds 25 minutes. The lower bound is below 25.}
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{CI 3:} 95\% $t$-interval for mean battery life: $(18.4, 21.6)$ hr, $n = 50$, $s = 5.8$.
+
+\begin{enumerate}[label=\alph*.]
+  \item Correct interpretation:
+        \ansline{We are 95\% confident that the interval (18.4, 21.6) hours captures the true mean battery life for all phones of this model.}
+
+  \item Claim: mean $\ge 20$ hours. Evidence against?
+        \ansline{Not convincing: 20 hours lies inside the interval (18.4, 21.6). The data do not provide convincing evidence that the mean battery life differs from 20 hours. However, because 18.4 $<$ 20, the interval does include values below 20, so the claim is not fully supported either.}
+
+  \item Minimum $n$ for $ME \le 1$ hr:
+        \ansline{$ME = t^* \cdot s/\sqrt{n} \le 1$. Using $t^* \approx 1.960$ and $s = 5.8$: $\sqrt{n} \ge 1.960 \times 5.8 / 1 = 11.368$; $n \ge 11.368^2 \approx 129.2$. Round up: $n \ge 130$.}
+
+  \item Trade-off of raising $C$ to 99\%:
+        \ansline{A higher confidence level ($t^*$ increases from $\approx 2.009$ to $\approx 2.680$ for $df = 49$) widens the interval, increasing the margin of error. The interval captures $\mu$ more reliably, but provides less precision.}
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

@@ -1,19 +1,28 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.3 — Exit Ticket (Answer Key)
+%! AP Statistics — Unit 7, Lesson 7.3 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
 \pageheader{Unit 7, Lesson 7.3}{Exit Ticket --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
+A 95\% confidence interval for the mean commute time for city workers is
+$(24.3,\ 31.7)$ minutes, based on a random sample.
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}
+
+  \item Correct interpretation:
+        \ansline{We are 95\% confident that the interval (24.3, 31.7) minutes captures the true mean commute time for all city workers.}
+
+  \item Claim: mean $= 22$ min. Evidence against?
+        \ansline{Yes: 22 minutes lies below the entire interval (24.3, 31.7). Because the claimed value is not captured by the interval, the data provide convincing evidence that the true mean commute time differs from (specifically, exceeds) 22 minutes.}
+
+  \item Effect of quadrupling $n$:
+        \ansline{The margin of error is halved. Since $ME \propto 1/\sqrt{n}$ and $\sqrt{4n} = 2\sqrt{n}$, quadrupling $n$ reduces $ME$ by a factor of 2.}
+
+\end{enumerate}
 
 \end{document}

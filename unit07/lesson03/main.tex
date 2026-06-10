@@ -1,12 +1,10 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.3 — Lesson Plan
+%! AP Statistics — Unit 7, Lesson 7.3 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
-\graphicspath{{images/}}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\UnitNumberName}{Unit 7: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 7.3: TODO: Lesson Title}
+
+\newcommand{\UnitNumberName}{Unit 7: Inference for Quantitative Data: Means \quad}
+\newcommand{\LessonNumberName}{Lesson 7.3: Justifying a Claim About a Population Mean Based on a Confidence Interval}
 
 \begin{document}
 \begin{center}
@@ -16,55 +14,252 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will correctly interpret one-sample $t$-intervals,
+    identify relationships between sample size, confidence level, and interval width, and
+    use a confidence interval to justify a claim about a population mean. (Big Idea: UNC)
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 4 --- Statistical Argumentation}
+    \begin{itemize}
+        \item Interpret a confidence interval for a population mean, including
+              matched-pairs mean difference (Skill 4.B; UNC-4.S).
+        \item Justify a claim based on a confidence interval (Skill 4.D; UNC-4.T).
+        \item Identify relationships between sample size, CI width, and margin of
+              error (Skill 4.A; UNC-4.U).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item A 95\% CI does \emph{not} mean ``95\% probability that $\mu$ is in
+              the interval'' --- it means the method captures $\mu$ in 95\% of
+              repeated samples (UNC-4.S.1).
+        \item A correct interpretation references the specific sample, context,
+              and population (UNC-4.S.3).
+        \item Increasing $n$ decreases width; increasing confidence level increases
+              width; the two trade off (UNC-4.U).
+        \item To justify a claim: if the claim value is outside the CI, there is
+              evidence against it; if it is inside, there is insufficient evidence
+              against it (UNC-4.T.1).
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{lX}
+    \textbf{Interpretation of a CI} &
+        ``We are $C$\% confident that the interval $(\ell, u)$ captures the true mean
+        [parameter] for [population].'' (UNC-4.S.2) \\
+    \textbf{What $C$\% confident means} &
+        In repeated random sampling with the same $n$, approximately $C$\% of all
+        CIs constructed this way will capture $\mu$ (UNC-4.S.1) \\
+    \textbf{Width of the interval} &
+        $\text{Width} = 2 \cdot ME = 2t^* \cdot s/\sqrt{n}$; proportional to
+        $1/\sqrt{n}$ (UNC-4.U.2) \\
+    \textbf{Effect of confidence level} &
+        Higher $C$ $\Rightarrow$ larger $t^*$ $\Rightarrow$ wider interval
+        (UNC-4.U.3) \\
+    \textbf{Effect of sample size} &
+        Larger $n$ $\Rightarrow$ smaller $SE$ $\Rightarrow$ narrower interval;
+        to halve the width, quadruple $n$ (UNC-4.U.1) \\
+    \textbf{Using CI to justify a claim} &
+        If the claimed value of $\mu$ lies \emph{outside} the CI, the data provide
+        evidence against that claim (UNC-4.T.1) \\
+\end{tabularx}
 \end{skillbox}
 
-\begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
-\end{fixedskillbox}
-
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Lesson 7.2: the full four-step $t$-interval procedure --- conditions,
+              formula $\bar x \pm t^* \cdot s/\sqrt{n}$, and $df = n - 1$.
+        \item Unit 6: correct vs.\ common-error interpretations of a CI for
+              a proportion --- the same logic applies to means.
+        \item Unit 6: using a CI to justify a claim about $p$ (analogous to 7.3).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Connections Forward}
+    \begin{itemize}
+        \item One-sample $t$-test (complementary tool) $\to$ Lessons 7.4--7.5
+        \item Two-sample $t$-interval (difference of means) $\to$ Lesson 7.6
+        \item Selecting the right procedure (CI vs.\ test) $\to$ Lesson 7.10
+        \item Same interpretation structure applies to all CIs throughout Units 7--9
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (5--7 min)}\\
+    Display a student-generated interval from Lesson 7.2:
+    ``95\% CI for mean sodium intake: (2615, 3065) mg.''\\[4pt]
+    Show three student ``interpretations'' on the board (one correct, two wrong).
+    Ask pairs: ``Which is correct? What is wrong with the others?''\\[4pt]
+    Reveal the correct form and discuss what the phrase ``95\% confident'' actually
+    means --- a property of the \emph{method}, not of this one interval.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15 min)}
+    \begin{enumerate}
+        \item Debrief the three interpretation errors: (a) ``there is a 95\%
+              chance $\mu$ is in the interval'' (wrong --- $\mu$ is fixed); (b)
+              ``95\% of sample means fall in this interval'' (wrong --- this is about
+              the parameter, not the statistic); (c) correct form with reference to
+              the sample, context, and population.
+        \item Introduce the width relationships graphically: show how doubling $n$
+              reduces ME by factor $1/\sqrt{2}$ and quadrupling $n$ halves ME.
+        \item Claim-justification framework: ``The claimed value $\mu_0 = 2300$ mg
+              lies \emph{outside} the interval (2615, 3065), so the data provide
+              evidence that the true mean sodium intake exceeds 2300 mg.''
+        \item Matched-pairs interpretation: same language, but $\mu$ refers to the
+              mean of \emph{differences} in the population.
+    \end{enumerate}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{skillbox}[Explicit Instruction: Interpretation \& Claim Justification]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Correct Interpretation Template}\\
+    ``We are $C$\% confident that the interval \blank{2cm} to \blank{2cm}
+    captures the true mean \underline{[quantity]} for \underline{[population]}.''\\[6pt]
+    \textbf{Common Errors to Correct}
+    \begin{itemize}
+        \item Saying ``probability'' instead of ``confident'' (implies $\mu$ could
+              be in different places --- it is fixed).
+        \item Omitting the population or sample context.
+        \item Claiming the interval contains 95\% of the data values.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Claim Justification Framework}
+    \begin{enumerate}
+        \item State the claimed value $\mu_0$.
+        \item Report the CI you computed.
+        \item If $\mu_0$ is \emph{outside} the CI: ``Because $\mu_0$ is not captured
+              by the interval, the data provide convincing evidence that the true mean
+              differs from $\mu_0$.''
+        \item If $\mu_0$ is \emph{inside} the CI: ``Because $\mu_0$ is plausible
+              based on the interval, we do not have convincing evidence against the
+              claim.''
+        \item One-sided claims: check whether the entire CI lies above (or below)
+              the claimed value.
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Circulate and Check}
+    \begin{itemize}
+        \item Flag probability language in interpretations; insist on ``confident.''
+        \item Ensure the population is named (not just ``the sample'') in the
+              interpretation.
+        \item Check that claim justifications reference the CI explicitly, not just
+              a vague ``the evidence shows.''
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Cold-Call Prompts}
+    \begin{itemize}
+        \item ``A classmate says `there is a 95\% chance $\mu$ is between 2615 and
+              3065.' What is wrong with that statement?''
+        \item ``If we increase the confidence level to 99\%, what happens to the
+              width of the interval and to the margin of error?''
+        \item ``The claimed value is inside the interval. Does that mean the claim
+              is proved true? Explain.''
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Partner Activity (10--12 min)}\\
+    Students receive three completed intervals (different contexts, confidence
+    levels, and claimed values). For each:
+    \begin{enumerate}
+        \item Write a correct one-sentence interpretation.
+        \item Determine whether the data provide convincing evidence against the
+              claimed value. Justify using the CI.
+        \item Predict how the width changes if $n$ is doubled or $C$ is raised
+              from 90\% to 99\%.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support (Tier R)}: Sentence frame provided; only items 1--2.
+        \item \textit{On-grade (Tier A)}: All three items for all three scenarios.
+        \item \textit{Extension (Tier E)}: For one scenario, determine the minimum
+              $n$ needed to reduce the margin of error to a specified value. Justify
+              algebraically.
+        \item \textit{ELL}: Bilingual sentence stems for the interpretation template.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}
+    \begin{enumerate}
+        \item A 95\% $t$-interval for the mean commute time of city workers is
+              $(24.3,\ 31.7)$ minutes. Write a correct interpretation.
+        \item The city claims the mean commute is 22 minutes. Does the interval
+              provide convincing evidence against this claim? Justify.
+        \item If the sample size were quadrupled (same $\bar x$ and $s$), describe
+              the effect on the margin of error.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{A 95\% confidence interval for the mean weight (oz) of a product is
+    $(15.8,\ 16.2)$. A manager claims the mean weight is 16.5 oz. Which of the
+    following is the best conclusion?}
+    \begin{enumerate}[label=(\Alph*)]
+        \item The mean weight is definitely not 16.5 oz.
+        \item There is convincing evidence that the mean weight is not 16.5 oz.
+        \item There is not convincing evidence the mean weight differs from 16.5 oz.
+        \item 95\% of products weigh between 15.8 and 16.2 oz.
+    \end{enumerate}
+    Answer: (B) --- 16.5 is outside the interval.
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item Three problems: each supplies a completed CI and a context. Students
+              write a correct interpretation, assess a stated claim, and answer a
+              width/ME question (effect of changing $n$ or $C$).
+        \item One AP-style free-response question requiring a full four-step interval
+              procedure plus interpretation and claim justification.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: A 2004 AP FRQ asks students to relate a one-sided
+              CI to a significance test. Work through the problem and explain the
+              connection.
+        \item \textit{Preview}: Lesson 7.4 introduces the one-sample $t$-test ---
+              the significance-testing counterpart to the $t$-interval built in
+              Lessons 7.2 and 7.3.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
+
 \end{document}

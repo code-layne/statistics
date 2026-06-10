@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.2 — Guided Notes
+%! AP Statistics — Unit 7, Lesson 7.2 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
@@ -9,11 +9,100 @@
 \pageheader{Unit 7, Lesson 7.2}{Guided Notes}
 \namedateperiod
 
-\vspace{0.15in}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+\end{itemize}
+\end{objectivebox}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{vocabbox}
+\termblanklong{$t$-distribution}
+\termblanklong{Degrees of freedom ($df$)}
+\termblanklong{Standard error of $\bar x$ ($SE_{\bar x}$)}
+\termblanklong{Critical value $t^*$}
+\termblanklong{One-sample $t$-interval}
+\termblanklong{Matched-pairs design}
+\end{vocabbox}
+
+\begin{hookbox}
+A nutritionist records daily sodium intake for a random sample of 20 college students:
+$\bar x = 2840$ mg, $s = 480$ mg. The recommended maximum is 2300 mg.
+
+Why can't we use a $z$-interval to estimate the true mean sodium intake? \writelines{2}
+\end{hookbox}
+
+\begin{notesbox}{The $t$-Distribution (VAR-7.A)}
+When we substitute $s$ for $\sigma$, the statistic $t = \dfrac{\bar x - \mu}{s/\sqrt{n}}$
+follows a \blank{3cm}-distribution.
+
+\vspace{0.1in}
+\textbf{Properties:}
+\begin{itemize}
+    \item Bell-shaped, \blank{4cm}, centered at \blank{2cm}.
+    \item Heavier tails than the standard normal (because $s$ adds variability).
+    \item Indexed by \textbf{degrees of freedom}: $df = n - $ \blank{1cm}.
+    \item As $df$ \blank{4cm}, the $t$-distribution approaches $N(0, 1)$.
+\end{itemize}
+
+\textbf{Finding $t^*$:} For 95\% CI with $n = 20$: $df = $ \blank{2cm}, $t^* = $ \blank{2.5cm}.
+\end{notesbox}
+
+\begin{notesbox}{Conditions for a One-Sample $t$-Interval (UNC-4.P)}
+\begin{enumerate}
+    \item \textbf{Random:} Data come from a \blank{5cm} or randomized experiment.
+    \item \textbf{10\%:} If sampling w/o replacement: $n \le $ \blank{2cm}$\% \cdot N$.
+    \item \textbf{Large Sample:}
+          \begin{itemize}
+              \item $n \ge $ \blank{2cm}: CLT applies $\to$ condition met.
+              \item $n < $ \blank{2cm}: check that the data show no strong
+                    \blank{4cm} or \blank{3cm}.
+          \end{itemize}
+\end{enumerate}
+\end{notesbox}
+
+\begin{notesbox}{The One-Sample $t$-Interval Formula (UNC-4.Q, UNC-4.R)}
+\renewcommand{\arraystretch}{2}
+\begin{tabularx}{\linewidth}{lX}
+    Point estimate & $\bar x$ \\
+    Standard error & $SE_{\bar x} = \dfrac{s}{\sqrt{n}}$ \\
+    Margin of error & $ME = t^* \cdot \dfrac{s}{\sqrt{n}}$ \quad ($t^*$ from table, $df = n - 1$) \\
+    \textbf{Interval} & $\bar x \pm t^* \cdot \dfrac{s}{\sqrt{n}}$ \\
+\end{tabularx}
+
+\vspace{0.1in}
+\textbf{Sodium example:} $n = 20$, $\bar x = 2840$, $s = 480$, 95\% CI.
+
+$df = $ \blank{2cm}, \quad $t^* = $ \blank{2.5cm}, \quad $SE = 480/\sqrt{20} = $ \blank{2.5cm} mg
+
+Interval: $2840 \pm $ \blank{2cm} $\cdot$ \blank{2cm} $= 2840 \pm$ \blank{2cm}
+$= ($ \blank{2cm}$,$ \blank{2cm}$)$ mg
+\end{notesbox}
+
+\begin{notesbox}{The Four-Step Procedure (PCCF)}
+\begin{enumerate}
+    \item \textbf{Parameter:} Let $\mu = $ the true mean \blank{4cm} for \blank{4cm}.
+    \item \textbf{Conditions:} State and verify all three (Random, 10\%, Large Sample).
+    \item \textbf{Calculate:} $\bar x \pm t^* \cdot s/\sqrt{n}$
+    \item \textbf{Conclude:} ``We are \blank{2cm}\% confident that the interval
+          $(\rule{1.5cm}{0.4pt},\ \rule{1.5cm}{0.4pt})$ captures the true mean
+          \blank{4cm} for \blank{4cm}.''
+\end{enumerate}
+\end{notesbox}
+
+\begin{notesbox}{Matched-Pairs Design (UNC-4.O.3)}
+When data come in pairs (before/after, two treatments on same subject):
+\begin{enumerate}
+    \item Compute differences $d_i = x_{i,1} - x_{i,2}$ for each pair.
+          (State the order of subtraction: \writeline)
+    \item Find $\bar d = $ \blank{3cm} and $s_d = $ \blank{3cm}.
+    \item Apply the one-sample $t$-interval to the differences:
+          $\bar d \pm t^* \cdot \dfrac{s_d}{\sqrt{n}}$, \quad $df = n - 1$,
+          where $n = $ number of \blank{3cm}.
+\end{enumerate}
 \end{notesbox}
 
 \end{document}

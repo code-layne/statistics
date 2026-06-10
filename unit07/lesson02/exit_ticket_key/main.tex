@@ -1,7 +1,7 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.2 — Exit Ticket (Answer Key)
+%! AP Statistics — Unit 7, Lesson 7.2 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{apstats-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -9,11 +9,31 @@
 \pageheader{Unit 7, Lesson 7.2}{Exit Ticket --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
+A quality-control engineer randomly selects 16 bottles from a production line and
+measures the fill volume. $\bar x = 498$ mL, $s = 6$ mL.
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}
+
+  \item Conditions:
+        \begin{itemize}
+            \item \textbf{Random:} \ans{Random sample of bottles stated.}
+            \item \textbf{10\%:} \ans{$16 \le 10\%$ of all bottles produced (assume large production run).}
+            \item \textbf{Large Sample:} \ans{$n = 16 < 30$; must check for strong skewness or outliers in the data. Assume engineer verified this.}
+        \end{itemize}
+
+  \item $df = $ \ans{15} \quad $t^* = $ \ans{2.131} \quad
+        $SE = 6/\sqrt{16} = $ \ans{1.5 mL}
+
+  \item $498 \pm 2.131 \times 1.5 = 498 \pm 3.197 = ($ \ans{494.8} $,$ \ans{501.2} $)$ mL
+
+  \item \ansline{We are 95\% confident that the interval (494.8, 501.2) mL captures the true mean fill volume for all bottles produced on this production line.}
+
+\end{enumerate}
+
+\begin{teachernote}
+    $t^*$ for $df = 15$, 95\% CI is 2.131.
+    $ME = 2.131 \times 1.5 = 3.197$ mL.
+\end{teachernote}
 
 \end{document}

@@ -1,7 +1,7 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.2 — Warm-Up (Answer Key)
+%! AP Statistics — Unit 7, Lesson 7.2 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\usepackage{apstats-key}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
@@ -11,9 +11,32 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+From Unit 6, the one-sample $z$-interval for a proportion has the form
+$\hat p \pm z^* \sqrt{\hat p(1 - \hat p)/n}$.
+
+\begin{enumerate}
+  \item A random sample of 100 adults finds 64 support a new policy. Verify
+        conditions and construct a 95\% CI for the true proportion.
+
+        \begin{itemize}
+          \item \textbf{Random:} \ans{Random sample stated.}
+          \item \textbf{Large Counts:} $n\hat p = $ \ans{64}$ \ge 10$? \ans{Yes}
+                \quad $n(1-\hat p) = $ \ans{36}$ \ge 10$? \ans{Yes}
+          \item $\hat p = $ \ans{0.64} \quad $z^* = $ \ans{1.960}
+          \item $95\%$ CI: $0.64 \pm 1.960\sqrt{0.64(0.36)/100} = 0.64 \pm 0.094$
+                $= ($ \ans{0.546} $,$ \ans{0.734} $)$
+        \end{itemize}
+
+  \item Now suppose we want to estimate a population mean. $\bar x = 42$,
+        $s = 8$, $n = 36$, $\sigma$ unknown.
+
+        \begin{enumerate}[label=\alph*.]
+          \item Why can't we use a $z$-interval?
+                \ansline{A $z$-interval for a mean requires knowing $\sigma$. Since $\sigma$ is unknown, we cannot compute a valid $z$-statistic; we must substitute $s$, which changes the distribution of the standardized statistic.}
+
+          \item What distribution should we use?
+                \ansline{The $t$-distribution with $df = n - 1 = 35$ degrees of freedom. Its shape depends on $df$; it has heavier tails than the standard normal to account for the extra uncertainty from estimating $\sigma$ with $s$.}
+        \end{enumerate}
+\end{enumerate}
 
 \end{document}

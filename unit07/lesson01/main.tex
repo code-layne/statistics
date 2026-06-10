@@ -1,12 +1,10 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.1 — Lesson Plan
+%! AP Statistics — Unit 7, Lesson 7.1 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
-\graphicspath{{images/}}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\UnitNumberName}{Unit 7: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 7.1: TODO: Lesson Title}
+
+\newcommand{\UnitNumberName}{Unit 7: Inference for Quantitative Data: Means \quad}
+\newcommand{\LessonNumberName}{Lesson 7.1: Introducing Statistics --- Why Should I Worry About Error?}
 
 \begin{document}
 \begin{center}
@@ -16,55 +14,230 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will recognize that random variation can lead to
+    errors in statistical inference, and they will frame the central question of Unit 7:
+    how do we account for estimation error when making decisions about population means?
+    (Big Idea: VAR)
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 1 --- Selecting Statistical Methods}
+    \begin{itemize}
+        \item Identify questions suggested by probabilities of errors in statistical
+              inference (Skill 1.A; VAR-1.I).
+        \item Bridge: Unit 6 built inference for proportions using the normal model
+              --- Unit 7 extends to population \emph{means}, where $\sigma$ is unknown.
+        \item VAR-1.I.1: Random variation may result in errors in statistical
+              inference --- wrong decisions can occur even when procedures are correct.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item Even a perfectly conducted inference procedure can yield an incorrect
+              conclusion due to sampling variability.
+        \item Knowing how often errors occur helps evaluate the reliability of our
+              conclusions.
+        \item This lesson is a framing lesson (Topic 7.1 is not directly assessed
+              in the CED) that sets the stage for Lessons 7.2--7.10.
+        \item Key shift from Unit 6: for means we estimate $\sigma$ with $s$,
+              which produces the $t$-distribution instead of $z$.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Error in inference} --- reaching an incorrect conclusion about a
+              population parameter because of sampling variability
+        \item \textbf{Type I error} --- rejecting a true null hypothesis (false positive);
+              probability = $\alpha$
+        \item \textbf{Type II error} --- failing to reject a false null hypothesis
+              (false negative); probability = $\beta$
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Significance level ($\alpha$)} --- the maximum tolerable probability
+              of a Type I error
+        \item \textbf{Population SD ($\sigma$)} --- the true spread of the population;
+              rarely known in practice
+        \item \textbf{Sample SD ($s$)} --- our estimate of $\sigma$, computed from data;
+              replaces $\sigma$ in Unit 7 procedures
+        \item \textbf{$t$-distribution} --- family of distributions arising when $s$
+              replaces $\sigma$; heavier tails than the normal
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
-\end{fixedskillbox}
-
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Unit 6: one-sample $z$-interval and $z$-test for a proportion.
+        \item Unit 6: Type I and Type II errors with proportions --- what each means
+              in a real scenario.
+        \item Unit 5: sampling distribution of $\bar x$ --- shape (CLT), center
+              $\mu_{\bar x} = \mu$, spread $\sigma_{\bar x} = \sigma/\sqrt{n}$.
+        \item Connect: ``What happens when $\sigma$ is unknown?''
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Connections Forward}
+    \begin{itemize}
+        \item $t$-distribution and its properties $\to$ Lesson 7.2
+        \item Confidence intervals for one mean $\to$ Lessons 7.2--7.3
+        \item Significance tests for one mean $\to$ Lessons 7.4--7.5
+        \item Two-sample $t$-procedures $\to$ Lessons 7.6--7.9
+        \item Choosing between $z$ and $t$ $\to$ Lesson 7.10
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (5--7 min)}\\
+    Display a headline: ``Drug lowers average recovery time by 2 days --- results
+    statistically significant.'' A follow-up: ``New study finds no effect.''\\[4pt]
+    Ask: ``How can two studies disagree? Did someone make a mistake?''\\[4pt]
+    Reveal: Both studies may have followed correct procedures.
+    \textbf{Random variation means even valid inference can lead to wrong conclusions.}
+    The question of Unit 7: \textbf{How do we quantify and manage error when working
+    with population means?}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15 min)}
+    \begin{enumerate}
+        \item Revisit the sampling distribution of $\bar x$ from Unit 5. Shape:
+              approximately normal by CLT when $n \ge 30$ (or population is normal).
+              Center: $\mu$. Spread: $\sigma/\sqrt{n}$.
+        \item The catch: $\sigma$ is almost never known. Substituting $s$ introduces
+              additional variability --- that is why the $t$-distribution has heavier
+              tails than the standard normal.
+        \item Foreshadow: when we use $s$, the statistic
+              $t = (\bar x - \mu)/(s/\sqrt{n})$ follows a $t$-distribution with
+              $n - 1$ degrees of freedom.
+        \item Frame errors in the means context: a Type I error means concluding
+              $\mu \ne \mu_0$ when it is actually equal; a Type II error means failing
+              to detect a real shift in the mean.
+    \end{enumerate}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Direct Instruction (8 min)}
+    \begin{itemize}
+        \item Show a simulation: 100 samples from a population with known $\mu = 50$
+              each produce a 95\% CI for $\mu$. Roughly 5 of the 100 intervals miss
+              $\mu = 50$ --- that is a Type I error rate of 5\%.
+        \item Connect $\alpha$ to error rate: if $\alpha = 0.05$, we expect to commit
+              a Type I error in about 5\% of correctly conducted tests.
+        \item Emphasize: error rates are properties of the \emph{procedure}, not of
+              any individual sample. A single result is either right or wrong --- we
+              just cannot know which.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Active Monitoring}
+    \begin{itemize}
+        \item Listen for ``statistical significance means no error.'' Redirect:
+              significance only means the result is unlikely under $H_0$; Type I
+              errors still occur at rate $\alpha$.
+        \item Cold-call: ``If $\alpha = 0.01$ instead of 0.05, how does that change
+              the Type I error rate? The Type II error rate?''
+        \item Check warm-up for fluency with the sampling distribution of $\bar x$
+              and with identifying error types from Unit 6 scenarios.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Partner Activity (8--10 min)}\\
+    Three real-world decision scenarios (drug trial, quality control, employee survey).
+    For each:
+    \begin{enumerate}
+        \item State the null and alternative hypothesis in words.
+        \item Describe a Type I error in context.
+        \item Describe a Type II error in context.
+        \item Decide which error is more costly and explain why.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support (Tier R)}: Provide sentence frames for error descriptions;
+              supply the hypotheses already stated.
+        \item \textit{On-grade (Tier A)}: Complete all four steps for each scenario.
+        \item \textit{Extension (Tier E)}: For one scenario, argue whether lowering
+              $\alpha$ from 0.05 to 0.01 is a good trade-off. What happens to Type II
+              error and power?
+        \item \textit{ELL}: Bilingual card --- ``Type I error / error tipo I,''
+              ``significance level / nivel de significancia.''
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}
+    \begin{enumerate}
+        \item A quality-control inspector tests whether the mean fill of juice bottles
+              differs from the labeled 12 oz. Describe in context what a Type I error
+              would mean.
+        \item Describe what a Type II error would mean in the same context.
+        \item If the inspector sets $\alpha = 0.10$ instead of 0.05, how does that
+              change the Type I and Type II error rates?
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{A researcher sets $\alpha = 0.05$ and conducts a significance test. She
+    fails to reject $H_0$. Which of the following is a correct interpretation?}
+    \begin{enumerate}[label=(\Alph*)]
+        \item She has proved that $H_0$ is true.
+        \item The probability that $H_0$ is true is 0.95.
+        \item She may have committed a Type II error.
+        \item She has committed a Type I error.
+    \end{enumerate}
+    Answer: (C)
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item For three given scenarios (each with a context, $H_0$, and $H_a$):
+              (a) describe a Type I error in context; (b) describe a Type II error
+              in context; (c) state which error is more consequential and justify.
+        \item Reflection: ``Explain why it is impossible to simultaneously minimize
+              both the Type I and Type II error rates for a fixed sample size.''
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: Research a published clinical trial that was later
+              contradicted. Identify whether the initial or follow-up study was more
+              likely to have committed a Type I or Type II error. Justify.
+        \item \textit{Preview}: Lesson 7.2 introduces the $t$-distribution and builds
+              the first complete inference procedure for a population mean --- the
+              one-sample $t$-interval.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
+
 \end{document}
