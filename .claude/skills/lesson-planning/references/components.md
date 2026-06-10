@@ -31,8 +31,7 @@ AP tags and list review topics):
    Selecting Statistical Methods"). Right: "Key Understandings" paraphrased from the EKs.
 4. **Vocabulary, Concepts & Theorems** — `skillbox{greenbox}`, a `tabularx` term/definition
    table (use `\TallMath{...}` for tall formulas).
-5. **Activate Prior Knowledge & Spiral Review** — `fixedskillbox{sky}`; left lists the
-   reviewed skills, right shows the warm-up thumbnail via `\includegraphics[page=1]{warmup/main}`.
+5. **Activate Prior Knowledge & Spiral Review** — `skillbox{sky}` (**not** `fixedskillbox` — that environment does not exist); left lists the reviewed skills, right shows the warm-up thumbnail via `\includegraphics[page=1]{warmup/main}`.
 6. **Hook** — `skillbox{sky}`: the entry question or scenario.
 7. **Lesson** (and optional **Lesson (cont.)**) — `skillbox{sky}` with `\begin{multicols}{2}`;
    the worked instructional progression, bolding the questions you'll pose.
@@ -59,20 +58,12 @@ AP tags and list review topics):
 
 ## Warm-up
 
-`warmup/` (+ `warmup_key/`) — short spiral review of *prerequisite* skills.
-
-**HARD CONSTRAINT: exactly one printed page — blank AND key. No exceptions.**
-Design to fit: `\pageheader` + `\namedateperiod` + one `notesbox` with 3–4 questions.
-If borderline, cut a question. After building, verify:
-```bash
-pdftoppm -r 72 target/unitXX/lessonYY/warmup/main.pdf /tmp/wm && ls /tmp/wm*.ppm | wc -l  # must = 1
-```
-Do not continue until both blank and key each return 1.
-
-Frequently a **prefab PDF**: drop in as `warmup/main.pdf` — `lesson.mk` merges it directly,
-and the lesson plan can embed its thumbnail via `\includegraphics{warmup/main}`. If authored:
-3–4 quick problems with work space (`\vspace`), `\namedateperiod`, spiral review stays text-only
-in the plan. Key mirrors with `\ans`. No "sketch the…" questions — see SKILL.md Hard Constraints.
+`warmup/` (+ `warmup_key/`) — short spiral review of *prerequisite* skills, sized to the
+thumbnail shown on the lesson plan. Frequently a **prefab PDF**: if so, just drop it in as
+`warmup/main.pdf` (and `warmup_key/main.pdf`) — `lesson.mk` merges it directly, and the lesson
+plan can embed its thumbnail via `\includegraphics{warmup/main}`. If authored: 3–5 quick
+problems with work space (`\vspace`), `\namedateperiod`, and the spiral review stays text-only
+in the plan. Key mirrors with `\ans`.
 
 ## Guided notes
 
@@ -98,19 +89,10 @@ in the plan. Key mirrors with `\ans`. No "sketch the…" questions — see SKILL
 
 ## Exit ticket
 
-`exit_ticket/` (+ `exit_ticket_key/`) — a short independent check, no notes.
-
-**HARD CONSTRAINT: exactly one printed page — blank AND key. No exceptions.**
-Budget: `\pageheader` + `\namedateperiod` + 2–3 items max with work space.
-After building, verify:
-```bash
-pdftoppm -r 72 target/unitXX/lessonYY/exit_ticket/main.pdf /tmp/et && ls /tmp/et*.ppm | wc -l  # must = 1
-```
-Do not continue until both blank and key each return 1. If > 1 page: cut an item.
-
-Structure: `\pageheader{...}{Exit Ticket}` + `\namedateperiod`; a tight `enumerate` with
-a little work space per item. Key fills with `\ans`. Graded for completion ("mistakes happen,
-blanks don't"). No "sketch the…" questions.
+`exit_ticket/` (+ `exit_ticket_key/`) — a short independent check (2–3 items), no notes.
+`\pageheader{...}{Exit Ticket}` + `\namedateperiod`; a tight `enumerate` with a little work
+space. Key fills with `\ans`. Graded for completion in the example courses ("mistakes happen,
+blanks don't").
 
 ## Homework
 
@@ -140,14 +122,6 @@ There is no key toggle — every key is a separate file under `<comp>_key/`:
 - Use the `teachernote` environment for teacher-only guidance (pacing, common errors).
 - Because the key matches the blank line-for-line, the two paginate identically — verify by
   building both and comparing.
-
-**`\ans{}` checklist — run mentally on every key file before building:**
-1. Is every `\ans{...}` call in TEXT mode (not between `$...$` or `\[...\]`)? If not, close
-   math, write `\ans{}`, reopen math. For in-formula slots use `{\color{keyred}\mathbf{...}}`.
-2. Does any `\ans{...}` argument contain a bare math-only command (`\sqrt`, `\dfrac`, `\hat`,
-   `\overline`, `\ne`, `_`, `^`)? If so, wrap the argument in `$...$`:
-   `\ans{\sqrt{n}}` → `\ans{$\sqrt{n}$}`.
-3. Grep: `grep -n '\\ans{' main.tex` — inspect every hit for the above two issues.
 
 ## Unit cover
 
