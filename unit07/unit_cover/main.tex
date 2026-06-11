@@ -1,0 +1,92 @@
+%! AP Statistics — Unit 7 Cover Sheet
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+% ── Full-bleed navy banner ────────────────────────────────────────────────────
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[navy] (current page.north west)
+    rectangle ([yshift=-1.4in]current page.north east);
+\end{tikzpicture}
+\vspace{-1.3in}
+
+\begin{center}
+  {\color{white}\bfseries\fontsize{24}{30}\selectfont AP Statistics}\\[5pt]
+  {\color{goldacc}\bfseries\large Shepherd \quad 2026--2027}\\[10pt]
+  {\color{white}\bfseries\Large Unit 7: Inference for Quantitative Data: Means}\\[3pt]
+\end{center}
+
+\vspace{0.18in}
+
+% ── Unit overview ─────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=sky,colframe=navy,boxrule=0.9pt,arc=2mm,
+    left=4mm,right=4mm,top=2mm,bottom=2mm]
+  \small\textbf{Unit Overview.}\quad
+  Unit 7 extends the inference framework to quantitative data. Students move from the
+  $z$-distribution to the $t$-distribution, constructing and interpreting confidence
+  intervals and carrying out significance tests for a single population mean. The unit
+  then applies all procedures to the two-sample setting (independent and paired designs)
+  and closes with a synthesis lesson on selecting and communicating appropriate inference
+  procedures.
+\end{tcolorbox}
+
+\vspace{0.14in}
+
+% ── Lessons in this unit ──────────────────────────────────────────────────────
+\renewcommand{\arraystretch}{1.35}
+\begin{skillbox}[Lessons in This Unit]{goldbox}
+\small
+\begin{tabularx}{\linewidth}{@{} c >{\bfseries}p{0.46\linewidth} X @{}}
+  \textbf{\#} & \textbf{Title} & \textbf{Focus} \\
+  \hline
+  7.1  & Introducing Statistics: Should I Worry About Error?
+       & Revisiting error; transition to means; motivating $t$-procedures. \\
+  \hline
+  7.2  & Constructing a Confidence Interval for a Population Mean
+       & One-sample $t$-interval; $t$-distribution; degrees of freedom; conditions. \\
+  \hline
+  7.3  & Justifying a Claim Based on a CI for a Population Mean
+       & Interpreting $t$-intervals; width vs.\ $n$ and $C$; justifying claims. \\
+  \hline
+  7.4  & Setting Up a Test for a Population Mean
+       & $H_0$/$H_a$ for $\mu$; one-sample $t$-test; Normal/Large Sample conditions. \\
+  \hline
+  7.5  & Carrying Out a Test for a Population Mean
+       & $t$-statistic; $p$-value; decision and conclusion; linking CI and test. \\
+  \hline
+  7.6  & Confidence Intervals for the Difference of Two Means
+       & Two-sample $t$-interval for $\mu_1 - \mu_2$; conditions; calculation. \\
+  \hline
+  7.7  & Justifying a Claim Based on a CI for a Difference of Means
+       & Interpreting two-sample $t$-intervals; justifying comparative claims. \\
+  \hline
+  7.8  & Setting Up a Test for the Difference of Two Population Means
+       & $H_0{:}\;\mu_1 = \mu_2$; two-sample $t$-test; paired vs.\ independent. \\
+  \hline
+  7.9  & Carrying Out a Test for the Difference of Two Population Means
+       & Two-sample $t$-statistic; $p$-value; decision and conclusion. \\
+  \hline
+  7.10 & Skills Focus: Selecting and Communicating Inference Procedures
+       & Choosing $z$- vs.\ $t$-procedures; full four-step AP exam practice. \\
+  \hline
+\end{tabularx}
+\end{skillbox}
+
+\vspace{0.12in}
+
+% ── Standards covered ─────────────────────────────────────────────────────────
+\begin{skillbox}[AP Statistics Big Ideas \& Learning Objectives --- Unit 7]{greenbox}
+\small
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.16\linewidth} X @{}}
+  VAR-7.A        & Describe consequences of errors in hypothesis testing for quantitative data. \\
+  UNC-4.O--T     & Identify, verify conditions, calculate, interpret, and justify claims from a one-sample $t$-interval for $\mu$. \\
+  VAR-6.L--O; DAT-3.E--F & State hypotheses; identify and carry out a one-sample $t$-test; conclude in context. \\
+  UNC-4.U--Z     & Identify, calculate, interpret, and justify claims from a two-sample $t$-interval for $\mu_1 - \mu_2$. \\
+  VAR-6.P--S; DAT-3.G--H & State hypotheses; carry out a two-sample $t$-test; address pairing; conclude. \\
+  DAT-3.I        & Select and implement an appropriate inference procedure; communicate conclusions. \\
+\end{tabularx}
+\end{skillbox}
+
+\end{document}
