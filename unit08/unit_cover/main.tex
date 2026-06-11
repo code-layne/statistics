@@ -1,0 +1,85 @@
+%! AP Statistics — Unit 8 Cover Sheet
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+% ── Full-bleed navy banner ────────────────────────────────────────────────────
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[navy] (current page.north west)
+    rectangle ([yshift=-1.4in]current page.north east);
+\end{tikzpicture}
+\vspace{-1.3in}
+
+\begin{center}
+  {\color{white}\bfseries\fontsize{24}{30}\selectfont AP Statistics}\\[5pt]
+  {\color{goldacc}\bfseries\large Shepherd \quad 2026--2027}\\[10pt]
+  {\color{white}\bfseries\Large Unit 8: Inference for Categorical Data: Chi-Square}\\[3pt]
+\end{center}
+
+\vspace{0.18in}
+
+% ── Unit overview ─────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=sky,colframe=navy,boxrule=0.9pt,arc=2mm,
+    left=4mm,right=4mm,top=2mm,bottom=2mm]
+  \small\textbf{Unit Overview.}\quad
+  Unit 8 extends the inference framework to categorical data with two or more categories.
+  Students learn the chi-square family of significance tests: the goodness-of-fit test
+  (does one categorical variable match a claimed distribution?), the test for homogeneity
+  (do two or more populations share the same distribution?), and the test for independence
+  (are two categorical variables associated within a single population?). The unit closes
+  by synthesizing all inference procedures for categorical data encountered in Units 6
+  and 8.
+\end{tcolorbox}
+
+\vspace{0.14in}
+
+% ── Lessons in this unit ──────────────────────────────────────────────────────
+\renewcommand{\arraystretch}{1.35}
+\begin{skillbox}[Lessons in This Unit]{goldbox}
+\small
+\begin{tabularx}{\linewidth}{@{} c >{\bfseries}p{0.46\linewidth} X @{}}
+  \textbf{\#} & \textbf{Title} & \textbf{Focus} \\
+  \hline
+  8.1 & Introducing Statistics: Are My Results Unexpected?
+      & Observed vs.\ expected counts; motivating chi-square. \\
+  \hline
+  8.2 & Setting Up a Chi-Square Goodness of Fit Test
+      & Chi-square distribution; hypotheses; expected counts; conditions. \\
+  \hline
+  8.3 & Carrying Out a Chi-Square Test for Goodness of Fit
+      & $\chi^2$ statistic; degrees of freedom; $p$-value; conclusion in context. \\
+  \hline
+  8.4 & Expected Counts in Two-Way Tables
+      & Two-way frequency tables; computing expected cell counts. \\
+  \hline
+  8.5 & Setting Up a Chi-Square Test for Homogeneity or Independence
+      & Choosing homogeneity vs.\ independence; hypotheses; conditions. \\
+  \hline
+  8.6 & Carrying Out a Chi-Square Test for Homogeneity or Independence
+      & $\chi^2$ statistic; $p$-value; decision and conclusion; full four-step. \\
+  \hline
+  8.7 & Skills Focus: Selecting an Appropriate Inference Procedure for Categorical Data
+      & Choosing among $z$-, chi-square procedures; AP exam synthesis. \\
+  \hline
+\end{tabularx}
+\end{skillbox}
+
+\vspace{0.12in}
+
+% ── Standards covered ─────────────────────────────────────────────────────────
+\begin{skillbox}[AP Statistics Big Ideas \& Learning Objectives --- Unit 8]{greenbox}
+\small
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.18\linewidth} X @{}}
+  VAR-1.J       & Identify questions suggested by variation between observed and expected counts in categorical data. \\
+  VAR-8.A--E    & Describe chi-square distributions; state GOF hypotheses; identify the procedure; calculate expected counts; verify conditions. \\
+  VAR-8.F--G    & Calculate $\chi^2$ statistic and $p$-value for a goodness-of-fit test; conclude in context. \\
+  VAR-8.H       & Calculate expected counts for cells in a two-way table. \\
+  VAR-8.I--K    & State hypotheses and verify conditions for chi-square tests of homogeneity and independence. \\
+  VAR-8.L; DAT-3.G--H & Carry out a chi-square test for homogeneity or independence; interpret and justify a conclusion. \\
+  DAT-3.I       & Select and implement an appropriate inference procedure for categorical data; communicate conclusions. \\
+\end{tabularx}
+\end{skillbox}
+
+\end{document}
