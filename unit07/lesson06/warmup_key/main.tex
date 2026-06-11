@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.6 — Warm-Up (Answer Key)
+%! Confidence Intervals for the Difference of Two Means — Unit 7, Lesson 7.6 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
@@ -11,9 +11,36 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Spiral Review --- One-Sample $t$-Interval (Lessons 7.2--7.3)}
+
+A school dietitian claims that students consume an average of 850 calories at lunch. A
+random sample of 22 students recorded their lunch calories. The results were
+$\bar x = 920$ cal and $s = 130$ cal. A dotplot shows no strong skew or outliers.
+
+\textbf{1.} Name the inference method and give the degrees of freedom.
+
+\quad Method: \ans{one-sample $t$-interval for $\mu$} \quad $df = $ \ans{21}
+
+\textbf{2.} Verify both conditions.
+\begin{itemize}
+  \item Random: \ansline{Random sample of 22 students --- met.}
+  \item Normal: \ansline{$n = 22 < 30$; dotplot shows no strong skew or outliers --- met.}
+\end{itemize}
+
+\textbf{3.} Compute the standard error and margin of error for a 95\% confidence interval
+($t^* = 2.080$). Show your work.
+
+\vspace{0.1in}
+$SE = \dfrac{s}{\sqrt{n}} = \dfrac{{\color{keyred}\mathbf{130}}}{\sqrt{{\color{keyred}\mathbf{22}}}} \approx $ \ans{27.72}
+\hfill
+$ME = t^* \times SE = {\color{keyred}\mathbf{2.080}} \times {\color{keyred}\mathbf{27.72}} \approx $ \ans{57.66}
+
+\textbf{4.} Write the 95\% confidence interval and interpret it in context.
+
+\quad CI: $\bar x \pm ME = {\color{keyred}\mathbf{920}} \pm {\color{keyred}\mathbf{57.66}} = ($ \ans{862} , \ans{978} $)$
+
+\quad Interpretation: \ansline{We are 95\% confident the true mean lunch calorie intake for students is between 862 and 978 calories.}
+
 \end{notesbox}
 
 \end{document}

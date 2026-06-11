@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.6 — Guided Notes (Answer Key)
+%! Confidence Intervals for the Difference of Two Means — Unit 7, Lesson 7.6 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
@@ -11,9 +11,110 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+  \item \ansline{Identify the two-sample $t$-interval as the appropriate procedure for a difference of two population means.}
+  \item \ansline{Verify the independence and Normal conditions for the two-sample $t$-interval.}
+  \item \ansline{Compute the standard error $SE = \sqrt{s_1^2/n_1 + s_2^2/n_2}$ and margin of error.}
+  \item \ansline{Calculate and interpret a two-sample $t$-interval for $\mu_1 - \mu_2$ in context.}
+\end{itemize}
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{Two-sample $t$-interval for $\mu_1 - \mu_2$}]
+        Used to estimate \ans{the difference of two population means ($\mu_1 - \mu_2$)} using two \ans{independent} samples when
+        $\sigma_1$ and $\sigma_2$ are \ans{unknown}.
+  \item[\termblanklong{Point estimate of $\mu_1 - \mu_2$}]
+        $\bar x_1 - \bar x_2$\,: the \ans{difference} of the two sample means.
+  \item[\termblanklong{Standard error of $\bar x_1 - \bar x_2$}]
+        $SE = \sqrt{\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2}}$\,. \quad
+        Estimates the \ans{standard deviation of the sampling distribution} of $\bar x_1 - \bar x_2$.
+  \item[\termblanklong{Degrees of freedom (two-sample)}]
+        Found using \ans{technology}; do NOT use $n_1 + n_2 - 2$.
+\end{description}
+\end{vocabbox}
+
+\begin{hookbox}
+\textbf{City A vs.\ City B: Which City Pays More?}\\
+City A: $n_1 = 32$, $\bar x_1 = \$62{,}400$, $s_1 = \$8{,}500$ \quad
+City B: $n_2 = 28$, $\bar x_2 = \$58{,}700$, $s_2 = \$7{,}200$\\[4pt]
+Point estimate: $\bar x_1 - \bar x_2 = \$62{,}400 - \$58{,}700 = $ \ans{\$3{,}700}\\[4pt]
+Question: Is this difference just random variation, or evidence that City A really pays more?
+An interval estimate will tell us.
+\end{hookbox}
+
+\begin{notesbox}{Sampling Distribution of $\bar x_1 - \bar x_2$ (UNC-4.V)}
+If two independent SRSs are drawn from populations with means $\mu_1, \mu_2$ and standard
+deviations $\sigma_1, \sigma_2$, and if both populations are Normal \emph{or}
+both $n_1, n_2 > 30$:
+
+\begin{center}
+Shape: \ans{approximately Normal} \quad
+Center: $\mu_{\bar x_1 - \bar x_2} = $ \ans{$\mu_1 - \mu_2$} \quad
+$SD = \sqrt{\dfrac{\sigma_1^2}{n_1} + \dfrac{\sigma_2^2}{n_2}}$
+\end{center}
+
+Since $\sigma_1, \sigma_2$ are unknown, replace with $s_1, s_2$ and use a
+\ans{$t$-} distribution. The procedure is a \textbf{two-sample $t$-interval}.
+\end{notesbox}
+
+\begin{notesbox}{Conditions to Verify (UNC-4.W)}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{@{} p{0.20\linewidth} X @{}}
+\textbf{Condition} & \textbf{How to verify} \\ \hline
+\textbf{Independence} &
+  Each sample: random sample or \ans{randomized} experiment. \\
+& If sampling without replacement: $n_1 \le$ \ans{10\%} $N_1$ and $n_2 \le$ \ans{10\%} $N_2$. \\
+& The two \ans{groups / samples} must be independent of each other. \\
+\textbf{Normal} &
+  If both $n_1, n_2 \ge 30$: \ans{CLT} applies. \\
+& If either $n < 30$: check for no strong \ans{skew} or \ans{outliers} in the sample. \\
+\end{tabularx}
+\end{notesbox}
+
+\begin{notesbox}{The Confidence Interval Formula (UNC-4.X and UNC-4.Y)}
+\begin{center}
+$(\bar x_1 - \bar x_2) \pm \underbrace{t^*}_{\text{critical value}} \cdot
+\underbrace{\sqrt{\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2}}}_{\text{standard error}}$
+\end{center}
+
+\begin{itemize}
+  \item Standard error: $SE = \sqrt{\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2}}$
+  \item Margin of error: $ME = $ \ans{$t^*$} $\times$ \ans{$SE$}
+  \item $t^*$ and $df$ from \ans{technology} (TI-84: \texttt{2-SampTInt})
+\end{itemize}
+
+\medskip
+\textbf{Worked Example: Salaries.}
+City A: $n_1 = 32$, $\bar x_1 = 62400$, $s_1 = 8500$. \quad
+City B: $n_2 = 28$, $\bar x_2 = 58700$, $s_2 = 7200$.
+
+\medskip
+$SE = \sqrt{\dfrac{8500^2}{{\color{keyred}\mathbf{32}}} + \dfrac{7200^2}{{\color{keyred}\mathbf{28}}}}
+    = \sqrt{{\color{keyred}\mathbf{2{,}257{,}813}} + {\color{keyred}\mathbf{1{,}851{,}429}}} \approx$ \ans{2{,}026}
+
+\medskip
+Technology: $df \approx 58$, \; $t^* \approx 2.002$ for 95\% confidence.
+
+\medskip
+$ME = 2.002 \times {\color{keyred}\mathbf{2{,}026}} \approx$ \ans{4{,}056}
+
+\medskip
+$CI = 3{,}700 \pm {\color{keyred}\mathbf{4{,}056}} = ($ \ans{$-$356}, \ans{7{,}756} $)$
+
+\medskip
+\textit{Interpretation:} We are 95\% confident the true difference in mean salaries
+($\mu_{\text{A}} - \mu_{\text{B}}$) is between \ans{$-$\$356} and \ans{\$7{,}756}.
+Since \ans{0} \ans{is} in the interval, this \ans{does not} provide
+convincing evidence that City A has a higher mean salary than City B.
+
+\begin{teachernote}
+The interval includes 0, so we cannot conclude the means differ at the 95\% confidence
+level. This is a rich discussion point: the point estimate (\$3,700) looks large, but
+sampling variability is substantial.
+\end{teachernote}
 \end{notesbox}
 
 \end{document}

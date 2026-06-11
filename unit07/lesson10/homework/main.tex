@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.10 — Homework
+%! Skills Focus: Selecting, Implementing, and Communicating Inference Procedures — Unit 7, Lesson 7.10 — Homework
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
@@ -9,11 +9,135 @@
 \pageheader{Unit 7, Lesson 7.10}{Homework}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: author the Homework. See references/components.md for the expected structure.
-\begin{notesbox}{Homework}
-\writelines{4}
-\end{notesbox}
+\begin{enumerate}
+
+\item \textbf{Identify the Procedure.} \; For each scenario, name the correct inference
+      procedure. No computation required.
+
+\begin{enumerate}[label=\alph*.]
+  \item A market researcher randomly selects 80 coffee drinkers and asks whether they prefer
+        oat milk over dairy milk. She wants to estimate the proportion who prefer oat milk.
+
+        Procedure: \blank{9cm}
+
+  \item A physical therapist records the number of days until pain relief for 12 randomly
+        selected patients treated with a new therapy and 12 treated with a standard therapy.
+        She wants to test whether the new therapy leads to faster relief, on average.
+
+        Procedure: \blank{9cm}
+
+  \item A company tracks customer satisfaction scores (0--100) for 40 randomly selected
+        customers before and after a new service policy. They want to test whether scores
+        increased after the policy change.
+
+        Procedure: \blank{9cm}
+\end{enumerate}
+
+\vspace{0.10in}
+
+\item \textbf{Proportions: Hypothesis Test.} \;
+      In a random sample of 120 city residents, 54 said they support expanding the public
+      transit system. In a random sample of 100 suburban residents, 35 said the same.
+      Is there evidence that the proportion who support expansion is higher among city
+      residents? Use $\alpha = 0.05$.
+
+      \textit{Write a complete four-step response.}
+
+      \begin{enumerate}[label=\alph*.]
+        \item \textbf{State:} Procedure: \blank{7cm}\\
+              $H_0$: \blank{5cm} \quad $H_a$: \blank{5cm}
+        \item \textbf{Plan:} Verify conditions (use numbers):
+              \begin{itemize}
+                \item Random: \writeline
+                \item 10\%: \writeline
+                \item Large Counts: \writeline
+              \end{itemize}
+        \item \textbf{Do:} $\hat p_1 =$ \blank{1.5cm} \; $\hat p_2 =$ \blank{1.5cm} \;
+              $\hat p_c = \dfrac{54+35}{120+100} =$ \blank{1.8cm}
+
+              $z = \dfrac{(\hat p_1 - \hat p_2)}{\sqrt{\hat p_c(1-\hat p_c)(1/120+1/100)}} \approx$ \blank{1.8cm} \quad $p$-value $\approx$ \blank{2cm}
+
+        \item \textbf{Conclude:} \writeline \writeline
+      \end{enumerate}
+
+\vspace{0.10in}
+
+\item \textbf{Means: Confidence Interval.} \;
+      A nutritionist randomly samples 22 adults and records their daily sodium intake.
+      The sample mean is 2,580 mg and the sample standard deviation is 310 mg. A dotplot
+      shows roughly symmetric data with one mild outlier. Construct a 95\% confidence interval
+      for the mean daily sodium intake of all adults. Interpret your interval.
+
+      \begin{enumerate}[label=\alph*.]
+        \item \textbf{State:} Procedure: \blank{7cm} \quad Parameter: \blank{5cm}
+        \item \textbf{Plan:} Conditions:
+              \begin{itemize}
+                \item Random: \writeline
+                \item Normal ($n < 30$): \writeline
+              \end{itemize}
+        \item \textbf{Do:} $t^* =$ \blank{1.5cm} (df = \blank{1.5cm}); \;
+              $ME = t^* \cdot \dfrac{s}{\sqrt{n}} =$ \blank{3cm}; \; Interval: \blank{4cm}
+        \item \textbf{Conclude:} \writeline \writeline
+      \end{enumerate}
+
+\vspace{0.10in}
+
+\item \textbf{Matched Pairs.} \;
+      A coach records the 40-meter sprint time (seconds) for 10 randomly selected sprinters
+      before and after a 4-week speed training program. The differences (before $-$ after)
+      have $\bar d = 0.31$ s and $s_d = 0.18$ s. The dotplot of differences is roughly
+      symmetric with no outliers. Is there evidence that sprint times improved?
+
+      Write a complete four-step response. Use $\alpha = 0.05$.
+
+      \begin{enumerate}[label=\alph*.]
+        \item \textbf{State:} Procedure: \blank{7cm}\\
+              $H_0$: \blank{4.5cm} \quad $H_a$: \blank{4.5cm}
+        \item \textbf{Plan:} Conditions: Random: \writeline \quad Normal: \writeline
+        \item \textbf{Do:} $t = \dfrac{\bar d - 0}{s_d / \sqrt{n}} = \dfrac{0.31}{0.18/\sqrt{10}} \approx$ \blank{1.8cm} \quad
+              $p$-value $\approx$ \blank{2cm} ($df =$ \blank{1.5cm})
+        \item \textbf{Conclude:} \writeline \writeline
+      \end{enumerate}
+
+\vspace{0.10in}
+
+\item \textbf{AP-Style Multiple Choice.} \;
+      \textit{A researcher wants to determine whether there is a difference in the mean exam
+      scores of students who study alone versus those who study in groups. She randomly assigns
+      30 students to study alone and 30 to study in groups, then records each student's exam
+      score. Which procedure is most appropriate?}
+
+      \begin{enumerate}[label=(\Alph*)]
+        \item One-sample $t$-test for $\mu$
+        \item Matched-pairs $t$-test for $\mu_d$
+        \item Two-sample $t$-test for $\mu_1 - \mu_2$
+        \item Two-sample $z$-test for $p_1 - p_2$
+      \end{enumerate}
+
+\end{enumerate}
+
+\begin{extensionbox}
+\textbf{Extension: CI vs.\ Significance Test} (optional)
+
+A two-sample $t$-test for $\mu_1 - \mu_2$ gives $t = 2.31$, $p = 0.026$ at $\alpha = 0.05$.
+A corresponding 95\% CI for $\mu_1 - \mu_2$ is $(0.4,\; 5.8)$.
+
+Both lead to the same conclusion (reject $H_0$), yet the CI provides more information. Explain
+in 2--3 sentences what the CI tells you that the significance test alone does not.
+\end{extensionbox}
+
+\begin{reflectionbox}
+\textbf{Preview: Unit 8 --- Chi-Square Tests}
+
+Unit 8 introduces a new class of inference procedures for categorical data with more than two
+categories. Rather than a $z$- or $t$-statistic, these procedures use a chi-square statistic
+($\chi^2$). The same four-step structure (State, Plan, Do, Conclude) will apply.
+
+In the next unit, you will learn to test whether a categorical variable follows a claimed
+distribution (goodness-of-fit), and whether two categorical variables are associated
+(test of independence or homogeneity).
+\end{reflectionbox}
 
 \end{document}

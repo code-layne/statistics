@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.9 — Group Activity
+%! Carrying Out a Test for the Difference of Two Population Means — Unit 7, Lesson 7.9 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
@@ -9,11 +9,73 @@
 \pageheader{Unit 7, Lesson 7.9}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\textit{Complete all four SPDC steps for each scenario. Show all computations.}
+
+\begin{scenariobox}[Tier R --- Remediate: Read, Interpret, and Conclude]{sky}
+A food scientist tested whether a new recipe produces crackers with a different mean
+sodium content than the original recipe. A two-sample $t$-test on independent random
+samples gave: $t = 2.41$, $df = 58$, $p = 0.019$ (two-sided), $\alpha = 0.05$.
+
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{State:} $H_0$: \blank{5cm} \quad $H_a$: \blank{5cm}
+  \item \textbf{Interpret the $p$-value.} Fill in the blanks.
+
+        ``Assuming the two recipes produce crackers with \blank{4cm} mean sodium content,
+        there is a \blank{1.5cm} probability of observing a difference in sample means
+        as \blank{3cm} as the one found, just by chance.''
+
+  \item \textbf{Decide.} At $\alpha = 0.05$: [reject / fail to reject] $H_0$
+        because $p = $ \blank{1.5cm} [is / is not] less than $\alpha$.
+
+  \item \textbf{Conclude.} Write a complete conclusion in context.
+        \writelines{2}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Tier A --- Approaching: Compute and Conclude]{sky}
+A sports physiologist wants to know whether a resistance training program increases mean
+grip strength more than a stretching program. Participants were randomly assigned to one
+of two groups. After 8 weeks: Group 1 (resistance), $n_1 = 24$, $\bar x_1 = 52.3$ kg,
+$s_1 = 7.8$ kg; Group 2 (stretching), $n_2 = 26$, $\bar x_2 = 47.1$ kg, $s_2 = 8.4$ kg.
+Dotplots are roughly symmetric with no outliers.
+
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{State:} $H_0$: \blank{4cm} \quad $H_a$: \blank{4cm}
+  \item \textbf{Plan:} Method: \blank{5cm}. Conditions:
+        \begin{itemize}
+          \item Random: \writeline
+          \item Normal: \writeline
+        \end{itemize}
+  \item \textbf{Do:} $SE = \sqrt{\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2}} = $ \blank{3.5cm}
+
+        $t = \dfrac{(\bar x_1 - \bar x_2) - 0}{SE} = \dfrac{\blank{3cm}}{\blank{2.5cm}} \approx$ \blank{2cm}
+
+        Technology: $p \approx$ \blank{2cm} \quad $df \approx$ \blank{2cm}
+
+  \item \textbf{Conclude:} At $\alpha = 0.05$: \writelines{2}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Tier E --- Extension: One-Sided vs.\ Two-Sided]{sky}
+Use the grip strength data from Tier A: $t \approx 2.33$, technology gives $df \approx 47$.
+
+\begin{enumerate}[label=\alph*.]
+  \item Suppose the physiologist had instead used $H_a: \mu_1 \ne \mu_2$ (two-sided).
+        Use technology to find the two-sided $p$-value. \quad $p_{\text{two-sided}} \approx$ \blank{2cm}
+
+  \item Compare the one-sided $p$-value (from Tier A) to the two-sided $p$-value.
+        How do they relate to each other? \writeline
+
+  \item The physiologist pre-specified $H_a: \mu_1 > \mu_2$ before collecting data.
+        Is it appropriate to report the two-sided $p$-value instead because it yields
+        a larger value? Explain. \writelines{2}
+
+  \item Suppose the sample sizes were doubled to $n_1 = 48$, $n_2 = 52$, with the same
+        sample means and standard deviations. Would the $SE$ increase, decrease, or stay
+        the same? How would this affect $t$ and the $p$-value? \writelines{2}
+\end{enumerate}
+\end{scenariobox}
 
 \end{document}

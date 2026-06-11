@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.7 — Guided Notes
+%! Justifying a Claim About the Difference of Two Means Based on a CI — Unit 7, Lesson 7.7 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
@@ -11,9 +11,106 @@
 
 \vspace{0.15in}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+  \item \writeline
+  \item \writeline
+  \item \writeline
+\end{itemize}
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{Interpretation of a two-sample CI}]
+        In repeated random sampling with the same sample sizes, approximately \blank{2cm}\%
+        of CIs constructed this way will capture \blank{5cm}.
+  \item[\termblanklong{Plausible values}]
+        Values \blank{3cm} the CI are consistent with the data; values \blank{3cm} the
+        CI are not.
+  \item[\termblanklong{Width of a CI}]
+        $\text{width} = 2 \times t^* \cdot SE$;\quad $SE = \sqrt{\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2}}$.
+        Width \blank{3cm} as sample sizes increase.
+\end{description}
+\end{vocabbox}
+
+\begin{notesbox}{Part 1: Interpreting a Two-Sample $t$-Interval (UNC-4.Z)}
+
+\textbf{The Interpretation Must Include:}
+\begin{enumerate}
+  \item The \blank{3cm} level
+  \item Both \blank{3cm} (not just the samples)
+  \item The \blank{4cm} of subtraction ($\mu_1 - \mu_2$)
+  \item The lower and upper bounds with \blank{2cm}
+\end{enumerate}
+
+\medskip
+\textbf{Model Sentence (2009 AP FRQ 4):}
+
+``Based on these samples, one can be 95 percent confident that the difference in the
+population mean response times (northern $-$ southern) is between \blank{2cm} minutes
+and \blank{2cm} minutes.''
+
+\medskip
+\textbf{Worked Example.} A 99\% CI for $\mu_{\text{online}} - \mu_{\text{in-person}}$ exam
+score is $(2.1, 11.3)$ points.
+
+\medskip
+Interpretation: ``We are \blank{2cm}\% confident that the true difference in \blank{5cm}
+(\blank{2cm} $-$ \blank{2cm}) is between \blank{1.5cm} and \blank{1.5cm} points.''
+
 \end{notesbox}
+
+\begin{notesbox}{Part 2: Justifying a Claim (UNC-4.AA)}
+
+\renewcommand{\arraystretch}{1.7}
+\begin{tabularx}{\linewidth}{@{} p{0.35\linewidth} X @{}}
+  \textbf{Where is 0?} & \textbf{Conclusion} \\ \hline
+  0 is \emph{inside} the interval & \writeline \\
+  0 is \emph{above} the interval (entire interval $> 0$) & \writeline \\
+  0 is \emph{below} the interval (entire interval $< 0$) & \writeline \\
+\end{tabularx}
+
+\medskip
+\textbf{Example.} The 99\% CI above is $(2.1, 11.3)$. Is 0 inside or outside?
+
+\quad 0 is \blank{3cm} the interval.
+
+\quad Conclusion: There \blank{3cm} convincing evidence that online students score
+higher than in-person students on average.
+
+\end{notesbox}
+
+\begin{notesbox}{Part 3: Effect of Sample Size on Width (UNC-4.AB)}
+
+$SE = \sqrt{\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2}}$. \quad As $n_1$ and $n_2$ \blank{3cm},
+$SE$ \blank{2cm}, so the interval becomes \blank{3cm}.
+
+\medskip
+\textbf{Example.} Suppose $s_1 = s_2 = 10$ and we compare two sample-size scenarios:
+
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} p{0.25\linewidth} X X X @{}}
+  \textbf{Scenario} & $n_1 = n_2$ & $SE$ & Approx.\ margin of error \\ \hline
+  A & 20 & $\sqrt{\dfrac{100}{20}+\dfrac{100}{20}} = \blank{2cm}$ & $\approx$ \blank{2cm} \\
+  B & 80 & $\sqrt{\dfrac{100}{80}+\dfrac{100}{80}} = \blank{2cm}$ & $\approx$ \blank{2cm} \\
+\end{tabularx}
+
+\medskip
+Quadrupling each sample size \blank{3cm} the margin of error by a factor of \blank{1.5cm}.
+
+\end{notesbox}
+
+\begin{practicebox}
+A 95\% CI for $\mu_{\text{brand A}} - \mu_{\text{brand B}}$ battery life is $(-3.2,\; 0.4)$ hours.
+
+\begin{itemize}
+  \item Interpret the interval: \writelines{2}
+  \item Does the interval provide convincing evidence that Brand A lasts longer? Explain.
+        \writeline
+  \item If both sample sizes were quadrupled (all else equal), would the new CI be
+        narrower, wider, or the same? Explain. \writeline
+\end{itemize}
+\end{practicebox}
 
 \end{document}

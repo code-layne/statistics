@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.9 — Homework (Answer Key)
+%! Carrying Out a Test for the Difference of Two Population Means — Unit 7, Lesson 7.9 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,99 @@
 \pageheader{Unit 7, Lesson 7.9}{Homework --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\textit{Complete all four SPDC steps for each problem. Show all computations.}
+
+\begin{enumerate}
+
+\item \textbf{Study Hours.}
+
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{State:} $H_0$: \ans{$\mu_1 - \mu_2 = 0$} \quad $H_a$: \ans{$\mu_1 - \mu_2 > 0$}
+  \item \textbf{Plan:} Method: \ans{Two-sample $t$-test for a difference of means}, conditions met: \ansline{Random samples; both $n \ge 30$ so CLT applies.}
+  \item \textbf{Do:} $SE = \sqrt{\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2}} \approx$ \ans{1.39}
+        \quad $t \approx$ \ans{1.80} \quad Technology: $p \approx$ \ans{0.037}, $df \approx$ \ans{59}
+  \item \textbf{Conclude:} At $\alpha = 0.05$: \ansline{Because $p \approx 0.037 < \alpha = 0.05$, we reject $H_0$. We have convincing evidence that residential students study more hours per week on average than commuter students.}
+  \ansline{}
+\end{enumerate}
+
+\vspace{0.05in}
+
+\item \textbf{Reading Scores.}
+
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{State:} $H_0$: \ans{$\mu_1 - \mu_2 = 0$} \quad $H_a$: \ans{$\mu_1 - \mu_2 \ne 0$}
+  \item \textbf{Plan:} Method: \ans{Two-sample $t$-test}. Conditions: \ansline{Random assignment; $n_1 = 40$ and $n_2 = 38 \ge 30$, CLT applies.}
+  \item \textbf{Do:} $SE \approx$ \ans{2.31} \quad $t \approx$ \ans{1.56}
+        \quad $p$ (two-sided) $\approx$ \ans{0.122} \quad $df \approx$ \ans{74}
+  \item \textbf{Conclude:} \ansline{Because $p \approx 0.122 > \alpha = 0.05$, we fail to reject $H_0$. We do not have convincing evidence that the two literacy programs produce different mean reading scores.}
+  \ansline{}
+\end{enumerate}
+
+\vspace{0.05in}
+
+\item \textbf{Recovery Time.}
+
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{State:} $H_0$: \ans{$\mu_1 - \mu_2 = 0$} \quad $H_a$: \ans{$\mu_1 - \mu_2 < 0$}
+
+        \begin{teachernote}
+        Group 1 = new protocol; Group 2 = standard. Since lower recovery time is better,
+        $H_a: \mu_1 < \mu_2$, i.e., $\mu_1 - \mu_2 < 0$.
+        \end{teachernote}
+
+  \item \textbf{Plan:} Method: \ans{Two-sample $t$-test}. Conditions:
+        \begin{itemize}
+          \item Random: \ansline{Randomized experiment --- patients randomly assigned to protocols.}
+          \item Normal ($n < 30$): \ansline{Both distributions roughly symmetric, no outliers; normality condition met.}
+        \end{itemize}
+  \item \textbf{Do:} $SE \approx$ \ans{1.21} \quad $t \approx$ \ans{$-2.73$}
+        \quad Technology: $p \approx$ \ans{0.005} \quad $df \approx$ \ans{35}
+  \item \textbf{Conclude:} At $\alpha = 0.05$: \ansline{Because $p \approx 0.005 < \alpha = 0.05$, we reject $H_0$. We have convincing evidence that the new stretching protocol reduces mean recovery time compared to the standard protocol.}
+  \ansline{}
+\end{enumerate}
+
+\vspace{0.05in}
+
+\item \textbf{Fuel Efficiency.}
+
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{State:} $H_0$: \ans{$\mu_1 - \mu_2 = 0$} \quad $H_a$: \ans{$\mu_1 - \mu_2 \ne 0$}
+  \item \textbf{Plan:} Method: \ans{Two-sample $t$-test}. Conditions: \ansline{Random samples; both dotplots roughly symmetric with no outliers.}
+  \item \textbf{Do:} $SE \approx$ \ans{0.862} \quad $t \approx$ \ans{$-1.97$}
+        \quad $p$ (two-sided) $\approx$ \ans{0.054}
+  \item \textbf{Conclude:} \ansline{Because $p \approx 0.054 > \alpha = 0.05$, we fail to reject $H_0$. We do not have convincing evidence (at the 5\% level) that the two engine designs produce different mean fuel efficiencies.}
+  \ansline{}
+\end{enumerate}
+
+\end{enumerate}
+
+\begin{reflectionbox}
+A student says: ``We got $p = 0.18$, which means the two groups probably have equal means.''
+Explain what is wrong with this statement. What does ``fail to reject $H_0$'' actually mean
+when comparing two groups?
+\ansline{The $p$-value does not measure the probability that $H_0$ is true. It is computed assuming $H_0$ is true. A large $p$-value means the data are consistent with the null, not that the null is correct.}
+\ansline{``Fail to reject $H_0$'' means the data do not provide sufficient evidence against equal population means --- not that the means are proven equal.}
+\ansline{}
+\end{reflectionbox}
+
+\begin{extensionbox}
+\textbf{Preview of Lesson 7.10 --- Selecting an Inference Procedure.}
+For each scenario below, identify the correct inference procedure (one-sample $t$-test,
+matched-pairs $t$-test, or two-sample $t$-test) and explain your reasoning.
+\begin{enumerate}[label=(\alph*)]
+  \item Researchers measure blood pressure for the same 15 patients before and after
+        taking a new medication.
+  \item Two independent groups of students take different versions of a standardized test.
+        Researchers compare mean scores.
+  \item A factory samples 40 bolts and tests whether the mean diameter differs from the
+        specified 10 mm.
+\end{enumerate}
+\ansline{(a) Matched-pairs $t$-test: measurements are paired (same subject, before and after).}
+\ansline{(b) Two-sample $t$-test: two independent groups are compared.}
+\ansline{(c) One-sample $t$-test: one sample compared to a known null value (10 mm).}
+\ansline{}
+\end{extensionbox}
 
 \end{document}

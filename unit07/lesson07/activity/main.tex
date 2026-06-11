@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.7 — Group Activity
+%! Justifying a Claim About the Difference of Two Means Based on a CI — Unit 7, Lesson 7.7 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
@@ -9,11 +9,81 @@
 \pageheader{Unit 7, Lesson 7.7}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\begin{scenariobox}[Tier R --- Interpreting a Given Interval (Template Task)]{sky}
+A two-sample $t$-interval for $\mu_{\text{city}} - \mu_{\text{suburban}}$ daily commute time
+(minutes) is reported as a 90\% CI: $(4.2,\; 12.6)$ minutes.
+
+\medskip
+\textbf{1.} Fill in the interpretation sentence using the template below.
+
+``We are \blank{1.5cm}\% confident that the true difference in \blank{5cm}
+(\blank{2cm} $-$ \blank{2cm}) commute time is between \blank{1.5cm} and
+\blank{1.5cm} minutes.''
+
+\medskip
+\textbf{2.} Is 0 inside or outside the interval? Circle:
+\quad \textbf{Inside} \quad / \quad \textbf{Outside}
+
+\medskip
+\textbf{3.} Does the interval provide evidence that city residents have a longer mean commute
+time than suburban residents? Circle one and explain.
+
+\quad \textbf{Yes} \qquad \textbf{No}
+
+\writeline
+\end{scenariobox}
+
+\begin{scenariobox}[Tier A --- Calculate, Interpret, and Justify]{sky}
+A nutrition researcher compares mean daily fiber intake (grams) for adults in two age groups.
+Group 1 (ages 18--34): $\bar x_1 = 18.4$ g, $s_1 = 5.2$ g, $n_1 = 45$.
+Group 2 (ages 35--54): $\bar x_2 = 21.9$ g, $s_2 = 6.1$ g, $n_2 = 50$.
+Both conditions are met. $df = 88$ (given). $t^* = 1.988$ for 95\% confidence.
+
+\textbf{a.} Compute $SE = \sqrt{\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2}}$.
+
+\[SE = \sqrt{\dfrac{\blank{1.8cm}^2}{\blank{1.5cm}} + \dfrac{\blank{1.8cm}^2}{\blank{1.5cm}}} \approx \blank{2cm}\text{ g}\]
+
+\textbf{b.} Construct the 95\% CI for $\mu_1 - \mu_2$.
+
+\[(\blank{1.5cm} - \blank{1.5cm}) \pm \blank{1.5cm} \cdot \blank{2cm} \approx (\blank{2cm},\; \blank{2cm})\text{ g}\]
+
+\textbf{c.} Interpret the interval in context. \writelines{2}
+
+\textbf{d.} A dietitian claims adults aged 18--34 consume less fiber than those aged 35--54.
+Does the CI support this claim? Explain using the interval.
+
+\writelines{2}
+\end{scenariobox}
+
+\begin{scenariobox}[Tier E --- Compare Widths and Design a Study]{sky}
+Researchers study sleep duration (hours) for college students at two campuses.
+Both groups have $s_1 = s_2 = 1.5$ hr. They plan to use 95\% confidence with $t^* \approx 1.97$.
+
+\textbf{a.} Compute the margin of error for each sample-size plan below.
+
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{@{} l c c c @{}}
+  \textbf{Plan} & $n_1 = n_2$ & $SE = \sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}$ & ME $= t^* \cdot SE$ \\[2pt] \hline
+  X & 25  & \blank{2.5cm} & \blank{2.5cm} \\
+  Y & 100 & \blank{2.5cm} & \blank{2.5cm} \\
+\end{tabular}
+
+\medskip
+\textbf{b.} By what factor did the margin of error decrease from Plan X to Plan Y?
+\writeline
+
+\textbf{c.} A researcher wants the margin of error to be no more than 0.30 hours.
+Using the same $s$ values and $t^* \approx 1.97$, what minimum equal sample size $n$
+is needed in each group? Set up the inequality and solve.
+
+\writelines{3}
+
+\textbf{d.} If the 95\% CI for $\mu_1 - \mu_2$ under Plan Y is $(-0.1,\; 0.5)$ hr,
+does this provide evidence that the two campuses differ in mean sleep? Justify.
+
+\writeline
+\end{scenariobox}
 
 \end{document}

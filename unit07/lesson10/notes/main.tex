@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.10 — Guided Notes
+%! Skills Focus: Selecting, Implementing, and Communicating Inference Procedures — Unit 7, Lesson 7.10 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
@@ -9,11 +9,91 @@
 \pageheader{Unit 7, Lesson 7.10}{Guided Notes}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+  \item \writeline
+  \item \writeline
+  \item \writeline
+\end{itemize}
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{Inference procedure selection}]
+        To choose correctly: (1) identify the \blank{4cm} (proportion or mean); (2) count
+        the \blank{3.5cm} (one or two); (3) decide whether to \blank{3cm} or \blank{3cm}.
+  \item[\termblanklong{Matched-pairs $t$-test}]
+        Used when data come in \blank{4cm} (same subject measured twice, or two paired
+        subjects). Compute \blank{3cm}, then run a \blank{5cm} $t$-test on the differences.
+        The parameter is \blank{2cm}.
+\end{description}
+\end{vocabbox}
+
+\begin{hookbox}
+A sports scientist records resting heart rates for 20 elite cyclists and 20 recreational
+cyclists. She wants to know whether elite cyclists have a lower \emph{mean} resting heart rate.
+
+What procedure should she use? \blank{7cm}
+
+How did you decide? Two questions:
+\begin{enumerate}
+  \item Parameter type: \blank{8cm}
+  \item Number of samples: \blank{8cm}
+\end{enumerate}
+\end{hookbox}
+
+\begin{notesbox}{The Procedure Selection Framework}
+\textbf{Ask these questions in order:}
+
+\vspace{0.06in}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} p{0.28\linewidth} p{0.20\linewidth} p{0.16\linewidth} X @{}}
+  \rowcolor{sky}
+  \textbf{Parameter} & \textbf{\# Samples} & \textbf{Goal} & \textbf{Procedure} \\ \hline
+  Proportion $p$ & One & CI & \blank{6cm} \\
+  Proportion $p$ & One & Test & \blank{6cm} \\
+  $p_1-p_2$ & Two & CI & \blank{6cm} \\
+  $p_1-p_2$ & Two & Test & \blank{6cm} \\
+  Mean $\mu$ & One & CI & \blank{6cm} \\
+  Mean $\mu$ & One & Test & \blank{6cm} \\
+  $\mu_1-\mu_2$ & Two & CI & \blank{6cm} \\
+  $\mu_1-\mu_2$ & Two & Test & \blank{6cm} \\
+\end{tabularx}
 \end{notesbox}
+
+\begin{notesbox}{The Four-Step AP Write-Up}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} p{0.10\linewidth} p{0.22\linewidth} X @{}}
+  \rowcolor{sky}
+  \textbf{Step} & \textbf{Name} & \textbf{What to write} \\ \hline
+  1 & \blank{3cm} & Name the procedure; state $H_0$ and $H_a$ (or parameter for a CI); define symbols. \\
+  2 & \blank{3cm} & List each condition; verify with \blank{6cm}; state whether met. \\
+  3 & \blank{3cm} & Show formula + substitution; report \blank{5cm} (or interval). \\
+  4 & \blank{3cm} & ``Because $p$-value \blank{2cm} $\alpha$, I \blank{3cm} $H_0$.
+                     There \blank{2cm} sufficient evidence that \blank{5cm}.'' \\
+\end{tabularx}
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Partner Practice.} \;
+A school district randomly selects 40 elementary schools and 40 middle schools and records
+the mean reading-score gain (points) for each school over one year. An analyst wants to know
+whether elementary schools showed a larger mean gain than middle schools.
+
+\begin{enumerate}
+  \item Parameter: \blank{5cm} \quad \# samples: \blank{3cm} \quad Goal: \blank{3cm}
+  \item Procedure name: \blank{9cm}
+  \item $H_0$: \blank{5cm} \quad $H_a$: \blank{5cm}
+  \item List the three conditions and state how each is verified:
+        \begin{itemize}
+          \item Random: \writeline
+          \item 10\%: \writeline
+          \item Normal: \writeline
+        \end{itemize}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

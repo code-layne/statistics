@@ -1,12 +1,12 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.7 — Lesson Plan
+%! Justifying a Claim About the Difference of Two Means Based on a CI — Unit 7, Lesson 7.7 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\UnitNumberName}{Unit 7: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 7.7: TODO: Lesson Title}
+\newcommand{\UnitNumberName}{Unit 7: Inference for Quantitative Data: Means \quad}
+\newcommand{\LessonNumberName}{Lesson 7.7: Justifying a Claim About the Difference of Two Means Based on a Confidence Interval}
 
 \begin{document}
 \begin{center}
@@ -16,55 +16,280 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will interpret a two-sample $t$-interval for
+    $\mu_1 - \mu_2$ in context, use the interval to justify a claim (particularly whether
+    it contains or excludes 0), and describe how sample size affects the width of the interval.
+    (Big Idea: UNC)
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 4B --- Interpretation}
+    \begin{itemize}
+        \item Interpret a confidence interval for $\mu_1 - \mu_2$ in context, referencing
+              both samples and their populations (Skill 4.B; UNC-4.Z).
+    \end{itemize}
+    \textbf{AP Skill 4D --- Justification}
+    \begin{itemize}
+        \item Use a CI for $\mu_1 - \mu_2$ to justify or refute a claim; examine whether
+              0 is inside or outside the interval (Skill 4.D; UNC-4.AA).
+    \end{itemize}
+    \textbf{AP Skill 4A --- Sample Size \& Width}
+    \begin{itemize}
+        \item Explain how increasing sample sizes decreases interval width when all other
+              things remain the same (Skill 4.A; UNC-4.AB).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item A $C\%$ CI for $\mu_1 - \mu_2$ means: in repeated sampling with the same
+              sizes, approximately $C\%$ of such intervals will capture the true difference.
+        \item Interpretation must name both populations (not just samples) and give
+              numbers in context with a direction (e.g., Group 1 $-$ Group 2).
+        \item \textbf{If 0 is not in the interval:} plausible evidence of a real difference;
+              the claim of ``no difference'' is not supported.
+        \item \textbf{If 0 is in the interval:} a difference of 0 is plausible; insufficient
+              evidence to claim the means differ.
+        \item Larger $n$ $\Rightarrow$ smaller $SE$ $\Rightarrow$ narrower interval.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Two-sample $t$-interval for $\mu_1 - \mu_2$} --- interval estimate
+              for the difference of two population means using $t^*$ with Welch df
+        \item \textbf{Interpretation template} --- ``Based on these samples, we are $C\%$
+              confident the true difference in population means ($\mu_1 - \mu_2$) is
+              between [lower] and [upper] [units], in context.''
+        \item \textbf{Plausible values} --- values inside the CI are consistent with the data
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Zero in the interval} --- indicates a difference of 0 is plausible;
+              cannot conclude the population means differ
+        \item \textbf{Zero outside the interval} --- 0 is not a plausible difference;
+              provides evidence the population means differ
+        \item \textbf{Width of a CI} --- $2 \times t^* \cdot SE$; decreases as $n$ increases
+              because $SE = \sqrt{s_1^2/n_1 + s_2^2/n_2}$ shrinks
+        \item \textbf{Standard error (two-sample)} ---
+              $SE = \sqrt{\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2}}$
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
-\end{fixedskillbox}
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+    \textbf{Spiral Review (warm-up)}
+    \begin{itemize}
+        \item Constructing a two-sample $t$-interval: formula, conditions, and Welch df
+              --- from Lesson 7.6
+        \item Interpreting a one-sample CI for $\mu$ in context --- Lesson 7.3
+        \item Using a CI to justify a claim about a single proportion or mean --- Units 6--7
+        \item Effect of sample size and confidence level on CI width --- Lessons 7.3, 7.6
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
+    % Authored warm-up compiles to target/ — no source PDF to embed here.
+\end{minipage}
+\end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\begin{minipage}[t]{0.55\linewidth}
+    \textbf{Which City Has Faster Emergency Response? (3--4 min)}\\
+    A journalist collects response-time data from two cities and produces this calculator
+    output:
+    \begin{center}
+    \texttt{Two-Sample t Interval for $\mu_1 - \mu_2$}\\
+    \texttt{95\% CI: ($-$2.37, 0.37) minutes}
+    \end{center}
+    Ask: ``Does this interval prove one city is faster?''\\[4pt]
+    Key discussion points:
+    \begin{itemize}
+        \item The interval \emph{includes 0} --- a difference of zero is plausible.
+        \item The data do not provide convincing evidence that the mean response times differ.
+        \item This is the 2009 AP FRQ 4 illustrative example (UNC-4.Z.2).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.40\linewidth}
+    \textbf{Bridge from Lesson 7.6}\\
+    In Lesson 7.6 we \emph{built} the interval:
+    \[(\bar x_1 - \bar x_2) \pm t^* \cdot \sqrt{\tfrac{s_1^2}{n_1} + \tfrac{s_2^2}{n_2}}\]
+    Today we \emph{read} and \emph{use} the interval to answer a question:\\[4pt]
+    \begin{center}
+    \textbf{Is 0 inside or outside?}\\
+    Inside $\to$ no convincing evidence of a difference.\\
+    Outside $\to$ evidence of a real difference.
+    \end{center}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{skillbox}[Lesson: Interpreting a Two-Sample CI]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{The Interpretation Template (UNC-4.Z.2)}\\
+    An interpretation must include:
+    \begin{enumerate}
+        \item The confidence level ($C\%$)
+        \item Both populations (not the samples)
+        \item The direction of subtraction ($\mu_1 - \mu_2$)
+        \item The lower and upper bounds with units
+    \end{enumerate}
+    \textit{Model sentence:}\\
+    ``Based on these samples, we are 95\% confident that the difference in population mean
+    response times (northern $-$ southern) is between $-2.37$ minutes and $0.37$ minutes.''
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Connecting to the Long-Run Frequency (UNC-4.Z.1)}\\
+    \begin{itemize}
+        \item The 95\% refers to the \emph{method}, not to this specific interval.
+        \item In repeated random sampling with the same sample sizes, approximately 95\% of
+              all constructed intervals will contain $\mu_1 - \mu_2$.
+        \item We do \emph{not} say ``there is a 95\% probability that $\mu_1 - \mu_2$
+              falls in this interval'' (the parameter is fixed; the interval is random).
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Lesson (cont.): Justifying a Claim \& Width]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Using the CI to Justify a Claim (UNC-4.AA)}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{center}
+    \begin{tabular}{@{}p{0.40\linewidth} p{0.52\linewidth}@{}}
+        \textbf{Situation} & \textbf{Conclusion} \\ \hline
+        0 is \emph{inside} the interval & A difference of 0 is plausible; insufficient
+          evidence to claim $\mu_1 \ne \mu_2$. \\
+        0 is \emph{outside} the interval (entire interval $>0$) & Plausible evidence
+          $\mu_1 > \mu_2$; supports a ``positive difference'' claim. \\
+        0 is \emph{outside} the interval (entire interval $<0$) & Plausible evidence
+          $\mu_1 < \mu_2$; supports a ``negative difference'' claim. \\
+    \end{tabular}
+    \end{center}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Effect of Sample Size on Width (UNC-4.AB)}
+    \begin{itemize}
+        \item $SE = \sqrt{\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2}}$ decreases as
+              $n_1$ and/or $n_2$ increase.
+        \item Smaller $SE$ $\Rightarrow$ narrower interval $\Rightarrow$ more precision.
+        \item Doubling both sample sizes does \emph{not} halve the width (only
+              $1/\sqrt{2} \approx 0.71\times$ narrower).
+        \item Higher confidence level ($C\%$ $\uparrow$) $\Rightarrow$ larger $t^*$
+              $\Rightarrow$ wider interval (all else equal).
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Circulate and Check}
+    \begin{itemize}
+        \item Interpretation names \emph{populations}, not samples; includes both bounds
+              and units; specifies direction of subtraction.
+        \item Claim justification explicitly checks whether 0 is inside or outside.
+        \item Width reasoning references $SE$ (and sample sizes), not just the formula.
+        \item Students do not confuse ``95\% confident'' with ``95\% probability the
+              parameter is in the interval.''
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Cold-Call Prompts}
+    \begin{itemize}
+        \item ``Why do we need to say 'population means' and not just 'means'?''
+        \item ``The interval is $(1.2, 4.8)$ minutes. What does that tell us about the
+              claim that the two groups have the same mean?''
+        \item ``If we doubled both sample sizes, what would happen to the interval?''
+        \item ``Does 95\% confident mean there's a 95\% chance the true value is inside?
+              Explain the correct meaning.''
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{multicols}{3}
+    \textbf{Tier R --- Remediate}
+    \begin{itemize}
+        \item Provide a fill-in sentence frame for interpretation.
+        \item Focus on locating 0 relative to the interval and choosing the correct
+              conclusion word (``supports'' vs.\ ``does not support'').
+        \item Activity: Tier R template task only.
+    \end{itemize}
+    \columnbreak
+    \textbf{Tier A --- Approaching}
+    \begin{itemize}
+        \item Calculate a two-sample CI from summary statistics, write a full
+              interpretation, and answer a claim question with justification.
+        \item Explain in words why a larger sample narrows the interval.
+    \end{itemize}
+    \columnbreak
+    \textbf{Tier E --- Extension}
+    \begin{itemize}
+        \item Compare two scenarios differing only in sample size; quantify the
+              difference in width.
+        \item Design a study: determine minimum $n$ needed to achieve a desired
+              margin of error (conceptual reasoning).
+    \end{itemize}
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    A 90\% CI for $\mu_{\text{urban}} - \mu_{\text{rural}}$ sleep hours is $(0.3, 1.1)$ hr.
+    \begin{enumerate}
+        \item Interpret the interval in context.
+        \item Does the interval provide convincing evidence that urban residents sleep
+              more on average? Explain.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{A 95\% CI for $\mu_A - \mu_B$ battery life is $(-3.2, 0.4)$ hours.
+    Which conclusion is most appropriate?}
+    \begin{enumerate}[label=(\Alph*)]
+        \item Battery A lasts longer; the interval is mostly negative.
+        \item There is convincing evidence that the means differ because the interval
+              is not symmetric about 0.
+        \item There is insufficient evidence of a difference because 0 is in the interval.
+              \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+        \item Battery B lasts longer because the lower bound is negative.
+    \end{enumerate}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework Overview}
+    \begin{itemize}
+        \item Four problems: interpret given CIs for $\mu_1 - \mu_2$, justify claims, and
+              analyze the effect of sample size on width.
+        \item One problem revisits the 2009 AP FRQ 4 format (northern vs.\ southern
+              response times).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension:} If a 95\% CI excludes 0, must a corresponding
+              two-sided significance test at $\alpha = 0.05$ also reject $H_0$?
+              Explain the connection.
+        \item \textit{Preview:} Lesson 7.8 introduces significance tests for
+              $\mu_1 - \mu_2$ --- the two-sample $t$-test.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
+
 \end{document}

@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.10 — Homework (Answer Key)
+%! Skills Focus: Selecting, Implementing, and Communicating Inference Procedures — Unit 7, Lesson 7.10 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,128 @@
 \pageheader{Unit 7, Lesson 7.10}{Homework --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}
+
+\item \textbf{Identify the Procedure.}
+
+\begin{enumerate}[label=\alph*.]
+  \item A market researcher randomly selects 80 coffee drinkers and asks whether they prefer
+        oat milk over dairy milk. She wants to estimate the proportion who prefer oat milk.
+
+        Procedure: \ans{one-sample $z$-interval for $p$}
+
+  \item A physical therapist records the number of days until pain relief for 12 randomly
+        selected patients treated with a new therapy and 12 treated with a standard therapy.
+        She wants to test whether the new therapy leads to faster relief, on average.
+
+        Procedure: \ans{two-sample $t$-test for $\mu_1 - \mu_2$}
+
+  \item A company tracks customer satisfaction scores (0--100) for 40 randomly selected
+        customers before and after a new service policy. They want to test whether scores
+        increased after the policy change.
+
+        Procedure: \ans{matched-pairs $t$-test for $\mu_d$}
+\end{enumerate}
+
+\vspace{0.10in}
+
+\item \textbf{Proportions: Hypothesis Test.}
+
+      \begin{enumerate}[label=\alph*.]
+        \item \textbf{State:} Procedure: \ans{two-sample $z$-test for $p_1 - p_2$}\\
+              $H_0$: \ans{$p_1 - p_2 = 0$} \quad $H_a$: \ans{$p_1 - p_2 > 0$}
+        \item \textbf{Plan:}
+              \begin{itemize}
+                \item Random: \ansline{Both samples were randomly selected --- met.}
+                \item 10\%: \ansline{$120 \le 10\%$ of all city residents and $100 \le 10\%$ of all suburban residents (large populations assumed) --- met.}
+                \item Large Counts: \ansline{$120(0.45)=54$, $120(0.55)=66$, $100(0.35)=35$, $100(0.65)=65$ --- all $\ge 10$; met.}
+              \end{itemize}
+        \item \textbf{Do:} $\hat p_1 =$ \ans{0.45} \; $\hat p_2 =$ \ans{0.35} \;
+              $\hat p_c = \dfrac{54+35}{120+100} =$ \ans{$89/220 \approx 0.405$}
+
+              $z = \dfrac{(0.45 - 0.35)}{\sqrt{0.405(0.595)(1/120+1/100)}} \approx$ \ans{1.53} \quad $p$-value $\approx$ \ans{0.063}
+
+        \item \textbf{Conclude:} \ansline{Because $p \approx 0.063 > \alpha = 0.05$, fail to reject $H_0$. There is not sufficient evidence that the proportion of city residents who support transit expansion is higher than the proportion of suburban residents.}
+      \end{enumerate}
+
+\vspace{0.10in}
+
+\item \textbf{Means: Confidence Interval.}
+
+      \begin{enumerate}[label=\alph*.]
+        \item \textbf{State:} Procedure: \ans{one-sample $t$-interval for $\mu$} \quad
+              Parameter: \ans{$\mu$ = mean daily sodium intake (mg) of all adults}
+        \item \textbf{Plan:}
+              \begin{itemize}
+                \item Random: \ansline{Random sample of 22 adults --- met.}
+                \item Normal ($n < 30$): \ansline{$n = 22 < 30$; dotplot shows roughly symmetric data with one mild outlier. A single mild outlier in a symmetric distribution is generally acceptable --- Normal condition met, proceed with caution.}
+              \end{itemize}
+        \item \textbf{Do:} $t^* =$ \ans{2.080} (df = \ans{21}); \;
+              $ME = 2.080 \cdot \dfrac{310}{\sqrt{22}} \approx$ \ans{137.4}; \; Interval: \ans{$(2442.6,\; 2717.4)$}
+        \item \textbf{Conclude:} \ansline{We are 95\% confident that the mean daily sodium intake of all adults is between 2,443 mg and 2,717 mg.}
+      \end{enumerate}
+
+\vspace{0.10in}
+
+\item \textbf{Matched Pairs.}
+
+      \begin{enumerate}[label=\alph*.]
+        \item \textbf{State:} Procedure: \ans{matched-pairs $t$-test for $\mu_d$}\\
+              $H_0$: \ans{$\mu_d = 0$} \quad $H_a$: \ans{$\mu_d > 0$}
+              \quad ($\mu_d$ = mean difference in sprint time, before $-$ after)
+        \item \textbf{Plan:} Conditions: Random: \ansline{Randomly selected sprinters --- met.} \quad Normal: \ansline{$n = 10 < 30$; dotplot of differences shows symmetric, no outliers --- met.}
+        \item \textbf{Do:} $t = \dfrac{\bar d - 0}{s_d / \sqrt{n}} = \dfrac{0.31}{0.18/\sqrt{10}} \approx$ \ans{5.45} \quad
+              $p$-value $\approx$ \ans{$0.0002$} ($df =$ \ans{9})
+        \item \textbf{Conclude:} \ansline{Because $p \approx 0.0002 < \alpha = 0.05$, reject $H_0$. There is sufficient evidence that the mean sprint time for all sprinters decreased (improved) after the training program.}
+      \end{enumerate}
+
+\vspace{0.10in}
+
+\item \textbf{AP-Style Multiple Choice.}
+
+      \begin{enumerate}[label=(\Alph*)]
+        \item One-sample $t$-test for $\mu$
+        \item Matched-pairs $t$-test for $\mu_d$
+        \item Two-sample $t$-test for $\mu_1 - \mu_2$ \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+        \item Two-sample $z$-test for $p_1 - p_2$
+      \end{enumerate}
+      \begin{itemize}
+        \item (C) is correct: two independent groups (study alone vs.\ study in groups); quantitative outcome (exam score) $\to$ means $\to$ two-sample $t$.
+        \item (B) is wrong: matched pairs requires the same subjects measured twice; here, different students are assigned to each group.
+      \end{itemize}
+
+\end{enumerate}
+
+\begin{extensionbox}
+\textbf{Extension: CI vs.\ Significance Test} (optional)
+
+A two-sample $t$-test for $\mu_1 - \mu_2$ gives $t = 2.31$, $p = 0.026$ at $\alpha = 0.05$.
+A corresponding 95\% CI for $\mu_1 - \mu_2$ is $(0.4,\; 5.8)$.
+
+Both lead to the same conclusion (reject $H_0$), yet the CI provides more information. Explain
+in 2--3 sentences what the CI tells you that the significance test alone does not.
+
+\begin{teachernote}
+Expected answer: The CI tells us the plausible range of the actual difference, not just
+whether a difference exists. Specifically, it says $\mu_1 - \mu_2$ is between 0.4 and 5.8
+units. If the practical minimum meaningful difference is 1 unit, seeing a lower bound of 0.4
+would raise questions about whether the effect is practically significant, even though it is
+statistically significant. The significance test only tells us $p < 0.05$; the CI tells us how large the effect might be.
+\end{teachernote}
+\end{extensionbox}
+
+\begin{reflectionbox}
+\textbf{Preview: Unit 8 --- Chi-Square Tests}
+
+Unit 8 introduces a new class of inference procedures for categorical data with more than two
+categories. Rather than a $z$- or $t$-statistic, these procedures use a chi-square statistic
+($\chi^2$). The same four-step structure (State, Plan, Do, Conclude) will apply.
+
+In the next unit, you will learn to test whether a categorical variable follows a claimed
+distribution (goodness-of-fit), and whether two categorical variables are associated
+(test of independence or homogeneity).
+\end{reflectionbox}
 
 \end{document}

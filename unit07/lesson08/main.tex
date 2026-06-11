@@ -1,12 +1,12 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.8 — Lesson Plan
+%! Setting Up a Test for the Difference of Two Population Means — Unit 7, Lesson 7.8 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\UnitNumberName}{Unit 7: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 7.8: TODO: Lesson Title}
+\newcommand{\UnitNumberName}{Unit 7: Inference for Quantitative Data: Means \quad}
+\newcommand{\LessonNumberName}{Lesson 7.8: Setting Up a Test for the Difference of Two Population Means}
 
 \begin{document}
 \begin{center}
@@ -16,55 +16,294 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will identify when a two-sample $t$-test for a
+    difference of two population means is appropriate, write null and alternative hypotheses
+    in terms of $\mu_1 - \mu_2$, and verify the conditions for inference --- extending the
+    one-sample $t$-test framework to two independent groups. (Big Idea: VAR)
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 1 --- Selecting Statistical Methods}
+    \begin{itemize}
+        \item Identify a two-sample $t$-test as the appropriate method for testing
+              a claim about the difference of two population means when $\sigma_1$
+              and $\sigma_2$ are unknown (Skill 1.E; VAR-7.F).
+        \item Identify null and alternative hypotheses for a two-sample $t$-test in
+              terms of $\mu_1 - \mu_2$ (Skill 1.F; VAR-7.G).
+    \end{itemize}
+    \textbf{AP Skill 4 --- Statistical Argumentation}
+    \begin{itemize}
+        \item Verify that conditions for inference apply: independence for both
+              samples and approximately normal sampling distribution of
+              $\bar x_1 - \bar x_2$ (Skill 4.C; VAR-7.H).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item When comparing two independent groups and both $\sigma$'s are unknown,
+              use a \textbf{two-sample $t$-test for $\mu_1 - \mu_2$}.
+        \item $H_0: \mu_1 - \mu_2 = 0$ (equivalently $\mu_1 = \mu_2$); the alternative
+              reflects the direction of the research question.
+        \item Two sets of conditions to verify: (1) each sample is random or from a
+              randomized experiment; if sampling without replacement, apply the 10\%
+              rule to \emph{each} sample; (2) the sampling distribution of
+              $\bar x_1 - \bar x_2$ is approximately normal --- check both samples
+              separately.
+        \item Distinguish two-sample $t$-test (independent groups) from matched-pairs
+              $t$-test (paired data on the same subjects).
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Two-sample $t$-test for $\mu_1 - \mu_2$} --- a significance test
+              comparing two independent groups when both population standard deviations
+              are unknown
+        \item \textbf{Null hypothesis ($H_0$)} --- $H_0: \mu_1 - \mu_2 = 0$
+              (equivalently $H_0: \mu_1 = \mu_2$)
+        \item \textbf{Alternative hypothesis ($H_a$)} --- $H_a: \mu_1 - \mu_2 < 0$,
+              $> 0$, or $\ne 0$; the direction is determined by the research question,
+              set \emph{before} seeing data
+        \item \textbf{Independent samples} --- data from two unrelated groups; no
+              natural pairing between observations
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{10\% condition (two samples)} --- if sampling without replacement,
+              $n_1 \le 10\%N_1$ \emph{and} $n_2 \le 10\%N_2$
+        \item \textbf{Normal condition (two samples)} --- if both $n_1 \ge 30$ and
+              $n_2 \ge 30$, CLT applies; if either is $< 30$, check \emph{both}
+              samples for strong skewness and outliers
+        \item \textbf{Two-sided vs.\ one-sided alternative} --- two-sided ($\ne$) tests
+              whether the means differ; one-sided ($<$ or $>$) tests a directional claim
+        \item \textbf{Two-sample vs.\ matched pairs} --- independent groups $\to$
+              two-sample $t$; paired data $\to$ one-sample $t$ on differences
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
-\end{fixedskillbox}
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+    \textbf{Spiral Review (warm-up)}
+    \begin{itemize}
+        \item One-sample $t$-test setup: identifying the method, writing $H_0/H_a$,
+              verifying conditions --- from Lesson 7.4
+        \item Two-sample $t$-interval conditions: each sample random, 10\% rule for
+              each group, Normal condition for both --- from Lesson 7.6
+        \item Writing hypotheses in terms of population parameters, not statistics ---
+              connecting Lessons 7.4 and 7.6
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
+    % Authored warm-up compiles to target/ — no source PDF to embed here.
+\end{minipage}
+\end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\begin{minipage}[t]{0.55\linewidth}
+    \textbf{Which Training Program Works Better? (3--4 min)}\\
+    A hospital randomly assigns patients recovering from knee surgery to one of two
+    physical therapy programs: standard PT or an accelerated PT protocol. After 8 weeks,
+    researchers record the number of days until each patient returns to full mobility.\\[4pt]
+    Ask: ``How would you determine whether one program leads to faster recovery
+    \emph{on average}?''\\[4pt]
+    Key discussion points:
+    \begin{itemize}
+        \item We have two independent groups --- not paired data.
+        \item We want to compare $\mu_1$ (standard PT) vs.\ $\mu_2$ (accelerated PT).
+        \item Before computing anything: choose the method, write hypotheses, verify conditions.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.40\linewidth}
+    \textbf{Bridge from Lesson 7.6}\\
+    In Lesson 7.6 we built a \emph{confidence interval} for $\mu_1 - \mu_2$:\\[4pt]
+    Two-sample $t$-interval: estimate the plausible range of $\mu_1 - \mu_2$.\\[6pt]
+    In Lesson 7.8 we run a \emph{significance test} for $\mu_1 - \mu_2$:\\[4pt]
+    Two-sample $t$-test: ``Is there convincing evidence that $\mu_1 \ne \mu_2$?''\\[6pt]
+    Same conditions; different purpose.
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{skillbox}[Lesson: Choosing the Method]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{When to Use a Two-Sample $t$-Test}
+    \begin{enumerate}
+        \item Quantitative response variable measured on \emph{two independent groups}.
+        \item Population standard deviations $\sigma_1$ and $\sigma_2$ are unknown
+              (virtually always true in practice).
+        \item Goal: test a claim about $\mu_1 - \mu_2$.
+    \end{enumerate}
+    \textit{PT example: days to full mobility is quantitative; standard PT and accelerated PT
+    are two independent groups; $\sigma$'s unknown $\Rightarrow$ two-sample $t$-test.}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Two-Sample vs.\ Matched-Pairs --- Key Distinction}
+    \begin{itemize}
+        \item \textbf{Matched pairs:} each observation in group 1 is naturally paired
+              with one in group 2 (same subject before/after, or two measurements on
+              the same unit). $\to$ one-sample $t$-test on differences.
+        \item \textbf{Two independent samples:} different subjects randomly assigned
+              to or selected from two separate groups. $\to$ two-sample $t$-test.
+    \end{itemize}
+    \textit{Ask: ``Is there a natural pairing?'' If yes $\to$ matched pairs. If no $\to$
+    two-sample.}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Lesson (cont.): Hypotheses \& Conditions]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Writing Hypotheses (VAR-7.G)}
+    \begin{itemize}
+        \item Always in terms of \emph{population} parameters $\mu_1$ and $\mu_2$,
+              never sample statistics.
+        \item $H_0: \mu_1 - \mu_2 = 0$ \quad (equivalently $\mu_1 = \mu_2$)
+        \item Choose $H_a$ based on the research question --- \emph{before} data:
+              \begin{itemize}
+                  \item ``Is Group 1 \emph{lower} on average?''
+                        $\to H_a: \mu_1 - \mu_2 < 0$
+                  \item ``Is Group 1 \emph{higher} on average?''
+                        $\to H_a: \mu_1 - \mu_2 > 0$
+                  \item ``Do the groups \emph{differ}?''
+                        $\to H_a: \mu_1 - \mu_2 \ne 0$
+              \end{itemize}
+    \end{itemize}
+    \textit{PT example (let $\mu_1$ = standard, $\mu_2$ = accelerated):
+    $H_0: \mu_1 - \mu_2 = 0$; $H_a: \mu_1 - \mu_2 > 0$ (standard takes longer).}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Verifying Conditions (VAR-7.H)}
+    \begin{enumerate}
+        \item \textbf{Random/Independence (both samples):}
+              \begin{itemize}
+                  \item Each group: random sample or randomized experiment.
+                  \item If sampling without replacement: $n_1 \le 10\%N_1$
+                        \emph{and} $n_2 \le 10\%N_2$.
+              \end{itemize}
+        \item \textbf{Normal (sampling dist.\ of $\bar x_1 - \bar x_2$):}
+              \begin{itemize}
+                  \item Both $n_1 \ge 30$ and $n_2 \ge 30$: CLT applies to each.
+                  \item If \emph{either} $n < 30$: check \emph{both} sample
+                        distributions for strong skewness and outliers.
+              \end{itemize}
+    \end{enumerate}
+    \textit{PT: $n_1 = 18$, $n_2 = 17$ --- both $< 30$, so examine plots of
+    \emph{both} groups.}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Circulate and Check}
+    \begin{itemize}
+        \item Students write $\mu_1 - \mu_2$ (not $\bar x_1 - \bar x_2$) in hypotheses.
+        \item $H_0$ is $\mu_1 - \mu_2 = 0$; null value is always zero in standard setup.
+        \item Alternative direction matches the research question; chosen before data.
+        \item Normal condition check applies to \emph{both} samples independently.
+        \item Students correctly distinguish independent samples from matched pairs.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Cold-Call Prompts}
+    \begin{itemize}
+        \item ``Why is the null value for $\mu_1 - \mu_2$ always 0?''
+        \item ``What would change in the setup if the same patients received
+              both treatments?''
+        \item ``If $n_1 = 40$ but $n_2 = 18$, which Normal condition check applies?''
+        \item ``A student writes $H_0: \bar x_1 = \bar x_2$. What's wrong?''
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{multicols}{3}
+    \textbf{Tier R --- Remediate}
+    \begin{itemize}
+        \item Provide a side-by-side template: ``$H_0: \mu_1 - \mu_2 = 0$;
+              $H_a: \mu_1 - \mu_2$ (circle: $<$ / $>$ / $\ne$) $0$'' and the
+              two-condition checklist.
+        \item Focus on identifying independent vs.\ paired designs.
+        \item Activity: match scenarios to hypotheses only (Tier R items).
+    \end{itemize}
+    \columnbreak
+    \textbf{Tier A --- Approaching}
+    \begin{itemize}
+        \item Write full setup (method, hypotheses, conditions) for each scenario.
+        \item Justify each condition with numbers from the context.
+    \end{itemize}
+    \columnbreak
+    \textbf{Tier E --- Extension}
+    \begin{itemize}
+        \item Complete all scenarios, then design an original two-sample study.
+        \item Explain the trade-offs of a one-sided vs.\ two-sided alternative for
+              the same research context.
+    \end{itemize}
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    A data scientist believes the mean commute time for workers using public transit differs
+    from the mean commute time for workers who drive. She randomly surveys 22 transit users
+    and 25 drivers. Dotplots of both samples show roughly symmetric distributions with no
+    outliers.
+    \begin{enumerate}
+        \item Name the appropriate inference method.
+        \item State $H_0$ and $H_a$ in terms of $\mu_1 - \mu_2$.
+        \item Verify conditions for both samples.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{A researcher randomly assigns 30 volunteers to Diet A and 30 to Diet B. After
+    12 weeks he records weight lost (kg). Both samples are approximately normal. He tests
+    $H_0: \mu_A - \mu_B = 0$ vs.\ $H_a: \mu_A - \mu_B \ne 0$. Which method is correct?}
+    \begin{enumerate}[label=(\Alph*)]
+        \item One-sample $t$-test; the data come from one experiment.
+        \item Matched-pairs $t$-test; both groups share the same time period.
+        \item Two-sample $t$-test for $\mu_A - \mu_B$. \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+        \item $z$-test; both sample sizes equal 30.
+    \end{enumerate}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework Overview}
+    \begin{itemize}
+        \item Four to five contexts across varied settings: identify the method,
+              state hypotheses for $\mu_1 - \mu_2$, and verify conditions for both
+              samples. No $t$-statistic computation yet.
+        \item Students write a one-sentence justification for the direction of
+              $H_a$ in each problem.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension:} A student chooses $H_a: \mu_1 - \mu_2 > 0$
+              after seeing $\bar x_1 > \bar x_2$ in the data. Explain what is
+              wrong and why this inflates the Type I error rate.
+        \item \textit{Preview:} Lesson 7.9 carries out the two-sample $t$-test ---
+              compute the $t$-statistic, find the $p$-value using technology, and
+              write a conclusion in context.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
+
 \end{document}

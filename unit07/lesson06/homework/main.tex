@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.6 — Homework
+%! Confidence Intervals for the Difference of Two Means — Unit 7, Lesson 7.6 — Homework
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
@@ -11,9 +11,94 @@
 
 \vspace{0.15in}
 
-% TODO: author the Homework. See references/components.md for the expected structure.
-\begin{notesbox}{Homework}
-\writelines{4}
-\end{notesbox}
+\textit{For each problem: identify the procedure, verify conditions, compute the SE and
+confidence interval, and interpret. Show all computations.}
+
+\begin{enumerate}
+
+\item \textbf{Reaction Time.} \quad
+A psychologist compares mean reaction times (ms) between two age groups. A random sample
+of 30 young adults yields $\bar x_1 = 285$ ms, $s_1 = 42$ ms. A random sample of 35 older
+adults yields $\bar x_2 = 324$ ms, $s_2 = 55$ ms. Both distributions are roughly symmetric
+with no outliers. Technology: $df \approx 62$, $t^* \approx 2.000$ (95\%).
+
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{Identify} the procedure.  \blank{8cm}
+  \item \textbf{Verify} conditions.
+        \begin{itemize}
+          \item Random: \writeline
+          \item Normal: \writeline
+        \end{itemize}
+  \item \textbf{Compute:} $SE = \sqrt{\dfrac{(\blank{1.5cm})^2}{\blank{1.5cm}} + \dfrac{(\blank{1.5cm})^2}{\blank{1.5cm}}} \approx$ \blank{2.5cm}
+  \item \textbf{Interval:} $CI = (\blank{2cm} \pm 2.000 \times \blank{2cm}) = ($ \blank{3cm}, \blank{3cm} $)$
+  \item \textbf{Interpret} in context and state whether 0 is in the interval.
+        \writelines{2}
+\end{enumerate}
+
+\vspace{0.06in}
+
+\item \textbf{Plant Heights.} \quad
+A botanist grows a random sample of 22 plants under Fertilizer A and 20 plants under
+Fertilizer B. After 6 weeks: Fertilizer A: $\bar x_1 = 18.4$ cm, $s_1 = 3.1$ cm;
+Fertilizer B: $\bar x_2 = 15.7$ cm, $s_2 = 2.8$ cm.
+Both distributions are roughly symmetric with no outliers. Technology: $df \approx 40$,
+$t^* \approx 2.021$ (95\%).
+
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{Verify} conditions.
+        \begin{itemize}
+          \item Random / Independence: \writeline
+          \item Normal: \writeline
+        \end{itemize}
+  \item $SE \approx$ \blank{3cm} \quad $CI = ($ \blank{3cm}, \blank{3cm} $)$
+  \item \textbf{Interpret} and state whether the interval provides convincing evidence
+        that Fertilizer A produces taller plants.
+        \writelines{2}
+\end{enumerate}
+
+\vspace{0.06in}
+
+\item \textbf{Exam Scores.} \quad
+Two random samples of students take a standardized exam.
+School 1: $n_1 = 45$, $\bar x_1 = 512$, $s_1 = 68$.
+School 2: $n_2 = 40$, $\bar x_2 = 495$, $s_2 = 72$.
+Technology: $df \approx 82$, $t^* \approx 1.990$ (95\%).
+
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{Conditions} (brief, one sentence each): \writelines{2}
+  \item $SE \approx$ \blank{3cm} \quad $ME \approx$ \blank{3cm}
+  \item $CI = ($ \blank{3cm}, \blank{3cm} $)$
+  \item \textbf{Interpret} the interval and state whether 0 is in it. \writelines{2}
+\end{enumerate}
+
+\vspace{0.06in}
+
+\item \textbf{AP-Style Multiple Choice.}
+
+\textit{A 90\% confidence interval for $\mu_1 - \mu_2$ is computed from two independent
+random samples and found to be $(-1.2,\; 5.8)$. Which of the following is the best
+interpretation?}
+\begin{enumerate}[label=(\Alph*)]
+  \item We are 90\% confident the true difference is 2.3.
+  \item There is a 90\% probability the true difference is in this interval.
+  \item We are 90\% confident the true difference $\mu_1 - \mu_2$ is between $-1.2$ and $5.8$.
+  \item Because the interval contains positive values, $\mu_1 > \mu_2$ is certain.
+\end{enumerate}
+
+\end{enumerate}
+
+\begin{reflectionbox}
+A student says: ``Since the 95\% CI for $\mu_1 - \mu_2$ is $(-0.5, 3.1)$, there is a 95\%
+chance that 0 is not in the interval.'' Explain what is wrong with this statement. What does
+the 95\% confidence level actually mean?
+\writelines{3}
+\end{reflectionbox}
+
+\begin{extensionbox}
+For Problem 1, recompute the interval using a 90\% confidence level ($t^* \approx 1.671$,
+same $df$). How does the interval width change? Explain why a lower confidence level produces
+a narrower interval.
+\writelines{3}
+\end{extensionbox}
 
 \end{document}

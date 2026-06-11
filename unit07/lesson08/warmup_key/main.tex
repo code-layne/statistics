@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.8 — Warm-Up (Answer Key)
+%! Setting Up a Test for the Difference of Two Population Means — Unit 7, Lesson 7.8 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,40 @@
 \pageheader{Unit 7, Lesson 7.8}{Warm-Up --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.10in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
+\begin{notesbox}{Spiral Review --- One-Sample $t$-Tests \& Two-Sample Conditions (Lessons 7.4, 7.6)}
+
+\textbf{1.} A nutritionist believes the mean daily fiber intake of adults in a city is
+\emph{less} than the recommended 25 g. She randomly samples 30 adults; $\sigma$ is unknown.
+
+\begin{enumerate}[label=\alph*.]
+  \item Name the appropriate inference method. \ans{one-sample $t$-test for $\mu$} \quad $df = $ \ans{29}
+  \item State $H_0$ and $H_a$ using the population parameter.
+
+        $H_0$: \ans{$\mu = 25$} \qquad $H_a$: \ans{$\mu < 25$}
+  \item Is the Normal condition met? \ans{Yes} \; Explain briefly: \ansline{$n = 30 \ge 30$; CLT applies --- Normal condition met.}
+\end{enumerate}
+
+\vspace{0.08in}
+\textbf{2.} A researcher plans to compare mean exam scores for two independently selected
+groups of students: those taught with Method A ($n_1 = 24$) and Method B ($n_2 = 28$).
+Both populations are unknown.
+
+\begin{enumerate}[label=\alph*.]
+  \item Which conditions must be verified before running a two-sample $t$-test? Circle all that apply.
+
+        \quad \ans{(A) Random for each group} \quad
+        (B) $n_1 + n_2 \ge 30$ \quad
+        \ans{(C) 10\% rule for each group} \quad
+        \ans{(D) Both distributions checked when $n < 30$}
+
+  \item Define $\mu_1$ and $\mu_2$ in context.
+
+        $\mu_1 = $ \ans{mean exam score for all students taught with Method A} \qquad
+        $\mu_2 = $ \ans{mean exam score for all students taught with Method B}
+\end{enumerate}
+
 \end{notesbox}
 
 \end{document}

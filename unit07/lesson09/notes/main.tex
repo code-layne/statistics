@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.9 — Guided Notes
+%! Carrying Out a Test for the Difference of Two Population Means — Unit 7, Lesson 7.9 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
@@ -9,11 +9,114 @@
 \pageheader{Unit 7, Lesson 7.9}{Guided Notes}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+  \item \writeline
+  \item \writeline
+  \item \writeline
+\end{itemize}
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{Two-sample $t$-statistic}]
+        $t = \dfrac{(\bar x_1 - \bar x_2) - \blank{2cm}}{\blank{5cm}}$; follows an approximate
+        $t$-distribution when conditions are met.
+  \item[\termblanklong{SE of $\bar x_1 - \bar x_2$}]
+        $SE = \sqrt{\blank{5cm}}$; provided on the AP formula sheet.
+  \item[\termblanklong{Degrees of freedom (two-sample)}]
+        Calculated by \blank{4cm}; falls between $\min(n_1 - 1,\, n_2 - 1)$ and $n_1 + n_2 - 2$.
+  \item[\termblanklong{$p$-value (two-sample $t$-test)}]
+        Probability of observing a difference in sample means as \blank{6cm},
+        \emph{assuming \blank{3cm} is true ($\mu_1 = \mu_2$)}.
+\end{description}
+\end{vocabbox}
+
+\begin{notesbox}{State \& Plan: Hypotheses and the Formula}
+\textbf{Null and alternative hypotheses:}
+
+\quad $H_0$: $\mu_1 - \mu_2 = $ \blank{1.5cm} \hfill
+$H_a$: $\mu_1 - \mu_2$ \blank{1.5cm} $0$ \quad (or $\ne 0$ for two-sided)
+
+\medskip
+\textbf{The two-sample $t$-statistic (VAR-7.I):}
+
+\vspace{0.1in}
+\begin{center}
+  $t = \dfrac{(\bar x_1 - \bar x_2) - 0}{\sqrt{s_1^2/n_1 + s_2^2/n_2}}$
+\end{center}
+\vspace{0.05in}
+
+\begin{itemize}
+  \item Numerator: \blank{7cm}
+  \item Denominator: $SE = $ \blank{5cm} (from AP formula sheet)
+\end{itemize}
+
+\medskip
+\textbf{ACL Surgery Example} ($n_1 = 110$, $\bar x_1 = 47.2$, $s_1 = 8.4$;
+$n_2 = 100$, $\bar x_2 = 36.7$, $s_2 = 9.1$; $H_a: \mu_1 > \mu_2$):
+
+$SE = \sqrt{\dfrac{\blank{2cm}^2}{\blank{2cm}} + \dfrac{\blank{2cm}^2}{\blank{2cm}}} \approx$ \blank{2cm}
+\hfill
+$t = \dfrac{\blank{2.5cm} - \blank{2.5cm}}{\blank{2cm}} \approx$ \blank{2cm}
+
 \end{notesbox}
+
+\begin{notesbox}{Do: Find the $p$-Value}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} p{0.32\linewidth} X X @{}}
+  \textbf{$H_a$ direction} & \textbf{$p$-value} & \textbf{TI-84 (2-SampTTest)} \\ \hline
+  $H_a: \mu_1 - \mu_2 > 0$ & area to the \blank{2cm} of $t$ & select $\mu_1 > \mu_2$ \\
+  $H_a: \mu_1 - \mu_2 < 0$ & area to the \blank{2cm} of $t$ & select $\mu_1 < \mu_2$ \\
+  $H_a: \mu_1 - \mu_2 \ne 0$ & $2 \times$ area beyond $|t|$ & select $\mu_1 \ne \mu_2$ \\
+\end{tabularx}
+
+\medskip
+\textit{ACL ($H_a: \mu_1 > \mu_2$, $t \approx 7.13$, $df \approx 207$):}
+$p \approx $ \blank{3cm}. Pooled: \blank{2cm}.
+\end{notesbox}
+
+\begin{notesbox}{Conclude: Interpret $p$ and Make a Decision}
+\textbf{Interpreting the $p$-value (DAT-3.G):}
+
+``Assuming the null hypothesis is true ($\mu_1 = \mu_2$), there is a [p-value] probability of
+observing a difference in sample means as \blank{5cm} as $\bar x_1 - \bar x_2 = $ \blank{2cm}
+by chance alone.''
+
+\medskip
+\textit{ACL ($p \approx 0$):} \writeline
+
+\medskip
+\textbf{Decision Rule (DAT-3.H):}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} p{0.28\linewidth} X @{}}
+  If $p \le \alpha$ & \blank{4cm} $H_0$. Data provide \blank{5cm} evidence against $H_0$. \\
+  If $p > \alpha$   & \blank{6cm} $H_0$. Data do \emph{not} provide sufficient evidence. \\
+\end{tabularx}
+
+\medskip
+\textbf{Conclusion Template:}
+
+``Because $p = $ \blank{2cm} [is/is not] less than $\alpha = $ \blank{1.5cm}, we
+[reject / fail to reject] $H_0$. We [have/do not have] convincing evidence that
+[state $H_a$ in context].''
+
+\medskip
+\textit{ACL:} \writelines{2}
+\end{notesbox}
+
+\begin{practicebox}
+Using the tutoring warm-up: $SE = \sqrt{9.1^2/20 + 10.3^2/22} \approx 3.00$, $t \approx 1.53$,
+technology gives $df \approx 39$, $p \approx 0.067$ (one-sided).
+
+\begin{itemize}
+  \item Interpret the $p$-value: \writelines{2}
+  \item At $\alpha = 0.05$: [reject / fail to reject] $H_0$ because \blank{5cm}.
+  \item Write the conclusion: \writelines{2}
+\end{itemize}
+\end{practicebox}
 
 \end{document}
