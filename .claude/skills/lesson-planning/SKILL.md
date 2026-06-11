@@ -52,17 +52,28 @@ Pattern for a two-lesson request:
 # Coordinator does once:
 - detect prefix, read one model lesson, extract CED topics for L7.4 and L7.5
 
+# Coordinator scaffolds ALL lesson directories before spawning subagents:
+python3 .claude/skills/lesson-planning/scripts/new_lesson.py --project . --unit 07 --lesson 04 --components cover,warmup,notes,activity,exit_ticket,homework
+python3 .claude/skills/lesson-planning/scripts/new_lesson.py --project . --unit 07 --lesson 05 --components cover,warmup,notes,activity,exit_ticket,homework
+
 # Then in ONE message, spawn two agents in parallel:
 Agent(lesson=7.4, ced_content=..., model_lesson_path=...)
 Agent(lesson=7.5, ced_content=..., model_lesson_path=...)
 
-# Each subagent runs Steps 2–5 independently and reports back.
+# Each subagent uses the Write tool only to fill in content (no Bash needed).
+# Coordinator then runs: make -C unit07/lesson04 all && make -C unit07/lesson05 all
+# and verifies warmup/exit_ticket page counts before opening the PR.
 ```
+
+**Why the coordinator must scaffold:** Subagents run in a fresh permission context and
+may not have auto-approved Bash access. Scaffolding requires running `python3 new_lesson.py`
+(Bash). The coordinator always has this permission; subagents often do not. Scaffolding
+first means subagents only need the Write tool to fill in content.
 
 Each subagent receives: (a) the extracted CED content for its single lesson,
 (b) the path of one model lesson to mirror, (c) the known-errors checklist below,
-and (d) instructions to build and verify before returning. The coordinator collects
-results and opens one PR covering all lessons.
+and (d) instructions to use Write tool only (coordinator handles build/verify). The
+coordinator collects results, builds all lessons, verifies page counts, and opens one PR.
 
 ## Hard constraints — read before authoring a single line
 
@@ -137,6 +148,22 @@ After writing each lesson plan, grep for `fixedskillbox` and confirm zero hits.
 - bare `gold` color — use `goldbg` / `goldacc`
 - `\usepackage{apstats-boxes}` in a key file — keys use `apstats-key` only (it includes boxes)
 - `fixedskillbox` anywhere (see rule 4)
+- `tierbox` — does not exist; use `tcolorbox` with `[colback=white, colframe=black!40, title=\textbf{Tier R --- ...}, fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]`
+
+### 6. Only use colors defined in `shared/*-colors.sty`
+
+Before using any color name in a box or tcolorbox, verify it is defined in the project's
+color file (`shared/<prefix>-colors.sty`). Never invent color names. Defined colors for
+`apstats`:
+
+```
+navy  navylight  sky  skymid  goldacc  goldbg  hookbg
+greenbg  greenacc  redbg  redacc  charcoal  slate  linegray  keyred
+goldbox  greenbox  redbox
+```
+
+Any other name (e.g. `bluebox`, `purplebox`, `orangebox`, `gold`) is **undefined** and will
+cause a compile error. When in doubt, `grep` the `.sty` file for the color name first.
 
 ## Workflow
 
