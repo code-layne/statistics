@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.10 — Group Activity
+%! Skills Focus: Selecting, Implementing, and Communicating Inference Procedures — Unit 7, Lesson 7.10 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
@@ -9,11 +9,100 @@
 \pageheader{Unit 7, Lesson 7.10}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.10in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\textbf{Procedure Menu} (use for Tier R): one-sample $z$-interval for $p$ \;|\;
+one-sample $z$-test for $p$ \;|\; two-sample $z$-test for $p_1-p_2$ \;|\;
+one-sample $t$-test for $\mu$ \;|\; two-sample $t$-test for $\mu_1-\mu_2$ \;|\;
+matched-pairs $t$-test for $\mu_d$
+
+\vspace{0.08in}
+
+\begin{scenariobox}[Scenario 1 --- Sleep and Grade Level]{sky}
+A high school counselor randomly selects 25 freshmen and 25 seniors and records the
+number of hours each student slept the previous night. Summary statistics:
+Freshmen: $\bar x_1 = 7.1$ hr, $s_1 = 0.9$ hr. \;
+Seniors: $\bar x_2 = 6.4$ hr, $s_2 = 1.1$ hr.
+The dotplots for both groups show roughly symmetric distributions with no outliers.
+She wants to test whether freshmen sleep more, on average, than seniors.
+
+\textbf{Tier R:} Select the procedure from the menu above and list the conditions.
+\begin{itemize}
+  \item Procedure: \blank{8cm}
+  \item Conditions: Random --- \blank{4cm} \; 10\% --- \blank{4cm} \; Normal --- \blank{4cm}
+\end{itemize}
+
+\textbf{Tier A:} Complete all four steps.
+\begin{enumerate}
+  \item \textbf{State:} Procedure name: \blank{7cm} \\
+        $H_0$: \blank{5cm} \quad $H_a$: \blank{5cm}
+  \item \textbf{Plan:} Verify conditions (with numbers):
+        \begin{itemize}
+          \item Random: \writeline
+          \item 10\%: \writeline
+          \item Normal: \writeline
+        \end{itemize}
+  \item \textbf{Do:} $t = \dfrac{(\bar x_1 - \bar x_2)}{SE}$ \quad
+        $SE = \sqrt{\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2}} = \sqrt{\dfrac{0.9^2}{25} + \dfrac{1.1^2}{25}} \approx$ \blank{2cm}
+
+        $t \approx$ \blank{2cm} \quad $df \approx$ \blank{2cm} (technology) \quad $p$-value $\approx$ \blank{2.5cm}
+  \item \textbf{Conclude:} \writeline \writeline
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 2 --- Vaccine Side Effects]{sky}
+A pharmaceutical company randomly samples 200 participants from a clinical trial.
+Of 100 who received the vaccine, 18 reported a side effect. Of 100 who received a
+placebo, 9 reported a side effect. The company wants to estimate how much higher the
+proportion with side effects is for the vaccine group compared to the placebo group.
+
+\textbf{Tier R:} Select the procedure and list the conditions.
+\begin{itemize}
+  \item Procedure: \blank{8cm}
+  \item Large Counts (vaccine): $n_1 \hat p_1 =$ \blank{2.5cm} and $n_1(1-\hat p_1) =$ \blank{2.5cm}
+  \item Large Counts (placebo): $n_2 \hat p_2 =$ \blank{2.5cm} and $n_2(1-\hat p_2) =$ \blank{2.5cm}
+\end{itemize}
+
+\textbf{Tier A:} Construct a 95\% confidence interval.
+\begin{enumerate}
+  \item \textbf{State:} Procedure: \blank{7cm} \quad
+        Parameter: $p_1 - p_2 =$ \blank{6cm}
+  \item \textbf{Plan:} Verify conditions (with numbers):
+        \begin{itemize}
+          \item Random: \writeline
+          \item 10\%: \writeline
+          \item Large Counts: \writeline
+        \end{itemize}
+  \item \textbf{Do:} $\hat p_1 =$ \blank{1.5cm} \; $\hat p_2 =$ \blank{1.5cm} \;
+        $SE = \sqrt{\dfrac{\hat p_1(1-\hat p_1)}{100} + \dfrac{\hat p_2(1-\hat p_2)}{100}} \approx$ \blank{1.8cm}
+
+        Interval: $(0.18-0.09) \pm 1.96 \times$ \blank{1.8cm} $= ($ \blank{1.5cm}, \blank{1.5cm} $)$
+  \item \textbf{Conclude:} \writeline
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 3 --- Tier E: Critique a Student Response]{sky}
+\textbf{Tier E only.} \; A student was given this prompt: ``A researcher measures reaction time
+(milliseconds) for the same 15 subjects before and after caffeine. He finds
+$\bar d = -12$ ms, $s_d = 8$ ms, and wants to test whether caffeine reduces mean reaction time.''
+
+The student wrote:
+\begin{quote}
+\textit{``I will use a two-sample $t$-test for $\mu_1 - \mu_2$. $H_0: \bar x_1 = \bar x_2$;
+$H_a: \bar x_1 > \bar x_2$. Random: the 15 subjects were selected. Normal: $n = 15 < 30$ so
+the condition fails. Therefore we cannot proceed.''
+}
+\end{quote}
+
+Identify \textbf{two} errors in the student's response and write a corrected version of the
+affected steps.
+
+\begin{enumerate}
+  \item Error 1: \writeline \writeline
+        Correction: \writeline \writeline
+  \item Error 2: \writeline \writeline
+        Correction: \writeline \writeline
+\end{enumerate}
+\end{scenariobox}
 
 \end{document}

@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.8 — Group Activity (Answer Key)
+%! Setting Up a Test for the Difference of Two Population Means — Unit 7, Lesson 7.8 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,104 @@
 \pageheader{Unit 7, Lesson 7.8}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+% ── Tier R ─────────────────────────────────────────────────────────────────────
+\begin{scenariobox}[Tier R --- Remediate: Match the Hypotheses]{sky}
+\textbf{Directions:} Match each research scenario (1--3) to the correct pair of hypotheses
+(A--C). Write the letter in the blank.
+
+\medskip
+\begin{minipage}[t]{0.48\linewidth}
+\textbf{Scenarios}
+\begin{enumerate}
+  \item A researcher asks: ``Do students who listen to music while studying score
+        \emph{differently} on average than those who study in silence?'' \quad \ans{B}
+  \item A company claims its new battery lasts \emph{longer} on average than the
+        standard brand. \quad \ans{A}
+  \item A public health analyst believes mean daily step count is \emph{lower} for
+        office workers than for retail workers. \quad \ans{C}
+\end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\textbf{Hypothesis Pairs}
+\begin{itemize}
+  \item[\textbf{A.}] $H_0: \mu_1 - \mu_2 = 0$; \; $H_a: \mu_1 - \mu_2 > 0$
+  \item[\textbf{B.}] $H_0: \mu_1 - \mu_2 = 0$; \; $H_a: \mu_1 - \mu_2 \ne 0$
+  \item[\textbf{C.}] $H_0: \mu_1 - \mu_2 = 0$; \; $H_a: \mu_1 - \mu_2 < 0$
+\end{itemize}
+\end{minipage}
+
+\medskip
+For Scenario 1, a conditions checklist is provided. Check each box if the condition is met
+and write how you would verify it.
+
+\smallskip
+\begin{tabularx}{\linewidth}{@{} l X @{}}
+$\square$ Random (Group 1): & \ansline{Group 1 (music) was randomly selected --- Random condition met.} \\
+$\square$ Random (Group 2): & \ansline{Group 2 (silence) was randomly selected --- Random condition met.} \\
+$\square$ Normal (both groups are large, $n \ge 30$, OR distributions are checked): & \ansline{If $n \ge 30$ for each group, CLT applies. If either $n < 30$, check both sample distributions for strong skewness and outliers.} \\
+\end{tabularx}
+\end{scenariobox}
+
+% ── Tier A ─────────────────────────────────────────────────────────────────────
+\begin{scenariobox}[Tier A --- Approaching Proficiency: Full Setup]{sky}
+\textbf{Directions:} For the scenario below, (a) name the inference method, (b) state $H_0$
+and $H_a$ in terms of $\mu_1 - \mu_2$, and (c) verify both conditions.
+
+\medskip
+\textbf{Scenario:} An education researcher randomly selects 32 students from classrooms using
+project-based learning (Group 1) and 29 students from traditional lecture classrooms (Group 2)
+at the same school. She records end-of-year standardized test scores. She believes project-based
+learning leads to \emph{higher} mean scores. Histograms of both groups appear approximately
+symmetric with no outliers.
+
+\begin{enumerate}[label=\alph*.]
+  \item Inference method: \ans{two-sample $t$-test for $\mu_1 - \mu_2$}
+  \item Define $\mu_1$ and $\mu_2$:
+
+        $\mu_1 = $ \ans{mean test score for all project-based learning students} \qquad
+        $\mu_2 = $ \ans{mean test score for all lecture students}
+
+  \item $H_0$: \ans{$\mu_1 - \mu_2 = 0$} \qquad $H_a$: \ans{$\mu_1 - \mu_2 > 0$}
+
+        Direction of $H_a$: \ans{$> 0$} \quad Justify: \ansline{Researcher believes project-based learning leads to higher mean scores, so $\mu_1 > \mu_2$, i.e.\ $\mu_1 - \mu_2 > 0$.}
+
+  \item Conditions:
+        \begin{itemize}
+          \item Random (both groups): \ansline{Both groups were randomly selected from their respective classroom types --- Random condition met.}
+          \item 10\% rule: \ansline{$32 \le 10\%$ of all project-based students and $29 \le 10\%$ of all lecture students at the school (assuming populations $> 290$) --- met.}
+          \item Normal ($n_1 = 32$, $n_2 = 29$): \ansline{$n_1 = 32 \ge 30$ (CLT applies); $n_2 = 29 < 30$ --- must check Group 2 distribution. Histogram shows approximately symmetric with no outliers --- Normal condition met for both groups.}
+        \end{itemize}
+\end{enumerate}
+\end{scenariobox}
+
+% ── Tier E ─────────────────────────────────────────────────────────────────────
+\begin{scenariobox}[Tier E --- Extension: Design \& Compare]{sky}
+\textbf{Directions:} Design a study and analyze the choice of alternative hypothesis.
+
+\medskip
+\textbf{Part 1 --- Study Design.}
+\ansline{Randomly select samples of college athletes and non-athletes (e.g., $n_1 = 40$ athletes and $n_2 = 40$ non-athletes) from the university's enrollment. The two groups are composed of different individuals with no natural pairing, making them independent samples.}
+\ansline{}
+
+\textbf{Part 2 --- Write the hypotheses.}
+
+$H_0$: \ans{$\mu_1 - \mu_2 = 0$} \qquad $H_a$: \ans{$\mu_1 - \mu_2 < 0$}
+
+\textbf{Part 3 --- One-sided vs.\ two-sided.}
+\ansline{With $H_a: \mu_1 - \mu_2 \ne 0$, a significant result only tells us the means differ; it doesn't specify direction. The one-sided test ($< 0$) provides stronger evidence for the directional claim (athletes sleep less) when the data support that direction, but it risks missing a result in the opposite direction. The two-sided test is more conservative and appropriate when direction is not pre-specified.}
+\ansline{}
+\ansline{}
+\end{scenariobox}
+
+\begin{reflectionbox}
+In Tier A, $n_2 = 29 < 30$. How does this change the Normal condition check compared to if
+both groups had $n \ge 30$? Why must we examine \emph{both} distributions, not just the
+smaller one?
+\ansline{When either $n < 30$, we cannot rely on CLT alone --- we must examine both sample distributions for strong skewness and outliers. We check both because the sampling distribution of $\bar x_1 - \bar x_2$ depends on the shape of each group's distribution.}
+\ansline{}
+\end{reflectionbox}
 
 \end{document}

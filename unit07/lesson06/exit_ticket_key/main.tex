@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.6 — Exit Ticket (Answer Key)
+%! Confidence Intervals for the Difference of Two Means — Unit 7, Lesson 7.6 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
@@ -11,9 +11,41 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+A nutritionist wants to estimate the difference in mean daily sugar intake (grams) between
+adults in two cities. City X: $n_1 = 35$, $\bar x_1 = 82$ g, $s_1 = 14$ g. \quad
+City Y: $n_2 = 40$, $\bar x_2 = 75$ g, $s_2 = 11$ g.
+Both samples are random; both sample distributions are roughly symmetric with no outliers.
+Technology gives $df \approx 65$, $t^* \approx 1.997$ (95\% confidence).
+
+\begin{enumerate}
+  \item Identify the procedure and write the point estimate.
+
+        Procedure: \ans{two-sample $t$-interval for $\mu_{\text{X}} - \mu_{\text{Y}}$}
+
+        Point estimate: $\bar x_1 - \bar x_2 = $ \ans{$82 - 75 = 7$ g}
+
+  \item Verify both conditions.
+        \begin{itemize}
+          \item Random / Independence: \ansline{Random samples from two independent groups --- met.}
+          \item Normal: \ansline{$n_1 = 35 \ge 30$ and $n_2 = 40 \ge 30$; CLT applies for both --- met.}
+        \end{itemize}
+
+  \item Compute the standard error.
+
+        $SE = \sqrt{\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2}}
+            = \sqrt{\dfrac{({\color{keyred}\mathbf{14}})^2}{{\color{keyred}\mathbf{35}}} + \dfrac{({\color{keyred}\mathbf{11}})^2}{{\color{keyred}\mathbf{40}}}} \approx$ \ans{2.939}
+
+  \item Construct and interpret the 95\% confidence interval.
+
+        $CI = {\color{keyred}\mathbf{7}} \pm 1.997 \times {\color{keyred}\mathbf{2.939}} = ($ \ans{1.13} , \ans{12.87} $)$
+
+        \textit{Interpretation:} \ansline{We are 95\% confident the true difference in mean daily sugar intake (City X $-$ City Y) is between 1.13 g and 12.87 g.}
+        \ansline{Since the interval is entirely positive and does not contain 0, this provides convincing evidence that adults in City X consume more sugar on average than adults in City Y.}
+
+        \begin{teachernote}
+        $SE = \sqrt{196/35 + 121/40} = \sqrt{5.600 + 3.025} = \sqrt{8.625} \approx 2.937$.
+        $ME = 1.997 \times 2.937 \approx 5.865$. CI: $(7 - 5.87,\; 7 + 5.87) = (1.13,\; 12.87)$.
+        \end{teachernote}
+\end{enumerate}
 
 \end{document}

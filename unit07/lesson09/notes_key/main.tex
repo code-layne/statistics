@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.9 — Guided Notes (Answer Key)
+%! Carrying Out a Test for the Difference of Two Population Means — Unit 7, Lesson 7.9 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,118 @@
 \pageheader{Unit 7, Lesson 7.9}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+  \item \ansline{Calculate the two-sample $t$-statistic and find the $p$-value using technology. (VAR-7.I)}
+  \item \ansline{Interpret the $p$-value of a two-sample $t$-test in context, assuming $H_0$ is true. (DAT-3.G)}
+  \item \ansline{Make and justify a formal conclusion by comparing $p$ to $\alpha$. (DAT-3.H)}
+\end{itemize}
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{Two-sample $t$-statistic}]
+        $t = \dfrac{(\bar x_1 - \bar x_2) - {\color{keyred}\mathbf{0}}}%
+        {{\color{keyred}\mathbf{\sqrt{s_1^2/n_1 + s_2^2/n_2}}}}$; follows an approximate
+        $t$-distribution when conditions are met.
+  \item[\termblanklong{SE of $\bar x_1 - \bar x_2$}]
+        $SE = \sqrt{{\color{keyred}\mathbf{s_1^2/n_1 + s_2^2/n_2}}}$; provided on the AP formula sheet.
+  \item[\termblanklong{Degrees of freedom (two-sample)}]
+        Calculated by \ans{technology}; falls between $\min(n_1 - 1,\, n_2 - 1)$ and $n_1 + n_2 - 2$.
+  \item[\termblanklong{$p$-value (two-sample $t$-test)}]
+        Probability of observing a difference in sample means as \ans{extreme or more extreme than observed},
+        \emph{assuming \ans{$H_0$} is true ($\mu_1 = \mu_2$)}.
+\end{description}
+\end{vocabbox}
+
+\begin{notesbox}{State \& Plan: Hypotheses and the Formula}
+\textbf{Null and alternative hypotheses:}
+
+\quad $H_0$: $\mu_1 - \mu_2 = $ \ans{0} \hfill
+$H_a$: $\mu_1 - \mu_2$ \ans{$>$, $<$, or $\ne$} $0$ \quad (or $\ne 0$ for two-sided)
+
+\medskip
+\textbf{The two-sample $t$-statistic (VAR-7.I):}
+
+\vspace{0.1in}
+\begin{center}
+  $t = \dfrac{(\bar x_1 - \bar x_2) - 0}{\sqrt{s_1^2/n_1 + s_2^2/n_2}}$
+\end{center}
+\vspace{0.05in}
+
+\begin{itemize}
+  \item Numerator: \ans{observed difference in sample means minus the null value (0)}
+  \item Denominator: $SE = $ \ans{$\sqrt{s_1^2/n_1 + s_2^2/n_2}$} (from AP formula sheet)
+\end{itemize}
+
+\medskip
+\textbf{ACL Surgery Example} ($n_1 = 110$, $\bar x_1 = 47.2$, $s_1 = 8.4$;
+$n_2 = 100$, $\bar x_2 = 36.7$, $s_2 = 9.1$; $H_a: \mu_1 > \mu_2$):
+
+$SE = \sqrt{\dfrac{{\color{keyred}\mathbf{8.4}}^2}{{\color{keyred}\mathbf{110}}} + \dfrac{{\color{keyred}\mathbf{9.1}}^2}{{\color{keyred}\mathbf{100}}}} \approx$ \ans{1.47}
+\hfill
+$t = \dfrac{{\color{keyred}\mathbf{47.2}} - {\color{keyred}\mathbf{36.7}}}{{\color{keyred}\mathbf{1.47}}} \approx$ \ans{7.13}
+
 \end{notesbox}
+
+\begin{notesbox}{Do: Find the $p$-Value}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} p{0.32\linewidth} X X @{}}
+  \textbf{$H_a$ direction} & \textbf{$p$-value} & \textbf{TI-84 (2-SampTTest)} \\ \hline
+  $H_a: \mu_1 - \mu_2 > 0$ & area to the \ans{right} of $t$ & select $\mu_1 > \mu_2$ \\
+  $H_a: \mu_1 - \mu_2 < 0$ & area to the \ans{left} of $t$ & select $\mu_1 < \mu_2$ \\
+  $H_a: \mu_1 - \mu_2 \ne 0$ & $2 \times$ area beyond $|t|$ & select $\mu_1 \ne \mu_2$ \\
+\end{tabularx}
+
+\medskip
+\textit{ACL ($H_a: \mu_1 > \mu_2$, $t \approx 7.13$, $df \approx 207$):}
+$p \approx $ \ans{essentially 0 (very close to 0)}. Pooled: \ans{No}.
+\end{notesbox}
+
+\begin{notesbox}{Conclude: Interpret $p$ and Make a Decision}
+\textbf{Interpreting the $p$-value (DAT-3.G):}
+
+``Assuming the null hypothesis is true ($\mu_1 = \mu_2$), there is a [p-value] probability of
+observing a difference in sample means as \ans{large or larger} as $\bar x_1 - \bar x_2 = $ \ans{10.5 days}
+by chance alone.''
+
+\medskip
+\textit{ACL ($p \approx 0$):} \ansline{If the two techniques produce equal mean recovery times, observing a difference as large as 10.5 days by chance alone is essentially impossible.}
+
+\medskip
+\textbf{Decision Rule (DAT-3.H):}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} p{0.28\linewidth} X @{}}
+  If $p \le \alpha$ & \ans{Reject} $H_0$. Data provide \ans{convincing} evidence against $H_0$. \\
+  If $p > \alpha$   & \ans{Fail to reject} $H_0$. Data do \emph{not} provide sufficient evidence. \\
+\end{tabularx}
+
+\medskip
+\textbf{Conclusion Template:}
+
+``Because $p = $ \ans{$\approx 0$} [is/is not] less than $\alpha = $ \ans{0.05}, we
+\ans{reject} $H_0$. We \ans{have} convincing evidence that
+\ans{the true mean recovery time with the new technique is greater than with the standard technique}.''
+
+\medskip
+\textit{ACL:} \ansline{Because $p \approx 0 < \alpha = 0.05$, we reject $H_0$. We have convincing evidence that the new surgical technique results in a longer mean recovery time.}
+\ansline{}
+\end{notesbox}
+
+\begin{practicebox}
+Using the tutoring warm-up: $SE = \sqrt{9.1^2/20 + 10.3^2/22} \approx 3.00$, $t \approx 1.53$,
+technology gives $df \approx 39$, $p \approx 0.067$ (one-sided).
+
+\begin{itemize}
+  \item Interpret the $p$-value: \ansline{If tutored and non-tutored students have equal mean scores, there is about a 6.7\% chance of observing a difference this large by chance alone.}
+  \ansline{}
+  \item At $\alpha = 0.05$: [reject / \ans{fail to reject}] $H_0$ because \ans{$p = 0.067 > \alpha = 0.05$}.
+  \item Write the conclusion: \ansline{Because $p = 0.067 > \alpha = 0.05$, we fail to reject $H_0$. We do not have convincing evidence that tutored students have a higher mean math score.}
+  \ansline{}
+\end{itemize}
+\end{practicebox}
 
 \end{document}

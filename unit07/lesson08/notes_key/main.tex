@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.8 — Guided Notes (Answer Key)
+%! Setting Up a Test for the Difference of Two Population Means — Unit 7, Lesson 7.8 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,95 @@
 \pageheader{Unit 7, Lesson 7.8}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+  \item \ansline{Identify when to use a two-sample $t$-test for $\mu_1 - \mu_2$ (VAR-7.F).}
+  \item \ansline{State $H_0$ and $H_a$ for a difference of two population means (VAR-7.G).}
+  \item \ansline{Verify the Random and Normal conditions for both samples (VAR-7.H).}
+\end{itemize}
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{Two-sample $t$-test for $\mu_1 - \mu_2$}]
+        Used when comparing \ans{two independent groups with a quantitative response}; both $\sigma$'s are \ans{unknown}.
+  \item[\termblanklong{Null hypothesis ($H_0$)}]
+        $H_0: \mu_1 - \mu_2 = $ \ans{0} \quad (equivalently $\mu_1$ \ans{$=$} $\mu_2$).
+  \item[\termblanklong{Alternative hypothesis ($H_a$)}]
+        $H_a: \mu_1 - \mu_2$ \ans{$<$, $>$, or $\ne$} $0$; direction chosen \ans{before} seeing data.
+  \item[\termblanklong{Independent samples}]
+        Two groups with \ans{no natural pairing} between observations; not matched pairs.
+\end{description}
+\end{vocabbox}
+
+\begin{hookbox}
+A hospital randomly assigns patients to standard PT ($\mu_1$) or accelerated PT ($\mu_2$).
+Researchers measure days to full mobility. The population SDs $\sigma_1$ and $\sigma_2$ are
+\ans{unknown}. \quad Question: Is there evidence that the \ans{population means} differ?
+\end{hookbox}
+
+\begin{notesbox}{Step 1: Choose the Inference Method (VAR-7.F)}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} p{0.46\linewidth} X @{}}
+  \textbf{Situation} & \textbf{Method} \\ \hline
+  Two independent groups; quantitative response; $\sigma$'s unknown & \ans{two-sample $t$-test for $\mu_1 - \mu_2$} \\
+  Same subjects measured twice (before/after) & \ans{matched-pairs $t$-test (one-sample $t$ on differences)} \\
+\end{tabularx}
+
+\medskip
+\textit{PT example: two independent groups, $\sigma$'s unknown $\Rightarrow$ use a}
+\ans{two-sample $t$}\textit{-test.}
 \end{notesbox}
+
+\begin{notesbox}{Step 2: Write Hypotheses (VAR-7.G)}
+Always use \emph{population} parameters $\mu_1$ and $\mu_2$, not $\bar x_1$ or $\bar x_2$.
+
+\medskip
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} p{0.44\linewidth} X @{}}
+  \textbf{Research Question} & \textbf{Hypotheses} \\ \hline
+  Is Group 1 \emph{lower} on average? & $H_0: \mu_1 - \mu_2 = 0$ \quad $H_a: \mu_1 - \mu_2$ \ans{$< $} $0$ \\
+  Is Group 1 \emph{higher} on average? & $H_0: \mu_1 - \mu_2 = 0$ \quad $H_a: \mu_1 - \mu_2$ \ans{$> $} $0$ \\
+  Do the groups \emph{differ}? & $H_0: \mu_1 - \mu_2 = 0$ \quad $H_a: \mu_1 - \mu_2$ \ans{$\ne $} $0$ \\
+\end{tabularx}
+
+\medskip
+\textit{PT (let $\mu_1$ = standard, $\mu_2$ = accelerated):} \quad
+$H_0$: \ans{$\mu_1 - \mu_2 = 0$} \qquad $H_a$: \ans{$\mu_1 - \mu_2 > 0$}
+\end{notesbox}
+
+\begin{notesbox}{Step 3: Verify Conditions (VAR-7.H)}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} p{0.22\linewidth} X p{0.28\linewidth} @{}}
+  \textbf{Condition} & \textbf{How to verify} & \textbf{Note} \\ \hline
+  \textbf{Random} & Each group: random sample or \ans{randomized} experiment. & Check both groups \\
+  \textbf{10\% rule} & $n_1 \le 10\%N_1$ \emph{and} $n_2 \le 10\%N_2$. & When sampling w/o replacement \\
+  \textbf{Normal} ($\ge 30$) & Both $n_1 \ge 30$ and $n_2 \ge 30$: CLT applies to each. & \\
+  \textbf{Normal} ($< 30$) & If \emph{either} $n < 30$: check \emph{both} samples for no strong \ans{skewness} or \ans{outliers}. & \\
+\end{tabularx}
+
+\medskip
+\textit{PT ($n_1 = 18$, $n_2 = 17$ --- both $< 30$):}
+\begin{itemize}
+  \item Random: \ansline{Patients were randomly assigned to the two PT groups --- Random condition met for both.}
+  \item Normal: \ansline{Both $n_1 = 18$ and $n_2 = 17$ are $< 30$; examine dotplots/boxplots of \emph{both} groups for strong skewness and outliers.}
+\end{itemize}
+\end{notesbox}
+
+\begin{practicebox}
+A researcher believes mean resting heart rate is lower for yoga practitioners ($\mu_1$) than
+for non-practitioners ($\mu_2$). She randomly samples 40 yoga practitioners and 35 non-practitioners;
+$\sigma$'s are unknown.
+
+\begin{itemize}
+  \item Inference method: \ans{two-sample $t$-test for $\mu_1 - \mu_2$}
+  \item $H_0$: \ans{$\mu_1 - \mu_2 = 0$} \quad $H_a$: \ans{$\mu_1 - \mu_2 < 0$}
+  \item Random (both groups): \ansline{Both groups are random samples --- Random condition met.}
+  \item Normal (both groups): \ansline{Both $n_1 = 40 \ge 30$ and $n_2 = 35 \ge 30$; CLT applies --- Normal condition met.}
+\end{itemize}
+\end{practicebox}
 
 \end{document}

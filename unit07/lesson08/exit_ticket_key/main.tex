@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.8 — Exit Ticket (Answer Key)
+%! Setting Up a Test for the Difference of Two Population Means — Unit 7, Lesson 7.8 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
@@ -11,9 +11,36 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+A sports scientist believes the mean sprint time for varsity sprinters differs from the
+mean sprint time for club sprinters. She randomly selects 18 varsity sprinters
+($n_1 = 18$) and 22 club sprinters ($n_2 = 22$) and records each athlete's best
+100-meter time. Dotplots of both groups show roughly symmetric distributions with
+no outliers.
+
+\begin{enumerate}
+  \item Name the appropriate inference method.
+
+        Method: \ans{two-sample $t$-test for $\mu_1 - \mu_2$}
+
+  \item Define $\mu_1$ and $\mu_2$, then state $H_0$ and $H_a$.
+
+        $\mu_1 = $ \ans{mean 100 m time for all varsity sprinters} \qquad
+        $\mu_2 = $ \ans{mean 100 m time for all club sprinters}
+
+        $H_0$: \ans{$\mu_1 - \mu_2 = 0$} \qquad $H_a$: \ans{$\mu_1 - \mu_2 \ne 0$}
+
+  \item Verify the conditions for both samples.
+        \begin{itemize}
+          \item Random: \ansline{Both groups were randomly selected --- Random condition met for each sample.}
+          \item Normal ($n_1 = 18 < 30$, $n_2 = 22 < 30$): \ansline{Both $n_1 = 18$ and $n_2 = 22$ are $< 30$; dotplots of both groups show roughly symmetric distributions with no outliers --- Normal condition met for both.}
+
+                Can the test proceed? \ans{Yes} \quad Explain: \ansline{Both samples are random and both sample distributions are roughly symmetric with no outliers, so all conditions are met.}
+        \end{itemize}
+\end{enumerate}
+
+\begin{teachernote}
+Students often forget to check the Normal condition for \emph{both} groups when both $n < 30$.
+Reinforce that the condition applies to each sample independently.
+\end{teachernote}
 
 \end{document}

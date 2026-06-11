@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.9 — Group Activity (Answer Key)
+%! Carrying Out a Test for the Difference of Two Population Means — Unit 7, Lesson 7.9 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,80 @@
 \pageheader{Unit 7, Lesson 7.9}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\textit{Complete all four SPDC steps for each scenario. Show all computations.}
+
+\begin{scenariobox}[Tier R --- Remediate: Read, Interpret, and Conclude]{sky}
+A food scientist tested whether a new recipe produces crackers with a different mean
+sodium content than the original recipe. A two-sample $t$-test on independent random
+samples gave: $t = 2.41$, $df = 58$, $p = 0.019$ (two-sided), $\alpha = 0.05$.
+
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{State:} $H_0$: \ans{$\mu_1 - \mu_2 = 0$ (equal mean sodium)} \quad
+        $H_a$: \ans{$\mu_1 - \mu_2 \ne 0$ (different means)}
+
+  \item \textbf{Interpret the $p$-value.} Fill in the blanks.
+
+        ``Assuming the two recipes produce crackers with \ans{equal} mean sodium content,
+        there is a \ans{0.019} probability of observing a difference in sample means
+        as \ans{extreme or more extreme} as the one found, just by chance.''
+
+  \item \textbf{Decide.} At $\alpha = 0.05$: [\ans{reject} / fail to reject] $H_0$
+        because $p = $ \ans{0.019} [\ans{is} / is not] less than $\alpha$.
+
+  \item \textbf{Conclude.} Write a complete conclusion in context.
+        \ansline{Because $p = 0.019 < \alpha = 0.05$, we reject $H_0$. We have convincing evidence that the two recipes produce crackers with different mean sodium content.}
+        \ansline{}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Tier A --- Approaching: Compute and Conclude]{sky}
+A sports physiologist wants to know whether a resistance training program increases mean
+grip strength more than a stretching program. Participants were randomly assigned to one
+of two groups. After 8 weeks: Group 1 (resistance), $n_1 = 24$, $\bar x_1 = 52.3$ kg,
+$s_1 = 7.8$ kg; Group 2 (stretching), $n_2 = 26$, $\bar x_2 = 47.1$ kg, $s_2 = 8.4$ kg.
+Dotplots are roughly symmetric with no outliers.
+
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{State:} $H_0$: \ans{$\mu_1 - \mu_2 = 0$} \quad
+        $H_a$: \ans{$\mu_1 - \mu_2 > 0$}
+  \item \textbf{Plan:} Method: \ans{Two-sample $t$-test for a difference of means}. Conditions:
+        \begin{itemize}
+          \item Random: \ansline{Participants randomly assigned to groups --- randomized experiment.}
+          \item Normal: \ansline{Both dotplots are roughly symmetric with no outliers; CLT applies ($n_1 = 24$, $n_2 = 26$).}
+        \end{itemize}
+  \item \textbf{Do:} $SE = \sqrt{\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2}} = $ \ans{$\sqrt{7.8^2/24 + 8.4^2/26} \approx 2.23$}
+
+        $t = \dfrac{(\bar x_1 - \bar x_2) - 0}{SE} = \dfrac{{\color{keyred}\mathbf{52.3 - 47.1}}}{{\color{keyred}\mathbf{2.23}}} \approx$ \ans{2.33}
+
+        Technology: $p \approx$ \ans{0.012} \quad $df \approx$ \ans{47}
+
+  \item \textbf{Conclude:} At $\alpha = 0.05$: \ansline{Because $p \approx 0.012 < \alpha = 0.05$, we reject $H_0$. We have convincing evidence that the resistance program increases mean grip strength more than the stretching program.}
+  \ansline{}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Tier E --- Extension: One-Sided vs.\ Two-Sided]{sky}
+Use the grip strength data from Tier A: $t \approx 2.33$, technology gives $df \approx 47$.
+
+\begin{enumerate}[label=\alph*.]
+  \item Suppose the physiologist had instead used $H_a: \mu_1 \ne \mu_2$ (two-sided).
+        Use technology to find the two-sided $p$-value. \quad $p_{\text{two-sided}} \approx$ \ans{0.024}
+
+  \item Compare the one-sided $p$-value (from Tier A) to the two-sided $p$-value.
+        How do they relate to each other? \ansline{The two-sided $p$-value is exactly twice the one-sided $p$-value: $0.024 = 2 \times 0.012$.}
+
+  \item The physiologist pre-specified $H_a: \mu_1 > \mu_2$ before collecting data.
+        Is it appropriate to report the two-sided $p$-value instead because it yields
+        a larger value? Explain. \ansline{No. The alternative hypothesis must be determined before looking at the data. Switching to a two-sided test after seeing the data is data snooping and inflates the Type I error rate.}
+        \ansline{}
+
+  \item Suppose the sample sizes were doubled to $n_1 = 48$, $n_2 = 52$, with the same
+        sample means and standard deviations. Would the $SE$ increase, decrease, or stay
+        the same? How would this affect $t$ and the $p$-value? \ansline{$SE$ would decrease (larger $n$ reduces variability). A smaller $SE$ gives a larger $|t|$, which produces a smaller $p$-value --- making it easier to detect a real difference.}
+        \ansline{}
+\end{enumerate}
+\end{scenariobox}
 
 \end{document}

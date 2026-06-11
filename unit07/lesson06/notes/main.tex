@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.6 — Guided Notes
+%! Confidence Intervals for the Difference of Two Means — Unit 7, Lesson 7.6 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
@@ -11,9 +11,104 @@
 
 \vspace{0.15in}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+  \item \writeline
+  \item \writeline
+  \item \writeline
+  \item \writeline
+\end{itemize}
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{Two-sample $t$-interval for $\mu_1 - \mu_2$}]
+        Used to estimate \blank{5cm} using two \blank{3cm} samples when
+        $\sigma_1$ and $\sigma_2$ are \blank{2cm}.
+  \item[\termblanklong{Point estimate of $\mu_1 - \mu_2$}]
+        $\bar x_1 - \bar x_2$\,: the \blank{4cm} of the two sample means.
+  \item[\termblanklong{Standard error of $\bar x_1 - \bar x_2$}]
+        $SE = \sqrt{\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2}}$\,. \quad
+        Estimates the \blank{5cm} of the sampling distribution.
+  \item[\termblanklong{Degrees of freedom (two-sample)}]
+        Found using \blank{3cm}; do NOT use $n_1 + n_2 - 2$.
+\end{description}
+\end{vocabbox}
+
+\begin{hookbox}
+\textbf{City A vs.\ City B: Which City Pays More?}\\
+City A: $n_1 = 32$, $\bar x_1 = \$62{,}400$, $s_1 = \$8{,}500$ \quad
+City B: $n_2 = 28$, $\bar x_2 = \$58{,}700$, $s_2 = \$7{,}200$\\[4pt]
+Point estimate: $\bar x_1 - \bar x_2 = \$62{,}400 - \$58{,}700 = $ \blank{3cm}\\[4pt]
+Question: Is this difference just random variation, or evidence that City A really pays more?
+An interval estimate will tell us.
+\end{hookbox}
+
+\begin{notesbox}{Sampling Distribution of $\bar x_1 - \bar x_2$ (UNC-4.V)}
+If two independent SRSs are drawn from populations with means $\mu_1, \mu_2$ and standard
+deviations $\sigma_1, \sigma_2$, and if both populations are Normal \emph{or}
+both $n_1, n_2 > 30$:
+
+\begin{center}
+Shape: \blank{4cm} \quad
+Center: $\mu_{\bar x_1 - \bar x_2} = $ \blank{4cm} \quad
+$SD = \sqrt{\dfrac{\sigma_1^2}{n_1} + \dfrac{\sigma_2^2}{n_2}}$
+\end{center}
+
+Since $\sigma_1, \sigma_2$ are unknown, replace with $s_1, s_2$ and use a
+\blank{3cm} distribution. The procedure is a \textbf{two-sample $t$-interval}.
+\end{notesbox}
+
+\begin{notesbox}{Conditions to Verify (UNC-4.W)}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{@{} p{0.20\linewidth} X @{}}
+\textbf{Condition} & \textbf{How to verify} \\ \hline
+\textbf{Independence} &
+  Each sample: random sample or \blank{3.5cm} experiment. \\
+& If sampling without replacement: $n_1 \le$ \blank{1.5cm} $N_1$ and $n_2 \le$ \blank{1.5cm} $N_2$. \\
+& The two \blank{3cm} must be independent of each other. \\
+\textbf{Normal} &
+  If both $n_1, n_2 \ge 30$: \blank{3cm} applies. \\
+& If either $n < 30$: check for no strong \blank{3cm} or \blank{3cm} in the sample. \\
+\end{tabularx}
+\end{notesbox}
+
+\begin{notesbox}{The Confidence Interval Formula (UNC-4.X and UNC-4.Y)}
+\begin{center}
+$(\bar x_1 - \bar x_2) \pm \underbrace{t^*}_{\text{critical value}} \cdot
+\underbrace{\sqrt{\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2}}}_{\text{standard error}}$
+\end{center}
+
+\begin{itemize}
+  \item Standard error: $SE = \sqrt{\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2}}$
+  \item Margin of error: $ME = $ \blank{2cm} $\times$ \blank{2cm}
+  \item $t^*$ and $df$ from \blank{3cm} (TI-84: \texttt{2-SampTInt})
+\end{itemize}
+
+\medskip
+\textbf{Worked Example: Salaries.}
+City A: $n_1 = 32$, $\bar x_1 = 62400$, $s_1 = 8500$. \quad
+City B: $n_2 = 28$, $\bar x_2 = 58700$, $s_2 = 7200$.
+
+\medskip
+$SE = \sqrt{\dfrac{8500^2}{\blank{2cm}} + \dfrac{7200^2}{\blank{2cm}}}
+    = \sqrt{\blank{3cm} + \blank{3cm}} \approx$ \blank{2.5cm}
+
+\medskip
+Technology: $df \approx 58$, \; $t^* \approx 2.002$ for 95\% confidence.
+
+\medskip
+$ME = 2.002 \times \blank{2.5cm} \approx$ \blank{3cm}
+
+\medskip
+$CI = 3{,}700 \pm \blank{3cm} = ($ \blank{3cm}, \blank{3cm} $)$
+
+\medskip
+\textit{Interpretation:} We are 95\% confident the true difference in mean salaries
+($\mu_{\text{A}} - \mu_{\text{B}}$) is between \blank{2.5cm} and \blank{2.5cm}.
+Since \blank{0.8cm} [is / is not] in the interval, this [does / does not] provide
+convincing evidence that City A has a higher mean salary than City B.
 \end{notesbox}
 
 \end{document}

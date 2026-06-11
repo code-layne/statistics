@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.8 — Homework
+%! Setting Up a Test for the Difference of Two Population Means — Unit 7, Lesson 7.8 — Homework
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
@@ -9,11 +9,93 @@
 \pageheader{Unit 7, Lesson 7.8}{Homework}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: author the Homework. See references/components.md for the expected structure.
-\begin{notesbox}{Homework}
-\writelines{4}
-\end{notesbox}
+\textit{For each problem: (a) name the inference method; (b) define $\mu_1$ and $\mu_2$ and
+state $H_0$ and $H_a$; (c) verify conditions. Do \textbf{not} compute a test statistic.}
+
+\begin{enumerate}
+
+\item \textbf{Pain Relief.} \quad
+A pharmaceutical company randomly assigns 24 patients to a new pain-relief drug (Group 1)
+and 26 patients to a placebo (Group 2). Researchers believe the new drug produces a
+\emph{lower} mean pain score on a 10-point scale. Both groups' data appear approximately
+symmetric with no outliers.
+
+\begin{enumerate}[label=\alph*.]
+  \item Method: \blank{5.5cm}
+  \item $\mu_1 = $ \blank{5.5cm} \quad $\mu_2 = $ \blank{5.5cm}
+
+        $H_0$: \blank{4.5cm} \quad $H_a$: \blank{4.5cm}
+
+        Justify the direction of $H_a$: \writeline
+  \item Conditions:
+        \begin{itemize}
+          \item Random: \writeline
+          \item Normal ($n_1 = 24 < 30$, $n_2 = 26 < 30$): \writeline
+        \end{itemize}
+\end{enumerate}
+\vspace{0.08in}
+
+\item \textbf{Wages.} \quad
+An economist randomly surveys 50 workers in the technology sector (Group 1) and 45 workers
+in the education sector (Group 2). She wants to determine whether the mean annual wages
+\emph{differ} between the two sectors.
+
+\begin{enumerate}[label=\alph*.]
+  \item Method: \blank{5.5cm}
+  \item $H_0$: \blank{4.5cm} \quad $H_a$: \blank{4.5cm}
+  \item Conditions:
+        \begin{itemize}
+          \item Random: \writeline
+          \item Normal: \writeline
+        \end{itemize}
+\end{enumerate}
+\vspace{0.08in}
+
+\item \textbf{Screen Time.} \quad
+A pediatrician randomly selects 18 children in households with strict screen-time rules
+(Group 1) and 21 children in households with no rules (Group 2). She believes children
+with rules have a \emph{lower} mean daily screen time. A dotplot of Group 1 shows mild
+left skew with no outliers; a dotplot of Group 2 shows approximately symmetric data.
+
+\begin{enumerate}[label=\alph*.]
+  \item Method: \blank{5.5cm}
+  \item $H_0$: \blank{4.5cm} \quad $H_a$: \blank{4.5cm}
+  \item Conditions:
+        \begin{itemize}
+          \item Random: \writeline
+          \item Normal (both $n < 30$): \writeline
+
+                Can the test proceed? \blank{1.5cm} \quad Explain: \writeline
+        \end{itemize}
+\end{enumerate}
+\vspace{0.08in}
+
+\item \textbf{AP-Style.} \quad
+\textit{A researcher randomly assigns 15 subjects to a cold-water immersion group and
+15 subjects to a stretching group. He records recovery time (minutes) after exercise.
+He tests $H_0: \mu_1 - \mu_2 = 0$ vs.\ $H_a: \mu_1 - \mu_2 \ne 0$. Both dotplots
+show moderate skewness with one outlier each. Which statement about the Normal condition
+is most accurate?}
+
+\begin{enumerate}[label=(\Alph*)]
+  \item Both conditions are met because $n_1 + n_2 = 30 \ge 30$.
+  \item Both conditions are met; moderate skewness with one outlier per group is acceptable for $n < 30$.
+  \item Both conditions are not met; outliers with $n < 30$ violate the Normal condition.
+  \item The condition applies only to the group with the smaller sample size.
+\end{enumerate}
+\vspace{0.04in}
+Answer: \blank{1.5cm} \quad Brief justification: \writeline
+
+\end{enumerate}
+
+\begin{extensionbox}
+A student argues: ``Since the null hypothesis is always $\mu_1 - \mu_2 = 0$, a two-sample
+$t$-test can never detect a specific numerical difference like $\mu_1 - \mu_2 = 5$.''
+Is this correct? Explain when a researcher might hypothesize a non-zero difference and
+how the null hypothesis would be written in that case.
+\writelines{3}
+\end{extensionbox}
 
 \end{document}

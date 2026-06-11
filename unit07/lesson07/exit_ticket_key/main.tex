@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.7 — Exit Ticket (Answer Key)
+%! Justifying a Claim About the Difference of Two Means Based on a CI — Unit 7, Lesson 7.7 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
@@ -11,9 +11,24 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+A researcher compares mean resting heart rate (bpm) for runners and non-runners.
+Using independent random samples of 40 runners and 40 non-runners,
+a 95\% confidence interval for $\mu_{\text{runner}} - \mu_{\text{non-runner}}$ is
+$(-18.4,\; -6.2)$ bpm. All conditions for inference were verified.
+
+\begin{enumerate}
+  \item Interpret the confidence interval in context.
+        \ansline{We are 95\% confident that the true difference in mean resting heart rate (runners $-$ non-runners) for all people in these populations is between $-18.4$ and $-6.2$ bpm.}
+
+  \item A cardiologist claims that runners have a lower mean resting heart rate than
+        non-runners. Does the confidence interval provide convincing evidence for this
+        claim? Explain by referencing the interval.
+        \ansline{Yes. The entire interval is negative (below 0), so 0 is not a plausible difference. This provides convincing evidence that runners have a lower mean resting heart rate than non-runners.}
+
+  \item If the researcher had used samples of 160 runners and 160 non-runners
+        (all other values the same), how would the width of the CI change?
+        Circle one: \quad \ans{Narrower} \quad / \quad \textbf{Wider} \quad / \quad \textbf{Same} \\[4pt]
+        Explain: \ansline{Larger sample sizes reduce $SE = \sqrt{s_1^2/n_1 + s_2^2/n_2}$, which decreases the margin of error and narrows the interval.}
+\end{enumerate}
 
 \end{document}

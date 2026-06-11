@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.8 — Group Activity
+%! Setting Up a Test for the Difference of Two Population Means — Unit 7, Lesson 7.8 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
@@ -9,11 +9,104 @@
 \pageheader{Unit 7, Lesson 7.8}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+% ── Tier R ─────────────────────────────────────────────────────────────────────
+\begin{scenariobox}[Tier R --- Remediate: Match the Hypotheses]{sky}
+\textbf{Directions:} Match each research scenario (1--3) to the correct pair of hypotheses
+(A--C). Write the letter in the blank.
+
+\medskip
+\begin{minipage}[t]{0.48\linewidth}
+\textbf{Scenarios}
+\begin{enumerate}
+  \item A researcher asks: ``Do students who listen to music while studying score
+        \emph{differently} on average than those who study in silence?'' \quad \blank{1cm}
+  \item A company claims its new battery lasts \emph{longer} on average than the
+        standard brand. \quad \blank{1cm}
+  \item A public health analyst believes mean daily step count is \emph{lower} for
+        office workers than for retail workers. \quad \blank{1cm}
+\end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\textbf{Hypothesis Pairs}
+\begin{itemize}
+  \item[\textbf{A.}] $H_0: \mu_1 - \mu_2 = 0$; \; $H_a: \mu_1 - \mu_2 > 0$
+  \item[\textbf{B.}] $H_0: \mu_1 - \mu_2 = 0$; \; $H_a: \mu_1 - \mu_2 \ne 0$
+  \item[\textbf{C.}] $H_0: \mu_1 - \mu_2 = 0$; \; $H_a: \mu_1 - \mu_2 < 0$
+\end{itemize}
+\end{minipage}
+
+\medskip
+For Scenario 1, a conditions checklist is provided. Check each box if the condition is met
+and write how you would verify it.
+
+\smallskip
+\begin{tabularx}{\linewidth}{@{} l X @{}}
+$\square$ Random (Group 1): & \writeline \\
+$\square$ Random (Group 2): & \writeline \\
+$\square$ Normal (both groups are large, $n \ge 30$, OR distributions are checked): & \writeline \\
+\end{tabularx}
+\end{scenariobox}
+
+% ── Tier A ─────────────────────────────────────────────────────────────────────
+\begin{scenariobox}[Tier A --- Approaching Proficiency: Full Setup]{sky}
+\textbf{Directions:} For the scenario below, (a) name the inference method, (b) state $H_0$
+and $H_a$ in terms of $\mu_1 - \mu_2$, and (c) verify both conditions.
+
+\medskip
+\textbf{Scenario:} An education researcher randomly selects 32 students from classrooms using
+project-based learning (Group 1) and 29 students from traditional lecture classrooms (Group 2)
+at the same school. She records end-of-year standardized test scores. She believes project-based
+learning leads to \emph{higher} mean scores. Histograms of both groups appear approximately
+symmetric with no outliers.
+
+\begin{enumerate}[label=\alph*.]
+  \item Inference method: \blank{5.5cm}
+  \item Define $\mu_1$ and $\mu_2$:
+
+        $\mu_1 = $ \blank{6cm} \qquad $\mu_2 = $ \blank{6cm}
+
+  \item $H_0$: \blank{4.5cm} \qquad $H_a$: \blank{4.5cm}
+
+        Direction of $H_a$: \blank{2cm} \quad Justify: \writeline
+
+  \item Conditions:
+        \begin{itemize}
+          \item Random (both groups): \writeline
+          \item 10\% rule: \writeline
+          \item Normal ($n_1 = 32$, $n_2 = 29$): \writeline
+        \end{itemize}
+\end{enumerate}
+\end{scenariobox}
+
+% ── Tier E ─────────────────────────────────────────────────────────────────────
+\begin{scenariobox}[Tier E --- Extension: Design \& Compare]{sky}
+\textbf{Directions:} Design a study and analyze the choice of alternative hypothesis.
+
+\medskip
+\textbf{Part 1 --- Study Design.} A health researcher wants to compare the mean number of
+hours of sleep per night between college athletes and non-athletes at a large university.
+Describe a study design (who would be sampled, how many, and why it produces independent groups).
+\writelines{2}
+
+\textbf{Part 2 --- Write the hypotheses.} Define $\mu_1$ (athletes) and $\mu_2$ (non-athletes)
+and write $H_0$ and $H_a$ if the researcher believes athletes sleep \emph{less} on average.
+
+$H_0$: \blank{4.5cm} \qquad $H_a$: \blank{4.5cm}
+
+\textbf{Part 3 --- One-sided vs.\ two-sided.} If the researcher instead used $H_a: \mu_1 - \mu_2 \ne 0$,
+how would this change the conclusion she could draw? What are the trade-offs between one-sided
+and two-sided alternatives?
+\writelines{3}
+\end{scenariobox}
+
+\begin{reflectionbox}
+In Tier A, $n_2 = 29 < 30$. How does this change the Normal condition check compared to if
+both groups had $n \ge 30$? Why must we examine \emph{both} distributions, not just the
+smaller one?
+\writelines{2}
+\end{reflectionbox}
 
 \end{document}

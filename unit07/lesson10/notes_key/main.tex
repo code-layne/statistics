@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.10 — Guided Notes (Answer Key)
+%! Skills Focus: Selecting, Implementing, and Communicating Inference Procedures — Unit 7, Lesson 7.10 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
@@ -9,11 +9,91 @@
 \pageheader{Unit 7, Lesson 7.10}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+  \item \ansline{Select the correct inference procedure by identifying the parameter type and number of samples.}
+  \item \ansline{Verify the appropriate conditions and communicate whether each is met using numbers from the context.}
+  \item \ansline{Write a complete four-step inference procedure (State, Plan, Do, Conclude) using AP-exam language.}
+\end{itemize}
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{Inference procedure selection}]
+        To choose correctly: (1) identify the \ans{parameter} (proportion or mean); (2) count
+        the \ans{samples} (one or two); (3) decide whether to \ans{estimate} or \ans{test}.
+  \item[\termblanklong{Matched-pairs $t$-test}]
+        Used when data come in \ans{pairs} (same subject measured twice, or two paired
+        subjects). Compute \ans{differences $d_i$}, then run a \ans{one-sample} $t$-test on the differences.
+        The parameter is \ans{$\mu_d$}.
+\end{description}
+\end{vocabbox}
+
+\begin{hookbox}
+A sports scientist records resting heart rates for 20 elite cyclists and 20 recreational
+cyclists. She wants to know whether elite cyclists have a lower \emph{mean} resting heart rate.
+
+What procedure should she use? \ans{two-sample $t$-test for $\mu_1 - \mu_2$}
+
+How did you decide? Two questions:
+\begin{enumerate}
+  \item Parameter type: \ans{mean (quantitative data, not a proportion)}
+  \item Number of samples: \ans{two independent groups (elite vs.\ recreational)}
+\end{enumerate}
+\end{hookbox}
+
+\begin{notesbox}{The Procedure Selection Framework}
+\textbf{Ask these questions in order:}
+
+\vspace{0.06in}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} p{0.28\linewidth} p{0.20\linewidth} p{0.16\linewidth} X @{}}
+  \rowcolor{sky}
+  \textbf{Parameter} & \textbf{\# Samples} & \textbf{Goal} & \textbf{Procedure} \\ \hline
+  Proportion $p$ & One & CI & \ans{one-sample $z$-interval for $p$} \\
+  Proportion $p$ & One & Test & \ans{one-sample $z$-test for $p$} \\
+  $p_1-p_2$ & Two & CI & \ans{two-sample $z$-interval for $p_1-p_2$} \\
+  $p_1-p_2$ & Two & Test & \ans{two-sample $z$-test for $p_1-p_2$} \\
+  Mean $\mu$ & One & CI & \ans{one-sample $t$-interval for $\mu$} \\
+  Mean $\mu$ & One & Test & \ans{one-sample $t$-test for $\mu$} \\
+  $\mu_1-\mu_2$ & Two & CI & \ans{two-sample $t$-interval for $\mu_1-\mu_2$} \\
+  $\mu_1-\mu_2$ & Two & Test & \ans{two-sample $t$-test for $\mu_1-\mu_2$} \\
+\end{tabularx}
 \end{notesbox}
+
+\begin{notesbox}{The Four-Step AP Write-Up}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} p{0.10\linewidth} p{0.22\linewidth} X @{}}
+  \rowcolor{sky}
+  \textbf{Step} & \textbf{Name} & \textbf{What to write} \\ \hline
+  1 & \ans{State} & Name the procedure; state $H_0$ and $H_a$ (or parameter for a CI); define symbols. \\
+  2 & \ans{Plan} & List each condition; verify with \ans{numbers from context}; state whether met. \\
+  3 & \ans{Do} & Show formula + substitution; report \ans{$p$-value} (or interval). \\
+  4 & \ans{Conclude} & ``Because $p$-value \ans{$<$} $\alpha$, I \ans{reject} $H_0$.
+                     There \ans{is} sufficient evidence that \ans{[restate $H_a$ in context]}.'' \\
+\end{tabularx}
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Partner Practice.} \;
+A school district randomly selects 40 elementary schools and 40 middle schools and records
+the mean reading-score gain (points) for each school over one year. An analyst wants to know
+whether elementary schools showed a larger mean gain than middle schools.
+
+\begin{enumerate}
+  \item Parameter: \ans{$\mu_1 - \mu_2$ (difference of means)} \quad \# samples: \ans{two} \quad Goal: \ans{test}
+  \item Procedure name: \ans{two-sample $t$-test for $\mu_1 - \mu_2$}
+  \item $H_0$: \ans{$\mu_1 - \mu_2 = 0$} \quad $H_a$: \ans{$\mu_1 - \mu_2 > 0$}
+  \item List the three conditions and state how each is verified:
+        \begin{itemize}
+          \item Random: \ansline{Both groups were randomly selected --- Random condition met.}
+          \item 10\%: \ansline{$40 \le 10\%$ of all elementary (and middle) schools in the district (assuming large population) --- met.}
+          \item Normal: \ansline{$n_1 = n_2 = 40 \ge 30$ --- CLT applies; Normal condition met.}
+        \end{itemize}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.7 — Homework (Answer Key)
+%! Justifying a Claim About the Difference of Two Means Based on a CI — Unit 7, Lesson 7.7 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
@@ -11,9 +11,89 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
+\begin{enumerate}
+
+\item \textbf{Response Times (AP FRQ Context).} \quad
+A study compared mean emergency response times (minutes) between northern and southern
+districts of a city. A 95\% CI for $\mu_{\text{northern}} - \mu_{\text{southern}}$ is
+$(-2.37,\; 0.37)$ minutes.
+
+\begin{enumerate}[label=\alph*.]
+  \item Interpret the interval in context.
+        \ansline{We are 95\% confident that the true difference in mean emergency response time (northern $-$ southern) for all calls in these districts is between $-2.37$ and $0.37$ minutes.}
+  \item A city official claims northern response times are faster (lower mean) than
+        southern. Does the interval support this claim? Explain.
+        \ansline{No. 0 is inside the interval, so a difference of 0 is plausible. There is insufficient evidence to conclude that northern response times are faster.}
+  \item What does it mean that this is a \emph{95\%} confidence interval? Describe in
+        terms of repeated sampling.
+        \ansline{In repeated random sampling with the same sample sizes, approximately 95\% of CIs constructed this way would capture the true difference $\mu_{\text{northern}} - \mu_{\text{southern}}$.}
+\end{enumerate}
+
+\vspace{0.06in}
+
+\item \textbf{Textbook Reading Levels.} \quad
+A 90\% CI for $\mu_{\text{digital}} - \mu_{\text{print}}$ (mean reading comprehension score,
+out of 100) is $(3.8,\; 9.2)$ points.
+
+\begin{enumerate}[label=\alph*.]
+  \item Interpret the interval in context.
+        \ansline{We are 90\% confident that the true difference in mean reading comprehension score (digital $-$ print) for all students in these populations is between $3.8$ and $9.2$ points.}
+  \item A researcher claims that digital readers score higher on average. Does the CI
+        provide convincing evidence? Explain.
+        \ansline{Yes. The entire interval is positive (above 0), so 0 is not plausible. This provides convincing evidence that digital readers score higher on average.}
+\end{enumerate}
+
+\vspace{0.06in}
+
+\item \textbf{Effect of Sample Size.} \quad
+Two research teams study the same populations with the same standard deviations
+($s_1 = s_2 = 8$ points). Team A uses $n_1 = n_2 = 25$; Team B uses $n_1 = n_2 = 100$.
+Both use 95\% confidence.
+
+\begin{enumerate}[label=\alph*.]
+  \item Compute the $SE$ for each team.
+
+        Team A: $SE_A = \sqrt{\dfrac{8^2}{25} + \dfrac{8^2}{25}} = $ \ans{$\approx 2.263$ pts}
+
+        Team B: $SE_B = \sqrt{\dfrac{8^2}{100} + \dfrac{8^2}{100}} = $ \ans{$\approx 1.131$ pts}
+
+  \item Approximate the margin of error for each team, using $t^* \approx 2.0$.
+
+        Team A: ME $\approx$ \ans{4.53 pts} \qquad Team B: ME $\approx$ \ans{2.26 pts}
+
+  \item By what factor is Team B's interval narrower than Team A's?
+        \ansline{Team B's interval is $\approx 2\times$ narrower (factor of $\sqrt{4} = 2$), because sample sizes quadrupled.}
+\end{enumerate}
+
+\vspace{0.06in}
+
+\item \textbf{Comparing Weight-Loss Programs.} \quad
+A 99\% CI for $\mu_{\text{program A}} - \mu_{\text{program B}}$ (mean weight loss, kg) is
+$(-1.2,\; 4.8)$ kg.
+
+\begin{enumerate}[label=\alph*.]
+  \item Is there convincing evidence that one program produces greater mean weight loss?
+        Explain using the interval.
+        \ansline{No. 0 is inside the interval $(-1.2, 4.8)$, so a difference of 0 is plausible; insufficient evidence that the programs differ in mean weight loss.}
+  \item If the confidence level were lowered to 90\% (all else equal), would the interval
+        be narrower or wider? Explain.
+        \ansline{Narrower. A lower confidence level requires a smaller $t^*$, which reduces the margin of error.}
+\end{enumerate}
+
+\end{enumerate}
+
+\begin{extensionbox}
+A 95\% CI for $\mu_1 - \mu_2$ excludes 0. Must a two-sided significance test for
+$H_0: \mu_1 = \mu_2$ at $\alpha = 0.05$ also reject $H_0$? Explain the connection
+between confidence intervals and significance tests.
+\ansline{Yes. A 95\% CI and a two-sided test at $\alpha = 0.05$ are mathematically equivalent: if 0 is outside the CI, then the $p$-value for the two-sided test is less than 0.05, so $H_0$ is rejected. The CI captures all null values that would not be rejected at that level.}
+\end{extensionbox}
+
+\begin{notesbox}{Preview: Lesson 7.8}
+\textbf{Coming up next:} Lesson 7.8 introduces the \textbf{two-sample $t$-test} for
+$\mu_1 - \mu_2$ --- a formal significance test. You will connect the CI from Lesson 7.7
+to the $p$-value framework: if a 95\% CI excludes 0, the corresponding two-sided test
+at $\alpha = 0.05$ will also reject $H_0$.
 \end{notesbox}
 
 \end{document}

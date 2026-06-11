@@ -1,12 +1,12 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.6 — Lesson Plan
+%! Confidence Intervals for the Difference of Two Means — Unit 7, Lesson 7.6 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\UnitNumberName}{Unit 7: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 7.6: TODO: Lesson Title}
+\newcommand{\UnitNumberName}{Unit 7: Inference for Quantitative Data: Means \quad}
+\newcommand{\LessonNumberName}{Lesson 7.6: Confidence Intervals for the Difference of Two Means}
 
 \begin{document}
 \begin{center}
@@ -16,55 +16,275 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will identify the two-sample $t$-interval as the
+    appropriate procedure for estimating a difference of two population means, verify the
+    required conditions, compute the standard error and margin of error, and calculate and
+    interpret the resulting confidence interval.
+    (Big Idea: UNC)
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 1 --- Selecting Statistical Methods}
+    \begin{itemize}
+        \item Identify the two-sample $t$-interval as the appropriate procedure for a
+              difference of two population means (Skill 1.D; UNC-4.V).
+    \end{itemize}
+    \textbf{AP Skill 4 --- Statistical Argumentation}
+    \begin{itemize}
+        \item Verify conditions for the two-sample $t$-interval: independence (random
+              samples or randomized experiment; 10\% rule if sampling without replacement)
+              and Normal (both $n_1$ and $n_2 \ge 30$ if skewed) (Skill 4.C; UNC-4.W).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 3 --- Using Probability and Simulation}
+    \begin{itemize}
+        \item Determine the margin of error: $ME = t^* \cdot SE$ where
+              $SE = \sqrt{s_1^2/n_1 + s_2^2/n_2}$ (Skill 3.D; UNC-4.X).
+        \item Calculate the confidence interval:
+              $(\bar x_1 - \bar x_2) \pm t^*\sqrt{s_1^2/n_1 + s_2^2/n_2}$
+              with $df$ from technology (Skill 3.D; UNC-4.Y).
+    \end{itemize}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item Degrees of freedom come from technology (not $n_1 + n_2 - 2$).
+        \item An interval that does not contain 0 suggests the population means differ.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Two-sample $t$-interval for $\mu_1 - \mu_2$} --- a confidence
+              interval procedure for the difference of two independent population means
+              when $\sigma_1$ and $\sigma_2$ are unknown
+        \item \textbf{Point estimate of $\mu_1 - \mu_2$} --- $\bar x_1 - \bar x_2$,
+              the difference of sample means
+        \item \textbf{Standard error of $\bar x_1 - \bar x_2$} ---
+              $SE = \sqrt{\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2}}$;
+              estimates the standard deviation of the sampling distribution
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Degrees of freedom (two-sample)} --- found using technology;
+              not simply $n_1 + n_2 - 2$; always use calculator or software
+        \item \textbf{Margin of error (ME)} --- $t^* \cdot SE$; determines the width
+              of the interval around the point estimate
+        \item \textbf{Critical value $t^*$} --- the $t$-value for the desired confidence
+              level, based on $df$ from technology
+        \item \textbf{Independence condition} --- two independent random samples; 10\%
+              rule applies to each sample separately
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
-\end{fixedskillbox}
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+    \textbf{Spiral Review (warm-up)}
+    \begin{itemize}
+        \item One-sample $t$-interval: $\bar x \pm t^* \cdot (s/\sqrt{n})$ --- Lesson 7.2
+        \item SE formula and how it changes with sample size --- Lesson 7.2/7.3
+        \item Conditions for one-sample inference: random and Normal --- Lesson 7.2
+        \item Interpreting a confidence interval: ``We are $C\%$ confident the true
+              mean is between \ldots'' --- Lesson 7.3
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
+    % Authored warm-up compiles to target/ — no source PDF to embed here.
+\end{minipage}
+\end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\begin{minipage}[t]{0.55\linewidth}
+    \textbf{City A vs.\ City B: Which City Pays More? (3--4 min)}\\
+    Display two data summaries: City A ($n_1 = 32$ workers, $\bar x_1 = \$62{,}400$,
+    $s_1 = \$8{,}500$) and City B ($n_2 = 28$ workers, $\bar x_2 = \$58{,}700$,
+    $s_2 = \$7{,}200$). Ask: ``Is the \$3,700 difference meaningful, or just random
+    sampling variation?''
+
+    Key discussion points:
+    \begin{itemize}
+        \item We have \emph{two} independent samples and want to estimate $\mu_1 - \mu_2$.
+        \item Neither $\sigma$ is known, so we use a $t$-interval (not $z$).
+        \item We need to account for \emph{both} samples' variability in the SE.
+        \item An interval that doesn't include 0 suggests the means genuinely differ.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.40\linewidth}
+    \textbf{Bridge from Lessons 7.2--7.3}\\
+    One-sample $t$-interval: $\bar x \pm t^* \cdot \dfrac{s}{\sqrt{n}}$\\[6pt]
+    Two-sample extension:
+    $(\bar x_1 - \bar x_2) \pm t^* \cdot \sqrt{\dfrac{s_1^2}{n_1} + \dfrac{s_2^2}{n_2}}$\\[6pt]
+    Same logic; add the two sources of variability under the radical.
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{skillbox}[Lesson: Sampling Distribution \& Choosing the Method]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Sampling Distribution of $\bar x_1 - \bar x_2$}
+    \begin{itemize}
+        \item Two independent SRSs from populations with means $\mu_1$, $\mu_2$ and
+              standard deviations $\sigma_1$, $\sigma_2$.
+        \item If populations are Normal \emph{or} both $n_1, n_2 > 30$:
+              $\bar x_1 - \bar x_2$ is approximately Normal with
+              mean $\mu_1 - \mu_2$ and
+              $SD = \sqrt{\dfrac{\sigma_1^2}{n_1} + \dfrac{\sigma_2^2}{n_2}}$
+        \item Since $\sigma_1, \sigma_2$ are unknown, replace with $s_1, s_2$ and
+              use a $t$-distribution.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Appropriate Procedure (UNC-4.V.2)}\\
+    Use a \textbf{two-sample $t$-interval for a difference of population means} when:
+    \begin{enumerate}
+        \item Two independent samples (not matched pairs).
+        \item Both population standard deviations are unknown.
+        \item Conditions are met (see next box).
+    \end{enumerate}
+    \textit{Never pool variances on the AP Exam unless the problem explicitly states
+    equal population variances.}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Lesson (cont.): Conditions, SE, and the Interval]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Conditions to Verify (UNC-4.W)}
+    \begin{enumerate}
+        \item \textbf{Independence:}
+              \begin{itemize}
+                  \item Each sample is a random sample or part of a randomized experiment.
+                  \item If sampling without replacement: $n_1 \le 10\%N_1$ and
+                        $n_2 \le 10\%N_2$.
+                  \item The two groups must be independent of each other.
+              \end{itemize}
+        \item \textbf{Normal:}
+              \begin{itemize}
+                  \item If both $n_1, n_2 \ge 30$: CLT applies; condition is met.
+                  \item If either $n < 30$: check that sample is free of strong skew
+                        and outliers.
+              \end{itemize}
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{The Confidence Interval (UNC-4.X/Y)}
+    \[
+        (\bar x_1 - \bar x_2) \pm t^* \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}
+    \]
+    \begin{itemize}
+        \item $\bar x_1 - \bar x_2$: point estimate of $\mu_1 - \mu_2$.
+        \item $SE = \sqrt{s_1^2/n_1 + s_2^2/n_2}$: pooled standard error.
+        \item $t^*$: critical value; $df$ from technology (TI-84: 2-SampTInt).
+        \item $ME = t^* \cdot SE$.
+    \end{itemize}
+    \textit{Interpretation:} ``We are $C\%$ confident the true difference $\mu_1 - \mu_2$
+    is between \textit{lower} and \textit{upper}.''
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Circulate and Check}
+    \begin{itemize}
+        \item Students use $SE = \sqrt{s_1^2/n_1 + s_2^2/n_2}$, not a pooled formula.
+        \item Conditions verified for \emph{both} samples separately.
+        \item $df$ from technology, not $n_1 + n_2 - 2$.
+        \item Interval interpretation references $\mu_1 - \mu_2$ (not $\bar x_1 - \bar x_2$)
+              and includes context.
+        \item Students identify whether 0 is in the interval and state the implication.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Cold-Call Prompts}
+    \begin{itemize}
+        \item ``Why do we add $s_1^2/n_1$ and $s_2^2/n_2$ under the radical?''
+        \item ``If the interval is $(−2.1, 8.3)$, what does that tell us about $\mu_1 - \mu_2$?''
+        \item ``If the interval is entirely positive, what does that tell us?''
+        \item ``What would change if we switched Group 1 and Group 2?''
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{multicols}{3}
+    \textbf{Tier R --- Remediate}
+    \begin{itemize}
+        \item Provide the SE formula and CI template with labeled blanks.
+        \item Focus on identifying conditions and substituting values.
+        \item Activity: Tier R scenario only.
+    \end{itemize}
+    \columnbreak
+    \textbf{Tier A --- Approaching}
+    \begin{itemize}
+        \item Complete Tier R and Tier A scenarios independently.
+        \item Justify each condition; interpret the resulting interval in context.
+    \end{itemize}
+    \columnbreak
+    \textbf{Tier E --- Extension}
+    \begin{itemize}
+        \item Complete all tiers plus Tier E.
+        \item Compare two CIs and explain what each implies about the population means.
+    \end{itemize}
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    A nutritionist wants to estimate the difference in mean daily sugar intake (g) between
+    adults in two cities. City X: $n = 35$, $\bar x = 82$ g, $s = 14$ g.
+    City Y: $n = 40$, $\bar x = 75$ g, $s = 11$ g. Conditions are met.
+    \begin{enumerate}
+        \item Identify the procedure; state the point estimate.
+        \item Compute the standard error.
+        \item Interpret a 95\% CI of $(2.0, 12.0)$ g in context.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{A two-sample $t$-interval for $\mu_1 - \mu_2$ is computed as $(1.4, 8.6)$.
+    Which conclusion is best supported?}
+    \begin{enumerate}[label=(\Alph*)]
+        \item There is no convincing evidence that $\mu_1 \ne \mu_2$.
+        \item The true difference is exactly 5.0.
+        \item We are confident $\mu_1 > \mu_2$ because the interval is entirely positive.
+              \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+        \item We need a larger sample to make any conclusion.
+    \end{enumerate}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework Overview}
+    \begin{itemize}
+        \item Four to five problems: identify procedure, verify conditions, compute SE
+              and ME, calculate the interval, and interpret.
+        \item One problem requires students to analyze whether 0 is in the interval
+              and state the implication for the population means.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension:} Change the confidence level from 95\% to 90\% for
+              a given problem. How does the interval width change? Why?
+        \item \textit{Preview:} Lesson 7.7 extends this logic to \emph{significance
+              tests} for $\mu_1 - \mu_2$ --- the two-sample $t$-test.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
+
 \end{document}

@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.6 — Homework (Answer Key)
+%! Confidence Intervals for the Difference of Two Means — Unit 7, Lesson 7.6 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
@@ -11,9 +11,84 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\textit{For each problem: identify the procedure, verify conditions, compute the SE and
+confidence interval, and interpret. Show all computations.}
+
+\begin{enumerate}
+
+\item \textbf{Reaction Time.}
+
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{Identify:} \ans{two-sample $t$-interval for $\mu_{\text{young}} - \mu_{\text{older}}$}
+  \item \textbf{Verify:}
+        \begin{itemize}
+          \item Random: \ansline{Random samples of 30 young adults and 35 older adults --- met.}
+          \item Normal: \ansline{$n_1 = 30 \ge 30$ and $n_2 = 35 \ge 30$; CLT applies --- met.}
+        \end{itemize}
+  \item $SE = \sqrt{\dfrac{({\color{keyred}\mathbf{42}})^2}{{\color{keyred}\mathbf{30}}} + \dfrac{({\color{keyred}\mathbf{55}})^2}{{\color{keyred}\mathbf{35}}}} \approx$ \ans{12.22}
+  \item $CI = ({\color{keyred}\mathbf{-39}} \pm 2.000 \times {\color{keyred}\mathbf{12.22}}) = ($ \ans{$-63.44$}, \ans{$-14.56$} $)$
+
+        \begin{teachernote}
+        $\bar x_1 - \bar x_2 = 285 - 324 = -39$. $SE = \sqrt{1764/30 + 3025/35} = \sqrt{58.80 + 86.43} = \sqrt{145.23} \approx 12.05$; slight rounding difference from $12.22$ is acceptable. $ME \approx 24.1$. $CI \approx (-63.1, -14.9)$.
+        \end{teachernote}
+
+  \item \ansline{We are 95\% confident the true difference in mean reaction time (young $-$ older) is between $-63.4$ ms and $-14.6$ ms.}
+        \ansline{Since 0 is not in the interval (entirely negative), there is convincing evidence that young adults have faster mean reaction times than older adults.}
+\end{enumerate}
+
+\item \textbf{Plant Heights.}
+
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{Verify:}
+        \begin{itemize}
+          \item Random / Independence: \ansline{Random samples of plants; two independent groups --- met.}
+          \item Normal: \ansline{$n_1 = 22 < 30$ and $n_2 = 20 < 30$; both distributions roughly symmetric with no outliers --- met.}
+        \end{itemize}
+  \item $SE \approx$ \ans{0.912}
+
+        $CI = ({\color{keyred}\mathbf{2.7}} \pm 2.021 \times {\color{keyred}\mathbf{0.912}}) = ($ \ans{0.857}, \ans{4.543} $)$
+
+        \begin{teachernote}
+        $SE = \sqrt{3.1^2/22 + 2.8^2/20} = \sqrt{9.61/22 + 7.84/20} = \sqrt{0.4368 + 0.3920} = \sqrt{0.8288} \approx 0.910$.
+        $ME = 2.021 \times 0.910 \approx 1.839$. $CI = (2.7 - 1.84, 2.7 + 1.84) = (0.86, 4.54)$.
+        \end{teachernote}
+
+  \item \ansline{We are 95\% confident the true difference in mean plant height (Fertilizer A $-$ Fertilizer B) is between about 0.86 cm and 4.54 cm. Since the interval is entirely positive, this provides convincing evidence that Fertilizer A produces taller plants on average.}
+\end{enumerate}
+
+\item \textbf{Exam Scores.}
+
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{Conditions:} \ansline{Random samples from each school; $n_1 = 45 \ge 30$ and $n_2 = 40 \ge 30$ so CLT applies --- both conditions met.}
+  \item $SE \approx$ \ans{14.47} \quad $ME \approx$ \ans{28.80}
+
+        \begin{teachernote}
+        $SE = \sqrt{68^2/45 + 72^2/40} = \sqrt{4624/45 + 5184/40} = \sqrt{102.76 + 129.60} = \sqrt{232.36} \approx 15.24$. $ME = 1.990 \times 15.24 \approx 30.33$.
+        Slight differences due to rounding are acceptable.
+        \end{teachernote}
+
+  \item $CI = ($ \ans{$-13$}, \ans{$47$} $)$
+  \item \ansline{We are 95\% confident the true difference in mean exam scores (School 1 $-$ School 2) is between approximately $-13$ and $47$ points. Since 0 is in the interval, the data do not provide convincing evidence that the mean scores differ between the schools.}
+\end{enumerate}
+
+\item \textbf{AP-Style:} Correct answer: \ans{(C)}
+
+\begin{teachernote}
+(A) misidentifies the midpoint as the only value; (B) commits the common ``probability the
+parameter is in this interval'' error --- the interval is fixed once computed, not a
+probability statement about the parameter; (D) overstates certainty.
+(C) is the standard frequentist interpretation.
+\end{teachernote}
+
+\end{enumerate}
+
+\begin{reflectionbox}
+\ansline{The student's statement is wrong on two counts. First, once the interval is computed, 0 either is or is not in it --- there is no probability involved for a fixed interval. Second, the 95\% confidence level means: if we repeated this procedure many times, about 95\% of such intervals would capture the true parameter. It is a property of the \emph{method}, not a probability statement about one particular interval.}
+\end{reflectionbox}
+
+\begin{extensionbox}
+\ansline{With $t^* = 1.671$ (90\%): $ME = 1.671 \times 12.22 \approx 20.42$. CI $\approx (-59.4, -18.6)$, width $\approx 40.8$ ms compared to the 95\% width of $\approx 48.9$ ms.}
+\ansline{A lower confidence level requires us to be ``less confident'' that the interval captures the true parameter, so we need a smaller critical value $t^*$, which shrinks the margin of error and produces a narrower interval.}
+\end{extensionbox}
 
 \end{document}

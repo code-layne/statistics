@@ -1,4 +1,4 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.8 — Guided Notes
+%! Setting Up a Test for the Difference of Two Population Means — Unit 7, Lesson 7.8 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
@@ -9,11 +9,95 @@
 \pageheader{Unit 7, Lesson 7.8}{Guided Notes}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.12in}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+  \item \writeline
+  \item \writeline
+  \item \writeline
+\end{itemize}
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{Two-sample $t$-test for $\mu_1 - \mu_2$}]
+        Used when comparing \blank{6cm}; both $\sigma$'s are \blank{3cm}.
+  \item[\termblanklong{Null hypothesis ($H_0$)}]
+        $H_0: \mu_1 - \mu_2 = $ \blank{1.5cm} \quad (equivalently $\mu_1$ \blank{1.5cm} $\mu_2$).
+  \item[\termblanklong{Alternative hypothesis ($H_a$)}]
+        $H_a: \mu_1 - \mu_2$ \blank{2cm} $0$; direction chosen \blank{5cm} seeing data.
+  \item[\termblanklong{Independent samples}]
+        Two groups with \blank{6cm} between observations; not matched pairs.
+\end{description}
+\end{vocabbox}
+
+\begin{hookbox}
+A hospital randomly assigns patients to standard PT ($\mu_1$) or accelerated PT ($\mu_2$).
+Researchers measure days to full mobility. The population SDs $\sigma_1$ and $\sigma_2$ are
+\blank{3cm}. \quad Question: Is there evidence that the \blank{5cm} differ?
+\end{hookbox}
+
+\begin{notesbox}{Step 1: Choose the Inference Method (VAR-7.F)}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} p{0.46\linewidth} X @{}}
+  \textbf{Situation} & \textbf{Method} \\ \hline
+  Two independent groups; quantitative response; $\sigma$'s unknown & \blank{5cm} \\
+  Same subjects measured twice (before/after) & \blank{5cm} \\
+\end{tabularx}
+
+\medskip
+\textit{PT example: two independent groups, $\sigma$'s unknown $\Rightarrow$ use a}
+\blank{4cm}\textit{-test.}
 \end{notesbox}
+
+\begin{notesbox}{Step 2: Write Hypotheses (VAR-7.G)}
+Always use \emph{population} parameters $\mu_1$ and $\mu_2$, not $\bar x_1$ or $\bar x_2$.
+
+\medskip
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} p{0.44\linewidth} X @{}}
+  \textbf{Research Question} & \textbf{Hypotheses} \\ \hline
+  Is Group 1 \emph{lower} on average? & $H_0: \mu_1 - \mu_2 = 0$ \quad $H_a: \mu_1 - \mu_2$ \blank{2cm} $0$ \\
+  Is Group 1 \emph{higher} on average? & $H_0: \mu_1 - \mu_2 = 0$ \quad $H_a: \mu_1 - \mu_2$ \blank{2cm} $0$ \\
+  Do the groups \emph{differ}? & $H_0: \mu_1 - \mu_2 = 0$ \quad $H_a: \mu_1 - \mu_2$ \blank{2cm} $0$ \\
+\end{tabularx}
+
+\medskip
+\textit{PT (let $\mu_1$ = standard, $\mu_2$ = accelerated):} \quad
+$H_0$: \blank{4cm} \qquad $H_a$: \blank{4cm}
+\end{notesbox}
+
+\begin{notesbox}{Step 3: Verify Conditions (VAR-7.H)}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} p{0.22\linewidth} X p{0.28\linewidth} @{}}
+  \textbf{Condition} & \textbf{How to verify} & \textbf{Note} \\ \hline
+  \textbf{Random} & Each group: random sample or \blank{4cm} experiment. & Check both groups \\
+  \textbf{10\% rule} & $n_1 \le 10\%N_1$ \emph{and} $n_2 \le 10\%N_2$. & When sampling w/o replacement \\
+  \textbf{Normal} ($\ge 30$) & Both $n_1 \ge 30$ and $n_2 \ge 30$: CLT applies to each. & \\
+  \textbf{Normal} ($< 30$) & If \emph{either} $n < 30$: check \emph{both} samples for no strong \blank{4cm} or \blank{3cm}. & \\
+\end{tabularx}
+
+\medskip
+\textit{PT ($n_1 = 18$, $n_2 = 17$ --- both $< 30$):}
+\begin{itemize}
+  \item Random: \writeline
+  \item Normal: \writeline
+\end{itemize}
+\end{notesbox}
+
+\begin{practicebox}
+A researcher believes mean resting heart rate is lower for yoga practitioners ($\mu_1$) than
+for non-practitioners ($\mu_2$). She randomly samples 40 yoga practitioners and 35 non-practitioners;
+$\sigma$'s are unknown.
+
+\begin{itemize}
+  \item Inference method: \blank{5cm}
+  \item $H_0$: \blank{4cm} \quad $H_a$: \blank{4cm}
+  \item Random (both groups): \writeline
+  \item Normal (both groups): \writeline
+\end{itemize}
+\end{practicebox}
 
 \end{document}

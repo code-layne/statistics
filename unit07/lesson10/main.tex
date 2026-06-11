@@ -1,12 +1,12 @@
-%! TODO: Lesson Title — Unit 7, Lesson 7.10 — Lesson Plan
+%! Skills Focus: Selecting, Implementing, and Communicating Inference Procedures — Unit 7, Lesson 7.10 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
 \newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\UnitNumberName}{Unit 7: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 7.10: TODO: Lesson Title}
+\newcommand{\UnitNumberName}{Unit 7: Inference for Quantitative Data: Means \quad}
+\newcommand{\LessonNumberName}{Lesson 7.10: Skills Focus --- Selecting, Implementing, and Communicating Inference Procedures}
 
 \begin{document}
 \begin{center}
@@ -16,55 +16,312 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will select the correct inference procedure from all
+    six procedures learned in Units 6--7, implement it correctly through all four steps, and
+    communicate conclusions in AP-exam language with proper linkage between evidence and claims.
+    (Big Ideas: VAR, UNC)
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 1 --- Selecting Statistical Methods}
+    \begin{itemize}
+        \item Identify an appropriate inference procedure for a given scenario by recognizing
+              the parameter type (proportion vs.\ mean) and the number of samples (one vs.\ two)
+              (Skills 1.D, 1.E; VAR-6, VAR-7).
+        \item Identify when a confidence interval vs.\ a significance test is the
+              appropriate tool (Skill 1.D).
+        \item State hypotheses and check conditions for the selected procedure
+              (Skill 1.F; VAR-6, VAR-7).
+    \end{itemize}
+    \textbf{AP Skill 3 --- Using Probability and Simulation}
+    \begin{itemize}
+        \item Interpret a $p$-value in context and connect it to the conclusion
+              (Skill 3.D; VAR-6, VAR-7).
+        \item Interpret a confidence interval in context (Skill 3.E).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 4 --- Statistical Argumentation}
+    \begin{itemize}
+        \item Justify the selection of an inference procedure by citing the parameter and
+              sample structure (Skill 4.B).
+        \item Verify conditions for the selected procedure and communicate whether they are
+              met (Skill 4.C).
+        \item Carry out the procedure and report the test statistic and $p$-value (or interval)
+              (Skill 4.D).
+        \item Provide a conclusion in context using AP-exam language (Skill 4.E).
+    \end{itemize}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item The two decision axes: (1) proportion or mean? (2) one sample or two?
+        \item Every inference procedure follows the same four-step structure.
+        \item A CI estimates a parameter; a significance test evaluates a specific claim.
+        \item Matched-pairs data $\to$ one-sample $t$-test on the differences.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\textbf{Procedure Selection Table} --- Ask two questions: (1) Proportion or mean? (2) One sample or two?
+
+\medskip
+\renewcommand{\arraystretch}{1.7}
+\begin{tabularx}{\linewidth}{@{} p{0.18\linewidth} p{0.16\linewidth} p{0.14\linewidth} X X @{}}
+  \rowcolor{sky}
+  \textbf{Parameter} & \textbf{\# Samples} & \textbf{Goal} & \textbf{Procedure Name} & \textbf{Statistic / Form} \\
+  \hline
+  Proportion $p$ & One & CI & One-sample $z$-interval for $p$ & \TallMath{\hat p \pm z^* \sqrt{\tfrac{\hat p(1-\hat p)}{n}}} \\
+  Proportion $p$ & One & Test & One-sample $z$-test for $p$ & \TallMath{z = \dfrac{\hat p - p_0}{\sqrt{p_0(1-p_0)/n}}} \\
+  $p_1 - p_2$ & Two & CI & Two-sample $z$-interval for $p_1-p_2$ & \TallMath{(\hat p_1 - \hat p_2) \pm z^* SE} \\
+  $p_1 - p_2$ & Two & Test & Two-sample $z$-test for $p_1-p_2$ & pooled $\hat p_c$ \\
+  Mean $\mu$ & One & CI & One-sample $t$-interval for $\mu$ & \TallMath{\bar x \pm t^* \cdot \tfrac{s}{\sqrt{n}}} \\
+  Mean $\mu$ & One & Test & One-sample $t$-test for $\mu$ (or matched pairs) & \TallMath{t = \dfrac{\bar x - \mu_0}{s/\sqrt{n}}} \\
+  $\mu_1 - \mu_2$ & Two & CI & Two-sample $t$-interval for $\mu_1-\mu_2$ & \TallMath{(\bar x_1 - \bar x_2) \pm t^* SE} \\
+  $\mu_1 - \mu_2$ & Two & Test & Two-sample $t$-test for $\mu_1-\mu_2$ & \TallMath{t = \dfrac{\bar x_1 - \bar x_2}{SE}} \\
+\end{tabularx}
 \end{skillbox}
 
-\begin{fixedskillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{tabularx}{\linewidth}{@{}X c@{}}
-        \begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
-            Please see attached spiral review.  % TODO: list skills reviewed
-        \end{minipage}
-        &
-        \begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        \end{minipage}
-    \end{tabularx}
-\end{fixedskillbox}
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+    \textbf{Spiral Review (warm-up)}
+    \begin{itemize}
+        \item All six inference procedures: names, parameter symbols, and which distribution
+              ($z$ vs.\ $t$) applies --- Units 6 and 7
+        \item Four-step inference structure: State, Plan, Do, Conclude --- Units 6--7
+        \item Connecting $p$-values to conclusions; CI interpretation language
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
+    % Authored warm-up compiles to target/ — no source PDF to embed here.
+\end{minipage}
+\end{skillbox}
 
 \begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\begin{minipage}[t]{0.55\linewidth}
+    \textbf{Which Procedure Do I Use? (3--4 min)}\\
+    Display this scenario: ``A sports scientist collects resting heart rates for 20 elite
+    cyclists and 20 recreational cyclists. She wants to know whether elite cyclists have a
+    lower \emph{mean} resting heart rate.''\\[4pt]
+    Ask: ``Before we do any math --- what procedure should we use? How do you know?''\\[4pt]
+    Facilitate a 60-second Think-Pair-Share. Key reasoning:
+    \begin{itemize}
+        \item The parameter is a mean, not a proportion.
+        \item Two independent groups (not matched pairs).
+        \item She wants to test a claim $\to$ significance test.
+        \item Conclusion: \textbf{two-sample $t$-test for $\mu_1-\mu_2$}.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.40\linewidth}
+    \textbf{The Two Decision Questions}
+    \begin{enumerate}
+        \item \textbf{What is the parameter?}\\
+              Proportion ($p$) $\to$ $z$-procedure\\
+              Mean ($\mu$) $\to$ $t$-procedure
+        \item \textbf{How many samples?}\\
+              One group (or matched pairs) $\to$ one-sample\\
+              Two independent groups $\to$ two-sample
+    \end{enumerate}
+    \medskip
+    Third question: \textbf{Estimate or test?}\\
+    ``What is the range?'' $\to$ CI\\
+    ``Is there evidence for a claim?'' $\to$ test
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{skillbox}[Lesson: The Decision Framework]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Step-by-Step Procedure Selection}
+    \begin{enumerate}
+        \item \textbf{Identify the parameter.}\\
+              ``Proportion,'' ``percent,'' ``rate'' $\to$ $p$;\\
+              ``Mean,'' ``average'' $\to$ $\mu$.
+        \item \textbf{Count the samples.}\\
+              One group: one-sample.\\
+              Two independent groups: two-sample.\\
+              Same subjects measured twice (before/after): matched pairs $\to$ one-sample $t$ on differences.
+        \item \textbf{Decide: CI or test?}\\
+              Estimate a parameter or find a plausible range $\to$ CI.\\
+              Evaluate evidence for a specific claim $\to$ test.
+        \item \textbf{Name the procedure} using the exact AP name.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Common Traps}
+    \begin{itemize}
+        \item ``Before and after'' data: check whether it's \emph{matched pairs} (same subjects)
+              or two \emph{independent} samples. Matched pairs $\to$ one-sample $t$ on differences.
+        \item Hypotheses use population parameters, not sample statistics:
+              $H_0: \mu_1 - \mu_2 = 0$, not $H_0: \bar x_1 - \bar x_2 = 0$.
+        \item Two-sample $z$-test: pool ($\hat p_c$) only when testing $H_0: p_1 = p_2$.
+              Never pool for a CI.
+        \item Two-sample $t$ df: let technology compute Welch df; do not use $n_1+n_2-2$.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction: AP Four-Step Write-Up for a Significance Test]{sky}
+\begin{minipage}[t]{0.46\linewidth}
+    \textbf{The Four Steps}
+    \begin{enumerate}
+        \item \textbf{State.} Name the procedure. State $H_0$ and $H_a$ in terms of the
+              population parameter. Define symbols in context.
+        \item \textbf{Plan.} List each condition. Verify with numbers from the problem.
+              State whether each condition is met.
+        \item \textbf{Do.} Show the formula and substitution for the test statistic.
+              Report the $p$-value.
+        \item \textbf{Conclude.} ``Because $p$-value [$ < $ or $ \ge $] $\alpha = 0.05$,
+              I [reject / fail to reject] $H_0$. There [is / is not] sufficient evidence
+              to conclude that [restate $H_a$ in context].''
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.50\linewidth}
+    \textbf{Worked Example: Resting Heart Rate}\\
+    \textit{Elite: $n_1=20$, $\bar x_1=52$, $s_1=6$. \;
+    Recreational: $n_2=20$, $\bar x_2=61$, $s_2=8$. \\
+    Is there evidence elite cyclists have a lower mean HR? ($\alpha=0.05$)}
+    \begin{enumerate}
+        \item \textbf{State:} Two-sample $t$-test for $\mu_1-\mu_2$; $\mu_1$ = mean HR (elite),
+              $\mu_2$ = mean HR (recreational). $H_0: \mu_1-\mu_2=0$; $H_a: \mu_1-\mu_2<0$.
+        \item \textbf{Plan:} Random (given). 10\%: $20 \le 10\%$ of all cyclists (assumed large
+              population). Normal: $n_1=n_2=20$; no outliers stated; conditions met.
+        \item \textbf{Do:} $SE = \sqrt{6^2/20 + 8^2/20} \approx 2.24$;
+              $t = (52-61)/2.24 \approx -4.02$; $df \approx 34$ (technology); $p < 0.001$.
+        \item \textbf{Conclude:} Because $p < 0.05$, reject $H_0$. There is sufficient evidence
+              that the mean HR of elite cyclists is lower than that of recreational cyclists.
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction: Four-Step Write-Up for a Confidence Interval]{sky}
+\begin{minipage}[t]{0.46\linewidth}
+    \textbf{The Four Steps for a CI}
+    \begin{enumerate}
+        \item \textbf{State.} ``I will construct a [level]\% [procedure name].''
+              Define the parameter in context.
+        \item \textbf{Plan.} Same conditions as the corresponding test. Verify each.
+        \item \textbf{Do.} Compute $\text{statistic} \pm (\text{critical value}) \times SE$.
+              Report the interval $(L,\, U)$.
+        \item \textbf{Conclude.} ``We are [level]\% confident that the [parameter in context]
+              is between $L$ and $U$.''
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.50\linewidth}
+    \textbf{CI vs.\ Significance Test --- When to Use Which}
+    \begin{itemize}
+        \item Use a \textbf{significance test} when there is a specific null value to evaluate
+              (``Is the mean exactly 50?''; ``Are the two proportions equal?'').
+        \item Use a \textbf{confidence interval} when the goal is to \emph{estimate} a parameter
+              or when the question asks ``how large is the difference?''
+        \item A CI can substitute for a two-sided test: if the null value falls outside the CI,
+              reject $H_0$.
+        \item AP rubric note: when a question says ``use a confidence interval to determine
+              whether,'' compute the CI and check whether the null value is captured.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Circulate and Check}
+    \begin{itemize}
+        \item Students name the correct procedure and can articulate both decision criteria.
+        \item Hypotheses use population parameters, not sample statistics.
+        \item Conditions are verified with numbers, not just stated as ``met.''
+        \item Conclusions connect $p$-value to $\alpha$ explicitly and restate $H_a$ in context.
+        \item Students distinguish matched pairs from two independent samples.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Cold-Call Prompts}
+    \begin{itemize}
+        \item ``What two questions do you ask to identify the procedure?''
+        \item ``Is this matched pairs or two independent samples? How do you know?''
+        \item ``Your $p$-value is 0.08 and $\alpha=0.05$ --- what is your conclusion?
+              What if $\alpha=0.10$?''
+        \item ``The 95\% CI is $(1.2,\; 4.8)$. Does it suggest a real difference? How?''
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{multicols}{3}
+    \textbf{Tier R --- Remediate}
+    \begin{itemize}
+        \item Provide the selection table as a reference.
+        \item Activity: identify the procedure and list the conditions only (no calculation).
+        \item Focus on the two decision questions.
+    \end{itemize}
+    \columnbreak
+    \textbf{Tier A --- Approaching}
+    \begin{itemize}
+        \item Complete all three activity scenarios (select, set up, carry out, conclude).
+        \item Write full four-step responses in AP-exam language.
+    \end{itemize}
+    \columnbreak
+    \textbf{Tier E --- Extension}
+    \begin{itemize}
+        \item Complete all scenarios plus critique a provided student AP response.
+        \item Identify and correct two errors in procedure choice, conditions, or conclusion.
+    \end{itemize}
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    Two brief scenarios: students name the correct procedure and state one key condition.
+    \begin{enumerate}
+        \item A researcher surveys 150 randomly selected voters and wants to estimate the
+              true proportion who support a ballot measure.
+        \item A teacher assigns 32 students to two tutoring methods and tests whether mean
+              post-test scores differ between methods.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{Resting pulse rates recorded for 30 randomly selected women and 30 randomly selected
+    men. Test whether mean rates differ. Which procedure?}
+    \begin{enumerate}[label=(\Alph*)]
+        \item One-sample $t$-test for $\mu$
+        \item Matched-pairs $t$-test for $\mu_d$
+        \item Two-sample $t$-test for $\mu_1-\mu_2$ \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+        \item Two-sample $z$-test for $p_1-p_2$
+    \end{enumerate}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework Overview}
+    \begin{itemize}
+        \item Five AP-style problems spanning all six inference procedures; at least one
+              requires a complete four-step write-up.
+        \item One problem asks students to critique a provided response and identify errors.
+        \item Extension question: when is a CI more informative than a significance test?
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Spiral Review}
+    \begin{itemize}
+        \item All six procedure names, parameters, and distributions (Units 6--7)
+        \item Four-step write-up for both CIs and significance tests
+        \item $p$-value interpretation and conclusion language
+    \end{itemize}
+    \textbf{Preview}\\
+    Unit 8 introduces chi-square tests --- a new class of procedures for categorical data
+    with more than two categories. The same four-step structure applies.
+\end{minipage}
 \end{skillbox}
+
 \end{document}
