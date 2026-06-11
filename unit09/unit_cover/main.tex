@@ -1,0 +1,81 @@
+%! AP Statistics — Unit 9 Cover Sheet
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+% ── Full-bleed navy banner ────────────────────────────────────────────────────
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[navy] (current page.north west)
+    rectangle ([yshift=-1.4in]current page.north east);
+\end{tikzpicture}
+\vspace{-1.3in}
+
+\begin{center}
+  {\color{white}\bfseries\fontsize{24}{30}\selectfont AP Statistics}\\[5pt]
+  {\color{goldacc}\bfseries\large Shepherd \quad 2026--2027}\\[10pt]
+  {\color{white}\bfseries\Large Unit 9: Inference for Quantitative Data: Slopes}\\[3pt]
+\end{center}
+
+\vspace{0.18in}
+
+% ── Unit overview ─────────────────────────────────────────────────────────────
+\begin{tcolorbox}[colback=sky,colframe=navy,boxrule=0.9pt,arc=2mm,
+    left=4mm,right=4mm,top=2mm,bottom=2mm]
+  \small\textbf{Unit Overview.}\quad
+  Unit 9 applies the inference framework to linear regression.
+  Students construct and interpret confidence intervals for the slope of a
+  population regression model, then perform significance tests to assess whether a
+  linear relationship exists between two quantitative variables.
+  The unit closes with a synthesis lesson in which students select the appropriate
+  inference procedure across all procedures studied in the course.
+\end{tcolorbox}
+
+\vspace{0.14in}
+
+% ── Lessons in this unit ──────────────────────────────────────────────────────
+\renewcommand{\arraystretch}{1.35}
+\begin{skillbox}[Lessons in This Unit]{goldbox}
+\small
+\begin{tabularx}{\linewidth}{@{} c >{\bfseries}p{0.46\linewidth} X @{}}
+  \textbf{\#} & \textbf{Title} & \textbf{Focus} \\
+  \hline
+  9.1 & Introducing Statistics: Do Those Points Align?
+      & Revisiting scatterplots and LSRL; sampling variability of slope; motivating inference. \\
+  \hline
+  9.2 & Confidence Intervals for the Slope of a Regression Model
+      & $t$-interval for slope; standard error of $\hat{\beta}_1$; conditions; interpretation. \\
+  \hline
+  9.3 & Justifying a Claim About the Slope of a Regression Model Based on a Confidence Interval
+      & Using a CI to support or refute a claim; four-step write-up. \\
+  \hline
+  9.4 & Setting Up a Test for the Slope of a Regression Model
+      & Hypotheses; $t$-statistic for slope; conditions for inference on slope. \\
+  \hline
+  9.5 & Carrying Out a Test for the Slope of a Regression Model
+      & Computing $t$ and $p$-value; decision; conclusion in context; full four-step. \\
+  \hline
+  9.6 & Skills Focus: Selecting an Appropriate Inference Procedure
+      & Choosing among all confidence interval and significance test procedures; AP exam synthesis. \\
+  \hline
+\end{tabularx}
+\end{skillbox}
+
+\vspace{0.12in}
+
+% ── Standards covered ─────────────────────────────────────────────────────────
+\begin{skillbox}[AP Statistics Big Ideas \& Learning Objectives --- Unit 9]{greenbox}
+\small
+\begin{tabularx}{\linewidth}{@{} >{\bfseries}p{0.18\linewidth} X @{}}
+  VAR-1.J   & Identify questions suggested by the relationship between two quantitative variables in context. \\
+  VAR-7.A   & Describe a regression model for a population; identify parameters $\alpha$, $\beta_1$, and $\sigma$. \\
+  UNC-4.AH  & Construct and interpret a confidence interval for the slope of a regression model. \\
+  UNC-4.AI  & Justify a claim about a population slope based on a confidence interval. \\
+  VAR-7.B; VAR-7.C  & State hypotheses for a test about slope; identify the $t$ test for slope and verify conditions. \\
+  VAR-7.D; DAT-3.I  & Calculate the $t$ statistic and $p$-value for a test on slope; state a conclusion in context. \\
+  DAT-3.J   & Select an appropriate inference procedure for a given situation involving quantitative data. \\
+\end{tabularx}
+\end{skillbox}
+
+\end{document}
