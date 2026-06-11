@@ -1,0 +1,108 @@
+%! AP Statistics — Unit 8, Lesson 8.5 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.5}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+    \item \ansline{Distinguish between a chi-square test for homogeneity and a test for independence based on the study design.}
+    \item \ansline{State appropriate $H_0$ and $H_a$ for each type of chi-square test.}
+    \item \ansline{Verify the conditions required for chi-square tests for two-way tables.}
+\end{itemize}
+\end{objectivebox}
+
+\vspace{0.08in}
+
+\begin{vocabbox}
+\termblanklong{test for homogeneity}
+\ansline{A chi-square test that compares the distribution of one categorical variable across two or more populations or treatment groups.}
+\termblanklong{test for independence}
+\ansline{A chi-square test that determines whether two categorical variables are associated in a single population.}
+\termblanklong{association}
+\ansline{A relationship between two variables such that knowing one variable's value changes the probability distribution of the other.}
+\termblanklong{stratified random sample}
+\ansline{A sampling method in which the population is divided into subgroups (strata) and a random sample is drawn from each stratum.}
+\end{vocabbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Section 1: Two Study Designs}
+\begin{minipage}[t]{0.47\linewidth}
+    \textbf{Design Type 1:} One sample \\
+    We measure \textbf{two} categorical variables on each individual.\\
+    We want to know if \ans{there is an association} \\
+    between the two variables.\\[6pt]
+    $\Rightarrow$ This is a test for \ans{independence}.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.47\linewidth}
+    \textbf{Design Type 2:} Multiple groups \\
+    We measure \textbf{one} categorical variable on each group.\\
+    We want to know if \ans{the distributions are the same} \\
+    across the groups.\\[6pt]
+    $\Rightarrow$ This is a test for \ans{homogeneity}.
+\end{minipage}
+
+\vspace{0.1in}
+\textbf{Decision Questions:}
+\begin{enumerate}
+    \item Were data collected from \ans{one} sample(s) or \ans{multiple} groups?
+    \item Were \ans{one} or \ans{two} categorical variables measured per individual?
+\end{enumerate}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Section 2: Hypotheses}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{l X X}
+    & \textbf{Test for Homogeneity} & \textbf{Test for Independence} \\
+    \hline
+    $H_0$ & There is \ans{no} difference in the distributions of \ans{[variable]} across \ans{[groups]}.
+           & There is \ans{no} association between \ans{[var 1]} and \ans{[var 2]} in the population. \\
+    $H_a$ & There \ans{is} a difference in distributions (at least one group differs).
+           & There \ans{is} an association between the two variables. \\
+\end{tabularx}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Section 3: Conditions}
+\textbf{1. Independence condition}
+\begin{itemize}
+    \item For a test for homogeneity: data come from a \ans{stratified random sample} or a \ans{randomized experiment}.
+    \item For a test for independence: data come from a \ans{simple random sample (SRS)}.
+    \item When sampling without replacement: $n \le$ \ans{10}\% of $N$.
+\end{itemize}
+\textbf{2. Large-counts condition}
+\begin{itemize}
+    \item All \ans{expected} counts must be greater than \ans{5}.
+    \item Formula: $E = \dfrac{(\text{row total})(\text{\ans{column total}})}{n}$
+\end{itemize}
+\end{notesbox}
+
+\vspace{0.08in}
+
+\begin{notesbox}{Section 4: Classify Each Scenario}
+\begin{enumerate}[label=\alph*.]
+    \item A researcher randomly selects 100 students from each of three high schools
+          (Schools A, B, C) and asks which extracurricular activity (Sports/Arts/Neither)
+          each student participates in. \\[4pt]
+          Test type: \ans{test for homogeneity} \quad Because: \ansline{Three separate random samples (one per school) measure one categorical variable (extracurricular activity).}
+
+    \item A random sample of 300 adults is asked their political affiliation
+          (Democrat/Republican/Independent) and their view on a new policy (Support/Oppose).\\[4pt]
+          Test type: \ans{test for independence} \quad Because: \ansline{One random sample measures two categorical variables (political affiliation and policy view) on each individual.}
+\end{enumerate}
+\end{notesbox}
+
+\end{document}

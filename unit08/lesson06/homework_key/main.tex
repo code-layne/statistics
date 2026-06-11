@@ -1,0 +1,103 @@
+%! AP Statistics — Unit 8, Lesson 8.6 — Homework (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.6}{Homework --- Answer Key}
+\namedateperiod
+
+\vspace{0.08in}
+
+\textit{Show all work. Use all four SPDC steps for Problem 1.}
+
+\begin{enumerate}[itemsep=10pt]
+
+%% Problem 1 %%
+\item \textbf{Sleep and Grade Level.}
+
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{@{} l c c c @{}}
+\hline
+           & \textbf{$<$7 hrs} & \textbf{7$+$ hrs} & \textbf{Total} \\
+\hline
+9th grade  & 30 & 30 & 60  \\
+10th grade & 38 & 22 & 60  \\
+11th grade & 42 & 18 & 60  \\
+\hline
+\textbf{Total} & 110 & 70 & 180 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[label=\alph*., itemsep=6pt]
+  \item \textbf{State.}
+        Test type: \ans{Homogeneity --- three separate groups (grade levels) each randomly sampled; one variable (sleep amount).}
+
+        $H_0$: \ansline{The distribution of sleep amount is the same across all three grade levels.}
+        $H_a$: \ansline{The distribution of sleep amount differs for at least one grade level.}
+
+  \item \textbf{Plan.} Method: \ans{Chi-square test for homogeneity.}
+        Random: \ansline{Random selection stated in the problem.}
+
+        $E_{\text{9th, }<7} = \dfrac{60 \times 110}{180} = $ \ans{36.67}
+        \quad $E_{\text{9th, }7+} = \dfrac{60 \times 70}{180} = $ \ans{23.33}
+
+        \ans{All three grade levels have the same expected counts (36.67 and 23.33), all $\ge 5$. Condition met.}
+
+  \item \textbf{Do.} $\text{df} = ($ \ans{3} $-1)($ \ans{2} $-1) = $ \ans{2}
+
+        \renewcommand{\arraystretch}{1.6}
+        \begin{center}
+        \begin{tabular}{@{} l c c @{}}
+        \hline
+                   & \textbf{$<$7 hrs} & \textbf{7$+$ hrs} \\
+        \hline
+        9th grade  & $\dfrac{(30-{\color{keyred}\mathbf{36.67}})^2}{{\color{keyred}\mathbf{36.67}}} \approx 1.21$
+                   & $\dfrac{(30-{\color{keyred}\mathbf{23.33}})^2}{{\color{keyred}\mathbf{23.33}}} \approx 1.91$ \\
+        10th grade & \ans{$\dfrac{(38-36.67)^2}{36.67} \approx 0.05$} & \ans{$\dfrac{(22-23.33)^2}{23.33} \approx 0.08$} \\
+        11th grade & \ans{$\dfrac{(42-36.67)^2}{36.67} \approx 0.78$} & \ans{$\dfrac{(18-23.33)^2}{23.33} \approx 1.22$} \\
+        \hline
+        \end{tabular}
+        \end{center}
+
+        $\chi^2 = 1.21 + 1.91 + 0.05 + 0.08 + 0.78 + 1.22 \approx $ \ans{5.25}
+
+        \begin{teachernote}
+        Exact: $(30-36.\overline{6})^2/36.\overline{6} + \cdots$. With exact fractions $\chi^2 = 5.25$; rounding intermediate steps may give 5.25--5.33. Using the table: df = 2, $\chi^2 = 5.25$ falls between 4.605 ($p = 0.10$) and 5.991 ($p = 0.05$), so the p-value is between 0.05 and 0.10. Accept $p \approx 0.07$ from technology.
+        \end{teachernote}
+
+        p-value: \ans{Between 0.05 and 0.10 (from table, df = 2: $\chi^2 = 5.25$ lies between 4.605 and 5.991); technology gives $p \approx 0.072$.}
+
+  \item \textbf{Conclude.} At $\alpha = 0.05$:
+        \ansline{Because $p \approx 0.07 > \alpha = 0.05$, we fail to reject $H_0$. We do not have convincing evidence that the distribution of sleep amount differs across grade levels.}
+        \ansline{}
+\end{enumerate}
+
+\vspace{0.1in}
+
+%% Problem 2 %%
+\item \textbf{Degrees of Freedom.}
+
+\begin{enumerate}[label=\alph*.]
+  \item $\text{df} = (2-1)(4-1) = $ \ans{3}
+  \item Critical value at $\alpha = 0.05$, df $= 3$: \ans{7.815} (from table)
+  \item \ansline{$\chi^2 = 9.21 > 7.815$, so yes, the student can reject $H_0$ at $\alpha = 0.05$. The p-value is less than 0.05 (in fact, between 0.025 and 0.05).}
+\end{enumerate}
+
+\vspace{0.1in}
+
+%% Problem 3 %%
+\item \textbf{Conceptual Question.}
+
+\ansline{A larger $\chi^2$ value means the observed counts deviate more from the expected counts we would predict if $H_0$ were true. These larger deviations are less likely to occur by random chance alone. In terms of the chi-square distribution, a larger test statistic falls farther in the right tail, resulting in a smaller p-value. A smaller p-value means the data provide stronger evidence against $H_0$, making it more likely that the variables are truly associated (or the distributions differ).}
+\ansline{}
+\ansline{}
+\ansline{}
+
+\end{enumerate}
+
+\end{document}

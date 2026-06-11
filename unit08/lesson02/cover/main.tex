@@ -1,0 +1,53 @@
+%! AP Statistics — Unit 8, Lesson 8.2 — Student Packet Cover Sheet
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[navy] (current page.north west) rectangle
+    ([yshift=-2.2cm]current page.north east);
+  \node[anchor=west, white, font=\large\bfseries] at
+    ([xshift=1cm, yshift=-0.7cm]current page.north west)
+    {\CourseName: \SchoolYear};
+  \node[anchor=west, white, font=\normalsize] at
+    ([xshift=1cm, yshift=-1.3cm]current page.north west)
+    {Unit 8: Inference for Categorical Data: Chi-Square};
+  \node[anchor=west, white, font=\normalsize\bfseries] at
+    ([xshift=1cm, yshift=-1.9cm]current page.north west)
+    {Lesson 8.2 \quad Setting Up a Chi-Square Test for Goodness of Fit};
+\end{tikzpicture}
+
+\vspace{2.4cm}
+\namedateperiod
+
+\begin{learningtargetbox}
+\begin{itemize}
+    \item I can describe the shape, center, and spread of a chi-square distribution
+          and explain how degrees of freedom affect its skewness.
+    \item I can state H$_0$ and H$_a$ for a chi-square goodness of fit test, including
+          all category proportions in the null hypothesis.
+    \item I can calculate expected counts using $E = n \cdot p_0$ for each category.
+    \item I can verify the Random and Large Counts ($E \ge 5$) conditions for a
+          chi-square GOF test.
+\end{itemize}
+\end{learningtargetbox}
+
+\begin{tocbox}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{clXc}
+    \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
+    \hline
+    1 & Warm-Up      & Spiral review: proportions, hypotheses, Unit 6 conditions & \hfill/6 \\
+    2 & Guided Notes & Chi-square distribution, hypotheses, expected counts, conditions & \hfill/12 \\
+    3 & Activity     & M\&M Color Distribution Study: set up a GOF test & \hfill/15 \\
+    4 & Exit Ticket  & Independent: hypotheses, expected counts, condition check & \hfill/6 \\
+    5 & Homework     & Practice setting up chi-square GOF tests & \hfill/12 \\
+    \hline
+       & \multicolumn{2}{l}{\textbf{Total}} & \hfill/51 \\
+\end{tabularx}
+\end{tocbox}
+
+\end{document}

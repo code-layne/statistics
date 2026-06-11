@@ -1,0 +1,269 @@
+%! Skills Focus: Selecting an Appropriate Inference Procedure for Categorical Data — Unit 8, Lesson 8.7 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\UnitNumberName}{Unit 8: Inference for Categorical Data: Chi-Square \quad}
+\newcommand{\LessonNumberName}{Lesson 8.7: Skills Focus --- Selecting an Appropriate Inference Procedure for Categorical Data}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will identify the correct inference procedure for any
+    categorical data scenario by distinguishing among the five categorical inference procedures
+    (z-tests/intervals for proportions, chi-square goodness-of-fit, chi-square homogeneity, and
+    chi-square independence), and will explain why each procedure is or is not appropriate.
+    (Big Idea: VAR, UNC)
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 1 --- Selecting Statistical Methods}
+    \begin{itemize}
+        \item Identify the appropriate categorical inference procedure for a given scenario
+              by recognizing the parameter structure: one proportion, difference of proportions,
+              or a categorical distribution (Skill 1.E; VAR-6, UNC-4).
+        \item Distinguish between a z-procedure (one or two proportions) and a chi-square
+              procedure (three or more categories, or a two-way table) (Skill 1.D).
+        \item Recognize whether a scenario calls for a confidence interval vs.\
+              a significance test (Skill 1.D).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item Two-category binary questions $\to$ z-procedure. Three or more categories, or a
+              two-way table $\to$ chi-square.
+        \item Chi-square GOF: one variable, comparing an observed distribution to a claimed one.
+        \item Chi-square homogeneity: one categorical variable, compare across two or more groups.
+        \item Chi-square independence: two categorical variables recorded on one sample.
+        \item Homogeneity and independence use the same test statistic and mechanics, but
+              hypotheses and conclusions differ based on study design.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\textbf{Categorical Inference Procedure Selection Table}
+
+\medskip
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} p{0.17\linewidth} p{0.22\linewidth} p{0.14\linewidth} X @{}}
+  \rowcolor{sky}
+  \textbf{Parameter / Structure} & \textbf{Trigger Words} & \textbf{Goal} & \textbf{Procedure Name} \\
+  \hline
+  One proportion $p$ & one group, binary outcome & CI & One-sample $z$-interval for $p$ \\
+  One proportion $p$ & one group, binary outcome & Test & One-sample $z$-test for $p$ \\
+  $p_1 - p_2$ & two groups, binary outcome & CI & Two-sample $z$-interval for $p_1-p_2$ \\
+  $p_1 - p_2$ & two groups, binary outcome & Test & Two-sample $z$-test for $p_1-p_2$ \\
+  Distribution over $\ge 3$ categories & one sample, claimed distribution & Test & Chi-square goodness-of-fit test \\
+  One categorical variable & two or more independent groups & Test & Chi-square test for homogeneity \\
+  Two categorical variables & one sample, two-way table & Test & Chi-square test for independence \\
+\end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+    \textbf{Spiral Review (warm-up)}
+    \begin{itemize}
+        \item Names and key conditions for all five categorical inference procedures
+              (Units 6 and 8)
+        \item Recognizing parameter type from scenario language
+        \item Distinguishing binary outcomes from multi-category outcomes
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
+    % Authored warm-up compiles to target/ — no source PDF to embed here.
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Hook]{sky}
+\begin{minipage}[t]{0.55\linewidth}
+    \textbf{Which Procedure? (3--4 min)}\\
+    Display two scenarios side by side:\\[4pt]
+    A: ``A researcher surveys 200 students and records their favorite season (Fall, Winter,
+    Spring, Summer). Is this consistent with equal preference for all seasons?''\\[4pt]
+    B: ``A researcher surveys 200 students and records whether each prefers warmer months
+    ($\ge$ Spring/Summer) or cooler months (Fall/Winter). Is the proportion who prefer
+    warmer months equal to 0.5?''\\[4pt]
+    Ask: ``Both involve seasons and preferences. Why are these different procedures?''
+    Facilitate a 60-second Think-Pair-Share.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.40\linewidth}
+    \textbf{The Key Diagnostic Questions}
+    \begin{enumerate}
+        \item \textbf{How many categories?}\\
+              Two (binary) $\to$ z-procedure\\
+              Three or more $\to$ chi-square
+        \item \textbf{How many variables / groups?}\\
+              One variable, one sample: GOF or z-interval/test\\
+              One variable, two+ groups: homogeneity\\
+              Two variables, one sample: independence
+        \item \textbf{Estimate or test?}\\
+              ``What is the range?'' $\to$ CI (z only)\\
+              ``Is there evidence for a claim?'' $\to$ test
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Lesson: The Decision Framework]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Step-by-Step Procedure Selection}
+    \begin{enumerate}
+        \item \textbf{Count the categories.}\\
+              Binary (success/failure, yes/no): z-procedure.\\
+              Three or more: chi-square.
+        \item \textbf{Identify the design.}\\
+              Single sample + claimed distribution $\to$ GOF.\\
+              Two+ independent groups, one categorical variable $\to$ homogeneity.\\
+              Two categorical variables, one sample $\to$ independence.
+        \item \textbf{Decide: CI or test?}\\
+              CI applies only to z (proportion) procedures.\\
+              Chi-square procedures are always significance tests.
+        \item \textbf{Name the procedure} exactly.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homogeneity vs.\ Independence --- How to Tell}
+    \begin{itemize}
+        \item \textbf{Homogeneity:} Data come from \emph{separate} random samples (one per
+              group). The question is whether the distribution of a categorical variable is the
+              same across groups.
+              ``Were freshmen and seniors randomly selected separately, then asked about
+              preferred communication style?'' $\to$ homogeneity.
+        \item \textbf{Independence:} Data come from \emph{one} random sample; two categorical
+              variables are recorded for each subject.
+              ``Was one random sample of students taken, and both grade level and communication
+              preference recorded for each?'' $\to$ independence.
+        \item Same $\chi^2$ statistic and table; different hypotheses and conclusions.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction: Hypotheses and Conditions by Procedure]{sky}
+\renewcommand{\arraystretch}{1.9}
+\begin{tabularx}{\linewidth}{@{} p{0.22\linewidth} X X @{}}
+  \rowcolor{sky}
+  \textbf{Procedure} & \textbf{$H_0$ form} & \textbf{Key Condition (beyond Random/10\%)} \\
+  \hline
+  One-sample $z$-test & $H_0: p = p_0$ & Large Counts: $np_0 \ge 10$ and $n(1-p_0) \ge 10$ \\
+  Two-sample $z$-test & $H_0: p_1 = p_2$ & Large Counts: all four $n\hat p$ and $n(1-\hat p) \ge 10$ \\
+  Chi-square GOF & $H_0$: the distribution of [variable] is [claimed distribution] & Expected counts $\ge 5$ in each cell \\
+  Chi-square homogeneity & $H_0$: the distribution of [variable] is the same across all groups & Expected counts $\ge 5$ in each cell \\
+  Chi-square independence & $H_0$: there is no association between [var 1] and [var 2] & Expected counts $\ge 5$ in each cell \\
+\end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Circulate and Check}
+    \begin{itemize}
+        \item Students name the correct procedure and can articulate why (binary vs.\ multi-category;
+              one group vs.\ two+ groups vs.\ one sample with two variables).
+        \item Hypotheses use the correct parameter language for each procedure.
+        \item Students do not confuse homogeneity with independence.
+        \item Conditions are checked with numbers, not merely stated as ``met.''
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Cold-Call Prompts}
+    \begin{itemize}
+        \item ``There are four categories --- which class of procedures does that trigger?''
+        \item ``The researcher took one sample and recorded two variables --- homogeneity or
+              independence?''
+        \item ``Why can't we use chi-square to produce a confidence interval?''
+        \item ``State $H_0$ for a chi-square test of independence.''
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{multicols}{3}
+    \textbf{Tier R --- Remediate}
+    \begin{itemize}
+        \item Provide the selection table as a reference.
+        \item Activity: identify procedure and state the form of $H_0$ only.
+        \item Focus on the binary vs.\ multi-category diagnostic.
+    \end{itemize}
+    \columnbreak
+    \textbf{Tier A --- Approaching}
+    \begin{itemize}
+        \item Complete all six activity scenarios (identify, state hypotheses, check conditions).
+        \item Distinguish homogeneity from independence in their own words.
+    \end{itemize}
+    \columnbreak
+    \textbf{Tier E --- Extension}
+    \begin{itemize}
+        \item Complete all scenarios plus critique a provided student response.
+        \item Explain when a two-sample $z$-test is preferred over chi-square homogeneity
+              even when both are technically valid.
+    \end{itemize}
+\end{multicols}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    Two to three brief scenarios: students name the correct procedure and state $H_0$.
+    \begin{enumerate}
+        \item A researcher surveys a random sample of 300 college students, recording gender
+              (male/female) and whether each owns a car (yes/no). Test for an association.
+        \item A candy company claims its bags contain 30\% red, 20\% orange, 20\% yellow,
+              20\% green, and 10\% blue pieces. A student counts colors in one bag to test
+              this claim.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{A political scientist randomly selects 150 voters from each of three regions and asks
+    each voter's party affiliation (Democrat, Republican, Independent). She wants to test
+    whether party affiliation distribution is the same in all three regions. Which procedure?}
+    \begin{enumerate}[label=(\Alph*)]
+        \item One-sample $z$-test for $p$
+        \item Two-sample $z$-test for $p_1-p_2$
+        \item Chi-square goodness-of-fit test
+        \item Chi-square test for homogeneity \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework Overview}
+    \begin{itemize}
+        \item Five AP-style scenario identification problems spanning all five categorical
+              inference procedures; at least one requires a full four-step set-up (state + plan).
+        \item One problem asks students to compare two procedures that could both apply and
+              explain which is preferred and why.
+        \item Extension: why chi-square procedures do not produce confidence intervals.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Spiral Review}
+    \begin{itemize}
+        \item All five categorical procedure names and triggering data structures
+        \item Condition names for chi-square vs.\ z-procedures
+        \item Hypothesis language for each procedure type
+    \end{itemize}
+    \textbf{Preview}\\
+    Unit 8 concludes with the Sample Test --- students will apply all categorical inference
+    procedures under timed, AP-exam conditions.
+\end{minipage}
+\end{skillbox}
+
+\end{document}

@@ -1,0 +1,54 @@
+%! Skills Focus: Selecting an Appropriate Inference Procedure for Categorical Data — Unit 8, Lesson 8.7 — Exit Ticket (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.7}{Exit Ticket --- Answer Key}
+\namedateperiod
+
+\vspace{0.12in}
+
+\textit{For each scenario: (a) name the correct inference procedure, and (b) write $H_0$ in
+the appropriate parameter language. No computation is required.}
+
+\vspace{0.10in}
+\begin{enumerate}
+
+\item A researcher collects one random sample of 300 college students and records two
+      variables: each student's political affiliation (Democrat, Republican, Independent, Other)
+      and whether the student voted in the last election (yes or no). The researcher wants to
+      test for an association between political affiliation and voter participation.
+
+      \begin{enumerate}[label=\alph*.]
+        \item Procedure: \ans{chi-square test for independence}
+        \item $H_0$ (write in context): \ansline{There is no association between political affiliation and voter participation among college students.}
+      \end{enumerate}
+
+\vspace{0.14in}
+
+\item A candy company claims its fruit snack bags are distributed as follows: 25\% strawberry,
+      25\% grape, 25\% orange, and 25\% cherry. A quality inspector randomly samples 160 bags and
+      counts the flavor of one piece in each. He wants to test whether the actual distribution
+      matches the company's claim.
+
+      \begin{enumerate}[label=\alph*.]
+        \item Procedure: \ans{chi-square goodness-of-fit test}
+        \item $H_0$ (write in context): \ansline{The distribution of flavors in fruit snack bags is 25\% strawberry, 25\% grape, 25\% orange, and 25\% cherry.}
+      \end{enumerate}
+
+\vspace{0.14in}
+
+\item A public health researcher randomly samples 200 adults from a rural county and 200 adults
+      from an urban county. She records whether each adult has health insurance (yes or no). She
+      wants to estimate how much higher the insured proportion is in the urban county.
+
+      \begin{enumerate}[label=\alph*.]
+        \item Procedure: \ans{two-sample $z$-interval for $p_1 - p_2$}
+        \item Why is a confidence interval (not a test) appropriate here? \ansline{The goal is to \emph{estimate} the magnitude of the difference in proportions (``how much higher''), not to test a specific claim about equality. A CI provides a range for $p_{\text{urban}} - p_{\text{rural}}$.}
+      \end{enumerate}
+
+\end{enumerate}
+
+\end{document}

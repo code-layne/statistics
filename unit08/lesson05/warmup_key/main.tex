@@ -1,0 +1,64 @@
+%! AP Statistics — Unit 8, Lesson 8.5 — Warm-Up (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.5}{Warm-Up --- Answer Key}
+\namedateperiod
+
+\vspace{0.12in}
+
+A two-way table summarizes data from $n = 180$ observations.
+
+\vspace{0.08in}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{0.78\linewidth}{l ccc c}
+    & \textbf{Category 1} & \textbf{Category 2} & \textbf{Category 3} & \textbf{Row Total} \\
+    \hline
+    \textbf{Group A} & 30 & 24 & 6  & 60  \\
+    \textbf{Group B} & 50 & 56 & 14 & 120 \\
+    \hline
+    \textbf{Col Total} & 80 & 80 & 20 & 180 \\
+\end{tabularx}
+
+\vspace{0.12in}
+
+\begin{enumerate}
+
+  \item Calculate the expected count for the Group A / Category 1 cell.
+        Show your work using the formula $E = \dfrac{(\text{row total})(\text{col total})}{n}$.
+
+        \ansline{$E = (60 \times 80) \div 180 = 4800 \div 180 \approx 26.67$}
+
+  \item Calculate the expected count for the Group B / Category 3 cell.
+        Show your work.
+
+        \ansline{$E = (120 \times 20) \div 180 = 2400 \div 180 \approx 13.33$}
+
+  \item Compute all six expected counts and record them in the table below.
+        Then check the large-counts condition: is it satisfied?
+
+        \vspace{0.06in}
+        \renewcommand{\arraystretch}{1.6}
+        \begin{tabularx}{0.78\linewidth}{l ccc}
+            & \textbf{Category 1} & \textbf{Category 2} & \textbf{Category 3} \\
+            \hline
+            \textbf{Group A} & \ans{26.67} & \ans{26.67} & \ans{6.67} \\
+            \textbf{Group B} & \ans{53.33} & \ans{53.33} & \ans{13.33} \\
+        \end{tabularx}
+
+        \vspace{0.06in}
+        Large-counts condition satisfied? \ans{Yes} \quad Explain: \ans{All six expected counts are greater than 5.}
+
+        \begin{teachernote}
+            Expected counts: A/C1 = 26.67, A/C2 = 26.67, A/C3 = 6.67;
+            B/C1 = 53.33, B/C2 = 53.33, B/C3 = 13.33.
+            The smallest is 6.67, which exceeds 5, so the large-counts
+            condition is satisfied.
+        \end{teachernote}
+
+\end{enumerate}
+
+\end{document}

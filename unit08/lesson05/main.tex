@@ -1,0 +1,324 @@
+%! AP Statistics — Unit 8, Lesson 8.5 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\newcommand{\UnitNumberName}{Unit 8: Inference for Categorical Data: Chi-Square \quad}
+\newcommand{\LessonNumberName}{Lesson 8.5: Setting Up a Chi-Square Test for Homogeneity or Independence}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will distinguish between chi-square tests for
+    homogeneity and independence based on study design, state appropriate hypotheses for
+    each test type, and verify the conditions required for two-way table chi-square tests.
+    (Big Idea: VAR)
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 1.E --- Identifying an Appropriate Inference Procedure}
+    \begin{itemize}
+        \item Identify the appropriate chi-square test (homogeneity vs.\ independence)
+              based on the study design (VAR-8.J).
+        \item Key distinguisher: homogeneity = multiple groups, one categorical variable;
+              independence = one sample, two categorical variables.
+    \end{itemize}
+    \textbf{AP Skill 1.F --- Identifying Hypotheses}
+    \begin{itemize}
+        \item State $H_0$ and $H_a$ correctly for each test type (VAR-8.I).
+        \item Homogeneity: hypothesize about whether distributions are the same across groups.
+        \item Independence: hypothesize about whether an association exists.
+    \end{itemize}
+    \textbf{AP Skill 4.C --- Verifying Conditions}
+    \begin{itemize}
+        \item Independence condition and large-counts condition for two-way table tests (VAR-8.K).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item Both tests use the \emph{same} chi-square statistic formula and the
+              \emph{same} degrees of freedom: $df = (\text{rows}-1)(\text{cols}-1)$.
+              The difference lies entirely in study design, hypothesis wording, and
+              conclusion wording.
+        \item Test for \textbf{homogeneity}: researcher draws separate random samples from
+              two or more populations (or assigns treatments), then records one categorical
+              variable. Goal: compare distributions across groups.
+        \item Test for \textbf{independence}: researcher draws one random sample from one
+              population, then records two categorical variables on each individual.
+              Goal: determine whether the two variables are associated.
+        \item Conditions: (1) random sampling or random assignment; (2) if sampling without
+              replacement, $n \le 10\%N$; (3) all expected counts $> 5$.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Test for homogeneity} --- a chi-square test that compares the
+              distribution of one categorical variable across two or more populations
+              or treatment groups
+        \item \textbf{Test for independence} --- a chi-square test that determines
+              whether two categorical variables are associated in a single population
+        \item \textbf{Association} --- a relationship between two variables such that
+              knowing one variable's value changes the probability distribution of the other
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Stratified random sample} --- a sampling method in which the
+              population is divided into subgroups (strata) and a random sample is
+              drawn from each stratum; used in homogeneity settings
+        \item \textbf{Expected count (two-way table)} ---
+              $E = \dfrac{(\text{row total})(\text{column total})}{\text{table total}}$
+        \item \textbf{Degrees of freedom (two-way)} ---
+              $df = (\text{rows} - 1)(\text{cols} - 1)$
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.55\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Lesson 8.4: calculating expected counts from a two-way table using
+              $E = (\text{row total} \times \text{column total}) \div n$.
+        \item Lesson 8.4: large-counts condition for two-way tables --- all expected
+              counts must exceed 5.
+        \item Units 6--7: setting up $H_0$ and $H_a$ for significance tests; the
+              language of ``no difference'' and ``no association.''
+        \item Connect: ``In Lesson 8.4 we computed expected counts and checked
+              conditions. Today we figure out \emph{which} test to run and how to
+              write the hypotheses correctly.''
+    \end{itemize}
+    \textit{Warm-up spiral review is attached --- expected counts in a two-way table.}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.38\linewidth}
+    \textbf{Connections Forward}
+    \begin{itemize}
+        \item Today: set up the test (identify, hypothesize, conditions)
+        \item Lesson 8.6: carry out the chi-square test for homogeneity/independence
+              (compute statistic, $p$-value, conclusion)
+        \item Lesson 8.7: choose the right chi-square test on the AP exam
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Hook]{sky}
+    \textbf{Hook (4 min)}\\
+    Present two newspaper headlines side by side:
+    \begin{itemize}
+        \item \textit{``Do students at different schools participate in extracurriculars
+              at different rates? Researchers surveyed 100 students at each of three schools.''}
+        \item \textit{``Is political affiliation linked to policy opinion? A Gallup poll of
+              300 adults reveals a surprising pattern.''}
+    \end{itemize}
+    Ask: \textbf{``Are these questions the same kind of question, or different kinds?
+    What is each study really asking?''} Let students argue. Reveal: both call for a
+    chi-square test --- but there are two flavors, and picking the wrong one costs
+    points on the AP exam.
+\end{skillbox}
+
+\begin{skillbox}[Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Two Study Designs (8 min)}
+    \begin{enumerate}
+        \item \textbf{Multiple groups, one variable.} A researcher samples from 3 schools
+              and records each student's extracurricular choice (Sports/Arts/Neither).
+              There are three separate samples and \emph{one} categorical variable.
+              $\Rightarrow$ \textbf{Test for Homogeneity.}
+        \item \textbf{One group, two variables.} A researcher takes one sample of 300 adults
+              and records \emph{two} things about each: political affiliation AND policy view.
+              $\Rightarrow$ \textbf{Test for Independence.}
+    \end{enumerate}
+    \textbf{Decision questions to ask:}
+    \begin{itemize}
+        \item Were data collected from \emph{one} sample or \emph{multiple} groups?
+        \item Were \emph{one} or \emph{two} categorical variables measured per individual?
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Side-by-Side Comparison}
+
+    \renewcommand{\arraystretch}{1.8}
+    \begin{tabularx}{\linewidth}{@{} l X X @{}}
+        & \textbf{Homogeneity} & \textbf{Independence} \\
+        \hline
+        \textbf{Design} & Multiple groups; one variable & One sample; two variables \\
+        \textbf{$H_0$} & Distributions of [var] are the same across all [groups] & No association between [var 1] and [var 2] in the population \\
+        \textbf{$H_a$} & Distributions differ (at least one group) & There is an association \\
+        \textbf{Conclusion} & Refers to distributions across groups & Refers to association in the population \\
+        \textbf{df} & $(r-1)(c-1)$ & $(r-1)(c-1)$ \\
+        \textbf{Statistic} & $\chi^2 = \sum\dfrac{(O-E)^2}{E}$ & same \\
+    \end{tabularx}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Lesson (cont.)]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hypotheses Wording (5 min)}\\[4pt]
+    \textbf{Homogeneity example (School survey):}
+    \begin{itemize}
+        \item $H_0$: The distribution of extracurricular participation is the same
+              across Schools A, B, and C.
+        \item $H_a$: The distribution of extracurricular participation is not the
+              same across all three schools (at least one school differs).
+    \end{itemize}
+    \textbf{Independence example (Political poll):}
+    \begin{itemize}
+        \item $H_0$: There is no association between political affiliation and policy
+              views in the adult population.
+        \item $H_a$: There is an association between political affiliation and policy
+              views in the adult population.
+    \end{itemize}
+    \textit{AP tip: the null always says ``no difference'' (homogeneity) or
+    ``no association'' (independence).}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Conditions (5 min)}\\[4pt]
+    \textbf{1. Independence condition}
+    \begin{itemize}
+        \item Homogeneity: stratified random sample or randomized experiment.
+        \item Independence: simple random sample from the population.
+        \item If sampling without replacement: $n \le 10\%N$.
+    \end{itemize}
+    \textbf{2. Large-counts condition}
+    \begin{itemize}
+        \item All \emph{expected} counts $> 5$.
+        \item Expected count formula: $E = \dfrac{(\text{row total})(\text{col total})}{n}$.
+        \item Must check \emph{every} cell in the table.
+    \end{itemize}
+    \textit{Remind students: conditions are checked the same way regardless of which test.}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Circulate and Check}
+    \begin{itemize}
+        \item Most common error: labeling a test as ``independence'' simply because
+              two variables appear in a table. Redirect: ask ``How many random samples
+              were drawn?''
+        \item Check hypothesis wording --- $H_0$ for homogeneity must name the
+              \emph{distribution}, not just ``the proportions.''
+        \item Listen for students mixing up ``same distribution'' with
+              ``independent.'' These are distinct statistical claims.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Cold-Call Prompts}
+    \begin{itemize}
+        \item ``A researcher randomly selects 50 men and 50 women and asks each
+              their favorite genre of music. Is this homogeneity or independence?
+              How do you know?''
+        \item ``A researcher takes one SRS of 200 teenagers and asks each their
+              favorite genre AND how many hours they stream per day. Homogeneity
+              or independence?''
+        \item ``What is $df$ for a $3 \times 4$ two-way table?'' (Answer: 6)
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Activity (10--12 min)}\\
+    Students work through both Scenario A (three schools, extracurricular) and
+    Scenario B (300 adults, political affiliation and policy view). For each:
+    \begin{enumerate}
+        \item Identify the test type and justify from the study design.
+        \item Write $H_0$ and $H_a$ in context.
+        \item Identify how independence was achieved.
+        \item Calculate 2 expected counts and check the large-counts condition.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Tier R --- Remediate}
+    \begin{itemize}
+        \item Provide the decision questions as a checklist.
+        \item Provide the expected-count formula already filled in for one cell; students
+              replicate for one more cell.
+        \item Focus on distinguishing ``one sample or multiple?'' rather than the full
+              condition check.
+    \end{itemize}
+    \textbf{Tier A --- Approaching Proficiency}
+    \begin{itemize}
+        \item Complete all four parts for both scenarios independently.
+        \item Verify the large-counts condition by computing all expected counts.
+    \end{itemize}
+    \textbf{Tier E --- Extension}
+    \begin{itemize}
+        \item Write a third scenario of their own creation for each test type, swap
+              with a partner, and check each other's hypotheses and conditions.
+        \item Identify what would change (only the conclusion wording) if we ran
+              a homogeneity test vs.\ an independence test on the same data table.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}
+    \begin{enumerate}
+        \item A school district randomly selects 80 students from each of 4 grade
+              levels and asks which subject (Math/Science/English) is their favorite.
+              (a) Identify the correct test. (b) Write $H_0$ in words.
+        \item A random sample of 200 adults is asked their marital status
+              (Married/Single/Other) and whether they exercise regularly (Yes/No).
+              (a) Identify the correct test. (b) Write $H_0$ in words.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Assessment Note}\\
+    Collect and sort into three piles:
+    \begin{itemize}
+        \item Correct test + correct $H_0$ wording $\to$ ready for Lesson 8.6.
+        \item Correct test, incorrect $H_0$ wording $\to$ reteach hypothesis language
+              at the start of 8.6.
+        \item Incorrect test $\to$ pull for a 2-min small-group review of the
+              ``one sample vs.\ multiple groups'' decision rule before 8.6.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework Overview}
+    \begin{itemize}
+        \item Problem 1 (three parts): classify scenarios as homogeneity or independence
+              and write hypotheses.
+        \item Problem 2: address the common misconception that ``two variables = independence.''
+        \item Problem 3: write out full conditions for a homogeneity study.
+        \item Problem 4: AP-style MC on identifying the correct chi-square test.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: Find a real news article that reports a chi-square test.
+              Identify which type of test was used and whether the hypotheses are stated
+              correctly.
+        \item \textit{Preview}: Lesson 8.6 carries out the full chi-square test on these
+              scenarios --- computing the test statistic, finding the $p$-value, and
+              writing a complete conclusion in context.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\end{document}

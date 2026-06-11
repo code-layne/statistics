@@ -1,0 +1,102 @@
+%! Skills Focus: Selecting an Appropriate Inference Procedure for Categorical Data — Unit 8, Lesson 8.7 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.7}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.10in}
+
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+  \item \ansline{Identify the correct categorical inference procedure for a given scenario.}
+  \item \ansline{Distinguish between z-procedures and chi-square procedures.}
+  \item \ansline{State $H_0$ in the appropriate language for each categorical procedure.}
+\end{itemize}
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{Categorical inference procedure}]
+        Any inference method applied to \ans{categorical} data. The first diagnostic question is:
+        does the outcome have \ans{two} categories or \ans{three or more}?
+
+  \item[\termblanklong{Chi-square goodness-of-fit (GOF) test}]
+        Used when there is \ans{one} sample and \ans{three} or more categories. Tests
+        whether the observed distribution matches a \ans{claimed (hypothesized)} distribution.
+
+  \item[\termblanklong{Chi-square test for homogeneity}]
+        Used when there are \ans{two} or more \ans{independent} samples and one categorical
+        variable. Tests whether the \ans{distribution of the variable} is the same across groups.
+
+  \item[\termblanklong{Chi-square test for independence}]
+        Used when there is \ans{one} sample and \ans{two} categorical variables recorded
+        for each subject. Tests whether there is an \ans{association} between the variables.
+\end{description}
+\end{vocabbox}
+
+\begin{hookbox}
+A researcher surveys students about their transportation to school (Walk, Bus, Car, Bike).
+\begin{enumerate}
+  \item \textit{Scenario A:} She surveys students at one school and wants to test whether
+        walking, bus, car, and biking are equally common.\\
+        What procedure? \ans{chi-square goodness-of-fit test}
+  \item \textit{Scenario B:} She surveys students at two schools (separate random samples)
+        and wants to test whether the distribution of transportation modes is the same at both.\\
+        What procedure? \ans{chi-square test for homogeneity}
+  \item \textit{Scenario C:} She takes one random sample and records both transportation mode
+        and whether each student arrives on time (yes/no). She tests for association.\\
+        What procedure? \ans{chi-square test for independence}
+\end{enumerate}
+\end{hookbox}
+
+\begin{notesbox}{Categorical Inference Decision Table}
+\textbf{Fill in the procedure name and key condition:}
+
+\vspace{0.06in}
+\renewcommand{\arraystretch}{2.2}
+\begin{tabularx}{\linewidth}{@{} p{0.20\linewidth} p{0.20\linewidth} p{0.12\linewidth} p{0.20\linewidth} X @{}}
+  \rowcolor{sky}
+  \textbf{Data Structure} & \textbf{Number of Categories} & \textbf{Goal} & \textbf{Procedure Name} & \textbf{Key Condition} \\
+  \hline
+  One proportion, one sample & Two (binary) & CI & \ans{one-sample $z$-interval for $p$} & \ans{Large Counts: $n\hat{p} \ge 10$, $n(1{-}\hat{p}) \ge 10$} \\
+  One proportion, one sample & Two (binary) & Test & \ans{one-sample $z$-test for $p$} & \ans{Large Counts: $np_0 \ge 10$, $n(1{-}p_0) \ge 10$} \\
+  Difference in proportions, two samples & Two (binary) & CI & \ans{two-sample $z$-interval for $p_1{-}p_2$} & \ans{Large Counts: all four $\ge 10$} \\
+  Difference in proportions, two samples & Two (binary) & Test & \ans{two-sample $z$-test for $p_1{-}p_2$} & \ans{Large Counts: all four $\ge 10$} \\
+  One sample, claimed distribution & Three or more & Test & \ans{chi-square goodness-of-fit test} & \ans{Expected counts $\ge 5$} \\
+  Two or more groups (sep.\ samples), one variable & Three or more & Test & \ans{chi-square test for homogeneity} & \ans{Expected counts $\ge 5$} \\
+  One sample, two variables & Any & Test & \ans{chi-square test for independence} & \ans{Expected counts $\ge 5$} \\
+\end{tabularx}
+\end{notesbox}
+
+\begin{notesbox}{Homogeneity vs.\ Independence --- How to Tell}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} p{0.22\linewidth} X X @{}}
+  \rowcolor{sky}
+  & \textbf{Homogeneity} & \textbf{Independence} \\ \hline
+  \textbf{Sampling design} & \ans{separate random samples, one per group} & \ans{one random sample} \\
+  \textbf{Number of variables} & \ans{one} & \ans{two} \\
+  \textbf{$H_0$ language} & ``The \ans{distribution} is the same across all \ans{groups}.'' & ``There is no \ans{association} between [var 1] and [var 2].'' \\
+  \textbf{Same $\chi^2$ statistic?} & \ans{yes} & \ans{yes} \\
+\end{tabularx}
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Partner Practice.} \;
+A social scientist randomly selects 50 adults aged 18--34 and 50 adults aged 35--54. He asks
+each person to rate their social media use as Low, Moderate, or High. He wants to test whether
+the distribution of social media use is the same for both age groups.
+
+\begin{enumerate}
+  \item Binary or multi-category outcome? \ans{multi-category (3 levels)} \quad Number of groups: \ans{2}
+  \item Procedure name: \ans{chi-square test for homogeneity}
+  \item Form of $H_0$: \ansline{The distribution of social media use (Low, Moderate, High) is the same for adults aged 18--34 and adults aged 35--54.}
+  \item Key condition to check (beyond Random and 10\%): \ansline{Expected counts: all expected cell counts must be at least 5.}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

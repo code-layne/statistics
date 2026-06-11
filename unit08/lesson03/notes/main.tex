@@ -1,0 +1,106 @@
+%! AP Statistics — Unit 8, Lesson 8.3 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.3}{Guided Notes}
+\namedateperiod
+
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+\end{itemize}
+\end{objectivebox}
+
+\begin{vocabbox}
+\termblanklong{Chi-square test statistic ($\chi^2$)}
+\termblanklong{Degrees of freedom (GOF)}
+\termblanklong{P-value (chi-square GOF)}
+\termblanklong{Conclusion template}
+\end{vocabbox}
+
+\begin{notesbox}{The Chi-Square Test Statistic}
+When carrying out a chi-square goodness-of-fit test, we measure how far the observed
+counts are from the expected counts using the \textbf{chi-square test statistic}:
+
+\vspace{0.1in}
+\[
+    \chi^2 = \sum \frac{(\text{\blank{2.5cm}} - \text{\blank{2.5cm}})^2}{\text{\blank{2.5cm}}}
+\]
+
+\vspace{0.05in}
+Each term $\dfrac{(O-E)^2}{E}$ measures \blank{8cm}.
+
+\vspace{0.1in}
+A \textbf{larger} $\chi^2$ value provides \blank{4cm} evidence against $H_0$.
+
+\vspace{0.1in}
+\textbf{Degrees of freedom} for a GOF test: \quad $df = $ \blank{2cm} $-$ \blank{2cm}
+
+where the first blank is the \blank{4cm} of categories.
+\end{notesbox}
+
+\begin{notesbox}{Worked Example: Flower Color Distribution}
+A botanist claims a flower comes in 4 colors in a 3:2:2:1 ratio. A random sample
+of 160 flowers is collected.
+
+\renewcommand{\arraystretch}{2.2}
+\begin{center}
+\begin{tabular}{lcccc}
+    \textbf{Color}           & Red    & Pink   & White  & Yellow \\
+    \hline
+    \textbf{Null proportion} & 0.375  & 0.25   & 0.25   & 0.125  \\
+    \textbf{Expected ($E$)}  & \blank{1.8cm} & \blank{1.8cm} & \blank{1.8cm} & \blank{1.8cm} \\
+    \textbf{Observed ($O$)}  & 65     & 44     & 38     & 13     \\
+    $\boldsymbol{(O-E)^2/E}$ & \blank{1.8cm} & \blank{1.8cm} & \blank{1.8cm} & \blank{1.8cm} \\
+\end{tabular}
+\end{center}
+
+\vspace{0.1in}
+$\chi^2 = $ \blank{1.5cm} $+$ \blank{1.5cm} $+$ \blank{1.5cm} $+$ \blank{1.5cm}
+        $=$ \blank{2cm}
+
+\vspace{0.1in}
+$df = $ \blank{2cm} $- 1 =$ \blank{1.5cm}
+\end{notesbox}
+
+\begin{notesbox}{Finding and Interpreting the P-Value}
+Using a chi-square table with $df =$ \blank{1.5cm}, look up $\chi^2 \approx$ \blank{2cm}.
+
+\vspace{0.1in}
+The p-value is \blank{2cm} (always a \textbf{right-tailed} area).
+
+\vspace{0.15in}
+\textbf{Interpret the p-value:}\\[4pt]
+``The probability, given \blank{7cm} is true, of obtaining
+a chi-square statistic of \blank{2cm} or \blank{2cm} is approximately \blank{2cm}.''
+
+\vspace{0.1in}
+\textit{Note:} The p-value is \emph{not} the probability that $H_0$ is true.
+\end{notesbox}
+
+\begin{notesbox}{Stating a Complete Conclusion}
+Compare the p-value to the significance level $\alpha = 0.05$:
+
+\vspace{0.1in}
+``Because $p =$ \blank{2cm} \blank{1cm} $\alpha = 0.05$, we \blank{3.5cm} $H_0$.
+We \blank{3cm} convincing evidence that \blank{7cm}.''
+
+\vspace{0.1in}
+\textbf{For the botanist example:} \writelines{2}
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Quick Check:} Suppose a different sample of 160 flowers gave $\chi^2 = 9.20$
+with $df = 3$. Using the chi-square table, is $p < 0.05$ or $p > 0.05$?
+What conclusion would you reach at $\alpha = 0.05$?
+
+\writelines{3}
+\end{practicebox}
+
+\end{document}

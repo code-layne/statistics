@@ -1,0 +1,170 @@
+%! AP Statistics — Unit 8, Lesson 8.6 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.6}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+  \item \ansline{Calculate the chi-square test statistic and degrees of freedom from a two-way table. (VAR-8.L)}
+  \item \ansline{Find and interpret the p-value for a chi-square test using a table or technology. (VAR-8.M / DAT-3.K)}
+  \item \ansline{Make and justify a formal conclusion by comparing p to alpha in context. (DAT-3.L)}
+\end{itemize}
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{Test statistic (two-way)}]
+        $\chi^2 = \displaystyle\sum \dfrac{(O - E)^2}{E}$; always \ans{$\ge 0$};
+        larger values mean \ans{greater deviation from expected counts / stronger evidence against $H_0$}.
+  \item[\termblanklong{Degrees of freedom (two-way)}]
+        $\text{df} = ($ \ans{rows} $- 1)($ \ans{columns} $- 1)$; use the number of
+        \ans{rows} and \ans{columns} in the table.
+  \item[\termblanklong{p-value interpretation}]
+        ``The probability, assuming $H_0$ is \ans{true}, of obtaining a $\chi^2$
+        statistic as large or \ans{larger} as the one observed.''
+\end{description}
+\end{vocabbox}
+
+\begin{notesbox}{Context: Transit Plan Opinions in Three Cities}
+
+Three cities (A, B, C) each randomly sampled 100 residents.
+Survey question: Do you support the new transit plan?
+
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{@{} l c c c c @{}}
+\hline
+           & \textbf{Support} & \textbf{Neutral} & \textbf{Oppose} & \textbf{Total} \\
+\hline
+City A     & 58  & 22  & 20  & 100 \\
+City B     & 45  & 35  & 20  & 100 \\
+City C     & 37  & 28  & 35  & 100 \\
+\hline
+\textbf{Total} & 140 & 85 & 75 & 300 \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Step 1 --- State:}
+$H_0$: \ansline{The distribution of opinions on the transit plan is the same across all three cities.}
+
+$H_a$: \ansline{The distribution of opinions on the transit plan differs for at least one city.}
+
+\end{notesbox}
+
+\begin{notesbox}{Step 2 --- Plan: Check Conditions}
+
+\begin{itemize}
+  \item \textbf{Random:} \ans{Each city took a random sample of 100 residents} (stated in the problem)
+  \item \textbf{10\% condition:} $n \le 10\% \times $ \ans{all residents of each city} --- satisfied for large populations.
+  \item \textbf{Large Counts:} All expected counts $\ge$ \ans{5}.
+\end{itemize}
+
+\vspace{0.06in}
+\textbf{Fill in expected counts} using $E = \dfrac{\text{row total} \times \text{col total}}{\text{grand total}}$:
+
+\renewcommand{\arraystretch}{1.6}
+\begin{center}
+\begin{tabular}{@{} l c c c @{}}
+\hline
+           & \textbf{Support} & \textbf{Neutral} & \textbf{Oppose} \\
+\hline
+City A     & $\dfrac{100 \times 140}{300} =$ \ans{46.67} & \ans{28.33} & \ans{25.00} \\[6pt]
+City B     & \ans{46.67} & \ans{28.33} & \ans{25.00} \\[6pt]
+City C     & \ans{46.67} & \ans{28.33} & \ans{25.00} \\
+\hline
+\end{tabular}
+\end{center}
+
+All expected counts $\ge 5$? (circle): \quad \textbf{Yes} \quad \ans{(smallest is 25.00 $\ge$ 5 --- condition met)}
+
+\end{notesbox}
+
+\begin{notesbox}{Step 3 --- Do: Calculate $\chi^2$ (VAR-8.L)}
+
+\textbf{Formula:}
+\[
+  \chi^2 = \sum_{\text{all cells}} \frac{(O - E)^2}{E}
+\]
+
+\textbf{df} $= ($ \ans{3} $- 1)($ \ans{3} $- 1) = $ \ans{4}
+
+\vspace{0.06in}
+\textbf{Cell contributions:}
+
+City A: $\dfrac{(58-46.67)^2}{46.67} + \dfrac{({\color{keyred}\mathbf{22}}-{\color{keyred}\mathbf{28.33}})^2}{{\color{keyred}\mathbf{28.33}}} + \dfrac{({\color{keyred}\mathbf{20}}-{\color{keyred}\mathbf{25}})^2}{{\color{keyred}\mathbf{25}}} = 2.75 + {\color{keyred}\mathbf{1.42}} + {\color{keyred}\mathbf{1.00}}$
+
+\vspace{0.06in}
+City B: $\dfrac{({\color{keyred}\mathbf{45}}-{\color{keyred}\mathbf{46.67}})^2}{{\color{keyred}\mathbf{46.67}}} + {\color{keyred}\mathbf{1.57}} + {\color{keyred}\mathbf{1.00}} = {\color{keyred}\mathbf{2.63}}$
+
+\vspace{0.06in}
+City C: ${\color{keyred}\mathbf{2.01}} + {\color{keyred}\mathbf{0.00}} + {\color{keyred}\mathbf{4.00}} = {\color{keyred}\mathbf{6.01}}$
+
+\vspace{0.06in}
+$\chi^2 = {\color{keyred}\mathbf{2.75 + 1.42 + 1.00 + 2.63 + 6.01 \approx 13.81}}$
+
+\begin{teachernote}
+Exact values: City A: 2.748 + 1.416 + 1.000 = 5.164. City B: 0.060 + 1.572 + 1.000 = 2.632. City C: 2.006 + 0.004 + 4.000 = 6.010. Total $\chi^2 \approx 13.81$.
+\end{teachernote}
+
+\end{notesbox}
+
+\begin{notesbox}{Steps 4--5 --- Find p-Value, Interpret, and Conclude (VAR-8.M / DAT-3.K / DAT-3.L)}
+
+\textbf{Using the chi-square table:} With df $= $ \ans{4}, the value $\chi^2 \approx$ \ans{13.81}
+falls between $\chi^2 = 13.28$ ($p = 0.01$) and $\chi^2 = 18.47$ ($p = 0.001$).
+
+p-value $\approx$ \ans{0.008}
+
+\medskip
+\textbf{Interpret the p-value:}
+
+``Assuming the distribution of opinions \ans{is the same across all three cities}, there is a
+\ans{0.8\%} probability of observing a $\chi^2$ statistic as large as \ans{13.81} by chance alone.''
+
+\medskip
+\textbf{Conclusion} at $\alpha = 0.05$:
+
+\ansline{Because $p \approx 0.008 < \alpha = 0.05$, we reject $H_0$. We have convincing evidence that the distribution of opinions on the transit plan differs across the three cities.}
+
+\end{notesbox}
+
+\begin{practicebox}{Practice: Complete the Test --- Key}
+
+A researcher surveys a random sample of 120 college students and asks their major
+(STEM / Non-STEM) and whether they prefer studying alone or in a group.
+
+\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\begin{tabular}{@{} l c c c @{}}
+\hline
+            & \textbf{Alone} & \textbf{Group} & \textbf{Total} \\
+\hline
+STEM        & 38 & 22 & 60 \\
+Non-STEM    & 28 & 32 & 60 \\
+\hline
+\textbf{Total} & 66 & 54 & 120 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[label=\alph*.]
+  \item Test type: \ans{Independence} \quad $H_0$: \ansline{Study preference and major are independent among college students.}
+  \item Expected count for STEM/Alone: $E = \dfrac{{\color{keyred}\mathbf{60}} \times {\color{keyred}\mathbf{66}}}{{\color{keyred}\mathbf{120}}} = $ \ans{33}
+  \item $\text{df} = ($ \ans{2} $-1)($ \ans{2} $-1) = $ \ans{1}
+        \quad $\chi^2 \approx $ \ans{3.30} (technology) \quad p-value $\approx$ \ans{0.069}
+  \item \ansline{Because $p \approx 0.069 > \alpha = 0.05$, we fail to reject $H_0$. We do not have convincing evidence that study preference and major are associated among college students.}
+  \ansline{}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

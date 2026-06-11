@@ -1,0 +1,250 @@
+%! AP Statistics — Unit 8, Lesson 8.1 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\newcommand{\UnitNumberName}{Unit 8: Inference for Categorical Data: Chi-Square \quad}
+\newcommand{\LessonNumberName}{Lesson 8.1: Introducing Statistics --- Are My Results Unexpected?}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will recognize that categorical data can differ
+    from what we expect by chance, and they will frame the central question of Unit 8:
+    are the differences between observed and expected counts large enough to conclude that
+    something real is going on, or could they simply be due to random variation?
+    (Big Idea: VAR)
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 1.A --- Selecting Statistical Methods}
+    \begin{itemize}
+        \item Identify questions suggested by variation between observed and expected
+              counts in categorical data (Skill 1.A; VAR-1.J).
+        \item Bridge: Units 1--2 described distributions of categorical variables using
+              counts and proportions --- Unit 8 asks whether those distributions match
+              what we expected.
+        \item VAR-1.J.1: Variation between what we find and what we expect to find may
+              be random, or it may indicate something real.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item If a distribution of categorical data perfectly matched the expected
+              distribution, there would be no statistical question to ask. Variation
+              is what creates the question.
+        \item Chi-square tests quantify how surprising the observed variation is under
+              the assumption that the expected distribution is correct.
+        \item This lesson is a framing lesson (Topic 8.1 is not directly assessed
+              on the AP exam) that sets the stage for Lessons 8.2--8.7.
+        \item Key shift from Units 6--7: instead of one or two proportions, Unit 8
+              compares entire categorical distributions.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Observed counts} --- the actual frequencies recorded from data
+        \item \textbf{Expected counts} --- the frequencies we would predict if a
+              specified distribution were true
+        \item \textbf{Chi-square test} --- a family of significance tests that compare
+              observed and expected counts to decide whether differences are due to chance
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Categorical variable (review)} --- a variable whose values are
+              labels or categories, not numerical measurements
+        \item \textbf{Distribution of a categorical variable} --- the list of all
+              possible categories and the proportion (or count) of observations in each
+        \item \textbf{Goodness-of-fit (preview)} --- how well observed data match a
+              claimed distribution
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Units 1--2: two-way frequency tables, marginal and conditional
+              distributions of categorical variables.
+        \item Units 1--2: bar charts and segmented bar charts to display
+              categorical distributions.
+        \item Units 6--7: inference logic --- setting up $H_0$ and $H_a$,
+              computing a test statistic, interpreting a $p$-value.
+        \item Connect: ``In Units 6--7 we compared one or two proportions.
+              What if we need to compare an entire distribution at once?''
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Connections Forward}
+    \begin{itemize}
+        \item Chi-square goodness-of-fit test setup $\to$ Lesson 8.2
+        \item Carrying out the GOF test $\to$ Lesson 8.3
+        \item Chi-square test for homogeneity $\to$ Lessons 8.4--8.5
+        \item Chi-square test for independence $\to$ Lesson 8.6
+        \item Choosing and applying the right chi-square procedure $\to$ Lesson 8.7
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (5--7 min)}\\
+    Show a bag of colored candies. Ask: ``The manufacturer claims 20\% of each of
+    5 colors. I counted one bag and got Red: 14, Orange: 8, Yellow: 12, Green: 9,
+    Blue: 7. Is this bag unusual, or is this just normal variation?''\\[4pt]
+    Ask students: ``How would you decide? What information would you need?''\\[4pt]
+    Reveal: We need a way to measure how far the observed counts are from
+    what we expected. \textbf{That measurement is the chi-square statistic.}
+    The question of Unit 8: \textbf{Are differences between observed and expected
+    counts large enough to conclude the distribution is not what we thought?}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15 min)}
+    \begin{enumerate}
+        \item Review: categorical variables and expected counts. If 50 candies
+              should be 20\% each color, the expected count per color is
+              $0.20 \times 50 = 10$.
+        \item The gap: observed count minus expected count. A gap of 0 means
+              perfect agreement. Larger gaps raise more suspicion.
+        \item Preview the chi-square idea: we add up all the gaps (adjusted for
+              scale). The bigger the total, the more surprising the data. The
+              formula and $p$-value arrive in Lesson 8.2.
+        \item Frame the unit arc: GOF test (Lessons 8.2--8.3) $\to$ two-way
+              tables: homogeneity (Lessons 8.4--8.5) and independence
+              (Lesson 8.6) $\to$ synthesis (Lesson 8.7).
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Direct Instruction (8 min)}
+    \begin{itemize}
+        \item Show the warm-up coffee-shop data on the board. Walk through
+              computing expected counts from a uniform distribution claim
+              ($25\%$ each of 4 flavors, $n = 200 \Rightarrow$ expected $= 50$ each).
+        \item Compute observed $-$ expected for each category. Ask: ``Which
+              category surprises you most? Least?''
+        \item Emphasize: a single large gap is noticeable, but chi-square tests
+              consider \emph{all} categories simultaneously. The formula
+              (coming in Lesson 8.2) weighs each gap relative to the expected count.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Active Monitoring}
+    \begin{itemize}
+        \item Listen for ``The largest count must be the most different from
+              expected.'' Redirect: a count of 72 with expected 50 is a gap of 22,
+              but a count of 5 with expected 50 would be far more surprising.
+        \item Cold-call: ``If I expect 25 of each of 4 outcomes and observe
+              25, 24, 26, 25 --- are those differences surprising? Why or why not?''
+        \item Check warm-up for fluency with proportions and expected counts
+              from Units 1--2.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Partner Activity (8--10 min)}\\
+    Use the activity (preferred study environment survey, $n = 120$). Groups:
+    \begin{enumerate}
+        \item Compute expected counts (equal distribution among 4 options).
+        \item Compute observed $-$ expected for each category.
+        \item Decide (without a formal test): do these differences look surprising?
+        \item Discuss what additional information would tell you whether the
+              differences are statistically significant.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support (Tier R)}: Provide the expected count calculation
+              already completed; students focus on computing and interpreting
+              differences.
+        \item \textit{On-grade (Tier A)}: Complete all four steps.
+        \item \textit{Extension (Tier E)}: Write a paragraph explaining what a
+              chi-square test would do with these differences; anticipate Lesson 8.2.
+        \item \textit{ELL}: Vocabulary card --- ``observed / observado,''
+              ``expected / esperado,'' ``chi-square / ji cuadrado.''
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}
+    \begin{enumerate}
+        \item A fair spinner has 4 equal sections. It is spun 80 times:
+              A=25, B=18, C=22, D=15. How many times would you expect each
+              outcome if the spinner is fair?
+        \item Which outcome has the largest difference from expected?
+              How large is the difference?
+        \item Without a formal test, do you think the spinner is unfair?
+              What would make you more confident?
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{A teacher claims students are equally likely to choose any of 4 topics
+    for a project. Of 100 students: 35 chose A, 20 chose B, 28 chose C, 17 chose D.
+    What is the expected count for each topic under the teacher's claim?}
+    \begin{enumerate}[label=(\Alph*)]
+        \item 17, 20, 28, 35
+        \item 35, 20, 28, 17
+        \item 25, 25, 25, 25
+        \item 100, 100, 100, 100
+    \end{enumerate}
+    Answer: (C)
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item Problem 1: Candy bag (200 candies, 5 colors, 20\% each claimed) ---
+              find expected counts, identify the color with the largest absolute
+              difference, and describe what a GOF test would answer.
+        \item Problem 2: Fair die (120 rolls) --- compute observed $-$ expected
+              for each of 6 faces and decide informally whether the results
+              are surprising.
+        \item Reflection: describe in your own words what question chi-square
+              tests answer about categorical data.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: Find a published survey with a claimed categorical
+              distribution. Compute expected counts and assess whether the observed
+              data appear consistent with the claim.
+        \item \textit{Preview}: Lesson 8.2 introduces the chi-square goodness-of-fit
+              test --- we will learn the formula for combining all observed vs.\
+              expected differences into a single test statistic and $p$-value.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\end{document}

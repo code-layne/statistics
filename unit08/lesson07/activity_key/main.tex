@@ -1,0 +1,137 @@
+%! Skills Focus: Selecting an Appropriate Inference Procedure for Categorical Data — Unit 8, Lesson 8.7 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.7}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.08in}
+
+\textbf{Procedure Menu} (use for Tier R): one-sample $z$-interval for $p$ \;|\;
+one-sample $z$-test for $p$ \;|\; two-sample $z$-test for $p_1-p_2$ \;|\;
+chi-square goodness-of-fit test \;|\;
+chi-square test for homogeneity \;|\;
+chi-square test for independence
+
+\vspace{0.06in}
+
+\begin{scenariobox}[Scenario 1 --- Streaming Preferences]{sky}
+A media company takes one random sample of 400 adults and records two things: each person's
+age group (Under 35 or 35 and Over) and their primary streaming service (Service A, B, or C).
+The company wants to test whether there is an association between age group and streaming
+service preference.
+
+\textbf{Tier R:} Name the procedure and state one key condition.
+\begin{itemize}
+  \item Procedure: \ans{chi-square test for independence}
+  \item Key condition: \ans{All expected cell counts must be at least 5.}
+\end{itemize}
+
+\textbf{Tier A:}
+\begin{enumerate}
+  \item Procedure name: \ans{chi-square test for independence}
+  \item $H_0$: \ansline{There is no association between age group and primary streaming service preference.}
+  \item $H_a$: \ansline{There is an association between age group and primary streaming service preference.}
+  \item Key condition to check: \ansline{Expected counts condition: all expected cell counts $\ge 5$. (Cannot verify without observed counts, but $n = 400$ with a $2 \times 3$ table makes this very likely.)}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 2 --- M\&M Color Distribution]{sky}
+A statistics student purchases a large bag of M\&Ms. The manufacturer claims the color
+distribution is 24\% blue, 20\% orange, 16\% green, 14\% yellow, 13\% red, and 13\% brown.
+The student counts colors in a random sample of 200 M\&Ms from the bag and wants to test
+whether her bag matches the claimed distribution.
+
+\textbf{Tier R:} Name the procedure and state one key condition.
+\begin{itemize}
+  \item Procedure: \ans{chi-square goodness-of-fit test}
+  \item Key condition: \ans{All expected counts must be at least 5.}
+\end{itemize}
+
+\textbf{Tier A:}
+\begin{enumerate}
+  \item Procedure name: \ans{chi-square goodness-of-fit test}
+  \item $H_0$: \ansline{The distribution of M\&M colors is 24\% blue, 20\% orange, 16\% green, 14\% yellow, 13\% red, and 13\% brown.}
+  \item $H_a$: \ansline{The distribution of M\&M colors differs from the claimed distribution.}
+  \item Minimum expected count for blue: $200 \times 0.24 =$ \ans{48} \quad Condition met? \ans{yes ($48 \ge 5$)}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 3 --- Vaccination Status and Opinion]{sky}
+A public health researcher randomly samples 150 vaccinated adults and 150 unvaccinated adults.
+She asks each person whether they support a new public health mandate (Support, Neutral, or
+Oppose). She wants to test whether the distribution of opinion is the same for vaccinated and
+unvaccinated adults.
+
+\textbf{Tier R:} Name the procedure.
+\begin{itemize}
+  \item Procedure: \ans{chi-square test for homogeneity}
+\end{itemize}
+
+\textbf{Tier A:}
+\begin{enumerate}
+  \item Procedure name: \ans{chi-square test for homogeneity}
+  \item $H_0$: \ansline{The distribution of opinion (Support, Neutral, Oppose) is the same for vaccinated and unvaccinated adults.}
+  \item $H_a$: \ansline{The distribution of opinion differs between vaccinated and unvaccinated adults.}
+  \item Explain in one sentence why this is \emph{not} a test for independence: \ansline{The data come from two separate random samples (one vaccinated, one unvaccinated), not from a single random sample with two variables recorded.}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 4 --- Voter Turnout]{sky}
+A political researcher randomly selects 500 registered voters and records whether each voted
+in the last election (yes or no). He wants to test whether the proportion who voted is
+greater than 55\%.
+
+\textbf{Tier A:}
+\begin{enumerate}
+  \item Procedure name: \ans{one-sample $z$-test for $p$}
+  \item $H_0$: \ans{$p = 0.55$} \quad $H_a$: \ans{$p > 0.55$}
+  \item Large Counts condition: $500 \times 0.55 =$ \ans{275} $\ge 10$? \ans{yes} \quad
+        $500 \times 0.45 =$ \ans{225} $\ge 10$? \ans{yes}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 5 --- Flu Shot Rates]{sky}
+A hospital system randomly samples 200 patients from its urban clinic and 200 patients from
+its rural clinic. It records whether each patient received a flu shot this season (yes or no).
+The hospital wants to test whether the proportion who received a flu shot differs between the
+two clinics.
+
+\textbf{Tier A:}
+\begin{enumerate}
+  \item Procedure name: \ans{two-sample $z$-test for $p_1 - p_2$}
+  \item $H_0$: \ans{$p_1 = p_2$} \quad $H_a$: \ans{$p_1 \ne p_2$}
+  \item Why is this a two-sample $z$-test rather than a chi-square test for homogeneity?
+        \ansline{The outcome is binary (yes/no flu shot), so there are only two categories. A two-sample $z$-test is the appropriate procedure when comparing two proportions; chi-square homogeneity is used when the response has three or more categories.}
+\end{enumerate}
+\end{scenariobox}
+
+\begin{scenariobox}[Scenario 6 --- Tier E: Compare and Contrast]{sky}
+\textbf{Tier E only.}
+
+A researcher takes a random sample of 300 college students and records two variables: class
+year (First-Year, Sophomore, Junior, Senior) and whether each student has a declared major
+(yes or no).
+
+\begin{enumerate}
+  \item A student says this situation calls for a two-sample $z$-test for $p_1 - p_2$
+        because the outcome (declared major) is binary. Identify the error in this reasoning
+        and name the correct procedure.
+        \ansline{Error: the two-sample $z$-test requires exactly two groups (samples). Here, class year has four categories, not two, and there is only one sample.}
+        \ansline{Correct procedure: chi-square test for independence (one sample, two variables recorded).}
+  \item A second student says this calls for a chi-square goodness-of-fit test. Identify the
+        error and explain why.
+        \ansline{Error: a GOF test compares a single variable's observed distribution to a claimed distribution. Here, there is no claimed distribution, and we have two variables.}
+        \ansline{The correct procedure is chi-square independence because we are examining the association between two categorical variables.}
+  \item State the correct $H_0$ and $H_a$ for the appropriate procedure.
+        \begin{itemize}
+          \item $H_0$: \ansline{There is no association between class year and whether a student has a declared major.}
+          \item $H_a$: \ansline{There is an association between class year and whether a student has a declared major.}
+        \end{itemize}
+\end{enumerate}
+\end{scenariobox}
+
+\end{document}

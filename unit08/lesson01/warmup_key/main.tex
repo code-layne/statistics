@@ -1,0 +1,61 @@
+%! AP Statistics — Unit 8, Lesson 8.1 — Warm-Up (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.1}{Warm-Up --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+A local coffee shop records the flavor of each drink sold during one week.
+The results are shown in the table below.
+
+\vspace{0.1in}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{0.55\linewidth}{Xc}
+    \textbf{Flavor} & \textbf{Observed Count} \\
+    \hline
+    Espresso   & 48 \\
+    Latte      & 72 \\
+    Cappuccino & 36 \\
+    Cold Brew  & 44 \\
+    \hline
+    \textbf{Total} & \textbf{200} \\
+\end{tabularx}
+
+\vspace{0.15in}
+
+\begin{enumerate}
+
+  \item What proportion of drinks sold were lattes? Show your work.
+
+        \ansline{$72 \div 200 = 0.36$, or 36\%.}
+
+  \item The shop expected each of the 4 flavors to make up exactly 25\% of total
+        sales. How many drinks of each flavor were \emph{expected}?
+
+        \vspace{0.05in}
+        \begin{tabularx}{0.8\linewidth}{Xc}
+            Expected espresso   & \ans{$0.25 \times 200 = 50$} \\[4pt]
+            Expected latte      & \ans{$0.25 \times 200 = 50$} \\[4pt]
+            Expected cappuccino & \ans{$0.25 \times 200 = 50$} \\[4pt]
+            Expected cold brew  & \ans{$0.25 \times 200 = 50$} \\
+        \end{tabularx}
+
+  \item Compare the observed counts to the expected counts. Does the difference
+        seem large or small? Explain in 1--2 sentences.
+
+        \ansline{The differences are moderate --- lattes are 22 above expected and cappuccinos are 14 below expected. Whether these differences are due to chance is exactly what chi-square tests will help us determine.}
+
+        \begin{teachernote}
+            Accept any reasonable comparison. Students should note that some
+            categories are above expected and some are below. The key idea is
+            that variation exists and the question is whether it is surprising.
+        \end{teachernote}
+
+\end{enumerate}
+
+\end{document}

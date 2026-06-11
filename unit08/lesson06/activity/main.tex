@@ -1,0 +1,134 @@
+%! AP Statistics — Unit 8, Lesson 8.6 — Group Activity
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.6}{Group Activity}
+\namepartnerperiod
+
+\vspace{0.08in}
+
+\begin{scenariobox}[Social Media Usage and Academic Performance]{sky}
+A researcher asks a random sample of 240 college students about their social media
+usage level (\textbf{Low / Moderate / High}) and their GPA category
+(\textbf{GPA $<$ 3.0} / \textbf{GPA $\ge$ 3.0}).
+
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{@{} l c c c @{}}
+\hline
+                 & \textbf{GPA $<$ 3.0} & \textbf{GPA $\ge$ 3.0} & \textbf{Row Total} \\
+\hline
+Low usage        & 18  & 42  & 60  \\
+Moderate usage   & 32  & 68  & 100 \\
+High usage       & 44  & 36  & 80  \\
+\hline
+\textbf{Total}   & 94  & 146 & 240 \\
+\hline
+\end{tabular}
+\end{center}
+\end{scenariobox}
+
+\vspace{0.04in}
+
+% ---- Tier R ----
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier R --- Recall},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[label=\alph*., itemsep=6pt]
+
+  \item Is this a test of \textbf{homogeneity} or \textbf{independence}? Explain in one sentence.
+        \writelines{2}
+
+  \item State $H_0$ and $H_a$.
+
+        $H_0$: \writeline
+        $H_a$: \writeline
+
+  \item Check the \textbf{Random} condition. Is it met?
+        \writeline
+
+  \item Compute the expected count for the \textbf{Low / GPA $<$ 3.0} cell.
+
+        $E = \dfrac{\blank{2cm} \times \blank{2cm}}{\blank{2cm}} = $ \blank{2.5cm}
+
+        Is the Large Counts condition met? (All expected counts $\ge 5$?) \blank{2cm}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.06in}
+
+% ---- Tier A ----
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier A --- Apply},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[label=\alph*., itemsep=6pt]
+\setcounter{enumi}{4}
+
+  \item Fill in the \textbf{expected counts table} using $E = \dfrac{\text{row total} \times \text{col total}}{240}$:
+
+        \renewcommand{\arraystretch}{1.8}
+        \begin{center}
+        \begin{tabular}{@{} l c c @{}}
+        \hline
+                         & \textbf{GPA $<$ 3.0} & \textbf{GPA $\ge$ 3.0} \\
+        \hline
+        Low usage        & \blank{3cm} & \blank{3cm} \\
+        Moderate usage   & \blank{3cm} & \blank{3cm} \\
+        High usage       & \blank{3cm} & \blank{3cm} \\
+        \hline
+        \end{tabular}
+        \end{center}
+
+  \item Complete the \textbf{$\chi^2$ contributions} table.
+        The first two are done for you; fill in the remaining four:
+
+        \renewcommand{\arraystretch}{1.8}
+        \begin{center}
+        \begin{tabular}{@{} l c c @{}}
+        \hline
+                         & \textbf{GPA $<$ 3.0} & \textbf{GPA $\ge$ 3.0} \\
+        \hline
+        Low usage        & $\dfrac{(18-23.5)^2}{23.5} = 1.29$ & $\dfrac{(42-36.5)^2}{36.5} = 0.83$ \\
+        Moderate usage   & \blank{4cm} & \blank{4cm} \\
+        High usage       & \blank{4cm} & \blank{4cm} \\
+        \hline
+        \end{tabular}
+        \end{center}
+
+        $\chi^2 = 1.29 + 0.83 + $ \blank{1.5cm} $+$ \blank{1.5cm} $+$ \blank{1.5cm} $+$ \blank{1.5cm} $\approx$ \blank{2.5cm}
+
+  \item $\text{df} = ($ \blank{1.5cm} $- 1)($ \blank{1.5cm} $- 1) = $ \blank{2cm}
+
+        Using the chi-square table with df $= 2$, the p-value for $\chi^2 \approx 12.69$ is approximately \blank{2.5cm}.
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.06in}
+
+% ---- Tier E ----
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier E --- Extend},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[label=\alph*., itemsep=8pt]
+\setcounter{enumi}{7}
+
+  \item \textbf{Interpret the p-value} in context (reference $H_0$).
+        \writelines{3}
+
+  \item \textbf{State a complete conclusion} at $\alpha = 0.05$.
+        \writelines{3}
+
+  \item Which cell contributes the most to $\chi^2$? What does this tell you about the
+        relationship between social media usage and GPA?
+        \writelines{3}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\end{document}

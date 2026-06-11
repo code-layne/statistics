@@ -1,0 +1,264 @@
+%! AP Statistics — Unit 8, Lesson 8.2 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\newcommand{\UnitNumberName}{Unit 8: Inference for Categorical Data: Chi-Square \quad}
+\newcommand{\LessonNumberName}{Lesson 8.2: Setting Up a Chi-Square Test for Goodness of Fit}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will describe the chi-square distribution, state
+    hypotheses for a goodness of fit test, identify when a GOF test is appropriate, calculate
+    expected counts, and verify conditions. (Big Idea: VAR)
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skills Addressed}
+    \begin{itemize}
+        \item Describe chi-square distributions: positive values, skewed right; skew
+              decreases with increasing degrees of freedom (Skill 3.C; VAR-8.A).
+        \item Identify H$_0$ and H$_a$ for a GOF test (Skill 1.F; VAR-8.B).
+        \item Identify chi-square GOF as the appropriate test for one categorical variable
+              (Skill 1.E; VAR-8.C).
+        \item Calculate expected counts = (sample size)(null proportion) (Skill 3.A; VAR-8.D).
+        \item Verify conditions: Random and Large Counts ($\ge 5$) (Skill 4.C; VAR-8.E).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item The chi-square statistic $\chi^2 = \sum \dfrac{(O - E)^2}{E}$ measures
+              how far observed counts deviate from expected counts.
+        \item Expected count for each category: $E = n \cdot p_0$, where $p_0$ is the
+              null proportion for that category.
+        \item H$_0$ specifies a complete distribution (all category proportions); H$_a$
+              says at least one proportion differs.
+        \item Large Counts condition: all expected counts must be $\ge 5$ (not observed).
+        \item A small $p$-value means the data are inconsistent with the claimed
+              distribution --- but the GOF test does not say \emph{which} category differs.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{lX}
+    \textbf{Chi-square distribution} &
+        A family of distributions with only positive values, skewed right; becomes
+        less skewed as degrees of freedom increase (VAR-8.A.1--2) \\
+    \textbf{Goodness of fit (GOF) test} &
+        A chi-square procedure that tests whether observed data follow a specified
+        distribution for one categorical variable (VAR-8.C.1) \\
+    \textbf{Expected count} &
+        $E = n \cdot p_0$; the count we would expect in a category if H$_0$ is true
+        (VAR-8.D.1) \\
+    \textbf{Null proportion ($p_0$)} &
+        The hypothesized proportion for each category, specified by H$_0$ (VAR-8.B.1) \\
+    \textbf{Degrees of freedom} &
+        For a GOF test: $df = (\text{number of categories}) - 1$ \\
+    \textbf{Large Counts condition} &
+        All expected counts $\ge 5$ (VAR-8.E.2) \\
+\end{tabularx}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Unit 6: stating H$_0$ and H$_a$ for a one-proportion $z$-test; the Large
+              Counts condition ($np_0 \ge 10$, $n(1-p_0) \ge 10$).
+        \item Unit 6: the idea that a test statistic measures distance from H$_0$.
+        \item Lesson 8.1: the chi-square statistic formula and shape of the distribution.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Connections Forward}
+    \begin{itemize}
+        \item Calculating the $\chi^2$ statistic and finding the $p$-value $\to$ Lesson 8.3
+        \item Drawing conclusions for GOF tests $\to$ Lesson 8.4
+        \item Chi-square test for homogeneity $\to$ Lesson 8.6
+        \item Chi-square test for independence $\to$ Lesson 8.7
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (5--7 min)}\\
+    Display a bag of 60 M\&Ms. Tell students the manufacturer claims the color
+    distribution is: 13\% red, 14\% orange, 14\% yellow, 16\% green, 24\% blue,
+    19\% brown.\\[4pt]
+    After counting: Red 10, Orange 11, Yellow 7, Green 9, Blue 16, Brown 7 (total = 60).\\[4pt]
+    Ask: ``Is this evidence the machine is off, or just random variation?'' How can we
+    decide? We need a procedure that compares \emph{all six} proportions at once.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15 min)}
+    \begin{enumerate}
+        \item Introduce the chi-square GOF test: used when we have \textbf{one categorical
+              variable} and want to test whether the population follows a specified
+              distribution.
+        \item State hypotheses: H$_0$ lists every category's claimed proportion; H$_a$
+              says at least one proportion is different.
+        \item Compute expected counts: $E = n \cdot p_0$ for each category.
+        \item Verify conditions: Random (random sample) and Large Counts (all $E \ge 5$).
+        \item Preview: next lesson calculates $\chi^2 = \sum (O-E)^2/E$ and finds
+              the $p$-value.
+    \end{enumerate}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Explicit Instruction: Setting Up a GOF Test]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Step-by-Step Setup (PCCF --- Steps 1 \& 2)}
+    \begin{enumerate}
+        \item \textbf{Parameter}: Describe the categorical variable and population of
+              interest.
+        \item \textbf{Hypotheses}:
+              \begin{itemize}
+                  \item H$_0$: [list all proportions as specified by the claim].
+                  \item H$_a$: At least one of the proportions is not as stated in H$_0$.
+              \end{itemize}
+        \item \textbf{Expected counts}: $E_i = n \cdot p_{0,i}$ for each category $i$.
+        \item \textbf{Conditions}:
+              \begin{itemize}
+                  \item \textit{Random}: random sample or randomized experiment.
+                  \item \textit{Independence}: if sampling w/o replacement, $n \le 10\%N$.
+                  \item \textit{Large Counts}: all $E_i \ge 5$.
+              \end{itemize}
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{M\&Ms Example}\\[4pt]
+    \textbf{H$_0$:} $p_\text{red} = 0.13$, $p_\text{orange} = 0.14$,
+    $p_\text{yellow} = 0.14$, $p_\text{green} = 0.16$,
+    $p_\text{blue} = 0.24$, $p_\text{brown} = 0.19$\\[4pt]
+    \textbf{H$_a$:} At least one of these proportions is not as stated.\\[4pt]
+    \textbf{Expected counts} ($n = 60$):
+    \begin{center}\small
+    \begin{tabular}{lcr}
+        Color & $p_0$ & $E = 60 \times p_0$ \\
+        \hline
+        Red    & 0.13 & 7.8 \\
+        Orange & 0.14 & 8.4 \\
+        Yellow & 0.14 & 8.4 \\
+        Green  & 0.16 & 9.6 \\
+        Blue   & 0.24 & 14.4 \\
+        Brown  & 0.19 & 11.4 \\
+    \end{tabular}
+    \end{center}
+    All $E \ge 5$ --- Large Counts met.
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Circulate and Check}
+    \begin{itemize}
+        \item Ensure students check \emph{expected} counts (not observed) for the
+              Large Counts condition.
+        \item Verify H$_0$ lists \emph{all} category proportions (not just one), and
+              that they sum to 1.
+        \item Listen for H$_a$ stated as ``all proportions differ'' --- redirect to
+              ``at least one.''
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Cold-Call Prompts}
+    \begin{itemize}
+        \item ``Why does H$_a$ say `at least one' instead of specifying which category?''
+        \item ``If $n = 40$ and $p_0 = 0.05$ for one category, is the Large Counts
+              condition met? What could you do?''
+        \item ``Why do we use expected counts (not observed) for the condition check?''
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Partner Activity (10--12 min)}\\
+    Students use a real dataset (days of the week a restaurant receives online orders)
+    to state hypotheses, calculate expected counts, and verify conditions for a GOF test
+    of uniform distribution. Three tiers (R, A, E) with increasing autonomy.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support (Tier R)}: H$_0$ provided; students only compute expected
+              counts and check the condition.
+        \item \textit{On-grade (Tier A)}: State full hypotheses, compute expected counts,
+              verify both conditions.
+        \item \textit{Extension (Tier E)}: Identify which condition fails if $n = 28$
+              (one $E < 5$) and suggest a remedy.
+        \item \textit{ELL}: Vocabulary card --- ``observed / observado,''
+              ``expected / esperado,'' ``goodness of fit / bondad de ajuste.''
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}
+    \begin{enumerate}
+        \item State H$_0$ and H$_a$ for a GOF test of whether birth months are equally
+              distributed across 4 seasons.
+        \item Compute expected counts for $n = 80$ observations.
+        \item Verify the Large Counts condition.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{A researcher collects data on a random sample of 120 people and tests
+    whether favorite genre of music follows a claimed distribution across 5 categories.
+    Which condition below is required for the chi-square GOF test?}
+    \begin{enumerate}[label=(\Alph*)]
+        \item All observed counts $\ge 5$.
+        \item All expected counts $\ge 5$.
+        \item The sample size is at least 30.
+        \item The distribution is approximately normal.
+    \end{enumerate}
+    Answer: (B)
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item Two problems, each providing a context, claimed proportions, and sample
+              data. Students state H$_0$/H$_a$, compute expected counts, and verify
+              conditions.
+        \item One problem where one expected count is slightly below 5 --- students
+              identify the failure and explain consequences.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: If only four categories remain after combining two
+              small cells, how does $df$ change? What is the trade-off?
+        \item \textit{Preview}: Lesson 8.3 calculates $\chi^2 = \sum (O-E)^2/E$ and
+              uses the chi-square distribution to find the $p$-value and draw a
+              conclusion.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\end{document}

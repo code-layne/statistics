@@ -1,0 +1,103 @@
+%! AP Statistics — Unit 8, Lesson 8.3 — Group Activity
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.3}{Group Activity}
+\namepartnerperiod
+
+\vspace{0.05in}
+
+\begin{tcolorbox}[colback=sky!30, colframe=navy, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm]
+\textbf{Birth Month Distribution of MLB Players}\\[4pt]
+Researchers wonder whether Major League Baseball (MLB) players are more likely to be born
+in certain months. If birth month had no effect on player development, we would expect
+players to be born equally often in each month ($p = 1/12 \approx 0.0833$ for each month).
+A random sample of 180 MLB players yields the following birth month counts:
+
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{lc|lc}
+    \textbf{Month} & \textbf{Observed} & \textbf{Month} & \textbf{Observed} \\
+    \hline
+    January   & 21 & July      & 13 \\
+    February  & 18 & August    & 12 \\
+    March     & 19 & September & 16 \\
+    April     & 22 & October   & 14 \\
+    May       & 17 & November  & 11 \\
+    June      & 15 & December  & 22 \\
+\end{tabular}
+\end{center}
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+\begin{enumerate}[leftmargin=1.5em]
+
+  \item \textbf{Hypotheses.} State $H_0$ and $H_a$ for a chi-square goodness-of-fit test.
+
+        \vspace{0.08in}
+        $H_0$: \blank{10cm}
+
+        \vspace{0.12in}
+        $H_a$: \blank{10cm}
+
+        \vspace{0.08in}
+
+  \item \textbf{Expected Counts.} Calculate the expected count for each month and verify
+        the large-counts condition.
+
+        \vspace{0.05in}
+        $E = n \times (1/12) =$ \blank{2cm} $\times$ \blank{2cm} $=$ \blank{2cm}
+        for each month.
+
+        \vspace{0.05in}
+        Large-counts condition: \blank{10cm}
+
+        \vspace{0.08in}
+
+  \item \textbf{Test Statistic.} Compute the $\chi^2$ statistic. Fill in each contribution
+        below, then sum.
+
+\renewcommand{\arraystretch}{2.0}
+\begin{center}
+\begin{tabular}{lcccc}
+    \textbf{Month} & $O$ & $E$ & $(O-E)^2/E$ & \\
+    \hline
+    January   & 21 & \blank{1.2cm} & \blank{2cm} & \\
+    February  & 18 & \blank{1.2cm} & \blank{2cm} & \\
+    March     & 19 & \blank{1.2cm} & \blank{2cm} & \\
+    April     & 22 & \blank{1.2cm} & \blank{2cm} & \\
+    May       & 17 & \blank{1.2cm} & \blank{2cm} & \\
+    June      & 15 & \blank{1.2cm} & \blank{2cm} & \\
+    July      & 13 & \blank{1.2cm} & \blank{2cm} & \\
+    August    & 12 & \blank{1.2cm} & \blank{2cm} & \\
+    September & 16 & \blank{1.2cm} & \blank{2cm} & \\
+    October   & 14 & \blank{1.2cm} & \blank{2cm} & \\
+    November  & 11 & \blank{1.2cm} & \blank{2cm} & \\
+    December  & 22 & \blank{1.2cm} & \blank{2cm} & \\
+    \hline
+    \textbf{Total} & 180 & & \blank{2.5cm} $= \chi^2$ & \\
+\end{tabular}
+\end{center}
+
+  \item \textbf{Degrees of Freedom and P-Value.}
+
+        $df =$ \blank{3cm}
+
+        \vspace{0.05in}
+        Using a chi-square table with $df = 11$, the p-value is approximately 0.30.
+        \textbf{Interpret the p-value} in context.
+
+        \writelines{3}
+
+  \item \textbf{Conclusion.} State a complete conclusion at $\alpha = 0.05$.
+
+        \writelines{3}
+
+\end{enumerate}
+
+\end{document}

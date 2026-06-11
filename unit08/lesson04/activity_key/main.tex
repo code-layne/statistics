@@ -1,0 +1,95 @@
+%! AP Statistics — Unit 8, Lesson 8.4 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.4}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.1in}
+
+\begin{scenariobox}[School Sports Participation Survey]{sky}
+A random sample of 150 middle school students is asked about their grade (6th, 7th, 8th)
+and whether they participate in a school sport (Yes or No). The results are shown below.
+
+\vspace{0.1in}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{lcccc}
+             & \textbf{Yes} & \textbf{No} & \textbf{Row Total} \\
+    \hline
+    6th grade & 24 & 26 & 50 \\
+    7th grade & 30 & 20 & 50 \\
+    8th grade & 18 & 32 & 50 \\
+    \hline
+    Column Total & 72 & 78 & 150 \\
+\end{tabular}
+\end{scenariobox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Task a.} Use the formula $E = \dfrac{(\text{row total})(\text{col total})}{\text{table total}}$
+to calculate the expected count for \textbf{two} of the six cells. Show all work.
+
+\begin{enumerate}[label=\alph*.]
+    \item 6th grade / Yes: \quad $E = \dfrac{(\ans{50})(\ans{72})}{\ans{150}} = $ \ans{24}
+
+          \vspace{0.1in}
+
+    \item 7th grade / No: \quad $E = \dfrac{(\ans{50})(\ans{78})}{\ans{150}} = $ \ans{26}
+\end{enumerate}
+
+\vspace{0.1in}
+\textbf{Task b.} All 6 expected counts:
+
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{lcc}
+             & \textbf{Expected: Yes} & \textbf{Expected: No} \\
+    \hline
+    6th grade & \ans{24} & \ans{26} \\
+    7th grade & \ans{24} & \ans{26} \\
+    8th grade & \ans{24} & \ans{26} \\
+\end{tabular}
+
+\vspace{0.1in}
+\textbf{Task c.} Large-Counts Condition: Are all expected counts $\ge 5$? \quad
+\textcolor{keyred}{\textbf{Yes}} \quad (No)
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Task a.} All expected counts: $E_{\text{Yes}} = (50 \times 72)/150 = $ \ans{24} for every grade;
+$E_{\text{No}} = (50 \times 78)/150 = $ \ans{26} for every grade.
+
+\vspace{0.1in}
+\textbf{Task b.} Side-by-side comparison:
+
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{lcccc}
+             & \textbf{Obs: Yes} & \textbf{Exp: Yes} & \textbf{Obs: No} & \textbf{Exp: No} \\
+    \hline
+    6th grade & 24 & \ans{24} & 26 & \ans{26} \\
+    7th grade & 30 & \ans{24} & 20 & \ans{26} \\
+    8th grade & 18 & \ans{24} & 32 & \ans{26} \\
+\end{tabular}
+
+\vspace{0.1in}
+\textbf{Task c.} \ansline{All expected counts are either 24 or 26, both of which are greater than 5, so the large-counts condition is satisfied.}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Task d.} \ansline{7th grade shows the largest difference: observed Yes $= 30$, expected $= 24$, difference $= +6$. 8th grade also shows $|O - E| = 6$ (observed Yes $= 18$ vs.\ expected $= 24$).}
+
+\textbf{Task e.} \ansline{Yes, the observed counts suggest an association. If grade and sports participation were independent, we would expect 24 Yes and 26 No in every grade. Instead, 7th graders participate more than expected and 8th graders less than expected, indicating that participation rates differ by grade level.}
+
+\textbf{Task f.} For 7th grade / Yes: $(O - E)^2/E = (30 - 24)^2/24 = 36/24 = $ \ans{1.5}.
+\ansline{A larger value of $(O - E)^2/E$ means a larger discrepancy between observed and expected in that cell, which contributes more to evidence of an association.}
+\end{tcolorbox}
+
+\end{document}

@@ -1,0 +1,128 @@
+%! AP Statistics — Unit 8, Lesson 8.1 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.1}{Guided Notes}
+\namedateperiod
+
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+\end{itemize}
+\end{objectivebox}
+
+\begin{vocabbox}
+\termblanklong{Observed counts}
+\termblanklong{Expected counts}
+\termblanklong{Chi-square test}
+\termblanklong{Distribution of a categorical variable}
+\end{vocabbox}
+
+\begin{hookbox}
+\textbf{Discussion:} A bag of candies claims 20\% of each of 5 colors. You open a bag
+and count: Red 14, Orange 8, Yellow 12, Green 9, Blue 7 (total = 50). Is your bag unusual,
+or is this just normal variation? How would you decide?
+
+\writelines{2}
+\end{hookbox}
+
+\begin{notesbox}{What Are Expected Counts?}
+If we \emph{assume} a categorical variable follows a specific distribution, the
+\textbf{expected count} for each category is:
+
+\[
+    \text{Expected count} = n \times p_{\text{category}}
+\]
+
+where $n$ is the \blank{3cm} and $p_{\text{category}}$ is the \blank{5cm}.
+
+\vspace{0.1in}
+\textbf{Example:} A coffee shop sells 200 drinks. If each of 4 flavors is equally popular
+(25\% each), the expected count for each flavor is $200 \times 0.25 = $ \blank{2cm}.
+
+\vspace{0.1in}
+Expected counts represent what we would see \blank{6cm}
+if the assumed distribution were true. They are not necessarily whole numbers.
+\end{notesbox}
+
+\begin{notesbox}{What Does ``Surprising'' Mean Statistically?}
+After computing expected counts, we compare them to the \blank{3cm} counts.
+
+\vspace{0.1in}
+\textbf{The gap} for a single category $= $ \blank{4cm}.
+
+\vspace{0.1in}
+A gap of \blank{1cm} means perfect agreement. Larger gaps indicate that the data
+\blank{6cm}.
+
+\vspace{0.1in}
+\renewcommand{\arraystretch}{2}
+\begin{tabularx}{\linewidth}{Xcc}
+    \textbf{Category} & \textbf{Observed} & \textbf{Gap (Obs $-$ Exp)} \\
+    \hline
+    Espresso   & 48 & \blank{2cm} \\
+    Latte      & 72 & \blank{2cm} \\
+    Cappuccino & 36 & \blank{2cm} \\
+    Cold Brew  & 44 & \blank{2cm} \\
+\end{tabularx}
+
+\vspace{0.1in}
+Which category has the largest gap? \blank{3cm} \quad
+Is the gap positive or negative? \blank{3cm}
+\end{notesbox}
+
+\begin{notesbox}{Preview: The Chi-Square Idea}
+Looking at one gap at a time is useful, but a chi-square test considers
+\blank{4cm} categories simultaneously.
+
+\vspace{0.1in}
+The general idea: we \blank{4cm} the gaps across all categories (after adjusting
+each gap for the size of the expected count). The resulting number is called the
+\textbf{chi-square statistic}, denoted $\chi^2$ (``chi-square'').
+
+\begin{itemize}
+    \item A $\chi^2$ value close to \blank{2cm} means observed counts closely match
+          expected counts.
+    \item A \blank{2cm} $\chi^2$ value means the observed counts differ substantially
+          from expected.
+    \item We will learn the formula in Lesson \blank{2cm}.
+\end{itemize}
+\end{notesbox}
+
+\begin{notesbox}{Unit 8 Arc Overview}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{lX}
+    \textbf{Lesson 8.1} & Framing: what question does Unit 8 ask? \\
+    \textbf{Lesson 8.2} & Setting up the chi-square \blank{4cm} test \\
+    \textbf{Lesson 8.3} & Carrying out the chi-square GOF test \\
+    \textbf{Lessons 8.4--8.5} & Chi-square test for \blank{4cm} (two-way tables, multiple groups) \\
+    \textbf{Lesson 8.6} & Chi-square test for \blank{4cm} (two categorical variables, one sample) \\
+    \textbf{Lesson 8.7} & Synthesis: choosing the right chi-square procedure \\
+\end{tabularx}
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Guided Practice:} A school surveys 120 students about their preferred study
+environment. Results: Library 38, Home 52, Caf\'e 18, Classroom 12.
+
+\begin{enumerate}
+  \item If preference were equally distributed among 4 options, what is the
+        expected count for each category?
+        \writelines{2}
+
+  \item Compute the gap (Observed $-$ Expected) for each category.
+        \writelines{2}
+
+  \item Without any formal calculation, does this data suggest students do
+        \emph{not} have equal preferences? Explain.
+        \writelines{2}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

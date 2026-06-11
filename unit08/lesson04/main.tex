@@ -1,0 +1,290 @@
+%! AP Statistics — Unit 8, Lesson 8.4 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\UnitNumberName}{Unit 8: Inference for Categorical Data: Chi-Square \quad}
+\newcommand{\LessonNumberName}{Lesson 8.4: Expected Counts in Two-Way Tables}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will calculate expected counts in two-way tables
+    and explain what those counts represent under $H_0$ --- specifically, what cell counts
+    would look like if the two categorical variables were independent (or the populations
+    were homogeneous). (Big Idea: VAR)
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 3.A --- Determining Parameters, Statistics, and Sampling Distributions}
+    \begin{itemize}
+        \item Calculate expected counts in a two-way table using the formula
+              $\text{Expected} = \dfrac{(\text{row total})(\text{col total})}{\text{table total}}$
+              (LO VAR-8.H; Skill 3.A).
+        \item Derive the formula from two equivalent perspectives:
+              (row proportion)(column total) \emph{or} (row total)(column proportion) ---
+              same result either way.
+        \item Bridge lesson: connects GOF (Lesson 8.3) to chi-square tests for
+              homogeneity and independence (Lessons 8.5--8.6).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item Expected counts represent the cell frequencies we would \emph{expect} if the
+              two variables were completely independent --- or if the population distributions
+              were identical across groups.
+        \item The large-counts condition for two-way chi-square tests: all expected counts
+              must be at least 5.
+        \item Equal row (or column) totals do \emph{not} guarantee equal expected counts ---
+              expected counts also depend on the other marginal totals.
+        \item This lesson is a computation bridge; the full chi-square test (comparing
+              observed vs.\ expected) is built in Lessons 8.5--8.6.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Two-way table} --- a display of counts for two categorical variables;
+              rows = one variable, columns = the other
+        \item \textbf{Row total} --- sum of counts across one row (one category of the
+              row variable)
+        \item \textbf{Column total} --- sum of counts down one column (one category of the
+              column variable)
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Expected count (two-way)} --- the count we would predict in a cell
+              if the row and column variables were independent:
+              $E = \dfrac{(\text{row total})(\text{col total})}{\text{table total}}$
+        \item \textbf{Marginal distribution} --- the row totals or column totals, expressed
+              as counts or proportions; describes one variable ignoring the other
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Lesson 8.3: chi-square GOF statistic formula and interpretation.
+        \item Lesson 8.3: expected counts for a one-way table (GOF) --- expected $= n \cdot p_0$.
+        \item Lesson 8.1--8.2: purpose of chi-square tests; conditions (random, large counts,
+              independence).
+        \item Connect: ``In GOF we compared observed to expected for one variable. Today
+              we extend that idea to \emph{two} variables simultaneously.''
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Warm-Up (attached)}\\
+    Spiral review of chi-square GOF:
+    \begin{itemize}
+        \item Decision and conclusion from a given $\chi^2$ statistic/p-value.
+        \item Interpreting degrees of freedom in context.
+    \end{itemize}
+    \textbf{Connections Forward}
+    \begin{itemize}
+        \item Chi-square test for homogeneity $\to$ Lesson 8.5
+        \item Chi-square test for independence $\to$ Lesson 8.6
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Hook]{sky}
+\textbf{Motivating Question (2--3 min)}\\
+Display the grade/learning-preference table (200 students). Ask:
+\textbf{``If grade level and learning preference are completely unrelated, how many
+9th-graders would we \emph{expect} to prefer online learning?''}
+
+Let students guess, then reveal the formula connection: if 50 out of 200 are 9th-graders
+(25\% of the sample) \emph{and} 100 out of 200 prefer online (50\% of the sample),
+independence predicts $0.25 \times 100 = 25$ students in that cell.
+That is exactly $(50 \times 100)/200 = 25$.
+\end{skillbox}
+
+\begin{skillbox}[Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Part 1 --- Reading a Two-Way Table (5 min)}
+    \begin{enumerate}
+        \item Display the grade/learning table. Label: rows = grade level, columns = preference,
+              cells = joint counts, margins = row and column totals.
+        \item Ask students to compute each marginal proportion.
+              Emphasize: the marginal distribution of preference is 100/200 = 50\% online,
+              50\% in-person --- regardless of grade.
+        \item Pose: ``Under independence, what fraction of any grade level should prefer
+              online?'' Answer: 50\% $\to$ so expected count = $0.50 \times 50 = 25$.
+    \end{enumerate}
+
+    \textbf{Part 2 --- Deriving the Formula (5 min)}\\
+    Two equivalent routes to the same answer:
+    \begin{itemize}
+        \item \textit{Route A}: (row proportion)(column total)
+              $= \dfrac{50}{200} \times 100 = 25$
+        \item \textit{Route B}: (row total)(column proportion)
+              $= 50 \times \dfrac{100}{200} = 25$
+        \item Both simplify to $\dfrac{(\text{row total})(\text{col total})}{\text{table total}}$.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Part 3 --- Filling in the Full Table (5 min)}
+
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabular}{lccc}
+        & \textbf{Online} & \textbf{In-person} & \textbf{Total} \\
+        \hline
+        9th  & 28 & 22 & 50 \\
+        10th & 35 & 15 & 50 \\
+        11th & 22 & 28 & 50 \\
+        12th & 15 & 35 & 50 \\
+        \hline
+        Total & 100 & 100 & 200 \\
+    \end{tabular}
+
+    \vspace{0.1in}
+    All expected counts $= (50 \times 100)/200 = 25$
+    (balanced design; each row is 25\% of total; each column is 50\%).
+
+    \vspace{0.1in}
+    \textbf{Large-Counts Condition:}\\
+    All expected counts $\ge 5$? \quad $25 \ge 5$ \checkmark\\
+    (Condition met for all 8 cells.)
+
+    \vspace{0.1in}
+    \textbf{Key Observation:} The observed counts differ from 25 in some cells ---
+    this discrepancy is what the chi-square statistic will measure in Lesson 8.5.
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Active Monitoring]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Circulate and Check}
+    \begin{itemize}
+        \item Students often apply the formula to cell counts instead of row/column totals.
+              Redirect: ``Which number comes from the row margin? Which from the column margin?''
+        \item Watch for students dividing row total by table total, then stopping --- remind
+              them to multiply by the column total.
+        \item Check that students distinguish \emph{observed} counts (given in the table)
+              from \emph{expected} counts (calculated).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Cold-Call Prompts}
+    \begin{itemize}
+        \item ``Without computing, what would all expected counts look like if every
+              row total were equal \emph{and} every column total were equal?'' (They'd
+              all be the same.)
+        \item ``If row totals are unequal but column totals are equal, are expected
+              counts in a given column all the same?'' (No --- they scale with row totals.)
+        \item ``What does it mean for the large-counts condition to fail?''
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{minipage}[t]{0.30\linewidth}
+    \textbf{Tier R --- Remediate}
+    \begin{itemize}
+        \item Provide the formula card: $E = RT \times CT / N$.
+        \item Supply a partially completed expected-count table; students fill the
+              remaining cells.
+        \item Sentence frame for condition check: ``All expected counts are
+              \underline{\hspace{1cm}}, which is [greater than / less than] 5, so
+              the large-counts condition is [met / not met].''
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.30\linewidth}
+    \textbf{Tier A --- Approaching}
+    \begin{itemize}
+        \item Complete the full activity: compute all 6 expected counts in the sports
+              participation table, check the large-counts condition, and compare observed
+              vs.\ expected.
+        \item Show work for at least 2 cells using the formula explicitly.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.30\linewidth}
+    \textbf{Tier E --- Extension}
+    \begin{itemize}
+        \item After computing expected counts, identify the grade/sport combination
+              showing the largest deviation from expected.
+        \item Conjecture: does this suggest an association between grade and sports
+              participation? Explain using both numbers and words.
+        \item Preview: write the $\chi^2$ contribution for that one cell:
+              $(O - E)^2 / E$.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Individual Work \& Assessment]{redbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    A 2$\times$3 table (120 students; gender vs.\ favorite subject):
+    \begin{itemize}
+        \item Male: Math 22, Science 28, English 10 $\to$ row total 60
+        \item Female: Math 18, Science 17, English 25 $\to$ row total 60
+        \item Column totals: 40, 45, 35; Table total: 120
+    \end{itemize}
+    Students calculate:
+    \begin{enumerate}
+        \item Expected count for Male/Math: $(60 \times 40)/120 = 20$.
+        \item Expected count for Female/English: $(60 \times 35)/120 = 17.5$.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Collection Note}\\
+    Collect exit tickets and sort into three piles:
+    \begin{itemize}
+        \item Correct formula and arithmetic --- ready for Lesson 8.5.
+        \item Correct formula, arithmetic error --- reteach before Lesson 8.5.
+        \item Incorrect formula --- pull for small-group review of marginals.
+    \end{itemize}
+    \textbf{AP-Style Check:} ``True or False: If all expected counts in a two-way
+    table are greater than 5, the observed counts must also be greater than 5.''
+    (False --- the large-counts condition only requires expected $\ge 5$.)
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework}
+    \begin{itemize}
+        \item Problem 1: compute all 6 expected counts in a 3$\times$2 table of
+              240 students (grade 10/11/12 vs.\ car ownership).
+        \item Problem 2: True/False --- ``equal row totals imply equal expected counts.''
+              Justify.
+        \item Problem 3: 3$\times$4 table, $n = 300$; all row totals $= 100$, all column
+              totals $= 75$. Compute expected counts; check large-counts condition.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: For the grade/learning table, compute $(O - E)^2/E$
+              for each of the 8 cells and sum them. What number do you get? (This is the
+              $\chi^2$ statistic students will use in Lesson 8.5.)
+        \item \textit{Preview}: Lesson 8.5 introduces the chi-square test for homogeneity ---
+              the full hypothesis-testing procedure that uses the expected counts computed
+              today.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\end{document}

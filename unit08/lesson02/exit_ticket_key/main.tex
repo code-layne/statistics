@@ -1,0 +1,58 @@
+%! AP Statistics — Unit 8, Lesson 8.2 — Exit Ticket (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.2}{Exit Ticket --- Answer Key}
+\namedateperiod
+
+\vspace{0.1in}
+A spinner has 5 regions with the following claimed proportions:
+A = 0.10, B = 0.20, C = 0.30, D = 0.25, E = 0.15.
+The spinner is spun 100 times and the region landed on is recorded each time.
+
+\begin{enumerate}
+
+  \item State H$_0$ and H$_a$ for a chi-square goodness of fit test of whether
+        the spinner follows the claimed distribution.
+
+        H$_0$: \ans{$p_A = 0.10$, $p_B = 0.20$, $p_C = 0.30$, $p_D = 0.25$, $p_E = 0.15$
+        (the spinner follows the claimed distribution).}
+
+        \vspace{0.05in}
+
+        H$_a$: \ans{At least one of the spinner's true proportions differs from the claimed value.}
+
+        \vspace{0.1in}
+
+  \item Calculate the expected count for each region.
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{lccc}
+            \textbf{Region} & \textbf{Null proportion ($p_0$)} & \textbf{Expected count ($E = 100 \cdot p_0$)} \\
+            \hline
+            A & 0.10 & \ans{10} \\
+            B & 0.20 & \ans{20} \\
+            C & 0.30 & \ans{30} \\
+            D & 0.25 & \ans{25} \\
+            E & 0.15 & \ans{15} \\
+        \end{tabular}
+        \end{center}
+
+        Are all expected counts greater than 5? \quad \textcolor{keyred}{\textbf{Yes}} \quad (No)
+
+        Justify: \ans{Smallest expected count is $E_A = 10 \ge 5$. All expected counts $\ge 5$,
+        so the Large Counts condition is satisfied.}
+
+\end{enumerate}
+
+\begin{teachernote}
+    $df = 5 - 1 = 4$. Students do not yet calculate the $\chi^2$ statistic or $p$-value ---
+    that is covered in Lesson 8.3. If students finish early, ask them to also state the
+    Random condition check for this context.
+\end{teachernote}
+
+\end{document}

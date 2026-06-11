@@ -1,0 +1,52 @@
+%! AP Statistics — Unit 8, Lesson 8.1 — Student Packet Cover Sheet
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[navy] (current page.north west) rectangle
+    ([yshift=-2.2cm]current page.north east);
+  \node[anchor=west, white, font=\large\bfseries] at
+    ([xshift=1cm, yshift=-0.7cm]current page.north west)
+    {\CourseName: \SchoolYear};
+  \node[anchor=west, white, font=\normalsize] at
+    ([xshift=1cm, yshift=-1.3cm]current page.north west)
+    {Unit 8: Inference for Categorical Data: Chi-Square};
+  \node[anchor=west, white, font=\normalsize\bfseries] at
+    ([xshift=1cm, yshift=-1.9cm]current page.north west)
+    {Lesson 8.1 \quad Introducing Statistics: Are My Results Unexpected?};
+\end{tikzpicture}
+
+\vspace{2.4cm}
+\namedateperiod
+
+\begin{learningtargetbox}
+\begin{itemize}
+    \item I can identify a question about whether variation between observed and
+          expected counts is due to chance.
+    \item I can explain what it means for categorical data to follow an expected
+          distribution.
+    \item I can describe how chi-square tests address questions about categorical
+          data distributions.
+\end{itemize}
+\end{learningtargetbox}
+
+\begin{tocbox}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{clXc}
+    \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
+    \hline
+    1 & Warm-Up        & Spiral review: categorical distributions, proportions, and expected counts & \hfill/5 \\
+    2 & Guided Notes   & Vocabulary, expected counts, the chi-square idea, unit arc overview        & \hfill/10 \\
+    3 & Activity       & Group work: observed vs.\ expected counts in a survey scenario             & \hfill/12 \\
+    4 & Exit Ticket    & Independent check on expected counts and interpreting differences          & \hfill/6 \\
+    5 & Homework       & Practice with expected counts and chi-square framing                      & \hfill/12 \\
+    \hline
+       & \multicolumn{2}{l}{\textbf{Total}} & \hfill/45 \\
+\end{tabularx}
+\end{tocbox}
+
+\end{document}
