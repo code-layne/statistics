@@ -1,0 +1,241 @@
+%! AP Statistics — Unit 8, Lesson 8.6 — Lesson Plan
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\newcommand{\UnitNumberName}{Unit 8: Inference for Categorical Data: Chi-Square \quad}
+\newcommand{\LessonNumberName}{Lesson 8.6: Carrying Out a Chi-Square Test for Homogeneity or Independence}
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries \CourseName: \SchoolYear \\
+    {\small\bfseries \UnitNumberName \LessonNumberName}}
+\end{center}
+
+\begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
+    left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
+    \textbf{Primary Objective:} Students will calculate the chi-square test statistic,
+    find and interpret the p-value, and state a complete conclusion for both
+    chi-square tests for homogeneity and chi-square tests for independence.
+    (Big Ideas: VAR, DAT)
+\end{tcolorbox}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{skillbox}[Priority Ideas \& Skills]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skills 3.E, 4.B, 4.E}
+    \begin{itemize}
+        \item \textbf{VAR-8.L (Skill 3.E):} Calculate
+              $\chi^2 = \sum \dfrac{(O - E)^2}{E}$ from a two-way table;
+              $\text{df} = (r-1)(c-1)$.
+        \item \textbf{VAR-8.M (Skill 3.E):} Find the p-value as the proportion of
+              the $\chi^2$ distribution (with the given df) that is $\ge$ the test
+              statistic; use a table or technology.
+        \item \textbf{DAT-3.K (Skill 4.B):} Interpret the p-value: the probability,
+              assuming $H_0$ is true, of obtaining a $\chi^2$ statistic as large or
+              larger than the one observed.
+        \item \textbf{DAT-3.L (Skill 4.E):} Compare p-value to $\alpha$; reject or
+              fail to reject $H_0$; justify a conclusion that answers the research
+              question in context.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item The $\chi^2$ formula is the same for GOF, homogeneity, and independence
+              tests; what differs is how expected counts are computed and df.
+        \item For two-way tables: $\text{df} = (r-1)(c-1)$, not $k-1$.
+        \item A larger $\chi^2$ means observed counts deviate more from expected,
+              yielding a smaller p-value and stronger evidence against $H_0$.
+        \item The conclusion must name the variables, state whether $H_0$ is rejected,
+              and explicitly answer the research question.
+        \item The p-value is computed \emph{assuming $H_0$ is true}; it is not the
+              probability that the variables are independent.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Test statistic (two-way)} ---
+              $\chi^2 = \sum \dfrac{(O-E)^2}{E}$; always $\ge 0$; summed over all cells
+        \item \textbf{Degrees of freedom (two-way)} ---
+              $\text{df} = (r-1)(c-1)$; governs the shape of the $\chi^2$ distribution
+        \item \textbf{p-value (chi-square)} ---
+              right-tail area; $P(\chi^2_{\text{df}} \ge \chi^2_{\text{obs}})$
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{p-value interpretation} --- ``If $H_0$ were true, the probability
+              of obtaining a $\chi^2$ statistic this large or larger is \ldots''
+        \item \textbf{Conclusion template} --- ``Because $p$ [compared to] $\alpha$,
+              we [reject/fail to reject] $H_0$. We [do/do not] have convincing evidence
+              that \ldots''
+        \item \textbf{Expected count (review)} ---
+              $E = \dfrac{\text{row total} \times \text{col total}}{\text{grand total}}$
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
+\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+    \textbf{Spiral Review (warm-up)}
+    \begin{itemize}
+        \item Lesson 8.4: identify test type (homogeneity vs.\ independence);
+              state $H_0$ and $H_a$ in context.
+        \item Lesson 8.5: compute expected counts;
+              $E = \dfrac{\text{row total} \times \text{col total}}{n}$.
+        \item Today's goal: complete the Do--Conclude phases using the $\chi^2$
+              statistic, p-value, and a formal conclusion.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.38\linewidth}\vspace{0pt}\centering
+    % Authored warm-up compiles to target/ --- no source PDF to embed here.
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Lesson: Computing $\chi^2$ and Finding the p-Value (VAR-8.L / VAR-8.M)]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Transit Plan Worked Example}\\
+    Three cities (A, B, C) each randomly sampled 100 residents.
+    Question: Do you support the new transit plan?
+    (Support / Neutral / Oppose)
+
+    \renewcommand{\arraystretch}{1.3}
+    \begin{center}\small
+    \begin{tabular}{@{} l c c c c @{}}
+    \hline
+              & Sup & Neu & Opp & Tot \\
+    \hline
+    City A    & 58  & 22  & 20  & 100 \\
+    City B    & 45  & 35  & 20  & 100 \\
+    City C    & 37  & 28  & 35  & 100 \\
+    \hline
+    Total     & 140 & 85  & 75  & 300 \\
+    \hline
+    \end{tabular}
+    \end{center}
+
+    \textbf{Expected counts (each row total = 100):}
+    \begin{itemize}
+        \item Support: $(100 \times 140)/300 = 46.67$
+        \item Neutral: $(100 \times 85)/300 = 28.33$
+        \item Oppose: $(100 \times 75)/300 = 25.00$
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{$\chi^2$ Contributions by Cell:}\\[4pt]
+    City A: $\frac{(58-46.67)^2}{46.67} + \frac{(22-28.33)^2}{28.33} + \frac{(20-25)^2}{25}$
+    $= 2.75 + 1.42 + 1.00$\\[4pt]
+    City B: $\frac{(45-46.67)^2}{46.67} + \frac{(35-28.33)^2}{28.33} + \frac{(20-25)^2}{25}$
+    $= 0.06 + 1.57 + 1.00$\\[4pt]
+    City C: $\frac{(37-46.67)^2}{46.67} + \frac{(28-28.33)^2}{28.33} + \frac{(35-25)^2}{25}$
+    $= 2.01 + 0.00 + 4.00$\\[6pt]
+    $\chi^2 \approx 13.81$, $\text{df} = (3-1)(3-1) = 4$\\[4pt]
+    p-value $\approx 0.008$ (from chi-square table, df = 4:\\
+    $\chi^2 = 13.28 \to p = 0.01$; $13.81 > 13.28$, so $p < 0.01$)
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Lesson (cont.): Interpret and Conclude (DAT-3.K / DAT-3.L)]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Interpreting the p-Value (DAT-3.K)}\\
+    ``Assuming $H_0$ is true (the distribution of opinions is the same across all
+    three cities), there is about a 0.8\% probability of observing a $\chi^2$ statistic
+    as large as 13.81 by chance alone.''\\[6pt]
+    Must explicitly state that $H_0$ is assumed true.  Do NOT say ``the probability
+    that the distributions are the same is 0.008.''
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Formal Conclusion (DAT-3.L)}\\
+    Compare: $p \approx 0.008 < \alpha = 0.05$ $\Rightarrow$ \textbf{reject $H_0$}.\\[4pt]
+    ``Because $p \approx 0.008 < \alpha = 0.05$, we reject $H_0$.  We have convincing
+    evidence that the distribution of opinions on the transit plan differs across the
+    three cities.''\\[4pt]
+    Template for failing to reject:\\
+    ``Because $p > \alpha$, we fail to reject $H_0$.  We do not have convincing
+    evidence that \ldots''
+\end{minipage}
+\end{skillbox}
+
+\begin{skillbox}[Common Errors \& Misconceptions]{redbox}
+\begin{itemize}
+    \item Using $\text{df} = k - 1$ (GOF formula) for a two-way table instead of $(r-1)(c-1)$.
+    \item Writing ``the p-value is the probability that the variables are independent'' --- the p-value is computed \emph{assuming} independence (or homogeneity); it does not prove it.
+    \item Omitting context from the conclusion or not answering the research question.
+    \item Forgetting to verify all expected counts $\ge 5$ before carrying out the test.
+    \item Using $\sqrt{\phantom{X}}$ or raw math inside \verb|\ans{}| --- use text or \verb|{\color{keyred}\mathbf{}}| for in-formula slots.
+\end{itemize}
+\end{skillbox}
+
+\begin{skillbox}[Lesson Flow \& Timing]{sky}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{} p{1.2in} p{4.7in} @{}}
+    \textbf{Warm-Up} (5 min)       & Spiral review from 8.5: identify test type and write hypotheses for two scenarios. \\
+    \textbf{Launch} (5 min)        & Preview: today we complete steps 3--5 of the 4-step procedure. Display the transit plan table. \\
+    \textbf{Guided Notes} (20 min) & Walk through the full 5-step procedure using the transit plan example; students fill in expected counts, $\chi^2$ contributions, df, p-value, and conclusion. Practice box with a 2$\times$2 table. \\
+    \textbf{Activity} (20 min)     & Social media \& GPA: test for independence (R/A/E tiers). \\
+    \textbf{Exit Ticket} (5 min)   & Given $\chi^2 = 8.45$, df = 4, p $\approx 0.077$: interpret p and conclude ($\alpha = 0.05$). \\
+    \textbf{Homework}              & 3 problems: complete chi-square test, df for a $2\times4$ table, and a conceptual explanation. \\
+\end{tabular}
+\end{skillbox}
+
+\begin{skillbox}[Standards Alignment]{greenbox}
+\begin{itemize}
+    \item \textbf{VAR-8.L} --- Calculate $\chi^2$ statistic from a two-way table (Skill 3.E)
+    \item \textbf{VAR-8.M} --- Find p-value from the chi-square distribution (Skill 3.E)
+    \item \textbf{DAT-3.K} --- Interpret the p-value in context (Skill 4.B)
+    \item \textbf{DAT-3.L} --- Justify a conclusion with statistical reasoning (Skill 4.E)
+\end{itemize}
+\end{skillbox}
+
+\begin{skillbox}[Group Work \& Differentiation]{redbox}
+\begin{multicols}{3}
+    \textbf{Tier R --- Remediate}
+    \begin{itemize}
+        \item Provide a pre-computed $\chi^2$ value; students find p-value from table, interpret, and conclude.
+        \item Formula strip: $\chi^2 = \sum(O-E)^2/E$; conclusion template.
+    \end{itemize}
+    \columnbreak
+    \textbf{Tier A --- Approaching}
+    \begin{itemize}
+        \item Given observed table with expected counts, compute $\chi^2$, find df and p-value, and write a full SPDC conclusion.
+    \end{itemize}
+    \columnbreak
+    \textbf{Tier E --- Extension}
+    \begin{itemize}
+        \item Identify which cell contributes most to $\chi^2$; explain what that cell reveals about the relationship.
+        \item Discuss how the conclusion wording differs for homogeneity vs.\ independence.
+    \end{itemize}
+\end{multicols}
+\end{skillbox}
+
+\begin{skillbox}[Reinforcement \& Extension]{goldbox}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework Overview}
+    \begin{itemize}
+        \item Problem 1: complete chi-square test for homogeneity (teenager sleep by grade).
+        \item Problem 2: df for a 2$\times$4 table; critical value at $\alpha = 0.05$.
+        \item Problem 3: conceptual --- why does a larger $\chi^2$ provide more evidence against $H_0$?
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item Identify the largest contributing cell and interpret it in context.
+        \item Preview --- Lesson 8.7: selecting among all three chi-square tests and writing complete AP free-response justifications.
+    \end{itemize}
+\end{minipage}
+\end{skillbox}
+
+\end{document}

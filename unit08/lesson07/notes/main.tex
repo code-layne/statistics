@@ -1,0 +1,102 @@
+%! Skills Focus: Selecting an Appropriate Inference Procedure for Categorical Data — Unit 8, Lesson 8.7 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.7}{Guided Notes}
+\namedateperiod
+
+\vspace{0.10in}
+
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+  \item \writeline
+  \item \writeline
+  \item \writeline
+\end{itemize}
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{Categorical inference procedure}]
+        Any inference method applied to \blank{4cm} data. The first diagnostic question is:
+        does the outcome have \blank{2cm} categories or \blank{3cm}?
+
+  \item[\termblanklong{Chi-square goodness-of-fit (GOF) test}]
+        Used when there is \blank{2cm} sample and \blank{2cm} or more categories. Tests
+        whether the observed distribution matches a \blank{5cm} distribution.
+
+  \item[\termblanklong{Chi-square test for homogeneity}]
+        Used when there are \blank{2.5cm} or more \blank{3cm} samples and one categorical
+        variable. Tests whether the \blank{4.5cm} is the same across groups.
+
+  \item[\termblanklong{Chi-square test for independence}]
+        Used when there is \blank{2cm} sample and \blank{2cm} categorical variables recorded
+        for each subject. Tests whether there is an \blank{4cm} between the variables.
+\end{description}
+\end{vocabbox}
+
+\begin{hookbox}
+A researcher surveys students about their transportation to school (Walk, Bus, Car, Bike).
+\begin{enumerate}
+  \item \textit{Scenario A:} She surveys students at one school and wants to test whether
+        walking, bus, car, and biking are equally common.\\
+        What procedure? \blank{8cm}
+  \item \textit{Scenario B:} She surveys students at two schools (separate random samples)
+        and wants to test whether the distribution of transportation modes is the same at both.\\
+        What procedure? \blank{8cm}
+  \item \textit{Scenario C:} She takes one random sample and records both transportation mode
+        and whether each student arrives on time (yes/no). She tests for association.\\
+        What procedure? \blank{8cm}
+\end{enumerate}
+\end{hookbox}
+
+\begin{notesbox}{Categorical Inference Decision Table}
+\textbf{Fill in the procedure name and key condition:}
+
+\vspace{0.06in}
+\renewcommand{\arraystretch}{2.2}
+\begin{tabularx}{\linewidth}{@{} p{0.20\linewidth} p{0.20\linewidth} p{0.12\linewidth} p{0.20\linewidth} X @{}}
+  \rowcolor{sky}
+  \textbf{Data Structure} & \textbf{Number of Categories} & \textbf{Goal} & \textbf{Procedure Name} & \textbf{Key Condition} \\
+  \hline
+  One proportion, one sample & Two (binary) & CI & \blank{4cm} & \blank{5cm} \\
+  One proportion, one sample & Two (binary) & Test & \blank{4cm} & \blank{5cm} \\
+  Difference in proportions, two samples & Two (binary) & CI & \blank{4cm} & \blank{5cm} \\
+  Difference in proportions, two samples & Two (binary) & Test & \blank{4cm} & \blank{5cm} \\
+  One sample, claimed distribution & Three or more & Test & \blank{4cm} & \blank{5cm} \\
+  Two or more groups (sep.\ samples), one variable & Three or more & Test & \blank{4cm} & \blank{5cm} \\
+  One sample, two variables & Any & Test & \blank{4cm} & \blank{5cm} \\
+\end{tabularx}
+\end{notesbox}
+
+\begin{notesbox}{Homogeneity vs.\ Independence --- How to Tell}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} p{0.22\linewidth} X X @{}}
+  \rowcolor{sky}
+  & \textbf{Homogeneity} & \textbf{Independence} \\ \hline
+  \textbf{Sampling design} & \blank{5cm} & \blank{5cm} \\
+  \textbf{Number of variables} & \blank{3cm} & \blank{3cm} \\
+  \textbf{$H_0$ language} & ``The \blank{2.5cm} is the same across all \blank{2cm}.'' & ``There is no \blank{3cm} between [var 1] and [var 2].'' \\
+  \textbf{Same $\chi^2$ statistic?} & \blank{2cm} & \blank{2cm} \\
+\end{tabularx}
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Partner Practice.} \;
+A social scientist randomly selects 50 adults aged 18--34 and 50 adults aged 35--54. He asks
+each person to rate their social media use as Low, Moderate, or High. He wants to test whether
+the distribution of social media use is the same for both age groups.
+
+\begin{enumerate}
+  \item Binary or multi-category outcome? \blank{4cm} \quad Number of groups: \blank{2cm}
+  \item Procedure name: \blank{9cm}
+  \item Form of $H_0$: \writeline
+  \item Key condition to check (beyond Random and 10\%): \writeline
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

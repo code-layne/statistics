@@ -1,0 +1,97 @@
+%! AP Statistics — Unit 8, Lesson 8.3 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.3}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.05in}
+
+\begin{tcolorbox}[colback=sky!30, colframe=navy, boxrule=0.8pt, arc=2mm,
+    left=3mm, right=3mm, top=2mm, bottom=2mm]
+\textbf{Birth Month Distribution of MLB Players}\\[4pt]
+Researchers wonder whether Major League Baseball (MLB) players are more likely to be born
+in certain months. If birth month had no effect on player development, we would expect
+players to be born equally often in each month ($p = 1/12 \approx 0.0833$ for each month).
+A random sample of 180 MLB players yields the following birth month counts:
+
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{lc|lc}
+    \textbf{Month} & \textbf{Observed} & \textbf{Month} & \textbf{Observed} \\
+    \hline
+    January   & 21 & July      & 13 \\
+    February  & 18 & August    & 12 \\
+    March     & 19 & September & 16 \\
+    April     & 22 & October   & 14 \\
+    May       & 17 & November  & 11 \\
+    June      & 15 & December  & 22 \\
+\end{tabular}
+\end{center}
+\end{tcolorbox}
+
+\vspace{0.08in}
+
+\begin{enumerate}[leftmargin=1.5em]
+
+  \item \textbf{Hypotheses.}
+
+        $H_0$: \ans{The birth month distribution of MLB players is uniform; each month
+        accounts for $1/12$ of all players ($p_1 = p_2 = \cdots = p_{12} = 1/12$).}
+
+        \vspace{0.05in}
+        $H_a$: \ans{At least one month has a different proportion of MLB player birthdays
+        than $1/12$.}
+
+        \vspace{0.08in}
+
+  \item \textbf{Expected Counts.}
+
+        $E = $ \ans{$180 \times (1/12) = 15$} for each month.
+
+        \vspace{0.05in}
+        Large-counts condition: \ans{All expected counts $= 15 \ge 5$; condition is satisfied.}
+
+        \vspace{0.08in}
+
+  \item \textbf{Test Statistic.}
+
+\renewcommand{\arraystretch}{2.0}
+\begin{center}
+\begin{tabular}{lcccc}
+    \textbf{Month} & $O$ & $E$ & $(O-E)^2/E$ & \\
+    \hline
+    January   & 21 & \ans{15} & \ans{$36/15 = 2.400$} & \\
+    February  & 18 & \ans{15} & \ans{$9/15 = 0.600$}  & \\
+    March     & 19 & \ans{15} & \ans{$16/15 \approx 1.067$} & \\
+    April     & 22 & \ans{15} & \ans{$49/15 \approx 3.267$} & \\
+    May       & 17 & \ans{15} & \ans{$4/15 \approx 0.267$}  & \\
+    June      & 15 & \ans{15} & \ans{$0/15 = 0.000$}  & \\
+    July      & 13 & \ans{15} & \ans{$4/15 \approx 0.267$}  & \\
+    August    & 12 & \ans{15} & \ans{$9/15 = 0.600$}  & \\
+    September & 16 & \ans{15} & \ans{$1/15 \approx 0.067$}  & \\
+    October   & 14 & \ans{15} & \ans{$1/15 \approx 0.067$}  & \\
+    November  & 11 & \ans{15} & \ans{$16/15 \approx 1.067$} & \\
+    December  & 22 & \ans{15} & \ans{$49/15 \approx 3.267$} & \\
+    \hline
+    \textbf{Total} & 180 & & \ans{$\approx 12.93$} $= \chi^2$ & \\
+\end{tabular}
+\end{center}
+
+  \item \textbf{Degrees of Freedom and P-Value.}
+
+        $df =$ \ans{$12 - 1 = 11$}
+
+        \vspace{0.05in}
+        \ansline{The probability, given that birth month is uniformly distributed among all MLB players, of obtaining a chi-square statistic of approximately 12.93 or larger is about 0.30.}
+
+  \item \textbf{Conclusion.}
+
+        \ansline{Because $p \approx 0.30 > \alpha = 0.05$, we fail to reject $H_0$. We do not have convincing evidence that the birth month distribution of MLB players differs from a uniform distribution.}
+
+\end{enumerate}
+
+\end{document}

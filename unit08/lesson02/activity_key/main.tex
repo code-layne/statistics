@@ -1,0 +1,94 @@
+%! AP Statistics — Unit 8, Lesson 8.2 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.2}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.1in}
+\textbf{M\&M Color Distribution Study}
+
+The Mars company claims the following color proportions for plain M\&Ms:
+Red 13\%, Orange 20\%, Yellow 14\%, Green 16\%, Blue 24\%, Brown 13\%.
+Random sample: $n = 200$ M\&Ms.
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+H$_0$: \ans{are equal to the claimed values: $p_\text{red} = 0.13$, $p_\text{orange} = 0.20$,
+$p_\text{yellow} = 0.14$, $p_\text{green} = 0.16$, $p_\text{blue} = 0.24$, $p_\text{brown} = 0.13$.}
+
+H$_a$: \ans{one color proportion differs from the claimed value.}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{lccc}
+    \textbf{Color} & \textbf{Null proportion ($p_0$)} & \textbf{Expected count ($E = 200 \cdot p_0$)} \\
+    \hline
+    Red    & 0.13 & \ans{26} \\
+    Orange & 0.20 & \ans{40} \\
+    Yellow & 0.14 & \ans{28} \\
+    Green  & 0.16 & \ans{32} \\
+    Blue   & 0.24 & \ans{48} \\
+    Brown  & 0.13 & \ans{26} \\
+\end{tabular}
+\end{center}
+
+All expected counts $\ge 5$? \ans{Yes --- smallest is 26. Large Counts condition is met.}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[label=\alph*.]
+
+  \item H$_0$: \ansline{$p_\text{red} = 0.13$, $p_\text{orange} = 0.20$,
+        $p_\text{yellow} = 0.14$, $p_\text{green} = 0.16$,
+        $p_\text{blue} = 0.24$, $p_\text{brown} = 0.13$.}
+
+        H$_a$: \ansline{At least one of these color proportions is not as stated.}
+
+  \item \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{lccc}
+            \textbf{Color} & \textbf{Null proportion ($p_0$)} & \textbf{Expected count ($E$)} \\
+            \hline
+            Red    & 0.13 & \ans{26} \\
+            Orange & 0.20 & \ans{40} \\
+            Yellow & 0.14 & \ans{28} \\
+            Green  & 0.16 & \ans{32} \\
+            Blue   & 0.24 & \ans{48} \\
+            Brown  & 0.13 & \ans{26} \\
+            \hline
+            \textbf{Total} & 1.00 & \ans{200} \\
+        \end{tabular}
+        \end{center}
+
+  \item \ansline{All expected counts are $\ge 5$ (smallest is 26). Large Counts condition is met.}
+
+  \item \ansline{We would need to know the total number of M\&Ms produced (population size $N$),
+        and verify that $n = 200 \le 10\% \cdot N$, i.e., that the bag was selected randomly and
+        that 200 is at most 10\% of the production lot.}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{teachernote}
+    Accept any reasonable categorical variable (e.g., blood types, die faces, survey responses).
+    Key checks: proportions must sum to 1; minimum sample size is determined by finding
+    $n$ such that $n \cdot p_\text{min} \ge 5$, so $n \ge 5 / p_\text{min}$.
+    Students should explicitly cite the one-categorical-variable requirement for GOF.
+\end{teachernote}
+\end{tcolorbox}
+
+\end{document}

@@ -1,0 +1,128 @@
+%! AP Statistics — Unit 8, Lesson 8.2 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.2}{Guided Notes}
+\namedateperiod
+
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+\end{itemize}
+\end{objectivebox}
+
+\begin{vocabbox}
+\termblanklong{Chi-square distribution}
+\termblanklong{Goodness of fit (GOF) test}
+\termblanklong{Expected count}
+\termblanklong{Null proportion ($p_0$)}
+\termblanklong{Degrees of freedom ($df$)}
+\termblanklong{Large Counts condition}
+\end{vocabbox}
+
+\begin{hookbox}
+A die is rolled 120 times and the results are recorded. The claimed distribution is
+that each face appears with probability $1/6$.
+
+Why can't we use six separate one-proportion $z$-tests to check this? \writelines{2}
+\end{hookbox}
+
+\begin{notesbox}{The Chi-Square Distribution (VAR-8.A)}
+\textbf{Properties:}
+\begin{itemize}
+    \item Values are always \blank{4cm} (never negative).
+    \item Shape is skewed \blank{3cm}.
+    \item As degrees of freedom \blank{4cm}, the skew becomes less pronounced.
+    \item $df = (\text{number of categories}) - $ \blank{1cm} for a GOF test.
+\end{itemize}
+
+\vspace{0.1in}
+\textbf{When to use a GOF test (VAR-8.C):} Use a chi-square GOF test when you have
+\blank{3cm} categorical variable and want to test whether the population follows
+a \blank{5cm} distribution.
+\end{notesbox}
+
+\begin{notesbox}{Stating Hypotheses (VAR-8.B)}
+H$_0$ states the \blank{5cm} for \blank{4cm} category.
+
+H$_a$: At least \blank{3cm} of the proportions is not as specified in H$_0$.
+
+\vspace{0.1in}
+\textbf{Die-Roll Example:}
+
+H$_0$: $p_1 = $ \blank{1.5cm}, $p_2 = $ \blank{1.5cm}, $p_3 = $ \blank{1.5cm},
+$p_4 = $ \blank{1.5cm}, $p_5 = $ \blank{1.5cm}, $p_6 = $ \blank{1.5cm}
+
+H$_a$: \writeline
+
+\textit{Note:} All null proportions must sum to \blank{1cm}.
+\end{notesbox}
+
+\begin{notesbox}{Calculating Expected Counts (VAR-8.D)}
+Formula: \quad $E = $ \blank{4cm} $\times$ \blank{4cm}
+
+\vspace{0.1in}
+\textbf{Die-Roll Example} ($n = 120$): \quad $E = 120 \times \dfrac{1}{6} = $ \blank{3cm} per face.
+
+\vspace{0.1in}
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{lcccccc}
+    \textbf{Face} & 1 & 2 & 3 & 4 & 5 & 6 \\
+    \hline
+    \textbf{Null proportion} & $1/6$ & $1/6$ & $1/6$ & $1/6$ & $1/6$ & $1/6$ \\
+    \textbf{Expected count} & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm}
+                            & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+\end{tabular}
+\end{center}
+\end{notesbox}
+
+\begin{notesbox}{Verifying Conditions (VAR-8.E)}
+\begin{enumerate}
+    \item \textbf{Random:} The data come from a \blank{5cm} or randomized experiment.
+          If sampling without replacement: $n \le $ \blank{2cm}$\% \cdot N$.
+    \item \textbf{Large Counts:} All \blank{4cm} counts are $\ge $ \blank{1cm}.
+\end{enumerate}
+
+\vspace{0.1in}
+\textbf{Die-Roll Check:}
+\begin{itemize}
+    \item Random: \blank{8cm}
+    \item Large Counts: Smallest expected count is \blank{2cm}. Condition \blank{3cm}.
+\end{itemize}
+
+\vspace{0.05in}
+\textit{Important:} The Large Counts condition uses \blank{4cm} counts, not
+\blank{4cm} counts.
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Practice:} A geneticist expects offspring to appear in a 9:3:3:1 phenotype
+ratio. She observes 160 offspring. How many does she expect in each phenotype category?
+Show the formula and fill in the table.
+
+\vspace{0.1in}
+Total ratio parts: $9 + 3 + 3 + 1 = $ \blank{2cm}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{lcccc}
+    \textbf{Phenotype} & A & B & C & D \\
+    \hline
+    \textbf{Null proportion} & $9/16$ & $3/16$ & $3/16$ & $1/16$ \\
+    \textbf{Expected count} ($n=160$) & \blank{2cm} & \blank{2cm} & \blank{2cm} & \blank{2cm} \\
+\end{tabular}
+\end{center}
+
+Is the Large Counts condition met? Explain. \writelines{1}
+\end{practicebox}
+
+\end{document}

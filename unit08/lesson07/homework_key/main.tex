@@ -1,0 +1,133 @@
+%! Skills Focus: Selecting an Appropriate Inference Procedure for Categorical Data — Unit 8, Lesson 8.7 — Homework (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.7}{Homework --- Answer Key}
+\namedateperiod
+
+\vspace{0.10in}
+
+\begin{enumerate}
+
+\item \textbf{Identify the Procedure.} \; For each scenario, name the correct inference
+      procedure. No computation required.
+
+\begin{enumerate}[label=\alph*.]
+  \item A meteorologist records weather outcomes (Sunny, Cloudy, Rainy, Snowy) for a random
+        sample of 365 days and wants to test whether the four outcomes are equally likely.
+
+        Procedure: \ans{chi-square goodness-of-fit test}
+
+  \item A university admissions office randomly samples 80 applicants from in-state and 80
+        applicants from out-of-state and records whether each was admitted (yes or no). They
+        want to estimate the difference in admission rates.
+
+        Procedure: \ans{two-sample $z$-interval for $p_1 - p_2$}
+
+  \item A market researcher takes one random sample of 500 shoppers and records each shopper's
+        age group (Under 30, 30--50, Over 50) and preferred shopping channel (Online, In-Store,
+        Both). She wants to know whether shopping channel preference is associated with age group.
+
+        Procedure: \ans{chi-square test for independence}
+
+  \item A nutrition researcher randomly samples students from four different dining halls and
+        records each student's beverage choice (Water, Soda, Juice, Other). She wants to test
+        whether the distribution of beverage choice is the same across all four dining halls.
+
+        Procedure: \ans{chi-square test for homogeneity}
+\end{enumerate}
+
+\vspace{0.10in}
+
+\item \textbf{State and Plan.} \;
+      A national survey organization claims that 15\% of adults read a physical newspaper daily.
+      A researcher suspects the true proportion is lower. She surveys a random sample of 400 adults
+      and finds that 48 of them read a physical newspaper daily.
+
+      \begin{enumerate}[label=\alph*.]
+        \item \textbf{State:} Procedure: \ans{one-sample $z$-test for $p$}\\
+              $H_0$: \ans{$p = 0.15$} \quad $H_a$: \ans{$p < 0.15$}
+        \item \textbf{Plan:} Verify conditions (use numbers):
+              \begin{itemize}
+                \item Random: \ansline{The problem states a random sample of 400 adults --- Random condition is met.}
+                \item 10\%: \ansline{$400 \le 10\%$ of all adults --- 10\% condition is met (assuming population of adults is large).}
+                \item Large Counts: \ansline{$np_0 = 400(0.15) = 60 \ge 10$ and $n(1-p_0) = 400(0.85) = 340 \ge 10$ --- Large Counts condition is met.}
+              \end{itemize}
+      \end{enumerate}
+
+\vspace{0.10in}
+
+\item \textbf{AP-Style Multiple Choice.} \;
+      \textit{A researcher takes a random sample of 250 households from a large city and records
+      each household's neighborhood type (Urban, Suburban, Rural) and internet connection type
+      (Broadband, Satellite, None). He wants to test whether there is an association between
+      neighborhood type and internet connection type. Which procedure is most appropriate?}
+
+      \begin{enumerate}[label=(\Alph*)]
+        \item Chi-square goodness-of-fit test
+        \item Chi-square test for homogeneity
+        \item Chi-square test for independence \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+        \item Two-sample $z$-test for $p_1 - p_2$
+      \end{enumerate}
+
+\begin{teachernote}
+One random sample with two categorical variables recorded $\to$ independence. Homogeneity would require separate random samples from each neighborhood type.
+\end{teachernote}
+
+\vspace{0.10in}
+
+\item \textbf{Compare Two Procedures.} \;
+      A researcher studies whether political party affiliation (Democrat, Republican, Independent)
+      differs between male and female voters. She randomly samples 200 male voters and 200 female
+      voters separately.
+
+      \begin{enumerate}[label=\alph*.]
+        \item Name the most appropriate procedure and explain your reasoning in two sentences.
+              \ansline{Chi-square test for homogeneity. The data come from two separate random samples (one male, one female), and the response variable (party affiliation) has three or more categories.}
+
+        \item A classmate argues that a two-sample $z$-test for $p_1 - p_2$ should be used
+              because there are only two groups. Identify the error in this reasoning.
+              \ansline{The two-sample $z$-test requires a binary response variable (only two categories). Here, party affiliation has three categories, so a chi-square test for homogeneity is required.}
+
+        \item Write $H_0$ for the correct procedure.
+              $H_0$: \ansline{The distribution of political party affiliation (Democrat, Republican, Independent) is the same for male and female voters.}
+      \end{enumerate}
+
+\vspace{0.10in}
+
+\item \textbf{Conditions and Hypotheses.} \;
+      A high school counselor randomly selects 40 freshmen, 40 sophomores, 40 juniors, and
+      40 seniors. She records whether each student has participated in at least one extracurricular
+      activity this year (yes or no). She wants to test whether the proportion who participate
+      differs across grade levels.
+
+      \begin{enumerate}[label=\alph*.]
+        \item Name the procedure: \ans{chi-square test for homogeneity}
+        \item $H_0$: \ansline{The proportion of students who participate in extracurricular activities is the same for all four grade levels.}
+        \item $H_a$: \ansline{The proportion of students who participate in extracurricular activities differs for at least one grade level.}
+        \item State the key condition that must be checked (beyond Random and 10\%): \ansline{Expected counts condition: all expected cell counts must be at least 5.}
+      \end{enumerate}
+
+\end{enumerate}
+
+\begin{extensionbox}
+\textbf{Extension: Why Can't Chi-Square Produce a Confidence Interval?} (optional)
+
+\begin{teachernote}
+Sample answer: Chi-square tests evaluate whether an entire distribution (or association) departs from a null model, but the $\chi^2$ statistic itself is not the estimate of a single numerical parameter like a proportion or mean. Because there is no single population parameter being estimated (the test simultaneously evaluates all cells of a table), there is no natural ``statistic $\pm$ margin of error'' form. Confidence intervals require a point estimate for a specific parameter; chi-square procedures test hypotheses about distributional patterns.
+\end{teachernote}
+\end{extensionbox}
+
+\begin{reflectionbox}
+\textbf{Preview: Unit 8 Sample Test}
+
+In the next class, you will complete the Unit 8 Sample Test, which covers all five categorical
+inference procedures. Review the decision table from today's guided notes and be ready to select
+a procedure, state hypotheses, verify conditions, and communicate a conclusion --- all under
+AP-exam conditions.
+\end{reflectionbox}
+
+\end{document}

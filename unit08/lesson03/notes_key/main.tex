@@ -1,0 +1,116 @@
+%! AP Statistics — Unit 8, Lesson 8.3 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.3}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+    \item[$\square$] \ansline{Calculate the chi-square test statistic for a GOF test using $\chi^2 = \sum (O-E)^2/E$.}
+    \item[$\square$] \ansline{Find and interpret the p-value using a chi-square table.}
+    \item[$\square$] \ansline{Write a complete conclusion for a chi-square GOF test, comparing $p$ to $\alpha$.}
+\end{itemize}
+\end{objectivebox}
+
+\begin{vocabbox}
+\termblanklong{Chi-square test statistic ($\chi^2$)}
+\ansline{A measure of how far observed counts are from expected counts; $\chi^2 = \sum (O-E)^2/E$; always $\ge 0$.}
+
+\termblanklong{Degrees of freedom (GOF)}
+\ansline{$df = k - 1$, where $k$ is the number of categories; reflects that the last category count is determined once the others are known.}
+
+\termblanklong{P-value (chi-square GOF)}
+\ansline{The area to the right of the observed $\chi^2$ under the chi-square distribution with $df = k - 1$; always right-tailed.}
+
+\termblanklong{Conclusion template}
+\ansline{``Because $p$ [$ > $ or $< $] $\alpha$, we [fail to reject / reject] $H_0$. We [do not have / have] convincing evidence that \ldots''}
+\end{vocabbox}
+
+\begin{notesbox}{The Chi-Square Test Statistic}
+When carrying out a chi-square goodness-of-fit test, we measure how far the observed
+counts are from the expected counts using the \textbf{chi-square test statistic}:
+
+\vspace{0.1in}
+\[
+    \chi^2 = \sum \frac{(\ans{O} - \ans{E})^2}{\ans{E}}
+\]
+
+\vspace{0.05in}
+Each term $\dfrac{(O-E)^2}{E}$ measures \ans{how much one category's observed count
+deviates from its expected count, scaled by the expected count}.
+
+\vspace{0.1in}
+A \textbf{larger} $\chi^2$ value provides \ans{more} evidence against $H_0$.
+
+\vspace{0.1in}
+\textbf{Degrees of freedom} for a GOF test: \quad $df = $ \ans{$k$} $-$ \ans{$1$}
+
+where the first blank is the \ans{number} of categories.
+\end{notesbox}
+
+\begin{notesbox}{Worked Example: Flower Color Distribution}
+A botanist claims a flower comes in 4 colors in a 3:2:2:1 ratio. A random sample
+of 160 flowers is collected.
+
+\renewcommand{\arraystretch}{2.2}
+\begin{center}
+\begin{tabular}{lcccc}
+    \textbf{Color}           & Red    & Pink   & White  & Yellow \\
+    \hline
+    \textbf{Null proportion} & 0.375  & 0.25   & 0.25   & 0.125  \\
+    \textbf{Expected ($E$)}  & \ans{60} & \ans{40} & \ans{40} & \ans{20} \\
+    \textbf{Observed ($O$)}  & 65     & 44     & 38     & 13     \\
+    $\boldsymbol{(O-E)^2/E}$ & \ans{$25/60 \approx 0.417$} & \ans{$16/40 = 0.4$} & \ans{$4/40 = 0.1$} & \ans{$49/20 = 2.45$} \\
+\end{tabular}
+\end{center}
+
+\vspace{0.1in}
+$\chi^2 = $ \ans{$0.417$} $+$ \ans{$0.4$} $+$ \ans{$0.1$} $+$ \ans{$2.45$}
+        $=$ \ans{$3.367$}
+
+\vspace{0.1in}
+$df = $ \ans{$4$} $- 1 =$ \ans{$3$}
+\end{notesbox}
+
+\begin{notesbox}{Finding and Interpreting the P-Value}
+Using a chi-square table with $df =$ \ans{3}, look up $\chi^2 \approx$ \ans{$3.367$}.
+
+\vspace{0.1in}
+The p-value is \ans{$\approx 0.338$} (always a \textbf{right-tailed} area).
+
+\vspace{0.15in}
+\textbf{Interpret the p-value:}\\[4pt]
+``The probability, given \ans{the null hypothesis (3:2:2:1 color ratio)} is true, of obtaining
+a chi-square statistic of \ans{$3.367$} or \ans{larger} is approximately \ans{$0.338$}.''
+
+\vspace{0.1in}
+\textit{Note:} The p-value is \emph{not} the probability that $H_0$ is true.
+\end{notesbox}
+
+\begin{notesbox}{Stating a Complete Conclusion}
+Compare the p-value to the significance level $\alpha = 0.05$:
+
+\vspace{0.1in}
+``Because $p =$ \ans{$0.338$} \ans{$>$} $\alpha = 0.05$, we \ans{fail to reject} $H_0$.
+We \ans{do not have} convincing evidence that \ans{the color distribution of these flowers
+differs from the 3:2:2:1 ratio}.''
+
+\vspace{0.1in}
+\textbf{For the botanist example:}
+\ansline{Because $p \approx 0.338 > \alpha = 0.05$, we fail to reject $H_0$. We do not have convincing evidence that the color distribution of these flowers differs from the 3:2:2:1 ratio claimed by the botanist.}
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Quick Check:} Suppose a different sample of 160 flowers gave $\chi^2 = 9.20$
+with $df = 3$. Using the chi-square table, is $p < 0.05$ or $p > 0.05$?
+What conclusion would you reach at $\alpha = 0.05$?
+
+\ansline{From a chi-square table with $df = 3$: $\chi^2 = 7.815$ corresponds to $p = 0.05$ and $\chi^2 = 9.348$ corresponds to $p = 0.025$. Since $9.20$ falls between these values, $0.025 < p < 0.05$, so $p < 0.05$. We reject $H_0$. We have convincing evidence that the color distribution differs from the 3:2:2:1 ratio.}
+\end{practicebox}
+
+\end{document}

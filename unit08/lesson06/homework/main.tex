@@ -1,0 +1,122 @@
+%! AP Statistics — Unit 8, Lesson 8.6 — Homework
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.6}{Homework}
+\namedateperiod
+
+\vspace{0.08in}
+
+\textit{Show all work. Use all four SPDC steps for Problem 1.}
+
+\begin{enumerate}[itemsep=10pt]
+
+%% Problem 1 %%
+\item \textbf{Sleep and Grade Level.}
+A school counselor randomly selects 180 teenagers and classifies them by
+\textbf{grade} (9th / 10th / 11th) and \textbf{sleep amount} ($<7$ hours / $7{+}$ hours per night).
+
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{@{} l c c c @{}}
+\hline
+           & \textbf{$<$7 hrs} & \textbf{7$+$ hrs} & \textbf{Total} \\
+\hline
+9th grade  & 30 & 30 & 60  \\
+10th grade & 38 & 22 & 60  \\
+11th grade & 42 & 18 & 60  \\
+\hline
+\textbf{Total} & 110 & 70 & 180 \\
+\hline
+\end{tabular}
+\end{center}
+
+A chi-square table excerpt (right-tail areas):
+
+\renewcommand{\arraystretch}{1.3}
+\begin{center}\small
+\begin{tabular}{@{} c c c c c @{}}
+\hline
+\textbf{df} & $p = 0.10$ & $p = 0.05$ & $p = 0.025$ & $p = 0.01$ \\
+\hline
+1  & 2.706  & 3.841  & 5.024  & 6.635  \\
+2  & 4.605  & 5.991  & 7.378  & 9.210  \\
+3  & 6.251  & 7.815  & 9.348  & 11.345 \\
+4  & 7.779  & 9.488  & 11.143 & 13.277 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[label=\alph*., itemsep=6pt]
+  \item \textbf{State.} Identify the test type. Write $H_0$ and $H_a$.
+
+        Test type: \blank{5cm}
+
+        $H_0$: \writeline
+        $H_a$: \writeline
+
+  \item \textbf{Plan.} Method: \blank{5.5cm}. Verify the Random condition: \writeline
+
+        Compute expected counts (each row total = 60):
+
+        $E_{\text{9th, }<7} = \dfrac{60 \times 110}{180} = $ \blank{2.5cm}
+        \quad $E_{\text{9th, }7+} = \dfrac{60 \times 70}{180} = $ \blank{2.5cm}
+
+        Are all expected counts $\ge 5$? \blank{2cm}
+
+  \item \textbf{Do.} $\text{df} = ($ \blank{1.5cm} $-1)($ \blank{1.5cm} $-1) = $ \blank{2cm}
+
+        Compute $\chi^2$ contributions and sum them below.
+
+        \renewcommand{\arraystretch}{1.6}
+        \begin{center}
+        \begin{tabular}{@{} l c c @{}}
+        \hline
+                   & \textbf{$<$7 hrs} & \textbf{7$+$ hrs} \\
+        \hline
+        9th grade  & $\dfrac{(30 - \blank{2cm})^2}{\blank{2cm}} = $ \blank{2cm}
+                   & $\dfrac{(30 - \blank{2cm})^2}{\blank{2cm}} = $ \blank{2cm} \\
+        10th grade & \blank{4.5cm} & \blank{4.5cm} \\
+        11th grade & \blank{4.5cm} & \blank{4.5cm} \\
+        \hline
+        \end{tabular}
+        \end{center}
+
+        $\chi^2 = $ \blank{4cm}
+
+        Using the table above, the p-value is approximately \blank{3cm}.
+
+  \item \textbf{Conclude.} At $\alpha = 0.05$:
+        \writelines{2}
+\end{enumerate}
+
+\vspace{0.1in}
+
+%% Problem 2 %%
+\item \textbf{Degrees of Freedom.}
+A student computes $\chi^2 = 9.21$ for a $2 \times 4$ contingency table.
+
+\begin{enumerate}[label=\alph*.]
+  \item What is the degrees of freedom? \blank{3cm}
+  \item Using the table in Problem 1, what is the critical value at $\alpha = 0.05$?
+        \blank{3cm}
+  \item Based on $\chi^2 = 9.21$, can the student reject $H_0$ at $\alpha = 0.05$?
+        Explain.
+        \writeline
+\end{enumerate}
+
+\vspace{0.1in}
+
+%% Problem 3 %%
+\item \textbf{Conceptual Question.}
+In what sense does a \emph{larger} $\chi^2$ value provide more evidence against $H_0$?
+Use the ideas of expected counts, p-value, and the chi-square distribution in your answer.
+\writelines{4}
+
+\end{enumerate}
+
+\end{document}

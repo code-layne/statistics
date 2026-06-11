@@ -1,0 +1,95 @@
+%! AP Statistics — Unit 8, Lesson 8.1 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.1}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.1in}
+\textbf{Are These Results Surprising?}
+
+\vspace{0.05in}
+A school surveys 120 students about their preferred study environment. The results are:
+
+\vspace{0.08in}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{0.7\linewidth}{Xcc}
+    \textbf{Environment} & \textbf{Observed Count} & \textbf{Expected Count} \\
+    \hline
+    Library    & 38 & \ans{30} \\
+    Home       & 52 & \ans{30} \\
+    Caf\'e     & 18 & \ans{30} \\
+    Classroom  & 12 & \ans{30} \\
+    \hline
+    \textbf{Total} & \textbf{120} & \ans{120} \\
+\end{tabularx}
+
+\vspace{0.1in}
+\textbf{Directions:} Work with your partner to complete parts (a)--(d) below.
+
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Part (a)} --- Fill in the expected count for each category, assuming all four
+study environments are equally preferred.
+
+\vspace{0.05in}
+\textit{Hint:} If 120 students are equally spread among 4 categories, expected count
+$= 120 \div 4 = $ \ans{30} for each category.
+
+\vspace{0.1in}
+Go back and fill in the Expected Count column in the table above.
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Part (b)} --- For each category, compute Observed $-$ Expected. Record your
+answers below.
+
+\vspace{0.05in}
+\begin{tabularx}{\linewidth}{Xcccc}
+    & Library & Home & Caf\'e & Classroom \\
+    \hline
+    Observed $-$ Expected & \ans{$+8$} & \ans{$+22$} & \ans{$-12$} & \ans{$-18$} \\
+\end{tabularx}
+
+\vspace{0.1in}
+Which category has the largest \textbf{positive} difference? \ans{Home ($+22$)}
+
+Which category has the largest \textbf{negative} difference? \ans{Classroom ($-18$)}
+
+\vspace{0.1in}
+\textbf{Part (c)} --- Without doing any formal calculation, do you think the differences
+are large enough to conclude that students do \emph{not} have equal preferences? Explain
+your reasoning in 2--3 sentences.
+
+\ansline{Answers vary --- accept reasonable judgment. The Home and Classroom differences are the largest (22 and 18 away from an expected 30), which may suggest real differences in preference. However, without a formal test we cannot rule out that these differences are due to chance alone.}
+
+\begin{teachernote}
+    Students should recognize that large differences (especially Home $+22$ and
+    Classroom $-18$) are potentially meaningful but cannot be confirmed without a
+    $p$-value. Accept a range of responses as long as students acknowledge uncertainty.
+\end{teachernote}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Part (d)} --- What additional information would help you decide whether these
+differences are \emph{statistically significant}? In other words, what would a formal
+statistical test provide that your informal comparison in part (c) cannot?
+
+\ansline{We would need to know the probability of seeing differences this large or larger by chance alone, assuming students have equal preferences. That is exactly what the chi-square test provides --- a $p$-value that quantifies how unusual the observed gaps are under the null hypothesis of equal preference.}
+
+\textbf{Bonus:} The chi-square statistic adds up all the gaps in a specific way.
+Why might we need to \emph{adjust} each gap relative to the expected count, rather than
+just adding up the raw gaps?
+
+\ansline{A gap of 10 from an expected count of 100 is less surprising than a gap of 10 from an expected count of 11. Dividing by the expected count scales each gap to reflect how unusual it is --- a large gap relative to a small expected count is more meaningful than the same raw gap relative to a large expected count.}
+\end{tcolorbox}
+
+\end{document}

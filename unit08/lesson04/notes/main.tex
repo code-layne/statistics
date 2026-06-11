@@ -1,0 +1,137 @@
+%! AP Statistics — Unit 8, Lesson 8.4 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.4}{Guided Notes}
+\namedateperiod
+
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+\end{itemize}
+\end{objectivebox}
+
+\begin{vocabbox}
+\termblanklong{Two-way table}
+\termblanklong{Expected count (two-way)}
+\termblanklong{Marginal distribution}
+\end{vocabbox}
+
+\begin{hookbox}
+\textbf{Discussion:} A survey asks 200 students about their grade level and learning
+preference (online vs.\ in-person). Without doing any calculation, do you think grade
+level and learning preference are associated? Why or why not?
+
+\writelines{2}
+\end{hookbox}
+
+\begin{notesbox}{Reading a Two-Way Table}
+In a two-way table:
+\begin{itemize}
+    \item Rows represent categories of the variable \blank{5cm}
+    \item Columns represent categories of the variable \blank{5cm}
+    \item Each cell contains the \blank{4cm} of individuals in that row-and-column combination
+    \item The \textbf{row totals} and \textbf{column totals} form the \blank{5cm} distribution
+\end{itemize}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{lcccc}
+             & \textbf{Online} & \textbf{In-person} & \textbf{Row Total} \\
+    \hline
+    9th grade  & 28 & 22 & \blank{1.5cm} \\
+    10th grade & 35 & 15 & \blank{1.5cm} \\
+    11th grade & 22 & 28 & \blank{1.5cm} \\
+    12th grade & 15 & 35 & \blank{1.5cm} \\
+    \hline
+    Column Total & \blank{1.5cm} & \blank{1.5cm} & \blank{1.5cm} \\
+\end{tabular}
+\end{notesbox}
+
+\begin{notesbox}{What Are Expected Counts?}
+Under $H_0$ (independence or homogeneity), knowing someone's row category tells us
+\blank{6cm} about their column category.
+
+\vspace{0.1in}
+\textbf{The Expected Count Formula:}
+\[
+    \text{Expected count} = \frac{(\text{row total}) \times (\text{column total})}{\blank{3cm}}
+\]
+
+\textbf{Derivation --- two equivalent routes:}
+
+\renewcommand{\arraystretch}{2.0}
+\begin{tabular}{ll}
+    \textbf{Route A} (row proportion $\times$ column total): &
+        $\dfrac{\text{row total}}{\blank{3cm}} \times \text{column total}$ \\
+    \textbf{Route B} (row total $\times$ column proportion): &
+        $\text{row total} \times \dfrac{\text{column total}}{\blank{3cm}}$ \\
+\end{tabular}
+
+\vspace{0.1in}
+Both simplify to $\dfrac{(\text{row total})(\text{column total})}{\text{table total}}$.
+\end{notesbox}
+
+\begin{notesbox}{Computing Expected Counts: Grade/Learning Example}
+Use the table above. For the 9th grade / Online cell:
+
+\vspace{0.1in}
+$E = \dfrac{(\blank{1.5cm}) \times (\blank{1.5cm})}{\blank{1.5cm}} = \blank{2cm}$
+
+\vspace{0.1in}
+Fill in all 8 expected counts:
+
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{lccc}
+             & \textbf{Online} & \textbf{In-person} & \textbf{Row Total} \\
+    \hline
+    9th grade  & \blank{2cm} & \blank{2cm} & 50 \\
+    10th grade & \blank{2cm} & \blank{2cm} & 50 \\
+    11th grade & \blank{2cm} & \blank{2cm} & 50 \\
+    12th grade & \blank{2cm} & \blank{2cm} & 50 \\
+    \hline
+    Col Total  & 100 & 100 & 200 \\
+\end{tabular}
+
+\vspace{0.1in}
+\textbf{Large-Counts Condition:} All expected counts must be $\ge$ \blank{1cm}.
+
+Check: Is the condition met here? \blank{5cm}
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Guided Practice:} A random sample of 90 college students is classified by year
+(First-year / Sophomore / Junior) and whether they live on campus (Yes / No).
+
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{lccc}
+             & \textbf{On Campus} & \textbf{Off Campus} & \textbf{Row Total} \\
+    \hline
+    First-year  & 22 & 8  & 30 \\
+    Sophomore   & 15 & 15 & 30 \\
+    Junior      & 8  & 22 & 30 \\
+    \hline
+    Col Total   & 45 & 45 & 90 \\
+\end{tabular}
+
+\vspace{0.1in}
+Compute the expected count for each of the 6 cells. Show work for at least 2 cells.
+
+\begin{enumerate}
+  \item First-year / On Campus: $E = \dfrac{(\blank{1.5cm})(\blank{1.5cm})}{\blank{1.5cm}} = \blank{2cm}$
+        \vspace{0.05in}
+  \item Sophomore / Off Campus: $E = \blank{6cm} = \blank{2cm}$
+        \vspace{0.05in}
+  \item Fill in the remaining 4 cells using the same formula.
+\end{enumerate}
+
+Check the large-counts condition: \writeline
+\end{practicebox}
+
+\end{document}

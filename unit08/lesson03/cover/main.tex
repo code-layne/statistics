@@ -1,0 +1,54 @@
+%! AP Statistics — Unit 8, Lesson 8.3 — Student Packet Cover Sheet
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\usepackage{tikz}
+\usepackage{ltablex}
+\keepXColumns
+
+\begin{document}
+
+\begin{tikzpicture}[remember picture, overlay]
+  \fill[navy] (current page.north west) rectangle
+    ([yshift=-2.2cm]current page.north east);
+  \node[anchor=west, white, font=\large\bfseries] at
+    ([xshift=1cm, yshift=-0.7cm]current page.north west)
+    {\CourseName: \SchoolYear};
+  \node[anchor=west, white, font=\normalsize] at
+    ([xshift=1cm, yshift=-1.3cm]current page.north west)
+    {Unit 8: Inference for Categorical Data: Chi-Square};
+  \node[anchor=west, white, font=\normalsize\bfseries] at
+    ([xshift=1cm, yshift=-1.9cm]current page.north west)
+    {Lesson 8.3 \quad Carrying Out a Chi-Square Test for Goodness of Fit};
+\end{tikzpicture}
+
+\vspace{2.4cm}
+\namedateperiod
+
+\begin{learningtargetbox}
+\begin{itemize}
+    \item I can calculate the chi-square test statistic for a goodness-of-fit test
+          using the formula $\chi^2 = \sum (O - E)^2 / E$.
+    \item I can find and interpret the p-value for a chi-square goodness-of-fit test
+          using a chi-square table.
+    \item I can write a complete conclusion for a chi-square goodness-of-fit test
+          in context, including comparison of $p$ to $\alpha$.
+\end{itemize}
+\end{learningtargetbox}
+
+\begin{tocbox}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{@{} c l X r @{}}
+    \textbf{\#} & \textbf{Component} & \textbf{Description} & \textbf{Score} \\
+    \hline
+    1 & Warm-Up        & Spiral review: hypotheses and expected counts (8.2)  & \hfill/6  \\
+    2 & Guided Notes   & Chi-square statistic, p-value, conclusion template    & \hfill/12 \\
+    3 & Group Activity & MLB birth month GOF test (full procedure)             & \hfill/15 \\
+    4 & Exit Ticket    & Candy color distribution: p-value and conclusion      & \hfill/6  \\
+    5 & Homework       & Three GOF problems (calculation + conceptual)         & \hfill/12 \\
+    \hline
+       & \multicolumn{2}{l}{\textbf{Total}} & \hfill/51 \\
+\end{tabularx}
+\end{tocbox}
+
+\end{document}

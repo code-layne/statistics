@@ -1,0 +1,143 @@
+%! AP Statistics — Unit 8, Lesson 8.4 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.4}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+    \item[$\square$] \ansline{Calculate expected counts in a two-way table using $(RT \times CT)/N$.}
+    \item[$\square$] \ansline{Explain what expected counts represent under $H_0$.}
+    \item[$\square$] \ansline{Check the large-counts condition for a two-way chi-square test.}
+\end{itemize}
+\end{objectivebox}
+
+\begin{vocabbox}
+\termblanklong{Two-way table}
+\ansline{A display of counts for two categorical variables; rows = one variable, columns = the other.}
+\termblanklong{Expected count (two-way)}
+\ansline{The count predicted in a cell if the two variables were independent: $E = (RT)(CT)/N$.}
+\termblanklong{Marginal distribution}
+\ansline{The row or column totals; describes the distribution of one variable ignoring the other.}
+\end{vocabbox}
+
+\begin{hookbox}
+\textbf{Discussion:} A survey asks 200 students about their grade level and learning
+preference (online vs.\ in-person). Without doing any calculation, do you think grade
+level and learning preference are associated? Why or why not?
+
+\begin{teachernote}
+    Accept any reasonable response. The observed data show 10th/12th graders diverge
+    most from 25; the expected counts all equal 25 under independence.
+\end{teachernote}
+\end{hookbox}
+
+\begin{notesbox}{Reading a Two-Way Table}
+In a two-way table:
+\begin{itemize}
+    \item Rows represent categories of the variable \ans{grade level}
+    \item Columns represent categories of the variable \ans{learning preference}
+    \item Each cell contains the \ans{count (frequency)} of individuals in that row-and-column combination
+    \item The \textbf{row totals} and \textbf{column totals} form the \ans{marginal} distribution
+\end{itemize}
+
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{lcccc}
+             & \textbf{Online} & \textbf{In-person} & \textbf{Row Total} \\
+    \hline
+    9th grade  & 28 & 22 & \ans{50} \\
+    10th grade & 35 & 15 & \ans{50} \\
+    11th grade & 22 & 28 & \ans{50} \\
+    12th grade & 15 & 35 & \ans{50} \\
+    \hline
+    Column Total & \ans{100} & \ans{100} & \ans{200} \\
+\end{tabular}
+\end{notesbox}
+
+\begin{notesbox}{What Are Expected Counts?}
+Under $H_0$ (independence or homogeneity), knowing someone's row category tells us
+\ans{nothing (no information)} about their column category.
+
+\vspace{0.1in}
+\textbf{The Expected Count Formula:}
+\[
+    \text{Expected count} = \frac{(\text{row total}) \times (\text{column total})}{\ans{table total}}
+\]
+
+\textbf{Derivation --- two equivalent routes:}
+
+\renewcommand{\arraystretch}{2.0}
+\begin{tabular}{ll}
+    \textbf{Route A} (row proportion $\times$ column total): &
+        $\dfrac{\text{row total}}{\ans{table total}} \times \text{column total}$ \\
+    \textbf{Route B} (row total $\times$ column proportion): &
+        $\text{row total} \times \dfrac{\text{column total}}{\ans{table total}}$ \\
+\end{tabular}
+
+\vspace{0.1in}
+Both simplify to $\dfrac{(\text{row total})(\text{column total})}{\text{table total}}$.
+\end{notesbox}
+
+\begin{notesbox}{Computing Expected Counts: Grade/Learning Example}
+Use the table above. For the 9th grade / Online cell:
+
+\vspace{0.1in}
+$E = \dfrac{(\ans{50}) \times (\ans{100})}{\ans{200}} = $ \ans{25}
+
+\vspace{0.1in}
+Fill in all 8 expected counts:
+
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{lccc}
+             & \textbf{Online} & \textbf{In-person} & \textbf{Row Total} \\
+    \hline
+    9th grade  & \ans{25} & \ans{25} & 50 \\
+    10th grade & \ans{25} & \ans{25} & 50 \\
+    11th grade & \ans{25} & \ans{25} & 50 \\
+    12th grade & \ans{25} & \ans{25} & 50 \\
+    \hline
+    Col Total  & 100 & 100 & 200 \\
+\end{tabular}
+
+\vspace{0.1in}
+\textbf{Large-Counts Condition:} All expected counts must be $\ge$ \ans{5}.
+
+Check: Is the condition met here? \ans{Yes --- all expected counts equal 25, which is $\ge 5$.}
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Guided Practice:} A random sample of 90 college students is classified by year
+(First-year / Sophomore / Junior) and whether they live on campus (Yes / No).
+
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{lccc}
+             & \textbf{On Campus} & \textbf{Off Campus} & \textbf{Row Total} \\
+    \hline
+    First-year  & 22 & 8  & 30 \\
+    Sophomore   & 15 & 15 & 30 \\
+    Junior      & 8  & 22 & 30 \\
+    \hline
+    Col Total   & 45 & 45 & 90 \\
+\end{tabular}
+
+\vspace{0.1in}
+Compute the expected count for each of the 6 cells. Show work for at least 2 cells.
+
+\begin{enumerate}
+  \item First-year / On Campus: $E = \dfrac{(\ans{30})(\ans{45})}{\ans{90}} = $ \ans{15}
+        \vspace{0.05in}
+  \item Sophomore / Off Campus: $E = \dfrac{(30)(45)}{90} = $ \ans{15}
+        \vspace{0.05in}
+  \item All 6 cells: \ans{Every expected count $= (30 \times 45)/90 = 15$, since all row totals are equal and both column totals are equal.}
+\end{enumerate}
+
+Check the large-counts condition: \ansline{All expected counts $= 15 \ge 5$. The large-counts condition is satisfied.}
+\end{practicebox}
+
+\end{document}

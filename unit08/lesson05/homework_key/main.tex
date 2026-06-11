@@ -1,0 +1,105 @@
+%! AP Statistics — Unit 8, Lesson 8.5 — Homework (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.5}{Homework --- Answer Key}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{enumerate}
+
+  \item For each scenario below, \textbf{(i)} identify whether the appropriate test is a
+        chi-square test for homogeneity or independence, \textbf{(ii)} explain your reasoning
+        based on the study design, and \textbf{(iii)} write $H_0$ and $H_a$ in context.
+
+        \begin{enumerate}[label=(\alph*)]
+
+          \item Three brands of coffee (Brand X, Y, Z) each recruited a random sample of
+                50 coffee tasters who rated their experience as Prefer, Neutral, or Dislike.
+
+                Test type: \ans{homogeneity} \quad Reason: \ansline{Three separate samples (one per brand) each measure one categorical variable (taste rating).}
+
+                $H_0$: \ansline{The distribution of taste ratings (Prefer/Neutral/Dislike) is the same across Brands X, Y, and Z.}
+                $H_a$: \ansline{The distribution of taste ratings is not the same for all three brands (at least one brand differs).}
+
+                \vspace{0.06in}
+
+          \item A simple random sample of 400 shoppers is asked their age group (18--30,
+                31--50, or 51+) and their preferred shopping method (In-store, Online, or Both).
+
+                Test type: \ans{independence} \quad Reason: \ansline{One random sample measures two categorical variables (age group and shopping method) on each individual.}
+
+                $H_0$: \ansline{There is no association between age group and preferred shopping method in the shopper population.}
+                $H_a$: \ansline{There is an association between age group and preferred shopping method in the shopper population.}
+
+                \vspace{0.06in}
+
+          \item A simple random sample of 200 high school athletes is classified by sport
+                (Football, Basketball, or Soccer) and GPA level (3.0 and above, or Below 3.0).
+
+                Test type: \ans{independence} \quad Reason: \ansline{One random sample measures two categorical variables (sport and GPA level) on each individual.}
+
+                $H_0$: \ansline{There is no association between sport and GPA level among high school athletes.}
+                $H_a$: \ansline{There is an association between sport and GPA level among high school athletes.}
+
+        \end{enumerate}
+
+  \item A student says scenarios (b) and (c) in Problem 1 both involve two categorical
+        variables, so both must be tests for independence. Is the student correct?
+        Explain your reasoning.
+
+        \ansline{Partially correct. Both scenarios do involve two categorical variables, and both are correctly classified as tests for independence --- so the student's conclusion happens to be right in this case. However, the student's reasoning is incomplete: the presence of two categorical variables alone does not determine the test type. The key factor is the study design: if one random sample is drawn and two variables are measured on each individual, use a test for independence; if separate samples are drawn from multiple groups and one variable is measured, use a test for homogeneity. The student should focus on the sampling structure, not just the number of variables.}
+
+  \item A researcher randomly selects 50 students from each of 3 schools
+        (School P, Q, R) and asks each student which after-school program they prefer
+        (Academic Support, Sports, or Arts). Total $n = 150$.
+
+        \begin{enumerate}[label=(\alph*)]
+          \item Identify the test type and write the hypotheses.
+
+                \ansline{Test for homogeneity. $H_0$: The distribution of after-school program preference is the same across Schools P, Q, and R. $H_a$: The distribution of after-school program preference is not the same for all three schools.}
+
+          \item Write out the two conditions for this chi-square test.
+                Can either condition be verified without seeing the actual data table?
+                Explain.
+
+                \ansline{(1) Independence condition: data come from a stratified random sample (50 students randomly selected from each school); if sampling without replacement, need $50 \le 10\%$ of each school's population (requires each school to have at least 500 students --- cannot verify without knowing school sizes). (2) Large-counts condition: all expected counts must exceed 5 --- cannot be verified without the data table, since expected counts depend on the observed row and column totals.}
+        \end{enumerate}
+
+  \item \textbf{AP-Style Multiple Choice.} Which of the following scenarios calls for
+        a chi-square test for \textbf{homogeneity}?
+
+        \begin{enumerate}[label=(\Alph*)]
+          \item A random sample of 500 adults is asked their employment status
+                (Employed/Unemployed) and their level of financial stress (Low/Medium/High).
+          \item Researchers randomly select 80 men and 80 women and record each person's
+                preferred exercise type (Cardio/Strength/Flexibility).
+                \textcolor{keyred}{\textbf{$\leftarrow$ correct}}
+          \item A random sample of 200 teenagers is asked their screen-time category
+                ($<$2 hrs/$2$--$4$ hrs/$>$4 hrs/day) and their sleep quality (Good/Poor).
+          \item A SRS of 300 patients from one hospital is classified by diagnosis
+                (Diabetes/Hypertension/Neither) and insurance type (Private/Public/None).
+        \end{enumerate}
+
+        \begin{teachernote}
+            (B) is correct: two separate random samples (men and women) each measure
+            one categorical variable (exercise type) --- test for homogeneity.
+            (A), (C), (D) all use one random sample and measure two variables --- tests
+            for independence.
+        \end{teachernote}
+
+\end{enumerate}
+
+\begin{reflectionbox}
+In your own words, what is the single most important question to ask when deciding whether
+to use a chi-square test for homogeneity or independence? Write 1--2 sentences.
+
+\ansline{The most important question is: were the data collected from one random sample or from multiple separate groups? If multiple groups were sampled, use a test for homogeneity; if one sample was drawn and two variables were recorded on each person, use a test for independence.}
+\end{reflectionbox}
+
+\end{document}

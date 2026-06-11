@@ -1,0 +1,138 @@
+%! AP Statistics — Unit 8, Lesson 8.6 — Group Activity (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.6}{Group Activity --- Answer Key}
+\namepartnerperiod
+
+\vspace{0.08in}
+
+\begin{scenariobox}[Social Media Usage and Academic Performance]{sky}
+A researcher asks a random sample of 240 college students about their social media
+usage level (\textbf{Low / Moderate / High}) and their GPA category
+(\textbf{GPA $<$ 3.0} / \textbf{GPA $\ge$ 3.0}).
+
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{@{} l c c c @{}}
+\hline
+                 & \textbf{GPA $<$ 3.0} & \textbf{GPA $\ge$ 3.0} & \textbf{Row Total} \\
+\hline
+Low usage        & 18  & 42  & 60  \\
+Moderate usage   & 32  & 68  & 100 \\
+High usage       & 44  & 36  & 80  \\
+\hline
+\textbf{Total}   & 94  & 146 & 240 \\
+\hline
+\end{tabular}
+\end{center}
+\end{scenariobox}
+
+\vspace{0.04in}
+
+% ---- Tier R ----
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier R --- Recall},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[label=\alph*., itemsep=6pt]
+
+  \item Is this a test of \textbf{homogeneity} or \textbf{independence}? Explain in one sentence.
+        \ansline{Independence --- one random sample of 240 students; two categorical variables (social media usage and GPA) measured on the same individuals.}
+
+  \item State $H_0$ and $H_a$.
+
+        $H_0$: \ansline{Social media usage level and GPA category are independent among college students.}
+        $H_a$: \ansline{Social media usage level and GPA category are associated among college students.}
+
+  \item Check the \textbf{Random} condition. Is it met?
+        \ansline{Yes --- the problem states a random sample of 240 college students.}
+
+  \item Compute the expected count for the \textbf{Low / GPA $<$ 3.0} cell.
+
+        $E = \dfrac{{\color{keyred}\mathbf{60}} \times {\color{keyred}\mathbf{94}}}{{\color{keyred}\mathbf{240}}} = $ \ans{23.5}
+
+        Is the Large Counts condition met? \ans{Yes --- all expected counts are $\ge 5$ (smallest is 23.5).}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.06in}
+
+% ---- Tier A ----
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier A --- Apply},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[label=\alph*., itemsep=6pt]
+\setcounter{enumi}{4}
+
+  \item Fill in the \textbf{expected counts table}:
+
+        \renewcommand{\arraystretch}{1.8}
+        \begin{center}
+        \begin{tabular}{@{} l c c @{}}
+        \hline
+                         & \textbf{GPA $<$ 3.0} & \textbf{GPA $\ge$ 3.0} \\
+        \hline
+        Low usage        & \ans{23.5}  & \ans{36.5}  \\
+        Moderate usage   & \ans{39.17} & \ans{60.83} \\
+        High usage       & \ans{31.33} & \ans{48.67} \\
+        \hline
+        \end{tabular}
+        \end{center}
+
+  \item Complete the \textbf{$\chi^2$ contributions} table:
+
+        \renewcommand{\arraystretch}{1.8}
+        \begin{center}
+        \begin{tabular}{@{} l c c @{}}
+        \hline
+                         & \textbf{GPA $<$ 3.0} & \textbf{GPA $\ge$ 3.0} \\
+        \hline
+        Low usage        & $\dfrac{(18-23.5)^2}{23.5} = 1.29$ & $\dfrac{(42-36.5)^2}{36.5} = 0.83$ \\
+        Moderate usage   & \ans{$\dfrac{(32-39.17)^2}{39.17} \approx 1.31$} & \ans{$\dfrac{(68-60.83)^2}{60.83} \approx 0.84$} \\
+        High usage       & \ans{$\dfrac{(44-31.33)^2}{31.33} \approx 5.12$} & \ans{$\dfrac{(36-48.67)^2}{48.67} \approx 3.30$} \\
+        \hline
+        \end{tabular}
+        \end{center}
+
+        $\chi^2 = 1.29 + 0.83 + $ \ans{1.31} $+$ \ans{0.84} $+$ \ans{5.12} $+$ \ans{3.30} $\approx$ \ans{12.69}
+
+  \item $\text{df} = ($ \ans{3} $- 1)($ \ans{2} $- 1) = $ \ans{2}
+
+        p-value for $\chi^2 \approx 12.69$, df $= 2$: approximately \ans{0.002}.
+
+\end{enumerate}
+\end{tcolorbox}
+
+\vspace{0.06in}
+
+% ---- Tier E ----
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier E --- Extend},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[label=\alph*., itemsep=8pt]
+\setcounter{enumi}{7}
+
+  \item \textbf{Interpret the p-value} in context.
+        \ansline{The probability of obtaining a chi-square statistic of 12.69 or larger, given that social media usage and GPA are independent among college students, is approximately 0.002.}
+        \ansline{}
+        \ansline{}
+
+  \item \textbf{State a complete conclusion} at $\alpha = 0.05$.
+        \ansline{Because $p \approx 0.002 < \alpha = 0.05$, we reject $H_0$. We have convincing evidence of an association between social media usage level and GPA category among college students.}
+        \ansline{}
+        \ansline{}
+
+  \item Which cell contributes the most to $\chi^2$? What does this tell you?
+        \ansline{The High usage / GPA $<$ 3.0 cell contributes the most (approximately 5.12). Students with high social media usage had far more below-3.0 GPAs than expected under independence, suggesting that high usage is particularly associated with lower GPA.}
+        \ansline{}
+        \ansline{}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\end{document}

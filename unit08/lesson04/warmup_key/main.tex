@@ -1,0 +1,40 @@
+%! AP Statistics — Unit 8, Lesson 8.4 — Warm-Up (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.4}{Warm-Up --- Answer Key}
+\namedateperiod
+
+\vspace{0.15in}
+
+A researcher conducts a chi-square goodness-of-fit test to determine whether the
+distribution of students across four academic departments matches expected enrollment
+proportions. The test produces $\chi^2 = 7.82$ with $df = 3$ and $p$-value $\approx 0.050$.
+
+\begin{enumerate}
+
+  \item At $\alpha = 0.05$, state your decision (reject or fail to reject $H_0$)
+        and explain your reasoning in one sentence.
+
+        \textbf{Decision:} \ans{Reject $H_0$}
+
+        \textbf{Reasoning:}
+        \ansline{$p = 0.050 \le \alpha = 0.05$, so we reject $H_0$ (borderline --- reject when $p \le \alpha$).}
+
+  \item Write a conclusion in context. Use the form:
+        ``We [do / do not] have convincing evidence that\ldots''
+
+        \ansline{We have convincing evidence that the distribution of students across the four departments differs from the expected enrollment proportions.}
+
+  \item What does $df = 3$ tell us about the number of categories in the
+        original data? Show your work.
+
+        \ansline{$df = k - 1 \Rightarrow 3 = k - 1 \Rightarrow k = $ \ans{4}. There were 4 categories.}
+
+\end{enumerate}
+
+\end{document}

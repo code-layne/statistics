@@ -1,0 +1,166 @@
+%! AP Statistics — Unit 8, Lesson 8.6 — Guided Notes
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.6}{Guided Notes}
+\namedateperiod
+
+\vspace{0.1in}
+
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+  \item \writeline
+  \item \writeline
+  \item \writeline
+\end{itemize}
+\end{objectivebox}
+
+\begin{vocabbox}
+\begin{description}
+  \item[\termblanklong{Test statistic (two-way)}]
+        $\chi^2 = \displaystyle\sum \dfrac{(O - E)^2}{E}$; always \blank{2cm};
+        larger values mean \blank{5cm}.
+  \item[\termblanklong{Degrees of freedom (two-way)}]
+        $\text{df} = ($ \blank{2cm} $- 1)($ \blank{2cm} $- 1)$; use the number of
+        \blank{3cm} and \blank{3cm} in the table.
+  \item[\termblanklong{p-value interpretation}]
+        ``The probability, assuming $H_0$ is \blank{2cm}, of obtaining a $\chi^2$
+        statistic as large or \blank{3cm} as the one observed.''
+\end{description}
+\end{vocabbox}
+
+\begin{notesbox}{Context: Transit Plan Opinions in Three Cities}
+
+Three cities (A, B, C) each randomly sampled 100 residents.
+Survey question: Do you support the new transit plan?
+
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{@{} l c c c c @{}}
+\hline
+           & \textbf{Support} & \textbf{Neutral} & \textbf{Oppose} & \textbf{Total} \\
+\hline
+City A     & 58  & 22  & 20  & 100 \\
+City B     & 45  & 35  & 20  & 100 \\
+City C     & 37  & 28  & 35  & 100 \\
+\hline
+\textbf{Total} & 140 & 85 & 75 & 300 \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Step 1 --- State:} $H_0$: \writeline
+
+$H_a$: \writeline
+
+\end{notesbox}
+
+\begin{notesbox}{Step 2 --- Plan: Check Conditions}
+
+\begin{itemize}
+  \item \textbf{Random:} \blank{7cm} (stated in the problem)
+  \item \textbf{10\% condition:} $n \le 10\% \times $ \blank{3cm} --- satisfied for large populations.
+  \item \textbf{Large Counts:} All expected counts $\ge$ \blank{1.5cm}.
+\end{itemize}
+
+\vspace{0.06in}
+\textbf{Fill in expected counts} using $E = \dfrac{\text{row total} \times \text{col total}}{\text{grand total}}$:
+
+\renewcommand{\arraystretch}{1.6}
+\begin{center}
+\begin{tabular}{@{} l c c c @{}}
+\hline
+           & \textbf{Support} & \textbf{Neutral} & \textbf{Oppose} \\
+\hline
+City A     & $\dfrac{100 \times 140}{300} =$ \blank{2.2cm} & \blank{2.2cm} & \blank{2.2cm} \\[6pt]
+City B     & \blank{2.2cm} & \blank{2.2cm} & \blank{2.2cm} \\[6pt]
+City C     & \blank{2.2cm} & \blank{2.2cm} & \blank{2.2cm} \\
+\hline
+\end{tabular}
+\end{center}
+
+All expected counts $\ge 5$? (circle): \quad \textbf{Yes} \qquad \textbf{No}
+
+\end{notesbox}
+
+\begin{notesbox}{Step 3 --- Do: Calculate $\chi^2$ (VAR-8.L)}
+
+\textbf{Formula:}
+\[
+  \chi^2 = \sum_{\text{all cells}} \frac{(O - E)^2}{E}
+\]
+
+\textbf{df} $= ($ \blank{1.5cm} $- 1)($ \blank{1.5cm} $- 1) = $ \blank{2cm}
+
+\vspace{0.06in}
+\textbf{Cell contributions} (partially worked --- complete the blanks):
+
+City A: $\dfrac{(58-46.67)^2}{46.67} + \dfrac{(\blank{1.8cm}-\blank{1.8cm})^2}{\blank{1.8cm}} + \dfrac{(\blank{1.8cm}-\blank{1.8cm})^2}{\blank{1.8cm}} = 2.75 + \blank{1.8cm} + \blank{1.8cm}$
+
+\vspace{0.06in}
+City B: $\dfrac{(\blank{1.8cm}-\blank{1.8cm})^2}{\blank{1.8cm}} + \blank{1.8cm} + \blank{1.8cm} = \blank{1.8cm}$
+
+\vspace{0.06in}
+City C: $\blank{1.8cm} + \blank{1.8cm} + \blank{1.8cm} = \blank{1.8cm}$
+
+\vspace{0.06in}
+$\chi^2 = \blank{3cm}$
+
+\end{notesbox}
+
+\begin{notesbox}{Steps 4--5 --- Find p-Value, Interpret, and Conclude (VAR-8.M / DAT-3.K / DAT-3.L)}
+
+\textbf{Using the chi-square table:} With df $= $ \blank{1.5cm}, the value $\chi^2 \approx$ \blank{2cm}
+falls between $\chi^2 = 13.28$ ($p = 0.01$) and $\chi^2 = 18.47$ ($p = 0.001$).
+
+p-value $\approx$ \blank{2.5cm}
+
+\medskip
+\textbf{Interpret the p-value:}
+
+``Assuming the distribution of opinions \blank{6cm}, there is a
+\blank{2cm} probability of observing a $\chi^2$ statistic as large as \blank{2cm} by chance alone.''
+
+\medskip
+\textbf{Conclusion} at $\alpha = 0.05$:
+
+``Because $p \approx$ \blank{2cm} [is/is not] less than $\alpha = 0.05$, we
+[reject / fail to reject] $H_0$.  We [have / do not have] convincing evidence that \blank{5cm}.''
+
+\end{notesbox}
+
+\begin{practicebox}{Practice: Complete the Test}
+
+A researcher surveys a random sample of 120 college students and asks their major
+(STEM / Non-STEM) and whether they prefer studying alone or in a group.
+Observed counts:
+
+\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\begin{tabular}{@{} l c c c @{}}
+\hline
+            & \textbf{Alone} & \textbf{Group} & \textbf{Total} \\
+\hline
+STEM        & 38 & 22 & 60 \\
+Non-STEM    & 28 & 32 & 60 \\
+\hline
+\textbf{Total} & 66 & 54 & 120 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}[label=\alph*.]
+  \item Test type: \blank{4cm} \quad $H_0$: \writeline
+  \item Expected count for STEM/Alone: $E = \dfrac{\blank{1.8cm} \times \blank{1.8cm}}{\blank{1.8cm}} = $ \blank{2cm}
+  \item $\text{df} = ($ \blank{1.5cm} $-1)($ \blank{1.5cm} $-1) = $ \blank{1.5cm}
+        \quad $\chi^2 = $ \blank{2.5cm} (use technology) \quad p-value $\approx$ \blank{2.5cm}
+  \item Conclusion at $\alpha = 0.05$: \writelines{2}
+\end{enumerate}
+\end{practicebox}
+
+\end{document}

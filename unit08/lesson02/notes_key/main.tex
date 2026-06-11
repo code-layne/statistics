@@ -1,0 +1,128 @@
+%! AP Statistics — Unit 8, Lesson 8.2 — Guided Notes (Answer Key)
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-key}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.2}{Guided Notes --- Answer Key}
+\namedateperiod
+
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+    \item[$\square$] \ansline{Describe the shape of a chi-square distribution and the effect of degrees of freedom.}
+    \item[$\square$] \ansline{State H$_0$ and H$_a$ for a chi-square goodness of fit test.}
+    \item[$\square$] \ansline{Identify when a chi-square GOF test is the appropriate procedure.}
+    \item[$\square$] \ansline{Calculate expected counts using $E = n \cdot p_0$.}
+    \item[$\square$] \ansline{Verify the Random and Large Counts conditions for a GOF test.}
+\end{itemize}
+\end{objectivebox}
+
+\begin{vocabbox}
+\termblanklong{Chi-square distribution}
+\ansline{A family of distributions with only positive values, skewed right; becomes less skewed as degrees of freedom increase.}
+
+\termblanklong{Goodness of fit (GOF) test}
+\ansline{A chi-square procedure that tests whether observed data for one categorical variable follow a claimed (specified) distribution.}
+
+\termblanklong{Expected count}
+\ansline{$E = n \cdot p_0$; the count expected in a category if H$_0$ is true.}
+
+\termblanklong{Null proportion ($p_0$)}
+\ansline{The claimed proportion for each category, specified by H$_0$.}
+
+\termblanklong{Degrees of freedom ($df$)}
+\ansline{For a GOF test: $df = (\text{number of categories}) - 1$.}
+
+\termblanklong{Large Counts condition}
+\ansline{All expected counts must be $\ge 5$.}
+\end{vocabbox}
+
+\begin{hookbox}
+Why can't we use six separate one-proportion $z$-tests to check the die distribution?
+\ansline{Using multiple separate tests inflates the overall Type I error rate. We need a single procedure that combines all six categories into one test statistic --- the chi-square GOF test.}
+\end{hookbox}
+
+\begin{notesbox}{The Chi-Square Distribution (VAR-8.A)}
+\textbf{Properties:}
+\begin{itemize}
+    \item Values are always \ans{positive (or zero)}.
+    \item Shape is skewed \ans{right}.
+    \item As degrees of freedom \ans{increase}, the skew becomes less pronounced.
+    \item $df = (\text{number of categories}) - $ \ans{1} for a GOF test.
+\end{itemize}
+
+\textbf{When to use a GOF test (VAR-8.C):} Use a chi-square GOF test when you have
+\ans{one} categorical variable and want to test whether the population follows a
+\ans{specified (claimed)} distribution.
+\end{notesbox}
+
+\begin{notesbox}{Stating Hypotheses (VAR-8.B)}
+H$_0$ states the \ans{proportion (null proportion)} for \ans{each} category.
+
+H$_a$: At least \ans{one} of the proportions is not as specified in H$_0$.
+
+\vspace{0.1in}
+\textbf{Die-Roll Example:}
+
+H$_0$: $p_1 = $ \ans{$1/6$}, $p_2 = $ \ans{$1/6$}, $p_3 = $ \ans{$1/6$},
+$p_4 = $ \ans{$1/6$}, $p_5 = $ \ans{$1/6$}, $p_6 = $ \ans{$1/6$}
+
+H$_a$: \ansline{At least one face of the die does not appear with probability $1/6$.}
+
+\textit{Note:} All null proportions must sum to \ans{1}.
+\end{notesbox}
+
+\begin{notesbox}{Calculating Expected Counts (VAR-8.D)}
+Formula: \quad $E = $ \ans{sample size ($n$)} $\times$ \ans{null proportion ($p_0$)}
+
+\vspace{0.1in}
+\textbf{Die-Roll Example} ($n = 120$): \quad $E = 120 \times \dfrac{1}{6} = $ \ans{20} per face.
+
+\vspace{0.1in}
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{lcccccc}
+    \textbf{Face} & 1 & 2 & 3 & 4 & 5 & 6 \\
+    \hline
+    \textbf{Null proportion} & $1/6$ & $1/6$ & $1/6$ & $1/6$ & $1/6$ & $1/6$ \\
+    \textbf{Expected count} & \ans{20} & \ans{20} & \ans{20} & \ans{20} & \ans{20} & \ans{20} \\
+\end{tabular}
+\end{center}
+\end{notesbox}
+
+\begin{notesbox}{Verifying Conditions (VAR-8.E)}
+\begin{enumerate}
+    \item \textbf{Random:} The data come from a \ans{random sample} or randomized experiment.
+          If sampling without replacement: $n \le $ \ans{10}\%$ \cdot N$.
+    \item \textbf{Large Counts:} All \ans{expected} counts are $\ge $ \ans{5}.
+\end{enumerate}
+
+\textbf{Die-Roll Check:}
+\begin{itemize}
+    \item Random: \ansline{The 120 rolls are assumed to be a random process (fair rolling conditions).}
+    \item Large Counts: Smallest expected count is \ans{20}. Condition \ans{met ($\ge 5$)}.
+\end{itemize}
+
+\textit{Important:} The Large Counts condition uses \ans{expected} counts, not
+\ans{observed} counts.
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Practice:} Total ratio parts: $9 + 3 + 3 + 1 = $ \ans{16}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{lcccc}
+    \textbf{Phenotype} & A & B & C & D \\
+    \hline
+    \textbf{Null proportion} & $9/16$ & $3/16$ & $3/16$ & $1/16$ \\
+    \textbf{Expected count} ($n=160$) & \ans{90} & \ans{30} & \ans{30} & \ans{10} \\
+\end{tabular}
+\end{center}
+
+Large Counts condition: \ansline{All expected counts $\ge 5$ (smallest is 10). Condition is met.}
+\end{practicebox}
+
+\end{document}

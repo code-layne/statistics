@@ -1,0 +1,109 @@
+%! AP Statistics — Unit 8, Lesson 8.4 — Group Activity
+\documentclass[10pt]{article}
+\usepackage{apstats-article}
+\usepackage{apstats-boxes}
+\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+
+\begin{document}
+
+\pageheader{Unit 8, Lesson 8.4}{Group Activity}
+\namepartnerperiod
+
+\vspace{0.1in}
+
+\begin{scenariobox}[School Sports Participation Survey]{sky}
+A random sample of 150 middle school students is asked about their grade (6th, 7th, 8th)
+and whether they participate in a school sport (Yes or No). The results are shown below.
+
+\vspace{0.1in}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{lcccc}
+             & \textbf{Yes} & \textbf{No} & \textbf{Row Total} \\
+    \hline
+    6th grade & 24 & 26 & 50 \\
+    7th grade & 30 & 20 & 50 \\
+    8th grade & 18 & 32 & 50 \\
+    \hline
+    Column Total & 72 & 78 & 150 \\
+\end{tabular}
+\end{scenariobox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Task a.} Use the formula $E = \dfrac{(\text{row total})(\text{col total})}{\text{table total}}$
+to calculate the expected count for \textbf{two} of the six cells. Show all work.
+
+\begin{enumerate}[label=\alph*.]
+    \item 6th grade / Yes: \quad $E = \dfrac{(\blank{1.5cm})(\blank{1.5cm})}{\blank{1.5cm}} = \blank{2cm}$
+
+          \vspace{0.1in}
+
+    \item 7th grade / No: \quad $E = \dfrac{(\blank{1.5cm})(\blank{1.5cm})}{\blank{1.5cm}} = \blank{2cm}$
+\end{enumerate}
+
+\vspace{0.1in}
+\textbf{Task b.} Use the pattern you see to fill in all 6 expected counts (fill-in provided):
+
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{lcc}
+             & \textbf{Expected: Yes} & \textbf{Expected: No} \\
+    \hline
+    6th grade & \blank{2.5cm} & \blank{2.5cm} \\
+    7th grade & \blank{2.5cm} & \blank{2.5cm} \\
+    8th grade & \blank{2.5cm} & \blank{2.5cm} \\
+\end{tabular}
+
+\vspace{0.1in}
+\textbf{Task c.} Large-Counts Condition: Are all expected counts $\ge 5$?
+\quad Circle one: \quad \textbf{Yes} \quad \textbf{No}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Task a.} Calculate the expected count for \textbf{all 6 cells}. Show work for at least 2 cells.
+
+\vspace{0.1in}
+
+\textbf{Task b.} Complete the side-by-side comparison table:
+
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{lcccc}
+             & \textbf{Obs: Yes} & \textbf{Exp: Yes} & \textbf{Obs: No} & \textbf{Exp: No} \\
+    \hline
+    6th grade & 24 & \blank{2cm} & 26 & \blank{2cm} \\
+    7th grade & 30 & \blank{2cm} & 20 & \blank{2cm} \\
+    8th grade & 18 & \blank{2cm} & 32 & \blank{2cm} \\
+\end{tabular}
+
+\vspace{0.1in}
+\textbf{Task c.} Check the large-counts condition. State it in a complete sentence.
+
+\writelines{2}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40, title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Complete all tasks from Tier A, then answer:
+
+\textbf{Task d.} Which grade level shows the \textbf{largest difference} between
+observed and expected counts? Use numbers to support your answer.
+
+\writelines{2}
+
+\textbf{Task e.} Does the pattern of observed vs.\ expected counts suggest an
+\textbf{association} between grade level and sports participation? Explain using
+both the numbers from the table and the idea of what expected counts represent.
+
+\writelines{3}
+
+\textbf{Task f.} For the cell with the largest difference, compute
+$(O - E)^2/E$. This is one term in the chi-square statistic. What does a
+larger value of $(O - E)^2/E$ suggest?
+
+\writelines{3}
+\end{tcolorbox}
+
+\end{document}
