@@ -1,19 +1,101 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.6 — Guided Notes
+%! AP Statistics — Unit 9, Lesson 9.6 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.6}{Guided Notes}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+    \item[$\square$] Identify whether a context calls for a confidence interval or a significance test.
+    \item[$\square$] Select the correct inference procedure for a given context from Units 6--9.
+    \item[$\square$] State $H_0$ and $H_a$ (or describe the parameter being estimated) for the selected procedure.
+\end{itemize}
+\end{objectivebox}
+
+\begin{vocabbox}
+\termblanklong{Parameter}
+\termblanklong{Confidence interval}
+\termblanklong{Significance test}
+\termblanklong{Inference procedure}
+\end{vocabbox}
+
+\begin{hookbox}
+You have now learned more than 8 different inference procedures. How do you know which one to use on the AP exam? The key is a systematic decision framework.
+
+\textit{Think about it:} What is the first question you should ask when you read a scenario on the AP exam? \writelines{1}
+\end{hookbox}
+
+\begin{notesbox}{Decision Framework: Step-by-Step}
+Use the three questions below to identify the correct procedure.
+
+\vspace{0.1in}
+\textbf{Step 1 — What TYPE of variable(s)?}
+
+\hspace{1cm} $\to$ \blank{4cm} (categories, counts, yes/no) \quad OR \quad \blank{4cm} (measurements, averages)
+
+\vspace{0.15in}
+\textbf{Step 2 — What is the DATA STRUCTURE?}
+
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{@{\hspace{0.5cm}} l l}
+  \textit{If Categorical:} & \\
+  \hspace{0.5cm} One proportion & $\to$ \blank{5cm} \\
+  \hspace{0.5cm} Two proportions (independent) & $\to$ \blank{5cm} \\
+  \hspace{0.5cm} One categorical variable, testing fit to a distribution & $\to$ \blank{5cm} \\
+  \hspace{0.5cm} Two categorical variables (association / independence) & $\to$ \blank{5cm} \\
+  \hspace{0.5cm} One categorical variable compared across 2+ populations & $\to$ \blank{5cm} \\[6pt]
+  \textit{If Quantitative:} & \\
+  \hspace{0.5cm} One mean & $\to$ \blank{5cm} \\
+  \hspace{0.5cm} Two paired means (same subjects, measured twice) & $\to$ \blank{5cm} \\
+  \hspace{0.5cm} Two independent means & $\to$ \blank{5cm} \\
+  \hspace{0.5cm} Two quantitative variables (predict $y$ from $x$) & $\to$ \blank{5cm} \\
+\end{tabular}
+
+\vspace{0.15in}
+\textbf{Step 3 — CI or Significance Test?}
+
+\hspace{1cm} \textbf{Confidence interval} $\to$ goal is to \blank{5cm} a parameter.
+
+\hspace{1cm} \textbf{Significance test} $\to$ goal is to \blank{5cm} a claim about a parameter.
+\end{notesbox}
+
+\begin{notesbox}{All Inference Procedures: Reference Table}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{@{} p{0.22\linewidth} p{0.25\linewidth} X X @{}}
+  \rowcolor{sky}
+  \textbf{Variable Type} & \textbf{Data Structure} & \textbf{Confidence Interval} & \textbf{Significance Test} \\
+  \hline
+  Categorical & 1 proportion & 1-prop $z$-interval & 1-prop $z$-test \\
+  Categorical & 2 proportions & 2-prop $z$-interval & 2-prop $z$-test \\
+  Categorical & 1 var, $\ge$3 categories (fit to claimed dist.) & --- & Chi-square GOF test \\
+  Categorical & 1 var, 2+ independent groups & --- & Chi-square test for homogeneity \\
+  Categorical & 2 categorical vars, 1 sample & --- & Chi-square test for independence \\
+  Quantitative & 1 mean & 1-sample $t$-interval & 1-sample $t$-test \\
+  Quantitative & 2 independent means & 2-sample $t$-interval & 2-sample $t$-test \\
+  Quantitative & Matched pairs & Paired $t$-interval & Paired $t$-test \\
+  Quantitative & Bivariate (slope) & $t$-interval for slope & $t$-test for slope \\
+\end{tabularx}
+\end{notesbox}
+
+\begin{notesbox}{Quick Practice}
+For each scenario, name the inference procedure.
+
+\vspace{0.1in}
+\textbf{a.} A researcher randomly surveys 150 voters and asks them to rate their satisfaction on a scale of 1--10. She wants a 95\% CI for the mean satisfaction score.
+
+\hspace{0.5cm} Procedure: \blank{9cm}
+
+\vspace{0.15in}
+\textbf{b.} A study randomly assigns cats to one of two diets and records each cat's weight change (kg) over 6 months. Researchers test whether the diets produce different mean weight changes.
+
+\hspace{0.5cm} Procedure: \blank{9cm}
 \end{notesbox}
 
 \end{document}

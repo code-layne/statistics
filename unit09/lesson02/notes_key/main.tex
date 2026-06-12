@@ -1,19 +1,106 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.2 — Guided Notes (Answer Key)
+%! AP Statistics — Unit 9, Lesson 9.2 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.2}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+    \item[$\square$] Identify a $t$-interval for slope as the appropriate procedure for estimating the true slope $\beta$.
+    \item[$\square$] State the LINER conditions and verify each condition for a given context.
+    \item[$\square$] Compute a confidence interval using $b \pm t^* \cdot SE_b$ with $df = n - 2$.
+    \item[$\square$] Interpret a confidence interval for slope in context.
+\end{itemize}
+\end{objectivebox}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{vocabbox}
+\termblanklong{Population regression line ($\mu_y = \alpha + \beta x$)}
+\termblanklong{Sample regression line ($\hat{y} = a + bx$)}
+\termblanklong{Standard deviation of residuals ($s$)}
+\termblanklong{Standard error of slope ($SE_b$)}
+\termblanklong{$t$-interval for slope}
+\termblanklong{LINER conditions}
+\end{vocabbox}
+
+\begin{hookbox}
+A physical therapist randomly selects 25 patients and records the number of weekly PT
+sessions ($x$) and recovery time in weeks ($y$). The LSRL is $\hat{y} = 12.4 - 0.8x$
+with $s = 2.1$ and $SE_b = 0.22$. The therapist wants to estimate the true slope $\beta$
+for all patients.
+
+What procedure should she use, and why? \writelines{2}
+\end{hookbox}
+
+\begin{notesbox}{The Sampling Distribution of $b$ and the $t$-Interval (UNC-4.AC)}
+The sample slope $b$ is a statistic that estimates the true slope $\beta$.
+Its sampling distribution has:
+\begin{itemize}
+    \item Mean: $\mu_b = $ \ans{$\beta$}
+    \item Standard deviation: $\sigma_b = \dfrac{\sigma}{\sigma_x\sqrt{n}}$
+\end{itemize}
+
+\vspace{0.1in}
+Because $\sigma$ is unknown, we estimate it with
+$s = $ \ans{$\sqrt{\sum(y_i - \hat{y}_i)^2/(n-2)}$}.
+
+\vspace{0.15in}
+The appropriate confidence interval procedure for slope is a \ans{$t$-interval} interval.
+
+\vspace{0.1in}
+\textbf{CI formula:}\quad
+$b\ \pm\ t^* \cdot$ \ans{$SE_b$},\quad where $df = n -$ \ans{2}.
+\end{notesbox}
+
+\begin{notesbox}{LINER Conditions for Inference on Slope (UNC-4.AD)}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabular}{>{\bfseries}p{1.3cm} p{5.3cm} p{5.8cm}}
+    Letter & Condition & How to Check \\
+    \hline
+    L &
+        The true relationship between $x$ and $y$ is \ans{linear}. &
+        Residual plot shows \ans{random scatter around 0 with no curve}. \\
+    I &
+        Observations are \ans{independent}; if sampling w/o replacement: $n \le$ \ans{10\%}$\cdot N$. &
+        Data come from a \ans{random sample or experiment}. \\
+    N &
+        The responses $y$ are approximately \ans{normal} for fixed $x$. &
+        Residual histogram; $n >$ \ans{30} if skewed. \\
+    E &
+        $\sigma_y$ does not \ans{vary} with $x$ (equal variance). &
+        Residual plot shows \ans{constant spread}. \\
+    R &
+        Data come from a \ans{random sample} or randomized experiment. &
+        Check study design. \\
+\end{tabular}
+\end{notesbox}
+
+\begin{notesbox}{Computing a CI for Slope from Output (UNC-4.AE/AF)}
+\textbf{Reading computer output:} Find $b$ in the \textbf{Coef} column and $SE_b$
+in the \textbf{SE Coef} column on the slope row.
+
+\vspace{0.1in}
+Margin of error $= t^* \cdot$ \ans{$SE_b$}.
+
+\vspace{0.15in}
+\textbf{Worked Example (PT Data):}\quad $b = -0.8$,\; $SE_b = 0.22$,\; $n = 25$,\; 95\% CI.
+
+\vspace{0.05in}
+$df = 25 - 2 = 23$;\quad $t^* = 2.069$
+
+\vspace{0.1in}
+$CI:\quad -0.8\ \pm\ 2.069 \times 0.22\ =\ -0.8\ \pm$
+\ans{$0.455$}
+$=\ ($\ans{$-1.255$},\; \ans{$-0.345$}$)$
+
+\vspace{0.15in}
+\textbf{Interpret:} \ans{We are 95\% confident that the true slope of the population
+regression line relating recovery time to weekly PT sessions for all patients is between
+$-1.255$ and $-0.345$ weeks per session.}
 \end{notesbox}
 
 \end{document}

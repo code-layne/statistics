@@ -1,19 +1,119 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.5 — Group Activity
+%! AP Statistics — Unit 9, Lesson 9.5 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.5}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
+\textbf{Significance Tests for Slope --- Two Contexts}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\vspace{0.1in}
+\textbf{Regression Output 1: Hours Studied vs.\ Exam Score} ($n = 32$)
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{lrrrr}
+    \textbf{Predictor} & \textbf{Coef} & \textbf{SE Coef} & \textbf{T} & \textbf{P} \\
+    \hline
+    Constant & 41.2 & 5.8 & 7.10 & 0.000 \\
+    Hours    &  3.8 & 0.72 & 5.28 & 0.000 \\
+\end{tabular}
+\end{center}
+
+Researcher's claim: ``More study time is associated with higher exam scores.''
+
+\vspace{0.1in}
+\textbf{Regression Output 2: Daily Steps (thousands) vs.\ Body Mass Index} (kg/m$^2$, $n = 25$)
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{lrrrr}
+    \textbf{Predictor} & \textbf{Coef} & \textbf{SE Coef} & \textbf{T} & \textbf{P} \\
+    \hline
+    Constant & 32.4 &  2.1 & 15.43 & 0.000 \\
+    Steps    & $-0.48$ & 0.31 & $-1.55$ & 0.135 \\
+\end{tabular}
+\end{center}
+
+Researcher's claim: ``Daily step count is negatively associated with BMI.''
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Use \textbf{Output 1} only. Assume LINER conditions are met.
+
+\begin{enumerate}[label=\alph*.]
+
+  \item Let $\beta =$ the true slope of the population regression line relating exam score
+        to hours studied. State the hypotheses.
+
+        H$_0$: $\beta = $ \blank{2cm} \qquad H$_a$: $\beta \ne $ \blank{2cm}
+
+  \item Read the test statistic and degrees of freedom from the output.
+
+        $t = $ \blank{2cm} \qquad $df = n - 2 = 32 - 2 = $ \blank{2cm}
+
+  \item Read the $p$-value from the output: $p = $ \blank{2cm}
+
+  \item Since $p$ \blank{1cm} $0.05$, we \quad \textbf{reject} \quad/\quad
+        \textbf{fail to reject} \quad H$_0$.  \hfill(circle one)
+
+  \item Complete the conclusion sentence:
+
+        ``There \blank{2cm} convincing evidence that the true slope relating exam score
+        to hours studied is \blank{2cm} zero.''
+
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Carry out a complete 4-step significance test for \textbf{each output} at $\alpha = 0.05$.
+Assume LINER conditions are met.
+
+\textbf{Output 1:}
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{Hypotheses.} Define $\beta$, then state H$_0$ and H$_a$. \writelines{2}
+  \item \textbf{Conditions.} State that LINER conditions are assumed to be met. \writeline
+  \item \textbf{Test statistic \& $p$-value.} Identify from the table. \writeline
+  \item \textbf{Conclusion.} Write a complete conclusion sentence in context. \writelines{2}
+\end{enumerate}
+
+\textbf{Output 2:}
+\begin{enumerate}[label=\alph*.]
+  \item \textbf{Hypotheses.} Define $\beta$, then state H$_0$ and H$_a$. \writelines{2}
+  \item \textbf{Conditions.} State that LINER conditions are assumed to be met. \writeline
+  \item \textbf{Test statistic \& $p$-value.} Identify from the table. \writeline
+  \item \textbf{Conclusion.} Write a complete conclusion sentence in context. \writelines{2}
+\end{enumerate}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Complete all of Tier A. Then, for \textbf{Output 1}:
+
+\begin{enumerate}[label=\alph*.]
+  \item Construct a 95\% confidence interval for $\beta$ using $t^* = 2.042$ ($df = 30$).
+        Show your calculation.
+        \writelines{3}
+
+  \item Does zero fall inside the confidence interval? What does this tell you about
+        the hypothesis test conclusion? Explain why the CI and test give consistent results.
+        \writelines{3}
+\end{enumerate}
+
+\end{tcolorbox}
 
 \end{document}

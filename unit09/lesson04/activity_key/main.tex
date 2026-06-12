@@ -1,19 +1,103 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.4 — Group Activity (Answer Key)
+%! AP Statistics — Unit 9, Lesson 9.4 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.4}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
+\textbf{Setting Up a Significance Test for Slope}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\vspace{0.05in}
+\textbf{Scenario 1:} A nutritionist randomly selects 40 adults and records their
+daily fiber intake (grams, $x$) and LDL cholesterol (mg/dL, $y$). A residual plot
+shows random scatter around zero with roughly equal spread. A histogram of residuals
+is approximately bell-shaped. She wants to test whether fiber intake is linearly
+related to LDL cholesterol.
+
+\vspace{0.05in}
+\textbf{Scenario 2:} A realtor randomly selects 50 homes sold in a city and records
+square footage ($x$) and sale price (\$1000s, $y$). The residual plot shows random
+scatter with no curve and roughly equal spread. $n = 50$ so normality is reasonable.
+She wants to test whether square footage linearly predicts sale price.
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Use Scenario 1 only.}
+
+\begin{enumerate}[label=\alph*.]
+
+  \item Name the appropriate test: \ans{$t$-test for slope}
+
+  \item Define $\beta$: ``the true slope of the regression line relating
+        \ans{fiber intake} to \ans{LDL cholesterol} for \ans{adults}.''
+
+  \item H$_0$: $\beta = $ \ans{0} \qquad H$_a$: $\beta$ \ans{$\ne$} 0
+
+  \item LINER conditions:
+
+        \begin{tabularx}{\linewidth}{lXccc}
+            \textbf{Letter} & \textbf{Condition} & \textbf{Met?} \\
+            \hline
+            L & Random scatter in residual plot & \ans{YES} \\
+            I & Random sample; 10\% condition   & \ans{YES} (random sample stated; need to assume population $\ge 400$) \\
+            N & Residuals bell-shaped            & \ans{YES} \\
+            E & Equal spread in residual plot    & \ans{YES} \\
+        \end{tabularx}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[label=\alph*.]
+
+  \item Test: \ans{$t$-test for slope} for both scenarios.
+
+  \item \textit{Scenario 1:} $\beta = $ \ans{the true slope of the regression line
+        relating LDL cholesterol to fiber intake for adults.}
+        H$_0$: \ans{$\beta = 0$} \quad H$_a$: \ans{$\beta \ne 0$}
+
+        \textit{Scenario 2:} $\beta = $ \ans{the true slope of the regression line
+        relating sale price to square footage for homes in this city.}
+        H$_0$: \ans{$\beta = 0$} \quad H$_a$: \ans{$\beta \ne 0$}
+
+  \item \ans{L: Met for both --- residual plots show random scatter with no curve.
+        I: Met for both --- both are random samples (assume populations $\ge 400$ and
+        $\ge 500$ respectively for 10\% condition).
+        N: Met for Scenario 1 (bell-shaped residuals); met for Scenario 2 ($n = 50 > 30$).
+        E: Met for both --- residual plots show roughly equal spread.
+        R: Met for both --- random samples stated.}
+
+  \item \ans{The 10\% condition for I cannot be fully verified without knowing the
+        total population size for each study.}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[label=\alph*., start=5]
+
+  \item \ans{One-sided alternative: H$_a$: $\beta > 0$ (larger homes have higher
+        sale prices). This is appropriate only if she had a strong prior reason to
+        believe the relationship is positive before seeing the data.}
+
+  \item \ans{A two-sided alternative is more conservative and guards against
+        data snooping --- choosing a one-sided test after observing the direction
+        of $b$ inflates the Type I error rate. Unless there is a strong theoretical
+        reason to rule out the other direction in advance, two-sided is preferred.}
+
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

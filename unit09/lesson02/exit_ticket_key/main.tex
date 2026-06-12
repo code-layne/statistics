@@ -1,19 +1,48 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.2 — Exit Ticket (Answer Key)
+%! AP Statistics — Unit 9, Lesson 9.2 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.2}{Exit Ticket --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
+A nutritionist randomly selects 20 adults and records their daily calorie intake ($x$,
+in hundreds of calories) and resting metabolic rate ($y$, calories/day).
+Computer output gives $b = 18.4$, $SE_b = 4.2$, and $n = 20$.
+Assume all LINER conditions are met. Use $t^* = 2.101$ for a 95\% CI ($df = 18$).
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\vspace{0.15in}
+\begin{enumerate}
+
+    \item Construct a 95\% confidence interval for the true slope $\beta$. Show your work.
+
+          \vspace{0.05in}
+          $b \pm t^* \cdot SE_b
+          = $ \ans{$18.4$} $\pm$ \ans{$2.101$} $\times$ \ans{$4.2$}
+          $= $ \ans{$18.4 \pm 8.824$}
+          $= ($ \ans{$9.576$},\; \ans{$27.224$}$)$
+
+          \vspace{0.1in}
+
+    \item Interpret this confidence interval in context.
+
+          \vspace{0.05in}
+          \ans{We are 95\% confident that the true slope of the population regression
+          line relating resting metabolic rate to daily calorie intake for adults is
+          between approximately 9.6 and 27.2 calories per day per hundred calories consumed.}
+
+          \vspace{0.1in}
+
+    \item Does this CI provide evidence that $\beta \ne 0$? Justify your answer.
+
+          \vspace{0.05in}
+          \ans{Yes. Since 0 is not contained in the interval $(9.6,\ 27.2)$, this provides
+          evidence that $\beta \ne 0$; there is a positive linear relationship between
+          daily calorie intake and resting metabolic rate.}
+
+\end{enumerate}
 
 \end{document}

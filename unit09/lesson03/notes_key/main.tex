@@ -1,19 +1,115 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.3 — Guided Notes (Answer Key)
+%! AP Statistics — Unit 9, Lesson 9.3 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.3}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+    \item[$\square$] \ansline{Interpret a confidence interval for the slope of a regression model in context.}
+    \item[$\square$] \ansline{Use a CI for slope to justify or refute a claim about the true slope $\beta$.}
+    \item[$\square$] \ansline{Explain how increasing sample size affects the width of a CI for slope.}
+\end{itemize}
+\end{objectivebox}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{vocabbox}
+\termblanklong{CI for slope}
+\ansline{An interval estimate of the true slope $\beta$; has the form $b \pm t^* \cdot SE_b$ (UNC-4.AG.1--2).}
+
+\termblanklong{Interpretation of CI for slope}
+\ansline{Must include: confidence level (C\%), both endpoints with correct units, and a reference to the \emph{population} (not just the sample).}
+
+\termblanklong{Justifying a claim with a CI}
+\ansline{If the claimed value is outside the CI $\Rightarrow$ evidence against that claim; if inside $\Rightarrow$ consistent with the data (UNC-4.AH.1).}
+
+\termblanklong{Width of CI for slope}
+\ansline{Width $= 2t^* \cdot SE_b$; larger $n$ decreases $SE_b$, producing a narrower interval when all other things remain the same (UNC-4.AI.1).}
+\end{vocabbox}
+
+\begin{hookbox}
+Can you use the interval $(0.14,\ 0.52)$ to evaluate the claim $\beta = 0$? What about $\beta = 0.5$?
+
+\ansline{Since 0 is not in $(0.14,\ 0.52)$, this provides evidence against $\beta = 0$. Since 0.5 is in the interval, $\beta = 0.5$ is consistent with the data.}
+\end{hookbox}
+
+\begin{notesbox}{Interpreting a CI for Slope (UNC-4.AG)}
+
+\textbf{Interpretation Template:}
+
+``We are \blank{2cm}\% confident that the true slope of the population regression line
+relating \blank{4cm} to \blank{4cm} for \blank{4cm} is between \blank{2cm} and
+\blank{2cm} \blank{3cm}.''
+
+\vspace{0.1in}
+\textbf{Required elements for full AP credit:}
+\begin{enumerate}
+    \item \ans{Confidence level (C\%)}
+    \item \ans{Both endpoints with correct units}
+    \item \ans{Reference to the \emph{population} (not just the sample)}
+\end{enumerate}
+
+\vspace{0.1in}
+\textbf{Worked Example.} A 95\% CI for the slope relating exam score to daily study time
+for high school students is $(0.14,\ 0.52)$ points per hour.
+
+\textit{Complete interpretation:}
+\ansline{We are 95\% confident that the true slope of the population regression line
+relating exam score to daily study time for high school students is between 0.14 and
+0.52 points per hour of study.}
+
+\end{notesbox}
+
+\begin{notesbox}{Justifying a Claim Using a CI (UNC-4.AH)}
+
+\textbf{Logic:}
+\begin{itemize}
+    \item If the claimed value $\beta_0$ is \textbf{NOT} in the CI $\Rightarrow$
+          \ans{evidence against that claim (the data are inconsistent with $\beta_0$).}
+    \item If the claimed value $\beta_0$ \textbf{IS} in the CI $\Rightarrow$
+          \ans{the claim is consistent with the data (plausible).}
+\end{itemize}
+
+\vspace{0.1in}
+\textbf{Special case --- testing whether $\beta = 0$:}
+\begin{itemize}
+    \item If 0 is \textbf{not} in the CI $\Rightarrow$
+          \ans{evidence that $\beta \ne 0$; a linear relationship exists.}
+    \item If 0 \textbf{is} in the CI $\Rightarrow$
+          \ans{consistent with no linear relationship; cannot conclude $\beta \ne 0$.}
+\end{itemize}
+
+\vspace{0.1in}
+\textbf{Practice Table.} 95\% CI for slope $= (0.14,\ 0.52)$
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{p{3cm}p{3.5cm}p{5.5cm}}
+    \textbf{Claimed value} & \textbf{In CI? (Yes/No)} & \textbf{What can we conclude?} \\
+    \hline
+    $\beta = 0$   & \ans{No}  & \ansline{Evidence that $\beta \ne 0$; a positive linear relationship exists.} \\
+    $\beta = 0.5$ & \ans{Yes} & \ansline{Consistent with the data; $\beta = 0.5$ is plausible.} \\
+    $\beta = 1.0$ & \ans{No}  & \ansline{Evidence against $\beta = 1.0$; this claim is not supported.} \\
+\end{tabular}
+\end{center}
+
+\end{notesbox}
+
+\begin{notesbox}{Effect of Sample Size on Width (UNC-4.AI)}
+
+\textbf{Fill in:}
+
+``When all other things remain the same, as sample size \ans{increases}, the standard error
+$SE_b$ \ans{decreases}, and the confidence interval for slope becomes \ans{narrower}.''
+
+\vspace{0.05in}
+\textbf{Why?}
+\ansline{Larger samples contain more information about the population, which reduces variability in the estimate $b$. A smaller $SE_b$ means a smaller margin of error $t^* \cdot SE_b$, producing a narrower interval.}
+
 \end{notesbox}
 
 \end{document}

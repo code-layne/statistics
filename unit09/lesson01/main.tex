@@ -1,12 +1,11 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.1 — Lesson Plan
+%! AP Statistics — Unit 9, Lesson 9.1 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\UnitNumberName}{Unit 9: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 9.1: TODO: Lesson Title}
+\newcommand{\UnitNumberName}{Unit 9: Inference for Quantitative Data: Slopes \quad}
+\newcommand{\LessonNumberName}{Lesson 9.1: Introducing Statistics --- Do Those Points Align?}
 
 \begin{document}
 \begin{center}
@@ -16,54 +15,242 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will recognize that when we fit a least-squares
+    regression line to sample data, the slope $b$ is a \emph{statistic} that varies from
+    sample to sample. They will frame the central question of Unit 9: is the slope we
+    observe statistically significant evidence of a real linear relationship in the
+    population, or could it be due to random variation?
+    (Big Idea: VAR)
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skill 1.A --- Selecting Statistical Methods}
+    \begin{itemize}
+        \item Identify questions suggested by variation in scatter plots (Skill 1.A; VAR-1.K).
+        \item Bridge: Units 2--3 described bivariate data using LSRL and $r$ --- Unit 9
+              asks whether the linear trend is real or due to chance.
+        \item VAR-1.K.1: Variation in points' positions relative to a theoretical line
+              may be random or non-random.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item The sample slope $b$ is a statistic. Different random samples from the
+              same population produce different values of $b$.
+        \item If the true population slope $\beta = 0$, there is no real linear relationship.
+              A non-zero $b$ from sample data might still be due to chance.
+        \item Unit 9 asks: is the slope we observe statistically significant evidence
+              that $\beta \ne 0$ in the population?
+        \item This lesson is a framing lesson (Topic 9.1 is not directly assessed on
+              the AP exam) that sets the stage for Lessons 9.2--9.6.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{Population slope ($\beta$)} --- the true rate of change in the
+              linear relationship between two quantitative variables in the population
+        \item \textbf{Sample slope ($b$)} --- the slope of the LSRL computed from
+              sample data; a statistic that varies from sample to sample
+        \item \textbf{Null hypothesis for slope} --- $H_0\colon \beta = 0$: no real
+              linear relationship exists in the population
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \begin{itemize}
+        \item \textbf{LSRL (review)} --- the least-squares regression line
+              $\hat{y} = a + bx$ that minimizes the sum of squared residuals
+        \item \textbf{Correlation ($r$, review)} --- a measure of the strength and
+              direction of a linear relationship; $r = 0$ corresponds to $\beta = 0$
+        \item \textbf{Sampling variability} --- the natural variation in a statistic
+              across different random samples from the same population
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{minipage}[t]{0.48\linewidth}
-        % TODO: prior knowledge bullets (Units/lessons reviewed)
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.48\linewidth}
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        % TODO: connections forward (upcoming lessons)
-    \end{minipage}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Units 2--3: fitting LSRL to bivariate data, interpreting slope and
+              $y$-intercept in context.
+        \item Units 2--3: correlation $r$ as a measure of linear association;
+              $r^2$ as the fraction of variability explained.
+        \item Units 6--8: inference logic --- sampling distributions, null hypotheses,
+              $p$-values, and statistical significance.
+        \item Connect: ``In Units 6--8 we asked whether a proportion or count differed
+              from what we expected. Unit 9 asks the same about a \emph{slope}.''
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Connections Forward}
+    \begin{itemize}
+        \item Sampling distribution of $b$; conditions for inference $\to$ Lesson 9.2
+        \item Confidence interval for slope $\beta$ $\to$ Lesson 9.3
+        \item Significance test for slope ($t$-test) $\to$ Lesson 9.4
+        \item Reading computer output for regression $\to$ Lesson 9.5
+        \item Synthesis: choosing inference procedures for slopes $\to$ Lesson 9.6
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (5--7 min)}\\
+    Display two scatter plots on the board --- one with a clear positive trend (study
+    time vs.\ exam score, strong $r$) and one with a weak, noisy trend (hours of sleep
+    vs.\ reaction time, small $r$). Ask students:
+    \begin{itemize}
+        \item ``Both plots have a positive slope. Are you equally confident both
+              trends are real?''
+        \item ``How would you decide whether a trend is real or just random scatter?''
+    \end{itemize}
+    Reveal: Both lines have $b \ne 0$. But could either slope just be noise? The question
+    of Unit 9: \textbf{Is the population slope $\beta$ truly different from 0, or could
+    the sample slope $b$ have arisen by chance even if $\beta = 0$?}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15 min)}
+    \begin{enumerate}
+        \item Review: slope $b$ from LSRL is a statistic. Like $\bar{x}$ and $\hat{p}$,
+              it varies from sample to sample.
+        \item Thought experiment: if we took many samples of study time and exam scores
+              from the same population and fit an LSRL to each, we would get many
+              different values of $b$. Their distribution is the \emph{sampling
+              distribution of $b$}.
+        \item The null hypothesis $\beta = 0$ says the population has no linear
+              trend. Even so, sample slopes $b$ won't all equal 0 --- random scatter
+              produces non-zero $b$ values.
+        \item Frame the unit arc: sampling distribution of $b$ (9.2) $\to$ CI for
+              $\beta$ (9.3) $\to$ significance test (9.4) $\to$ computer output (9.5)
+              $\to$ synthesis (9.6).
+    \end{enumerate}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
-\end{skillbox}
-
-\begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Direct Instruction (8 min)}
+    \begin{itemize}
+        \item Show the warm-up LSRL on the board. Walk through interpreting the slope:
+              ``For each additional hour of study, the predicted exam score increases
+              by $b$ points.'' Ask: ``Could this slope be 0 in the population?''
+        \item Compare: a slope of $b = 0.5$ from $n = 200$ observations is very
+              different evidence from $b = 0.5$ from $n = 8$ observations. Sample
+              size affects how surprising a non-zero $b$ is.
+        \item Emphasize: a scatter plot with a visible trend is not enough evidence by
+              itself --- we need inference to decide whether $\beta \ne 0$.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Active Monitoring}
+    \begin{itemize}
+        \item Listen for ``The slope is positive, so there must be a real relationship.''
+              Redirect: a positive sample slope could arise by chance if $\beta = 0$.
+        \item Cold-call: ``If $\beta = 0$ for the study time / score relationship,
+              what would a scatter plot look like?'' (Random scatter around a horizontal
+              line; $r \approx 0$.)
+        \item Cold-call: ``Why can't we just look at $r$ and declare the relationship
+              real?'' (Need to know how likely $r$ that large is under $H_0$.)
+        \item Check warm-up for fluency with LSRL interpretation from Units 2--3.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Partner Activity (8--10 min)}\\
+    Use the activity (temperature vs.\ ice cream sales, $n = 20$). Groups:
+    \begin{enumerate}
+        \item Identify the explanatory and response variables; interpret the slope
+              and $y$-intercept of the given LSRL in context.
+        \item Use the LSRL to make a prediction and compute the residual for a
+              given data point.
+        \item Discuss: if the true population slope were 0, would the observed
+              slope be surprising? What would help them decide?
+        \item Identify what question a significance test for slope would answer.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support (Tier R)}: Scaffold provided --- slope and $y$-intercept
+              already identified; students focus on interpretation in context and the
+              conceptual question.
+        \item \textit{On-grade (Tier A)}: Complete all four steps.
+        \item \textit{Extension (Tier E)}: Write a paragraph articulating what
+              ``$\beta = 0$'' means in context and why observing $b \ne 0$ alone
+              is insufficient to conclude a real relationship exists.
+        \item \textit{ELL}: Vocabulary card --- ``slope / pendiente,''
+              ``population / poblaci\'on,'' ``sample / muestra.''
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}
+    \begin{enumerate}
+        \item A scatter plot of height vs.\ shoe size shows a positive linear trend
+              with LSRL $\hat{y} = 3.2 + 0.18x$ ($r = 0.61$, $n = 25$).
+              Is there a visible linear trend? What does the slope tell you?
+        \item What question must a statistician ask \emph{beyond} fitting the line?
+        \item Why can't we conclude the slope is ``real'' just because $b \ne 0$?
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{A researcher fits a LSRL to data on hours of sleep ($x$) and reaction
+    time ($y$) for a sample of 30 adults and finds $b = -0.08$ seconds per hour.
+    Which question is the focus of inference for slopes?}
+    \begin{enumerate}[label=(\Alph*)]
+        \item Whether the correlation $r$ equals $-0.08$
+        \item Whether the population slope $\beta$ could equal 0
+        \item Whether the sample is large enough to compute the LSRL
+        \item Whether the $y$-intercept is statistically significant
+    \end{enumerate}
+    Answer: (B)
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item Problem 1: Study time vs.\ exam score --- given LSRL and context,
+              interpret slope and $y$-intercept; make a prediction; explain why
+              $b \ne 0$ does not automatically confirm a real relationship.
+        \item Problem 2: Temperature vs.\ ice cream sales --- given $b = 3.4$ and
+              $n = 15$, discuss whether sample size matters for evaluating
+              whether $\beta$ could be 0.
+        \item Reflection: in your own words, state the central question that Unit 9
+              asks about linear relationships.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: Find a published regression study. Identify the
+              slope, sample size, and whether the authors report a $p$-value.
+              Explain what the $p$-value would tell you.
+        \item \textit{Preview}: Lesson 9.2 introduces the sampling distribution of
+              $b$ --- we will learn what values of $b$ are expected by chance alone
+              when $\beta = 0$, and how sample size and variability affect this.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
+
 \end{document}

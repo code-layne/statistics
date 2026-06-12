@@ -1,19 +1,83 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.2 — Homework
+%! AP Statistics — Unit 9, Lesson 9.2 — Homework
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.2}{Homework}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: author the Homework. See references/components.md for the expected structure.
-\begin{notesbox}{Homework}
-\writelines{4}
-\end{notesbox}
+\textbf{Problem 1: Sleep and Reaction Time}
+
+\vspace{0.05in}
+A random sample of 22 college students was used to study the relationship between hours
+of sleep per night ($x$) and reaction time in milliseconds ($y$). Computer output is
+shown below.
+
+\vspace{0.1in}
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{lrrrr}
+    \textbf{Predictor} & \textbf{Coef} & \textbf{SE Coef} & \textbf{T} & \textbf{P} \\
+    \hline
+    Constant & 412.3 & 28.4 & 14.52 & 0.000 \\
+    Sleep    & $-18.6$ & 5.3 & $-3.51$ & 0.002 \\
+    \hline
+    \multicolumn{5}{l}{$s = 24.1$ \quad $n = 22$}
+\end{tabular}
+\end{center}
+
+\vspace{0.1in}
+\begin{enumerate}[label=\alph*.]
+
+    \item Identify $b$ and $SE_b$ from the output.
+          \writelines{1}
+
+    \item For this problem, assume: the data come from a random sample; the residual plot
+          shows random scatter with roughly constant spread; and $n = 22$ is large enough
+          for normality (stated). Briefly note how each LINER condition is addressed.
+          \writelines{5}
+
+    \item Construct a 95\% CI for $\beta$ using $t^* = 2.086$ ($df = 20$). Show all work.
+          \writelines{3}
+
+    \item Interpret the CI in context.
+          \writelines{2}
+
+    \item Does the CI provide evidence of a negative linear relationship between hours of
+          sleep and reaction time? Explain.
+          \writelines{2}
+
+\end{enumerate}
+
+\vspace{0.2in}
+
+\textbf{Problem 2: Temperature and Heating Fuel Cost}
+
+\vspace{0.05in}
+A researcher studies 18 cities, recording average daily high temperature in January
+($x$, ${}^\circ$F) and monthly heating fuel cost ($y$, \$/month).
+Output gives $b = -4.8$, $SE_b = 1.1$, and $n = 18$.
+Use $t^* = 2.120$ ($df = 16$). Assume all LINER conditions are met.
+
+\vspace{0.1in}
+\begin{enumerate}[label=\alph*.]
+
+    \item Construct a 95\% CI for the true slope $\beta$. Show all work, then interpret
+          the interval in context.
+          \writelines{4}
+
+    \item A utility company claims $\beta = -5$ (each 1${}^\circ$F warmer costs \$5 less
+          per month). Is this claim consistent with your CI? Explain.
+          \writelines{2}
+
+    \item If the study had used 72 cities instead of 18, would you expect the CI to be
+          narrower or wider? Explain using the formula for $SE_b$.
+          \writelines{2}
+
+\end{enumerate}
 
 \end{document}

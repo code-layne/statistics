@@ -1,19 +1,47 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.3 — Exit Ticket (Answer Key)
+%! AP Statistics — Unit 9, Lesson 9.3 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.3}{Exit Ticket --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
+A researcher fits a regression line relating a person's age (years, $x$) to their reading
+speed (words per minute, $y$) for adults enrolled in a library program. From a random sample
+of 36 adults, computer output gives a 95\% confidence interval for the slope:
+$(-1.4,\ -0.2)$ wpm per year.
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}
+
+  \item Write a complete interpretation of this confidence interval in context.
+
+        \ans{We are 95\% confident that the true slope of the population regression line
+        relating reading speed to age for adults in this library program is between $-1.4$
+        and $-0.2$ words per minute per year.}
+
+  \item Does this CI provide evidence that $\beta \ne 0$? Justify your answer.
+
+        \ans{Yes. Since 0 is not contained in the interval $(-1.4,\ -0.2)$, this provides
+        evidence that $\beta \ne 0$; there is a negative linear relationship between age and
+        reading speed for adults in this library program.}
+
+  \item A reading specialist claims that age decreases reading speed by exactly
+        1 word per minute per year ($\beta = -1$). Is this claim consistent with the
+        confidence interval? Explain.
+
+        \ans{Yes. Since $-1$ is contained in the interval $(-1.4,\ -0.2)$, the specialist's
+        claim that $\beta = -1$ is consistent with the data.}
+
+\end{enumerate}
+
+\begin{teachernote}
+Students should write ``consistent with'' (not ``proves'' or ``confirms'') when the claimed
+value falls inside the interval. Full credit on Question 1 requires all three elements:
+confidence level, both endpoints with units, and a reference to the population (not just the
+sample). On Question 2, students must identify that 0 is outside the interval to earn credit.
+\end{teachernote}
 
 \end{document}

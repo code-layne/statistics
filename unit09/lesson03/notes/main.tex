@@ -1,19 +1,107 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.3 — Guided Notes
+%! AP Statistics — Unit 9, Lesson 9.3 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.3}{Guided Notes}
 \namedateperiod
 
-\vspace{0.15in}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+\end{itemize}
+\end{objectivebox}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{vocabbox}
+\termblanklong{CI for slope}
+\termblanklong{Interpretation of CI for slope}
+\termblanklong{Justifying a claim with a CI}
+\termblanklong{Width of CI for slope}
+\end{vocabbox}
+
+\begin{hookbox}
+Computer output for a regression of exam score (points) on daily study time (hours) gives
+a 95\% CI for the slope: $(0.14,\ 0.52)$.
+
+A researcher claims the true slope $\beta = 0$ --- that studying more has no effect on exam
+scores. Can you use this interval to evaluate that claim?
+What if the researcher instead claimed $\beta = 0.5$?
+
+\writelines{2}
+\end{hookbox}
+
+\begin{notesbox}{Interpreting a CI for Slope (UNC-4.AG)}
+
+\textbf{Interpretation Template:}
+
+``We are \blank{2cm}\% confident that the true slope of the population regression line
+relating \blank{4cm} to \blank{4cm} for \blank{4cm} is between \blank{2cm} and
+\blank{2cm} \blank{3cm}.''
+
+\vspace{0.1in}
+\textbf{Required elements for full AP credit:}
+\begin{enumerate}
+    \item \blank{6cm} (the confidence level)
+    \item \blank{8cm} (both endpoints with correct units)
+    \item \blank{8cm} (reference to the \emph{population}, not just the sample)
+\end{enumerate}
+
+\vspace{0.1in}
+\textbf{Worked Example.} A 95\% CI for the slope relating exam score to daily study time
+for high school students is $(0.14,\ 0.52)$ points per hour.
+
+\textit{Complete interpretation:} \writelines{2}
+
+\end{notesbox}
+
+\begin{notesbox}{Justifying a Claim Using a CI (UNC-4.AH)}
+
+\textbf{Logic:}
+\begin{itemize}
+    \item If the claimed value $\beta_0$ is \textbf{NOT} in the CI $\Rightarrow$
+          \blank{7cm}
+    \item If the claimed value $\beta_0$ \textbf{IS} in the CI $\Rightarrow$
+          \blank{7cm}
+\end{itemize}
+
+\vspace{0.1in}
+\textbf{Special case --- testing whether $\beta = 0$:}
+\begin{itemize}
+    \item If 0 is \textbf{not} in the CI $\Rightarrow$ \blank{6cm}
+    \item If 0 \textbf{is} in the CI $\Rightarrow$ \blank{6cm}
+\end{itemize}
+
+\vspace{0.1in}
+\textbf{Practice Table.} 95\% CI for slope $= (0.14,\ 0.52)$
+
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{p{3cm}p{3.5cm}p{5.5cm}}
+    \textbf{Claimed value} & \textbf{In CI? (Yes/No)} & \textbf{What can we conclude?} \\
+    \hline
+    $\beta = 0$   & \blank{3cm} & \writeline \\
+    $\beta = 0.5$ & \blank{3cm} & \writeline \\
+    $\beta = 1.0$ & \blank{3cm} & \writeline \\
+\end{tabular}
+\end{center}
+
+\end{notesbox}
+
+\begin{notesbox}{Effect of Sample Size on Width (UNC-4.AI)}
+
+\textbf{Fill in:}
+
+``When all other things remain the same, as sample size \blank{3cm}, the standard error
+$SE_b$ \blank{3cm}, and the confidence interval for slope becomes \blank{3cm}.''
+
+\vspace{0.05in}
+\textbf{Why?} \writelines{2}
+
 \end{notesbox}
 
 \end{document}

@@ -1,12 +1,12 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.5 — Lesson Plan
+%! AP Statistics — Unit 9, Lesson 9.5 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\UnitNumberName}{Unit 9: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 9.5: TODO: Lesson Title}
+
+\newcommand{\UnitNumberName}{Unit 9: Inference for Quantitative Data: Slopes \quad}
+\newcommand{\LessonNumberName}{Lesson 9.5: Carrying Out a Test for the Slope of a Regression Model}
 
 \begin{document}
 \begin{center}
@@ -16,54 +16,246 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will carry out a complete 4-step significance
+    test for the slope of a population regression model, reading the test statistic and
+    $p$-value from computer output, and interpreting the result in context.
+    (Big Ideas: VAR-7, DAT-3)
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skills Addressed}
+    \begin{itemize}
+        \item Calculate the $t$-test statistic for slope:
+              $t = \dfrac{b - \beta_0}{SE_b}$; $df = n - 2$ (Skill 3.E; VAR-7.I).
+        \item Interpret the $p$-value of a significance test for slope in context
+              (Skill 4.B; DAT-3.E).
+        \item Justify a claim about the population based on the test result
+              (Skill 4.E; DAT-3.F).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item The test statistic $t = b / SE_b$ measures how many standard errors the
+              sample slope is from the null value $\beta_0 = 0$.
+        \item The $p$-value is computed \emph{assuming} H$_0$ is true; it gives the
+              probability of a $t$-statistic as extreme as observed.
+        \item Computer regression output reports $b$, $SE_b$, $t$, and $P$ in the
+              slope row; students read these values directly.
+        \item If $p \le \alpha$, reject H$_0$ and conclude there is convincing evidence
+              of a linear relationship; if $p > \alpha$, fail to reject.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{lX}
+    \textbf{Null hypothesis for slope} &
+        H$_0$: $\beta = 0$ (no linear relationship between $x$ and $y$ in the population) \\
+    \textbf{Alternative hypothesis} &
+        H$_a$: $\beta \ne 0$ (two-sided) or $\beta > 0$ / $\beta < 0$ (one-sided) \\
+    \textbf{Test statistic ($t$)} &
+        $t = \dfrac{b - \beta_0}{SE_b}$; follows a $t$-distribution with $df = n - 2$
+        (VAR-7.I.1) \\
+    \textbf{$p$-value} &
+        Probability, if H$_0$ is true, of obtaining a test statistic as extreme as the
+        observed value (DAT-3.E.1) \\
+    \textbf{Regression output table} &
+        Computer output listing Predictor, Coef ($b$), SE Coef ($SE_b$), T, and P for
+        each term in the model \\
+    \textbf{LINER conditions} &
+        Linear, Independent, Normal, Equal variance, Random --- must be verified
+        before conducting a $t$-test for slope \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{minipage}[t]{0.48\linewidth}
-        % TODO: prior knowledge bullets (Units/lessons reviewed)
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.48\linewidth}
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        % TODO: connections forward (upcoming lessons)
-    \end{minipage}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Lesson 9.4: the $t$-distribution for slope inference; $df = n - 2$;
+              the LINER conditions.
+        \item Unit 6--7: the 4-step test structure (Hypotheses, Conditions, Test
+              stat/$p$-value, Conclusion).
+        \item Lesson 9.3: reading a regression output table --- identifying $b$ and
+              $SE_b$ for a confidence interval.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Connections Forward}
+    \begin{itemize}
+        \item Comparing the CI for slope to the test conclusion $\to$ Lesson 9.6
+        \item Interpreting $r^2$ alongside inference $\to$ Lesson 9.6
+        \item Reinforcing the logic of significance testing with quantitative
+              relationships $\to$ exam review
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (5--7 min)}\\
+    Display a scatterplot of outdoor temperature ($x$) vs.\ daily iced coffee sales
+    ($y$) for 18 days at a local café. Ask: ``The regression line has a positive slope.
+    But could that just be random variation? How do we decide if there is a \emph{real}
+    linear relationship in the population?''\\[4pt]
+    Show the computer output table on the board. Point out the slope row. Ask students
+    to identify $b$, $SE_b$, $t$, and $P$. Transition: ``Today we use those four
+    numbers to carry out a full significance test.''
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15 min)}
+    \begin{enumerate}
+        \item Review the 4-step framework in the regression slope context.
+        \item Show $t = b / SE_b$ and identify it in the output table.
+        \item Model a $p$-value interpretation: ``Assuming $\beta = 0$, there is a
+              [p-value] probability of obtaining a sample slope as extreme as $b = \ldots$''
+        \item Model the conclusion with reject/fail-to-reject language in context.
+        \item Students annotate the output table on their guided notes.
+    \end{enumerate}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{skillbox}[Explicit Instruction: The 4-Step Test for Slope]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Step 1 --- Hypotheses}
+    \begin{itemize}
+        \item Define $\beta$: ``the true slope of the regression line relating
+              [y] to [x] for [population].''
+        \item H$_0$: $\beta = 0$ (no linear relationship).
+        \item H$_a$: $\beta \ne 0$ (two-sided; use one-sided only if context justifies).
+    \end{itemize}
+    \textbf{Step 2 --- Conditions (LINER)}
+    \begin{itemize}
+        \item \textbf{L}inear: scatterplot shows a linear trend; residual plot shows no curve.
+        \item \textbf{I}ndependent: $n \le 10\%N$ (if sampling without replacement).
+        \item \textbf{N}ormal: residuals approximately normal.
+        \item \textbf{E}qual variance: residual plot shows roughly constant spread.
+        \item \textbf{R}andom: data come from a random sample.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Step 3 --- Test Stat \& $p$-value}
+    \begin{itemize}
+        \item Read $b$ and $SE_b$ from the slope row of the output table.
+        \item $t = \dfrac{b}{SE_b}$; $df = n - 2$.
+        \item The P column gives the two-sided $p$-value directly (halve it only if
+              H$_a$ is one-sided).
+    \end{itemize}
+    \textbf{Step 4 --- Conclusion}
+    \begin{itemize}
+        \item Compare $p$ to $\alpha$ (usually 0.05).
+        \item $p \le \alpha$: ``Reject H$_0$. There is convincing evidence that the
+              true slope relating [y] to [x] for [population] is not zero.''
+        \item $p > \alpha$: ``Fail to reject H$_0$. There is not convincing evidence
+              of a linear relationship between [y] and [x] for [population].''
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{skillbox}[Active Monitoring]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Circulate and Check}
+    \begin{itemize}
+        \item Ensure students define $\beta$ in words, not just write ``$\beta = 0$.''
+        \item Confirm they read $t$ and $p$ from the output rather than computing
+              from scratch (or confirm their computation matches).
+        \item Check that the $p$-value interpretation mentions ``assuming H$_0$ is
+              true'' and references the specific context.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Cold-Call Prompts}
+    \begin{itemize}
+        \item ``What does $\beta = 0$ mean in plain language for this context?''
+        \item ``If the $p$-value is 0.003, what does that tell us about the data
+              \emph{if} H$_0$ were true?''
+        \item ``Why do we use $df = n - 2$ instead of $df = n - 1$?''
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Partner Activity (12--15 min)}\\
+    Students receive two regression output tables from different real-world contexts
+    (study hours vs.\ exam score; elevation vs.\ average annual temperature). Three
+    tiers (R, A, E) with increasing autonomy. Tier R provides a guided 4-step
+    framework with blanks; Tier A asks students to complete all four steps
+    independently; Tier E also compares the test conclusion to a given confidence
+    interval for $\beta$.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support (Tier R)}: Framework with blanks; students identify
+              $b$, $SE_b$, compute $t$, interpret $p$, and write the conclusion.
+        \item \textit{On-grade (Tier A)}: Complete all 4 steps independently from
+              the output table for both contexts.
+        \item \textit{Extension (Tier E)}: Also compare the test decision to a given
+              95\% CI for $\beta$ and explain why they are consistent.
+        \item \textit{ELL}: Vocabulary card --- ``slope / pendiente,''
+              ``test statistic / estadístico de prueba,'' ``$p$-value / valor $p$.''
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}
+    \begin{enumerate}
+        \item State H$_0$ and H$_a$ for a test of the true slope of the regression
+              line relating altitude (ft) to average annual temperature ($^\circ$F).
+        \item Interpret the $p$-value (= 0.003) in context, assuming H$_0$ is true.
+        \item State a conclusion at $\alpha = 0.05$.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{A regression of $n = 24$ data points yields $b = 1.8$, $SE_b = 0.45$,
+    $t = 4.00$, and $P = 0.001$. Which conclusion is appropriate at $\alpha = 0.05$?}
+    \begin{enumerate}[label=(\Alph*)]
+        \item Fail to reject H$_0$; no evidence of a linear relationship.
+        \item Reject H$_0$; convincing evidence the true slope is not zero.
+        \item Fail to reject H$_0$; the slope is not statistically significant.
+        \item Reject H$_0$; the true slope is definitely 1.8.
+    \end{enumerate}
+    Answer: (B)
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item Two problems, each providing a regression output table; students complete
+              the full 4-step significance test.
+        \item One problem also asks students to construct a 95\% CI for $\beta$ and
+              explain how the CI and test give consistent conclusions.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: If a one-sided H$_a$ is appropriate, how does the
+              $p$-value from the two-sided output change? What context information
+              would justify a one-sided test?
+        \item \textit{Preview}: Lesson 9.6 connects CIs and significance tests for
+              slope and explores what $r^2$ tells us about the strength of the
+              linear relationship.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
+
 \end{document}

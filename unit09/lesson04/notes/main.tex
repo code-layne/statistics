@@ -1,19 +1,75 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.4 — Guided Notes
+%! AP Statistics — Unit 9, Lesson 9.4 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.4}{Guided Notes}
 \namedateperiod
 
-\vspace{0.15in}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+\end{itemize}
+\end{objectivebox}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{vocabbox}
+\termblanklong{$t$-test for slope}
+\termblanklong{Null hypothesis for slope ($H_0$: $\beta = 0$)}
+\termblanklong{Alternative hypothesis for slope ($H_a$)}
+\termblanklong{$\beta_0$ (hypothesized slope value)}
+\termblanklong{LINER conditions}
+\end{vocabbox}
+
+\begin{hookbox}
+A researcher believes that elevation predicts average annual temperature for mountain
+towns. She fits a regression line to data from $n = 18$ towns. Before running any
+significance test, what three things does she need to set up?
+
+\writelines{2}
+\end{hookbox}
+
+\begin{notesbox}{Naming the Procedure and Stating Hypotheses (VAR-7.J/K)}
+The appropriate procedure is a \blank{4cm} for slope.
+
+\vspace{0.1in}
+\textbf{Hypotheses} (always in terms of $\beta$, the \blank{6cm} slope):
+
+\begin{itemize}
+    \item H$_0$: $\beta = $ \blank{1.5cm} \quad (no linear relationship)
+    \item H$_a$: $\beta$ \blank{1.5cm} 0 \; (two-sided) \quad OR \quad
+          $\beta$ \blank{1.5cm} 0 \quad OR \quad $\beta$ \blank{1.5cm} 0
+\end{itemize}
+
+\vspace{0.05in}
+\textit{Note:} Hypotheses are about $\beta$ (the \blank{6cm} slope),
+not $b$ (the \blank{6cm} slope).
+
+\vspace{0.05in}
+The hypothesized value $\beta_0 = 0$ because: \writeline
+\end{notesbox}
+
+\begin{notesbox}{LINER Conditions (VAR-7.L)}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{clX}
+    \textbf{Letter} & \textbf{What It Means} & \textbf{How to Verify} \\
+    \hline
+    L & Linear relationship & Residual plot: \blank{5cm} \\
+    I & Independent observations & Random sample; $n \le$ \blank{1.5cm}$\%\cdot N$ \\
+    N & Normal $y$-values & Residual \blank{2.5cm} or $n >$ \blank{1.5cm} \\
+    E & Equal variance ($\sigma_y$ constant) & Residual plot: \blank{5cm} \\
+    R & Random data source & \blank{7cm} \\
+\end{tabularx}
+
+\vspace{0.1in}
+\textbf{Practice Check:} ``A random sample of 30 students'' --- which conditions
+can you verify from this statement alone? Which require the residual plot?
+
+\writelines{2}
 \end{notesbox}
 
 \end{document}

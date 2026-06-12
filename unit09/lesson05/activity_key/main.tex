@@ -1,19 +1,121 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.5 — Group Activity (Answer Key)
+%! AP Statistics — Unit 9, Lesson 9.5 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.5}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
+\textbf{Significance Tests for Slope --- Two Contexts}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\vspace{0.1in}
+\textbf{Regression Output 1: Hours Studied vs.\ Exam Score} ($n = 32$)
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{lrrrr}
+    \textbf{Predictor} & \textbf{Coef} & \textbf{SE Coef} & \textbf{T} & \textbf{P} \\
+    \hline
+    Constant & 41.2 & 5.8 & 7.10 & 0.000 \\
+    Hours    &  3.8 & 0.72 & 5.28 & 0.000 \\
+\end{tabular}
+\end{center}
+
+Researcher's claim: ``More study time is associated with higher exam scores.''
+
+\vspace{0.1in}
+\textbf{Regression Output 2: Daily Steps (thousands) vs.\ Body Mass Index} (kg/m$^2$, $n = 25$)
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{lrrrr}
+    \textbf{Predictor} & \textbf{Coef} & \textbf{SE Coef} & \textbf{T} & \textbf{P} \\
+    \hline
+    Constant & 32.4 &  2.1 & 15.43 & 0.000 \\
+    Steps    & $-0.48$ & 0.31 & $-1.55$ & 0.135 \\
+\end{tabular}
+\end{center}
+
+Researcher's claim: ``Daily step count is negatively associated with BMI.''
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Use \textbf{Output 1} only. Assume LINER conditions are met.
+
+\begin{enumerate}[label=\alph*.]
+
+  \item Let $\beta =$ the true slope of the population regression line relating exam score
+        to hours studied. State the hypotheses.
+
+        H$_0$: $\beta = $ \ans{0} \qquad H$_a$: $\beta \ne $ \ans{0}
+
+  \item Read the test statistic and degrees of freedom from the output.
+
+        $t = $ \ans{5.28} \qquad $df = n - 2 = 32 - 2 = $ \ans{30}
+
+  \item Read the $p$-value from the output: $p = $ \ans{0.000}
+
+  \item Since $p$ \ans{$<$} $0.05$, we \quad \textcolor{keyred}{\textbf{reject}} \quad /\quad
+        fail to reject \quad H$_0$.
+
+  \item Complete the conclusion sentence:
+
+        ``There \ans{is} convincing evidence that the true slope relating exam score
+        to hours studied is \ans{not equal to} zero.''
+
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Output 1 --- Complete 4-Step Test:}
+\begin{enumerate}[label=\alph*.]
+  \item \ans{\textbf{Step 1.} Let $\beta =$ the true slope of the population regression line
+        relating exam score to hours studied. H$_0$: $\beta = 0$; H$_a$: $\beta \ne 0$.}
+  \item \ans{\textbf{Step 2.} LINER conditions are assumed to be met.}
+  \item \ans{\textbf{Step 3.} $t = 5.28$, $df = 30$, $p = 0.000$ (from output).}
+  \item \ans{\textbf{Step 4.} Since $p \approx 0 < 0.05 = \alpha$, we reject H$_0$. There is
+        convincing evidence that the true slope of the population regression line relating
+        exam score to hours studied is not zero.}
+\end{enumerate}
+
+\textbf{Output 2 --- Complete 4-Step Test:}
+\begin{enumerate}[label=\alph*.]
+  \item \ans{\textbf{Step 1.} Let $\beta =$ the true slope of the population regression line
+        relating BMI to daily step count (in thousands). H$_0$: $\beta = 0$; H$_a$: $\beta \ne 0$.}
+  \item \ans{\textbf{Step 2.} LINER conditions are assumed to be met.}
+  \item \ans{\textbf{Step 3.} $t = -1.55$, $df = 23$, $p = 0.135$ (from output).}
+  \item \ans{\textbf{Step 4.} Since $p = 0.135 > 0.05 = \alpha$, we fail to reject H$_0$. There
+        is not convincing evidence that the true slope of the population regression line
+        relating BMI to daily step count is different from zero.}
+\end{enumerate}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Complete all of Tier A. Then, for \textbf{Output 1}:
+
+\begin{enumerate}[label=\alph*.]
+  \item \ans{$b \pm t^* \cdot SE_b = 3.8 \pm 2.042(0.72) = 3.8 \pm 1.47 = (2.33,\ 5.27)$}
+
+  \item \ans{Zero does not fall inside the interval $(2.33,\ 5.27)$, which is consistent
+        with rejecting H$_0$. The CI contains only positive values, confirming that
+        $\beta \ne 0$. Both procedures reach the same conclusion: there is convincing
+        evidence of a positive linear relationship between hours studied and exam score.}
+\end{enumerate}
+
+\end{tcolorbox}
 
 \end{document}

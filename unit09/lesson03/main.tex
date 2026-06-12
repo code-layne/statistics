@@ -1,12 +1,11 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.3 — Lesson Plan
+%! AP Statistics — Unit 9, Lesson 9.3 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\UnitNumberName}{Unit 9: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 9.3: TODO: Lesson Title}
+\newcommand{\UnitNumberName}{Unit 9: Inference for Quantitative Data: Slopes \quad}
+\newcommand{\LessonNumberName}{Lesson 9.3: Justifying a Claim About the Slope of a Regression Model Based on a Confidence Interval}
 
 \begin{document}
 \begin{center}
@@ -16,54 +15,234 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will interpret a confidence interval for the slope
+    of a regression model in context, use a CI to justify or refute a claim about the true slope
+    $\beta$, and describe how sample size affects interval width. (Big Idea: UNC)
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skills Addressed}
+    \begin{itemize}
+        \item Interpret a CI for the slope of a regression model, referencing the sample and
+              population with correct units (Skill 4.B; UNC-4.AG).
+        \item Justify a claim based on whether a specific value falls inside or outside a CI
+              for the slope (Skill 4.D; UNC-4.AH).
+        \item Identify the effect of increasing sample size on the width of a CI for the slope
+              (Skill 4.A; UNC-4.AI).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item Interpretation template: ``We are C\% confident that the true slope of the
+              population regression line relating [y] to [x] for [population] is between
+              [lower] and [upper] [units].''
+        \item If 0 is NOT in the CI $\Rightarrow$ evidence that $\beta \ne 0$ (real linear
+              relationship).
+        \item If 0 IS in the CI $\Rightarrow$ consistent with $\beta = 0$; cannot conclude
+              a linear relationship exists.
+        \item Larger $n$ $\Rightarrow$ smaller $SE_b$ $\Rightarrow$ narrower CI, all else equal
+              (UNC-4.AI.1).
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{lX}
+    \textbf{CI for slope} &
+        An interval estimate of the true slope $\beta$; form $b \pm t^* \cdot SE_b$
+        (UNC-4.AG.1--2) \\
+    \textbf{Interpretation of CI for slope} &
+        Must include: C\% confidence level, both endpoints with units, and a reference to the
+        \emph{population} (not just the sample) (UNC-4.AG.2) \\
+    \textbf{Justifying a claim with a CI} &
+        If the claimed value is outside the CI $\Rightarrow$ evidence against that claim;
+        if inside $\Rightarrow$ consistent with the data (UNC-4.AH.1) \\
+    \textbf{Width of CI for slope} &
+        Width $= 2t^* \cdot SE_b$; larger $n$ decreases $SE_b$, producing a narrower interval
+        when all other things remain the same (UNC-4.AI.1) \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{minipage}[t]{0.48\linewidth}
-        % TODO: prior knowledge bullets (Units/lessons reviewed)
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.48\linewidth}
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        % TODO: connections forward (upcoming lessons)
-    \end{minipage}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Lesson 9.2: constructing a CI for slope; the roles of $b$, $SE_b$, and $t^*$.
+        \item Unit 7: interpreting a CI for a mean --- ``We are C\% confident that the true
+              mean\ldots''
+        \item Lesson 9.1: the LINE-R conditions for inference on the slope.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Connections Forward}
+    \begin{itemize}
+        \item Significance testing for slope $\to$ Lesson 9.4
+        \item Connecting CI conclusions to $p$-value conclusions $\to$ Lesson 9.5
+        \item AP free-response writing for regression inference $\to$ Unit 9 review
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (4--5 min)}\\
+    Display computer output: a 95\% CI for the slope relating daily study time (hours) to
+    exam score (points) for high school students is $(0.14,\ 0.52)$.\\[4pt]
+    Ask: ``A researcher claims the true slope is 0 --- students who study more don't actually
+    score higher. Can you use this interval to evaluate that claim? What if the claim was
+    $\beta = 0.5$?''\\[4pt]
+    Let students discuss briefly, then frame: today's lesson is about reading what a CI for
+    slope \emph{says} about a population and using it to evaluate specific claims.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15 min)}
+    \begin{enumerate}
+        \item Model the interpretation template; annotate each required element on the board.
+        \item Introduce claim-justification logic: locate the claimed value relative to the
+              interval; outside = evidence against the claim.
+        \item Special case: 0 not in CI $\Rightarrow$ evidence that $\beta \ne 0$; 0 in CI
+              $\Rightarrow$ cannot conclude a linear relationship.
+        \item Width and sample size: show that $SE_b$ decreases as $n$ increases, so larger
+              samples produce narrower CIs, all else equal.
+        \item AP-writing annotation: compare a full-credit model response to a common
+              incomplete response.
+    \end{enumerate}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{skillbox}[Explicit Instruction: Interpreting and Using a CI for Slope]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Interpretation Template}\\[4pt]
+    ``We are \underline{C\%} confident that the true slope of the population regression line
+    relating \underline{[response]} to \underline{[explanatory]} for \underline{[population]}
+    is between \underline{[lower]} and \underline{[upper]} \underline{[units]}.''\\[6pt]
+    \textbf{Required elements for full AP credit:}
+    \begin{enumerate}
+        \item Confidence level (C\%)
+        \item Both endpoints with correct units
+        \item Reference to the \emph{population} (not the sample)
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Claim-Justification Logic}\\[4pt]
+    Given 95\% CI for $\beta$: $(L,\ U)$
+    \begin{itemize}
+        \item \textbf{Claim: $\beta = 0$}\\
+              $0 \notin (L,U)$ $\Rightarrow$ evidence that $\beta \ne 0$;
+              the data support a linear relationship.\\
+              $0 \in (L,U)$ $\Rightarrow$ consistent with no linear relationship.
+        \item \textbf{Claim: $\beta = \beta_0$}\\
+              $\beta_0 \notin (L,U)$ $\Rightarrow$ evidence against that claim.\\
+              $\beta_0 \in (L,U)$ $\Rightarrow$ claim is plausible.
+        \item \textbf{Width}: $n \uparrow\ \Rightarrow SE_b \downarrow\ \Rightarrow$
+              narrower CI.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{skillbox}[Active Monitoring]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Circulate and Check}
+    \begin{itemize}
+        \item Students often omit the \emph{population} reference --- redirect to ``for all
+              [population],'' not just the sample.
+        \item Watch for students saying ``there IS a relationship'' when 0 is in the CI;
+              correct to ``the data are consistent with no relationship.''
+        \item Ensure units of slope are reported correctly (response units per explanatory unit).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Cold-Call Prompts}
+    \begin{itemize}
+        \item ``Why must the interpretation reference the \emph{population}, not just the
+              sample?''
+        \item ``A 95\% CI for slope is $(-0.3,\ 0.8)$. Does this provide evidence that
+              $\beta \ne 0$? Explain.''
+        \item ``If a researcher doubles the sample size and recomputes the CI, what happens
+              to the width? Why?''
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Partner Activity (10--12 min)}\\
+    Students receive three regression computer outputs (hours studied vs.\ exam score;
+    outside temperature vs.\ daily ice cream sales; age vs.\ resting heart rate) with 95\%
+    CIs already computed. For each: interpret the CI, evaluate a researcher's specific claim,
+    and compare interval widths across different sample sizes. Three tiers (R, A, E).
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support (Tier R)}: Sentence frame provided; circle ``is'' or ``is not''
+              for claim evaluation.
+        \item \textit{On-grade (Tier A)}: Write full interpretations, justify claims, compare
+              widths.
+        \item \textit{Extension (Tier E)}: Also explain why width changes via $SE_b$; critique
+              a flawed student interpretation.
+        \item \textit{ELL}: Vocabulary support --- ``slope / pendiente,'' ``confident /
+              confiado,'' ``claim / afirmaci\'{o}n.''
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}
+    \begin{enumerate}
+        \item Given a 95\% CI for slope in context, write a complete interpretation.
+        \item Does the interval provide evidence that $\beta \ne 0$? Justify.
+        \item A researcher claims $\beta = 0.5$ --- is this consistent with the interval?
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{A 95\% CI for the slope relating weight (kg) to height (cm) for adult males is
+    $(0.48,\ 0.92)$. Which statement is best supported?}
+    \begin{enumerate}[label=(\Alph*)]
+        \item There is no evidence of a linear relationship.
+        \item The true slope is exactly 0.70 kg/cm.
+        \item The data provide evidence that the true slope is positive.
+        \item We are 95\% confident that the \emph{sample} slope is between 0.48 and 0.92.
+    \end{enumerate}
+    Answer: (C)
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item Problem 1: given a computer output with a 95\% CI for slope, write a complete
+              interpretation and evaluate two researcher claims (one where $\beta_0$ is inside
+              the CI, one where it is outside).
+        \item Problem 2: compare two CIs for slope from the same context with different sample
+              sizes ($n = 20$ vs.\ $n = 80$); explain which is narrower and why.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: If a CI for slope contains only positive values, what does
+              that imply about the $p$-value for a two-sided significance test at the same
+              $\alpha$ level?
+        \item \textit{Preview}: Lesson 9.4 introduces the $t$-test for slope --- students
+              will see that the CI and the hypothesis test lead to the same conclusion.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
+
 \end{document}

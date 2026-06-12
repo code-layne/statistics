@@ -1,19 +1,63 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.5 — Exit Ticket (Answer Key)
+%! AP Statistics — Unit 9, Lesson 9.5 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.5}{Exit Ticket --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+A meteorologist fits a regression line relating elevation ($x$, in hundreds of feet)
+to average annual temperature ($y$, ${}^\circ$F) for a random sample of 18 weather
+stations. Assume LINER conditions are met. Computer output:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{lrrrr}
+    \textbf{Predictor} & \textbf{Coef} & \textbf{SE Coef} & \textbf{T} & \textbf{P} \\
+    \hline
+    Constant   & 65.4 & 3.2  & 20.44 & 0.000 \\
+    Elevation  & $-2.1$ & 0.45 & $-4.67$ & 0.000 \\
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+
+  \item State H$_0$ and H$_a$ for a test of the true slope of the regression line
+        relating temperature to elevation.
+
+        H$_0$: \ans{$\beta = 0$; there is no linear relationship between elevation and
+        average annual temperature for weather stations.}
+
+        \vspace{0.05in}
+
+        H$_a$: \ans{$\beta \ne 0$; there is a linear relationship between elevation and
+        average annual temperature for weather stations.}
+
+        \vspace{0.1in}
+
+  \item Interpret the $p$-value ($= 0.000$) in context, assuming H$_0$ is true.
+
+        \ans{Assuming the true slope is 0 (no linear relationship between elevation and
+        average annual temperature), there is approximately a 0.000 probability of
+        obtaining a sample slope as extreme as $b = -2.1\,{}^\circ$F per hundred feet
+        just by chance.}
+
+  \item State a conclusion at $\alpha = 0.05$.
+
+        \ans{Since $p \approx 0 < 0.05 = \alpha$, we reject H$_0$. There is convincing
+        evidence that the true slope of the population regression line relating average
+        annual temperature to elevation for weather stations is not zero.}
+
+\end{enumerate}
+
+\begin{teachernote}
+$p \approx 0.000$ means the $p$-value rounds to 0.000 at three decimal places, not that
+it is exactly zero. Students may write $p < 0.001$ or $p \approx 0.000$ --- either phrasing
+earns full credit. Remind students that the $t$-statistic here is $-4.67$ with $df = 16$.
+\end{teachernote}
 
 \end{document}

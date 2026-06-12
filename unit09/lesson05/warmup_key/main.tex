@@ -1,8 +1,7 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.5 — Warm-Up (Answer Key)
+%! AP Statistics — Unit 9, Lesson 9.5 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
@@ -11,9 +10,34 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+For a random sample of 22 students, a researcher regresses exam score ($y$) on hours
+studied ($x$). The hypotheses are H$_0$: $\beta = 0$ vs.\ H$_a$: $\beta \ne 0$.
+The regression output gives $b = 3.6$ and $SE_b = 0.90$.
+
+\begin{enumerate}
+
+  \item Calculate the $t$-test statistic. Show your work.
+
+        \vspace{0.05in}
+        $t = \dfrac{b}{SE_b} = \dfrac{{\color{keyred}\mathbf{3.6}}}{{\color{keyred}\mathbf{0.90}}} = {}$\ans{4.00}
+
+        \vspace{0.15in}
+
+  \item What are the degrees of freedom for this test?
+
+        \vspace{0.05in}
+        $df = n - 2 = {\color{keyred}\mathbf{22}} - 2 = {}$\ans{20}
+
+        \vspace{0.15in}
+
+  \item The $p$-value from technology is 0.003. Is this greater than or less than
+        $\alpha = 0.05$? Based on this, should you reject or fail to reject H$_0$?
+        Explain briefly.
+
+        \vspace{0.05in}
+        \ans{$0.003 < 0.05$, so we reject H$_0$. There is convincing evidence of a
+        positive linear relationship between hours studied and exam score.}
+
+\end{enumerate}
 
 \end{document}

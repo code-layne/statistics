@@ -1,19 +1,101 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.6 — Group Activity (Answer Key)
+%! AP Statistics — Unit 9, Lesson 9.6 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.6}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
+\textbf{Inference Procedure Identification --- 8 Scenarios}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\textbf{Directions:} Read each scenario. Classify the data and identify the correct inference
+procedure at your tier. Work with your group and use the decision framework from notes.
+
+\vspace{0.1in}
+
+\textbf{Scenarios:}
+\begin{enumerate}[itemsep=4pt]
+  \item A researcher records whether each of 80 randomly selected college students owns a car
+        (yes/no). She wants to \textit{estimate} the proportion who own cars.
+  \item A school surveys 120 students and records their preferred lunch option (pizza, salad,
+        pasta, other). She wants to test whether the four options are equally popular.
+  \item A researcher randomly assigns 40 patients to medication A or medication B and records
+        recovery time (days) for each. She tests whether the two medications differ in mean
+        recovery time.
+  \item 50 pairs of identical twins are studied; one twin from each pair exercises 5+ hours per
+        week and the other exercises less. The researcher records reaction time for each twin
+        and tests whether exercise is associated with faster reaction time.
+  \item A political scientist randomly surveys 300 voters in two cities (150 from each) and
+        records party affiliation (Democrat, Republican, Independent). She tests whether the
+        party affiliation distribution is the same in both cities.
+  \item A nutritionist records daily sugar intake (g, $x$) and body fat percentage (\%, $y$)
+        for a random sample of 35 adults. She wants to \textit{estimate} the true slope $\beta$.
+  \item A researcher surveys 200 people and records education level (HS, Some College,
+        Bachelor's, Graduate) and income category (Low, Middle, High) to test whether
+        education and income are associated.
+  \item A sports scientist randomly samples 60 high school athletes and records their resting
+        heart rate (bpm). She wants to test whether the mean resting heart rate differs from
+        the national average of 72 bpm.
+\end{enumerate}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} c X X X c @{}}
+  \rowcolor{sky}
+  \textbf{\#} & \textbf{Categorical or Quantitative?} & \textbf{Groups / Structure} & \textbf{Procedure Name} & \textbf{CI or Test?} \\
+  \hline
+  1 & \ans{Categorical} & \ans{1 proportion} & \ans{1-prop $z$-interval} & \ans{CI} \\
+  2 & \ans{Categorical} & \ans{1 var, 4 categories} & \ans{Chi-sq GOF test} & \ans{Test} \\
+  3 & \ans{Quantitative} & \ans{2 independent groups} & \ans{2-sample $t$-test} & \ans{Test} \\
+  4 & \ans{Quantitative} & \ans{2 paired (matched)} & \ans{Paired $t$-test} & \ans{Test} \\
+\end{tabularx}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} c X X X c @{}}
+  \rowcolor{sky}
+  \textbf{\#} & \textbf{Categorical or Quantitative?} & \textbf{Groups / Structure} & \textbf{Procedure Name} & \textbf{CI or Test?} \\
+  \hline
+  1 & \ans{Categorical} & \ans{1 proportion} & \ans{1-prop $z$-interval} & \ans{CI} \\
+  2 & \ans{Categorical} & \ans{1 var, 4 categories} & \ans{Chi-sq GOF test} & \ans{Test} \\
+  3 & \ans{Quantitative} & \ans{2 independent groups} & \ans{2-sample $t$-test} & \ans{Test} \\
+  4 & \ans{Quantitative} & \ans{2 paired (matched)} & \ans{Paired $t$-test} & \ans{Test} \\
+  5 & \ans{Categorical} & \ans{1 var, 2 populations} & \ans{Chi-sq homogeneity} & \ans{Test} \\
+  6 & \ans{Quantitative} & \ans{Bivariate / slope} & \ans{$t$-interval for slope} & \ans{CI} \\
+  7 & \ans{Categorical} & \ans{2 categorical vars, 1 sample} & \ans{Chi-sq independence} & \ans{Test} \\
+  8 & \ans{Quantitative} & \ans{1 mean} & \ans{1-sample $t$-test} & \ans{Test} \\
+\end{tabularx}
+
+\vspace{0.1in}
+\textbf{Scenario 1} --- \ans{Estimate $p$ = the true proportion of college students who own a car.}
+
+\textbf{Scenario 3} --- \ans{$H_0$: $\mu_A = \mu_B$ (no difference in mean recovery time); $H_a$: $\mu_A \ne \mu_B$.}
+
+\textbf{Scenario 6} --- \ans{Estimate $\beta$ = the true slope of the population regression line relating sugar intake to body fat percentage.}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Complete all of Tier A above. Then answer the following.
+
+\vspace{0.08in}
+\textbf{Bonus 1.} \ans{The twins are naturally paired by genetics. Because each pair shares the same genetic background, the two observations in each pair are not independent. A paired $t$-test uses the \textit{differences} within each pair as the data, removing the variability due to genetics and increasing statistical power. A 2-sample $t$-test would ignore this pairing and be less powerful.}
+
+\textbf{Bonus 2.} \ans{A chi-square test for \textit{homogeneity} is used when data come from two or more separate populations (or groups) and we want to compare the distribution of a single categorical variable across those groups (Scenario 5: two cities). A chi-square test for \textit{independence} is used when data come from one sample and we want to determine whether two categorical variables are associated (Scenario 7: one sample, two variables recorded).}
+\end{tcolorbox}
 
 \end{document}

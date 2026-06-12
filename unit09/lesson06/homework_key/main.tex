@@ -1,19 +1,97 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.6 — Homework (Answer Key)
+%! AP Statistics — Unit 9, Lesson 9.6 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.6}{Homework --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
+\textbf{Directions:} For each scenario, answer all three parts.
+\begin{itemize}[noitemsep]
+  \item[(1)] Name the inference procedure.
+  \item[(2)] State the parameter being estimated (for a CI) or the hypotheses $H_0$ and $H_a$ (for a test).
+  \item[(3)] List the key conditions that must be checked for this procedure.
+\end{itemize}
+
+\begin{notesbox}{Problem 1}
+A random sample of 45 high school seniors records their SAT scores. The researcher wants
+to estimate the mean SAT score for all seniors at this school with a 95\% confidence interval.
+
+\vspace{0.08in}
+(1) Procedure: \ans{1-sample $t$-interval for a mean}
+
+\vspace{0.08in}
+(2) Parameter being estimated: \ans{$\mu$ = the true mean SAT score of all seniors at this school}
+
+\vspace{0.08in}
+(3) Conditions: \ans{Random sample; Normal/Large Sample ($n = 45 \ge 30$, so the condition is met); 10\% rule: $45 \le 10\%$ of all seniors at the school.}
+\end{notesbox}
+
+\begin{notesbox}{Problem 2}
+A school randomly surveys 120 sophomores about how they get to school (walk, bus, car, or
+bike). The researcher tests whether the four options are equally popular.
+
+\vspace{0.08in}
+(1) Procedure: \ans{Chi-square goodness of fit test}
+
+\vspace{0.08in}
+(2) $H_0$: \ans{$p_{\text{walk}} = p_{\text{bus}} = p_{\text{car}} = p_{\text{bike}} = 0.25$}
+$H_a$: \ans{At least one of the proportions differs from 0.25.}
+
+\vspace{0.08in}
+(3) Conditions: \ans{Random sample; Large Counts: all expected counts $= 120 \times 0.25 = 30 \ge 5$.}
+\end{notesbox}
+
+\begin{notesbox}{Problem 3}
+A researcher randomly selects 80 adults in a city and classifies each as a smoker or
+non-smoker. She tests whether the proportion of smokers in the city differs from the
+national rate of 14\%.
+
+\vspace{0.08in}
+(1) Procedure: \ans{1-proportion $z$-test}
+
+\vspace{0.08in}
+(2) $H_0$: \ans{$p = 0.14$}
+$H_a$: \ans{$p \ne 0.14$}
+
+\vspace{0.08in}
+(3) Conditions: \ans{Random sample; 10\% rule: $80 \le 10\%$ of all adults in the city; Large Counts: $np_0 = 80(0.14) = 11.2 \ge 10$ and $n(1-p_0) = 80(0.86) = 68.8 \ge 10$.}
+\end{notesbox}
+
+\begin{notesbox}{Problem 4}
+A pediatrician follows 60 children for 5 years, recording average daily screen time
+(hours/day, $x$) and reading proficiency score ($y$). She wants to test whether screen
+time is linearly related to reading proficiency.
+
+\vspace{0.08in}
+(1) Procedure: \ans{$t$-test for slope}
+
+\vspace{0.08in}
+(2) $H_0$: \ans{$\beta = 0$ (screen time is not a useful linear predictor of reading proficiency)}
+$H_a$: \ans{$\beta \ne 0$}
+
+\vspace{0.08in}
+(3) Conditions: \ans{LINER --- Linear (residual plot shows no pattern); Independent observations; Normal residuals (check histogram/boxplot of residuals); Equal variance (residual plot shows constant spread); Random sample.}
+\end{notesbox}
+
+\begin{notesbox}{Problem 5}
+A study records whether a randomly selected sample of 200 adults (100 from urban areas,
+100 from rural areas) experienced anxiety in the past year (yes/no). The researcher
+tests whether anxiety rates differ between urban and rural adults.
+
+\vspace{0.08in}
+(1) Procedure: \ans{2-proportion $z$-test}
+
+\vspace{0.08in}
+(2) $H_0$: \ans{$p_{\text{urban}} = p_{\text{rural}}$ (anxiety rates are the same in both groups)}
+$H_a$: \ans{$p_{\text{urban}} \ne p_{\text{rural}}$}
+
+\vspace{0.08in}
+(3) Conditions: \ans{Random sample from each group; 10\% rule for each group; Large Counts: $n\hat{p} \ge 10$ and $n(1-\hat{p}) \ge 10$ for each group (using the combined $\hat{p}$).}
 \end{notesbox}
 
 \end{document}

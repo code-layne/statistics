@@ -1,19 +1,48 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.5 — Exit Ticket
+%! AP Statistics — Unit 9, Lesson 9.5 — Exit Ticket
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.5}{Exit Ticket}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: author the Exit Ticket. See references/components.md for the expected structure.
-\begin{notesbox}{Exit Ticket}
-\writelines{4}
-\end{notesbox}
+A meteorologist fits a regression line relating elevation ($x$, in hundreds of feet)
+to average annual temperature ($y$, ${}^\circ$F) for a random sample of 18 weather
+stations. Assume LINER conditions are met. Computer output:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{lrrrr}
+    \textbf{Predictor} & \textbf{Coef} & \textbf{SE Coef} & \textbf{T} & \textbf{P} \\
+    \hline
+    Constant   & 65.4 & 3.2  & 20.44 & 0.000 \\
+    Elevation  & $-2.1$ & 0.45 & $-4.67$ & 0.000 \\
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+
+  \item State H$_0$ and H$_a$ for a test of the true slope of the regression line
+        relating temperature to elevation.
+
+        H$_0$: \blank{9cm}
+
+        \vspace{0.05in}
+
+        H$_a$: \blank{9cm}
+
+        \vspace{0.1in}
+
+  \item Interpret the $p$-value ($= 0.000$) in context, assuming H$_0$ is true.
+        \writelines{3}
+
+  \item State a conclusion at $\alpha = 0.05$.
+        \writelines{2}
+
+\end{enumerate}
 
 \end{document}

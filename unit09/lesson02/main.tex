@@ -1,12 +1,11 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.2 — Lesson Plan
+%! AP Statistics — Unit 9, Lesson 9.2 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\UnitNumberName}{Unit 9: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 9.2: TODO: Lesson Title}
+\newcommand{\UnitNumberName}{Unit 9: Inference for Quantitative Data: Slopes \quad}
+\newcommand{\LessonNumberName}{Lesson 9.2: Confidence Intervals for the Slope of a Regression Model}
 
 \begin{document}
 \begin{center}
@@ -16,54 +15,221 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will verify the LINER conditions for inference on
+    slope, read computer regression output, calculate a $t$-interval for the true slope
+    $\beta$, and interpret the interval in context. (Big Idea: UNC)
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skills Addressed}
+    \begin{itemize}
+        \item Identify a $t$-interval for slope as the appropriate CI procedure
+              (Skill 1.D; UNC-4.AC).
+        \item Verify LINER conditions for a CI for slope (Skill 4.C; UNC-4.AD).
+        \item Determine the margin of error $ME = t^* \cdot SE_b$ (Skill 3.D; UNC-4.AE).
+        \item Calculate the CI: $b \pm t^* \cdot SE_b$, $df = n-2$ (Skill 3.D; UNC-4.AF).
+        \item Interpret a CI for slope in context (Skill 4.B; UNC-4.AF).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item The sample slope $b$ estimates the true slope $\beta$; the sampling
+              distribution of $b$ is centered at $\beta$ with $SD = \sigma/(\sigma_x\sqrt{n})$.
+        \item $SE_b = s/(s_x\sqrt{n-1})$ uses $df = n-2$ because two parameters
+              ($\alpha$ and $\beta$) are estimated.
+        \item The CI is $b \pm t^*(SE_b)$, $df = n-2$.
+        \item LINER: Linear, Independent, Normal, Equal variance, Random.
+        \item A CI for $\beta$ that excludes 0 is evidence of a linear relationship.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{lX}
+    \textbf{Population regression line} &
+        $\mu_y = \alpha + \beta x$; $\beta$ is the true slope (UNC-4.AC.1) \\
+    \textbf{Sampling distribution of $b$} &
+        Center: $\mu_b = \beta$ (unbiased); spread: $\sigma_b = \sigma/(\sigma_x\sqrt{n})$
+        (UNC-4.AC.2) \\
+    \textbf{Residual SD ($s$)} &
+        $s = \sqrt{\sum(y_i - \hat{y}_i)^2/(n-2)}$; uses $df = n-2$ (UNC-4.AC.1) \\
+    \textbf{LINER conditions} &
+        Linear (residual plot), Independent (random/10\%), Normal (residuals),
+        Equal variance (residual plot), Random (UNC-4.AD.1) \\
+    \textbf{Standard error of slope} &
+        $SE_b = s/(s_x\sqrt{n-1})$; found in regression output (UNC-4.AE.2) \\
+    \textbf{$t$-interval for slope} &
+        $b \pm t^* \cdot SE_b$,\ $df = n-2$ (UNC-4.AF.2) \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{minipage}[t]{0.48\linewidth}
-        % TODO: prior knowledge bullets (Units/lessons reviewed)
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.48\linewidth}
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        % TODO: connections forward (upcoming lessons)
-    \end{minipage}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Unit 2: LSRL equation, interpreting slope in context, computing residuals.
+        \item Lesson 9.1: sampling distribution of $b$; why $b$ is an unbiased estimator
+              of $\beta$; what $\beta = 0$ means.
+        \item Units 7--8: $t$-interval structure: point estimate $\pm t^* \cdot SE$;
+              $df$ concept; interpreting a CI.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Connections Forward}
+    \begin{itemize}
+        \item Hypothesis test for slope ($H_0\colon \beta = 0$) $\to$ Lesson 9.3
+        \item Reading and using $p$-values from regression output $\to$ Lesson 9.4
+        \item CI vs.\ significance-test connection for slope $\to$ Lesson 9.5
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (4--5 min)}\\
+    Display a regression output table for hours studied ($x$) vs.\ exam score ($y$),
+    $n = 20$ students: slope $b = 3.24$, $SE_b = 1.08$.\\[4pt]
+    Ask: ``We know $b = 3.24$ is just one sample's slope.  What range of plausible values
+    for the \emph{true} slope $\beta$ is consistent with our data?''\\[4pt]
+    Connect to the $t$-interval idea from Units 7--8.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15 min)}
+    \begin{enumerate}
+        \item Review the sampling distribution of $b$: center $\beta$, spread $SE_b$.
+        \item Introduce LINER conditions; connect each to a residual plot or context check.
+        \item Derive the CI: $b \pm t^* \cdot SE_b$, $df = n-2$.
+        \item Model reading a regression output table: identify $b$, $SE_b$, $n$.
+        \item Worked example: compute and interpret a 95\% CI from regression output.
+    \end{enumerate}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{skillbox}[Explicit Instruction: LINER Conditions \& the CI]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{LINER Conditions}
+    \begin{description}
+        \item[\textbf{L}inear:] True relationship is linear --- residual plot shows
+              random scatter with no curve.
+        \item[\textbf{I}ndependent:] Observations are independent --- random sample or
+              experiment; 10\% condition if sampling without replacement.
+        \item[\textbf{N}ormal:] Responses approximately normal for fixed $x$ --- check
+              histogram/Normal probability plot of residuals, or $n > 30$.
+        \item[\textbf{E}qual variance:] $\sigma_y$ is constant across all $x$ --- residual
+              plot shows consistent vertical spread.
+        \item[\textbf{R}andom:] Data come from a random sample or randomized experiment.
+    \end{description}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Worked Example (Hours/Score)}\\[4pt]
+    Given: $b = 3.24$,\ $SE_b = 1.08$,\ $n = 20$,\ 95\% confidence.\\[4pt]
+    $df = 20 - 2 = 18$;\quad $t^* = 2.101$\\[4pt]
+    $ME = 2.101 \times 1.08 \approx 2.27$\\[4pt]
+    $CI: 3.24 \pm 2.27 \Rightarrow (0.97,\ 5.51)$\\[6pt]
+    \textbf{Interpret:} We are 95\% confident that the true slope of the
+    population regression line for exam score on hours studied is between 0.97
+    and 5.51 points per hour studied.
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{skillbox}[Active Monitoring]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Circulate and Check}
+    \begin{itemize}
+        \item Confirm students use $df = n - 2$ (not $n - 1$) for $t^*$.
+        \item Verify students use $SE_b$ from output --- not $s$ (residual SD).
+        \item Listen for interpretation language: ``We are $C$\% confident the true slope
+              $\beta$ is between \ldots'' (not ``probability'').
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Cold-Call Prompts}
+    \begin{itemize}
+        \item ``Why is $df = n - 2$ rather than $n - 1$ for a regression $t$-interval?''
+        \item ``Which LINER condition tells us to check the residual plot for curvature?''
+        \item ``If the CI for $\beta$ includes 0, what does that suggest?''
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Partner Activity (10--12 min)}\\
+    Students receive a regression output table for predicting highway fuel efficiency
+    (mpg) from vehicle weight (1000 lbs), $n = 24$ cars. Three tiers (R, A, E) guide
+    students from verifying conditions through computing and interpreting the CI.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support (Tier R)}: LINER conditions partially filled; formula
+              scaffolded; $t^*$ provided.
+        \item \textit{On-grade (Tier A)}: Verify conditions, identify $b$ and $SE_b$,
+              compute CI with $t^*$ given, interpret.
+        \item \textit{Extension (Tier E)}: Explain what it means that 0 is not in the CI;
+              connect CI width to $n$ and $SE_b$.
+        \item \textit{ELL}: Vocabulary card --- ``slope/pendiente,''
+              ``confidence interval/intervalo de confianza.''
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}
+    \begin{enumerate}
+        \item From a regression output table ($b = -2.10$, $SE_b = 0.63$, $n = 18$),
+              identify the slope and its standard error.
+        \item Compute a 95\% CI for $\beta$ using $t^* = 2.120$.
+        \item Interpret the interval in context (advertising spend vs.\ units returned).
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{A researcher fits a LSRL using data from $n = 25$ randomly selected cities
+    relating pollution index to hospital admission rate. The output shows $b = 4.7$,
+    $SE_b = 1.2$. Which degrees of freedom should be used for the $t$-interval for $\beta$?}
+    \begin{enumerate}[label=(\Alph*)]
+        \item $df = 25$
+        \item $df = 24$
+        \item $df = 23$
+        \item $df = 22$
+    \end{enumerate}
+    Answer: (C)
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item \textit{Problem 1:} Full CI procedure from regression output: verify LINER,
+              identify $b$ and $SE_b$, compute CI, interpret.
+        \item \textit{Problem 2:} Verify conditions and state a CI; identify which
+              condition is hardest to verify and explain why.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: If the CI for $\beta$ does not contain 0, what
+              conclusion can you draw? How does this connect to significance?
+        \item \textit{Preview}: Lesson 9.3 formalizes the hypothesis test for slope
+              ($H_0\colon \beta = 0$) using $t = b/SE_b$.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
+
 \end{document}

@@ -1,19 +1,126 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.5 — Guided Notes
+%! AP Statistics — Unit 9, Lesson 9.5 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.5}{Guided Notes}
 \namedateperiod
 
-\vspace{0.15in}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+\end{itemize}
+\end{objectivebox}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{vocabbox}
+\termblanklong{Null hypothesis for slope ($H_0$: $\beta = 0$)}
+\termblanklong{Alternative hypothesis ($H_a$: $\beta \ne 0$)}
+\termblanklong{Test statistic ($t = b / SE_b$)}
+\termblanklong{$p$-value (in context of regression)}
+\termblanklong{Regression output table}
+\termblanklong{LINER conditions}
+\end{vocabbox}
+
+\begin{hookbox}
+A café owner wonders whether outdoor temperature ($x$, in ${}^\circ$F) is linearly
+related to daily iced coffee sales ($y$, number of drinks). She collects data for 18
+randomly selected days and fits a regression line. Her software produces the following
+output:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{lrrrr}
+    \textbf{Predictor} & \textbf{Coef} & \textbf{SE Coef} & \textbf{T} & \textbf{P} \\
+    \hline
+    Constant    & 12.34 & 3.21 & 3.84 & 0.002 \\
+    Temperature &  2.30 & 0.58 & 3.97 & 0.001 \\
+\end{tabular}
+\end{center}
+
+What do the four numbers in the \textit{Temperature} row tell us?
+\writelines{2}
+\end{hookbox}
+
+\begin{notesbox}{Reading a Regression Output Table (VAR-7.I)}
+In a regression output table, the \textbf{slope row} (the predictor row, not Constant)
+contains the key values for inference.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{lcccc}
+    \textbf{Predictor} & \textbf{Coef} & \textbf{SE Coef} & \textbf{T} & \textbf{P} \\
+    \hline
+    Constant   & \blank{2cm} & \blank{2cm} & \blank{1.5cm} & \blank{1.5cm} \\
+    \textit{[x variable]} & \blank{2cm} & \blank{2cm} & \blank{1.5cm} & \blank{1.5cm} \\
+    \multicolumn{5}{l}{\small\itshape $\uparrow$ read $b$ and $SE_b$ from this row} \\
+\end{tabular}
+\end{center}
+
+\vspace{0.05in}
+\textbf{Café Example} ($n = 18$): $b = $ \blank{1.5cm}, $SE_b = $ \blank{1.5cm},
+$t = $ \blank{1.5cm}, $p$-value $= $ \blank{1.5cm}
+
+\vspace{0.1in}
+Test statistic formula: \quad $t = \dfrac{b}{\blank{3cm}}$ \qquad
+Degrees of freedom: \quad $df = n - \blank{1cm}$
+\end{notesbox}
+
+\begin{notesbox}{The 4-Step Significance Test for Slope (VAR-7.I, DAT-3.E/F)}
+
+\textbf{Step 1 — Hypotheses.} Define $\beta$ in words, then state:
+
+\quad H$_0$: $\beta = $ \blank{1.5cm} \quad (no linear relationship)
+
+\quad H$_a$: $\beta \ne $ \blank{1.5cm} \quad (there is a linear relationship)
+
+\vspace{0.12in}
+\textbf{Step 2 — Conditions (LINER).}
+\begin{itemize}
+    \item \textbf{L}inear: \blank{8cm}
+    \item \textbf{I}ndependent: \blank{8cm}
+    \item \textbf{N}ormal: \blank{8cm}
+    \item \textbf{E}qual variance: \blank{8cm}
+    \item \textbf{R}andom: \blank{8cm}
+\end{itemize}
+
+\vspace{0.12in}
+\textbf{Step 3 — Test Statistic \& $p$-value.}
+
+\quad $t = \dfrac{b}{SE_b} = \dfrac{\blank{1.5cm}}{\blank{1.5cm}} = \blank{1.5cm}$
+\qquad $df = \blank{1.5cm}$ \qquad $p$\text{-value} $= \blank{2cm}$ (from output)
+
+\vspace{0.12in}
+\textbf{Step 4 — Conclusion.}
+
+Since $p$ \blank{1cm} $\alpha$, we \blank{2.5cm} H$_0$.
+There \blank{1.5cm} convincing evidence that the true slope $\beta$ \blank{1cm} $0$.
+
+\end{notesbox}
+
+\begin{notesbox}{Worked Example: Iced Coffee Sales (All 4 Steps)}
+
+\textbf{Step 1.} Let $\beta = $ \writeline
+
+\quad H$_0$: \blank{7cm} \quad H$_a$: \blank{7cm}
+
+\vspace{0.1in}
+\textbf{Step 2.} LINER conditions: \writelines{3}
+
+\vspace{0.05in}
+\textbf{Step 3.} $t = \dfrac{\blank{1.5cm}}{\blank{1.5cm}} = \blank{1.5cm}$
+\quad $df = 18 - 2 = \blank{1.5cm}$ \quad $p = \blank{1.5cm}$ (from output)
+
+\vspace{0.1in}
+\textbf{Step 4.} Since $p$ \blank{1cm} $0.05$, we \blank{2.5cm} H$_0$.
+
+\writelines{2}
+
 \end{notesbox}
 
 \end{document}

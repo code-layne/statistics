@@ -1,12 +1,11 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.6 — Lesson Plan
+%! AP Statistics — Unit 9, Lesson 9.6 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\UnitNumberName}{Unit 9: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 9.6: TODO: Lesson Title}
+\newcommand{\UnitNumberName}{Unit 9: Inference for Quantitative Data: Slopes \quad}
+\newcommand{\LessonNumberName}{Lesson 9.6: Skills Focus --- Selecting an Appropriate Inference Procedure}
 
 \begin{document}
 \begin{center}
@@ -16,54 +15,228 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will synthesize all inference procedures studied
+    in Units 6--9 (proportions, means, chi-square, and slope) to correctly identify the
+    appropriate procedure for any given context, distinguishing between confidence intervals
+    and significance tests and recognizing the data structure that triggers each procedure.
+    (Big Idea: UNC, VAR, DAT)
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skills Addressed}
+    \begin{itemize}
+        \item Identify the appropriate inference procedure for a given context (Skill 1.D, 1.E).
+        \item Distinguish confidence intervals from significance tests (Skill 1.D).
+        \item Recognize categorical vs.\ quantitative variables and one-sample vs.\ two-sample
+              vs.\ paired vs.\ bivariate data structures (Skill 1.A).
+        \item Justify the choice of procedure with a well-reasoned explanation (Skill 4.B, 4.D, 4.E).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item The type of variable (categorical vs.\ quantitative) is the first decision point.
+        \item The data structure (one sample, two independent samples, matched pairs, or bivariate)
+              determines the specific procedure.
+        \item CI $\to$ estimate a parameter; significance test $\to$ assess evidence against $H_0$.
+        \item Chi-square procedures are always significance tests; slope inference applies to
+              bivariate quantitative data.
+        \item Correctly naming the procedure is an AP exam expectation.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\begin{skillbox}[{All Inference Procedures: Quick Reference}]{greenbox}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{@{} p{0.22\linewidth} p{0.22\linewidth} X X @{}}
+  \rowcolor{sky}
+  \textbf{Variable Type} & \textbf{Data Structure} & \textbf{Confidence Interval} & \textbf{Significance Test} \\
+  \hline
+  Categorical & 1 proportion & 1-prop $z$-interval & 1-prop $z$-test \\
+  Categorical & 2 proportions & 2-prop $z$-interval & 2-prop $z$-test \\
+  Categorical & 1 var, $\ge 3$ categories vs.\ claimed dist. & --- & Chi-square GOF test \\
+  Categorical & 1 var, 2+ independent groups & --- & Chi-square test for homogeneity \\
+  Categorical & 2 categorical vars, 1 sample & --- & Chi-square test for independence \\
+  Quantitative & 1 mean & 1-sample $t$-interval & 1-sample $t$-test \\
+  Quantitative & 2 independent means & 2-sample $t$-interval & 2-sample $t$-test \\
+  Quantitative & Matched pairs & Paired $t$-interval & Paired $t$-test \\
+  Quantitative & Bivariate (slope) & $t$-interval for slope & $t$-test for slope \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{minipage}[t]{0.48\linewidth}
-        % TODO: prior knowledge bullets (Units/lessons reviewed)
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.48\linewidth}
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        % TODO: connections forward (upcoming lessons)
-    \end{minipage}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Units 6--7: z-procedures for proportions; t-procedures for means;
+              conditions (Large Counts, Normal/Large Sample, Random, 10\% rule).
+        \item Unit 8: chi-square GOF, homogeneity, and independence.
+        \item Unit 9: regression output, the $t$-test and $t$-interval for slope.
+        \item The warm-up asks students to name the procedure from a brief context ---
+              a synthesis across all units.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Connections}
+    \begin{itemize}
+        \item This lesson synthesizes Units 6--9; there is no new content.
+        \item AP exam free-response questions frequently require students to identify
+              the correct procedure before setting it up.
+        \item Completing this lesson prepares students for the Unit 9 sample test
+              and the AP exam.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook: ``Same Answer --- Right Procedure?'' (4--5 min)}\\
+    Display three scenarios simultaneously:
+    \begin{enumerate}
+        \item ``Is the mean commute time for bus riders less than 30 minutes?''
+        \item ``Do urban and suburban commuters differ in mean commute time?''
+        \item ``Is there an association between commute mode (bus/train/car) and
+              commute satisfaction (high/low)?''
+    \end{enumerate}
+    Ask: ``Every scenario is about commuting. How are the procedures different?''
+    Take three 30-second responses; record the correct procedure next to each.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{The Decision Framework (15 min)}
+    \begin{enumerate}
+        \item \textbf{Variable type:} Is the variable of interest categorical (proportions/counts)
+              or quantitative (means/slope)?
+        \item \textbf{Data structure:}
+              \begin{itemize}
+                  \item One sample $\to$ 1-prop $z$, 1-sample $t$, or chi-sq GOF.
+                  \item Two independent groups $\to$ 2-prop $z$, 2-sample $t$, or homogeneity.
+                  \item Matched pairs $\to$ paired $t$.
+                  \item Two categorical variables, one sample $\to$ independence.
+                  \item Bivariate quantitative $\to$ slope procedures.
+              \end{itemize}
+        \item \textbf{Goal:} Estimate (CI) or test a claim (test)?
+        \item \textbf{Name the procedure exactly.}
+    \end{enumerate}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
+\begin{skillbox}[Explicit Instruction: Conditions by Procedure]{sky}
+\renewcommand{\arraystretch}{1.9}
+\begin{tabularx}{\linewidth}{@{} p{0.28\linewidth} X @{}}
+  \rowcolor{sky}
+  \textbf{Procedure} & \textbf{Key Conditions (beyond Random / 10\% rule)} \\
+  \hline
+  1-prop / 2-prop $z$ & Large Counts: $np_0 \ge 10$ and $n(1-p_0) \ge 10$ (or $n\hat p \ge 10$, $n(1-\hat p) \ge 10$) \\
+  1-sample / 2-sample $t$ & Normal/Large Sample: population normal OR $n \ge 30$ \\
+  Paired $t$ & Normal/Large Sample applied to the \emph{differences} \\
+  Chi-square (all) & Expected counts $\ge 5$ in every cell \\
+  $t$-test / $t$-interval for slope & LINER: Linear, Independent, Normal residuals, Equal variance, Random \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Circulate and Check}
+    \begin{itemize}
+        \item Students use the three-step framework (type, structure, goal) before
+              naming the procedure.
+        \item Watch for students who default to $t$-tests for all quantitative data;
+              prompt: ``Are these two independent groups or the same subjects measured twice?''
+        \item Ensure students do not confuse chi-square independence with homogeneity.
+        \item Students should name the procedure precisely (e.g., ``2-sample $t$-test for
+              $\mu_1 - \mu_2$''), not vaguely (e.g., ``a $t$-test'').
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Cold-Call Prompts}
+    \begin{itemize}
+        \item ``The variable is salary. Is that categorical or quantitative?''
+        \item ``The researcher randomly selected men and women separately --- are these
+              paired or independent samples?''
+        \item ``You want to \emph{estimate} the slope. Is that a CI or a test?''
+        \item ``There are only two categories --- can we use chi-square? Why or why not?''
+        \item ``State the parameter of interest for this scenario.''
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{multicols}{3}
+    \textbf{Tier R --- Remediate}
+    \begin{itemize}
+        \item Procedure selection table and decision flowchart provided.
+        \item Identify the variable type and data structure only; procedure name
+              is filled in from the table.
+        \item Focus on categorical vs.\ quantitative and one vs.\ two groups.
+    \end{itemize}
+    \columnbreak
+    \textbf{Tier A --- Approaching}
+    \begin{itemize}
+        \item Classify all 8 scenarios independently.
+        \item State the parameter being estimated or tested for each.
+        \item No reference table.
+    \end{itemize}
+    \columnbreak
+    \textbf{Tier E --- Extension}
+    \begin{itemize}
+        \item Complete all Tier A work.
+        \item For each scenario, also identify what additional information would be
+              needed to carry out the procedure and what conditions to check.
+        \item One bonus scenario is ambiguous; students must argue for their choice.
+    \end{itemize}
+\end{multicols}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    Two brief scenarios; for each, students name the correct procedure and write
+    a 2-sentence justification. Scored for correct identification and reasoning.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Check}\\
+    \textit{Researchers randomly sample 40 runners before and after a training program
+    and record each runner's finishing time. They want to test whether the program
+    reduced finishing times. Which procedure?}
+    \begin{enumerate}[label=(\Alph*)]
+        \item 2-sample $t$-test for $\mu_1 - \mu_2$
+        \item Paired $t$-test for $\mu_d$
+        \item 1-sample $t$-test for $\mu$
+        \item $t$-test for slope
+    \end{enumerate}
+    Answer: (B) --- same runners measured twice; differences are the data.
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework Overview}
+    \begin{itemize}
+        \item Five scenarios spanning all procedure families; students identify the
+              procedure, state $H_0$/$H_a$ (or the parameter for a CI), and list
+              the key conditions to check.
+        \item At least one scenario involves slope inference and one involves
+              paired data --- both commonly misclassified on AP exams.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Spiral Preview}
+    \begin{itemize}
+        \item This lesson completes the inference synthesis for Units 6--9.
+        \item Students are now prepared for the AP-style Unit 9 test, which will
+              require selecting and carrying out inference procedures across all
+              quantitative and categorical contexts.
+        \item Encourage students to keep the procedure selection table for exam review.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
+
 \end{document}

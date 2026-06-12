@@ -1,19 +1,123 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.1 — Guided Notes
+%! AP Statistics — Unit 9, Lesson 9.1 — Guided Notes
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.1}{Guided Notes}
 \namedateperiod
 
-\vspace{0.15in}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+\end{itemize}
+\end{objectivebox}
 
-% TODO: author the Guided Notes. See references/components.md for the expected structure.
-\begin{notesbox}{Guided Notes}
-\writelines{4}
+\begin{vocabbox}
+\termblanklong{Population slope ($\beta$)}
+\termblanklong{Sample slope ($b$)}
+\termblanklong{Sampling variability}
+\termblanklong{Null hypothesis for slope}
+\end{vocabbox}
+
+\begin{hookbox}
+\textbf{Discussion:} Two scatter plots are shown on the board. Both have a
+positive LSRL with slope $b > 0$. One has tightly clustered points; the other
+has widely scattered points. Which trend are you more confident is real? Why?
+
+\writelines{2}
+\end{hookbox}
+
+\begin{notesbox}{The Sample Slope Is a Statistic}
+In Units 2--3 we fit an LSRL $\hat{y} = a + bx$ to sample data and computed
+the slope $b$. The slope $b$ is a \blank{4cm}, not a parameter.
+
+\vspace{0.1in}
+\textbf{Key idea:} Different random samples from the same population produce
+\blank{5cm} values of $b$.
+
+\vspace{0.1in}
+The true (unknown) rate of change in the population is called the
+\textbf{population slope}, denoted \blank{1.5cm}.
+
+\vspace{0.1in}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{Xcc}
+    & \textbf{Symbol} & \textbf{Parameter or Statistic?} \\
+    \hline
+    True population slope       & $\beta$ & \blank{4cm} \\
+    Estimated slope from sample & $b$     & \blank{4cm} \\
+\end{tabularx}
 \end{notesbox}
+
+\begin{notesbox}{The Central Question of Unit 9}
+When we see a non-zero slope $b$ in sample data, two explanations are possible:
+
+\begin{enumerate}
+  \item The true population slope $\beta$ \blank{4cm} --- the trend is real.
+  \item The true population slope $\beta = $ \blank{1cm} --- there is no real
+        linear relationship, and the non-zero $b$ is due to \blank{4cm}.
+\end{enumerate}
+
+\vspace{0.1in}
+\textbf{The null hypothesis for slope:} $H_0\colon \beta = $ \blank{1cm}
+
+\vspace{0.08in}
+This says: in the population, there is \blank{5cm}
+between $x$ and $y$. Any non-zero $b$ we observe is just \blank{4cm}.
+
+\vspace{0.1in}
+\textbf{Unit 9 asks:} Is the sample slope $b$ we observed \blank{5cm}
+evidence that $\beta \ne 0$ in the population?
+\end{notesbox}
+
+\begin{notesbox}{Why Scatter Matters}
+Two factors influence how surprising a non-zero $b$ is under $H_0\colon \beta = 0$:
+
+\begin{enumerate}
+  \item \textbf{Sample size ($n$):} A slope of $b = 3.4$ from $n = 200$ observations
+        is \blank{3cm} evidence than the same slope from $n = 10$ observations.
+  \item \textbf{Scatter around the line:} The more tightly points cluster around the
+        LSRL, the \blank{3cm} our estimate of $\beta$.
+\end{enumerate}
+
+\vspace{0.1in}
+This is why we can't just look at $b$ and declare the relationship real --- we need
+\blank{6cm} to quantify how likely $b$ is under $H_0$.
+\end{notesbox}
+
+\begin{notesbox}{Unit 9 Arc Overview}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{lX}
+    \textbf{Lesson 9.1} & Framing: what question does Unit 9 ask? \\
+    \textbf{Lesson 9.2} & Sampling distribution of $b$; conditions for inference \\
+    \textbf{Lesson 9.3} & Confidence interval for \blank{2cm} \\
+    \textbf{Lesson 9.4} & Significance test for \blank{2cm} ($t$-test for slope) \\
+    \textbf{Lesson 9.5} & Reading \blank{4cm} output for regression \\
+    \textbf{Lesson 9.6} & Synthesis: \blank{5cm} \\
+\end{tabularx}
+\end{notesbox}
+
+\begin{practicebox}
+\textbf{Guided Practice:} A study collects data on daily high temperature ($x$, in $^\circ$F)
+and the number of ice cream cones sold ($y$) at a beachside stand for 20 days. The LSRL is
+$\hat{y} = -82.4 + 3.4x$ with $r = 0.87$.
+
+\begin{enumerate}
+  \item Interpret the slope in context.
+        \writelines{2}
+
+  \item Suppose the true population slope were $\beta = 0$. What would that mean
+        about the relationship between temperature and ice cream sales?
+        \writelines{2}
+
+  \item Does $r = 0.87$ alone prove that $\beta \ne 0$? Explain.
+        \writelines{2}
+\end{enumerate}
+\end{practicebox}
 
 \end{document}

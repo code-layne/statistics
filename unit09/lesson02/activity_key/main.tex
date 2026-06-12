@@ -1,19 +1,113 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.2 — Group Activity (Answer Key)
+%! AP Statistics — Unit 9, Lesson 9.2 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.2}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
+\textbf{Building a CI for the Slope --- Car Weight and Fuel Efficiency}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\vspace{0.05in}
+A researcher randomly selects 30 cars from a large database and records curb weight
+($x$, in hundreds of pounds) and highway fuel efficiency ($y$, mpg).
+Computer output is shown below.
+
+\vspace{0.1in}
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{lrrrr}
+    \textbf{Predictor} & \textbf{Coef} & \textbf{SE Coef} & \textbf{T} & \textbf{P} \\
+    \hline
+    Constant & 47.8 & 3.4 & 14.06 & 0.000 \\
+    Weight   & $-2.3$ & 0.41 & $-5.61$ & 0.000 \\
+    \hline
+    \multicolumn{5}{l}{$s = 3.2$ \quad $R^2 = 53.2\%$ \quad $n = 30$}
+\end{tabular}
+\end{center}
+
+\vspace{0.05in}
+The researcher wants to build a 95\% CI for the true slope $\beta$.
+Use $t^* = 2.048$ ($df = 28$).
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[label=\alph*.]
+
+    \item Identify the slope estimate and standard error from the output.
+
+          $b = $ \ans{$-2.3$}\quad and\quad $SE_b = $ \ans{$0.41$}
+
+    \item Complete the confidence interval.
+
+          $b \pm t^* \cdot SE_b
+          = $ \ans{$-2.3$} $\pm\ 2.048 \times $ \ans{$0.41$}
+          $= -2.3 \pm$ \ans{$0.840$}
+          $= ($ \ans{$-3.14$},\; \ans{$-1.46$}$)$
+
+    \item Fill in the interpretation.
+
+          ``We are 95\% confident that the true slope relating
+          \ans{highway fuel efficiency (mpg)} to \ans{curb weight (hundreds of pounds)}
+          for \ans{all cars in the database}
+          is between \ans{$-3.14$} and \ans{$-1.46$}
+          mpg per hundred pounds.''
+
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[label=\alph*.]
+
+    \item \ans{$b = -2.3$ mpg per hundred pounds; $SE_b = 0.41$.}
+
+    \item \ans{\textbf{L}: Residual plot shows random scatter with no curve --- linear condition met.
+          \textbf{I}: Random sample from a large database; $n = 30 \le 10\%$ of all cars --- independent.
+          \textbf{N}: $n = 30$, which is large enough to invoke the Central Limit Theorem --- normal condition met.
+          \textbf{E}: Residual plot shows roughly constant vertical spread --- equal variance met.
+          \textbf{R}: Cars were randomly selected --- random condition met.}
+
+    \item \ans{$CI: -2.3 \pm 2.048(0.41) = -2.3 \pm 0.840 = (-3.14,\ -1.46)$ mpg per hundred pounds.}
+
+    \item \ans{We are 95\% confident that the true slope of the population regression
+          line relating highway fuel efficiency to curb weight for all cars in the database
+          is between $-3.14$ and $-1.46$ mpg per hundred pounds.}
+
+    \item \ans{Yes. Since 0 is not contained in the interval $(-3.14,\ -1.46)$, this provides
+          evidence that $\beta \ne 0$; there is a negative linear relationship between
+          car weight and fuel efficiency.}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Complete all of Tier A above. Then answer the following.
+
+\begin{enumerate}[label=\alph*., start=6]
+
+    \item \ans{The CI would be wider. The formula $SE_b = s/(s_x\sqrt{n-1})$ shows that a
+          smaller $n$ produces a larger $SE_b$, which increases the margin of error and widens
+          the interval. With $n = 15$, we also lose degrees of freedom, making $t^*$ larger,
+          which further widens the CI.}
+
+    \item \ans{Yes, $-2.0$ is inside the interval $(-3.14,\ -1.46)$, so the manufacturer's
+          claimed value of $\beta = -2.0$ is consistent with the data. The CI does not
+          provide evidence against their claim.}
+
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

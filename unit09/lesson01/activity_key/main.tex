@@ -1,19 +1,117 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.1 — Group Activity (Answer Key)
+%! AP Statistics — Unit 9, Lesson 9.1 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.1}{Group Activity --- Answer Key}
 \namepartnerperiod
 
+\vspace{0.1in}
+\textbf{Is the Slope Real? Exploring Sampling Variability in Regression}
+
+\vspace{0.05in}
+Below are three regression scenarios. In each, a researcher collected data and fit a
+least-squares regression line. Your job: decide whether the observed slope seems
+convincingly different from 0, or whether it could plausibly be due to random variation.
+
+\vspace{0.1in}
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{clccc}
+    \textbf{\#} & \textbf{Context} & \textbf{Explanatory ($x$)} & \textbf{Response ($y$)} & \textbf{$n$, $b$} \\
+    \hline
+    1 & Sunlight and plant growth & hours of sunlight & growth (cm) & $n=200$,\ $b=0.45$ \\
+    2 & Driving and gas use       & miles driven      & gallons used & $n=8$,\ $b=1.2$ \\
+    3 & Shoe size and GPA         & shoe size         & GPA & $n=40$,\ $b=0.03$ \\
+\end{tabular}
+\end{center}
+
 \vspace{0.15in}
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate (Key)},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Scenario 1 only:} $n = 200$,\ $b = 0.45$ (hours of sunlight vs.\ plant growth in cm)
+
+\begin{enumerate}[label=\alph*.]
+
+  \item \ans{For each additional hour of sunlight, the predicted plant growth increases by 0.45 cm.}
+
+        \vspace{0.05in}
+
+  \item \textbf{Very surprising} (circled). \ans{With $n = 200$ observations, a slope of
+        $b = 0.45$ represents a consistent trend across many data points. If $\beta = 0$,
+        it would be very unlikely to observe a slope this large just by chance.}
+
+        \vspace{0.05in}
+
+  \item \ans{If $\beta = 0$, that means hours of sunlight have no real linear effect on
+        plant growth in the population --- knowing the sunlight hours does not help
+        predict plant growth.}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency (Key)},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[label=\alph*.]
+
+  \item Slope interpretations:
+
+        Scenario 1: \ans{For each additional hour of sunlight, the predicted plant growth increases by 0.45 cm.}
+
+        Scenario 2: \ans{For each additional mile driven, the predicted gas used increases by 1.2 gallons.}
+
+        Scenario 3: \ans{For each one-unit increase in shoe size, the predicted GPA increases by 0.03.}
+
+  \item Convincing evidence that $\beta \ne 0$?
+
+        Scenario 1: \ans{Yes --- convincing. The slope $b = 0.45$ is not tiny, and the
+        large sample size ($n = 200$) means sampling variability is low. A slope this far
+        from 0 is unlikely by chance alone.}
+
+        Scenario 2: \ans{Somewhat --- but not convincing. Although $b = 1.2$ seems large,
+        the sample is only $n = 8$. A single unusual observation could drive the slope.
+        High variability with small $n$ means this $b$ could easily occur by chance.}
+
+        Scenario 3: \ans{Not convincing. The slope $b = 0.03$ is very small. Even with
+        $n = 40$, a slope this close to 0 could easily arise from random variation when
+        $\beta = 0$.}
+
+  \item Most confident: \ans{Scenario 1} \quad Least confident: \ans{Scenario 3 (or 2)}
+
+        Reasoning: \ans{Scenario 1 has a moderate slope \emph{and} a large sample --- both
+        factors support convincing evidence. Scenario 3 has a very small slope, so it is
+        hard to distinguish from $\beta = 0$ even at $n = 40$.}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension (Key)},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[label=\alph*., start=4]
+
+  \item \ans{Both the slope magnitude \emph{and} the sample size matter. A large slope
+        from a very small sample ($n = 8$) is less convincing than a moderate slope from
+        a large sample ($n = 200$), because small samples have high sampling variability.
+        An unusual slope from 8 points could easily be driven by one or two atypical
+        observations. With 200 points, that same general trend is much harder to explain
+        by chance alone.}
+
+  \item \ans{Sampling variability always produces non-zero slopes, even when $\beta = 0$.
+        If we drew many random samples from a population with no linear relationship
+        ($\beta = 0$), the sample slopes $b$ would vary around 0 but would almost never
+        equal 0 exactly. So observing $b \ne 0$ tells us nothing by itself --- we need to
+        know how unlikely our specific $b$ would be if $\beta$ truly were 0.}
+
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

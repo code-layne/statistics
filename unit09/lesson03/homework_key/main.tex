@@ -1,19 +1,90 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.3 — Homework (Answer Key)
+%! AP Statistics — Unit 9, Lesson 9.3 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.3}{Homework --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
+\textbf{Directions:} Show all reasoning clearly. When interpreting a CI, include all
+required elements: confidence level, both endpoints with units, and a reference to the
+population.
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}
+
+  \item \textbf{Sleep and GPA.} A random sample of 50 college students was used to study
+        the relationship between average hours of sleep per night ($x$) and GPA ($y$).
+        Computer output gives a 95\% confidence interval for the slope: $(0.08,\ 0.44)$.
+
+        \begin{enumerate}[label=\alph*.]
+
+          \item Interpret the confidence interval in context.
+
+                \ans{We are 95\% confident that the true slope of the population regression
+                line relating GPA to average hours of sleep per night for college students is
+                between 0.08 and 0.44 GPA points per hour of sleep.}
+
+          \item Does this CI provide evidence that $\beta \ne 0$? Justify.
+
+                \ans{Yes. Since 0 is not contained in $(0.08,\ 0.44)$, this provides evidence
+                that $\beta \ne 0$; there is a positive linear relationship between sleep and
+                GPA for college students.}
+
+          \item A professor claims the true slope is $\beta = 0.5$.
+                Is this claim consistent with the interval? Explain.
+
+                \ans{No. Since 0.5 is not contained in $(0.08,\ 0.44)$, the professor's claim
+                that $\beta = 0.5$ is not consistent with the data.}
+
+          \item A colleague claims the true slope is $\beta = 0.2$.
+                Is this claim consistent with the interval? Explain.
+
+                \ans{Yes. Since 0.2 is contained in $(0.08,\ 0.44)$, the colleague's claim
+                that $\beta = 0.2$ is consistent with the data.}
+
+        \end{enumerate}
+
+  \item \textbf{Temperature and Electricity Use.} A researcher collects data from 15 cities
+        on average daily temperature ($^\circ$F, $x$) and monthly electricity usage
+        (kWh, $y$). A 90\% CI for the slope is $(12.3,\ 31.8)$.
+
+        A second researcher repeats the study with 60 cities and obtains a 90\% CI of
+        $(18.1,\ 26.7)$.
+
+        \begin{enumerate}[label=\alph*.]
+
+          \item Interpret the first researcher's CI in context.
+
+                \ans{We are 90\% confident that the true slope of the population regression
+                line relating monthly electricity usage to average daily temperature for cities
+                is between 12.3 and 31.8 kWh per degree Fahrenheit.}
+
+          \item Compare the widths of the two CIs. Which is narrower?
+                Show your calculations.
+
+                \ans{Width of first CI: $31.8 - 12.3 = 19.5$ kWh per $^\circ$F.
+                Width of second CI: $26.7 - 18.1 = 8.6$ kWh per $^\circ$F.
+                The second CI (from the study with $n = 60$ cities) is narrower.}
+
+          \item Explain why the second CI is narrower, using the concept of standard error.
+
+                \ans{The second study used $n = 60$ cities, a larger sample than the first
+                study's $n = 15$ cities. A larger sample size reduces the standard error
+                $SE_b$, which decreases the margin of error $t^* \cdot SE_b$. The result is
+                a narrower confidence interval, all else remaining the same.}
+
+          \item Do both CIs provide evidence that $\beta \ne 0$? Explain.
+
+                \ans{Yes --- both intervals. Since 0 is not contained in either $(12.3,\ 31.8)$
+                or $(18.1,\ 26.7)$, both CIs provide evidence that $\beta \ne 0$; there is a
+                positive linear relationship between daily temperature and monthly electricity
+                usage.}
+
+        \end{enumerate}
+
+\end{enumerate}
 
 \end{document}
