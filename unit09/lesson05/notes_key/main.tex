@@ -1,19 +1,129 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.5 — Guided Notes (Answer Key)
+%! AP Statistics — Unit 9, Lesson 9.5 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.5}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+    \item[$\square$] Calculate the $t$-test statistic for slope using $t = b / SE_b$.
+    \item[$\square$] Interpret the $p$-value of a significance test for slope in context.
+    \item[$\square$] Carry out all four steps of a significance test for slope and state a conclusion.
+    \item[$\square$] Read a regression output table and identify $b$, $SE_b$, $t$, and the $p$-value.
+\end{itemize}
+\end{objectivebox}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{vocabbox}
+\termblanklong{Null hypothesis for slope ($H_0$: $\beta = 0$)}
+\termblanklong{Alternative hypothesis ($H_a$: $\beta \ne 0$)}
+\termblanklong{Test statistic ($t = b / SE_b$)}
+\termblanklong{$p$-value (in context of regression)}
+\termblanklong{Regression output table}
+\termblanklong{LINER conditions}
+\end{vocabbox}
+
+\begin{hookbox}
+A café owner wonders whether outdoor temperature ($x$, in ${}^\circ$F) is linearly
+related to daily iced coffee sales ($y$, number of drinks). She collects data for 18
+randomly selected days and fits a regression line. Her software produces the following
+output:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{lrrrr}
+    \textbf{Predictor} & \textbf{Coef} & \textbf{SE Coef} & \textbf{T} & \textbf{P} \\
+    \hline
+    Constant    & 12.34 & 3.21 & 3.84 & 0.002 \\
+    Temperature &  2.30 & 0.58 & 3.97 & 0.001 \\
+\end{tabular}
+\end{center}
+
+What do the four numbers in the \textit{Temperature} row tell us?
+
+\ans{$b = 2.30$ is the estimated slope; $SE_b = 0.58$ is the standard error of the slope;
+$t = 3.97$ is the test statistic; $p = 0.001$ is the $p$-value for a two-sided test of $\beta = 0$.}
+\end{hookbox}
+
+\begin{notesbox}{Reading a Regression Output Table (VAR-7.I)}
+In a regression output table, the \textbf{slope row} (the predictor row, not Constant)
+contains the key values for inference.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{lcccc}
+    \textbf{Predictor} & \textbf{Coef} & \textbf{SE Coef} & \textbf{T} & \textbf{P} \\
+    \hline
+    Constant   & \ans{$a$} & --- & --- & --- \\
+    \textit{[x variable]} & \ans{$b$} & \ans{$SE_b$} & \ans{$t$} & \ans{$p$-value} \\
+    \multicolumn{5}{l}{\small\itshape $\uparrow$ read $b$ and $SE_b$ from this row} \\
+\end{tabular}
+\end{center}
+
+\vspace{0.05in}
+\textbf{Café Example} ($n = 18$): $b = $ \ans{2.30}, $SE_b = $ \ans{0.58},
+$t = $ \ans{3.97}, $p$-value $= $ \ans{0.001}
+
+\vspace{0.1in}
+Test statistic formula: \quad $t = \dfrac{b}{SE_b}$ \ans{(read $SE_b$ from the slope row of the output)} \qquad
+Degrees of freedom: \quad $df = n - \ans{2}$
+\end{notesbox}
+
+\begin{notesbox}{The 4-Step Significance Test for Slope (VAR-7.I, DAT-3.E/F)}
+
+\textbf{Step 1 — Hypotheses.} Define $\beta$ in words, then state:
+
+\quad H$_0$: $\beta = $ \ans{0} \quad (no linear relationship)
+
+\quad H$_a$: $\beta \ne $ \ans{0} \quad (there is a linear relationship)
+
+\vspace{0.12in}
+\textbf{Step 2 — Conditions (LINER).}
+\begin{itemize}
+    \item \textbf{L}inear: \ans{The true relationship between $x$ and $y$ is linear (check residual plot).}
+    \item \textbf{I}ndependent: \ans{Observations are independent; if sampling without replacement, $n \le 10\%$ of $N$.}
+    \item \textbf{N}ormal: \ans{Residuals are approximately normally distributed (check histogram/normal plot of residuals).}
+    \item \textbf{E}qual variance: \ans{The standard deviation of $y$ is the same for all values of $x$ (check residual plot for constant spread).}
+    \item \textbf{R}andom: \ans{Data come from a random sample or randomized experiment.}
+\end{itemize}
+
+\vspace{0.12in}
+\textbf{Step 3 — Test Statistic \& $p$-value.}
+
+\quad $t = \dfrac{b}{SE_b} = \dfrac{\ans{2.30}}{\ans{0.58}} = \ans{3.97}$
+\qquad $df = \ans{16}$ \qquad $p$\text{-value} $= \ans{0.001}$ (from output)
+
+\vspace{0.12in}
+\textbf{Step 4 — Conclusion.}
+
+Since $p$ \ans{$<$} $\alpha$, we \ans{reject} H$_0$.
+There \ans{is} convincing evidence that the true slope $\beta$ \ans{$\ne$} $0$.
+
+\end{notesbox}
+
+\begin{notesbox}{Worked Example: Iced Coffee Sales (All 4 Steps)}
+
+\textbf{Step 1.} Let $\beta = $ \ans{the true slope of the population regression line relating daily iced coffee sales to outdoor temperature.}
+
+\quad H$_0$: \ans{$\beta = 0$} \quad H$_a$: \ans{$\beta \ne 0$}
+
+\vspace{0.1in}
+\textbf{Step 2.} LINER conditions: \ans{Random --- days were randomly selected. Linear --- assume residual plot shows no curved pattern. Independent --- 18 days $\le 10\%$ of all possible days. Normal --- assume residuals approximately normal. Equal variance --- assume constant spread in residual plot.}
+
+\vspace{0.05in}
+\textbf{Step 3.} $t = \dfrac{\ans{2.30}}{\ans{0.58}} = \ans{3.97}$
+\quad $df = 18 - 2 = \ans{16}$ \quad $p = \ans{0.001}$ (from output)
+
+\vspace{0.1in}
+\textbf{Step 4.} Since $p = 0.001 $ \ans{$<$} $0.05$, we \ans{reject} H$_0$.
+
+\ans{There is convincing evidence that the true slope of the population regression line
+relating daily iced coffee sales to outdoor temperature for this café is not zero.}
+
 \end{notesbox}
 
 \end{document}

@@ -1,19 +1,81 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.5 — Homework
+%! AP Statistics — Unit 9, Lesson 9.5 — Homework
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.5}{Homework}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
+\textbf{Directions:} For each problem, carry out a significance test for slope as directed.
+Show all work clearly.
 
-% TODO: author the Homework. See references/components.md for the expected structure.
-\begin{notesbox}{Homework}
-\writelines{4}
-\end{notesbox}
+\begin{enumerate}
+
+  \item \textbf{Age and Running Speed.} A sports scientist studies the relationship between
+        age (years, $x$) and maximum running speed (mph, $y$) in adult recreational runners
+        (random sample, $n = 28$).
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{lrrrr}
+            \textbf{Predictor} & \textbf{Coef} & \textbf{SE Coef} & \textbf{T} & \textbf{P} \\
+            \hline
+            Constant & 12.8 & 1.2   & 10.67 & 0.000 \\
+            Age      & $-0.12$ & 0.037 & $-3.24$ & 0.003 \\
+        \end{tabular}
+        \end{center}
+
+        \begin{enumerate}[label=\alph*.]
+          \item State H$_0$ and H$_a$ in terms of $\beta$. Define $\beta$ in context.
+
+                \writelines{3}
+
+          \item Identify the test statistic from the output and verify it by calculation.
+                Assume LINER conditions are met.
+
+                $t = \dfrac{b}{SE_b} = \dfrac{\blank{2cm}}{\blank{2cm}} = \blank{2cm}$
+
+                \vspace{0.05in}
+                $df = n - 2 = \blank{2cm}$
+
+          \item Interpret the $p$-value in context.
+                \writelines{3}
+
+          \item State a conclusion at $\alpha = 0.05$. Does the data provide evidence that
+                age is linearly related to maximum running speed?
+                \writelines{3}
+        \end{enumerate}
+
+  \item \textbf{Absences and Course Grade.} A researcher examines how the number of absences
+        ($x$) relates to final course grade ($\%$, $y$) in an introductory statistics course
+        (random sample, $n = 35$). Assume LINER conditions are met.
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{lrrrr}
+            \textbf{Predictor} & \textbf{Coef} & \textbf{SE Coef} & \textbf{T} & \textbf{P} \\
+            \hline
+            Constant  & 91.4 & 2.3  & 39.74 & 0.000 \\
+            Absences  & $-2.3$ & 0.54 & $-4.26$ & 0.000 \\
+        \end{tabular}
+        \end{center}
+
+        \begin{enumerate}[label=\alph*.]
+          \item Carry out a complete 4-step significance test at $\alpha = 0.05$.
+                \writelines{10}
+
+          \item Construct a 95\% confidence interval for $\beta$ using $t^* = 2.035$
+                ($df = 33$). Show your work.
+                \writelines{3}
+
+          \item Explain why the confidence interval and the hypothesis test give
+                consistent conclusions.
+                \writelines{3}
+        \end{enumerate}
+
+\end{enumerate}
 
 \end{document}

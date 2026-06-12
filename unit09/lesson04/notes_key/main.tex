@@ -1,19 +1,78 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.4 — Guided Notes (Answer Key)
+%! AP Statistics — Unit 9, Lesson 9.4 — Guided Notes (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.4}{Guided Notes --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\begin{objectivebox}
+By the end of this lesson, I will be able to:
+\begin{itemize}
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+    \item[$\square$] \writeline
+\end{itemize}
+\end{objectivebox}
 
-% TODO: copy the blank Guided Notes verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Guided Notes --- Key}
-\ansline{TODO: answer}
+\begin{vocabbox}
+\termblanklong{$t$-test for slope}
+\termblanklong{Null hypothesis for slope ($H_0$: $\beta = 0$)}
+\termblanklong{Alternative hypothesis for slope ($H_a$)}
+\termblanklong{$\beta_0$ (hypothesized slope value)}
+\termblanklong{LINER conditions}
+\end{vocabbox}
+
+\begin{hookbox}
+A researcher believes that elevation predicts average annual temperature for mountain
+towns. She fits a regression line to data from $n = 18$ towns. Before running any
+significance test, what three things does she need to set up?
+
+\ans{(1) Name the procedure: $t$-test for slope. (2) State H$_0$ and H$_a$ in terms
+of $\beta$. (3) Verify the LINER conditions.}
+\end{hookbox}
+
+\begin{notesbox}{Naming the Procedure and Stating Hypotheses (VAR-7.J/K)}
+The appropriate procedure is a \ans{$t$-test} for slope.
+
+\vspace{0.1in}
+\textbf{Hypotheses} (always in terms of $\beta$, the \ans{population} slope):
+
+\begin{itemize}
+    \item H$_0$: $\beta = $ \ans{0} \quad (no linear relationship)
+    \item H$_a$: $\beta$ \ans{$\ne$} 0 \; (two-sided) \quad OR \quad
+          $\beta$ \ans{$>$} 0 \quad OR \quad $\beta$ \ans{$<$} 0
+\end{itemize}
+
+\vspace{0.05in}
+\textit{Note:} Hypotheses are about $\beta$ (the \ans{population} slope),
+not $b$ (the \ans{sample} slope).
+
+\vspace{0.05in}
+The hypothesized value $\beta_0 = 0$ because: \ans{we are testing whether there is
+any linear relationship at all; $\beta = 0$ means no linear relationship exists.}
+\end{notesbox}
+
+\begin{notesbox}{LINER Conditions (VAR-7.L)}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{clX}
+    \textbf{Letter} & \textbf{What It Means} & \textbf{How to Verify} \\
+    \hline
+    L & Linear relationship & Residual plot: \ans{random scatter, no curve} \\
+    I & Independent observations & Random sample; $n \le$ \ans{10}$\%\cdot N$ \\
+    N & Normal $y$-values & Residual \ans{histogram} or $n >$ \ans{30} \\
+    E & Equal variance ($\sigma_y$ constant) & Residual plot: \ans{constant/equal spread} \\
+    R & Random data source & \ans{random sample or randomized experiment} \\
+\end{tabularx}
+
+\vspace{0.1in}
+\textbf{Practice Check:} ``A random sample of 30 students'' --- which conditions
+can you verify from this statement alone? Which require the residual plot?
+
+\ans{R (random sample) and I (10\% condition) can be checked from the statement;
+L, N, and E require the residual plot.}
 \end{notesbox}
 
 \end{document}

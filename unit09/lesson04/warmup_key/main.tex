@@ -1,8 +1,7 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.4 — Warm-Up (Answer Key)
+%! AP Statistics — Unit 9, Lesson 9.4 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
@@ -11,9 +10,34 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+A 95\% confidence interval for the slope $\beta$ relating study hours ($x$) to
+exam score ($y$) for students at one school was computed as $(0.03,\ 0.21)$ points
+per additional hour of study.
+
+\begin{enumerate}
+
+  \item Does this confidence interval provide evidence that $\beta \ne 0$? Justify.
+
+        \ans{Yes. Since 0 is not in the interval $(0.03,\ 0.21)$, the CI provides
+        evidence that $\beta \ne 0$; there is a positive linear relationship between
+        study hours and exam score.}
+
+  \item What does $\beta = 0$ mean in context?
+
+        \ans{$\beta = 0$ means that in the population, studying more hours has no
+        linear effect on exam score --- there is no real linear relationship between
+        study time and score.}
+
+  \item A researcher now wants to formally \textbf{test} whether $\beta = 0$ using a
+        significance test rather than a confidence interval.
+        What would H$_0$ and H$_a$ be?
+
+        H$_0$: \ans{$\beta = 0$ (no linear relationship between study hours and exam score)}
+
+        \vspace{0.05in}
+
+        H$_a$: \ans{$\beta \ne 0$ (there is a linear relationship between study hours and exam score)}
+
+\end{enumerate}
 
 \end{document}

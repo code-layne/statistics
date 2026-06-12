@@ -1,8 +1,7 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.1 — Warm-Up (Answer Key)
+%! AP Statistics — Unit 9, Lesson 9.1 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
@@ -11,9 +10,49 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+A researcher records the number of hours students studied ($x$) and their score
+on a statistics exam ($y$) for a random sample of 30 students. The LSRL is:
+\[
+    \hat{y} = 48.3 + 4.2x
+\]
+
+\begin{enumerate}
+
+  \item Identify the slope and $y$-intercept of the LSRL. Interpret the
+        \textbf{slope} in context.
+
+        Slope: \ans{4.2} \quad $y$-intercept: \ans{48.3}
+
+        \vspace{0.05in}
+        Interpretation: \ans{For each additional hour studied, the predicted exam score
+        increases by 4.2 points.}
+
+        \vspace{0.1in}
+
+  \item Use the LSRL to predict the exam score for a student who studied
+        for 5 hours. Show your calculation.
+
+        \vspace{0.05in}
+        $\hat{y} = 48.3 + 4.2($\ans{5}$) = $ \ans{69.3}
+
+        \vspace{0.1in}
+
+  \item The slope $b = 4.2$ comes from one sample of 30 students. If we took a
+        different random sample of 30 students from the same population, would
+        we get exactly $b = 4.2$ again? What does this suggest about the
+        relationship between the sample slope and the population slope $\beta$?
+
+        \ansline{No --- a different sample would likely produce a different slope.
+        This means $b$ is a statistic that varies from sample to sample, just like
+        $\bar{x}$ or $\hat{p}$. The true population slope $\beta$ is a fixed (but
+        unknown) parameter; $b$ is our sample estimate of it.}
+
+\end{enumerate}
+
+\begin{teachernote}
+    Key takeaway: students should leave the warm-up recognizing that $b$ is a
+    sample statistic with sampling variability. The central question of Unit 9 ---
+    whether $\beta$ could be 0 --- follows naturally from this idea.
+\end{teachernote}
 
 \end{document}

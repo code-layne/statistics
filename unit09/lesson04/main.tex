@@ -1,12 +1,11 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.4 — Lesson Plan
+%! AP Statistics — Unit 9, Lesson 9.4 — Lesson Plan
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\usepackage{graphicx}   % -article does NOT load graphicx; needed for thumbnails/screenshots
+\usepackage{graphicx}
 \graphicspath{{images/}}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
-\newcommand{\UnitNumberName}{Unit 9: TODO: Unit Title \quad}
-\newcommand{\LessonNumberName}{Lesson 9.4: TODO: Lesson Title}
+\newcommand{\UnitNumberName}{Unit 9: Inference for Quantitative Data: Slopes \quad}
+\newcommand{\LessonNumberName}{Lesson 9.4: Setting Up a Test for the Slope of a Regression Model}
 
 \begin{document}
 \begin{center}
@@ -16,54 +15,215 @@
 
 \begin{tcolorbox}[colback=sky, colframe=navy, boxrule=0.9pt, arc=2mm,
     left=2mm, right=2mm, top=1.5mm, bottom=1.5mm]
-    \textbf{Primary Objective:} TODO --- restate the lesson aim in student terms.
-    % For AP courses append the governing big idea, e.g. (Big Idea: VAR)
+    \textbf{Primary Objective:} Students will identify the $t$-test for slope as the
+    appropriate procedure for testing a claim about the slope $\beta$ of a population
+    regression line, state H$_0$ and H$_a$ in terms of $\beta$, and verify the LINER
+    conditions. (Big Idea: VAR)
 \end{tcolorbox}
 
 \renewcommand{\arraystretch}{1.6}
 \begin{skillbox}[Priority Ideas \& Skills]{goldbox}
-    % TODO: left minipage = priority skills (AP Skill x.y for AP courses);
-    %       right minipage = Key Understandings (paraphrased from EKs).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP Skills Addressed}
+    \begin{itemize}
+        \item Identify the $t$-test for slope as the appropriate procedure when testing
+              a claim about $\beta$ (Skill 1.E; VAR-7.J).
+        \item State H$_0$ and H$_a$ in terms of $\beta$ for a $t$-test for slope
+              (Skill 1.F; VAR-7.K).
+        \item Verify the LINER conditions for inference about slope (Skill 4.C).
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Key Understandings}
+    \begin{itemize}
+        \item Hypotheses are written in terms of $\beta$ (population slope), not $b$
+              (sample slope).
+        \item H$_0$: $\beta = 0$ means no linear relationship exists in the population.
+        \item The LINER acronym summarizes five conditions: Linear, Independent, Normal,
+              Equal variance, Random.
+        \item Residual plots are the primary tool for checking L, N, and E.
+        \item A $t$-test for slope parallels the $t$-test for a mean: same distribution
+              family, same logic for hypotheses and conditions.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[{Vocabulary, Concepts, \& Theorems}]{greenbox}
-    % TODO: key terms + definitions for this lesson.
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{lX}
+    \textbf{$t$-test for slope} &
+        An inference procedure that tests whether the true slope $\beta$ of a population
+        regression line equals a specified value $\beta_0$ (usually 0) (VAR-7.J.1) \\
+    \textbf{Null hypothesis for slope} &
+        H$_0$: $\beta = \beta_0$ (most commonly $\beta_0 = 0$, i.e.\ no linear
+        relationship) (VAR-7.K.1) \\
+    \textbf{Alternative hypothesis for slope} &
+        H$_a$: $\beta \ne \beta_0$, $\beta > \beta_0$, or $\beta < \beta_0$
+        (usually $\ne$ on the AP exam) (VAR-7.K.1) \\
+    \textbf{$\beta_0$ (hypothesized value)} &
+        The value of $\beta$ specified in H$_0$; almost always 0 in AP Statistics \\
+    \textbf{LINER conditions} &
+        Linear, Independent, Normal, Equal variance, Random --- five conditions
+        required for valid inference about the slope of a regression model \\
+    \textbf{Residual plot} &
+        A scatterplot of residuals vs.\ fitted (or explanatory) values; used to
+        check the L, N, and E conditions \\
+\end{tabularx}
 \end{skillbox}
 
 \begin{skillbox}[Activate Prior Knowledge \& Spiral Review]{sky}
-    \begin{minipage}[t]{0.48\linewidth}
-        % TODO: prior knowledge bullets (Units/lessons reviewed)
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.48\linewidth}
-            % TODO: spiral-review thumbnail. Authored warm-ups compile to
-            % target/, so leave this text-only (as in AP Stats) unless you
-            % keep a source PDF in the warmup/ directory to embed.
-        % TODO: connections forward (upcoming lessons)
-    \end{minipage}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Prior Knowledge Check (3--4 min)}
+    \begin{itemize}
+        \item Lesson 9.2: the LINER conditions for a confidence interval for slope
+              (same conditions apply to the significance test).
+        \item Lesson 9.3: using a CI to make a claim --- if 0 is not captured, there
+              is evidence $\beta \ne 0$ --- previews formal test logic.
+        \item Unit 7 ($t$-tests for means): H$_0$: $\mu = \mu_0$; H$_a$: $\mu \ne \mu_0$;
+              slope replaces mean as the parameter.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Connections Forward}
+    \begin{itemize}
+        \item Computing the $t$-statistic and $p$-value for slope $\to$ Lesson 9.5
+        \item Drawing conclusions; full four-step procedure $\to$ Lesson 9.6
+        \item Reading computer output for regression inference $\to$ Lesson 9.5
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Hook]{sky}
-    % TODO: the engaging entry question / scenario.
+\begin{skillbox}[Hook \& Lesson]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Hook (5--7 min)}\\
+    Display: ``A researcher records elevation (m) and average annual temperature
+    ($^\circ$C) for 18 mountain towns and fits a regression line:
+    $\hat{y} = 22.4 - 0.0065x$.''\\[4pt]
+    Ask: ``She wants to know if elevation \emph{really} predicts temperature in the
+    population, or if $b = -0.0065$ could be sampling variability.''\\[4pt]
+    Discuss: What three things must she set up before computing anything?
+    (Name the procedure, state H$_0$/H$_a$, verify conditions.)
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Lesson Flow (15 min)}
+    \begin{enumerate}
+        \item Name the procedure: $t$-test for slope. When is it appropriate?
+        \item State H$_0$ and H$_a$ in terms of $\beta$, not $b$.
+              H$_0$: $\beta = 0$; H$_a$: $\beta \ne 0$ (most common on AP).
+        \item Unpack LINER --- model each letter with the elevation/temperature context.
+        \item Practice check: which conditions can be verified from context alone vs.\
+              which require the residual plot?
+    \end{enumerate}
+\end{minipage}
 \end{skillbox}
 
-\begin{skillbox}[Lesson]{sky}
-    % TODO: instructional walkthrough. Use \begin{multicols}{2} for density.
-\end{skillbox}
-
-\begin{skillbox}[Active Monitoring]{redbox}
-    % TODO: what to circulate and check for; cold-call prompts.
+\begin{skillbox}[Explicit Instruction \& Active Monitoring]{sky}
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{LINER Checklist}
+    \begin{itemize}
+        \item \textbf{L (Linear):} Residual plot shows random scatter, no curve.
+        \item \textbf{I (Independent):} Random sample or experiment; $n \le 10\%N$
+              if sampling without replacement.
+        \item \textbf{N (Normal):} Residual histogram approximately bell-shaped,
+              or $n > 30$.
+        \item \textbf{E (Equal variance):} Residual plot shows roughly constant spread
+              across all $x$ values.
+        \item \textbf{R (Random):} Data from a random sample or randomized experiment.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Common Errors to Address}
+    \begin{itemize}
+        \item Writing H$_0$: $b = 0$ instead of H$_0$: $\beta = 0$.
+        \item Checking linearity from the original scatterplot instead of the
+              \emph{residual} plot.
+        \item Forgetting to state the 10\% condition for I.
+    \end{itemize}
+    \textbf{Cold-Call Prompts}
+    \begin{itemize}
+        \item ``Why do we write $\beta$ in the hypotheses, not $b$?''
+        \item ``Which LINER letters require the residual plot? Which can you check
+              from context alone?''
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Group Work \& Differentiation]{redbox}
-    % TODO: Tier R / Tier A / Tier E (mirror activity/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Partner Activity (10--12 min)}\\
+    Two scenarios (fiber intake/LDL cholesterol; square footage/sale price). Students
+    name the test, define $\beta$ in context, state H$_0$/H$_a$, and verify LINER
+    conditions from the given information. Three tiers with increasing autonomy.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Differentiation}
+    \begin{itemize}
+        \item \textit{Support (Tier R)}: Scenario 1 only; sentence frames for
+              defining $\beta$; condition checklist with yes/no/N/A choices.
+        \item \textit{On-grade (Tier A)}: Both scenarios; write full hypotheses and
+              condition justifications.
+        \item \textit{Extension (Tier E)}: Add one-sided vs.\ two-sided reasoning
+              and argue why two-sided is generally preferred.
+        \item \textit{ELL}: Vocabulary card --- ``slope / pendiente,''
+              ``residual / residuo,'' ``population / poblaci\'{o}n.''
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Individual Work \& Assessment]{redbox}
-    % TODO: exit-ticket summary + assessment note (mirror exit_ticket/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Exit Ticket (5 min)}\\
+    Context: 35 students, extracurricular hours ($x$) vs.\ GPA ($y$).
+    \begin{enumerate}
+        \item Name the appropriate inference procedure and justify.
+        \item State H$_0$ and H$_a$ in terms of $\beta$; define $\beta$ in context.
+        \item Verify LINER conditions given: random scatter in residual plot, equal
+              spread, approximately normal residuals, school $N > 350$.
+    \end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{AP-Style Formative Check}\\
+    \textit{A researcher fits a regression line to data from a random sample of 25
+    adults (age vs.\ resting heart rate) and wants to test whether age is a
+    significant linear predictor of heart rate. Which is the correct null hypothesis?}
+    \begin{enumerate}[label=(\Alph*)]
+        \item H$_0$: $b = 0$
+        \item H$_0$: $r = 0$
+        \item H$_0$: $\beta = 0$
+        \item H$_0$: $\mu = 0$
+    \end{enumerate}
+    Answer: (C)
+\end{minipage}
 \end{skillbox}
 
 \begin{skillbox}[Reinforcement \& Extension]{goldbox}
-    % TODO: homework overview + extension + preview of next lesson (mirror homework/).
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Homework / Practice}
+    \begin{itemize}
+        \item Problem 1: Social media hours vs.\ GPA --- name procedure, state
+              hypotheses, verify LINER conditions, identify the one condition that
+              cannot be fully verified from the given information.
+        \item Problem 2: Three contexts requiring H$_0$/H$_a$ and interpretation
+              of $\beta = 0$, including one one-sided scenario.
+    \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+    \textbf{Extension / Preview}
+    \begin{itemize}
+        \item \textit{Extension}: Why is it problematic to choose a one-sided
+              alternative after seeing the data? (Discuss data snooping.)
+        \item \textit{Preview}: Lesson 9.5 computes the $t$-statistic
+              $t = \dfrac{b - \beta_0}{SE_b}$ and finds the $p$-value using
+              the $t$-distribution with $df = n - 2$.
+    \end{itemize}
+\end{minipage}
 \end{skillbox}
+
 \end{document}

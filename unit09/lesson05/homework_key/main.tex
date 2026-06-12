@@ -1,19 +1,109 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.5 — Homework (Answer Key)
+%! AP Statistics — Unit 9, Lesson 9.5 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.5}{Homework --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
+\textbf{Directions:} For each problem, carry out a significance test for slope as directed.
+Show all work clearly.
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}
+
+  \item \textbf{Age and Running Speed.} A sports scientist studies the relationship between
+        age (years, $x$) and maximum running speed (mph, $y$) in adult recreational runners
+        (random sample, $n = 28$).
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{lrrrr}
+            \textbf{Predictor} & \textbf{Coef} & \textbf{SE Coef} & \textbf{T} & \textbf{P} \\
+            \hline
+            Constant & 12.8 & 1.2   & 10.67 & 0.000 \\
+            Age      & $-0.12$ & 0.037 & $-3.24$ & 0.003 \\
+        \end{tabular}
+        \end{center}
+
+        \begin{enumerate}[label=\alph*.]
+          \item State H$_0$ and H$_a$ in terms of $\beta$. Define $\beta$ in context.
+
+                \ans{Let $\beta =$ the true slope of the population regression line relating
+                maximum running speed to age for adult recreational runners.\\[3pt]
+                H$_0$: $\beta = 0$ \quad H$_a$: $\beta \ne 0$}
+
+          \item Identify the test statistic from the output and verify it by calculation.
+                Assume LINER conditions are met.
+
+                $t = \dfrac{b}{SE_b} = \dfrac{{\color{keyred}\mathbf{-0.12}}}{{\color{keyred}\mathbf{0.037}}} = \ans{-3.24}$
+
+                \vspace{0.05in}
+                $df = n - 2 = \ans{26}$
+
+                \ans{The calculated value $t = -3.24$ matches the value in the output table.}
+
+          \item Interpret the $p$-value in context.
+
+                \ans{Assuming the true slope is 0 (no linear relationship between age and
+                maximum running speed), there is a 0.003 probability of obtaining a sample
+                slope as extreme as $b = -0.12$ mph per year just by chance.}
+
+          \item State a conclusion at $\alpha = 0.05$.
+
+                \ans{Since $p = 0.003 < 0.05 = \alpha$, we reject H$_0$. There is convincing
+                evidence that the true slope of the population regression line relating maximum
+                running speed to age for adult recreational runners is not zero. The data support
+                the claim that age is linearly related to maximum running speed.}
+        \end{enumerate}
+
+  \item \textbf{Absences and Course Grade.} A researcher examines how the number of absences
+        ($x$) relates to final course grade ($\%$, $y$) in an introductory statistics course
+        (random sample, $n = 35$). Assume LINER conditions are met.
+
+        \begin{center}
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{lrrrr}
+            \textbf{Predictor} & \textbf{Coef} & \textbf{SE Coef} & \textbf{T} & \textbf{P} \\
+            \hline
+            Constant  & 91.4 & 2.3  & 39.74 & 0.000 \\
+            Absences  & $-2.3$ & 0.54 & $-4.26$ & 0.000 \\
+        \end{tabular}
+        \end{center}
+
+        \begin{enumerate}[label=\alph*.]
+          \item Carry out a complete 4-step significance test at $\alpha = 0.05$.
+
+                \ans{\textbf{Step 1 --- Hypotheses.} Let $\beta =$ the true slope of the
+                population regression line relating final course grade to number of absences
+                for students in intro statistics. H$_0$: $\beta = 0$; H$_a$: $\beta \ne 0$.\\[3pt]
+                \textbf{Step 2 --- Conditions.} LINER conditions are assumed to be met.
+                The data come from a random sample.\\[3pt]
+                \textbf{Step 3 --- Test Statistic \& $p$-value.}
+                $t = -4.26$, $df = 33$, $p \approx 0.000$ (from output).\\[3pt]
+                \textbf{Step 4 --- Conclusion.} Since $p \approx 0 < 0.05 = \alpha$, we
+                reject H$_0$. There is convincing evidence that the true slope of the
+                population regression line relating final course grade to number of absences
+                for intro statistics students is not zero.}
+
+          \item Construct a 95\% confidence interval for $\beta$ using $t^* = 2.035$
+                ($df = 33$). Show your work.
+
+                \ans{$b \pm t^* \cdot SE_b = -2.3 \pm 2.035(0.54) = -2.3 \pm 1.099
+                = (-3.40,\ -1.20)$}
+
+          \item Explain why the confidence interval and the hypothesis test give
+                consistent conclusions.
+
+                \ans{Zero is not contained in the 95\% CI $(-3.40,\ -1.20)$. This is
+                consistent with rejecting H$_0$: $\beta = 0$ at $\alpha = 0.05$. Both
+                procedures agree that $\beta \ne 0$; the interval further indicates that
+                the true slope is negative (each additional absence is associated with a
+                decrease in course grade).}
+        \end{enumerate}
+
+\end{enumerate}
 
 \end{document}

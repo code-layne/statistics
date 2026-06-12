@@ -1,19 +1,115 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.6 — Group Activity
+%! AP Statistics — Unit 9, Lesson 9.6 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.6}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
+\textbf{Inference Procedure Identification --- 8 Scenarios}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\textbf{Directions:} Read each scenario. Classify the data and identify the correct inference
+procedure at your tier. Work with your group and use the decision framework from notes.
+
+\vspace{0.1in}
+
+\textbf{Scenarios:}
+\begin{enumerate}[itemsep=4pt]
+  \item A researcher records whether each of 80 randomly selected college students owns a car
+        (yes/no). She wants to \textit{estimate} the proportion who own cars.
+  \item A school surveys 120 students and records their preferred lunch option (pizza, salad,
+        pasta, other). She wants to test whether the four options are equally popular.
+  \item A researcher randomly assigns 40 patients to medication A or medication B and records
+        recovery time (days) for each. She tests whether the two medications differ in mean
+        recovery time.
+  \item 50 pairs of identical twins are studied; one twin from each pair exercises 5+ hours per
+        week and the other exercises less. The researcher records reaction time for each twin
+        and tests whether exercise is associated with faster reaction time.
+  \item A political scientist randomly surveys 300 voters in two cities (150 from each) and
+        records party affiliation (Democrat, Republican, Independent). She tests whether the
+        party affiliation distribution is the same in both cities.
+  \item A nutritionist records daily sugar intake (g, $x$) and body fat percentage (\%, $y$)
+        for a random sample of 35 adults. She wants to \textit{estimate} the true slope $\beta$.
+  \item A researcher surveys 200 people and records education level (HS, Some College,
+        Bachelor's, Graduate) and income category (Low, Middle, High) to test whether
+        education and income are associated.
+  \item A sports scientist randomly samples 60 high school athletes and records their resting
+        heart rate (bpm). She wants to test whether the mean resting heart rate differs from
+        the national average of 72 bpm.
+\end{enumerate}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Complete the table for \textbf{Scenarios 1--4} using the decision framework and reference table
+from your notes.
+
+\vspace{0.1in}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} c X X X c @{}}
+  \rowcolor{sky}
+  \textbf{\#} & \textbf{Categorical or Quantitative?} & \textbf{Groups / Structure} & \textbf{Procedure Name} & \textbf{CI or Test?} \\
+  \hline
+  1 & & & & \\
+  2 & & & & \\
+  3 & & & & \\
+  4 & & & & \\
+\end{tabularx}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Complete the table for \textbf{all 8 scenarios} without a reference table.
+
+\vspace{0.1in}
+\renewcommand{\arraystretch}{2.0}
+\begin{tabularx}{\linewidth}{@{} c X X X c @{}}
+  \rowcolor{sky}
+  \textbf{\#} & \textbf{Categorical or Quantitative?} & \textbf{Groups / Structure} & \textbf{Procedure Name} & \textbf{CI or Test?} \\
+  \hline
+  1 & & & & \\
+  2 & & & & \\
+  3 & & & & \\
+  4 & & & & \\
+  5 & & & & \\
+  6 & & & & \\
+  7 & & & & \\
+  8 & & & & \\
+\end{tabularx}
+
+\vspace{0.1in}
+Then, for scenarios \textbf{1}, \textbf{3}, and \textbf{6}, state the parameter being estimated
+or the hypotheses being tested.
+
+\vspace{0.05in}
+\textbf{Scenario 1} --- \writeline
+\textbf{Scenario 3} --- \writeline
+\textbf{Scenario 6} --- \writeline
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Complete all of Tier A above. Then answer the following.
+
+\vspace{0.08in}
+\textbf{Bonus 1.} For Scenario 4 (identical twins), explain why a \textit{paired} $t$-test is
+more appropriate than a \textit{2-sample} $t$-test.
+\writelines{3}
+
+\textbf{Bonus 2.} Scenarios 5 and 7 both involve two categorical variables, yet they use
+different chi-square procedures. Explain the key difference between a chi-square test for
+\textit{homogeneity} and a chi-square test for \textit{independence}.
+\writelines{3}
+\end{tcolorbox}
 
 \end{document}

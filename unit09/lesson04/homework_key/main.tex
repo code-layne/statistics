@@ -1,19 +1,84 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.4 — Homework (Answer Key)
+%! AP Statistics — Unit 9, Lesson 9.4 — Homework (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.4}{Homework --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: copy the blank Homework verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Homework --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\textbf{Problem 1.} A random sample of 28 college students was surveyed. The
+explanatory variable is hours per week spent on social media ($x$) and the response
+variable is GPA ($y$). A residual plot shows random scatter with no curve and constant
+spread. The residuals appear approximately normal.
+
+\begin{enumerate}[label=\alph*.]
+
+  \item Name the appropriate inference procedure.
+
+        \ans{$t$-test for slope}
+
+  \item Define $\beta$ in context and state H$_0$ and H$_a$.
+
+        $\beta = $ \ans{the true slope of the population regression line relating GPA
+        to hours per week on social media for college students}
+
+        H$_0$: \ans{$\beta = 0$} \quad H$_a$: \ans{$\beta \ne 0$}
+
+  \item Verify each LINER condition:
+
+        \ans{L: Met --- residual plot shows random scatter with no curve.
+        I: Met --- random sample stated; need to assume the college population is at
+        least $10 \times 28 = 280$ students (10\% condition).
+        N: Met --- residuals approximately normal.
+        E: Met --- residual plot shows constant spread.
+        R: Met --- random sample stated.}
+
+  \item \ans{The 10\% condition for I cannot be fully verified without knowing the
+        total size of the college student population. If the college has fewer than
+        280 students, the condition would not be met.}
+
+\end{enumerate}
+
+\vspace{0.1in}
+
+\textbf{Problem 2.}
+
+\begin{enumerate}[label=\alph*.]
+
+  \item H$_0$: \ans{$\beta = 0$ (rainfall has no linear effect on umbrella sales)}
+
+        H$_a$: \ans{$\beta \ne 0$ (rainfall is linearly related to umbrella sales)}
+
+        $\beta = 0$ means: \ans{daily rainfall has no linear effect on umbrella
+        sales in the population.}
+
+  \item H$_0$: \ans{$\beta = 0$}
+
+        H$_a$: \ans{$\beta > 0$ (one-sided: older runners take longer)}
+        (also accept $\beta \ne 0$ as a two-sided alternative)
+
+        $\beta = 0$ means: \ans{age has no linear effect on marathon finish time
+        in the population.}
+
+  \item H$_0$: \ans{$\beta = 0$}
+
+        H$_a$: \ans{$\beta < 0$ (one-sided: larger classes score lower)}
+
+        $\beta = 0$ means: \ans{class size has no linear effect on average exam
+        score in the population.}
+
+\end{enumerate}
+
+\begin{teachernote}
+For Problem 2b, the question says the researcher ``considers'' a one-sided test.
+Accept either $\beta > 0$ (one-sided) or $\beta \ne 0$ (two-sided). The one-sided
+alternative is appropriate only if the researcher committed to it before seeing the
+data. For Problem 2c, note that the teacher's claim involves $\beta < -1$, but AP
+convention tests H$_0$: $\beta = 0$; accept H$_a$: $\beta < 0$ as a valid simplification.
+\end{teachernote}
 
 \end{document}

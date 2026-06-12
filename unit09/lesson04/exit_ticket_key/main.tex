@@ -1,19 +1,58 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.4 — Exit Ticket (Answer Key)
+%! AP Statistics — Unit 9, Lesson 9.4 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.4}{Exit Ticket --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+A school researcher randomly selects 35 students and records the average number of
+hours per week they spend on extracurricular activities ($x$) and their GPA ($y$).
+She wants to test whether extracurricular time is linearly related to GPA.
+
+\begin{enumerate}
+
+  \item Name the appropriate inference procedure and justify your choice.
+
+        \ans{A $t$-test for slope, because we have one quantitative explanatory
+        variable ($x$ = extracurricular hours) and one quantitative response variable
+        ($y$ = GPA) and want to test whether the true slope of the population
+        regression line differs from zero.}
+
+  \item State H$_0$ and H$_a$ in terms of $\beta$. Define $\beta$ in context.
+
+        H$_0$: \ans{$\beta = 0$; there is no linear relationship between extracurricular
+        time and GPA in the population.}
+
+        \vspace{0.05in}
+
+        H$_a$: \ans{$\beta \ne 0$; there is a linear relationship between extracurricular
+        time and GPA in the population.}
+
+        \vspace{0.05in}
+
+        $\beta = $ \ans{the true slope of the population regression line relating GPA
+        to hours of extracurricular activities per week for students at this school}
+
+  \item Which LINER conditions are met?
+
+        \ans{L: Met --- residual plot shows random scatter (no curve).
+        I: Met --- random sample; $n = 35 \le 10\% \times 350 = 35$, so 10\% condition
+        is met (borderline).
+        N: Met --- residuals approximately normal.
+        E: Met --- residual plot shows roughly equal spread.
+        R: Met --- random sample stated.}
+
+\end{enumerate}
+
+\begin{teachernote}
+For condition I, $n = 35$ and $N > 350$ gives exactly $35 \le 0.10 \times 350 = 35$.
+This is borderline. Accept student answers that acknowledge it is met (barely) or that
+flag it as marginal. The key skill is checking the condition, not the exact conclusion.
+\end{teachernote}
 
 \end{document}

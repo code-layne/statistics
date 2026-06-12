@@ -1,8 +1,7 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.2 — Warm-Up (Answer Key)
+%! AP Statistics — Unit 9, Lesson 9.2 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
@@ -11,9 +10,36 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+A study of 15 randomly selected college students recorded the number of hours spent
+studying per week ($x$) and the score on a standardized exam ($y$).
+The LSRL is $\hat{y} = 42.3 + 3.8x$.
+
+\begin{enumerate}
+
+  \item \textbf{Interpret the slope} of the LSRL in context.
+
+        \ans{For each additional hour studied per week, the predicted standardized exam
+        score increases by approximately 3.8 points.}
+
+  \item One student studied 10 hours per week and earned a score of 81.
+        \textbf{Calculate the residual} for this student.
+
+        \vspace{0.05in}
+        $\hat{y} = 42.3 + 3.8($\ans{10}$) = $ \ans{80.3}
+
+        \vspace{0.08in}
+        Residual $= y - \hat{y} = $ \ans{81} $-$ \ans{80.3} $= $ \ans{0.7}
+
+        \vspace{0.1in}
+
+  \item In Lesson 9.1, you learned about the sampling distribution of the slope $b$.
+        Explain what it would mean if the \textbf{true slope $\beta = 0$} for this
+        population.
+
+        \ans{A true slope of $\beta = 0$ would mean there is no linear relationship
+        between hours studied and exam score in the population --- knowing how many hours
+        a student studies provides no useful information for predicting their score.}
+
+\end{enumerate}
 
 \end{document}

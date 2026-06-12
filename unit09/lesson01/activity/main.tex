@@ -1,19 +1,121 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.1 — Group Activity
+%! AP Statistics — Unit 9, Lesson 9.1 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.1}{Group Activity}
 \namepartnerperiod
 
+\vspace{0.1in}
+\textbf{Is the Slope Real? Exploring Sampling Variability in Regression}
+
+\vspace{0.05in}
+Below are three regression scenarios. In each, a researcher collected data and fit a
+least-squares regression line. Your job: decide whether the observed slope seems
+convincingly different from 0, or whether it could plausibly be due to random variation.
+
+\vspace{0.1in}
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{clccc}
+    \textbf{\#} & \textbf{Context} & \textbf{Explanatory ($x$)} & \textbf{Response ($y$)} & \textbf{$n$, $b$} \\
+    \hline
+    1 & Sunlight and plant growth & hours of sunlight & growth (cm) & $n=200$,\ $b=0.45$ \\
+    2 & Driving and gas use       & miles driven      & gallons used & $n=8$,\ $b=1.2$ \\
+    3 & Shoe size and GPA         & shoe size         & GPA & $n=40$,\ $b=0.03$ \\
+\end{tabular}
+\end{center}
+
 \vspace{0.15in}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Scenario 1 only:} $n = 200$,\ $b = 0.45$ (hours of sunlight vs.\ plant growth in cm)
+
+\begin{enumerate}[label=\alph*.]
+
+  \item Interpret the slope $b = 0.45$ in context using the sentence frame:
+
+        \vspace{0.05in}
+        ``For each additional \blank{4.5cm}, the predicted \blank{4cm} increases by \blank{2cm}.''
+
+        \vspace{0.1in}
+
+  \item If the true slope $\beta = 0$, would getting $b = 0.45$ from $n = 200$
+        observations be surprising? \textbf{Circle one:}
+
+        \vspace{0.05in}
+        \hspace{1cm}\textbf{Very surprising} \qquad \textbf{Somewhat surprising} \qquad \textbf{Not surprising}
+
+        \vspace{0.05in}
+        Explain briefly: \writelines{2}
+
+  \item What does it mean to say $\beta = 0$ in this context?
+
+        \writelines{2}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{All 3 scenarios.}
+
+\begin{enumerate}[label=\alph*.]
+
+  \item Interpret the slope in context for each scenario (one sentence each).
+
+        Scenario 1: \writelines{1}
+
+        Scenario 2: \writelines{1}
+
+        Scenario 3: \writelines{1}
+
+  \item Based on the sample size and slope value, do you think the data provide
+        convincing evidence that $\beta \ne 0$? Explain your reasoning (informal --- no
+        formal test yet).
+
+        Scenario 1: \writelines{2}
+
+        Scenario 2: \writelines{2}
+
+        Scenario 3: \writelines{2}
+
+  \item For which scenario are you \textbf{most} confident the slope is real?
+        Which are you \textbf{least} confident about? Why?
+
+        Most confident: \blank{3cm} \quad Least confident: \blank{3cm}
+
+        Reasoning: \writelines{2}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Complete all of Tier A above. Then answer:
+
+\begin{enumerate}[label=\alph*., start=4]
+
+  \item Scenarios 1 and 2 have similar slope magnitudes ($b \approx 0.45$ vs.\ $b \approx 1.2$),
+        but very different sample sizes ($n = 200$ vs.\ $n = 8$). What does this suggest
+        about what matters when deciding whether a slope is real?
+
+        \writelines{3}
+
+  \item Why can't we simply look at whether $b \ne 0$ to conclude that $\beta \ne 0$?
+
+        \writelines{3}
+
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}

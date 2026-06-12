@@ -1,19 +1,40 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.1 — Exit Ticket (Answer Key)
+%! AP Statistics — Unit 9, Lesson 9.1 — Exit Ticket (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.1}{Exit Ticket --- Answer Key}
 \namedateperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
+A researcher collects data from 12 stores on the number of ads run per month ($x$) and
+monthly revenue (\$thousands, $y$). The least-squares regression line is
+$\hat{y} = 45.2 + 0.8x$.
 
-% TODO: copy the blank Exit Ticket verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Exit Ticket --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\begin{enumerate}
+
+  \item Interpret the slope $b = 0.8$ in context.
+
+        \ans{For each additional ad run per month, the predicted monthly revenue
+        increases by \$0.8 thousand (or \$800).}
+
+  \item Another researcher says, ``Since $b \ne 0$, we can conclude that advertising
+        increases revenue.'' What is wrong with this reasoning?
+
+        \ans{The slope $b = 0.8$ is a sample statistic. Even if $\beta = 0$ (advertising
+        has no real effect on revenue), random variation in the data could produce a
+        non-zero $b$. We cannot conclude $\beta \ne 0$ just because $b \ne 0$.}
+
+  \item What question does Unit 9 ask about this slope, and why can't we answer it just
+        by looking at $b$?
+
+        \ans{Unit 9 asks whether the true population slope $\beta$ is different from
+        $0$ --- i.e., whether there is a real linear relationship between advertising and
+        revenue in the population. We cannot answer this just from $b$ because sampling
+        variability always produces non-zero slopes, even when $\beta = 0$.}
+
+\end{enumerate}
 
 \end{document}

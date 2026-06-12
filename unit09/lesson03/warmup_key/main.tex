@@ -1,8 +1,7 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.3 — Warm-Up (Answer Key)
+%! AP Statistics — Unit 9, Lesson 9.3 — Warm-Up (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
@@ -11,9 +10,41 @@
 
 \vspace{0.15in}
 
-% TODO: copy the blank Warm-Up verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Warm-Up --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+A researcher used a random sample of 40 adults in a city to study the relationship between
+hours of exercise per week ($x$) and resting heart rate (bpm, $y$).
+Computer output gave a 95\% confidence interval for the slope: $(-2.8,\ -0.4)$.
+
+\begin{enumerate}
+
+  \item Interpret this confidence interval in context. Use the sentence frame below.
+
+        \textit{``We are 95\% confident that the true slope of the population regression line
+        relating \blank{4cm} to \blank{4cm} for \blank{4cm} is between \blank{2cm} and
+        \blank{2cm} \blank{3cm}.''}
+
+        \vspace{0.05in}
+
+        \ans{We are 95\% confident that the true slope of the population regression line
+        relating resting heart rate to hours of weekly exercise for adults in this city is
+        between $-2.8$ and $-0.4$ bpm per hour of exercise per week.}
+
+        \vspace{0.1in}
+
+  \item Does this interval provide evidence that $\beta \ne 0$? Explain briefly.
+
+        \ans{Yes. Since 0 is not contained in the interval $(-2.8,\ -0.4)$, this provides
+        evidence that $\beta \ne 0$; there is a negative linear relationship between weekly
+        exercise and resting heart rate for adults in this city.}
+
+        \vspace{0.1in}
+
+  \item If the sample size had been 160 instead of 40, how would the \textbf{width} of the
+        confidence interval change? Why?
+
+        \ans{The width would decrease. A larger sample size reduces the standard error $SE_b$,
+        which makes the margin of error smaller and produces a narrower confidence interval,
+        all else remaining the same.}
+
+\end{enumerate}
 
 \end{document}

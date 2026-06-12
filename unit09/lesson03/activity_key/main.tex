@@ -1,19 +1,117 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.3 — Group Activity (Answer Key)
+%! AP Statistics — Unit 9, Lesson 9.3 — Group Activity (Answer Key)
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
-\usepackage{apstats-key}   % pulls in -boxes; do NOT also load -boxes
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
+\usepackage{apstats-key}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.3}{Group Activity --- Answer Key}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
+Three research teams each fit a regression model and reported a 95\% confidence interval
+for the slope. The intervals are already computed --- your job is to interpret them and
+evaluate researcher claims.
 
-% TODO: copy the blank Group Activity verbatim, then fill blanks with \ans{} / \ansline{}.
-\begin{notesbox}{Group Activity --- Key}
-\ansline{TODO: answer}
-\end{notesbox}
+\vspace{0.08in}
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{clllcc}
+    \textbf{Study} & \textbf{Explanatory ($x$)} & \textbf{Response ($y$)} &
+    \textbf{Population} & \textbf{95\% CI} & \textbf{$n$} \\
+    \hline
+    A & Daily screen time (hr) & Sleep duration (hr) & High school students & $(-0.31,\ -0.05)$ & 45 \\
+    B & Advertising spend (\$1000s) & Monthly sales (\$1000s) & Small retailers & $(-0.8,\ 2.1)$ & 28 \\
+    C & Elevation (100 ft) & Avg.\ July temperature ($^\circ$F) & Weather stations & $(-3.2,\ -0.9)$ & 20 \\
+\end{tabular}
+\end{center}
+
+\vspace{0.1in}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate (Key)},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{1.} Sentence frame:
+
+\ans{We are 95\% confident that the true slope relating sleep duration to daily screen time
+for high school students is between $-0.31$ and $-0.05$ hours of sleep per hour of screen time.}
+
+\vspace{0.1in}
+\textbf{2.} Is 0 in the interval $(-0.31,\ -0.05)$? \quad \textcolor{keyred}{\textbf{No}}
+
+Therefore, there \ans{is} evidence that $\beta \ne 0$.
+
+\vspace{0.1in}
+\textbf{3.} Is $-0.1$ in the interval $(-0.31,\ -0.05)$? \quad \textcolor{keyred}{\textbf{Yes}}
+
+Is the claim $\beta = -0.1$ consistent with the data?
+\ans{Yes --- $-0.1$ is inside the interval, so this claim is consistent with the data.}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency (Key)},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\begin{enumerate}[label=\alph*.]
+
+  \item Interpretations:
+
+        Study A: \ans{We are 95\% confident that the true slope of the population regression line
+        relating sleep duration to daily screen time for high school students is between $-0.31$
+        and $-0.05$ hours of sleep per hour of screen time.}
+
+        Study B: \ans{We are 95\% confident that the true slope of the population regression line
+        relating monthly sales to advertising spend for small retailers is between $-0.8$ and
+        $2.1$ thousand dollars of sales per thousand dollars of advertising.}
+
+        Study C: \ans{We are 95\% confident that the true slope of the population regression line
+        relating average July temperature to elevation for weather stations is between $-3.2$
+        and $-0.9$ degrees Fahrenheit per 100 feet of elevation.}
+
+  \item Evidence that $\beta \ne 0$?
+
+        Study A: \ans{Yes. Since 0 is not in $(-0.31,\ -0.05)$, this provides evidence that
+        $\beta \ne 0$; there is a negative linear relationship between screen time and sleep.}
+
+        Study B: \ans{No. Since 0 is contained in $(-0.8,\ 2.1)$, the interval is consistent
+        with $\beta = 0$; we cannot conclude a linear relationship exists.}
+
+        Study C: \ans{Yes. Since 0 is not in $(-3.2,\ -0.9)$, this provides evidence that
+        $\beta \ne 0$; there is a negative linear relationship between elevation and temperature.}
+
+  \item Researcher claims:
+
+        Study A ($\beta = 0$): \ans{0 is not in $(-0.31,\ -0.05)$, so this provides evidence
+        against $\beta = 0$.}
+
+        Study B ($\beta = 1.5$): \ans{1.5 is in $(-0.8,\ 2.1)$, so $\beta = 1.5$ is consistent
+        with the data.}
+
+        Study C ($\beta = -2.0$): \ans{$-2.0$ is in $(-3.2,\ -0.9)$, so $\beta = -2.0$ is
+        consistent with the data.}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension (Key)},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Bonus 1.}
+\ans{Because 0 is contained in the interval $(-0.8,\ 2.1)$, the data are consistent with
+$\beta = 0$ (no linear relationship), so the interval does not provide evidence that
+advertising spend is linearly related to monthly sales.}
+
+\vspace{0.1in}
+\textbf{Bonus 2.}
+\ans{With $n = 80$ instead of $n = 20$, the standard error $SE_b$ would decrease, producing
+a narrower CI. The new interval would be narrower than $(-3.2,\ -0.9)$. Since $-2.0$ falls
+inside the original interval and the new interval would be centered at roughly the same value
+of $b$, it is likely (though not guaranteed) that $-2.0$ would still be contained in the
+narrower interval.}
+
+\end{tcolorbox}
 
 \end{document}

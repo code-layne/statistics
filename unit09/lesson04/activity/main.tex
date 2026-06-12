@@ -1,19 +1,117 @@
-%! TODO: Lesson Title — Unit 9, Lesson 9.4 — Group Activity
+%! AP Statistics — Unit 9, Lesson 9.4 — Group Activity
 \documentclass[10pt]{article}
 \usepackage{apstats-article}
 \usepackage{apstats-boxes}
-\newcommand{\TallMath}[1]{$\displaystyle #1\rule[-1.4em]{0pt}{3.2em}$}
 
 \begin{document}
 
 \pageheader{Unit 9, Lesson 9.4}{Group Activity}
 \namepartnerperiod
 
-\vspace{0.15in}
+\vspace{0.1in}
+\textbf{Setting Up a Significance Test for Slope}
 
-% TODO: author the Group Activity. See references/components.md for the expected structure.
-\begin{notesbox}{Group Activity}
-\writelines{4}
-\end{notesbox}
+\vspace{0.05in}
+\textbf{Scenario 1:} A nutritionist randomly selects 40 adults and records their
+daily fiber intake (grams, $x$) and LDL cholesterol (mg/dL, $y$). A residual plot
+shows random scatter around zero with roughly equal spread. A histogram of residuals
+is approximately bell-shaped. She wants to test whether fiber intake is linearly
+related to LDL cholesterol.
+
+\vspace{0.05in}
+\textbf{Scenario 2:} A realtor randomly selects 50 homes sold in a city and records
+square footage ($x$) and sale price (\$1000s, $y$). The residual plot shows random
+scatter with no curve and roughly equal spread. $n = 50$ so normality is reasonable.
+She wants to test whether square footage linearly predicts sale price.
+
+\vspace{0.1in}
+\textbf{Directions:} Complete the setup at your tier.
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier R --- Remediate},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+\textbf{Use Scenario 1 only.}
+
+\begin{enumerate}[label=\alph*.]
+
+  \item Name the appropriate test: \blank{7cm}
+
+  \item Define $\beta$: ``the true slope of the regression line relating
+        \blank{4cm} to \blank{4cm} for \blank{4cm}.''
+
+  \item H$_0$: $\beta = $ \blank{1.5cm} \qquad H$_a$: $\beta$ \blank{1.5cm} 0
+        \quad (circle one: \quad $<$ \quad $\ne$ \quad $>$)
+
+  \item For each LINER condition, circle YES (met), NO (violated), or N/A
+        (cannot verify from the given information):
+
+        \begin{tabularx}{\linewidth}{lXccc}
+            \textbf{Letter} & \textbf{Condition} & \textbf{Met?} \\
+            \hline
+            L & Random scatter in residual plot & YES \quad / \quad NO \quad / \quad N/A \\
+            I & Random sample; 10\% condition   & YES \quad / \quad NO \quad / \quad N/A \\
+            N & Residuals bell-shaped            & YES \quad / \quad NO \quad / \quad N/A \\
+            E & Equal spread in residual plot    & YES \quad / \quad NO \quad / \quad N/A \\
+        \end{tabularx}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier A --- Approaching Proficiency},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Complete \textbf{both} Scenario 1 and Scenario 2. For each:
+
+\begin{enumerate}[label=\alph*.]
+
+  \item Name the appropriate test.
+
+        Scenario 1: \blank{6cm} \qquad Scenario 2: \blank{6cm}
+
+  \item Define $\beta$ in context and state H$_0$ and H$_a$ for each scenario.
+
+        \textit{Scenario 1:} $\beta = $ \writeline
+        H$_0$: \blank{8cm} \quad H$_a$: \blank{8cm}
+
+        \vspace{0.05in}
+        \textit{Scenario 2:} $\beta = $ \writeline
+        H$_0$: \blank{8cm} \quad H$_a$: \blank{8cm}
+
+  \item Verify each LINER condition for both scenarios using the information given.
+        State whether each is met and explain briefly.
+
+        \writelines{4}
+
+  \item Is there any condition you cannot fully verify from the given information?
+        Which one, and why?
+
+        \writelines{2}
+
+\end{enumerate}
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=white, colframe=black!40,
+    title=\textbf{Tier E --- Extension},
+    fonttitle=\bfseries, arc=2mm, left=3mm, right=3mm, top=2mm, bottom=2mm]
+
+Complete all of Tier A above. Then answer the following:
+
+\begin{enumerate}[label=\alph*., start=5]
+
+  \item For Scenario 2, the realtor suspects the relationship is positive (larger
+        homes cost more). Should she use a one-sided or two-sided alternative?
+        Write the specific H$_a$ she would use.
+
+        \writelines{2}
+
+  \item Why is it almost always better to use a two-sided alternative unless you
+        have a strong prior reason to use one-sided?
+
+        \writelines{2}
+
+\end{enumerate}
+\end{tcolorbox}
 
 \end{document}
